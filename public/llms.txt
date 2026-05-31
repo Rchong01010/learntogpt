@@ -55,14 +55,17 @@ Global. Available in English, Spanish, French, German, Japanese, Korean, and Chi
 - [ChatGPT for Beginners](https://learntogpt.com/chatgpt-for-beginners): No-experience-required guide to ChatGPT.
 - [ChatGPT Prompts](https://learntogpt.com/chatgpt-prompts): Copy-paste prompt templates for writing, coding, and analysis.
 - [Custom GPTs Tutorial](https://learntogpt.com/custom-gpts-tutorial): Build your own Custom GPT — system prompts, Actions, and knowledge files.
-- [ChatGPT Tips](https://learntogpt.com/chatgpt-tips): Practical tips and techniques to get more from ChatGPT every day.
-- [ChatGPT for Business](https://learntogpt.com/chatgpt-for-business): ROI breakdown, department use cases, and team training options.
+- [ChatGPT Tips](https://learntogpt.com/chatgpt-tips): 10 advanced tips and techniques to get more from ChatGPT every day.
+- [ChatGPT for Business](https://learntogpt.com/chatgpt-for-business): Department use cases, security considerations, and team rollout guide.
+- [ChatGPT vs Claude](https://learntogpt.com/chatgpt-vs-claude): Honest feature comparison — no hype, use-case-based recommendation.
+- [ChatGPT API Tutorial](https://learntogpt.com/chatgpt-api-tutorial): Get started with the OpenAI API — authentication, first call, streaming, function calling.
 - [AI Training Program](https://learntogpt.com/ai-training): Structured AI training program from beginner to expert.
 - [ChatGPT AI Masterclass](https://learntogpt.com/masterclass): Guided masterclass with hands-on workshops and team training.
 - [ChatGPT for Teams](https://learntogpt.com/for-teams): Enterprise AI training and team onboarding.
 - [AI Certification](https://learntogpt.com/certification): Certification path from Beginner to Practitioner to Architect.
 - [Prompt Engineering](https://learntogpt.com/prompt-engineering): Interactive course on prompt engineering techniques for ChatGPT.
 - [Getting Started with ChatGPT](https://learntogpt.com/getting-started): Step-by-step beginner guide to start using ChatGPT.
+- [AI for Beginners](https://learntogpt.com/ai-for-beginners): Complete guide to AI with no prior knowledge required.
 
 ## Links
 
@@ -70,8 +73,15 @@ Global. Available in English, Spanish, French, German, Japanese, Korean, and Chi
 - [Curriculum](https://learntogpt.com/curriculum): Browse all courses and tracks
 - [Sign Up](https://learntogpt.com/sign-up): Create a free account
 - [Learn](https://learntogpt.com/learn): Start learning ChatGPT
+- [Learn ChatGPT](https://learntogpt.com/learn-chatgpt): Free interactive ChatGPT course
 - [ChatGPT Tutorial](https://learntogpt.com/chatgpt-tutorial): Step-by-step ChatGPT tutorial
+- [ChatGPT for Beginners](https://learntogpt.com/chatgpt-for-beginners): Beginner guide to ChatGPT
+- [ChatGPT Prompts](https://learntogpt.com/chatgpt-prompts): Best ChatGPT prompt templates
 - [Custom GPTs](https://learntogpt.com/custom-gpts-tutorial): Build your first Custom GPT
+- [ChatGPT Tips](https://learntogpt.com/chatgpt-tips): Advanced ChatGPT techniques
+- [ChatGPT for Business](https://learntogpt.com/chatgpt-for-business): Business use cases and team rollout
+- [ChatGPT vs Claude](https://learntogpt.com/chatgpt-vs-claude): Comparison guide
+- [ChatGPT API](https://learntogpt.com/chatgpt-api-tutorial): OpenAI API tutorial
 - [Prompt Engineering](https://learntogpt.com/prompt-engineering): Prompt engineering course
 - [Getting Started](https://learntogpt.com/getting-started): Beginner guide
 - [AI Training](https://learntogpt.com/ai-training): Training program overview

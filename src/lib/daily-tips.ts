@@ -73,8 +73,8 @@ const tips: DailyTip[] = [
   // ── Workflow ─────────────────────────────────────────────
   {
     id: 9,
-    title: "CLAUDE.md is your project memory",
-    body: "Create a custom instructions file that ChatGPT reads it automatically at the start of every session. Put your project conventions, tech stack, and common commands there. It is the fastest way to get ChatGPT up to speed without repeating yourself.",
+    title: "Custom Instructions are your persistent memory",
+    body: "Set up Custom Instructions in ChatGPT Settings → Personalization. Put your role, preferred response format, and things ChatGPT should always or never do. It is the fastest way to get consistent responses without repeating yourself every session.",
     category: "workflow",
   },
   {
@@ -86,20 +86,20 @@ const tips: DailyTip[] = [
   },
   {
     id: 11,
-    title: "The /compact command",
-    body: "When your ChatGPT conversation gets long, use the summarize option. It summarizes the conversation so far and frees up context window space. Use it proactively before you run out of room, not after.",
+    title: "Start a new chat when you switch topics",
+    body: "ChatGPT carries all prior context into every new message. When you switch to a different task, start a fresh conversation — otherwise old context bleeds in and degrades response quality. One project, one conversation. New project, new chat.",
     category: "workflow",
   },
   {
     id: 12,
-    title: "Multi-file edits in one shot",
-    body: "ChatGPT can edit multiple files at once. Instead of describing changes file by file, describe the change you want across your codebase and let ChatGPT figure out which files to touch. It reads, plans, and edits them together.",
+    title: "Upload files directly for better analysis",
+    body: "Instead of copy-pasting content, upload files directly to ChatGPT. It can read PDFs, CSVs, Excel files, and images without any preprocessing. Use Code Interpreter for data files that need real computation, or just drop files into chat for reading and analysis.",
     category: "workflow",
   },
   {
     id: 13,
-    title: "Git-aware workflows",
-    body: "ChatGPT knows your git state. Ask 'what changed?' to see a summary of uncommitted work, or 'commit this with a good message' to let ChatGPT write a descriptive commit. It can also create branches, review diffs, and help with rebasing.",
+    title: "Use Custom GPTs for repeatable workflows",
+    body: "The GPT Store has pre-built Custom GPTs for specific tasks — brand voice, data analysis, code review, writing assistance. When you find yourself giving ChatGPT the same setup instructions repeatedly, there's probably a Custom GPT for it, or you can build one yourself.",
     category: "workflow",
   },
   {
@@ -138,20 +138,20 @@ const tips: DailyTip[] = [
   },
   {
     id: 19,
-    title: "Artifacts for instant visuals",
-    body: "Ask ChatGPT to create an artifact for anything visual or interactive: diagrams, charts, web pages, React components, SVGs. Artifacts render right in the conversation so you can see the result immediately and iterate.",
+    title: "Canvas for long-form collaborative editing",
+    body: "When you need to edit a long document without regenerating the whole thing, switch to Canvas. It opens a persistent document editor alongside the chat so ChatGPT can make targeted edits to specific sections. Great for proposals, reports, and long-form writing.",
     category: "feature",
   },
   {
     id: 20,
-    title: "MCP connects ChatGPT to your tools",
-    body: "Model Context Protocol connects ChatGPT to external tools like databases, APIs, and file systems. Instead of copy-pasting data into ChatGPT, connect it directly. ChatGPT supports MCP servers.",
+    title: "Browse with Bing for real-time information",
+    body: "ChatGPT's training has a knowledge cutoff. Enable Browse with Bing when you need current information — recent news, live pricing, regulatory updates, or anything that changes frequently. Without it, ChatGPT can only draw on what it learned during training.",
     category: "feature",
   },
   {
     id: 21,
-    title: "Background agents for long tasks",
-    body: "Need ChatGPT to handle a long task while you keep working? ChatGPT can run tasks in the background. Start a task, let it run, and check back when it is done. Great for test suites, large refactors, or code generation across many files.",
+    title: "DALL-E for quick visual assets",
+    body: "ChatGPT can generate images directly via DALL-E. Describe the composition, style, mood, and what to exclude. Use it for mockups, concept illustrations, and social media graphics. Prompt quality matters — the more specific your description, the closer the result.",
     category: "feature",
   },
   {

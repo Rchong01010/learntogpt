@@ -47,16 +47,16 @@ const DIFFICULTY_STYLES: Record<string, { bg: string; text: string; border: stri
 };
 
 // ---------------------------------------------------------------------------
-// Track accent colors
+// Track accent colors — OpenAI green-anchored palette
 // ---------------------------------------------------------------------------
 const TRACK_ICON_BG: Record<Track, string> = {
-  why_claude:         'bg-game-blue',
-  three_levels:       'bg-teal',
+  why_claude:         'bg-teal',
+  three_levels:       'bg-orange',
   essentials:         'bg-game-purple',
   level_up:           'bg-orange',
-  build_something:    'bg-gold',
-  practitioner_setup: 'bg-orange',
-  advanced_workflows: 'bg-cyan-600',
+  build_something:    'bg-teal',
+  practitioner_setup: 'bg-game-blue',
+  advanced_workflows: 'bg-teal',
 };
 
 // ---------------------------------------------------------------------------
@@ -133,10 +133,10 @@ export function CoursesClient({ courses, isPro }: CoursesClientProps) {
               key={tab.value}
               type="button"
               onClick={() => setActiveTab(tab.value)}
-              className={`cursor-pointer rounded-full border-3 border-ink px-5 py-2.5 text-sm font-bold transition-all ${
+              className={`cursor-pointer rounded-full border px-5 py-2.5 text-sm font-semibold transition-all ${
                 isActive
-                  ? 'bg-orange text-white shadow-[3px_3px_0px_#1c1917] -translate-x-px -translate-y-px'
-                  : 'bg-cream text-ink hover:bg-warm-white'
+                  ? 'border-orange bg-orange text-white shadow-sm'
+                  : 'border-[#e5e7eb] bg-white text-ink hover:border-orange/40 hover:bg-[#f7f7f8]'
               }`}
             >
               {t(tab.labelKey)}
@@ -156,8 +156,6 @@ export function CoursesClient({ courses, isPro }: CoursesClientProps) {
           return (
             <Link key={course.id} href={`/courses/${course.slug}`} className="group">
               <div className="card-f relative flex h-full flex-col overflow-hidden">
-                {/* Top accent bar */}
-                <div className={`h-2 w-full ${TRACK_ICON_BG[course.track]}`} />
 
                 {/* Card body */}
                 <div className="flex flex-1 flex-col gap-3 p-5">
@@ -174,7 +172,7 @@ export function CoursesClient({ courses, isPro }: CoursesClientProps) {
                           {t('badgeFree')}
                         </span>
                       ) : (
-                        <span className="badge-f border-amber-600 bg-amber-50 text-amber-700">
+                        <span className="badge-f border-orange bg-orange/10 text-orange">
                           {t('badgePro')}
                         </span>
                       )}

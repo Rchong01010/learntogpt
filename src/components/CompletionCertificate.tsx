@@ -121,7 +121,7 @@ export function CompletionCertificate({
             <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
               Certificate of Completion
             </p>
-            <p className="font-serif text-4xl italic text-ink">
+            <p className="text-4xl font-extrabold tracking-tight text-orange">
               Learn to GPT
             </p>
           </div>

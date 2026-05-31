@@ -261,7 +261,7 @@ const challenges: DailyChallenge[] = [
     id: 27,
     title: "Compare Models",
     description:
-      "Ask the same question to Haiku and Sonnet. Notice the difference in depth, speed, and style.",
+      "Ask the same question to GPT-4o and o1. Notice the difference in reasoning depth, speed, and style.",
     xpReward: 20,
     icon: "🔬",
     category: "learn",

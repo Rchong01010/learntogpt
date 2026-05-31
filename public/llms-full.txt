@@ -196,6 +196,63 @@ No programming experience is required for Tracks 1, 2, and 3, which cover ChatGP
 - [ChatGPT System Prompts](https://learntogpt.com/chatgpt-system-prompts): How to write effective ChatGPT system prompts and Custom Instructions.
 - [Learn AI](https://learntogpt.com/learn-ai): The best way to learn artificial intelligence — learning paths for every level.
 - [AI for Beginners](https://learntogpt.com/ai-for-beginners): Complete beginner's guide to AI — what AI actually is and your first steps.
+- [ChatGPT vs Claude](https://learntogpt.com/chatgpt-vs-claude): Honest side-by-side feature comparison — writing, coding, browsing, context window, pricing.
+- [How to Use ChatGPT](https://learntogpt.com/how-to-use-chatgpt): Practical guide for using ChatGPT effectively at work — use cases, mistakes, workflows.
+- [ChatGPT for Beginners](https://learntogpt.com/chatgpt-for-beginners): No-experience-required guide to ChatGPT — what it is, first prompts, what to expect.
+
+---
+
+## SEO Pages — ChatGPT
+
+### /learn-chatgpt
+Free interactive course to learn ChatGPT from scratch. Covers all 7 tracks. Hands-on prompt sandbox in every lesson. No credit card required.
+URL: https://learntogpt.com/learn-chatgpt
+Keywords: learn chatgpt, chatgpt course, chatgpt lessons
+
+### /chatgpt-tutorial
+Step-by-step tutorial for ChatGPT. Account setup, first prompts, Custom Instructions, Custom GPTs, and workflow integration. Updated for GPT-4o.
+URL: https://learntogpt.com/chatgpt-tutorial
+Keywords: chatgpt tutorial, how to use chatgpt step by step
+
+### /how-to-use-chatgpt
+Practical guide to using ChatGPT at work. Covers writing, research, coding, brainstorming, data analysis. Includes common mistakes and how to fix them.
+URL: https://learntogpt.com/how-to-use-chatgpt
+Keywords: how to use chatgpt, chatgpt guide
+
+### /chatgpt-for-beginners
+Beginner guide to ChatGPT. No technical background required. Explains what ChatGPT is, four first prompts to try, and what to expect in the first week.
+URL: https://learntogpt.com/chatgpt-for-beginners
+Keywords: chatgpt for beginners, chatgpt beginner guide
+
+### /chatgpt-prompts
+Best ChatGPT prompt templates organized by category: writing, analysis, brainstorming, coding, productivity. Includes prompt anatomy framework.
+URL: https://learntogpt.com/chatgpt-prompts
+Keywords: chatgpt prompts, best chatgpt prompts, chatgpt prompt templates
+
+### /custom-gpts-tutorial
+How to build a Custom GPT from scratch. Covers GPT Builder, system prompts, knowledge files, Actions (API integrations), and publishing.
+URL: https://learntogpt.com/custom-gpts-tutorial
+Keywords: custom gpts, how to make a custom gpt, custom gpt tutorial
+
+### /chatgpt-tips
+10 advanced ChatGPT tips for power users. Covers Custom Instructions, prompt chaining, role-priming, memory, structured output, and self-critique loops.
+URL: https://learntogpt.com/chatgpt-tips
+Keywords: chatgpt tips, chatgpt tips and tricks, chatgpt advanced tips
+
+### /chatgpt-for-business
+ChatGPT for business use cases by department (Sales, Marketing, Operations, HR). Includes security considerations, team rollout strategy, and enterprise options.
+URL: https://learntogpt.com/chatgpt-for-business
+Keywords: chatgpt for business, chatgpt business use cases, chatgpt enterprise
+
+### /chatgpt-vs-claude
+Honest feature comparison of ChatGPT and Claude. Side-by-side table covering writing, coding, browsing, context window, image generation, pricing, and developer tools.
+URL: https://learntogpt.com/chatgpt-vs-claude
+Keywords: chatgpt vs claude, chatgpt or claude, chatgpt claude comparison
+
+### /chatgpt-api-tutorial
+OpenAI API tutorial for beginners. Covers authentication, first API call, streaming, function calling, and real-world use cases. Includes Python code example.
+URL: https://learntogpt.com/chatgpt-api-tutorial
+Keywords: chatgpt api, openai api tutorial, chatgpt api tutorial
 
 ---
 
@@ -204,18 +261,22 @@ No programming experience is required for Tracks 1, 2, and 3, which cover ChatGP
 - [Website](https://learntogpt.com): Learn to GPT homepage
 - [Curriculum](https://learntogpt.com/curriculum): Browse all courses and tracks
 - [Sign Up](https://learntogpt.com/sign-up): Create a free account
-- [Learn ChatGPT](https://learntogpt.com/learn-chatgpt): Free ChatGPT lessons
+- [Learn ChatGPT](https://learntogpt.com/learn-chatgpt): Free interactive ChatGPT course
 - [ChatGPT Tutorial](https://learntogpt.com/chatgpt-tutorial): Step-by-step ChatGPT tutorial
+- [How to Use ChatGPT](https://learntogpt.com/how-to-use-chatgpt): Practical ChatGPT guide
+- [ChatGPT for Beginners](https://learntogpt.com/chatgpt-for-beginners): Beginner guide
+- [ChatGPT Prompts](https://learntogpt.com/chatgpt-prompts): Prompt templates for professional use
 - [Custom GPTs](https://learntogpt.com/custom-gpts-tutorial): Build your first Custom GPT
+- [ChatGPT Tips](https://learntogpt.com/chatgpt-tips): Advanced techniques for power users
+- [ChatGPT for Business](https://learntogpt.com/chatgpt-for-business): Enterprise ROI and team training
+- [ChatGPT vs Claude](https://learntogpt.com/chatgpt-vs-claude): Honest comparison
+- [ChatGPT API](https://learntogpt.com/chatgpt-api-tutorial): OpenAI API tutorial
 - [Prompt Engineering](https://learntogpt.com/prompt-engineering): Prompt engineering course
 - [Getting Started](https://learntogpt.com/getting-started): Beginner guide
 - [AI Training](https://learntogpt.com/ai-training): Training program overview
 - [Masterclass](https://learntogpt.com/masterclass): Masterclass details and enrollment
 - [For Teams](https://learntogpt.com/for-teams): Enterprise and team training
 - [Certification](https://learntogpt.com/certification): Certification levels and path
-- [ChatGPT for Business](https://learntogpt.com/chatgpt-for-business): Enterprise ROI and team training
-- [ChatGPT Prompts](https://learntogpt.com/chatgpt-prompts): Prompt templates for professional use
-- [ChatGPT Tips](https://learntogpt.com/chatgpt-tips): Daily tips and techniques
 
 ---
 

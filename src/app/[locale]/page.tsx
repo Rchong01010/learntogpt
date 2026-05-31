@@ -82,7 +82,7 @@ export default async function LandingPage({
   const t = await getTranslations("landing");
 
   return (
-    <div className="flex min-h-screen flex-col bg-linen">
+    <div className="flex min-h-screen flex-col bg-white">
       {/* Structured Data — @graph with EducationalOrganization + WebSite */}
       <script
         type="application/ld+json"
@@ -125,10 +125,10 @@ export default async function LandingPage({
       />
 
       {/* ==================== 1. NAV ==================== */}
-      <header className="sticky top-0 z-50 border-b-[4px] border-ink bg-linen">
+      <header className="sticky top-0 z-50 border-b border-[#e5e7eb] bg-white/95 backdrop-blur-sm">
       <nav>
         <div className="mx-auto flex max-w-[1160px] items-center justify-between px-6 py-4">
-          <Link href="/" className="logo-serif text-[1.75rem] text-ink">
+          <Link href="/" className="logo-serif text-[1.5rem] text-ink">
             <span className="text-gpt-green">Learn to</span> GPT
           </Link>
           <div className="flex items-center gap-3">
@@ -153,7 +153,7 @@ export default async function LandingPage({
             </Link>
             <Link
               href="/sign-up"
-              className="inline-flex items-center rounded-full border-[3px] border-ink bg-orange px-[22px] py-[10px] text-[0.85rem] font-bold text-white shadow-[3px_3px_0px_#1c1917] transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[1px_1px_0px_#1c1917]"
+              className="inline-flex items-center rounded-lg bg-orange px-[18px] py-[9px] text-[0.85rem] font-semibold text-white shadow-sm transition-all hover:bg-teal hover:shadow-md"
             >
               {t("nav.getStarted")}
             </Link>
@@ -165,30 +165,32 @@ export default async function LandingPage({
       <main className="flex-1">
         {/* ==================== 2. HERO ==================== */}
         <section className="px-6 pb-20 pt-[100px] text-center">
+          {/* OpenAI-style top gradient bar */}
+          <div className="pointer-events-none absolute left-0 right-0 top-0 h-1 bg-gradient-to-r from-[#0d8a6c] via-[#10a37f] to-[#1ac99a]" />
           <div className="mx-auto max-w-[1160px]">
-            <h1 className="text-[4rem] font-extrabold leading-[1.1] text-ink max-md:text-[2.6rem] max-[480px]:text-[2rem]">
-              <em className="font-serif font-normal not-italic text-orange italic">
+            <h1 className="text-[4rem] font-extrabold leading-[1.1] tracking-tight text-ink max-md:text-[2.6rem] max-[480px]:text-[2rem]">
+              <span className="text-gpt-green">
                 {t("hero.headlineAccent")}
-              </em>{" "}
+              </span>{" "}
               {t("hero.headline")}
             </h1>
-            <p className="mt-2 text-[1.8rem] font-bold tracking-tight text-ink max-md:text-[1.4rem] max-[480px]:text-[1.1rem]">
+            <p className="mt-3 text-[1.6rem] font-semibold tracking-tight text-ink/70 max-md:text-[1.3rem] max-[480px]:text-[1.05rem]">
               {t("hero.subtitle")}
             </p>
-            <p className="mx-auto mb-10 mt-7 max-w-[560px] text-[1.1rem] font-normal leading-[1.7] text-text-secondary">
+            <p className="mx-auto mb-10 mt-7 max-w-[560px] text-[1.05rem] font-normal leading-[1.7] text-text-secondary">
               {t("hero.body")}
             </p>
 
             <div className="mb-4 flex flex-wrap items-center justify-center gap-4 max-[480px]:flex-col max-[480px]:items-center">
               <a
                 href="#paths"
-                className="inline-flex items-center justify-center rounded-full border-[3px] border-ink bg-orange px-10 py-4 text-[1.1rem] font-bold text-white shadow-[6px_6px_0px_#1c1917] transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[1px_1px_0px_#1c1917] max-[480px]:w-full max-[480px]:max-w-[320px]"
+                className="inline-flex items-center justify-center rounded-lg bg-orange px-10 py-4 text-[1rem] font-semibold text-white shadow-sm transition-all hover:bg-teal hover:shadow-md max-[480px]:w-full max-[480px]:max-w-[320px]"
               >
                 {t("hero.ctaNew")}
               </a>
               <a
                 href="#paths"
-                className="inline-flex items-center justify-center rounded-full border-[3px] border-ink bg-cream px-10 py-4 text-[1.1rem] font-bold text-ink shadow-[6px_6px_0px_#1c1917] transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[1px_1px_0px_#1c1917] max-[480px]:w-full max-[480px]:max-w-[320px]"
+                className="inline-flex items-center justify-center rounded-lg border border-[#e5e7eb] bg-white px-10 py-4 text-[1rem] font-semibold text-ink shadow-sm transition-all hover:border-orange hover:shadow-md max-[480px]:w-full max-[480px]:max-w-[320px]"
               >
                 {t("hero.ctaExisting")}
               </a>
@@ -202,9 +204,9 @@ export default async function LandingPage({
         {/* ==================== 3. ANTI-DUOLINGO ==================== */}
         <section className="px-6 py-[60px]">
           <div className="mx-auto max-w-[800px]">
-            <div className="grid overflow-hidden rounded-[18px] border-[4px] border-ink bg-cream shadow-[6px_6px_0px_#1c1917] max-md:grid-cols-1 md:grid-cols-2">
+            <div className="grid overflow-hidden rounded-xl border border-[#e5e7eb] bg-white shadow-sm max-md:grid-cols-1 md:grid-cols-2">
               {/* Left — Old Way */}
-              <div className="anti-stripes relative border-r-0 border-b-0 bg-warm-white p-[40px_36px] max-md:border-b-[3px] max-md:border-dashed max-md:border-[#d4cfc5] max-[480px]:p-[28px_24px] md:border-r-[3px] md:border-dashed md:border-[#d4cfc5]">
+              <div className="anti-stripes relative bg-[#fafafa] p-[40px_36px] max-md:border-b max-md:border-dashed max-md:border-[#e5e7eb] max-[480px]:p-[28px_24px] md:border-r md:border-dashed md:border-[#e5e7eb]">
                 <span className="mb-5 block font-mono text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-[#c94040]">
                   {t("anti.labelOld")}
                 </span>
@@ -256,38 +258,38 @@ export default async function LandingPage({
               {/* Path A — Beginner */}
               <Link
                 href="/courses/why-claude/meet-claude"
-                className="relative block cursor-pointer rounded-[24px] border-[4px] border-ink bg-cream p-[36px_32px_32px] shadow-[6px_6px_0px_#1c1917] transition-all duration-300 hover:-translate-y-[6px] hover:shadow-[8px_10px_0px_#1c1917] max-[480px]:p-[28px_24px_24px]"
+                className="relative block cursor-pointer rounded-xl border border-[#e5e7eb] bg-white p-[36px_32px_32px] shadow-sm transition-all duration-300 hover:-translate-y-[4px] hover:border-orange hover:shadow-md max-[480px]:p-[28px_24px_24px]"
               >
-                <div className="absolute -top-[14px] right-6 rounded-full border-[3px] border-ink bg-teal px-[14px] py-[6px] font-mono text-[0.7rem] font-bold uppercase tracking-[0.15em] text-white shadow-[3px_3px_0px_#1c1917]">
+                <div className="absolute -top-[12px] right-6 rounded-full bg-teal px-[14px] py-[5px] font-mono text-[0.7rem] font-bold uppercase tracking-[0.15em] text-white shadow-sm">
                   {t("paths.a.badge")}
                 </div>
-                <div className="mb-5 flex size-[72px] items-center justify-center rounded-full border-[4px] border-ink bg-[#d0f0ea] text-[2rem] shadow-[3px_3px_0px_#1c1917]">
+                <div className="mb-5 flex size-[64px] items-center justify-center rounded-2xl bg-[#d0f0ea] text-[2rem]">
                   &#127793;
                 </div>
-                <div className="mb-[10px] text-[1.4rem] font-extrabold text-ink">
+                <div className="mb-[10px] text-[1.3rem] font-extrabold text-ink">
                   {t("paths.a.title")}
                 </div>
                 <div className="mb-5 text-[0.95rem] leading-[1.6] text-text-secondary">
                   {t("paths.a.desc")}
                 </div>
                 <div className="mb-6 flex flex-wrap items-center gap-2">
-                  <span className="whitespace-nowrap rounded-full border-2 border-ink bg-warm-white px-3 py-[5px] font-mono text-[0.72rem] font-semibold">
+                  <span className="whitespace-nowrap rounded-full border border-[#e5e7eb] bg-[#f7f7f8] px-3 py-[5px] font-mono text-[0.72rem] font-semibold">
                     {t("paths.a.step1")}
                   </span>
                   <span className="text-[0.8rem] text-text-secondary">
                     &rarr;
                   </span>
-                  <span className="whitespace-nowrap rounded-full border-2 border-ink bg-warm-white px-3 py-[5px] font-mono text-[0.72rem] font-semibold">
+                  <span className="whitespace-nowrap rounded-full border border-[#e5e7eb] bg-[#f7f7f8] px-3 py-[5px] font-mono text-[0.72rem] font-semibold">
                     {t("paths.a.step2")}
                   </span>
                   <span className="text-[0.8rem] text-text-secondary">
                     &rarr;
                   </span>
-                  <span className="whitespace-nowrap rounded-full border-2 border-ink bg-warm-white px-3 py-[5px] font-mono text-[0.72rem] font-semibold">
+                  <span className="whitespace-nowrap rounded-full border border-[#e5e7eb] bg-[#f7f7f8] px-3 py-[5px] font-mono text-[0.72rem] font-semibold">
                     {t("paths.a.step3")}
                   </span>
                 </div>
-                <span className="inline-flex w-full items-center justify-center rounded-full border-[3px] border-ink bg-teal px-[22px] py-[10px] text-[0.85rem] font-bold text-white shadow-[3px_3px_0px_#1c1917]">
+                <span className="inline-flex w-full items-center justify-center rounded-lg bg-teal px-[22px] py-[10px] text-[0.85rem] font-semibold text-white shadow-sm transition-all hover:bg-walnut">
                   {t("paths.a.cta")}
                 </span>
               </Link>
@@ -295,32 +297,32 @@ export default async function LandingPage({
               {/* Path B — Intermediate */}
               <Link
                 href="/curriculum"
-                className="relative block cursor-pointer rounded-[24px] border-[4px] border-ink bg-cream p-[36px_32px_32px] shadow-[6px_6px_0px_#1c1917] transition-all duration-300 hover:-translate-y-[6px] hover:shadow-[8px_10px_0px_#1c1917] max-[480px]:p-[28px_24px_24px]"
+                className="relative block cursor-pointer rounded-xl border border-[#e5e7eb] bg-white p-[36px_32px_32px] shadow-sm transition-all duration-300 hover:-translate-y-[4px] hover:border-orange hover:shadow-md max-[480px]:p-[28px_24px_24px]"
               >
-                <div className="absolute -top-[14px] right-6 rounded-full border-[3px] border-ink bg-orange px-[14px] py-[6px] font-mono text-[0.7rem] font-bold uppercase tracking-[0.15em] text-white shadow-[3px_3px_0px_#1c1917]">
+                <div className="absolute -top-[12px] right-6 rounded-full bg-orange px-[14px] py-[5px] font-mono text-[0.7rem] font-bold uppercase tracking-[0.15em] text-white shadow-sm">
                   {t("paths.b.badge")}
                 </div>
-                <div className="mb-5 flex size-[72px] items-center justify-center rounded-full border-[4px] border-ink bg-[#ffecd2] text-[2rem] shadow-[3px_3px_0px_#1c1917]">
+                <div className="mb-5 flex size-[64px] items-center justify-center rounded-2xl bg-[#d0f0ea] text-[2rem]">
                   &#9889;
                 </div>
-                <div className="mb-[10px] text-[1.4rem] font-extrabold text-ink">
+                <div className="mb-[10px] text-[1.3rem] font-extrabold text-ink">
                   {t("paths.b.title")}
                 </div>
                 <div className="mb-5 text-[0.95rem] leading-[1.6] text-text-secondary">
                   {t("paths.b.desc")}
                 </div>
                 <div className="mb-6 flex flex-wrap items-center gap-2">
-                  <span className="whitespace-nowrap rounded-full border-2 border-ink bg-warm-white px-3 py-[5px] font-mono text-[0.72rem] font-semibold">
+                  <span className="whitespace-nowrap rounded-full border border-[#e5e7eb] bg-[#f7f7f8] px-3 py-[5px] font-mono text-[0.72rem] font-semibold">
                     {t("paths.b.step1")}
                   </span>
-                  <span className="whitespace-nowrap rounded-full border-2 border-ink bg-warm-white px-3 py-[5px] font-mono text-[0.72rem] font-semibold">
+                  <span className="whitespace-nowrap rounded-full border border-[#e5e7eb] bg-[#f7f7f8] px-3 py-[5px] font-mono text-[0.72rem] font-semibold">
                     {t("paths.b.step2")}
                   </span>
-                  <span className="whitespace-nowrap rounded-full border-2 border-ink bg-warm-white px-3 py-[5px] font-mono text-[0.72rem] font-semibold">
+                  <span className="whitespace-nowrap rounded-full border border-[#e5e7eb] bg-[#f7f7f8] px-3 py-[5px] font-mono text-[0.72rem] font-semibold">
                     {t("paths.b.step3")}
                   </span>
                 </div>
-                <span className="inline-flex w-full items-center justify-center rounded-full border-[3px] border-ink bg-orange px-[22px] py-[10px] text-[0.85rem] font-bold text-white shadow-[3px_3px_0px_#1c1917]">
+                <span className="inline-flex w-full items-center justify-center rounded-lg bg-orange px-[22px] py-[10px] text-[0.85rem] font-semibold text-white shadow-sm transition-all hover:bg-teal">
                   {t("paths.b.cta")}
                 </span>
               </Link>
@@ -395,10 +397,10 @@ export default async function LandingPage({
                 />
               </svg>
 
-              <div className="relative z-[1] grid gap-[40px_60px] max-md:grid-cols-1 max-md:gap-7 md:grid-cols-2">
+              <div className="relative z-[1] grid gap-[32px_48px] max-md:grid-cols-1 max-md:gap-5 md:grid-cols-2">
                 {/* World 01 */}
-                <div className="island-bob island-bob-0 relative cursor-pointer rounded-[24px] border-[4px] border-ink bg-cream p-[28px_24px_24px] shadow-[4px_4px_0px_#1c1917] transition-all duration-300 hover:-translate-y-1 hover:shadow-[6px_8px_0px_#1c1917]">
-                  <div className="absolute -top-[14px] right-5 flex size-8 items-center justify-center rounded-full border-[3px] border-ink bg-teal text-[0.85rem] font-bold text-white">
+                <div className="island-bob island-bob-0 relative cursor-pointer rounded-xl border border-[#e5e7eb] border-l-4 border-l-teal bg-white p-[28px_24px_24px] shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+                  <div className="absolute -top-[12px] right-5 flex size-7 items-center justify-center rounded-full bg-teal text-[0.8rem] font-bold text-white shadow-sm">
                     01
                   </div>
                   <span className="mb-2 block text-[2rem]">&#127793;</span>
@@ -408,80 +410,80 @@ export default async function LandingPage({
                       {t("tracks.world1.badge")}
                     </span>
                   </div>
-                  <div className="mb-[6px] text-[1.2rem] font-bold text-ink">
+                  <div className="mb-[6px] text-[1.15rem] font-bold text-ink">
                     {t("tracks.world1.title")}
                   </div>
                   <div className="text-[0.85rem] leading-[1.5] text-text-secondary">
                     {t("tracks.world1.desc")}
                   </div>
-                  <div className="mt-2 font-serif text-[0.9rem] italic text-walnut">
+                  <div className="mt-2 text-[0.85rem] font-medium text-teal">
                     {t("tracks.world1.tagline")}
                   </div>
                 </div>
 
                 {/* World 02 */}
-                <div className="island-bob island-bob-1 relative cursor-pointer rounded-[24px] border-[4px] border-ink bg-cream p-[28px_24px_24px] shadow-[4px_4px_0px_#1c1917] transition-all duration-300 hover:-translate-y-1 hover:shadow-[6px_8px_0px_#1c1917]">
-                  <div className="absolute -top-[14px] right-5 flex size-8 items-center justify-center rounded-full border-[3px] border-ink bg-orange text-[0.85rem] font-bold text-white">
+                <div className="island-bob island-bob-1 relative cursor-pointer rounded-xl border border-[#e5e7eb] border-l-4 border-l-orange bg-white p-[28px_24px_24px] shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+                  <div className="absolute -top-[12px] right-5 flex size-7 items-center justify-center rounded-full bg-orange text-[0.8rem] font-bold text-white shadow-sm">
                     02
                   </div>
                   <span className="mb-2 block text-[2rem]">&#128188;</span>
                   <div className="mb-1 font-mono text-[0.7rem] font-semibold uppercase tracking-[0.15em] text-text-secondary">
                     {t("tracks.world2.num")}
                   </div>
-                  <div className="mb-[6px] text-[1.2rem] font-bold text-ink">
+                  <div className="mb-[6px] text-[1.15rem] font-bold text-ink">
                     {t("tracks.world2.title")}
                   </div>
                   <div className="text-[0.85rem] leading-[1.5] text-text-secondary">
                     {t("tracks.world2.desc")}
                   </div>
-                  <div className="mt-2 font-serif text-[0.9rem] italic text-walnut">
+                  <div className="mt-2 text-[0.85rem] font-medium text-orange">
                     {t("tracks.world2.tagline")}
                   </div>
                 </div>
 
                 {/* World 03 */}
-                <div className="island-bob island-bob-2 relative cursor-pointer rounded-[24px] border-[4px] border-ink bg-cream p-[28px_24px_24px] shadow-[4px_4px_0px_#1c1917] transition-all duration-300 hover:-translate-y-1 hover:shadow-[6px_8px_0px_#1c1917]">
-                  <div className="absolute -top-[14px] right-5 flex size-8 items-center justify-center rounded-full border-[3px] border-ink bg-game-purple text-[0.85rem] font-bold text-white">
+                <div className="island-bob island-bob-2 relative cursor-pointer rounded-xl border border-[#e5e7eb] border-l-4 border-l-game-purple bg-white p-[28px_24px_24px] shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+                  <div className="absolute -top-[12px] right-5 flex size-7 items-center justify-center rounded-full bg-game-purple text-[0.8rem] font-bold text-white shadow-sm">
                     03
                   </div>
                   <span className="mb-2 block text-[2rem]">&#128187;</span>
                   <div className="mb-1 font-mono text-[0.7rem] font-semibold uppercase tracking-[0.15em] text-text-secondary">
                     {t("tracks.world3.num")}
                   </div>
-                  <div className="mb-[6px] text-[1.2rem] font-bold text-ink">
+                  <div className="mb-[6px] text-[1.15rem] font-bold text-ink">
                     {t("tracks.world3.title")}
                   </div>
                   <div className="text-[0.85rem] leading-[1.5] text-text-secondary">
                     {t("tracks.world3.desc")}
                   </div>
-                  <div className="mt-2 font-serif text-[0.9rem] italic text-walnut">
+                  <div className="mt-2 text-[0.85rem] font-medium text-game-purple">
                     {t("tracks.world3.tagline")}
                   </div>
                 </div>
 
                 {/* World 04 */}
-                <div className="island-bob island-bob-3 relative cursor-pointer rounded-[24px] border-[4px] border-ink bg-cream p-[28px_24px_24px] shadow-[4px_4px_0px_#1c1917] transition-all duration-300 hover:-translate-y-1 hover:shadow-[6px_8px_0px_#1c1917]">
-                  <div className="absolute -top-[14px] right-5 flex size-8 items-center justify-center rounded-full border-[3px] border-ink bg-game-blue text-[0.85rem] font-bold text-white">
+                <div className="island-bob island-bob-3 relative cursor-pointer rounded-xl border border-[#e5e7eb] border-l-4 border-l-game-blue bg-white p-[28px_24px_24px] shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+                  <div className="absolute -top-[12px] right-5 flex size-7 items-center justify-center rounded-full bg-game-blue text-[0.8rem] font-bold text-white shadow-sm">
                     04
                   </div>
                   <span className="mb-2 block text-[2rem]">&#129302;</span>
                   <div className="mb-1 font-mono text-[0.7rem] font-semibold uppercase tracking-[0.15em] text-text-secondary">
                     {t("tracks.world4.num")}
                   </div>
-                  <div className="mb-[6px] text-[1.2rem] font-bold text-ink">
+                  <div className="mb-[6px] text-[1.15rem] font-bold text-ink">
                     {t("tracks.world4.title")}
                   </div>
                   <div className="text-[0.85rem] leading-[1.5] text-text-secondary">
                     {t("tracks.world4.desc")}
                   </div>
-                  <div className="mt-2 font-serif text-[0.9rem] italic text-walnut">
+                  <div className="mt-2 text-[0.85rem] font-medium text-game-blue">
                     {t("tracks.world4.tagline")}
                   </div>
                 </div>
 
                 {/* World 05 — spans full width */}
-                <div className="island-bob island-bob-4 relative col-span-1 mx-auto w-full max-w-[420px] cursor-pointer rounded-[24px] border-[4px] border-ink bg-cream p-[28px_24px_24px] shadow-[4px_4px_0px_#1c1917] transition-all duration-300 hover:-translate-y-1 hover:shadow-[6px_8px_0px_#1c1917] max-md:max-w-full md:col-span-2 md:justify-self-center">
-                  <div className="absolute -top-[14px] right-5 flex size-8 items-center justify-center rounded-full border-[3px] border-ink bg-gold text-[0.85rem] font-bold text-ink">
+                <div className="island-bob island-bob-4 relative col-span-1 mx-auto w-full max-w-[420px] cursor-pointer rounded-xl border border-[#e5e7eb] border-l-4 border-l-orange bg-white p-[28px_24px_24px] shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md max-md:max-w-full md:col-span-2 md:justify-self-center">
+                  <div className="absolute -top-[12px] right-5 flex size-7 items-center justify-center rounded-full bg-orange text-[0.8rem] font-bold text-white shadow-sm">
                     05
                   </div>
                   <span className="mb-2 block text-[2rem]">&#127942;</span>
@@ -491,13 +493,13 @@ export default async function LandingPage({
                       {t("tracks.world5.badge")}
                     </span>
                   </div>
-                  <div className="mb-[6px] text-[1.2rem] font-bold text-ink">
+                  <div className="mb-[6px] text-[1.15rem] font-bold text-ink">
                     {t("tracks.world5.title")}
                   </div>
                   <div className="text-[0.85rem] leading-[1.5] text-text-secondary">
                     {t("tracks.world5.desc")}
                   </div>
-                  <div className="mt-2 font-serif text-[0.9rem] italic text-walnut">
+                  <div className="mt-2 text-[0.85rem] font-medium text-orange">
                     {t("tracks.world5.tagline")}
                   </div>
                 </div>
@@ -518,9 +520,9 @@ export default async function LandingPage({
 
             <div className="mt-10 grid grid-cols-2 gap-5 md:grid-cols-4">
               {/* XP Bar */}
-              <div className="game-tilt-0 rounded-[18px] border-[3px] border-ink bg-cream p-[28px_20px] text-center shadow-[3px_3px_0px_#1c1917] transition-all duration-300">
+              <div className="game-tilt-0 rounded-xl border border-[#e5e7eb] bg-white p-[28px_20px] text-center shadow-sm transition-all duration-300">
                 <div className="mb-4 flex min-h-[56px] items-center justify-center">
-                  <div className="h-[18px] w-full overflow-hidden rounded-[20px] border-2 border-ink bg-warm-white">
+                  <div className="h-[14px] w-full overflow-hidden rounded-full bg-[#f0fdf8]">
                     <div className="xp-bar-fill" />
                   </div>
                 </div>
@@ -533,16 +535,16 @@ export default async function LandingPage({
               </div>
 
               {/* Badges */}
-              <div className="game-tilt-1 rounded-[18px] border-[3px] border-ink bg-cream p-[28px_20px] text-center shadow-[3px_3px_0px_#1c1917] transition-all duration-300">
+              <div className="game-tilt-1 rounded-xl border border-[#e5e7eb] bg-white p-[28px_20px] text-center shadow-sm transition-all duration-300">
                 <div className="mb-4 flex min-h-[56px] items-center justify-center">
                   <div className="flex justify-center gap-2">
-                    <div className="flex size-10 items-center justify-center rounded-full border-2 border-ink bg-[#d0f0ea] text-[1rem] shadow-[2px_2px_0px_#1c1917]">
+                    <div className="flex size-10 items-center justify-center rounded-full bg-[#d0f0ea] text-[1rem]">
                       &#127793;
                     </div>
-                    <div className="flex size-10 items-center justify-center rounded-full border-2 border-ink bg-[#ffecd2] text-[1rem] shadow-[2px_2px_0px_#1c1917]">
+                    <div className="flex size-10 items-center justify-center rounded-full bg-[#fef3c7] text-[1rem]">
                       &#9889;
                     </div>
-                    <div className="flex size-10 items-center justify-center rounded-full border-2 border-ink bg-[#ede9fe] text-[1rem] shadow-[2px_2px_0px_#1c1917]">
+                    <div className="flex size-10 items-center justify-center rounded-full bg-[#ede9fe] text-[1rem]">
                       &#128640;
                     </div>
                   </div>
@@ -556,21 +558,21 @@ export default async function LandingPage({
               </div>
 
               {/* Levels */}
-              <div className="game-tilt-2 rounded-[18px] border-[3px] border-ink bg-cream p-[28px_20px] text-center shadow-[3px_3px_0px_#1c1917] transition-all duration-300">
+              <div className="game-tilt-2 rounded-xl border border-[#e5e7eb] bg-white p-[28px_20px] text-center shadow-sm transition-all duration-300">
                 <div className="mb-4 flex min-h-[56px] items-center justify-center">
                   <div className="flex items-center justify-center gap-1">
                     {[1, 2, 3].map((n) => (
                       <div
                         key={n}
-                        className="flex size-7 items-center justify-center rounded-[6px] border-2 border-ink bg-orange font-mono text-[0.6rem] font-bold text-white"
+                        className="flex size-7 items-center justify-center rounded-lg bg-orange font-mono text-[0.6rem] font-bold text-white"
                       >
                         {n}
                       </div>
                     ))}
-                    <div className="level-pulse flex size-7 items-center justify-center rounded-[6px] border-2 border-ink bg-gold font-mono text-[0.6rem] font-bold text-ink">
+                    <div className="level-pulse flex size-7 items-center justify-center rounded-lg bg-[#10a37f] font-mono text-[0.6rem] font-bold text-white">
                       4
                     </div>
-                    <div className="flex size-7 items-center justify-center rounded-[6px] border-2 border-ink bg-warm-white font-mono text-[0.6rem] font-bold text-text-secondary">
+                    <div className="flex size-7 items-center justify-center rounded-lg bg-[#f7f7f8] font-mono text-[0.6rem] font-bold text-text-secondary">
                       5
                     </div>
                   </div>
@@ -584,18 +586,18 @@ export default async function LandingPage({
               </div>
 
               {/* Streak */}
-              <div className="game-tilt-3 rounded-[18px] border-[3px] border-ink bg-cream p-[28px_20px] text-center shadow-[3px_3px_0px_#1c1917] transition-all duration-300">
+              <div className="game-tilt-3 rounded-xl border border-[#e5e7eb] bg-white p-[28px_20px] text-center shadow-sm transition-all duration-300">
                 <div className="mb-4 flex min-h-[56px] items-center justify-center">
                   <div className="flex items-center justify-center gap-[6px]">
                     {[1, 2, 3, 4].map((n) => (
                       <div
                         key={n}
-                        className="flex size-8 items-center justify-center rounded-full border-2 border-ink bg-[#c94040] text-[0.9rem]"
+                        className="flex size-8 items-center justify-center rounded-full bg-[#fee2e2] text-[0.9rem]"
                       >
                         &#128293;
                       </div>
                     ))}
-                    <div className="flex size-8 items-center justify-center rounded-full border-2 border-ink bg-warm-white" />
+                    <div className="flex size-8 items-center justify-center rounded-full bg-[#f7f7f8]" />
                   </div>
                 </div>
                 <div className="text-[0.95rem] font-bold text-ink">
@@ -623,19 +625,19 @@ export default async function LandingPage({
               {t("sandbox.heading")}
             </h2>
 
-            <div className="relative mx-auto mt-11 max-w-[800px] overflow-hidden rounded-[18px] border-[4px] border-ink bg-cream shadow-[6px_6px_0px_#1c1917]">
-              {/* Header bar */}
-              <div className="flex items-center gap-2 bg-[#1c1917] px-5 py-[14px]">
-                <div className="size-3 rounded-full border-2 border-white/30 bg-[#c94040]" />
-                <div className="size-3 rounded-full border-2 border-white/30 bg-gold" />
-                <div className="size-3 rounded-full border-2 border-white/30 bg-teal" />
-                <span className="ml-auto font-mono text-[0.75rem] text-white/60">
+            <div className="relative mx-auto mt-11 max-w-[800px] overflow-hidden rounded-xl border border-[#e5e7eb] bg-white shadow-md">
+              {/* Header bar — OpenAI dark */}
+              <div className="flex items-center gap-2 bg-[#202123] px-5 py-[14px]">
+                <div className="size-3 rounded-full bg-[#c94040]" />
+                <div className="size-3 rounded-full bg-[#f59e0b]" />
+                <div className="size-3 rounded-full bg-[#10a37f]" />
+                <span className="ml-auto font-mono text-[0.75rem] text-white/50">
                   {t("sandbox.filename")}
                 </span>
               </div>
 
               {/* Code body */}
-              <div className="sandbox-lined relative min-h-[200px] p-7 max-md:p-5">
+              <div className="sandbox-lined relative min-h-[200px] bg-[#fafafa] p-7 max-md:p-5">
                 <pre className="font-mono text-[0.85rem] leading-[32px] text-ink">
                   <code>
                     <span className="text-text-secondary">
@@ -680,19 +682,19 @@ export default async function LandingPage({
                   </code>
                 </pre>
                 {/* +25 XP stamp */}
-                <div className="absolute bottom-5 right-5 rotate-[6deg] rounded-[12px] border-[3px] border-ink bg-teal px-4 py-2 font-mono text-[0.85rem] font-bold text-white shadow-[3px_3px_0px_#1c1917]">
+                <div className="absolute bottom-5 right-5 rotate-[6deg] rounded-lg bg-teal px-4 py-2 font-mono text-[0.85rem] font-bold text-white shadow-sm">
                   {t("sandbox.stamp")}
                 </div>
               </div>
 
               {/* Footer */}
-              <div className="flex items-center justify-between border-t-2 border-dashed border-[#d4cfc5] px-7 py-5">
+              <div className="flex items-center justify-between border-t border-[#e5e7eb] px-7 py-5">
                 <span className="max-w-[400px] text-[0.9rem] text-text-secondary">
                   {t("sandbox.footerText")}
                 </span>
                 <Link
                   href="/courses/why-claude/meet-claude"
-                  className="inline-flex items-center rounded-full border-[3px] border-ink bg-orange px-[22px] py-[10px] text-[0.85rem] font-bold text-white shadow-[3px_3px_0px_#1c1917] transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[1px_1px_0px_#1c1917]"
+                  className="inline-flex items-center rounded-lg bg-orange px-[22px] py-[10px] text-[0.85rem] font-semibold text-white shadow-sm transition-all hover:bg-teal hover:shadow-md"
                 >
                   {t("sandbox.cta")}
                 </Link>
@@ -713,9 +715,9 @@ export default async function LandingPage({
 
             <div className="mt-10 grid gap-5 max-md:grid-cols-1 md:grid-cols-2">
               {/* Build Item 01 */}
-              <div className="relative rounded-[18px] border-[3px] border-ink bg-cream p-[32px_28px_28px] shadow-[4px_4px_0px_#1c1917] transition-all duration-300 hover:-translate-y-1 hover:shadow-[6px_8px_0px_#1c1917]">
-                <div className="absolute -top-[14px] left-6 font-mono text-[0.7rem] font-bold uppercase tracking-[0.2em] text-white">
-                  <span className="rounded-full border-[3px] border-ink bg-teal px-[14px] py-[6px] shadow-[2px_2px_0px_#1c1917]">
+              <div className="relative rounded-xl border border-[#e5e7eb] border-l-4 border-l-teal bg-white p-[32px_28px_28px] shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+                <div className="absolute -top-[12px] left-6 font-mono text-[0.7rem] font-bold uppercase tracking-[0.2em] text-white">
+                  <span className="rounded-full bg-teal px-[14px] py-[5px] shadow-sm">
                     01
                   </span>
                 </div>
@@ -728,9 +730,9 @@ export default async function LandingPage({
               </div>
 
               {/* Build Item 02 */}
-              <div className="relative rounded-[18px] border-[3px] border-ink bg-cream p-[32px_28px_28px] shadow-[4px_4px_0px_#1c1917] transition-all duration-300 hover:-translate-y-1 hover:shadow-[6px_8px_0px_#1c1917]">
-                <div className="absolute -top-[14px] left-6 font-mono text-[0.7rem] font-bold uppercase tracking-[0.2em] text-white">
-                  <span className="rounded-full border-[3px] border-ink bg-orange px-[14px] py-[6px] shadow-[2px_2px_0px_#1c1917]">
+              <div className="relative rounded-xl border border-[#e5e7eb] border-l-4 border-l-orange bg-white p-[32px_28px_28px] shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+                <div className="absolute -top-[12px] left-6 font-mono text-[0.7rem] font-bold uppercase tracking-[0.2em] text-white">
+                  <span className="rounded-full bg-orange px-[14px] py-[5px] shadow-sm">
                     02
                   </span>
                 </div>
@@ -743,9 +745,9 @@ export default async function LandingPage({
               </div>
 
               {/* Build Item 03 */}
-              <div className="relative rounded-[18px] border-[3px] border-ink bg-cream p-[32px_28px_28px] shadow-[4px_4px_0px_#1c1917] transition-all duration-300 hover:-translate-y-1 hover:shadow-[6px_8px_0px_#1c1917]">
-                <div className="absolute -top-[14px] left-6 font-mono text-[0.7rem] font-bold uppercase tracking-[0.2em] text-white">
-                  <span className="rounded-full border-[3px] border-ink bg-game-purple px-[14px] py-[6px] shadow-[2px_2px_0px_#1c1917]">
+              <div className="relative rounded-xl border border-[#e5e7eb] border-l-4 border-l-game-purple bg-white p-[32px_28px_28px] shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+                <div className="absolute -top-[12px] left-6 font-mono text-[0.7rem] font-bold uppercase tracking-[0.2em] text-white">
+                  <span className="rounded-full bg-game-purple px-[14px] py-[5px] shadow-sm">
                     03
                   </span>
                 </div>
@@ -758,9 +760,9 @@ export default async function LandingPage({
               </div>
 
               {/* Build Item 04 */}
-              <div className="relative rounded-[18px] border-[3px] border-ink bg-cream p-[32px_28px_28px] shadow-[4px_4px_0px_#1c1917] transition-all duration-300 hover:-translate-y-1 hover:shadow-[6px_8px_0px_#1c1917]">
-                <div className="absolute -top-[14px] left-6 font-mono text-[0.7rem] font-bold uppercase tracking-[0.2em] text-ink">
-                  <span className="rounded-full border-[3px] border-ink bg-gold px-[14px] py-[6px] shadow-[2px_2px_0px_#1c1917]">
+              <div className="relative rounded-xl border border-[#e5e7eb] border-l-4 border-l-game-blue bg-white p-[32px_28px_28px] shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+                <div className="absolute -top-[12px] left-6 font-mono text-[0.7rem] font-bold uppercase tracking-[0.2em] text-white">
+                  <span className="rounded-full bg-game-blue px-[14px] py-[5px] shadow-sm">
                     04
                   </span>
                 </div>
@@ -781,8 +783,8 @@ export default async function LandingPage({
 
         {/* ==================== 8. CREDIBILITY ==================== */}
         <section className="px-6 py-[60px]">
-          <div className="mx-auto max-w-[720px] rounded-[18px] border-[4px] border-ink bg-cream p-10 text-center shadow-[4px_4px_0px_#1c1917]">
-            <div className="mb-5 inline-flex items-center gap-2 rounded-full border-2 border-ink bg-[#d0f0ea] px-[18px] py-2 font-mono text-[0.8rem] font-semibold text-ink shadow-[3px_3px_0px_#1c1917]">
+          <div className="mx-auto max-w-[720px] rounded-xl border border-[#e5e7eb] bg-white p-10 text-center shadow-sm">
+            <div className="mb-5 inline-flex items-center gap-2 rounded-full bg-[#d0f0ea] px-[18px] py-2 font-mono text-[0.8rem] font-semibold text-teal">
               &#10003; {t("cred.badge")}
             </div>
             <div className="mb-7 text-[1.15rem] font-bold text-ink">
@@ -814,7 +816,7 @@ export default async function LandingPage({
                 </div>
               </div>
               <div className="text-center">
-                <div className="font-mono text-[2.2rem] font-bold leading-none text-gold max-[480px]:text-[1.6rem]">
+                <div className="font-mono text-[2.2rem] font-bold leading-none text-orange max-[480px]:text-[1.6rem]">
                   {t("cred.achievement.num")}
                 </div>
                 <div className="mt-1 text-[0.78rem] font-semibold uppercase tracking-[0.15em] text-text-secondary">
@@ -836,18 +838,18 @@ export default async function LandingPage({
             <h2 className="mt-3 text-center text-[2rem] font-extrabold leading-[1.2] text-ink">
               {t("faq.heading")}
             </h2>
-            <div className="mt-10 space-y-3">
+            <div className="mt-10 space-y-2">
               {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
                 <details
                   key={i}
-                  className="group overflow-hidden rounded-[12px] border-[3px] border-ink bg-warm-white [&[open]]:shadow-[3px_3px_0px_#1c1917]"
+                  className="group overflow-hidden rounded-xl border border-[#e5e7eb] bg-white [&[open]]:border-orange/30 [&[open]]:shadow-sm"
                 >
-                  <summary className="flex cursor-pointer list-none items-center justify-between px-6 py-5 text-[1rem] font-bold text-ink [&::-webkit-details-marker]:hidden">
+                  <summary className="flex cursor-pointer list-none items-center justify-between px-6 py-5 text-[1rem] font-semibold text-ink [&::-webkit-details-marker]:hidden">
                     {t(`faq.q${i}`)}
-                    <span className="text-[1.4rem] font-bold text-orange group-open:hidden">
+                    <span className="ml-4 shrink-0 text-[1.4rem] font-bold text-orange group-open:hidden">
                       +
                     </span>
-                    <span className="hidden text-[1.4rem] font-bold text-orange group-open:inline">
+                    <span className="ml-4 hidden shrink-0 text-[1.4rem] font-bold text-orange group-open:inline">
                       {"\u2212"}
                     </span>
                   </summary>
@@ -863,19 +865,19 @@ export default async function LandingPage({
         {/* ==================== 11. FINAL CTA ==================== */}
         <section className="px-6 pb-[100px] pt-20 text-center">
           <div className="mx-auto max-w-[1160px]">
-            <h2 className="text-[2.4rem] font-extrabold leading-[1.2] text-ink max-md:text-[1.9rem]">
+            <h2 className="text-[2.4rem] font-extrabold leading-[1.2] tracking-tight text-ink max-md:text-[1.9rem]">
               {t("finalCta.headline")}{" "}
-              <em className="font-serif font-normal not-italic text-orange italic">
+              <span className="text-gpt-green">
                 {t("finalCta.headlineAccent")}
-              </em>
+              </span>
             </h2>
-            <p className="mt-2 font-serif text-[1.5rem] italic text-walnut">
+            <p className="mt-3 text-[1.2rem] font-medium text-text-secondary">
               {t("finalCta.subtitle")}
             </p>
             <div className="mt-9">
               <Link
                 href="/courses/why-claude/meet-claude"
-                className="inline-flex items-center justify-center gap-2 rounded-full border-[3px] border-ink bg-orange px-10 py-4 text-[1.1rem] font-bold text-white shadow-[6px_6px_0px_#1c1917] transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[1px_1px_0px_#1c1917]"
+                className="inline-flex items-center justify-center gap-2 rounded-lg bg-orange px-10 py-4 text-[1.05rem] font-semibold text-white shadow-sm transition-all hover:bg-teal hover:shadow-md"
               >
                 {t("finalCta.cta")}
                 <ArrowRight className="size-5" />
@@ -889,7 +891,7 @@ export default async function LandingPage({
       </main>
 
       {/* ==================== 12. FOOTER ==================== */}
-      <footer className="border-t-[4px] border-ink py-10 text-center">
+      <footer className="border-t border-[#e5e7eb] py-10 text-center">
         <div className="mx-auto max-w-[1160px] px-6">
           <div className="logo-serif mb-3 text-[1.4rem] text-ink">
             <span className="text-gpt-green">Learn to</span> GPT

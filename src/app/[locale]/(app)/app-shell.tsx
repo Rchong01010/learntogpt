@@ -71,10 +71,10 @@ function NavLink({
     <Link
       href={href}
       className={cn(
-        "flex items-center gap-3 rounded-[12px] px-3 py-2.5 text-sm font-semibold transition-all",
+        "flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-semibold transition-all",
         isActive
-          ? "border-[3px] border-ink bg-cream text-ink shadow-[3px_3px_0px_#1c1917]"
-          : "border-[3px] border-transparent text-text-secondary hover:border-ink/20 hover:bg-cream hover:text-ink",
+          ? "bg-orange/10 text-orange"
+          : "text-text-secondary hover:bg-[#f7f7f8] hover:text-ink",
       )}
     >
       <Icon className="size-[18px] shrink-0" />
@@ -88,17 +88,17 @@ export function AppShell({ userData, children }: AppShellProps) {
   const t = useTranslations("nav");
 
   return (
-    <div className="flex h-full min-h-screen bg-linen">
+    <div className="flex h-full min-h-screen bg-[#f7f7f8]">
       {/* Desktop sidebar */}
-      <aside className="hidden w-64 shrink-0 flex-col border-r-[4px] border-ink bg-warm-white md:flex">
+      <aside className="hidden w-64 shrink-0 flex-col border-r border-[#e5e7eb] bg-white md:flex">
         {/* Logo */}
-        <div className="flex h-16 items-center gap-2.5 px-5">
-          <div className="flex size-9 items-center justify-center rounded-[12px] border-[3px] border-ink bg-orange font-bold text-white text-sm shadow-[2px_2px_0px_#1c1917]">
-            CA
+        <div className="flex h-16 items-center gap-2.5 px-5 border-b border-[#e5e7eb]">
+          <div className="flex size-9 items-center justify-center rounded-xl bg-orange font-bold text-white text-sm">
+            LG
           </div>
           <div className="flex flex-col leading-tight">
-            <span className="logo-serif text-xl text-ink">Learn to GPT</span>
-            <span className="text-[11px] font-bold uppercase tracking-[0.15em] text-text-secondary">Academy</span>
+            <span className="logo-serif text-[1.1rem] text-ink">Learn to GPT</span>
+            <span className="text-[10px] font-semibold uppercase tracking-[0.15em] text-text-secondary">Academy</span>
           </div>
         </div>
 
@@ -116,13 +116,13 @@ export function AppShell({ userData, children }: AppShellProps) {
         </nav>
 
         {/* Bottom user card */}
-        <div className="border-t-[3px] border-ink p-3">
-          <div className="flex items-center gap-2.5 rounded-[12px] border-[2px] border-ink/20 bg-linen p-2.5">
+        <div className="border-t border-[#e5e7eb] p-3">
+          <div className="flex items-center gap-2.5 rounded-xl bg-[#f7f7f8] p-2.5">
             <Avatar size="sm">
               {userData.avatarUrl ? (
                 <AvatarImage src={userData.avatarUrl} />
               ) : (
-                <AvatarFallback className="border-[2px] border-ink bg-gold text-ink font-bold text-xs">
+                <AvatarFallback className="bg-orange text-white font-bold text-xs">
                   {userData.displayName[0]}
                 </AvatarFallback>
               )}
@@ -138,7 +138,7 @@ export function AppShell({ userData, children }: AppShellProps) {
       {/* Main content area */}
       <div className="flex flex-1 flex-col">
         {/* Top bar */}
-        <header className="flex h-16 items-center justify-between border-b-[4px] border-ink bg-warm-white px-4">
+        <header className="flex h-16 items-center justify-between border-b border-[#e5e7eb] bg-white px-4">
           {/* Mobile hamburger */}
           <div className="md:hidden">
             <Sheet>
@@ -147,11 +147,11 @@ export function AppShell({ userData, children }: AppShellProps) {
               >
                 <Menu className="size-5 text-ink" />
               </SheetTrigger>
-              <SheetContent side="left" className="w-64 bg-warm-white p-0">
-                <SheetHeader className="border-b-[3px] border-ink px-4 py-3">
+              <SheetContent side="left" className="w-64 bg-white p-0">
+                <SheetHeader className="border-b border-[#e5e7eb] px-4 py-3">
                   <SheetTitle className="flex items-center gap-2">
-                    <div className="flex size-7 items-center justify-center rounded-[10px] border-[2px] border-ink bg-orange font-bold text-white text-xs shadow-[2px_2px_0px_#1c1917]">
-                      CA
+                    <div className="flex size-7 items-center justify-center rounded-xl bg-orange font-bold text-white text-xs">
+                      LG
                     </div>
                     <span className="logo-serif text-lg text-ink">{t("brandName")}</span>
                   </SheetTitle>
@@ -194,7 +194,7 @@ export function AppShell({ userData, children }: AppShellProps) {
               {userData.avatarUrl ? (
                 <AvatarImage src={userData.avatarUrl} />
               ) : (
-                <AvatarFallback className="border-[2px] border-ink bg-gold text-ink font-bold text-xs">
+                <AvatarFallback className="bg-orange text-white font-bold text-xs">
                   {userData.displayName[0]}
                 </AvatarFallback>
               )}

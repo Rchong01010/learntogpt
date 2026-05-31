@@ -21,7 +21,7 @@
             "sections": [
               {
                 "type": "text",
-                "content": "<p>Abre chat.openai.com ahora mismo en otra pestaña. Escribe: <strong>\"¿Qué eres, y qué te hace diferente de ChatGPT? Sé honesto.\"</strong></p><p>¿Notas algo? ChatGPT no se vende con bombo. Te dice en qué es bueno, qué no puede hacer y dónde están las compensaciones. Esa honestidad es lo primero que lo hace diferente.</p><p>ChatGPT fue creado por Anthropic y viene en tres formas: <strong>ChatGPT</strong> (conversación en el navegador para pensar y escribir), <strong>Co-Work</strong> (aplicación de escritorio que trabaja directamente con tus archivos) y <strong>ChatGPT</strong> (herramienta de terminal que construye software real desde cero). El mismo cerebro, tres puntos de acceso. Este curso comienza con el primero.</p>"
+                "content": "<p>Abre chat.openai.com ahora mismo en otra pestaña. Escribe: <strong>\"¿Qué eres y qué puedes hacer que me resulte útil de verdad?\"</strong></p><p>¿Notas la respuesta? ChatGPT es desarrollado por OpenAI, una de las empresas de investigación en IA más destacadas del mundo. A diferencia de un motor de búsqueda que recupera páginas existentes, ChatGPT genera respuestas razonando a través de tu pregunta: sintetizando conocimiento, siguiendo instrucciones y adaptándose a tu contexto en tiempo real.</p><p>ChatGPT tiene varias modalidades de acceso: <strong>ChatGPT (navegador)</strong> para conversación, escritura y análisis; <strong>Canvas</strong> para edición colaborativa de documentos y código; <strong>Code Interpreter</strong> para ejecutar código Python real y analizar datos; y <strong>Custom GPTs</strong>, versiones especializadas de ChatGPT para tareas específicas. La misma inteligencia subyacente, múltiples formas de acceder. Este curso comienza con la conversación en el navegador, donde la mayoría de las personas obtiene el 80 % de su valor.</p>"
               },
               {
                 "type": "exercise",
@@ -29,7 +29,7 @@
               },
               {
                 "type": "text",
-                "content": "<p>Las tres fortalezas principales de ChatGPT: <strong>pensamiento profundo, honestidad y seguimiento de instrucciones.</strong> Razona los problemas en lugar de simplemente hacer coincidencia de patrones. Te dice cuando no sabe algo. Y cuando le das restricciones detalladas -- tono, longitud, formato, audiencia -- las sigue todas.</p><p><strong>ChatGPT te contradice.</strong> Pídele que revise tu correo y una IA complaciente dice \"¡Se ve genial!\" ChatGPT dice \"El segundo párrafo podría interpretarse como un compromiso con un cronograma que no has aceptado.\" ¿Cuál realmente te ayudó?</p>"
+                "content": "<p><strong>Tus primeros cinco prompts para probar ahora, en otra pestaña:</strong></p><p>No son ejemplos artificiales. Cada uno revela una capacidad específica de ChatGPT en menos de dos minutos.</p><ol><li><strong>Test de complejidad:</strong> <em>\"Compara trabajar desde casa versus la oficina para una empresa de 30 personas con equipo de ventas. Quiero una respuesta matizada que no pretenda que una opción es claramente mejor.\"</em></li><li><strong>Precisión de instrucciones:</strong> <em>\"Escribe un correo profesional rechazando una reunión. Menos de 80 palabras. No empieces con ‛Yo'. No uses la palabra ‛lamentablemente'. Sugiere una alternativa asíncrona.\"</em></li><li><strong>Coincidencia de voz:</strong> <em>\"Aquí hay dos correos que escribí: [pega dos correos]. Escribe un tercer correo en mi voz rechazando un proyecto pero manteniendo la relación cálida.\"</em></li><li><strong>Test de honestidad:</strong> <em>\"Quiero renunciar a mi trabajo y abrir un restaurante. Dame consejos honestos, no solo ánimo.\"</em></li><li><strong>Ayuda práctica:</strong> <em>\"Tengo una hoja de cálculo con 200 filas de datos de ventas. ¿Cómo calcularía el ingreso total por región usando una fórmula?\"</em></li></ol><p>Prueba al menos dos antes de continuar.</p>"
               },
               {
                 "type": "exercise",
@@ -41,7 +41,7 @@
               },
               {
                 "type": "summary",
-                "content": "<p>ChatGPT es la misma inteligencia en tres profundidades. Sus fortalezas son el pensamiento profundo, la honestidad y el seguimiento preciso de instrucciones. Te contradice cuando algo no cuadra. A continuación: cómo hablarle realmente.</p>"
+                "content": "<p>ChatGPT es desarrollado por OpenAI y genera respuestas razonando a través de tus preguntas: es un compañero de pensamiento, no un motor de búsqueda. Sus tres fortalezas son la generación versátil, el seguimiento de instrucciones y el razonamiento. Más allá de la conversación, tiene herramientas especializadas: DALL-E para imágenes, Code Interpreter para datos y código, Canvas para edición y Custom GPTs para tareas específicas. Usa el patrón de permiso explícito, la sonda de incertidumbre y el abogado del diablo para obtener respuestas más honestas y útiles. Siguiente: cómo hablarle eficazmente.</p>"
               }
             ]
           },

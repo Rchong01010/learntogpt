@@ -21,15 +21,15 @@
             "sections": [
               {
                 "type": "text",
-                "content": "<p>Öffne jetzt sofort chat.openai.com in einem anderen Tab. Tippe: <strong>\"Was bist du, und was macht dich anders als ChatGPT? Sei ehrlich.\"</strong></p><p>Fällt dir etwas auf? ChatGPT macht keinen Hype um sich selbst. Es sagt dir, was es gut kann, was es nicht kann und wo die Kompromisse liegen. Diese Ehrlichkeit ist das Erste, was es anders macht.</p><p>ChatGPT wurde von Anthropic entwickelt und kommt in drei Formen: <strong>ChatGPT</strong> (Browser-Konversation zum Denken und Schreiben), <strong>Co-Work</strong> (Desktop-App, die direkt mit deinen Dateien arbeitet) und <strong>ChatGPT</strong> (Terminal-Tool, das echte Software von Grund auf erstellt). Dasselbe Gehirn, drei Zugangspunkte. Dieser Kurs beginnt mit dem ersten.</p>"
+                "content": "<p>Öffne jetzt sofort chat.openai.com in einem anderen Tab. Tippe: <strong>\"Was bist du, und was kannst du mir wirklich nützen?\"</strong></p><p>Fällt dir die Antwort auf? ChatGPT wird von OpenAI entwickelt, einem der führenden KI-Forschungsunternehmen der Welt. Anders als eine Suchmaschine, die bestehende Seiten abruft, generiert ChatGPT Antworten, indem es deine Frage durchdenkt – Wissen synthetisiert, Anweisungen befolgt und sich in Echtzeit an deinen Kontext anpasst.</p><p>ChatGPT gibt es in verschiedenen Zugangsformen: <strong>ChatGPT (Browser)</strong> für Gespräche, Schreiben und Analysen; <strong>Canvas</strong> für kollaboratives Dokument- und Code-Editing; <strong>Code Interpreter</strong> zum Ausführen von echtem Python-Code und zur Datenanalyse; und <strong>Custom GPTs</strong> – spezialisierte Versionen von ChatGPT für bestimmte Aufgaben. Dieselbe Intelligenz, mehrere Zugangspunkte. Dieser Kurs beginnt mit dem Browser-Chat – dort holen die meisten Menschen 80 % ihres Nutzens heraus.</p>"
               },
               {
                 "type": "exercise",
                 "exercise_id": "ex_wc_01a"
               },
               {
-                "type": "text",
-                "content": "<p>ChatGPTs drei Kernstärken: <strong>tiefes Denken, Ehrlichkeit und das Befolgen von Anweisungen.</strong> Es denkt Probleme durch, statt nur Muster abzugleichen. Es sagt dir, wenn es etwas nicht weiß. Und wenn du ihm detaillierte Vorgaben machst – Ton, Länge, Format, Zielgruppe – dann befolgt es alles davon.</p><p><strong>ChatGPT widerspricht.</strong> Bitte es, deine E-Mail zu überprüfen, und eine gefällige KI sagt „Sieht super aus!“ ChatGPT sagt „Der zweite Absatz könnte als Zusage zu einem Zeitplan missverstanden werden, dem du nicht zugestimmt hast.“ Welche KI hat dir wirklich geholfen?</p>"
+                “type”: “text”,
+                “content”: “<p><strong>Deine ersten fünf Prompts zum Ausprobieren – jetzt, in einem anderen Tab:</strong></p><p>Das sind keine künstlichen Beispiele. Jeder zeigt eine konkrete ChatGPT-Fähigkeit in unter zwei Minuten.</p><ol><li><strong>Komplexitätstest:</strong> <em>„Vergleiche Home-Office vs. Büro für ein 30-köpfiges Unternehmen mit Vertriebsteam. Ich möchte eine differenzierte Antwort, die nicht so tut, als ob eine Option klar besser wäre.”</em></li><li><strong>Präzision bei Anweisungen:</strong> <em>„Schreib eine professionelle E-Mail, die ein Meeting ablehnt. Maximal 80 Wörter. Beginne nicht mit ‚Ich'. Verwende nicht das Wort ‚leider'. Schlage eine asynchrone Alternative vor.”</em></li><li><strong>Stil-Matching:</strong> <em>„Hier sind zwei E-Mails, die ich geschrieben habe: [zwei E-Mails einfügen]. Schreibe eine dritte E-Mail in meinem Stil, die ein Projekt ablehnt, aber die Beziehung warmhält.”</em></li><li><strong>Ehrlichkeitstest:</strong> <em>„Ich möchte meinen Job kündigen und ein Restaurant eröffnen. Gib mir ehrlichen Rat, keine Ermutigung.”</em></li><li><strong>Praxishilfe:</strong> <em>„Ich habe eine Tabelle mit 200 Zeilen Verkaufsdaten. Wie berechne ich den Gesamtumsatz nach Region mit einer Formel?”</em></li></ol><p>Probiere mindestens zwei aus, bevor du weitermachst.</p>”
               },
               {
                 "type": "exercise",
@@ -41,7 +41,7 @@
               },
               {
                 "type": "summary",
-                "content": "<p>ChatGPT ist dieselbe Intelligenz in drei Tiefen. Seine Stärken sind tiefes Denken, Ehrlichkeit und präzises Befolgen von Anweisungen. Es widerspricht, wenn etwas nicht stimmt. Als Nächstes: wie du tatsächlich mit ChatGPT sprichst.</p>"
+                "content": "<p>ChatGPT wird von OpenAI entwickelt und generiert Antworten, indem es deine Fragen durchdenkt – ein Denkpartner, keine Suchmaschine. Seine drei Stärken sind vielseitige Generierung, das Befolgen von Anweisungen und Reasoning. Über den Chat hinaus gibt es spezialisierte Tools: DALL-E für Bilder, Code Interpreter für Daten und Code, Canvas zum Editieren und Custom GPTs für bestimmte Aufgaben. Nutze das Ehrlichkeitsmuster, die Unsicherheitsabfrage und den Advocatus-Diaboli-Ansatz für ehrlichere, nützlichere Antworten. Als Nächstes: wie du effektiv mit ChatGPT sprichst.</p>"
               }
             ]
           },

@@ -21,7 +21,7 @@
             "sections": [
               {
                 "type": "text",
-                "content": "<p>现在就在另一个标签页打开 chat.openai.com。输入：<strong>\"你是什么？你和 ChatGPT 有什么不同？请诚实回答。\"</strong></p><p>注意到什么了吗？ChatGPT 不会自吹自擂。它会告诉你自己擅长什么、不能做什么、以及哪里存在取舍。这种诚实正是它与众不同的第一个特点。</p><p>ChatGPT 由 Anthropic 开发，提供三种形态：<strong>ChatGPT</strong>（用于思考和写作的浏览器对话）、<strong>Co-Work</strong>（直接处理你文件的桌面应用）和 <strong>ChatGPT</strong>（从零开始构建真实软件的终端工具）。同一个大脑，三个入口。本课程从第一个开始。</p>"
+                "content": "<p>现在就在另一个标签页打开 chat.openai.com。输入：<strong>\"你是什么？你能真正帮到我的有哪些？\"</strong></p><p>注意这个回答。ChatGPT 由 OpenAI 开发，是全球最知名的 AI 研究公司之一。与检索现有网页的搜索引擎不同，ChatGPT 通过推理你的问题来生成回答——综合知识、遵循指令，并实时适应你的上下文。</p><p>ChatGPT 有多种访问方式：用于对话、写作和分析的 <strong>ChatGPT（浏览器）</strong>；用于协作文档和代码编辑的 <strong>Canvas</strong>；用于运行真实 Python 代码和分析数据的 <strong>Code Interpreter</strong>；以及为特定任务定制的 ChatGPT 专属版本 <strong>Custom GPTs</strong>。相同的底层智能，多种访问方式。本课程从浏览器对话开始——大多数人在这里获得 80% 的价值。</p>"
               },
               {
                 "type": "exercise",
@@ -29,7 +29,7 @@
               },
               {
                 "type": "text",
-                "content": "<p>ChatGPT 的三大核心优势：<strong>深度思考、诚实和精准执行指令。</strong>它通过推理来解决问题，而不是简单的模式匹配。不知道的事情它会如实告知。当你给出详细的约束条件——语气、长度、格式、受众——它会全部遵守。</p><p><strong>ChatGPT 会反驳你。</strong>让它审阅你的邮件，顺从的 AI 会说\"看起来很棒！\"ChatGPT 会说\"第二段可能被误解为你对一个尚未同意的时间表做出了承诺。\"哪个真正帮到了你？</p>"
+                "content": "<p><strong>现在就在另一个标签页试试这五个提示词：</strong></p><p>这些不是人为构造的例子。每一个都能在两分钟内展示 ChatGPT 的特定能力。</p><ol><li><strong>复杂性测试：</strong><em>「对于一个有销售团队的 30 人公司，比较居家办公和办公室办公。我想要一个有细致入微的答案，不要假装哪一种明显更好。」</em></li><li><strong>指令精确性：</strong><em>「写一封婉拒会议邀请的职业邮件。80 字以内。不要以「我」开头。不要用「遗憾」这个词。建议一种异步替代方案。」</em></li><li><strong>风格匹配：</strong><em>「这是我写的两封邮件：[粘贴两封邮件]。用我的风格写第三封邮件，拒绝一个项目但保持关系温暖。」</em></li><li><strong>诚实测试：</strong><em>「我想辞职去开餐厅。给我诚实的建议，不只是鼓励。」</em></li><li><strong>实用帮助：</strong><em>「我有一个 200 行销售数据的电子表格。如何用公式按地区计算总收入？」</em></li></ol><p>在继续之前至少尝试两个。</p>"
               },
               {
                 "type": "exercise",
@@ -41,7 +41,7 @@
               },
               {
                 "type": "summary",
-                "content": "<p>ChatGPT 是同一种智能在三个深度的体现。它的优势是深度思考、诚实和精准执行指令。当有不对劲的地方时它会反驳。接下来：如何真正与 ChatGPT 对话。</p>"
+                "content": "<p>ChatGPT 由 OpenAI 开发，通过推理你的问题来生成回答——它是思考伙伴，不是搜索引擎。三大优势是多用途生成、遵循指令和推理能力。除对话外，还有专业工具：DALL-E 生成图像、Code Interpreter 处理数据和代码、Canvas 用于编辑、Custom GPTs 处理特定任务。使用明确授权模式、不确定性探测和魔鬼代言人技巧，获得更诚实、更有用的回答。接下来：如何高效地与 ChatGPT 对话。</p>"
               }
             ]
           },
