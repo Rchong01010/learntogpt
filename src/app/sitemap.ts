@@ -19,7 +19,7 @@ import { PLATFORM } from "@/lib/config";
  * can discover and index the publicly accessible educational content.
  */
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const base = process.env.NEXT_PUBLIC_APP_URL || "https://learntogpt.com";
+  const base = (process.env.NEXT_PUBLIC_APP_URL || "https://learntogpt.com").trim();
 
   // Public routes that should appear in the sitemap. Auth routes
   // (/dashboard, /profile, /settings, /leaderboard, /missions)
