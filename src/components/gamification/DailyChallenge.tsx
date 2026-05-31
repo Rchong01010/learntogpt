@@ -10,7 +10,7 @@ function getDateString(): string {
 }
 
 function getStorageKey(dateStr: string): string {
-  return `claude_academy_daily_challenge_${dateStr}`;
+  return `learntogpt_daily_challenge_${dateStr}`;
 }
 
 export function DailyChallenge({ isAuthenticated }: { isAuthenticated: boolean }) {

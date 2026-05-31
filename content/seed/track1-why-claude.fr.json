@@ -21,7 +21,7 @@
             "sections": [
               {
                 "type": "text",
-                "content": "<p>Ouvre chat.openai.com maintenant dans un autre onglet. Tape : <strong>\"Qu'est-ce que tu es, et que peux-tu faire qui me soit vraiment utile ?\"</strong></p><p>Tu remarques la réponse ? ChatGPT est développé par OpenAI, l'une des entreprises de recherche en IA les plus en vue au monde. Contrairement à un moteur de recherche qui récupère des pages existantes, ChatGPT génère des réponses en raisonnant sur ta question — synthétisant des connaissances, suivant des instructions et s'adaptant à ton contexte en temps réel.</p><p>ChatGPT est disponible en plusieurs modes : <strong>ChatGPT (navigateur)</strong> pour la conversation, la rédaction et l'analyse ; <strong>Canvas</strong> pour l'édition collaborative de documents et de code ; <strong>Code Interpreter</strong> pour exécuter du vrai code Python et analyser des données ; et les <strong>Custom GPTs</strong> — des versions spécialisées de ChatGPT pour des tâches précises. La même intelligence sous-jacente, plusieurs façons d'y accéder. Ce cours commence par la conversation dans le navigateur — c'est là que la plupart des gens obtiennent 80 % de leur valeur.</p>"
+                "content": "<p>Ouvre chat.openai.com maintenant dans un autre onglet. Tape : <strong>\"Qu'est-ce que tu es, et que peux-tu faire qui me soit vraiment utile ?\"</strong> Observe comment il raisonne ta question au lieu de simplement chercher des pages.</p>"
               },
               {
                 "type": "exercise",
@@ -29,7 +29,7 @@
               },
               {
                 "type": "text",
-                "content": "<p><strong>Tes cinq premiers prompts à essayer maintenant, dans un autre onglet :</strong></p><p>Ce ne sont pas des exemples artificiels. Chacun révèle une capacité spécifique de ChatGPT en moins de deux minutes.</p><ol><li><strong>Test de complexité :</strong> <em>« Compare le télétravail et le bureau pour une entreprise de 30 personnes avec une équipe commerciale. Je veux une réponse nuancée qui ne prétend pas qu'une option est clairement meilleure. »</em></li><li><strong>Précision des instructions :</strong> <em>« Rédige un e-mail professionnel pour décliner une réunion. Moins de 80 mots. Ne commence pas par « Je ». N'utilise pas le mot « malheureusement ». Propose une alternative asynchrone. »</em></li><li><strong>Correspondance de voix :</strong> <em>« Voici deux e-mails que j'ai écrits : [colle deux e-mails]. Rédige un troisième e-mail dans mon style pour décliner un projet en maintenant une relation chaleureuse. »</em></li><li><strong>Test d'honnêteté :</strong> <em>« Je veux quitter mon emploi et ouvrir un restaurant. Donne-moi des conseils honnêtes, pas seulement des encouragements. »</em></li><li><strong>Aide pratique :</strong> <em>« J'ai une feuille de calcul avec 200 lignes de données de ventes. Comment calculer le chiffre d'affaires total par région avec une formule ? »</em></li></ol><p>Essaie au moins deux avant de continuer.</p>"
+                "content": "<p>Trois forces clés de ChatGPT : <strong>génération polyvalente</strong> (écrire, analyser, traduire dans n'importe quel domaine), <strong>suivi des instructions</strong> (retient toutes tes contraintes à la fois), et <strong>raisonnement</strong> (évalue les compromis plutôt que de simplement chercher des correspondances). Utilise le pattern <em>« Je veux ton évaluation honnête, y compris les parties que je n'ai pas envie d'entendre »</em> pour des réponses plus sincères.</p>"
               },
               {
                 "type": "exercise",
@@ -41,7 +41,7 @@
               },
               {
                 "type": "summary",
-                "content": "<p>ChatGPT est développé par OpenAI et génère des réponses en raisonnant sur tes questions — c'est un partenaire de réflexion, pas un moteur de recherche. Ses trois forces sont la génération polyvalente, le suivi des instructions et le raisonnement. Au-delà de la conversation, il dispose d'outils spécialisés : DALL-E pour les images, Code Interpreter pour les données et le code, Canvas pour l'édition et les Custom GPTs pour des tâches précises. Utilise le schéma de permission explicite, la sonde d'incertitude et l'avocat du diable pour obtenir des réponses plus honnêtes et utiles. Prochaine étape : comment lui parler efficacement.</p>"
+                "content": "<p>ChatGPT génère en raisonnant, pas en cherchant. Trois forces : génération, suivi des instructions, raisonnement. Pour des réponses honnêtes, demande la critique explicitement. Prochaine étape : comment lui parler efficacement.</p>"
               }
             ]
           },
@@ -103,7 +103,7 @@
             "sections": [
               {
                 "type": "text",
-                "content": "<p>Essaie ça maintenant. Ouvre ChatGPT et tape : <strong>\"Écris-moi un e-mail.\"</strong></p><p>Tu obtiendras un modèle générique qui ressemble à tous les autres e-mails d'IA. Maintenant essaie : <strong>\"Écris un e-mail de relance à une cliente nommée Sarah qui a manqué notre appel de mardi. Ton : chaleureux mais direct. Mentionne un report au jeudi à 14h. Maximum 100 mots.\"</strong></p><p>Le jour et la nuit. La différence, c'est le contexte. ChatGPT ne peut pas lire dans tes pensées, mais il est exceptionnel pour travailler avec ce que tu lui donnes.</p>"
+                "content": "<p>Ouvre ChatGPT et tape : <strong>« Écris-moi un e-mail. »</strong> Tu obtiendras un modèle générique. Maintenant essaie : <strong>« Écris un e-mail de relance à Sarah qui a manqué notre appel de mardi. Ton : chaleureux mais direct. Report au jeudi à 14h. Maximum 100 mots. »</strong> Le jour et la nuit. C'est ça, le contexte.</p>"
               },
               {
                 "type": "exercise",
@@ -111,7 +111,7 @@
               },
               {
                 "type": "text",
-                "content": "<p><strong>La boucle d'itération, c'est là que ChatGPT brille.</strong> Tu n'as pas fini après la première réponse. Dis-lui quoi ajuster : « Rends l'ouverture plus personnelle. » « Trop formel. » « Ajoute une ligne sur notre consultation gratuite. » Chaque tour se rapproche du but. ChatGPT se souvient de tout et intègre tout.</p><p><strong>Les cinq choses dont ChatGPT a besoin de ta part :</strong> <strong>1. Qui</strong> (le public). <strong>2. Quoi</strong> (le livrable). <strong>3. Comment</strong> (ton, longueur, format). <strong>4. Pourquoi</strong> (quelle décision cela sert). <strong>5. Quoi ne pas</strong> (ce qu'il faut éviter). Plus tu en fournis d'avance, moins tu édites après.</p>"
+                "content": "<p>Donne à ChatGPT cinq éléments en avance : <strong>Qui</strong> (public), <strong>Quoi</strong> (livrable), <strong>Comment</strong> (ton, format, longueur), <strong>Pourquoi</strong> (quelle décision ça sert), <strong>Quoi pas</strong> (ce qu'il faut éviter). Plus de contexte en avance = moins d'édition après. Puis itère avec un retour spécifique.</p>"
               },
               {
                 "type": "exercise",
@@ -119,7 +119,7 @@
               },
               {
                 "type": "text",
-                "content": "<p><strong>Encore un réflexe à ancrer : demande à ChatGPT de te contredire.</strong></p><p>« Je pense à X. Qu'est-ce que j'oublie ? » ou « Trouve les failles de ce plan avant que je m'engage. » La plupart des gens utilisent l'IA comme une machine à dire oui. ChatGPT est à son meilleur quand tu lui donnes la permission d'être en désaccord.</p>"
+                "content": "<p>Construis cette habitude : demande à ChatGPT de te contredire. <em>« Je pense à X. Qu'est-ce que j'oublie ? »</em> ou <em>« Trouve les failles de ce plan avant que je m'engage. »</em> Utilise ça avant les grandes décisions et les pitches.</p>"
               },
               {
                 "type": "exercise",
@@ -127,7 +127,7 @@
               },
               {
                 "type": "summary",
-                "content": "<p>Le contexte transforme une sortie générique en sortie utile. L'itération transforme une bonne sortie en excellente sortie. Donne à ChatGPT qui, quoi, comment, pourquoi et quoi-ne-pas. Puis affine. Prochaine étape : l'art de donner à ChatGPT le bon contexte dès le départ.</p>"
+                "content": "<p>Contexte = sortie utile. Cinq éléments : qui, quoi, comment, pourquoi, quoi-ne-pas. Itère avec un retour spécifique. Demande la contradiction avant les grandes décisions. Prochaine étape : instructions personnalisées et fenêtre de contexte.</p>"
               }
             ]
           },

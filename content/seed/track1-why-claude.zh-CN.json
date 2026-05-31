@@ -21,7 +21,7 @@
             "sections": [
               {
                 "type": "text",
-                "content": "<p>现在就在另一个标签页打开 chat.openai.com。输入：<strong>\"你是什么？你能真正帮到我的有哪些？\"</strong></p><p>注意这个回答。ChatGPT 由 OpenAI 开发，是全球最知名的 AI 研究公司之一。与检索现有网页的搜索引擎不同，ChatGPT 通过推理你的问题来生成回答——综合知识、遵循指令，并实时适应你的上下文。</p><p>ChatGPT 有多种访问方式：用于对话、写作和分析的 <strong>ChatGPT（浏览器）</strong>；用于协作文档和代码编辑的 <strong>Canvas</strong>；用于运行真实 Python 代码和分析数据的 <strong>Code Interpreter</strong>；以及为特定任务定制的 ChatGPT 专属版本 <strong>Custom GPTs</strong>。相同的底层智能，多种访问方式。本课程从浏览器对话开始——大多数人在这里获得 80% 的价值。</p>"
+                "content": "<p>现在就在另一个标签页打开 chat.openai.com。输入：<strong>\"你是什么？你能真正帮到我的有哪些？\"</strong> 与搜索引擎不同，ChatGPT 通过推理你的问题来生成回答，而不是检索网页。</p>"
               },
               {
                 "type": "exercise",
@@ -29,7 +29,7 @@
               },
               {
                 "type": "text",
-                "content": "<p><strong>现在就在另一个标签页试试这五个提示词：</strong></p><p>这些不是人为构造的例子。每一个都能在两分钟内展示 ChatGPT 的特定能力。</p><ol><li><strong>复杂性测试：</strong><em>「对于一个有销售团队的 30 人公司，比较居家办公和办公室办公。我想要一个有细致入微的答案，不要假装哪一种明显更好。」</em></li><li><strong>指令精确性：</strong><em>「写一封婉拒会议邀请的职业邮件。80 字以内。不要以「我」开头。不要用「遗憾」这个词。建议一种异步替代方案。」</em></li><li><strong>风格匹配：</strong><em>「这是我写的两封邮件：[粘贴两封邮件]。用我的风格写第三封邮件，拒绝一个项目但保持关系温暖。」</em></li><li><strong>诚实测试：</strong><em>「我想辞职去开餐厅。给我诚实的建议，不只是鼓励。」</em></li><li><strong>实用帮助：</strong><em>「我有一个 200 行销售数据的电子表格。如何用公式按地区计算总收入？」</em></li></ol><p>在继续之前至少尝试两个。</p>"
+                "content": "<p>ChatGPT 的三大优势：<strong>多用途生成</strong>（写作、分析、翻译）、<strong>遵循指令</strong>（同时记住所有约束）、<strong>推理</strong>（判断权衡而非简单匹配）。想要诚实回答时，请明确说：<em>「包括我不想听的部分，给我你真实的评估」</em>。</p>"
               },
               {
                 "type": "exercise",
@@ -41,7 +41,7 @@
               },
               {
                 "type": "summary",
-                "content": "<p>ChatGPT 由 OpenAI 开发，通过推理你的问题来生成回答——它是思考伙伴，不是搜索引擎。三大优势是多用途生成、遵循指令和推理能力。除对话外，还有专业工具：DALL-E 生成图像、Code Interpreter 处理数据和代码、Canvas 用于编辑、Custom GPTs 处理特定任务。使用明确授权模式、不确定性探测和魔鬼代言人技巧，获得更诚实、更有用的回答。接下来：如何高效地与 ChatGPT 对话。</p>"
+                "content": "<p>ChatGPT 是思考伙伴，不是搜索引擎——它通过推理生成回答。三大优势：多用途生成、遵循指令、推理。想要诚实回答请明确要求。接下来：如何高效地与 ChatGPT 对话。</p>"
               }
             ]
           },
@@ -189,11 +189,7 @@
             "sections": [
               {
                 "type": "text",
-                "content": "<p>试试这个：将一个很长的邮件线程粘贴到 ChatGPT 中，然后问\"这里实际要做的决定是什么？谁在阻碍它？\"ChatGPT 会阅读整个线程，追踪谁说了什么，并在 30 秒内给你答案。这就是<strong>上下文窗口</strong>的实力。</p><p>上下文窗口是 ChatGPT 在一次对话中能够记住的信息量。ChatGPT 的上下文窗口非常大——可以容纳一整部小说的内容。这意味着完整的合同、研究论文或长长的邮件链都可以在一次对话中处理。</p>"
-              },
-              {
-                "type": "text",
-                "content": "<p><strong>大上下文窗口能让你做什么：</strong></p><p>粘贴一份 40 页的合同并询问任何条款。比较第 3 节和第 12 节。进行长时间对话而 ChatGPT 不会丢失线索。在数十条消息中处理复杂项目而无需重新开始。</p><p>如果上下文窗口很小，你就必须把文档分成小块，分别粘贴，然后祈祷 AI 记住前面的部分。剧透：它不会的。</p>"
+                "content": "<p>将一个长邮件线程粘贴到 ChatGPT 中，问「这里实际要做的决定是什么？谁在阻碍？」30 秒内你就得到答案。这就是<strong>上下文窗口</strong>的实力。完整的合同或长邮件链都可以在一次对话中处理。</p>"
               },
               {
                 "type": "exercise",
@@ -201,7 +197,7 @@
               },
               {
                 "type": "text",
-                "content": "<p><strong>系统提示词</strong>让你能给 ChatGPT 持久的上下文，在每条消息中保持活跃：你的风格指南、你的角色、始终适用的约束。把它想象成新员工第一天的入职简报。</p><p><strong>好上下文的技巧：</strong>具体优于笼统（\"B2B SaaS 营销顾问\"胜过\"你是有帮助的\"）。包含好输出的示例。说明不要做什么（\"永远不要使用行话\"）。把重要的东西放在前面——ChatGPT 特别关注你给出内容的开头和结尾。</p>"
+                "content": "<p><strong>系统提示词</strong>让你给 ChatGPT 设置持久上下文：角色、风格指南、始终适用的约束。关键是具体。<em>「B2B SaaS 营销顾问」</em>远胜于<em>「你是有帮助的」</em>。也要说明禁止事项。</p>"
               },
               {
                 "type": "exercise",
@@ -275,7 +271,7 @@
             "sections": [
               {
                 "type": "text",
-                "content": "<p>让 ChatGPT 生成图片——它做不到。让它在三份 30 页的供应商提案中找到隐藏成本——它展现出完全不同层次的能力。了解这个差异就是技能所在。</p><p><strong>ChatGPT 擅长之处：</strong><strong>深度分析</strong>（逐字阅读长文档，跨章节关联信息）。<strong>细腻的写作</strong>（适应受众、语调和约束）。<strong>复杂指令</strong>（跟踪你指定的每个约束）。<strong>长文档</strong>（一次对话中保持一整本书的内容）。</p>"
+                "content": "<p>让 ChatGPT 生成图片——做不到。但让它在三份 30 页提案中找到隐藏成本——能力完全不同。<strong>擅长：</strong>深度分析、细腻写作、跟踪复杂指令、处理长文档。</p>"
               },
               {
                 "type": "exercise",
@@ -283,7 +279,7 @@
               },
               {
                 "type": "text",
-                "content": "<p><strong>ChatGPT 的困难之处：</strong><strong>无法生成图片或视频</strong>（使用 Midjourney/DALL-E；ChatGPT 可以编写提示词）。<strong>没有实时数据</strong>（先搜索，再将结果粘贴到 ChatGPT 中分析）。<strong>冷门事实的幻觉</strong>（核实姓名、日期和统计数据）。<strong>大规模数学计算</strong>（数字用电子表格，解读用 ChatGPT）。</p><p>最好的 ChatGPT 用户也知道什么时候不该用 ChatGPT。</p>"
+                "content": "<p><strong>局限：</strong>无法生成图片/视频（用 Midjourney）、没有实时数据（先搜索再粘贴）、冷门事实可能出错（核实名字日期）、大规模计算（用电子表格）。最好的 ChatGPT 用户也知道什么时候不该用它。</p>"
               },
               {
                 "type": "exercise",
@@ -357,7 +353,7 @@
             "sections": [
               {
                 "type": "text",
-                "content": "<p>从 ChatGPT 获得 10 倍价值的人将其作为<strong>可重复流程</strong>的一部分，而不是一次性提问。以下三个模式将聊天变为构建。</p><p><strong>模式 1：从研究到决策。</strong>粘贴同一主题的 5 篇文章。让 ChatGPT 告诉你它们在哪里一致，在哪里矛盾，以及什么适用于你的情况。一次对话，五个来源，一个个性化建议。</p><p><strong>模式 2：草稿-审查-发送。</strong>获取初稿。让 ChatGPT 从你的受众角度批评自己的作品。整合批评并润色。发送。大多数人在第 1 步就停了——第 2 步和第 3 步才是质量飞跃发生的地方。</p>"
+                "content": "<p>从 ChatGPT 获得 10 倍价值的人将其作为<strong>可重复流程</strong>使用。<strong>模式 1：</strong>粘贴同主题 5 篇文章，问「哪里一致、哪里矛盾、什么适用于我的情况？」<strong>模式 2：</strong>获取初稿→让 ChatGPT 从受众角度批评→整合后发送。</p>"
               },
               {
                 "type": "exercise",
@@ -365,7 +361,7 @@
               },
               {
                 "type": "text",
-                "content": "<p><strong>模式 3：周度操作员。</strong>设置一个 ChatGPT 项目，将你的角色、优先事项和定期交付物作为系统上下文。每周一粘贴新数据并获得同样的分析。ChatGPT 已经知道格式、受众和关注点。这不是对话——这是操作系统。</p><p><strong>接下来的内容：</strong>Track 2 深入 ChatGPT 的每个界面。Track 3 提供具体的工作流程手册。Track 4 涵盖高级技巧。你已经有了基础。</p>"
+                "content": "<p><strong>模式 3：周度操作员。</strong>设置项目，将角色、优先事项和定期交付物作为系统上下文。每周粘贴新数据就能获得同样的分析。这不是对话——这是操作系统。Track 2-4 将继续深入。</p>"
               },
               {
                 "type": "exercise",

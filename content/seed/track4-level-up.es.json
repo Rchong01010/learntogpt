@@ -21,23 +21,15 @@
             "sections": [
               {
                 "type": "text",
-                "content": "<p>Las <strong>habilidades</strong> son capacidades adicionales que instalas, configuras o construyes para darle nuevos poderes a ChatGPT. Vienen en tres niveles: instrucciones personalizadas (ajustes de comportamiento), habilidades del marketplace (flujos de trabajo preconstruidos) y comandos personalizados (tus propias creaciones). Una habilidad es útil. Cinco habilidades trabajando juntas transforman tu forma de operar.</p>"
+                "content": "<p>Las <strong>habilidades</strong> son capacidades adicionales que instalas, configuras o construyes para darle nuevos poderes a ChatGPT. Vienen en tres niveles: instrucciones</p>"
               },
               {
                 "type": "exercise",
                 "exercise_id": "ex_lu_01"
               },
               {
-                "type": "text",
-                "content": "<p>No todas las habilidades son iguales. Una habilidad que solo envuelve un prompt que podrías escribir tú mismo es un truco. Una habilidad que lee tu contexto, extrae datos reales y produce resultados consistentes es una herramienta de flujo de trabajo. Al evaluar: ¿entiende mi contexto, o es solo un prompt elegante?</p>"
-              },
-              {
                 "type": "exercise",
                 "exercise_id": "ex_lu_02"
-              },
-              {
-                "type": "text",
-                "content": "<p>Las habilidades se potencian con el tiempo. Una habilidad de redacción más una habilidad de calendario más una habilidad de CRM significa que ChatGPT puede escribir un seguimiento personalizado para tu reunión de las 2 p.m. sin que tú escribas un solo detalle. Quienes invierten en su configuración de habilidades ahora tienen una ventaja que crece con el tiempo.</p>"
               },
               {
                 "type": "exercise",
@@ -45,7 +37,7 @@
               },
               {
                 "type": "summary",
-                "content": "<p>Las habilidades son capacidades adicionales que se potencian al apilarse. Evalúalas por su comprensión del contexto, no por listas de funciones. Invierte en la configuración ahora: genera dividendos en cada interacción futura.</p>"
+                "content": "<p>Las habilidades son capacidades adicionales que se potencian al apilarse. Evalúalas por su comprensión del contexto, no por listas de funciones. Invierte en la configuración ahora:</p>"
               }
             ]
           },
@@ -107,15 +99,11 @@
             "sections": [
               {
                 "type": "text",
-                "content": "<p><strong>En ChatGPT,</strong> las habilidades son instrucciones personalizadas y plantillas de prompts guardadas. <strong>En Co-work,</strong> tienes el marketplace de habilidades — capacidades preconstruidas que instalas en segundos. <strong>En Code,</strong> construyes comandos slash personalizados que ejecutan flujos de trabajo de múltiples pasos. La progresión es natural: empieza simple, gradúate a poderoso.</p>"
+                "content": "<p><strong>En ChatGPT,</strong> las habilidades son instrucciones personalizadas y plantillas de prompts guardadas. <strong>En Co-work,</strong> tienes el marketplace de habilidades —</p>"
               },
               {
                 "type": "exercise",
                 "exercise_id": "ex_lu_04"
-              },
-              {
-                "type": "text",
-                "content": "<p>Las habilidades que construyes pueden compartirse. Si tu comando /deploy le ahorra horas a tu equipo, publícalo. Las mejores habilidades del marketplace empezaron como el atajo personal de alguien. Separar la configuración de la lógica es lo que convierte una herramienta personal en una herramienta de equipo.</p>"
               },
               {
                 "type": "exercise",
@@ -123,7 +111,7 @@
               },
               {
                 "type": "summary",
-                "content": "<p>Las habilidades funcionan en los tres niveles. Empieza simple, gradúate a poderoso y comparte lo que construyas. Un archivo de configuración significa que los colegas adaptan ajustes, no reescriben código.</p>"
+                "content": "<p>Las habilidades funcionan en los tres niveles. Empieza simple, gradúate a poderoso y comparte lo que construyas. Un archivo de configuración significa que los colegas adaptan ajustes, no</p>"
               }
             ]
           },
@@ -172,23 +160,15 @@
             "sections": [
               {
                 "type": "text",
-                "content": "<p>La mayoría de la gente usa ChatGPT como si tuviera amnesia. Cada conversación empieza desde cero. <strong>El contexto es la diferencia entre un asistente inteligente y un asistente inteligente que te conoce.</strong> Un prompt mediocre con contexto rico produce mejores resultados que un prompt perfecto sin contexto.</p>"
+                "content": "<p>La mayoría de la gente usa ChatGPT como si tuviera amnesia. Cada conversación empieza desde cero. <strong>El contexto es la diferencia entre un asistente inteligente y un asistente</p>"
               },
               {
                 "type": "exercise",
                 "exercise_id": "ex_lu_06"
               },
               {
-                "type": "text",
-                "content": "<p>El contexto que tienes que pegar manualmente es un cuello de botella. El verdadero avance es conectar ChatGPT con las herramientas donde tu contexto ya vive. Proyectos con archivos subidos, acceso directo a tu sistema de archivos o conexiones cableadas a tu calendario, correo, CRM y APIs. <strong>Reduce la distancia entre ChatGPT y tus datos reales.</strong></p>"
-              },
-              {
                 "type": "exercise",
                 "exercise_id": "ex_lu_07"
-              },
-              {
-                "type": "text",
-                "content": "<p>El contexto se potencia pero también se vuelve obsoleto. Hoy ChatGPT conoce tu proyecto. El próximo mes conoce tu proyecto, el feedback de tus clientes, las preferencias de tu equipo y tus objetivos Q2 — pero solo si lo mantienes actualizado. Las revisiones programadas previenen que el contexto obsoleto envenene buenos flujos de trabajo.</p>"
               },
               {
                 "type": "exercise",
@@ -253,23 +233,15 @@
             "sections": [
               {
                 "type": "text",
-                "content": "<p>Los prompts individuales son poderosos. Los prompts encadenados son transformadores. En lugar de pedirle a ChatGPT que haga una cosa y alimentar manualmente el resultado a la siguiente solicitud, diseñas secuencias donde el output del paso uno se convierte automáticamente en el input del paso dos. Una cadena simple: \"Resume este documento\" → \"Extrae decisiones\" → \"Redacta correo de seguimiento con puntos de acción.\"</p>"
+                "content": "<p>Los prompts individuales son poderosos. Los prompts encadenados son transformadores. En lugar de pedirle a ChatGPT que haga una cosa y alimentar manualmente el resultado a la siguiente</p>"
               },
               {
                 "type": "exercise",
                 "exercise_id": "ex_lu_09"
               },
               {
-                "type": "text",
-                "content": "<p><strong>La clave de las buenas cadenas:</strong> cada paso tiene un trabajo claro y específico. No le pidas a un paso que haga demasiado. Piensa en línea de ensamblaje, no en un prompt gigante. Cuando las cadenas se rompen, el problema suele estar en la transferencia entre pasos, no en los pasos mismos.</p>"
-              },
-              {
                 "type": "exercise",
                 "exercise_id": "ex_lu_10"
-              },
-              {
-                "type": "text",
-                "content": "<p>Esto es lo que los usuarios avanzados realmente construyen. <strong>Briefing matutino:</strong> consulta el calendario, revisa correo, repasa tareas, genera un resumen. <strong>Seguimiento de reunión:</strong> procesa notas, extrae puntos de acción, redacta correos, actualiza tareas. <strong>Kit de preparación para cliente:</strong> extrae historial de cuenta, comunicaciones recientes, temas abiertos antes de cualquier llamada. El hilo conductor: ChatGPT se encarga de recopilar y organizar. Tú te encargas de pensar y decidir.</p>"
               },
               {
                 "type": "exercise",
@@ -277,7 +249,7 @@
               },
               {
                 "type": "summary",
-                "content": "<p>Encadenar significa que el output de cada paso alimenta el siguiente. Mantén cada paso enfocado. Corrige transferencias rotas, no pasos rotos. Construye para flujos de trabajo diarios reales — briefings, seguimientos y kits de preparación.</p>"
+                "content": "<p>Encadenar significa que el output de cada paso alimenta el siguiente. Mantén cada paso enfocado. Corrige transferencias rotas, no pasos rotos. Construye para flujos de trabajo diarios</p>"
               }
             ]
           },
@@ -339,23 +311,15 @@
             "sections": [
               {
                 "type": "text",
-                "content": "<p>Hacer que las cadenas funcionen sin ti es el siguiente nivel. Automatización significa que ChatGPT se ejecuta con un disparador o un horario: briefing matutino a las 7am, bandeja de entrada clasificada cada hora, informe semanal el viernes a las 4pm. La regla: <strong>automatiza la recopilación y la redacción. Mantén a los humanos en la aprobación y el envío.</strong></p>"
+                "content": "<p>Hacer que las cadenas funcionen sin ti es el siguiente nivel. Automatización significa que ChatGPT se ejecuta con un disparador o un horario: briefing matutino a las 7am, bandeja de</p>"
               },
               {
                 "type": "exercise",
                 "exercise_id": "ex_lu_12"
               },
               {
-                "type": "text",
-                "content": "<p><strong>La escalera de confianza.</strong> Empieza con automatización que te ahorre tiempo en trabajo de preparación. A medida que construyes confianza en la calidad del output, expande gradualmente. Automatiza cuando: repetitivo, inputs predecibles, bajo riesgo, output revisable. Mantén al humano en el ciclo cuando: orientado al cliente, requiere juicio matizado, altas consecuencias. Nunca saltes directamente a totalmente autónomo en trabajo de alto riesgo.</p>"
-              },
-              {
                 "type": "exercise",
                 "exercise_id": "ex_lu_13"
-              },
-              {
-                "type": "text",
-                "content": "<p><strong>Lo que separa al top 1%:</strong> pensar arquitectónicamente. Miran todo su flujo de trabajo y preguntan \"¿Dónde encaja ChatGPT?\" Diseñan para integración, no para aislamiento. Tu siguiente paso: elige tu flujo de trabajo recurrente que más tiempo consume. Mapéalo. Encadénalo. Automatiza lo que tenga sentido. Ese único flujo de trabajo, completamente optimizado, ahorra más tiempo que cien prompts ingeniosos.</p>"
               },
               {
                 "type": "exercise",
@@ -363,7 +327,7 @@
               },
               {
                 "type": "summary",
-                "content": "<p>Automatiza la recopilación y la redacción. Mantén a los humanos en la aprobación y el envío. Sube la escalera de confianza gradualmente. Un flujo de trabajo completamente optimizado supera a cien prompts ingeniosos.</p>"
+                "content": "<p>Automatiza la recopilación y la redacción. Mantén a los humanos en la aprobación y el envío. Sube la escalera de confianza gradualmente. Un flujo de trabajo completamente optimizado</p>"
               }
             ]
           },

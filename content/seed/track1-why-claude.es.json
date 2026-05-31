@@ -21,7 +21,7 @@
             "sections": [
               {
                 "type": "text",
-                "content": "<p>Abre chat.openai.com ahora mismo en otra pestaña. Escribe: <strong>\"¿Qué eres y qué puedes hacer que me resulte útil de verdad?\"</strong></p><p>¿Notas la respuesta? ChatGPT es desarrollado por OpenAI, una de las empresas de investigación en IA más destacadas del mundo. A diferencia de un motor de búsqueda que recupera páginas existentes, ChatGPT genera respuestas razonando a través de tu pregunta: sintetizando conocimiento, siguiendo instrucciones y adaptándose a tu contexto en tiempo real.</p><p>ChatGPT tiene varias modalidades de acceso: <strong>ChatGPT (navegador)</strong> para conversación, escritura y análisis; <strong>Canvas</strong> para edición colaborativa de documentos y código; <strong>Code Interpreter</strong> para ejecutar código Python real y analizar datos; y <strong>Custom GPTs</strong>, versiones especializadas de ChatGPT para tareas específicas. La misma inteligencia subyacente, múltiples formas de acceder. Este curso comienza con la conversación en el navegador, donde la mayoría de las personas obtiene el 80 % de su valor.</p>"
+                "content": "<p>Abre chat.openai.com ahora mismo en otra pestaña. Escribe: <strong>\"¿Qué eres y qué puedes hacer que me resulte útil de verdad?\"</strong> Observa cómo razona tu pregunta en lugar de simplemente buscar páginas.</p>"
               },
               {
                 "type": "exercise",
@@ -29,7 +29,7 @@
               },
               {
                 "type": "text",
-                "content": "<p><strong>Tus primeros cinco prompts para probar ahora, en otra pestaña:</strong></p><p>No son ejemplos artificiales. Cada uno revela una capacidad específica de ChatGPT en menos de dos minutos.</p><ol><li><strong>Test de complejidad:</strong> <em>\"Compara trabajar desde casa versus la oficina para una empresa de 30 personas con equipo de ventas. Quiero una respuesta matizada que no pretenda que una opción es claramente mejor.\"</em></li><li><strong>Precisión de instrucciones:</strong> <em>\"Escribe un correo profesional rechazando una reunión. Menos de 80 palabras. No empieces con ‛Yo'. No uses la palabra ‛lamentablemente'. Sugiere una alternativa asíncrona.\"</em></li><li><strong>Coincidencia de voz:</strong> <em>\"Aquí hay dos correos que escribí: [pega dos correos]. Escribe un tercer correo en mi voz rechazando un proyecto pero manteniendo la relación cálida.\"</em></li><li><strong>Test de honestidad:</strong> <em>\"Quiero renunciar a mi trabajo y abrir un restaurante. Dame consejos honestos, no solo ánimo.\"</em></li><li><strong>Ayuda práctica:</strong> <em>\"Tengo una hoja de cálculo con 200 filas de datos de ventas. ¿Cómo calcularía el ingreso total por región usando una fórmula?\"</em></li></ol><p>Prueba al menos dos antes de continuar.</p>"
+                "content": "<p>Tres fortalezas clave de ChatGPT: <strong>generación versátil</strong> (escribe, analiza, traduce en cualquier dominio), <strong>seguimiento de instrucciones</strong> (rastrea todas tus restricciones a la vez), y <strong>razonamiento</strong> (evalúa intercambios en lugar de solo buscar patrones). Usa el patrón <em>\"Quiero tu evaluación honesta, incluso las partes que quizás no quiero escuchar\"</em> para respuestas más sinceras.</p>"
               },
               {
                 "type": "exercise",
@@ -41,7 +41,7 @@
               },
               {
                 "type": "summary",
-                "content": "<p>ChatGPT es desarrollado por OpenAI y genera respuestas razonando a través de tus preguntas: es un compañero de pensamiento, no un motor de búsqueda. Sus tres fortalezas son la generación versátil, el seguimiento de instrucciones y el razonamiento. Más allá de la conversación, tiene herramientas especializadas: DALL-E para imágenes, Code Interpreter para datos y código, Canvas para edición y Custom GPTs para tareas específicas. Usa el patrón de permiso explícito, la sonda de incertidumbre y el abogado del diablo para obtener respuestas más honestas y útiles. Siguiente: cómo hablarle eficazmente.</p>"
+                "content": "<p>ChatGPT genera razonando, no buscando. Tres fortalezas: generación, seguimiento de instrucciones, razonamiento. Para respuestas honestas, pide crítica explícitamente. Siguiente: cómo hablarle eficazmente.</p>"
               }
             ]
           },
@@ -103,7 +103,7 @@
             "sections": [
               {
                 "type": "text",
-                "content": "<p>Prueba esto ahora. Abre ChatGPT y escribe: <strong>\"Escríbeme un correo.\"</strong></p><p>Obtendrás una plantilla genérica que suena como cualquier otro correo de IA. Ahora prueba: <strong>\"Escribe un correo de seguimiento a una clienta llamada Sarah que faltó a nuestra llamada del martes. Tono: cálido pero directo. Menciona reprogramar para el jueves a las 2pm. Máximo 100 palabras.\"</strong></p><p>De día a noche. La diferencia es contexto. ChatGPT no puede leer tu mente, pero es excepcional trabajando con lo que le des.</p>"
+                "content": "<p>Abre ChatGPT y escribe: <strong>\"Escríbeme un correo.\"</strong> Obtendrás una plantilla genérica. Ahora prueba: <strong>\"Escribe un correo de seguimiento a Sarah que faltó a nuestra llamada del martes. Cálido pero directo. Reprogramar para el jueves a las 2pm. Máximo 100 palabras.\"</strong> De día a noche. Eso es contexto.</p>"
               },
               {
                 "type": "exercise",
@@ -111,7 +111,7 @@
               },
               {
                 "type": "text",
-                "content": "<p><strong>El ciclo de iteración es donde ChatGPT brilla.</strong> No terminas después de la primera respuesta. Dile qué ajustar: \"Haz la apertura más personal.\" \"Demasiado formal.\" \"Agrega una línea sobre nuestra consulta gratuita.\" Cada ronda se acerca más. ChatGPT recuerda todo e incorpora todo.</p><p><strong>Las cinco cosas que ChatGPT necesita de ti:</strong> <strong>1. Quién</strong> (la audiencia). <strong>2. Qué</strong> (el entregable). <strong>3. Cómo</strong> (tono, longitud, formato). <strong>4. Por qué</strong> (qué decisión apoya esto). <strong>5. Qué no</strong> (cosas a evitar). Mientras más de estas proporciones de antemano, menos edición necesitas después.</p>"
+                "content": "<p>Dale a ChatGPT cinco cosas por adelantado: <strong>Quién</strong> (audiencia), <strong>Qué</strong> (entregable), <strong>Cómo</strong> (tono, formato, longitud), <strong>Por qué</strong> (qué decisión apoya), <strong>Qué no</strong> (cosas a evitar). Más contexto por adelantado = menos edición después. Luego itera con retroalimentación específica.</p>"
               },
               {
                 "type": "exercise",
@@ -119,7 +119,7 @@
               },
               {
                 "type": "text",
-                "content": "<p><strong>Un patrón más que vale la pena convertir en hábito: pídele a ChatGPT que te contradiga.</strong></p><p>\"Estoy pensando en X. ¿Qué me estoy perdiendo?\" o \"Encuentra los puntos débiles de este plan antes de que me comprometa.\" La mayoría de las personas usan la IA como una máquina de decir sí. ChatGPT es mejor cuando le das permiso de estar en desacuerdo.</p>"
+                "content": "<p>Conviértelo en hábito: pídele a ChatGPT que te contradiga. <em>\"Estoy pensando en X. ¿Qué me estoy perdiendo?\"</em> o <em>\"Encuentra los puntos débiles de este plan antes de que me comprometa.\"</em> Úsalo antes de decisiones importantes y pitches.</p>"
               },
               {
                 "type": "exercise",
@@ -127,7 +127,7 @@
               },
               {
                 "type": "summary",
-                "content": "<p>El contexto convierte la salida genérica en salida útil. La iteración convierte la buena salida en excelente salida. Dale a ChatGPT quién, qué, cómo, por qué y qué-no. Luego refina. A continuación: el arte de darle a ChatGPT el contexto correcto desde el inicio.</p>"
+                "content": "<p>Contexto = salida útil. Cinco elementos: quién, qué, cómo, por qué, qué no. Itera con retroalimentación específica. Pide contradicción antes de decisiones importantes. A continuación: instrucciones personalizadas y ventana de contexto.</p>"
               }
             ]
           },
@@ -189,11 +189,7 @@
             "sections": [
               {
                 "type": "text",
-                "content": "<p>Prueba esto: pega un hilo largo de correos en ChatGPT y pregunta \"¿Cuál es la decisión real que se está tomando aquí, y quién la está bloqueando?\" ChatGPT lee todo el hilo, rastrea quién dijo qué y te da la respuesta en 30 segundos. Esa es la <strong>ventana de contexto</strong> en acción.</p><p>La ventana de contexto es cuánto puede retener ChatGPT en memoria durante una conversación. La de ChatGPT es enorme -- puede retener el equivalente a una novela completa. Eso significa contratos completos, artículos de investigación o cadenas largas de correos en una sola conversación.</p>"
-              },
-              {
-                "type": "text",
-                "content": "<p><strong>Lo que una ventana de contexto grande te permite hacer:</strong></p><p>Pega un contrato de 40 páginas y pregunta sobre cualquier cláusula. Compara la sección 3 con la sección 12. Ten una conversación larga sin que ChatGPT pierda el hilo. Trabaja en un proyecto complejo a lo largo de docenas de mensajes sin empezar de nuevo.</p><p>Con una ventana de contexto pequeña, tendrías que dividir documentos en fragmentos, pegar cada uno por separado y esperar que la IA recuerde las secciones anteriores. Spoiler: no lo hará.</p>"
+                "content": "<p>Pega un hilo largo de correos en ChatGPT y pregunta: <em>\"¿Cuál es la decisión real aquí, y quién la está bloqueando?\"</em> Lee todo el hilo y responde en 30 segundos. Esa es la <strong>ventana de contexto</strong> — cuánto ChatGPT mantiene en memoria activa. Los modelos modernos pueden retener contratos completos o artículos de investigación en una sola conversación.</p>"
               },
               {
                 "type": "exercise",
@@ -201,7 +197,7 @@
               },
               {
                 "type": "text",
-                "content": "<p>Los <strong>system prompts</strong> te permiten darle a ChatGPT contexto persistente que permanece activo en cada mensaje: tu guía de estilo, tu rol, restricciones que siempre aplican. Piénsalo como orientar a un nuevo empleado en su primer día.</p><p><strong>El arte del buen contexto:</strong> Sé específico sobre general (\"Consultor de marketing B2B SaaS\" vence a \"Eres útil\"). Incluye ejemplos de buena salida. Indica qué NO hacer (\"Nunca uses jerga\"). Pon lo importante al principio -- ChatGPT presta mucha atención al principio y al final de lo que le das.</p>"
+                "content": "<p>Las <strong>instrucciones personalizadas</strong> dan a ChatGPT contexto persistente para cada conversación. Haz clic en tu perfil → Instrucciones personalizadas. Sé específico en lugar de general. Incluye ejemplos de buena salida. Indica qué NO hacer — las restricciones negativas suelen ser las más poderosas. Plantilla: <em>\"Sobre mí: Soy [rol]. Mi audiencia es [audiencia]. Siempre [restricción]. Nunca [exclusión].\"</em></p>"
               },
               {
                 "type": "exercise",
@@ -213,7 +209,7 @@
               },
               {
                 "type": "summary",
-                "content": "<p>La ventana de contexto permite a ChatGPT retener documentos completos en memoria. Los system prompts le dan instrucciones persistentes. El arte está en ser específico, usar ejemplos y poner lo importante al principio. A continuación: en qué es excelente ChatGPT y dónde tiene dificultades.</p>"
+                "content": "<p>La ventana de contexto retiene documentos completos. Las instrucciones personalizadas dan valores predeterminados persistentes. Sé específico, incluye ejemplos, indica exclusiones. A continuación: fortalezas y límites de ChatGPT.</p>"
               }
             ]
           },
@@ -275,7 +271,7 @@
             "sections": [
               {
                 "type": "text",
-                "content": "<p>Pídele a ChatGPT que genere una imagen -- no puede. Pídele que encuentre costos ocultos en tres propuestas de proveedores de 30 páginas -- está en otra liga. Conocer la diferencia es la habilidad.</p><p><strong>Donde ChatGPT destaca:</strong> <strong>Análisis profundo</strong> (lee cada palabra en documentos largos, conecta información entre secciones). <strong>Escritura con matices</strong> (se adapta a la audiencia, voz y restricciones). <strong>Instrucciones complejas</strong> (rastrea cada restricción que especifiques). <strong>Documentos largos</strong> (mantiene un libro entero en una conversación).</p>"
+                "content": "<p>ChatGPT destaca en <strong>generación versátil</strong> (escribe, codifica, analiza, traduce fluidamente), <strong>seguimiento de instrucciones complejas</strong> (rastrea tono, formato, longitud, inclusiones y exclusiones a la vez), y <strong>razonamiento</strong>. Su kit de herramientas integrado lo amplía: DALL-E para imágenes, Browse para búsqueda web en vivo, Code Interpreter para Python real en tus archivos, Canvas para edición de formato largo.</p>"
               },
               {
                 "type": "exercise",
@@ -283,7 +279,7 @@
               },
               {
                 "type": "text",
-                "content": "<p><strong>Donde ChatGPT tiene dificultades:</strong> <strong>Sin imágenes ni video</strong> (usa Midjourney/DALL-E; ChatGPT puede escribir los prompts). <strong>Sin datos en tiempo real</strong> (busca primero, pega los resultados en ChatGPT para análisis). <strong>Alucinaciones con datos oscuros</strong> (verifica nombres, fechas y estadísticas). <strong>Matemáticas a escala</strong> (usa una hoja de cálculo para los números, ChatGPT para la interpretación).</p><p>Los mejores usuarios de ChatGPT también saben cuándo NO usar ChatGPT.</p>"
+                "content": "<p>Donde ChatGPT tiene dificultades: <strong>alucinaciones con datos oscuros</strong> (verifica nombres, fechas, citas en fuentes primarias), <strong>información desactualizada</strong> sin Browse (pega datos actuales tú mismo), y <strong>cálculos a gran escala</strong> (usa Code Interpreter o una hoja de cálculo para las matemáticas, luego pega los resultados en el chat para interpretarlos).</p>"
               },
               {
                 "type": "exercise",
@@ -295,7 +291,7 @@
               },
               {
                 "type": "summary",
-                "content": "<p>Los superpoderes de ChatGPT: análisis profundo, escritura con matices, instrucciones complejas, documentos largos. Sus límites: sin imágenes, sin datos en tiempo real, verificar datos oscuros. La habilidad es saber qué herramienta para qué trabajo. A continuación: cómo convertir el uso casual de ChatGPT en flujos de trabajo reales.</p>"
+                "content": "<p>Fortalezas: generación, seguimiento de instrucciones, razonamiento, herramientas integradas. Límites: verificar datos oscuros, activar Browse para datos actuales, usar Code Interpreter para cálculos. La habilidad es enrutar cada tarea a la herramienta correcta. A continuación: convertir el uso casual en flujos de trabajo reales.</p>"
               }
             ]
           },
@@ -357,7 +353,7 @@
             "sections": [
               {
                 "type": "text",
-                "content": "<p>Las personas que obtienen 10x el valor de ChatGPT lo usan como parte de <strong>procesos repetibles</strong>, no preguntas de una sola vez. Aquí hay tres patrones que convierten chatear en construir.</p><p><strong>Patrón 1: De la investigación a la decisión.</strong> Pega 5 artículos sobre el mismo tema. Pregunta a ChatGPT dónde coinciden, dónde se contradicen y qué aplica a tu situación. Una conversación, cinco fuentes, una recomendación personalizada.</p><p><strong>Patrón 2: Borrador-revisión-envío.</strong> Obtén un primer borrador. Pide a ChatGPT que critique su propio trabajo desde la perspectiva de tu audiencia. Incorpora la crítica y pule. Envía. La mayoría de las personas se detienen en el paso 1 -- los pasos 2 y 3 son donde ocurre el salto de calidad.</p>"
+                "content": "<p>Los usuarios avanzados usan ChatGPT como parte de <strong>procesos repetibles</strong>, no preguntas de una sola vez. Dos patrones: <strong>Investigación-a-decisión</strong> — pega cinco artículos, pregunta dónde coinciden y qué sugieren para tu situación. <strong>Borrador-revisión-envío</strong> — obtén un borrador, luego pide a ChatGPT que lo critique desde la perspectiva del lector antes de pulir y enviar.</p>"
               },
               {
                 "type": "exercise",
@@ -365,7 +361,7 @@
               },
               {
                 "type": "text",
-                "content": "<p><strong>Patrón 3: El operador semanal.</strong> Configura un proyecto de ChatGPT con tu rol, prioridades y entregables recurrentes como contexto del sistema. Cada lunes, pega datos frescos y obtén el mismo análisis. ChatGPT ya conoce el formato, la audiencia y en qué enfocarse. Eso no es una conversación -- es un sistema operativo.</p><p><strong>Lo que viene:</strong> El Track 2 profundiza en cada superficie de ChatGPT. El Track 3 te da playbooks de flujos de trabajo específicos. El Track 4 cubre técnicas avanzadas. Ya tienes la base.</p>"
+                "content": "<p>Después de una sesión productiva, pregunta: <em>\"Escríbeme una plantilla reutilizable para la próxima vez que enfrente una situación similar.\"</em> Guárdala. La próxima vez, pega la plantilla en una nueva conversación con detalles frescos. Así los usuarios avanzados construyen un manual personal — no memorizando técnicas, sino capturando lo que funcionó.</p>"
               },
               {
                 "type": "exercise",
@@ -377,7 +373,7 @@
               },
               {
                 "type": "summary",
-                "content": "<p>Completaste el Track 1. Sabes cómo piensa ChatGPT, cómo hablarle, en qué es excelente y cómo el uso casual se convierte en flujos de trabajo reales. Los tres patrones -- investigación-a-decisión, borrador-revisión-envío y operador semanal -- son tu puente a los tracks más profundos. Ve a construir algo.</p>"
+                "content": "<p>Track 1 completo. Sabes cómo funciona ChatGPT, cómo darle contexto, en qué es bueno y cómo el uso casual se convierte en flujos de trabajo. Tres hitos: guardar tu mejor prompt, configurar instrucciones personalizadas, construir un Custom GPT para una tarea recurrente. Ve a construir algo.</p>"
               }
             ]
           },

@@ -21,23 +21,15 @@
             "sections": [
               {
                 "type": "text",
-                "content": "<p>ChatGPT schreibt generischen Text, weil du ihm generische Prompts gibst. Hör auf, deinen Ton mit Adjektiven zu beschreiben. Füge stattdessen drei Dinge ein, die du tatsächlich geschrieben hast, und sage \"passe diesen Ton an.\" ChatGPT ist außergewöhnlich gut im Musterabgleich -- gib ihm Muster zum Abgleichen.</p>"
+                "content": "<p>ChatGPT schreibt generischen Text, weil du ihm generische Prompts gibst. Hör auf, deinen Ton mit Adjektiven zu beschreiben. Füge stattdessen drei Dinge ein, die du tatsächlich</p>"
               },
               {
                 "type": "exercise",
                 "exercise_id": "ex_es_01"
               },
               {
-                "type": "text",
-                "content": "<p><strong>Schichte deine Spezifika:</strong> Beispiele deines Schreibstils, explizite Stilregeln (\"sage niemals 'ich hoffe, diese E-Mail erreicht Sie wohlauf'\"), und Einschränkungen wie Länge und Format. Je konkreter dein Prompt, desto weniger muss ChatGPT raten.</p><p>Wie du das einrichtest, hängt von der Ebene ab. <strong>In ChatGPT</strong> erstellst du ein Projekt mit 5-10 Schreibproben plus einem kurzen Stil-Leitfaden. <strong>In Co-work</strong> liest ChatGPT dein offenes Dokument und passt den Ton automatisch an. <strong>In Code</strong> erstellst du ein wiederverwendbares Prompt-Template mit eingebautem Stil.</p>"
-              },
-              {
                 "type": "exercise",
                 "exercise_id": "ex_es_02"
-              },
-              {
-                "type": "text",
-                "content": "<p>Das Muster auf allen drei Ebenen: zeigen, nicht erzählen. Beispiele statt Beschreibungen. Kontext statt Anweisungen.</p>"
               },
               {
                 "type": "exercise",
@@ -45,7 +37,7 @@
               },
               {
                 "type": "summary",
-                "content": "<p>Stimm-Abgleich beginnt mit echten Beispielen deines Schreibstils, nicht mit Adjektivlisten. Richte dein Stil-System in der Ebene ein, die du am meisten nutzt -- Projekte, Co-work-Kontext oder Code-Templates.</p>"
+                "content": "<p>Stimm-Abgleich beginnt mit echten Beispielen deines Schreibstils, nicht mit Adjektivlisten. Richte dein Stil-System in der Ebene ein, die du am meisten nutzt -- Projekte, Co-work-Kontext</p>"
               }
             ]
           },
@@ -102,23 +94,15 @@
             "sections": [
               {
                 "type": "text",
-                "content": "<p>Die erste Ausgabe wird fast nie versendet. Die Iterationsschleife ist der größte Qualitätssprung. <strong>Fang breit an, dann werde spezifisch.</strong> Erste Runde: Stimme und Struktur korrigieren. Zweite Runde: bestimmte Absätze korrigieren. Dritte Runde: Wortwahl polieren.</p>"
+                "content": "<p>Die erste Ausgabe wird fast nie versendet. Die Iterationsschleife ist der größte Qualitätssprung. <strong>Fang breit an, dann werde spezifisch.</strong>"
               },
               {
                 "type": "exercise",
                 "exercise_id": "ex_es_04"
               },
               {
-                "type": "text",
-                "content": "<p><strong>Sei konkret darüber, was falsch ist.</strong> \"Mach es besser\" ist nutzlos. \"Der zweite Absatz klingt zu geschäftsmäßig\" gibt ChatGPT etwas zum Arbeiten. <strong>Sage ChatGPT, was es behalten soll.</strong> \"Die Eröffnung ist perfekt. Ändere sie nicht. Korrigiere alles nach dem ersten Absatz.\" Zwei bis drei Runden reichen aus.</p>"
-              },
-              {
                 "type": "exercise",
                 "exercise_id": "ex_es_05"
-              },
-              {
-                "type": "text",
-                "content": "<p>Iteration ist der Prozess, kein Scheitern. Jeder professionelle Autor überarbeitet. Der Unterschied ist, dass mit ChatGPT jede Überarbeitung Sekunden statt Stunden dauert.</p>"
               },
               {
                 "type": "exercise",
@@ -188,23 +172,15 @@
             "sections": [
               {
                 "type": "text",
-                "content": "<p>ChatGPTs Dokumenten-Superkraft ist nicht Suche -- sondern Verständnis. Lade einen Vertrag, eine Tabelle oder einen Bericht hoch, und ChatGPT hält alles gleichzeitig im Kontext. Bitte ChatGPT nicht, \"diesen Vertrag zusammenzufassen.\" Bitte es, \"jede Klausel zu finden, die mich Geld kosten könnte, wenn ich eine Frist verpasse.\" Je gezielter deine Frage, desto nützlicher die Analyse.</p>"
+                "content": "<p>ChatGPTs Dokumenten-Superkraft ist nicht Suche -- sondern Verständnis. Lade einen Vertrag, eine Tabelle oder einen Bericht hoch, und ChatGPT hält alles gleichzeitig im Kontext. Bitte</p>"
               },
               {
                 "type": "exercise",
                 "exercise_id": "ex_es_07"
               },
               {
-                "type": "text",
-                "content": "<p><strong>Dokumentenübergreifende Analyse ist der Power-Move.</strong> Lade drei Quartalsberichte hoch und frage \"welche Trends zeichnen sich ab?\" Lade einen Mietvertrag und die Mieterrechte deines Bundeslandes hoch und bitte ChatGPT, Konflikte zu markieren. ChatGPT verbindet Muster über Dokumente hinweg, die du beim getrennten Lesen übersehen würdest.</p><p>Profitipp: \"Extrahiere jedes Datum und jede Frist aus diesem Vertrag in einer chronologisch sortierten Tabelle\" schlägt \"fasse das zusammen\" jedes Mal.</p>"
-              },
-              {
                 "type": "exercise",
                 "exercise_id": "ex_es_08"
-              },
-              {
-                "type": "text",
-                "content": "<p>Wähle die passende Ebene für die Aufgabe: ChatGPT für einmalige Tiefenanalyse, Co-work für kontextbezogene Dokumentenbearbeitung, Code für Stapelverarbeitung im großen Maßstab.</p>"
               },
               {
                 "type": "exercise",
@@ -212,7 +188,7 @@
               },
               {
                 "type": "summary",
-                "content": "<p>Lade Dokumente hoch und stelle gezielte Fragen, keine generischen Zusammenfassungen. Dokumentenübergreifende Analyse findet Muster, die du übersehen würdest. Nutze ChatGPT für Tiefenanalyse, Co-work für Bearbeitung, Code für Stapelverarbeitung.</p>"
+                "content": "<p>Lade Dokumente hoch und stelle gezielte Fragen, keine generischen Zusammenfassungen. Dokumentenübergreifende Analyse findet Muster, die du übersehen würdest. Nutze ChatGPT für</p>"
               }
             ]
           },
@@ -274,23 +250,15 @@
             "sections": [
               {
                 "type": "text",
-                "content": "<p>Die meisten Menschen nutzen ChatGPT wie eine Suchmaschine mit besserer Grammatik. Frage stellen, Antwort bekommen, weitermachen. Dabei bleiben 90% des Wertes auf dem Tisch liegen. Wenn du fragst \"Wie groß ist der Markt für Legal Tech?\" bekommst du eine Zahl. Wenn du fragst \"Ich erwäge den Einstieg in Legal Tech mit einem KI-gestützten Aufnahmeprodukt. Was sind die drei größten Risiken, die ich nicht sehe?\" -- das ist ein Denkgespräch.</p>"
+                "content": "<p>Die meisten Menschen nutzen ChatGPT wie eine Suchmaschine mit besserer Grammatik. Frage stellen, Antwort bekommen, weitermachen. Dabei bleiben 90% des Wertes auf dem Tisch liegen. Wenn</p>"
               },
               {
                 "type": "exercise",
                 "exercise_id": "ex_es_10"
               },
               {
-                "type": "text",
-                "content": "<p><strong>Die progressive Recherche-Session ist der Power-Move.</strong> Fang breit an: \"Was sind die wichtigsten Ansätze für X?\" Gehe tiefer: \"Erkläre den zweiten Ansatz genauer. Was sind die echten Herausforderungen?\" Dann werde spezifisch: \"Wenn ich mit all dem in diesem Bereich mit einem kleinen Team und 6 Monaten baue, wo ist die Lücke?\" Jede Runde baut auf der vorherigen auf. Am Ende hast du eine zusammengeführte Analyse, die sonst Tage gedauert hätte.</p>"
-              },
-              {
                 "type": "exercise",
                 "exercise_id": "ex_es_11"
-              },
-              {
-                "type": "text",
-                "content": "<p><strong>Die Schlüsselgewohnheit: argumentiere mit ChatGPT.</strong> Widerspreche. \"Ich bin mit deinem zweiten Punkt nicht einverstanden, weil...\" und ChatGPT passt sich an. \"Du gehst von X aus, aber in unserem Markt stimmt Y\" und ChatGPT berechnet neu. Hör auf, ChatGPT zu nutzen, um zu bestätigen, was du schon glaubst. Fang an, es zu nutzen, um herauszufordern, was du glaubst.</p>"
               },
               {
                 "type": "exercise",
@@ -360,23 +328,15 @@
             "sections": [
               {
                 "type": "text",
-                "content": "<p>Du hast die Recherche gemacht. Jetzt musst du entscheiden. An diesem Punkt schließen die meisten Menschen ChatGPT und folgen ihrem Bauchgefühl. Tu das nicht. ChatGPT ist außergewöhnlich gut in der Entscheidungsunterstützung -- nicht weil es Entscheidungen für dich trifft, sondern weil es Rigorosität in dein Denken bringt.</p>"
+                "content": "<p>Du hast die Recherche gemacht. Jetzt musst du entscheiden. An diesem Punkt schließen die meisten Menschen ChatGPT und folgen ihrem Bauchgefühl. Tu das nicht. ChatGPT ist außergewöhnlich</p>"
               },
               {
                 "type": "exercise",
                 "exercise_id": "ex_es_13"
               },
               {
-                "type": "text",
-                "content": "<p><strong>Drei Frameworks, die versteckte Risiken aufdecken:</strong> \"Führe ein Pre-Mortem durch. Nehme an, wir haben es gemacht und es ist gescheitert. Was ist schiefgelaufen?\" \"Steelmanne die Gegenposition. Gib mir das stärkste Argument für die Option, gegen die ich mich neige.\" \"Wende Regret-Minimierung an. Welche Wahl werde ich in 10 Jahren am wenigsten bereuen?\"</p>"
-              },
-              {
                 "type": "exercise",
                 "exercise_id": "ex_es_14"
-              },
-              {
-                "type": "text",
-                "content": "<p><strong>Red-Teaming ist der fortgeschrittene Move.</strong> Sage ChatGPT vor jeder großen Entscheidung: \"Greife diesen Plan an. Finde jede Schwäche, jede Annahme, die falsch sein könnte, jede Art wie das scheitern kann. Sei brutal.\" Dann verteidige deinen Plan gegen ChatGPTs Angriffe. Was überlebt, ist stärker. Was nicht überlebt, wäre sowieso gescheitert.</p>"
               },
               {
                 "type": "exercise",
@@ -384,7 +344,7 @@
               },
               {
                 "type": "summary",
-                "content": "<p>Nutze Pre-Mortems, Steelmanning und Red-Teaming, um Entscheidungen vor dem Commitment zu stresstesten. ChatGPT ersetzt nicht dein Urteilsvermögen -- es gibt deinem Urteilsvermögen bessere Inputs.</p>"
+                "content": "<p>Nutze Pre-Mortems, Steelmanning und Red-Teaming, um Entscheidungen vor dem Commitment zu stresstesten. ChatGPT ersetzt nicht dein Urteilsvermögen -- es gibt deinem Urteilsvermögen</p>"
               }
             ]
           },

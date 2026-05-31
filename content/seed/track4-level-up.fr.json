@@ -21,23 +21,15 @@
             "sections": [
               {
                 "type": "text",
-                "content": "<p>Les <strong>compétences</strong> sont des capacités additionnelles que tu installes, configures ou construis pour donner de nouveaux pouvoirs à ChatGPT. Elles se déclinent en trois niveaux : instructions personnalisées (ajustements de comportement), compétences du marché (workflows préconstruits) et commandes personnalisées (tes propres créations). Une compétence, c'est bien. Cinq compétences travaillant ensemble transforment ta façon d'opérer.</p>"
+                "content": "<p>Les <strong>compétences</strong> sont des capacités additionnelles que tu installes, configures ou construis pour donner de nouveaux pouvoirs à ChatGPT. Elles se déclinent en trois</p>"
               },
               {
                 "type": "exercise",
                 "exercise_id": "ex_lu_01"
               },
               {
-                "type": "text",
-                "content": "<p>Toutes les compétences ne se valent pas. Une compétence qui ne fait qu'emballer un prompt que tu pourrais taper toi-même est un gadget. Une compétence qui lit ton contexte, récupère de vraies données et produit un résultat cohérent est un outil de workflow. Pour évaluer : est-ce qu'elle comprend mon contexte, ou est-ce juste un prompt habillé ?</p>"
-              },
-              {
                 "type": "exercise",
                 "exercise_id": "ex_lu_02"
-              },
-              {
-                "type": "text",
-                "content": "<p>Les compétences se cumulent dans le temps. Une compétence de rédaction plus une compétence de calendrier plus une compétence CRM signifie que ChatGPT peut écrire un suivi personnalisé pour ta réunion de 14h sans que tu tapes un seul détail. Ceux qui investissent dans leur configuration de compétences maintenant ont un avantage cumulatif.</p>"
               },
               {
                 "type": "exercise",
@@ -45,7 +37,7 @@
               },
               {
                 "type": "summary",
-                "content": "<p>Les compétences sont des capacités additionnelles qui se cumulent quand on les empile. Évalue-les par leur compréhension du contexte, pas par des listes de fonctionnalités. Investis dans la configuration maintenant — ça rapporte des dividendes à chaque interaction future.</p>"
+                "content": "<p>Les compétences sont des capacités additionnelles qui se cumulent quand on les empile. Évalue-les par leur compréhension du contexte, pas par des listes de fonctionnalités. Investis dans</p>"
               }
             ]
           },
@@ -107,15 +99,11 @@
             "sections": [
               {
                 "type": "text",
-                "content": "<p><strong>Dans ChatGPT,</strong> les compétences sont des instructions personnalisées et des modèles de prompts enregistrés. <strong>Dans Co-work,</strong> tu as le marché des compétences — des capacités préconstruites que tu installes en quelques secondes. <strong>Dans Code,</strong> tu construis des commandes slash personnalisées qui exécutent des workflows en plusieurs étapes. La progression est naturelle : commencer simplement, évoluer vers le puissant.</p>"
+                "content": "<p><strong>Dans ChatGPT,</strong> les compétences sont des instructions personnalisées et des modèles de prompts enregistrés. <strong>Dans Co-work,</strong> tu as le marché des compétences</p>"
               },
               {
                 "type": "exercise",
                 "exercise_id": "ex_lu_04"
-              },
-              {
-                "type": "text",
-                "content": "<p>Les compétences que tu construis peuvent être partagées. Si ta commande /deploy fait gagner des heures à ton équipe, publie-la. Les meilleures compétences du marché ont commencé comme le raccourci personnel de quelqu'un. Séparer la configuration de la logique est ce qui transforme un outil personnel en outil d'équipe.</p>"
               },
               {
                 "type": "exercise",
@@ -123,7 +111,7 @@
               },
               {
                 "type": "summary",
-                "content": "<p>Les compétences fonctionnent sur les trois niveaux. Commence simplement, évolue vers le puissant et partage ce que tu construis. Un fichier de configuration signifie que les collègues adaptent les paramètres, pas le code.</p>"
+                "content": "<p>Les compétences fonctionnent sur les trois niveaux. Commence simplement, évolue vers le puissant et partage ce que tu construis. Un fichier de configuration signifie que les collègues</p>"
               }
             ]
           },
@@ -172,23 +160,15 @@
             "sections": [
               {
                 "type": "text",
-                "content": "<p>La plupart des gens utilisent ChatGPT comme s'il avait une amnésie. Chaque conversation repart de zéro. <strong>Le contexte est la différence entre un assistant intelligent et un assistant intelligent qui te connaît.</strong> Un prompt médiocre avec un contexte riche produit de meilleurs résultats qu'un prompt parfait sans contexte.</p>"
+                "content": "<p>La plupart des gens utilisent ChatGPT comme s'il avait une amnésie. Chaque conversation repart de zéro. <strong>Le contexte est la différence entre un assistant intelligent et un</p>"
               },
               {
                 "type": "exercise",
                 "exercise_id": "ex_lu_06"
               },
               {
-                "type": "text",
-                "content": "<p>Le contexte que tu dois coller manuellement est un goulot d'étranglement. Le vrai déblocage est de connecter ChatGPT aux outils où ton contexte vit déjà. Des Projets avec des fichiers téléchargés, un accès direct à ton système de fichiers ou des connexions câblées à ton calendrier, tes e-mails, ton CRM et tes API. <strong>Réduis la distance entre ChatGPT et tes vraies données.</strong></p>"
-              },
-              {
                 "type": "exercise",
                 "exercise_id": "ex_lu_07"
-              },
-              {
-                "type": "text",
-                "content": "<p>Le contexte se cumule mais peut aussi devenir obsolète. Aujourd'hui ChatGPT connaît ton projet. Le mois prochain il connaît ton projet, les retours de tes clients, les préférences de ton équipe et tes objectifs Q2 — mais seulement si tu le maintiens à jour. Des revues programmées empêchent le contexte obsolète d'empoisonner de bons workflows.</p>"
               },
               {
                 "type": "exercise",
@@ -253,23 +233,15 @@
             "sections": [
               {
                 "type": "text",
-                "content": "<p>Les prompts individuels sont puissants. Les prompts enchaînés sont transformateurs. Au lieu de demander à ChatGPT de faire une chose et d'alimenter manuellement le résultat dans la demande suivante, tu conçois des séquences où la sortie de l'étape un devient automatiquement l'entrée de l'étape deux. Une chaîne simple : « Résume ce document » → « Extrais les décisions » → « Rédige un e-mail de suivi avec les points d'action. »</p>"
+                "content": "<p>Les prompts individuels sont puissants. Les prompts enchaînés sont transformateurs. Au lieu de demander à ChatGPT de faire une chose et d'alimenter manuellement le résultat dans la</p>"
               },
               {
                 "type": "exercise",
                 "exercise_id": "ex_lu_09"
               },
               {
-                "type": "text",
-                "content": "<p><strong>La clé des bonnes chaînes :</strong> chaque étape a un travail clair et spécifique. Ne demande pas à une étape de faire trop. Pense chaîne de montage, pas un prompt géant. Quand les chaînes cassent, le problème est généralement le passage de relais entre les étapes, pas les étapes elles-mêmes.</p>"
-              },
-              {
                 "type": "exercise",
                 "exercise_id": "ex_lu_10"
-              },
-              {
-                "type": "text",
-                "content": "<p>Voici ce que les utilisateurs avancés construisent réellement. <strong>Briefing matinal :</strong> récupère le calendrier, vérifie les e-mails, passe en revue les tâches, génère un résumé. <strong>Suivi de réunion :</strong> traite les notes, extrait les points d'action, rédige les e-mails, met à jour les tâches. <strong>Kit de préparation client :</strong> récupère l'historique du compte, les communications récentes, les problèmes ouverts avant chaque appel. Le fil rouge : ChatGPT gère la collecte et l'organisation. Toi, tu gères la réflexion et la décision.</p>"
               },
               {
                 "type": "exercise",
@@ -277,7 +249,7 @@
               },
               {
                 "type": "summary",
-                "content": "<p>Enchaîner signifie que la sortie de chaque étape alimente la suivante. Garde chaque étape focalisée. Corrige les passages de relais cassés, pas les étapes cassées. Construis pour de vrais workflows quotidiens — briefings, suivis et kits de préparation.</p>"
+                "content": "<p>Enchaîner signifie que la sortie de chaque étape alimente la suivante. Garde chaque étape focalisée. Corrige les passages de relais cassés, pas les étapes cassées. Construis pour de</p>"
               }
             ]
           },
@@ -339,23 +311,15 @@
             "sections": [
               {
                 "type": "text",
-                "content": "<p>Faire tourner les chaînes sans toi est le niveau suivant. L'automatisation signifie que ChatGPT s'exécute sur un déclencheur ou un planning : briefing matinal à 7h, boîte de réception triée toutes les heures, rapport hebdomadaire le vendredi à 16h. La règle : <strong>automatise la collecte et la rédaction. Garde les humains sur la validation et l'envoi.</strong></p>"
+                "content": "<p>Faire tourner les chaînes sans toi est le niveau suivant. L'automatisation signifie que ChatGPT s'exécute sur un déclencheur ou un planning : briefing matinal à 7h, boîte de réception</p>"
               },
               {
                 "type": "exercise",
                 "exercise_id": "ex_lu_12"
               },
               {
-                "type": "text",
-                "content": "<p><strong>L'échelle de confiance.</strong> Commence avec l'automatisation qui te fait gagner du temps sur le travail préparatoire. À mesure que tu construis ta confiance dans la qualité des résultats, étends progressivement. Automatise quand : répétitif, entrées prévisibles, enjeux faibles, résultat vérifiable. Garde l'humain dans la boucle quand : orienté client, nécessite un jugement nuancé, conséquences importantes. Ne saute jamais directement à l'autonomie complète sur du travail à enjeux élevés.</p>"
-              },
-              {
                 "type": "exercise",
                 "exercise_id": "ex_lu_13"
-              },
-              {
-                "type": "text",
-                "content": "<p><strong>Ce qui sépare le top 1% :</strong> penser architecturalement. Ils regardent leur workflow entier et demandent « Où ChatGPT s'intègre-t-il ? » Ils conçoivent pour l'intégration, pas l'isolation. Ta prochaine étape : choisis ton workflow récurrent le plus chronophage. Cartographie-le. Enchaîne-le. Automatise ce qui a du sens. Ce seul workflow, entièrement optimisé, économise plus de temps qu'une centaine de prompts ingénieux.</p>"
               },
               {
                 "type": "exercise",
@@ -363,7 +327,7 @@
               },
               {
                 "type": "summary",
-                "content": "<p>Automatise la collecte et la rédaction. Garde les humains sur la validation et l'envoi. Grimpe l'échelle de confiance progressivement. Un seul workflow entièrement optimisé bat une centaine de prompts ingénieux.</p>"
+                "content": "<p>Automatise la collecte et la rédaction. Garde les humains sur la validation et l'envoi. Grimpe l'échelle de confiance progressivement. Un seul workflow entièrement optimisé bat une</p>"
               }
             ]
           },

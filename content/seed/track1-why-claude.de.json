@@ -21,15 +21,15 @@
             "sections": [
               {
                 "type": "text",
-                "content": "<p>Öffne jetzt sofort chat.openai.com in einem anderen Tab. Tippe: <strong>\"Was bist du, und was kannst du mir wirklich nützen?\"</strong></p><p>Fällt dir die Antwort auf? ChatGPT wird von OpenAI entwickelt, einem der führenden KI-Forschungsunternehmen der Welt. Anders als eine Suchmaschine, die bestehende Seiten abruft, generiert ChatGPT Antworten, indem es deine Frage durchdenkt – Wissen synthetisiert, Anweisungen befolgt und sich in Echtzeit an deinen Kontext anpasst.</p><p>ChatGPT gibt es in verschiedenen Zugangsformen: <strong>ChatGPT (Browser)</strong> für Gespräche, Schreiben und Analysen; <strong>Canvas</strong> für kollaboratives Dokument- und Code-Editing; <strong>Code Interpreter</strong> zum Ausführen von echtem Python-Code und zur Datenanalyse; und <strong>Custom GPTs</strong> – spezialisierte Versionen von ChatGPT für bestimmte Aufgaben. Dieselbe Intelligenz, mehrere Zugangspunkte. Dieser Kurs beginnt mit dem Browser-Chat – dort holen die meisten Menschen 80 % ihres Nutzens heraus.</p>"
+                "content": "<p>Öffne jetzt chat.openai.com in einem anderen Tab. Tippe: <strong>\"Was bist du, und was kannst du mir wirklich nützen?\"</strong> Beobachte, wie ChatGPT deine Frage durchdenkt – statt nur Seiten zu suchen.</p>"
               },
               {
                 "type": "exercise",
                 "exercise_id": "ex_wc_01a"
               },
               {
-                “type”: “text”,
-                “content”: “<p><strong>Deine ersten fünf Prompts zum Ausprobieren – jetzt, in einem anderen Tab:</strong></p><p>Das sind keine künstlichen Beispiele. Jeder zeigt eine konkrete ChatGPT-Fähigkeit in unter zwei Minuten.</p><ol><li><strong>Komplexitätstest:</strong> <em>„Vergleiche Home-Office vs. Büro für ein 30-köpfiges Unternehmen mit Vertriebsteam. Ich möchte eine differenzierte Antwort, die nicht so tut, als ob eine Option klar besser wäre.”</em></li><li><strong>Präzision bei Anweisungen:</strong> <em>„Schreib eine professionelle E-Mail, die ein Meeting ablehnt. Maximal 80 Wörter. Beginne nicht mit ‚Ich'. Verwende nicht das Wort ‚leider'. Schlage eine asynchrone Alternative vor.”</em></li><li><strong>Stil-Matching:</strong> <em>„Hier sind zwei E-Mails, die ich geschrieben habe: [zwei E-Mails einfügen]. Schreibe eine dritte E-Mail in meinem Stil, die ein Projekt ablehnt, aber die Beziehung warmhält.”</em></li><li><strong>Ehrlichkeitstest:</strong> <em>„Ich möchte meinen Job kündigen und ein Restaurant eröffnen. Gib mir ehrlichen Rat, keine Ermutigung.”</em></li><li><strong>Praxishilfe:</strong> <em>„Ich habe eine Tabelle mit 200 Zeilen Verkaufsdaten. Wie berechne ich den Gesamtumsatz nach Region mit einer Formel?”</em></li></ol><p>Probiere mindestens zwei aus, bevor du weitermachst.</p>”
+                "type": "text",
+                "content": "<p>ChatGPTs drei Kernstärken: <strong>vielseitige Generierung</strong> (schreiben, analysieren, übersetzen), <strong>Anweisungstreue</strong> (verfolgt alle deine Vorgaben gleichzeitig) und <strong>Reasoning</strong> (wägt Argumente ab statt zu googeln). Nutze das Muster <em>\"Ich möchte deine ehrliche Einschätzung, auch wenn sie unbequem ist\"</em> für ehrlichere Antworten.</p>"
               },
               {
                 "type": "exercise",
@@ -41,7 +41,7 @@
               },
               {
                 "type": "summary",
-                "content": "<p>ChatGPT wird von OpenAI entwickelt und generiert Antworten, indem es deine Fragen durchdenkt – ein Denkpartner, keine Suchmaschine. Seine drei Stärken sind vielseitige Generierung, das Befolgen von Anweisungen und Reasoning. Über den Chat hinaus gibt es spezialisierte Tools: DALL-E für Bilder, Code Interpreter für Daten und Code, Canvas zum Editieren und Custom GPTs für bestimmte Aufgaben. Nutze das Ehrlichkeitsmuster, die Unsicherheitsabfrage und den Advocatus-Diaboli-Ansatz für ehrlichere, nützlichere Antworten. Als Nächstes: wie du effektiv mit ChatGPT sprichst.</p>"
+                "content": "<p>ChatGPT generiert durch Reasoning, nicht durch Suchen. Drei Stärken: Generierung, Anweisungstreue, Reasoning. Für ehrliche Antworten explizit um Kritik bitten. Als Nächstes: effektiv mit ChatGPT sprechen.</p>"
               }
             ]
           },
@@ -52,10 +52,10 @@
               "type": "scenario_walkthrough",
               "prompt": "Wähle die richtige ChatGPT-Stufe für drei verschiedene Aufgaben.",
               "options": null,
-              "correct_answer": "{\"title\": \"Wähle die richtige Stufe\", \"steps\": [{\"type\": \"context\", \"text\": \"Drei Aufgaben. Jede braucht ChatGPT, aber nicht denselben ChatGPT. Ordne jede der richtigen Stufe zu.\"}, {\"type\": \"choice\", \"claude_response\": \"Aufgabe 1: Brainstorme 10 Geschenkideen für den Geburtstag deines Partners. Keine Dateien, nur kreatives Denken.\", \"question\": \"Welche Stufe?\", \"options\": [\"ChatGPT \\u2014 Browser-Konversation\", \"Co-Work \\u2014 Desktop-App\", \"ChatGPT \\u2014 Terminal\"], \"correct\": 0, \"feedback\": \"Reines Denken, keine Dateien, nichts zu bauen. ChatGPT im Browser ist genau richtig.\"}, {\"type\": \"choice\", \"claude_response\": \"Aufgabe 2: Du hast 6 Monate Quittungs-PDFs auf deinem Desktop, die nach Monat und Kategorie sortiert werden müssen.\", \"question\": \"Welche Stufe?\", \"options\": [\"ChatGPT \\u2014 Browser-Konversation\", \"Co-Work \\u2014 Desktop-App\", \"ChatGPT \\u2014 Terminal\"], \"correct\": 1, \"feedback\": \"Die Aufgabe liegt in deinen Dateien. Co-Work liest und bearbeitet sie direkt, ohne Hochladen.\"}, {\"type\": \"choice\", \"claude_response\": \"Aufgabe 3: Erstelle einen interaktiven Budget-Tracker, den dein ganzes Team nutzen kann.\", \"question\": \"Welche Stufe?\", \"options\": [\"ChatGPT \\u2014 Browser-Konversation\", \"Co-Work \\u2014 Desktop-App\", \"ChatGPT \\u2014 Terminal\"], \"correct\": 2, \"feedback\": \"Das ist eine Bau-Aufgabe. Etwas, das noch nicht existiert, muss von Grund auf erstellt werden. ChatGPT erledigt das.\"}]}",
-              "explanation": "Die Entscheidung ist eine einzige Frage: Findet diese Aufgabe in meinem Kopf statt, in meinen Dateien oder muss sie gebaut werden? Kopf = ChatGPT. Dateien = Co-Work. Bauen = ChatGPT.",
+              "correct_answer": "{\"title\": \"Wähle die richtige Stufe\", \"steps\": [{\"type\": \"context\", \"text\": \"Drei Aufgaben. Jede braucht ChatGPT, aber nicht denselben ChatGPT. Ordne jede der richtigen Stufe zu.\"}, {\"type\": \"choice\", \"claude_response\": \"Aufgabe 1: Brainstorme 10 Geschenkideen für den Geburtstag deines Partners. Keine Dateien, nur kreatives Denken.\", \"question\": \"Welche Stufe?\", \"options\": [\"ChatGPT Chat \\u2014 Browser-Konversation\", \"Canvas \\u2014 kollaborativer Dokumenten-Editor\", \"Code Interpreter \\u2014 Code ausführen und Daten analysieren\"], \"correct\": 0, \"feedback\": \"Reines Denken, keine Dateien, nichts zu bauen. ChatGPT Chat im Browser ist genau richtig.\"}, {\"type\": \"choice\", \"claude_response\": \"Aufgabe 2: Du hast 6 Monate Verkaufsdaten in einer Excel-Datei, die nach Region und Monat analysiert werden müssen.\", \"question\": \"Welche Stufe?\", \"options\": [\"ChatGPT Chat \\u2014 Browser-Konversation\", \"Canvas \\u2014 kollaborativer Dokumenten-Editor\", \"Code Interpreter \\u2014 Datei hochladen und Python-Analyse starten\"], \"correct\": 2, \"feedback\": \"Code Interpreter führt echten Python-Code auf deiner hochgeladenen Datei aus und produziert echte Analysen, Charts und Zusammenfassungen.\"}, {\"type\": \"choice\", \"claude_response\": \"Aufgabe 3: Du musst einen langen technischen Vorschlag schreiben und ihn gemeinsam mit KI bearbeiten.\", \"question\": \"Welche Stufe?\", \"options\": [\"ChatGPT Chat \\u2014 Browser-Konversation\", \"Canvas \\u2014 persistentes Dokument mit inline Bearbeitung\", \"Code Interpreter \\u2014 Dokument als Code generieren\"], \"correct\": 1, \"feedback\": \"Canvas gibt dir einen persistenten Dokument-Arbeitsbereich, in dem du und ChatGPT gemeinsam bearbeitest.\"}]}",
+              "explanation": "Die Entscheidung ist eine einzige Frage: Braucht diese Aufgabe Denken, Datenanalyse oder kollaborative Bearbeitung? Denken = Chat. Daten = Code Interpreter. Langes Dokument = Canvas.",
               "hints": [
-                "Frag dich: Findet diese Aufgabe in meinem Kopf statt, in meinen Dateien oder muss sie gebaut werden?"
+                "Frag dich: Ist das eine Denk-, Daten- oder Dokumentbearbeitungs-Aufgabe?"
               ],
               "xp_reward": 15
             },
@@ -71,7 +71,7 @@
                 "Du kannst eine schlechte Entscheidung immer rückgängig machen"
               ],
               "correct_answer": "1",
-              "explanation": "Eine selbstbewusst falsche Antwort ist schlimmer als eine unsichere, weil du weniger geneigt bist, sie zu hinterfragen. Wenn KI sagt 'Ich bin mir nicht sicher,' überprüfst du. Wenn sie etwas als Fakt darstellt, vertraust du ihr. ChatGPT ist darauf ausgelegt, Unsicherheit zu signalisieren, statt Sicherheit vorzutäuschen.",
+              "explanation": "Eine selbstbewusst falsche Antwort ist schlimmer als eine unsichere, weil du weniger geneigt bist, sie zu hinterfragen. Wenn KI sagt 'Ich bin mir nicht sicher,' überprüfst du. Wenn sie etwas als Fakt darstellt, vertraust du ihr.",
               "hints": [
                 "Denk an den Unterschied zwischen einer KI, die sagt 'Ich denke...' und einer, die etwas als absolute Tatsache darstellt."
               ],
@@ -84,7 +84,7 @@
               "prompt": "Schreibe einen Prompt, der ChatGPT bittet, den Lebenslauf eines Bewerbers zu überprüfen und ehrliches, nützliches Feedback zu geben -- nicht nur Lob.",
               "options": null,
               "correct_answer": "{\"scenario\":\"Du stellst für eine Senior-Marketing-Position ein. Der Lebenslauf eines Kandidaten sieht auf den ersten Blick gut aus. Schreibe einen Prompt, der echtes Feedback liefert -- Stärken UND Schwächen -- damit du entscheiden kannst, ob du ihn zum Gespräch einlädst.\",\"scoring_criteria\":[{\"keyword_group\":[\"honest\",\"critical\",\"candid\",\"don't hold back\",\"genuine\",\"real feedback\",\"weaknesses\",\"gaps\",\"concerns\",\"red flag\"],\"label\":\"Hat um ehrliches/kritisches Feedback gebeten\",\"points\":2},{\"keyword_group\":[\"senior\",\"marketing\",\"role\",\"position\",\"job\",\"hiring\"],\"label\":\"Hat die Rolle spezifiziert\",\"points\":1},{\"keyword_group\":[\"strengths\",\"pros\",\"strong\",\"good\",\"stands out\",\"impressive\"],\"label\":\"Hat auch nach Stärken gefragt (ausgewogene Bewertung)\",\"points\":1},{\"keyword_group\":[\"interview\",\"hire\",\"decision\",\"bring in\",\"move forward\",\"next step\"],\"label\":\"Hat es mit der Einstellungsentscheidung verknüpft\",\"points\":1},{\"keyword_group\":[\"experience\",\"qualification\",\"skill\",\"background\",\"achievement\",\"metric\",\"result\"],\"label\":\"Hat erwähnt, was bewertet werden soll\",\"points\":1},{\"keyword_group\":[\"compare\",\"versus\",\"typical\",\"expect\",\"standard\",\"benchmark\",\"competitive\"],\"label\":\"Hat um einen Vergleichsmaßstab gebeten\",\"points\":1}],\"max_points\":7,\"pass_threshold\":4,\"ideal_prompt\":\"Ich stelle für eine Senior-Marketing-Manager-Position ein. Hier ist der Lebenslauf eines Kandidaten. Gib mir eine ehrliche Einschätzung: Was sind die echten Stärken, wo sind die Lücken oder Warnsignale, und würdest du empfehlen, ihn zum Gespräch einzuladen? Sei nicht nett um nett zu sein -- ich muss eine gute Einstellungsentscheidung treffen.\",\"tips\":[\"Ausdrücklich nach Schwächen zu fragen signalisiert ChatGPT, dass du Ehrlichkeit willst, keine Schmeichelei.\",\"Die Bewertung mit einer Entscheidung zu verbinden gibt ChatGPT einen klaren Zweck für das Feedback.\"]}",
-              "explanation": "Die meisten Leute bitten KI, 'meinen Lebenslauf zu überprüfen' und bekommen 'Sieht super aus!' Wenn du ausdrücklich um ehrliche Kritik bittest und es mit einer echten Entscheidung verknüpfst, liefert ChatGPT die Art von Feedback, die wirklich hilft.",
+              "explanation": "Die meisten Leute bitten KI, 'meinen Lebenslauf zu überprüfen' und bekommen 'Sieht super aus!' Wenn du ausdrücklich um ehrliche Kritik bittest und es mit einer echten Entscheidung verknüpfst, liefert ChatGPT wirklich nützliches Feedback.",
               "hints": [
                 "Wenn du nur sagst 'überprüfe diesen Lebenslauf,' wird die meiste KI standardmäßig nett sein. Wie signalisierst du, dass du die echte Einschätzung willst?"
               ],
@@ -103,7 +103,7 @@
             "sections": [
               {
                 "type": "text",
-                "content": "<p>Probier das jetzt aus. Öffne ChatGPT und tippe: <strong>\"Schreib mir eine E-Mail.\"</strong></p><p>Du bekommst eine generische Vorlage, die wie jede andere KI-E-Mail klingt. Jetzt versuch: <strong>\"Schreib eine Nachfass-E-Mail an eine Kundin namens Sarah, die unseren Dienstags-Call verpasst hat. Ton: warm, aber direkt. Erwähne eine Verschiebung auf Donnerstag, 14 Uhr. Maximal 100 Wörter.\"</strong></p><p>Wie Tag und Nacht. Der Unterschied ist Kontext. ChatGPT kann deine Gedanken nicht lesen, aber es ist hervorragend darin, mit dem zu arbeiten, was du ihm gibst.</p>"
+                "content": "<p>Öffne ChatGPT und tippe: <strong>\"Schreib mir eine E-Mail.\"</strong> Du bekommst eine generische Vorlage. Jetzt versuch: <strong>\"Schreib eine Nachfass-E-Mail an Sarah, die unseren Dienstags-Call verpasst hat. Warm, aber direkt. Verschiebung auf Donnerstag 14 Uhr. Maximal 100 Wörter.\"</strong> Wie Tag und Nacht. Das ist Kontext.</p>"
               },
               {
                 "type": "exercise",
@@ -111,7 +111,7 @@
               },
               {
                 "type": "text",
-                "content": "<p><strong>Der Iterations-Loop ist, wo ChatGPT glänzt.</strong> Du bist nach der ersten Antwort nicht fertig. Sag ihm, was es anpassen soll: \"Mach den Einstieg persönlicher.\" \"Zu formell.\" \"Füge eine Zeile über unsere kostenlose Beratung hinzu.\" Jede Runde kommt näher. ChatGPT merkt sich alles und berücksichtigt alles.</p><p><strong>Die fünf Dinge, die ChatGPT von dir braucht:</strong> <strong>1. Wer</strong> (die Zielgruppe). <strong>2. Was</strong> (das Ergebnis). <strong>3. Wie</strong> (Ton, Länge, Format). <strong>4. Warum</strong> (welche Entscheidung das unterstützt). <strong>5. Was nicht</strong> (Dinge, die vermieden werden sollen). Je mehr davon du vorab lieferst, desto weniger musst du nachher bearbeiten.</p>"
+                "content": "<p>Gib ChatGPT fünf Dinge vorab: <strong>Wer</strong> (Zielgruppe), <strong>Was</strong> (Ergebnis), <strong>Wie</strong> (Ton, Format, Länge), <strong>Warum</strong> (welche Entscheidung das unterstützt), <strong>Was nicht</strong> (was vermieden werden soll). Mehr Kontext vorab = weniger Bearbeitung danach. Dann iteriere mit spezifischem Feedback.</p>"
               },
               {
                 "type": "exercise",
@@ -119,7 +119,7 @@
               },
               {
                 "type": "text",
-                "content": "<p><strong>Noch ein Muster, das sich als Gewohnheit lohnt: Bitte ChatGPT, zu widersprechen.</strong></p><p>\"Ich denke über X nach. Was übersehe ich?\" oder \"Finde Schwachstellen in diesem Plan, bevor ich mich festlege.\" Die meisten Leute nutzen KI als Ja-Sager-Maschine. ChatGPT ist am besten, wenn du ihm die Erlaubnis gibst, anderer Meinung zu sein.</p>"
+                "content": "<p>Bitte ChatGPT, zu widersprechen: <em>\"Ich denke über X nach. Was übersehe ich?\"</em> oder <em>\"Finde Schwachstellen in diesem Plan, bevor ich mich festlege.\"</em> Nutze das vor wichtigen Entscheidungen und Pitches.</p>"
               },
               {
                 "type": "exercise",
@@ -127,7 +127,7 @@
               },
               {
                 "type": "summary",
-                "content": "<p>Kontext verwandelt generische Ausgabe in nützliche Ausgabe. Iteration verwandelt gute Ausgabe in großartige Ausgabe. Gib ChatGPT Wer, Was, Wie, Warum und Was-nicht. Dann verfeinere. Als Nächstes: die Kunst, ChatGPT den richtigen Kontext vorab zu geben.</p>"
+                "content": "<p>Kontext = nützliche Ausgabe. Fünf Elemente: Wer, Was, Wie, Warum, Was-nicht. Mit spezifischem Feedback iterieren. Vor wichtigen Entscheidungen widersprechen lassen. Als Nächstes: Custom Instructions und Kontextfenster.</p>"
               }
             ]
           },
@@ -156,10 +156,10 @@
               "type": "prompt_lab",
               "prompt": "Dein Kunde braucht ein Projektangebot bis Freitag. Schreibe einen detaillierten Prompt an ChatGPT mit genügend Kontext für einen starken ersten Entwurf.",
               "options": null,
-              "correct_answer": "{\"scenario\":\"Dein Kunde (eine mittelgroße Anwaltskanzlei) braucht ein Angebot für ein Website-Redesign. Budget: 15.000 €, Zeitrahmen: 6 Wochen, Frist: Freitag. Der Kunde ist traditionell und formell. Schreibe einen Prompt, der ChatGPT alles gibt, was es braucht, um ein Angebot zu erstellen, das du tatsächlich versenden könntest.\",\"scoring_criteria\":[{\"keyword_group\":[\"law firm\",\"client\",\"legal\",\"attorney\",\"firm\"],\"label\":\"Hat den Kundentyp identifiziert\",\"points\":1},{\"keyword_group\":[\"proposal\",\"pitch\",\"scope\",\"deliverable\"],\"label\":\"Hat den Dokumenttyp spezifiziert\",\"points\":1},{\"keyword_group\":[\"$15,000\",\"15000\",\"budget\",\"cost\",\"price\",\"pricing\"],\"label\":\"Hat das Budget angegeben\",\"points\":1},{\"keyword_group\":[\"6 weeks\",\"six weeks\",\"timeline\",\"deadline\",\"schedule\",\"friday\"],\"label\":\"Hat den Zeitrahmen erwähnt\",\"points\":1},{\"keyword_group\":[\"formal\",\"professional\",\"traditional\",\"conservative\",\"tone\"],\"label\":\"Hat den Ton oder die Zielgruppe spezifiziert\",\"points\":2},{\"keyword_group\":[\"website\",\"redesign\",\"web\",\"site\",\"design\"],\"label\":\"Hat das Projekt beschrieben\",\"points\":1}],\"max_points\":7,\"pass_threshold\":4,\"ideal_prompt\":\"Schreibe ein Projektangebot für ein Website-Redesign für eine mittelgroße Anwaltskanzlei. Budget: 15.000 €. Zeitrahmen: 6 Wochen. Die Kanzlei ist traditionell und formell -- keine Startup-Sprache. Enthält: Zusammenfassung, Umfang mit Leistungen, Zeitplan mit Meilensteinen, Preisaufschlüsselung. Maximal 2 Seiten. Ton: professionell und souverän.\",\"tips\":[\"Sag ChatGPT, wer die Zielgruppe ist. Eine Kanzlei und ein Tech-Startup brauchen völlig unterschiedliche Töne.\",\"Gib Einschränkungen wie Seitenlänge, Budget und Zeitrahmen an -- sie formen das gesamte Dokument.\"]}",
-              "explanation": "Ein detaillierter Prompt mit Kundentyp, Budget, Zeitrahmen, Ton und Struktur gibt ChatGPT genug, um einen Entwurf zu erstellen, den du tatsächlich prüfen und versenden würdest. Jede Entscheidung, die du vorab triffst, spart dir Bearbeitungszeit danach.",
+              "correct_answer": "{\"scenario\":\"Dein Kunde (eine mittelgroße Anwaltskanzlei) braucht ein Angebot für ein Website-Redesign. Budget: 15.000 €, Zeitrahmen: 6 Wochen, Frist: Freitag. Der Kunde ist traditionell und formell. Schreibe einen Prompt, der ChatGPT alles gibt, was es braucht, um ein Angebot zu erstellen, das du tatsächlich versenden könntest.\",\"scoring_criteria\":[{\"keyword_group\":[\"law firm\",\"client\",\"legal\",\"attorney\",\"firm\"],\"label\":\"Hat den Kundentyp identifiziert\",\"points\":1},{\"keyword_group\":[\"proposal\",\"pitch\",\"scope\",\"deliverable\"],\"label\":\"Hat den Dokumenttyp spezifiziert\",\"points\":1},{\"keyword_group\":[\"$15,000\",\"15000\",\"budget\",\"cost\",\"price\",\"pricing\"],\"label\":\"Hat das Budget angegeben\",\"points\":1},{\"keyword_group\":[\"6 weeks\",\"six weeks\",\"timeline\",\"deadline\",\"schedule\",\"friday\"],\"label\":\"Hat den Zeitrahmen erwähnt\",\"points\":1},{\"keyword_group\":[\"formal\",\"professional\",\"traditional\",\"conservative\",\"tone\"],\"label\":\"Hat den Ton oder die Zielgruppe spezifiziert\",\"points\":2},{\"keyword_group\":[\"website\",\"redesign\",\"web\",\"site\",\"design\"],\"label\":\"Hat das Projekt beschrieben\",\"points\":1}],\"max_points\":7,\"pass_threshold\":4,\"ideal_prompt\":\"Schreibe ein Projektangebot für ein Website-Redesign für eine mittelgroße Anwaltskanzlei. Budget: 15.000 €. Zeitrahmen: 6 Wochen. Die Kanzlei ist traditionell und formell -- keine Startup-Sprache. Enthält: Zusammenfassung, Umfang mit Leistungen, Zeitplan mit Meilensteinen, Preisaufschlüsselung. Maximal 2 Seiten. Ton: professionell und souverän.\",\"tips\":[\"Sag ChatGPT, wer die Zielgruppe ist.\",\"Gib Einschränkungen wie Seitenlänge, Budget und Zeitrahmen an.\"]}",
+              "explanation": "Ein detaillierter Prompt mit Kundentyp, Budget, Zeitrahmen, Ton und Struktur gibt ChatGPT genug für einen verwendbaren Entwurf.",
               "hints": [
-                "Denk an jede Entscheidung, die ChatGPT treffen müsste, ohne dich fragen zu können. Je mehr du vorab beantwortest, desto besser der erste Entwurf."
+                "Denk an jede Entscheidung, die ChatGPT treffen müsste, ohne dich fragen zu können."
               ],
               "xp_reward": 10
             },
@@ -169,8 +169,8 @@
               "type": "speed_prompt",
               "prompt": "Du hast 45 Sekunden. Schreibe einen Prompt, der ChatGPT bittet, eine schlechte Geschäftsidee zu hinterfragen.",
               "options": null,
-              "correct_answer": "{\"time_limit_seconds\":45,\"scenario\":\"Dein Freund will ein drittes Café in einer Stadt mit 5.000 Einwohnern eröffnen, die bereits zwei hat. Er bittet dich um Geld. Schreibe einen Prompt, der ChatGPT dazu bringt, die Idee zu hinterfragen, nicht zu ermutigen.\",\"scoring_criteria\":[{\"keyword_group\":[\"push back\",\"challenge\",\"poke holes\",\"devil's advocate\",\"critique\",\"problems\",\"risks\",\"why this won't work\",\"honest\"],\"label\":\"Hat ChatGPT gebeten, die Idee zu hinterfragen\",\"points\":2},{\"keyword_group\":[\"coffee\",\"shop\",\"cafe\",\"store\",\"business\"],\"label\":\"Hat die Art des Geschäfts erwähnt\",\"points\":1},{\"keyword_group\":[\"5000\",\"small town\",\"population\",\"market\",\"demand\",\"two\",\"competition\",\"already\",\"existing\"],\"label\":\"Hat die Marktgröße oder Konkurrenz erwähnt\",\"points\":2},{\"keyword_group\":[\"invest\",\"money\",\"friend\",\"fund\",\"capital\",\"asking\"],\"label\":\"Hat die Investitionsanfrage erwähnt\",\"points\":1},{\"keyword_group\":[\"question\",\"ask\",\"conversation\",\"talk\",\"discuss\",\"bring up\"],\"label\":\"Hat es mit einem echten Gespräch verbunden\",\"points\":1}],\"max_points\":7,\"pass_threshold\":4,\"ideal_prompt\":\"Mein Freund will ein drittes Café in einer Stadt mit 5.000 Einwohnern eröffnen und bittet mich zu investieren. Zwei Cafés gibt es bereits. Sei brutal ehrlich: Was sind die größten Risiken und Gründe, warum das scheitern könnte? Ermutige die Idee nicht -- ich brauche die harten Fragen, bevor ich Geld investiere.\"}",
-              "explanation": "Unter Zeitdruck findest du heraus, was du natürlich einbeziehst. Die Schlüsselelemente: Sage ChatGPT, dass es hinterfragen soll (nicht ermutigen), gib die relevanten Fakten an und erkläre, warum du Ehrlichkeit brauchst.",
+              "correct_answer": "{\"time_limit_seconds\":45,\"scenario\":\"Dein Freund will ein drittes Café in einer Stadt mit 5.000 Einwohnern eröffnen, die bereits zwei hat. Er bittet dich um Geld. Schreibe einen Prompt, der ChatGPT dazu bringt, die Idee zu hinterfragen, nicht zu ermutigen.\",\"scoring_criteria\":[{\"keyword_group\":[\"push back\",\"challenge\",\"poke holes\",\"devil's advocate\",\"critique\",\"problems\",\"risks\",\"why this won't work\",\"honest\"],\"label\":\"Hat ChatGPT gebeten, die Idee zu hinterfragen\",\"points\":2},{\"keyword_group\":[\"coffee\",\"shop\",\"cafe\",\"store\",\"business\"],\"label\":\"Hat die Art des Geschäfts erwähnt\",\"points\":1},{\"keyword_group\":[\"5000\",\"small town\",\"population\",\"market\",\"demand\",\"two\",\"competition\",\"already\",\"existing\"],\"label\":\"Hat die Marktgröße oder Konkurrenz erwähnt\",\"points\":2},{\"keyword_group\":[\"invest\",\"money\",\"friend\",\"fund\",\"capital\",\"asking\"],\"label\":\"Hat die Investitionsanfrage erwähnt\",\"points\":1},{\"keyword_group\":[\"question\",\"ask\",\"conversation\",\"talk\",\"discuss\",\"bring up\"],\"label\":\"Hat es mit einem echten Gespräch verbunden\",\"points\":1}],\"max_points\":7,\"pass_threshold\":4,\"ideal_prompt\":\"Mein Freund will ein drittes Café in einer Stadt mit 5.000 Einwohnern eröffnen und bittet mich zu investieren. Zwei Cafés gibt es bereits. Sei brutal ehrlich: Was sind die größten Risiken? Ermutige die Idee nicht -- ich brauche die harten Fragen, bevor ich Geld investiere.\"}",
+              "explanation": "Schlüsselelemente: ChatGPT sagen, dass es hinterfragen soll (nicht ermutigen), relevante Fakten angeben, erklären warum Ehrlichkeit gebraucht wird.",
               "hints": [
                 "Konzentrier dich darauf, ChatGPT zu sagen, welche Rolle es spielen soll: Kritiker, nicht Cheerleader."
               ],
@@ -181,7 +181,7 @@
         {
           "title": "Kontext ist alles",
           "slug": "context-is-everything",
-          "description": "System-Prompts, das Kontextfenster und die Kunst, ChatGPT die richtigen Informationen zu geben.",
+          "description": "Custom Instructions, das Kontextfenster und die Kunst, ChatGPT die richtigen Informationen zu geben.",
           "order_index": 3,
           "xp_reward": 50,
           "estimated_minutes": 7,
@@ -189,11 +189,7 @@
             "sections": [
               {
                 "type": "text",
-                "content": "<p>Versuch das: Füge einen langen E-Mail-Thread in ChatGPT ein und frage \"Was ist die eigentliche Entscheidung hier, und wer blockiert sie?\" ChatGPT liest den gesamten Thread, verfolgt, wer was gesagt hat, und gibt dir die Antwort in 30 Sekunden. Das ist das <strong>Kontextfenster</strong> in Aktion.</p><p>Das Kontextfenster ist, wie viel ChatGPT sich während einer Konversation merken kann. das ChatGPT Kontextfenster ist riesig -- es kann das Äquivalent eines ganzen Romans aufnehmen. Das bedeutet vollständige Verträge, Forschungsarbeiten oder lange E-Mail-Ketten in einer einzigen Konversation.</p>"
-              },
-              {
-                "type": "text",
-                "content": "<p><strong>Was ein großes Kontextfenster ermöglicht:</strong></p><p>Füge einen 40-seitigen Vertrag ein und frage nach jeder Klausel. Vergleiche Abschnitt 3 mit Abschnitt 12. Führe eine lange Konversation, ohne dass ChatGPT den Faden verliert. Arbeite an einem komplexen Projekt über Dutzende Nachrichten, ohne neu anfangen zu müssen.</p><p>Mit einem kleinen Kontextfenster müsstest du Dokumente in Stücke teilen, jedes einzeln einfügen und hoffen, dass die KI sich an frühere Abschnitte erinnert. Spoiler: Sie wird es nicht tun.</p>"
+                "content": "<p>Füge einen langen E-Mail-Thread in ChatGPT ein und frage: <em>\"Was ist die eigentliche Entscheidung hier, und wer blockiert sie?\"</em> ChatGPT liest den gesamten Thread und antwortet in 30 Sekunden. Das ist das <strong>Kontextfenster</strong> — wie viel ChatGPT aktiv im Gedächtnis hält. Moderne ChatGPT-Modelle halten ganze Verträge oder Forschungsarbeiten in einer Konversation.</p>"
               },
               {
                 "type": "exercise",
@@ -201,7 +197,7 @@
               },
               {
                 "type": "text",
-                "content": "<p><strong>System-Prompts</strong> erlauben dir, ChatGPT dauerhaften Kontext zu geben, der über jede Nachricht hinweg aktiv bleibt: dein Stilguide, deine Rolle, Einschränkungen, die immer gelten. Stell es dir vor wie das Einarbeiten eines neuen Mitarbeiters am ersten Tag.</p><p><strong>Die Kunst des guten Kontexts:</strong> Sei spezifisch statt allgemein (\"B2B-SaaS-Marketing-Berater\" schlägt \"Du bist hilfreich\"). Füge Beispiele für gute Ausgaben bei. Sage, was NICHT getan werden soll (\"Verwende niemals Fachjargon\"). Stelle das Wichtigste an den Anfang -- ChatGPT achtet besonders auf den Anfang und das Ende dessen, was du ihm gibst.</p>"
+                "content": "<p><strong>Custom Instructions</strong> geben ChatGPT dauerhaften Kontext für jede Konversation. Klicke auf dein Profil → Custom Instructions. Sei spezifisch statt allgemein. Füge Beispiele für gute Ausgaben bei. Sage, was NICHT getan werden soll — negative Vorgaben sind oft am wirkungsvollsten. Vorlage: <em>\"Über mich: Ich bin [Rolle]. Meine Zielgruppe ist [Zielgruppe]. Immer [Vorgabe]. Niemals [Ausschluss].\"</em></p>"
               },
               {
                 "type": "exercise",
@@ -213,7 +209,7 @@
               },
               {
                 "type": "summary",
-                "content": "<p>Das Kontextfenster erlaubt ChatGPT, ganze Dokumente im Gedächtnis zu behalten. System-Prompts geben ihm dauerhafte Anweisungen. Die Kunst ist Spezifität, Beispiele verwenden und das Wichtigste an den Anfang stellen. Als Nächstes: Worin ChatGPT wirklich gut ist und wo es Schwierigkeiten hat.</p>"
+                "content": "<p>Das Kontextfenster hält ganze Dokumente im Gedächtnis. Custom Instructions geben ChatGPT dauerhafte Voreinstellungen. Spezifisch sein, Beispiele nutzen, Ausschlüsse festlegen. Als Nächstes: Stärken und Grenzen von ChatGPT.</p>"
               }
             ]
           },
@@ -224,8 +220,8 @@
               "type": "prompt_lab",
               "prompt": "Du überprüfst einen 40-seitigen Vertrag. Schreibe einen Prompt, der das ChatGPT Kontextfenster nutzt, um zwei weit entfernte Abschnitte abzugleichen.",
               "options": null,
-              "correct_answer": "{\"scenario\":\"Du hast einen 40-seitigen Lieferantenvertrag in ChatGPT eingefügt. Die Freistellungsklausel auf Seite 30 scheint unbegrenzte Haftung zu schaffen, aber du erinnerst dich an die Haftungsobergrenze auf Seite 5. Schreibe einen Prompt, der ChatGPT bittet, diese beiden Abschnitte abzugleichen.\",\"scoring_criteria\":[{\"keyword_group\":[\"page 5\",\"earlier\",\"section\",\"liability\",\"cap\",\"limit\",\"previous\",\"above\",\"before\"],\"label\":\"Hat einen früheren Teil des Dokuments referenziert\",\"points\":2},{\"keyword_group\":[\"indemnification\",\"indemnify\",\"page 30\",\"current\",\"this section\",\"this clause\"],\"label\":\"Hat den aktuellen Abschnitt referenziert\",\"points\":1},{\"keyword_group\":[\"conflict\",\"contradict\",\"override\",\"weaken\",\"undermine\",\"loophole\",\"exception\",\"cross-reference\",\"compare\",\"connect\"],\"label\":\"Hat nach Konflikten oder Verbindungen gefragt\",\"points\":2},{\"keyword_group\":[\"negotiate\",\"change\",\"fix\",\"recommend\",\"should I\",\"what should\"],\"label\":\"Hat um handlungsorientierte Empfehlung gebeten\",\"points\":1},{\"keyword_group\":[\"protect\",\"risk\",\"exposure\",\"liable\",\"dangerous\",\"concern\",\"gap\"],\"label\":\"Hat sich auf praktische Auswirkungen konzentriert\",\"points\":1}],\"max_points\":7,\"pass_threshold\":4,\"ideal_prompt\":\"Die Freistellungsklausel auf Seite 30 scheint in manchen Szenarien unbegrenzte Haftung zu schaffen. Aber die Haftungsobergrenze auf Seite 5 sollte unsere Risikoexposition begrenzen. Vergleiche diese beiden Abschnitte: Hebt die Freistellungsklausel die Haftungsobergrenze effektiv auf? Falls ja, welche Formulierung schafft die Lücke und worauf sollte ich in der Verhandlung drängen?\",\"tips\":[\"Die Referenz auf bestimmte Seiten zwingt ChatGPT, sein gesamtes Kontextfenster zu nutzen.\",\"Nach Konflikten zwischen Abschnitten zu fragen ist genau das, was eine KI mit kleinem Kontextfenster nicht kann.\"]}",
-              "explanation": "Das Abgleichen weit entfernter Dokumentteile ist die Killerfunktion des Kontextfensters. Eine KI mit kleinem Kontextfenster hätte Seite 5 vergessen, wenn du bei Seite 30 angekommen bist. ChatGPT hält das gesamte Dokument gleichzeitig im Gedächtnis.",
+              "correct_answer": "{\"scenario\":\"Du hast einen 40-seitigen Lieferantenvertrag in ChatGPT eingefügt. Die Freistellungsklausel auf Seite 30 scheint unbegrenzte Haftung zu schaffen, aber du erinnerst dich an die Haftungsobergrenze auf Seite 5. Schreibe einen Prompt, der ChatGPT bittet, diese beiden Abschnitte abzugleichen.\",\"scoring_criteria\":[{\"keyword_group\":[\"page 5\",\"earlier\",\"section\",\"liability\",\"cap\",\"limit\",\"previous\",\"above\",\"before\"],\"label\":\"Hat einen früheren Teil des Dokuments referenziert\",\"points\":2},{\"keyword_group\":[\"indemnification\",\"indemnify\",\"page 30\",\"current\",\"this section\",\"this clause\"],\"label\":\"Hat den aktuellen Abschnitt referenziert\",\"points\":1},{\"keyword_group\":[\"conflict\",\"contradict\",\"override\",\"weaken\",\"undermine\",\"loophole\",\"exception\",\"cross-reference\",\"compare\",\"connect\"],\"label\":\"Hat nach Konflikten oder Verbindungen gefragt\",\"points\":2},{\"keyword_group\":[\"negotiate\",\"change\",\"fix\",\"recommend\",\"should I\",\"what should\"],\"label\":\"Hat um handlungsorientierte Empfehlung gebeten\",\"points\":1},{\"keyword_group\":[\"protect\",\"risk\",\"exposure\",\"liable\",\"dangerous\",\"concern\",\"gap\"],\"label\":\"Hat sich auf praktische Auswirkungen konzentriert\",\"points\":1}],\"max_points\":7,\"pass_threshold\":4,\"ideal_prompt\":\"Die Freistellungsklausel auf Seite 30 scheint unbegrenzte Haftung zu schaffen. Aber die Haftungsobergrenze auf Seite 5 sollte unsere Risikoexposition begrenzen. Vergleiche diese beiden Abschnitte: Hebt die Freistellungsklausel die Haftungsobergrenze auf? Falls ja, welche Formulierung schafft die Lücke und worauf sollte ich in der Verhandlung drängen?\",\"tips\":[\"Die Referenz auf bestimmte Seiten zwingt ChatGPT, sein gesamtes Kontextfenster zu nutzen.\",\"Nach Konflikten zwischen Abschnitten zu fragen ist genau das, was eine KI mit kleinem Kontextfenster nicht kann.\"]}",
+              "explanation": "Das Abgleichen weit entfernter Dokumentteile ist die Killerfunktion des Kontextfensters. ChatGPT hält das gesamte Dokument gleichzeitig im Gedächtnis.",
               "hints": [
                 "Der Power-Move ist, zwei weit entfernte Teile des Dokuments zu verbinden."
               ],
@@ -235,12 +231,12 @@
               "id": "ex_wc_03b",
               "order_index": 2,
               "type": "scenario_walkthrough",
-              "prompt": "Gehe eine Multi-Dokument-Analyse durch, die das Abgleichen zweier Dokumente in derselben Konversation erfordert.",
+              "prompt": "Gehe durch das Einrichten von Custom Instructions, die ChatGPT für deine spezifische Rolle konsistent nützlich machen.",
               "options": null,
-              "correct_answer": "{\"title\": \"Dokumentübergreifende Analyse\", \"steps\": [{\"type\": \"context\", \"text\": \"Du vergleichst den Vertrag eines Lieferanten mit den Standardbedingungen deines Unternehmens. Beide Dokumente sind in dieselbe ChatGPT-Konversation geladen -- insgesamt über 60 Seiten.\"}, {\"type\": \"choice\", \"claude_response\": \"Du hast beide Dokumente eingefügt. ChatGPT bestätigt, dass es beide gelesen hat. Was ist deine erste Frage?\", \"question\": \"Welche Frage nutzt das Vorhandensein beider Dokumente am besten?\", \"options\": [\"Fasse den Lieferantenvertrag für mich zusammen\", \"Was sind die wichtigsten Unterschiede zwischen den Zahlungsbedingungen des Lieferanten und unseren Standard-Zahlungsbedingungen?\", \"Ist das ein guter Vertrag?\"], \"correct\": 1, \"feedback\": \"Der Vergleich spezifischer Bedingungen über zwei Dokumente hinweg ist genau das, was das Kontextfenster ermöglicht. Eine Zusammenfassung nutzt nur ein Dokument. Der Abgleich ist die Superkraft.\"}, {\"type\": \"choice\", \"claude_response\": \"ChatGPT hat festgestellt, dass der Lieferant Netto-15 verlangt, während deine Bedingungen Netto-45 vorsehen, plus eine 2% Verzugsgebühr, die du nicht hast. Jetzt willst du tiefer gehen.\", \"question\": \"Was ist deine nächste Frage?\", \"options\": [\"Erzähl mir mehr über Zahlungsbedingungen allgemein\", \"Gibt es Klauseln im Lieferantenvertrag, die direkt mit unseren Standardbedingungen in Konflikt stehen? Liste jeden Konflikt auf, die wichtigsten zuerst.\", \"Schreibe den Lieferantenvertrag um, damit er unseren Bedingungen entspricht\"], \"correct\": 1, \"feedback\": \"Nach jedem Konflikt zwischen zwei Dokumenten zu fragen ist eine massive Abgleich-Aufgabe, die das volle Kontextfenster nutzt. ChatGPT vergleicht systematisch jeden Abschnitt mit dem anderen.\"}]}",
-              "explanation": "Zwei Dokumente in eine Konversation zu laden und ChatGPT nach Konflikten zwischen ihnen suchen zu lassen ist die praktische Anwendung des Kontextfensters. Kein Aufteilen, kein Tab-Wechsel, kein verlorener Kontext.",
+              "correct_answer": "{\"title\": \"Custom Instructions einrichten\", \"steps\": [{\"type\": \"context\", \"text\": \"Du bist Product Manager und nutzt ChatGPT täglich für Schreiben, Analyse und Entscheidungsfindung. Richten wir Custom Instructions ein, damit jede Konversation im richtigen Kontext startet.\"}, {\"type\": \"choice\", \"claude_response\": \"Du öffnest Custom Instructions zum ersten Mal. Was ist das Wichtigste in 'Was soll ChatGPT über dich wissen'?\", \"question\": \"Was gehört in das erste Feld?\", \"options\": [\"Dein Name und Standort\", \"Deine Rolle, Branche und Art der Arbeit, die du mit ChatGPT machst\", \"Deine Lieblingssprache\", \"Nichts — leer lassen\"], \"correct\": 1, \"feedback\": \"Deine Rolle und dein Kontext sind die Grundlage. 'Ich bin Product Manager bei einem B2B SaaS-Unternehmen. Ich schreibe Specs, analysiere User Research, bereite Stakeholder-Meetings vor' — das prägt jede Antwort.\"}, {\"type\": \"choice\", \"claude_response\": \"Jetzt musst du 'Wie soll ChatGPT antworten?' ausfüllen. Was ist am wertvollsten?\", \"question\": \"Welche Antwort-Einstellung macht den größten Unterschied?\", \"options\": [\"Immer in Stichpunkten antworten\", \"Ton-Vorlieben, Längen-Standard und was vermieden werden soll (Anti-Muster)\", \"Immer mit einer Zusammenfassung beginnen\", \"Immer formelle Sprache verwenden\"], \"correct\": 1, \"feedback\": \"Ton + Längen-Standard + Anti-Muster. 'Sei direkt. Beginne mit der Antwort. Vermeide Fachjargon wie Leverage oder Synergien. Standard unter 200 Wörtern.' Diese drei Dinge filtern 80% der schlechten Ausgaben.\"}]}",
+              "explanation": "Custom Instructions funktionieren am besten, wenn sie Rollen-Kontext, Ton-Vorlieben, Längen-Standards und explizite Anti-Muster kombinieren.",
               "hints": [
-                "Die besten Fragen zwingen ChatGPT, beide Dokumente gleichzeitig zu betrachten."
+                "Denk darüber nach, was ChatGPT immer über dich wissen soll, ohne gefragt zu werden."
               ],
               "xp_reward": 15
             },
@@ -256,7 +252,7 @@
                 "Nichts -- moderne KI hat unbegrenzten Kontext"
               ],
               "correct_answer": "1",
-              "explanation": "Wenn der Kontext überschritten wird, lässt die KI stillschweigend frühere Teile der Konversation fallen. Sie warnt dich nicht. Sie gibt einfach Antworten, die dem vorher Gesagten widersprechen, oder verpasst Verbindungen zu früherer Diskussion. Deshalb ist die Kontextfenster-Größe wichtig für echte Arbeit.",
+              "explanation": "Wenn der Kontext überschritten wird, lässt die KI stillschweigend frühere Teile der Konversation fallen. Sie warnt dich nicht. Sie gibt einfach Antworten, die dem vorher Gesagten widersprechen.",
               "hints": [
                 "Denk darüber nach, was 'Vergessen' für eine KI bedeutet. Weiß sie, dass sie vergessen hat?"
               ],
@@ -275,7 +271,7 @@
             "sections": [
               {
                 "type": "text",
-                "content": "<p>Bitte ChatGPT, ein Bild zu generieren -- es kann nicht. Bitte es, versteckte Kosten in drei 30-seitigen Lieferantenangeboten zu finden -- da spielt es in einer anderen Liga. Den Unterschied zu kennen ist die Fähigkeit.</p><p><strong>Wo ChatGPT glänzt:</strong> <strong>Tiefe Analyse</strong> (liest jedes Wort über lange Dokumente hinweg, verbindet Informationen über Abschnitte). <strong>Nuanciertes Schreiben</strong> (passt sich an Zielgruppe, Stimme und Einschränkungen an). <strong>Komplexe Anweisungen</strong> (verfolgt jede Vorgabe, die du machst). <strong>Lange Dokumente</strong> (hält ein ganzes Buch in einer Konversation).</p>"
+                "content": "<p>ChatGPT glänzt bei <strong>vielseitiger Generierung</strong> (schreiben, programmieren, analysieren, übersetzen), <strong>komplexer Anweisungstreue</strong> (verfolgt Ton, Format, Länge, Einschlüsse, Ausschlüsse gleichzeitig) und <strong>Reasoning durch Abwägungen</strong>. Das integrierte Toolkit erweitert das: DALL-E für Bilder, Browse für Live-Websuche, Code Interpreter für echtes Python auf deinen Dateien, Canvas für Langformat-Bearbeitung.</p>"
               },
               {
                 "type": "exercise",
@@ -283,7 +279,7 @@
               },
               {
                 "type": "text",
-                "content": "<p><strong>Wo ChatGPT Schwierigkeiten hat:</strong> <strong>Keine Bilder oder Videos</strong> (nutze Midjourney/DALL-E; ChatGPT kann die Prompts dafür schreiben). <strong>Keine Echtzeit-Daten</strong> (suche zuerst, füge die Ergebnisse in ChatGPT für die Analyse ein). <strong>Halluzinationen bei obskuren Fakten</strong> (überprüfe Namen, Daten und Statistiken). <strong>Mathematik im großen Maßstab</strong> (nutze eine Tabellenkalkulation für die Zahlen, ChatGPT für die Interpretation).</p><p>Die besten ChatGPT-Nutzer wissen auch, wann sie ChatGPT NICHT nutzen sollten.</p>"
+                "content": "<p>Wo ChatGPT Schwierigkeiten hat: <strong>Halluzinationen bei obskuren Fakten</strong> (Namen, Daten, Zitate über primäre Quellen verifizieren), <strong>veraltete Informationen</strong> ohne Browse (aktuelle Daten selbst einfügen), und <strong>umfangreiche Berechnungen</strong> (Code Interpreter oder Tabellenkalkulation für die Mathematik, dann Ergebnisse in Chat einfügen).</p>"
               },
               {
                 "type": "exercise",
@@ -295,7 +291,7 @@
               },
               {
                 "type": "summary",
-                "content": "<p>ChatGPTs Superkräfte: tiefe Analyse, nuanciertes Schreiben, komplexe Anweisungen, lange Dokumente. Seine Grenzen: keine Bilder, keine Echtzeit-Daten, obskure Fakten überprüfen. Die Fähigkeit ist zu wissen, welches Werkzeug für welche Aufgabe. Als Nächstes: wie aus gelegentlicher ChatGPT-Nutzung echte Workflows werden.</p>"
+                "content": "<p>Stärken: Generierung, Anweisungstreue, Reasoning, integrierte Tools. Grenzen: obskure Fakten verifizieren, Browse für aktuelle Daten aktivieren, Code Interpreter für Berechnungen nutzen. Als Nächstes: aus gelegentlicher Nutzung echte Workflows machen.</p>"
               }
             ]
           },
@@ -304,17 +300,17 @@
               "id": "ex_wc_04a",
               "order_index": 1,
               "type": "multiple_choice",
-              "prompt": "Welche Stärke von ChatGPT ist am nützlichsten, um 3 Lieferantenangebote zu vergleichen und versteckte Kosten zu finden?",
+              "prompt": "Welches ChatGPT-Feature würdest du nutzen, um eine hochgeladene Verkaufs-CSV zu analysieren, Umsatz nach Region zu berechnen und ein Balkendiagramm zu erstellen?",
               "options": [
-                "Nuanciertes Schreiben -- die Empfehlung muss poliert klingen",
-                "Tiefe Analyse -- versteckte Kosten zu finden erfordert das Lesen jedes Details in allen drei Dokumenten",
-                "Code -- du solltest zuerst ein Tabellenmodell erstellen",
-                "Komplexe Anweisungen -- das Vergleichsformat muss spezifisch sein"
+                "Chat -- Analyse in Worten beschreiben",
+                "Code Interpreter -- führt echten Python-Code auf deiner Datei aus und produziert echte Charts",
+                "Browse -- nach Analysetools suchen",
+                "DALL-E -- ein Bild eines Balkendiagramms generieren"
               ],
               "correct_answer": "1",
-              "explanation": "Versteckte Kosten über drei Dokumente hinweg zu finden erfordert das Lesen jedes Details und das Verbinden von Informationen über Abschnitte. Das ist tiefe Analyse. Schreiben und Anweisungen helfen bei der Ausgabe, aber die Kernaufgabe ist die Analyse.",
+              "explanation": "Code Interpreter führt echten Python-Code auf hochgeladenen Dateien aus. Du bekommst echte berechnete Ergebnisse und herunterladbare Charts.",
               "hints": [
-                "Was ist der schwierigste Teil dieser Aufgabe -- die Empfehlung zu schreiben oder zu finden, was in den Angeboten verborgen ist?"
+                "Welches Feature führt echten Code auf deiner echten Datei aus?"
               ],
               "xp_reward": 5
             },
@@ -324,8 +320,8 @@
               "type": "prompt_lab",
               "prompt": "Du hast einen 50-seitigen Vertrag, den du vor der Unterschrift überprüfen musst. Schreibe einen Prompt, der ChatGPT dazu bringt, die 3 größten Risiken zu finden.",
               "options": null,
-              "correct_answer": "{\"scenario\":\"Du bist kurz davor, einen 50-seitigen SaaS-Lieferantenvertrag zu unterschreiben. Du willst, dass ChatGPT das Ganze liest und die 3 größten Risiken identifiziert -- Klauseln, die dir am meisten schaden könnten.\",\"scoring_criteria\":[{\"keyword_group\":[\"risk\",\"dangerous\",\"concern\",\"problem\",\"issue\",\"flag\",\"watch out\",\"trap\",\"hidden\"],\"label\":\"Hat gezielt nach Risiken gefragt\",\"points\":2},{\"keyword_group\":[\"3\",\"three\",\"top\",\"biggest\",\"most important\",\"worst\"],\"label\":\"Hat die Anzahl der Risiken spezifiziert\",\"points\":1},{\"keyword_group\":[\"contract\",\"agreement\",\"vendor\",\"SaaS\",\"document\"],\"label\":\"Hat den Dokumenttyp referenziert\",\"points\":1},{\"keyword_group\":[\"liability\",\"termination\",\"auto-renewal\",\"indemnification\",\"penalty\",\"clause\",\"section\"],\"label\":\"Hat bestimmte Bereiche zum Prüfen erwähnt\",\"points\":1},{\"keyword_group\":[\"why\",\"explain\",\"impact\",\"consequence\",\"what happens\",\"cost\",\"exposure\"],\"label\":\"Hat um Erklärung der Auswirkungen gebeten\",\"points\":1},{\"keyword_group\":[\"negotiate\",\"push back\",\"change\",\"fix\",\"recommend\",\"suggest\",\"alternative\"],\"label\":\"Hat um Verhandlungsempfehlungen gebeten\",\"points\":1}],\"max_points\":7,\"pass_threshold\":4,\"ideal_prompt\":\"Lies diesen 50-seitigen SaaS-Lieferantenvertrag und identifiziere die 3 größten Risiken für mein Unternehmen. Für jedes: (1) zitiere die Klausel, (2) erkläre, warum sie gefährlich ist, in einfacher Sprache, (3) schlage vor, was ich stattdessen verhandeln sollte. Fokus auf Haftungsobergrenzen, Fallen bei automatischer Verlängerung, Kündigungsbeschränkungen und Freistellungsklauseln.\",\"tips\":[\"Sag ChatGPT, wonach es suchen soll, damit es weiß, wo es am tiefsten graben soll.\",\"Die Anfrage nach Verhandlungsalternativen verwandelt Analyse in Handlung.\"]}",
-              "explanation": "Ein guter Vertragsprüfungs-Prompt sagt ChatGPT, wonach es suchen soll (Risiken, nicht Zusammenfassungen), wie viele, und was es damit tun soll. Das verwandelt ein 50-seitiges Dokument in 3 handlungsfähige Punkte.",
+              "correct_answer": "{\"scenario\":\"Du bist kurz davor, einen 50-seitigen SaaS-Lieferantenvertrag zu unterschreiben. Du willst, dass ChatGPT das Ganze liest und die 3 größten Risiken identifiziert.\",\"scoring_criteria\":[{\"keyword_group\":[\"risk\",\"dangerous\",\"concern\",\"problem\",\"issue\",\"flag\",\"watch out\",\"trap\",\"hidden\"],\"label\":\"Hat gezielt nach Risiken gefragt\",\"points\":2},{\"keyword_group\":[\"3\",\"three\",\"top\",\"biggest\",\"most important\",\"worst\"],\"label\":\"Hat die Anzahl der Risiken spezifiziert\",\"points\":1},{\"keyword_group\":[\"contract\",\"agreement\",\"vendor\",\"SaaS\",\"document\"],\"label\":\"Hat den Dokumenttyp referenziert\",\"points\":1},{\"keyword_group\":[\"liability\",\"termination\",\"auto-renewal\",\"indemnification\",\"penalty\",\"clause\",\"section\"],\"label\":\"Hat bestimmte Bereiche zum Prüfen erwähnt\",\"points\":1},{\"keyword_group\":[\"why\",\"explain\",\"impact\",\"consequence\",\"what happens\",\"cost\",\"exposure\"],\"label\":\"Hat um Erklärung der Auswirkungen gebeten\",\"points\":1},{\"keyword_group\":[\"negotiate\",\"push back\",\"change\",\"fix\",\"recommend\",\"suggest\",\"alternative\"],\"label\":\"Hat um Verhandlungsempfehlungen gebeten\",\"points\":1}],\"max_points\":7,\"pass_threshold\":4,\"ideal_prompt\":\"Lies diesen 50-seitigen SaaS-Lieferantenvertrag und identifiziere die 3 größten Risiken für mein Unternehmen. Für jedes: (1) zitiere die Klausel, (2) erkläre in einfacher Sprache, warum sie gefährlich ist, (3) schlage vor, was ich stattdessen verhandeln sollte. Fokus auf Haftungsobergrenzen, Fallen bei automatischer Verlängerung, Kündigungsbeschränkungen und Freistellungsklauseln.\",\"tips\":[\"Sag ChatGPT, wonach es suchen soll.\",\"Verhandlungsalternativen anfragen verwandelt Analyse in Handlung.\"]}",
+              "explanation": "Ein guter Vertragsprüfungs-Prompt sagt ChatGPT, wonach es suchen soll, wie viele, und was es damit tun soll.",
               "hints": [
                 "Bitte ChatGPT nicht einfach, den Vertrag zu 'überprüfen.' Sag ihm, worüber du dir Sorgen machst."
               ],
@@ -335,12 +331,12 @@
               "id": "ex_wc_04c",
               "order_index": 3,
               "type": "matching_pairs",
-              "prompt": "Ordne jede Aufgabe dem besten Werkzeug zu.",
+              "prompt": "Ordne jede Aufgabe dem besten ChatGPT-Tool oder -Feature zu.",
               "options": null,
-              "correct_answer": "{\"Analyze a 40-page research paper and find the key insights\":\"Claude\",\"Generate a product mockup image\":\"Midjourney or DALL-E\",\"Get today's stock price for AAPL\":\"Search engine or finance app\",\"Review a contract for hidden risks\":\"Claude\",\"Calculate compound interest on 10,000 rows of data\":\"Spreadsheet (Excel/Sheets)\",\"Write a board memo in a specific tone and format\":\"Claude\"}",
-              "explanation": "ChatGPT glänzt bei Analyse, Schreiben und komplexen Anweisungen. Nutze Bildgeneratoren für Visuelles, Suchmaschinen für Echtzeit-Daten und Tabellenkalkulationen für umfangreiche Berechnungen. Das beste Werkzeug hängt von der Aufgabe ab.",
+              "correct_answer": "{\"Eine hochgeladene CSV analysieren und Umsatz-Chart erstellen\":\"Code Interpreter\",\"Produktmockup-Bild aus Beschreibung generieren\":\"DALL-E\",\"Aktuelle Nachrichten zu einer heute gemeldeten Fusion\":\"Browse with Bing\",\"Vertrag auf versteckte Risiken prüfen\":\"Chat (Vertrag einfügen)\",\"Langen Vorschlag mit kollaborativer Bearbeitung schreiben\":\"Canvas\",\"Vorgebautte KI für juristische Dokumentenprüfung nutzen\":\"Custom GPT\"}",
+              "explanation": "Jedes ChatGPT-Tool hat seinen Anwendungsfall: Code Interpreter für Daten/Code, DALL-E für Bilder, Browse für Live-Infos, Canvas für Langformat-Bearbeitung, Custom GPTs für spezialisierte Aufgaben.",
               "hints": [
-                "Denk darüber nach, was jede Aufgabe tatsächlich erfordert: Denken, visuelle Erstellung, Live-Daten oder Zahlenverarbeitung?"
+                "Überlege, was jede Aufgabe tatsächlich erfordert: Datenanalyse, visuelle Erstellung, Live-Informationen oder Langformat-Bearbeitung?"
               ],
               "xp_reward": 15
             }
@@ -357,7 +353,7 @@
             "sections": [
               {
                 "type": "text",
-                "content": "<p>Die Leute, die 10x den Wert aus ChatGPT holen, nutzen es als Teil von <strong>wiederholbaren Prozessen</strong>, nicht für einmalige Fragen. Hier sind drei Muster, die Chatten in Bauen verwandeln.</p><p><strong>Muster 1: Recherche-zur-Entscheidung.</strong> Füge 5 Artikel zum selben Thema ein. Frage ChatGPT, wo sie übereinstimmen, wo sie sich widersprechen und was auf deine Situation zutrifft. Eine Konversation, fünf Quellen, eine personalisierte Empfehlung.</p><p><strong>Muster 2: Entwurf-Überprüfung-Versand.</strong> Hole einen ersten Entwurf. Bitte ChatGPT, seine eigene Arbeit aus der Perspektive deiner Zielgruppe zu kritisieren. Arbeite die Kritik ein und poliere. Versende. Die meisten Leute hören bei Schritt 1 auf -- Schritte 2 und 3 sind, wo der Qualitätssprung passiert.</p>"
+                "content": "<p>Power-User nutzen ChatGPT als Teil von <strong>wiederholbaren Prozessen</strong>, nicht für einmalige Fragen. Zwei Muster: <strong>Recherche-zur-Entscheidung</strong> — fünf Artikel einfügen, fragen wo sie übereinstimmen, widersprechen und was das für deine Situation bedeutet. <strong>Entwurf-Überprüfung-Versand</strong> — Entwurf holen, dann aus Leserperspektive kritisieren lassen, einarbeiten, versenden.</p>"
               },
               {
                 "type": "exercise",
@@ -365,7 +361,7 @@
               },
               {
                 "type": "text",
-                "content": "<p><strong>Muster 3: Der wöchentliche Operator.</strong> Richte ein ChatGPT-Projekt mit deiner Rolle, deinen Prioritäten und wiederkehrenden Ergebnissen als System-Kontext ein. Jeden Montag füge frische Daten ein und erhalte die gleiche Analyse. ChatGPT kennt bereits das Format, die Zielgruppe und worauf es achten soll. Das ist keine Konversation -- das ist ein Betriebssystem.</p><p><strong>Was als Nächstes kommt:</strong> Track 2 geht tief in jede ChatGPT-Oberfläche. Track 3 gibt dir spezifische Workflow-Playbooks. Track 4 behandelt Power-Techniken. Du hast das Fundament.</p>"
+                "content": "<p>Nach einer produktiven Session fragen: <em>\"Schreib mir eine wiederverwendbare Vorlage für das nächste Mal, wenn ich eine ähnliche Situation habe.\"</em> Speichern. Nächstes Mal die Vorlage in eine neue Konversation mit frischen Details einfügen. So entsteht ein persönliches Playbook.</p>"
               },
               {
                 "type": "exercise",
@@ -377,7 +373,7 @@
               },
               {
                 "type": "summary",
-                "content": "<p>Du hast Track 1 abgeschlossen. Du weißt, wie ChatGPT denkt, wie du mit ihm sprichst, worin es großartig ist und wie aus gelegentlicher Nutzung echte Workflows werden. Die drei Muster -- Recherche-zur-Entscheidung, Entwurf-Überprüfung-Versand und wöchentlicher Operator -- sind deine Brücke zu den tieferen Tracks. Los, bau etwas.</p>"
+                "content": "<p>Track 1 abgeschlossen. Du weißt, wie ChatGPT arbeitet, wie du Kontext gibst, worin es gut ist und wie gelegentliche Nutzung zu Workflows wird. Drei Meilensteine: besten Prompt speichern, Custom Instructions einrichten, ersten Custom GPT bauen. Los geht's.</p>"
               }
             ]
           },
@@ -388,10 +384,10 @@
               "type": "scenario_walkthrough",
               "prompt": "Gehe den Entwurf-Überprüfung-Versand-Loop durch: Starte mit einem vagen Prompt, iteriere in drei Runden, bis die Ausgabe großartig ist.",
               "options": null,
-              "correct_answer": "{\"title\": \"Von Vage zu Großartig in 3 Runden\", \"steps\": [{\"type\": \"context\", \"text\": \"Du brauchst ChatGPT, um einen LinkedIn-Post über eine Lektion zu schreiben, die du aus dem Verlust eines großen Kunden gelernt hast. Lass uns sehen, wie Iteration generische Ausgabe in etwas Überzeugendes verwandelt.\"}, {\"type\": \"context\", \"text\": \"Du tippst: 'Schreib mir einen LinkedIn-Post über den Verlust eines Kunden.'\\n\\nChatGPT antwortet: 'Den Verlust unseres größten Kunden zu erleben war hart. Aber es hat mir die Bedeutung von Kommunikation, Erwartungsmanagement und dem Aufbau widerstandsfähiger Systeme gelehrt. Jeder Rückschlag ist ein Startpunkt für ein Comeback...'\\n\\nGenerischer LinkedIn-Müll. Zeit zu iterieren.\"}, {\"type\": \"choice\", \"claude_response\": \"Der erste Entwurf klingt wie ein Motivationsposter. Wie sagst du ChatGPT, dass es das verbessern soll?\", \"question\": \"Welche Iterations-Anweisung ist besser?\", \"options\": [\"Mach es ansprechender und authentischer\", \"Das klingt wie ein Motivationsposter. Ich bin direkt, etwas selbstironisch, keine Buzzwords. Schreib es in diesem Stil um.\", \"Mach es länger mit mehr Details\", \"Füge Emojis und Hashtags hinzu\"], \"correct\": 1, \"feedback\": \"Spezifische Richtung bringt spezifische Ergebnisse. 'Ansprechender' ist vage. ChatGPT deine tatsächliche Stimme zu sagen und was es vermeiden soll, gibt ihm etwas zum Arbeiten.\"}, {\"type\": \"choice\", \"claude_response\": \"ChatGPT schreibt mit einer echten Stimme um: 'Der Anruf kam an einem Dienstagnachmittag. Unser größter Kunde, 35% des Umsatzes, ging. Nicht in 90 Tagen. In 30...' Besser. Aber der Inhalt könnte stärker sein.\", \"question\": \"Was fragst du als Nächstes?\", \"options\": [\"Sieht super aus, ab damit\", \"Füge einen Call-to-Action hinzu\", \"Was würde einen Leser zum Stoppen bringen? Sei ehrlich -- wenn die Lektionen generisch sind, sag es mir.\", \"Mach es kürzer\"], \"correct\": 2, \"feedback\": \"ChatGPT zu bitten, seinen eigenen Inhalt zu kritisieren -- nicht nur das Schreiben -- ist der Punkt, an dem du Einsichten bekommst, die du sonst übersehen würdest. ChatGPT antwortet, dass die Lektionen vorhersehbar sind und schlägt vor, den überraschenden oder kontraintuitiven Winkel zu finden.\"}]}",
-              "explanation": "Zwei Runden der Iteration haben einen generischen Post in etwas mit einer echten Stimme und ehrlicher Selbstkritik verwandelt. Die Lektion: Dein erster Prompt ist nie dein letzter. Die Magie liegt im Hin-und-Her.",
+              "correct_answer": "{\"title\": \"Von Vage zu Großartig in 3 Runden\", \"steps\": [{\"type\": \"context\", \"text\": \"Du brauchst ChatGPT, um einen LinkedIn-Post über eine Lektion zu schreiben, die du aus dem Verlust eines großen Kunden gelernt hast. Lass uns sehen, wie Iteration generische Ausgabe in etwas Überzeugendes verwandelt.\"}, {\"type\": \"context\", \"text\": \"Du tippst: 'Schreib mir einen LinkedIn-Post über den Verlust eines Kunden.'\\n\\nChatGPT antwortet: 'Den Verlust unseres größten Kunden zu erleben war hart. Aber es hat mir die Bedeutung von Kommunikation, Erwartungsmanagement und dem Aufbau widerstandsfähiger Systeme gelehrt.'\\n\\nGenerischer LinkedIn-Müll. Zeit zu iterieren.\"}, {\"type\": \"choice\", \"claude_response\": \"Der erste Entwurf klingt wie ein Motivationsposter. Wie sagst du ChatGPT, dass es das verbessern soll?\", \"question\": \"Welche Iterations-Anweisung ist besser?\", \"options\": [\"Mach es ansprechender und authentischer\", \"Das klingt wie ein Motivationsposter. Ich bin direkt, etwas selbstironisch, keine Buzzwords. Schreib es in diesem Stil um.\", \"Mach es länger mit mehr Details\", \"Füge Emojis und Hashtags hinzu\"], \"correct\": 1, \"feedback\": \"Spezifische Richtung bringt spezifische Ergebnisse. 'Ansprechender' ist vage. ChatGPT deine tatsächliche Stimme sagen gibt ihm etwas zum Arbeiten.\"}, {\"type\": \"choice\", \"claude_response\": \"ChatGPT schreibt um: 'Der Anruf kam an einem Dienstagnachmittag. Unser größter Kunde, 35% des Umsatzes, ging.' Besser. Aber der Inhalt könnte stärker sein.\", \"question\": \"Was fragst du als Nächstes?\", \"options\": [\"Sieht super aus, ab damit\", \"Füge einen Call-to-Action hinzu\", \"Was würde einen Leser zum Stoppen bringen? Sei ehrlich -- wenn die Lektionen generisch sind, sag es mir.\", \"Mach es kürzer\"], \"correct\": 2, \"feedback\": \"ChatGPT zu bitten, seinen eigenen Inhalt zu kritisieren ist der Punkt, an dem du Einsichten bekommst, die du sonst übersehen würdest.\"}]}",
+              "explanation": "Zwei Runden der Iteration haben einen generischen Post in etwas mit echter Stimme verwandelt. Die Lektion: Dein erster Prompt ist nie dein letzter.",
               "hints": [
-                "Jede Runde sollte etwas Bestimmtes ändern. Sag nicht nur 'besser' -- sag, was sich ändern soll und was bleiben soll."
+                "Jede Runde sollte etwas Bestimmtes ändern. Sag, was sich ändern soll und was bleiben soll."
               ],
               "xp_reward": 15
             },
@@ -401,8 +397,8 @@
               "type": "speed_prompt",
               "prompt": "Du hast 45 Sekunden. Schreibe einen Prompt, damit ChatGPT deinen Businessplan vor einem Investoren-Pitch ehrlich überprüft.",
               "options": null,
-              "correct_answer": "{\"time_limit_seconds\":45,\"scenario\":\"Du hast einen 10-seitigen Businessplan für ein neues SaaS-Produkt. Nächste Woche pitchst du vor Investoren. Schreibe einen Prompt, der ChatGPT dazu bringt, den Plan auseinanderzunehmen -- finde die Schwachstellen, bevor es die Investoren tun.\",\"scoring_criteria\":[{\"keyword_group\":[\"honest\",\"brutal\",\"critical\",\"tough\",\"don't hold back\",\"tear apart\",\"weaknesses\",\"holes\",\"problems\"],\"label\":\"Hat um ehrliche/kritische Überprüfung gebeten\",\"points\":2},{\"keyword_group\":[\"investor\",\"pitch\",\"funding\",\"VC\",\"raise\",\"present\"],\"label\":\"Hat den Investoren-Kontext erwähnt\",\"points\":1},{\"keyword_group\":[\"business plan\",\"plan\",\"SaaS\",\"product\",\"startup\"],\"label\":\"Hat das Dokument referenziert\",\"points\":1},{\"keyword_group\":[\"question\",\"ask\",\"challenge\",\"object\",\"pushback\",\"concern\"],\"label\":\"Hat nach wahrscheinlichen Investoren-Fragen gefragt\",\"points\":2},{\"keyword_group\":[\"fix\",\"improve\",\"strengthen\",\"recommend\",\"suggest\",\"change\"],\"label\":\"Hat um Verbesserungsvorschläge gebeten\",\"points\":1}],\"max_points\":7,\"pass_threshold\":4,\"ideal_prompt\":\"Ich pitche nächste Woche diesen 10-seitigen SaaS-Businessplan vor Investoren. Sei mein härtester Kritiker: Finde jede schwache Annahme, fragwürdige Prognose und Lücke, die ein Investor angreifen wird. Für jede Schwäche, sage mir, was der Investor sagen wird und wie ich den Plan verbessern oder mich auf die Antwort vorbereiten sollte. Sei nicht ermutigend -- ich brauche die harte Wahrheit jetzt, nicht im Meeting.\"}",
-              "explanation": "Die besten Prompts für eine ehrliche Überprüfung bitten ChatGPT ausdrücklich, NICHT nett zu sein. Sag ihm, was auf dem Spiel steht, welche Rolle es spielen soll und was es mit den Ergebnissen tun soll.",
+              "correct_answer": "{\"time_limit_seconds\":45,\"scenario\":\"Du hast einen 10-seitigen Businessplan für ein neues SaaS-Produkt. Nächste Woche pitchst du vor Investoren. Schreibe einen Prompt, der ChatGPT dazu bringt, den Plan auseinanderzunehmen.\",\"scoring_criteria\":[{\"keyword_group\":[\"honest\",\"brutal\",\"critical\",\"tough\",\"don't hold back\",\"tear apart\",\"weaknesses\",\"holes\",\"problems\"],\"label\":\"Hat um ehrliche/kritische Überprüfung gebeten\",\"points\":2},{\"keyword_group\":[\"investor\",\"pitch\",\"funding\",\"VC\",\"raise\",\"present\"],\"label\":\"Hat den Investoren-Kontext erwähnt\",\"points\":1},{\"keyword_group\":[\"business plan\",\"plan\",\"SaaS\",\"product\",\"startup\"],\"label\":\"Hat das Dokument referenziert\",\"points\":1},{\"keyword_group\":[\"question\",\"ask\",\"challenge\",\"object\",\"pushback\",\"concern\"],\"label\":\"Hat nach wahrscheinlichen Investoren-Fragen gefragt\",\"points\":2},{\"keyword_group\":[\"fix\",\"improve\",\"strengthen\",\"recommend\",\"suggest\",\"change\"],\"label\":\"Hat um Verbesserungsvorschläge gebeten\",\"points\":1}],\"max_points\":7,\"pass_threshold\":4,\"ideal_prompt\":\"Ich pitche nächste Woche diesen 10-seitigen SaaS-Businessplan vor Investoren. Sei mein härtester Kritiker: Finde jede schwache Annahme und Lücke, die ein Investor angreifen wird. Für jede Schwäche, sage mir, was der Investor sagen wird und wie ich mich vorbereiten sollte. Sei nicht ermutigend.\"}",
+              "explanation": "Die besten Prompts für eine ehrliche Überprüfung bitten ChatGPT ausdrücklich, NICHT nett zu sein. Sag ihm, was auf dem Spiel steht und was es mit den Ergebnissen tun soll.",
               "hints": [
                 "Denk: Was würdest du wollen, dass dir ein brutal ehrlicher Freund vor einem großen Pitch sagt?"
               ],
@@ -416,11 +412,11 @@
               "options": [
                 "Jedes Mal längere Fragen stellen",
                 "ChatGPT nur für kreatives Brainstorming verwenden",
-                "Ein Projekt mit dauerhaftem Kontext einrichten und die gleiche Analyse wöchentlich mit frischen Daten durchführen",
-                "Zwischen ChatGPT und ChatGPT für verschiedene Aufgaben wechseln"
+                "Ein Custom GPT mit dauerhaftem Kontext einrichten und die gleiche Analyse wöchentlich mit frischen Daten durchführen",
+                "Zwischen ChatGPT und anderen KI-Tools für verschiedene Aufgaben wechseln"
               ],
               "correct_answer": "2",
-              "explanation": "Das wöchentliche Operator-Muster -- dauerhafter Kontext, wiederkehrende Analyse, frische Daten -- verwandelt ChatGPT von einem Chatbot in ein Entscheidungsunterstützungssystem. Der System-Prompt kennt deine Rolle, deine Zielgruppe und dein Format. Du fügst nur die neuesten Zahlen hinzu.",
+              "explanation": "Das wöchentliche Operator-Muster -- dauerhafter Kontext, wiederkehrende Analyse, frische Daten -- verwandelt ChatGPT von einem Chatbot in ein Entscheidungsunterstützungssystem.",
               "hints": [
                 "Welche Option beschreibt einen wiederholbaren Prozess, nicht eine einmalige Konversation?"
               ],

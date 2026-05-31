@@ -29,7 +29,7 @@ interface LocalProgressStore {
 // Constants
 // ---------------------------------------------------------------------------
 
-const STORAGE_KEY = "claude_academy_progress";
+const STORAGE_KEY = "learntogpt_progress";
 
 // ---------------------------------------------------------------------------
 // Helpers

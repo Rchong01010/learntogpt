@@ -21,23 +21,15 @@
             "sections": [
               {
                 "type": "text",
-                "content": "<p><strong>Fähigkeiten</strong> sind Zusatzfunktionen, die du installieren, konfigurieren oder selbst erstellen kannst, um ChatGPT neue Kräfte zu verleihen. Es gibt drei Stufen: benutzerdefinierte Anweisungen (Verhaltensanpassungen), Marketplace-Fähigkeiten (vorgefertigte Workflows) und selbst erstellte Befehle (deine eigenen Kreationen). Eine Fähigkeit ist gut. Fünf Fähigkeiten, die zusammenarbeiten, verändern deine Arbeitsweise grundlegend.</p>"
+                "content": "<p><strong>Fähigkeiten</strong> sind Zusatzfunktionen, die du installieren, konfigurieren oder selbst erstellen kannst, um ChatGPT neue Kräfte zu verleihen. Es gibt drei Stufen:</p>"
               },
               {
                 "type": "exercise",
                 "exercise_id": "ex_lu_01"
               },
               {
-                "type": "text",
-                "content": "<p>Nicht alle Fähigkeiten sind gleichwertig. Eine Fähigkeit, die nur einen Prompt verpackt, den du auch selbst tippen könntest, ist ein Gimmick. Eine Fähigkeit, die deinen Kontext liest, echte Daten abruft und konsistente Ergebnisse liefert, ist ein Workflow-Tool. Bei der Bewertung: Versteht sie meinen Kontext, oder ist sie nur ein schicker Prompt?</p>"
-              },
-              {
                 "type": "exercise",
                 "exercise_id": "ex_lu_02"
-              },
-              {
-                "type": "text",
-                "content": "<p>Fähigkeiten potenzieren sich über die Zeit. Eine Entwurfs-Fähigkeit plus eine Kalender-Fähigkeit plus eine CRM-Fähigkeit bedeutet, dass ChatGPT eine personalisierte Nachfass-E-Mail für dein 14-Uhr-Meeting schreiben kann, ohne dass du ein einziges Detail eingibst. Wer jetzt in sein Fähigkeiten-Setup investiert, hat einen wachsenden Vorsprung.</p>"
               },
               {
                 "type": "exercise",
@@ -45,7 +37,7 @@
               },
               {
                 "type": "summary",
-                "content": "<p>Fähigkeiten sind Zusatzfunktionen, die sich beim Stapeln potenzieren. Bewerte sie nach Kontextverständnis, nicht nach Feature-Listen. Investiere jetzt in die Einrichtung – sie zahlt sich bei jeder zukünftigen Interaktion aus.</p>"
+                "content": "<p>Fähigkeiten sind Zusatzfunktionen, die sich beim Stapeln potenzieren. Bewerte sie nach Kontextverständnis, nicht nach Feature-Listen. Investiere jetzt in die Einrichtung – sie zahlt sich</p>"
               }
             ]
           },
@@ -107,15 +99,11 @@
             "sections": [
               {
                 "type": "text",
-                "content": "<p><strong>In ChatGPT</strong> sind Fähigkeiten benutzerdefinierte Anweisungen und gespeicherte Prompt-Vorlagen. <strong>In Co-work</strong> gibt es den Fähigkeiten-Marketplace – vorgefertigte Funktionen, die du in Sekunden installierst. <strong>In Code</strong> erstellst du benutzerdefinierte Slash-Befehle, die mehrstufige Workflows ausführen. Die Entwicklung ist natürlich: einfach starten, zu leistungsstark aufsteigen.</p>"
+                "content": "<p><strong>In ChatGPT</strong> sind Fähigkeiten benutzerdefinierte Anweisungen und gespeicherte Prompt-Vorlagen. <strong>In Co-work</strong> gibt es den Fähigkeiten-Marketplace –</p>"
               },
               {
                 "type": "exercise",
                 "exercise_id": "ex_lu_04"
-              },
-              {
-                "type": "text",
-                "content": "<p>Fähigkeiten, die du erstellst, können geteilt werden. Wenn dein /deploy-Befehl deinem Team Stunden spart, veröffentliche ihn. Die besten Marketplace-Fähigkeiten begannen als jemandes persönliche Abkürzung. Konfiguration von Logik zu trennen macht aus einem persönlichen Tool ein Team-Tool.</p>"
               },
               {
                 "type": "exercise",
@@ -123,7 +111,7 @@
               },
               {
                 "type": "summary",
-                "content": "<p>Fähigkeiten funktionieren über alle drei Stufen. Starte einfach, steigere dich zu leistungsstark, und teile, was du erstellst. Eine Konfigurationsdatei bedeutet, dass Kollegen Einstellungen anpassen, nicht Code umschreiben.</p>"
+                "content": "<p>Fähigkeiten funktionieren über alle drei Stufen. Starte einfach, steigere dich zu leistungsstark, und teile, was du erstellst. Eine Konfigurationsdatei bedeutet, dass Kollegen</p>"
               }
             ]
           },
@@ -172,23 +160,15 @@
             "sections": [
               {
                 "type": "text",
-                "content": "<p>Die meisten Menschen nutzen ChatGPT, als hätte es Amnesie. Jede Konversation beginnt bei null. <strong>Kontext ist der Unterschied zwischen einem intelligenten Assistenten und einem intelligenten Assistenten, der dich kennt.</strong> Ein mittelmäßiger Prompt mit reichem Kontext liefert bessere Ergebnisse als ein perfekter Prompt ohne Kontext.</p>"
+                "content": "<p>Die meisten Menschen nutzen ChatGPT, als hätte es Amnesie. Jede Konversation beginnt bei null. <strong>Kontext ist der Unterschied zwischen einem intelligenten Assistenten und einem</p>"
               },
               {
                 "type": "exercise",
                 "exercise_id": "ex_lu_06"
               },
               {
-                "type": "text",
-                "content": "<p>Kontext, den du manuell einfügen musst, ist ein Flaschenhals. Der eigentliche Durchbruch ist, ChatGPT mit den Tools zu verbinden, in denen dein Kontext bereits lebt. Projekte mit hochgeladenen Dateien, direkter Zugriff auf dein Dateisystem oder Verbindungen zu deinem Kalender, E-Mail, CRM und APIs. <strong>Verringere die Distanz zwischen ChatGPT und deinen echten Daten.</strong></p>"
-              },
-              {
                 "type": "exercise",
                 "exercise_id": "ex_lu_07"
-              },
-              {
-                "type": "text",
-                "content": "<p>Kontext potenziert sich, kann aber auch veralten. Heute kennt ChatGPT dein Projekt. Nächsten Monat kennt es dein Projekt, dein Kundenfeedback, die Präferenzen deines Teams und deine Q2-Ziele – aber nur, wenn du es aktuell hältst. Regelmäßige Reviews verhindern, dass veralteter Kontext gute Workflows vergiftet.</p>"
               },
               {
                 "type": "exercise",
@@ -196,7 +176,7 @@
               },
               {
                 "type": "summary",
-                "content": "<p>Persistenter Kontext eliminiert wiederholte Einrichtung und potenziert sich über die Zeit. Verbinde ChatGPT mit dem Ort, an dem deine Daten leben. Plane regelmäßige Reviews, um alles aktuell zu halten.</p>"
+                "content": "<p>Persistenter Kontext eliminiert wiederholte Einrichtung und potenziert sich über die Zeit. Verbinde ChatGPT mit dem Ort, an dem deine Daten leben. Plane regelmäßige Reviews, um alles</p>"
               }
             ]
           },
@@ -253,23 +233,15 @@
             "sections": [
               {
                 "type": "text",
-                "content": "<p>Einzelne Prompts sind leistungsstark. Verkettete Prompts sind transformativ. Statt ChatGPT um eine Sache zu bitten und das Ergebnis manuell in die nächste Anfrage einzufügen, entwirfst du Sequenzen, bei denen der Output von Schritt eins automatisch zum Input von Schritt zwei wird. Eine einfache Kette: 'Fasse dieses Dokument zusammen' → 'Extrahiere Entscheidungen' → 'Entwerfe eine Nachfass-E-Mail mit Aktionspunkten.'</p>"
+                "content": "<p>Einzelne Prompts sind leistungsstark. Verkettete Prompts sind transformativ. Statt ChatGPT um eine Sache zu bitten und das Ergebnis manuell in die nächste Anfrage einzufügen, entwirfst</p>"
               },
               {
                 "type": "exercise",
                 "exercise_id": "ex_lu_09"
               },
               {
-                "type": "text",
-                "content": "<p><strong>Der Schlüssel zu guten Ketten:</strong> Jeder Schritt hat eine klare, spezifische Aufgabe. Lass einen Schritt nicht zu viel tun. Denke Fließband, nicht ein riesiger Prompt. Wenn Ketten brechen, liegt das Problem meist bei der Übergabe zwischen den Schritten, nicht bei den Schritten selbst.</p>"
-              },
-              {
                 "type": "exercise",
                 "exercise_id": "ex_lu_10"
-              },
-              {
-                "type": "text",
-                "content": "<p>Das bauen Power-User tatsächlich. <strong>Morgen-Briefing:</strong> ruft den Kalender ab, prüft E-Mails, überprüft Aufgaben, erstellt ein Briefing. <strong>Meeting-Follow-Up:</strong> verarbeitet Notizen, extrahiert Aktionspunkte, entwirft E-Mails, aktualisiert Aufgaben. <strong>Kundenvorbereitungspaket:</strong> ruft Account-Historie, aktuelle Kommunikation und offene Themen vor jedem Anruf ab. Der rote Faden: ChatGPT übernimmt das Sammeln und Organisieren. Du übernimmst das Denken und Entscheiden.</p>"
               },
               {
                 "type": "exercise",
@@ -277,7 +249,7 @@
               },
               {
                 "type": "summary",
-                "content": "<p>Verkettung bedeutet, dass der Output jedes Schritts den nächsten speist. Halte jeden Schritt fokussiert. Repariere gebrochene Übergaben, nicht gebrochene Schritte. Baue für echte tägliche Workflows – Briefings, Follow-Ups und Vorbereitungspakete.</p>"
+                "content": "<p>Verkettung bedeutet, dass der Output jedes Schritts den nächsten speist. Halte jeden Schritt fokussiert. Repariere gebrochene Übergaben, nicht gebrochene Schritte. Baue für echte</p>"
               }
             ]
           },
@@ -339,23 +311,15 @@
             "sections": [
               {
                 "type": "text",
-                "content": "<p>Ketten ohne dich laufen zu lassen ist das nächste Level. Automatisierung bedeutet, dass ChatGPT auf einen Trigger oder Zeitplan reagiert: Morgen-Briefing um 7 Uhr, Posteingang jede Stunde sortiert, Wochenbericht freitags um 16 Uhr. Die Regel: <strong>Automatisiere das Sammeln und Entwerfen. Lass Menschen das Genehmigen und Senden übernehmen.</strong></p>"
+                "content": "<p>Ketten ohne dich laufen zu lassen ist das nächste Level. Automatisierung bedeutet, dass ChatGPT auf einen Trigger oder Zeitplan reagiert: Morgen-Briefing um 7 Uhr, Posteingang jede</p>"
               },
               {
                 "type": "exercise",
                 "exercise_id": "ex_lu_12"
               },
               {
-                "type": "text",
-                "content": "<p><strong>Die Vertrauensleiter.</strong> Beginne mit Automatisierung, die dir Zeit bei der Vorbereitung spart. Wenn du Vertrauen in die Output-Qualität aufbaust, erweitere schrittweise. Automatisiere wenn: wiederkehrend, vorhersehbare Inputs, geringe Risiken, überprüfbarer Output. Behalte den Menschen in der Schleife bei: kundenorientierten, nuancierter Beurteilung erfordernden, folgenreichen Aufgaben. Springe nie direkt zur vollständigen Autonomie bei risikoreichen Aufgaben.</p>"
-              },
-              {
                 "type": "exercise",
                 "exercise_id": "ex_lu_13"
-              },
-              {
-                "type": "text",
-                "content": "<p><strong>Was die Top 1% unterscheidet:</strong> architektonisches Denken. Sie betrachten ihren gesamten Workflow und fragen 'Wo passt ChatGPT rein?' Sie entwerfen für Integration, nicht für Isolation. Dein nächster Schritt: Wähle deinen zeitaufwändigsten wiederkehrenden Workflow. Bilde ihn ab. Verkette ihn. Automatisiere, was sinnvoll ist. Dieser eine Workflow, vollständig optimiert, spart mehr Zeit als hundert clevere Prompts.</p>"
               },
               {
                 "type": "exercise",
@@ -363,7 +327,7 @@
               },
               {
                 "type": "summary",
-                "content": "<p>Automatisiere das Sammeln und Entwerfen. Lass Menschen das Genehmigen und Senden übernehmen. Klettere die Vertrauensleiter schrittweise hinauf. Ein vollständig optimierter Workflow schlägt hundert clevere Prompts.</p>"
+                "content": "<p>Automatisiere das Sammeln und Entwerfen. Lass Menschen das Genehmigen und Senden übernehmen. Klettere die Vertrauensleiter schrittweise hinauf. Ein vollständig optimierter Workflow</p>"
               }
             ]
           },

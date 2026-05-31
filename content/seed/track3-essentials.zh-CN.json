@@ -28,16 +28,8 @@
                 "exercise_id": "ex_es_01"
               },
               {
-                "type": "text",
-                "content": "<p><strong>层叠你的具体要求：</strong>你的写作范例、明确的风格规则（“永远不要说'希望这封邮件一切安好'”），以及长度和格式等限制。你的提示越具体，ChatGPT需要猜测的就越少。</p><p>设置方式取决于层级。<strong>在ChatGPT中，</strong>创建一个项目，包含5-10个写作样本加上简短的风格指南。<strong>在Co-work中，</strong>ChatGPT会阅读你打开的文档并自动匹配语气。<strong>在Code中，</strong>创建一个内置风格的可重用提示模板。</p>"
-              },
-              {
                 "type": "exercise",
                 "exercise_id": "ex_es_02"
-              },
-              {
-                "type": "text",
-                "content": "<p>三个层级的共同模式：展示，而非讲述。范例优于描述。上下文优于指令。</p>"
               },
               {
                 "type": "exercise",
@@ -109,16 +101,8 @@
                 "exercise_id": "ex_es_04"
               },
               {
-                "type": "text",
-                "content": "<p><strong>具体说明哪里不对。</strong>”写好点“毫无用处。“第二段听起来太企业化“给了ChatGPT可以处理的东西。<strong>告诉ChatGPT保留什么。</strong>”开头完美。别动它。修正第一段之后的所有内容。“两三轮就够了。</p>"
-              },
-              {
                 "type": "exercise",
                 "exercise_id": "ex_es_05"
-              },
-              {
-                "type": "text",
-                "content": "<p>迭代是过程，不是失败。每个专业作家都会修改。区别在于，有了ChatGPT，每次修改只需几秒而不是几小时。</p>"
               },
               {
                 "type": "exercise",
@@ -195,16 +179,8 @@
                 "exercise_id": "ex_es_07"
               },
               {
-                "type": "text",
-                "content": "<p><strong>跨文档分析是关键技能。</strong>上传三份季度报告，问“正在出现什么趋势？“上传一份租赁合同和你所在地区的租户权利摘要，让ChatGPT标记冲突。ChatGPT能连接你分别阅读时会错过的跨文档模式。</p><p>专业提示：“从这份合同中按时间顺序提取所有日期和截止日期到表格中“每次都胜过“总结一下“。</p>"
-              },
-              {
                 "type": "exercise",
                 "exercise_id": "ex_es_08"
-              },
-              {
-                "type": "text",
-                "content": "<p>根据任务选择合适的层级：ChatGPT用于一次性深度分析，Co-work用于上下文内文档编辑，Code用于大规模批量处理。</p>"
               },
               {
                 "type": "exercise",
@@ -281,16 +257,8 @@
                 "exercise_id": "ex_es_10"
               },
               {
-                "type": "text",
-                "content": "<p><strong>渐进式研究会话是关键技能。</strong>从宽泛开始：“X的主要方法有哪些？“深入下去：“展开第二种方法。真正的挑战是什么？“然后具体化：“综合以上所有，如果我带着小团队和6个月时间在这个领域构建，差距在哪里？“每一轮都建立在上一轮基础上。最终，你得到一份本来需要好几天的综合分析。</p>"
-              },
-              {
                 "type": "exercise",
                 "exercise_id": "ex_es_11"
-              },
-              {
-                "type": "text",
-                "content": "<p><strong>关键习惯：和ChatGPT辩论。</strong>反驳它。“我不同意你的第二点，因为……”ChatGPT会调整。“你假设了X，但在我们的市场Y才是对的“ChatGPT会重新计算。停止用ChatGPT来确认你已经相信的。开始用它来挑战你相信的。</p>"
               },
               {
                 "type": "exercise",
@@ -367,16 +335,8 @@
                 "exercise_id": "ex_es_13"
               },
               {
-                "type": "text",
-                "content": "<p><strong>三个揭示隐藏风险的框架：</strong>”做个事前验尸。假设我们执行了但失败了。出了什么问题？“”钢人论证反对意见。给我一个支持我倾向反对的选项的最强论据。“”运用后悔最小化。10年后我会最不后悔哪个选择？“</p>"
-              },
-              {
                 "type": "exercise",
                 "exercise_id": "ex_es_14"
-              },
-              {
-                "type": "text",
-                "content": "<p><strong>红队是高级技能。</strong>在任何重大决定之前，告诉ChatGPT：“攻击这个计划。找到每个弱点、每个可能错误的假设、每种失败的方式。残酷一点。“然后为你的计划辩护，对抗ChatGPT的攻击。存活下来的更强了。没存活的本来就会失败。</p>"
               },
               {
                 "type": "exercise",
