@@ -119,6 +119,7 @@ export default async function LocaleLayout({
       className={`${sora.variable} ${jetbrainsMono.variable} ${instrumentSerif.variable} h-full antialiased`}
     >
       <head>
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="dns-prefetch" href="https://mazngjrfjvjxsufjrscv.supabase.co" />
         <link rel="dns-prefetch" href="https://yaiuujiducipbdzdbzrl.supabase.co" />
         <link rel="dns-prefetch" href="https://js.stripe.com" />
