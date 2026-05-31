@@ -12,7 +12,7 @@
       "lessons": [
         {
           "title": "Advanced Prompt Engineering",
-          "slug": "slash-commands-custom-workflows",
+          "slug": "advanced-prompt-engineering",
           "description": "Chain complex workflows with structured prompts, break large tasks into sequenced steps, and build repeatable automation patterns that run consistently every time.",
           "order_index": 1,
           "xp_reward": 100,

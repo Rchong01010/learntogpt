@@ -2,18 +2,18 @@
   "track": "advanced_workflows",
   "courses": [
     {
-      "title": "Hooks, Memory & Infrastructure",
-      "slug": "hooks-memory-infra",
-      "description": "Hooks that enforce what you forget. Bridges that connect autonomous agents to your terminal. A tiered memory architecture that scales past 50 files without blowing your context window. The full operating system, assembled.",
+      "title": "ChatGPT as Your Operating System",
+      "slug": "chatgpt-as-operating-system",
+      "description": "Automation triggers, persistent context architecture, Zapier/Make integrations, and the maintenance habits that make ChatGPT compound across weeks and months — not just single sessions.",
       "difficulty": "expert",
       "order_index": 8,
       "is_free": false,
       "icon": "Wrench",
       "lessons": [
         {
-          "title": "Hooks: Automate Your Environment",
-          "slug": "hooks-automate-environment",
-          "description": "SessionStart, Stop, PreToolUse, PostToolUse. Event-driven automation that enforces discipline you would otherwise forget.",
+          "title": "Zapier & Make: Automated Triggers",
+          "slug": "zapier-make-automated-triggers",
+          "description": "Use Zapier and Make to trigger ChatGPT automatically from events in your existing tools. Build workflows that run without you touching them.",
           "order_index": 1,
           "xp_reward": 100,
           "estimated_minutes": 6,
@@ -21,23 +21,23 @@
             "sections": [
               {
                 "type": "text",
-                "content": "<p>Four hook events: <strong>SessionStart</strong> (load STATE.md), <strong>Stop</strong> (remind to update STATE.md), <strong>PreToolUse</strong> (block or warn), <strong>PostToolUse</strong> (log after).</p>"
+                "content": "<p>Most people use ChatGPT reactively — open a tab, ask a question. Power users build <strong>trigger-based workflows</strong>: a new form submission drafts a response, a new Slack message summarizes overnight activity, a spreadsheet update generates a report. That's ChatGPT running for you, not with you.</p>"
               },
               {
                 "type": "text",
-                "content": "<p>SessionStart hook loads STATE.md, runs a staleness check, and shows agent activity count. Keep each command under 5 seconds. Use <code>2>/dev/null || echo</code> so missing files don't fail.</p>"
+                "content": "<p><strong>Zapier</strong> connects 7,000+ apps with no code. <strong>Make</strong> handles more complex branching and data transformation. Both can trigger a ChatGPT prompt when an event fires, then send the result somewhere useful. Decision: use Zapier for speed, Make when you need conditional logic or multi-step data processing.</p>"
               },
               {
                 "type": "text",
-                "content": "<p>PreToolUse hooks need a <strong>matcher</strong> field (e.g., <code>\"Bash\"</code>). Soft check: print reminder, exit 0. Hard block: print to stderr, exit 2. Always end with exit 0 fallback.</p>"
+                "content": "<p>Anatomy of a trigger workflow: <strong>Trigger</strong> (event in an app) → <strong>Action</strong> (send data + prompt to ChatGPT) → <strong>Output</strong> (send ChatGPT's response somewhere). Example: New Typeform submission → ChatGPT drafts a personalized response → Draft saved to Google Docs for human review.</p>"
               },
               {
                 "type": "text",
-                "content": "<p>Timeout discipline: SessionStart and PreToolUse get 3-5 seconds. PostToolUse gets 10 seconds. Pre-compute network checks with a cron and read the cached file. A slow hook gets disabled.</p>"
+                "content": "<p>Three starter workflows that pay off immediately: <strong>Support inbox triage</strong> (new email → ChatGPT categorizes + drafts reply → Slack notification), <strong>Meeting prep</strong> (calendar event tomorrow → ChatGPT pulls context + drafts agenda → sent to your email), <strong>Weekly digest</strong> (Friday trigger → ChatGPT summarizes Slack + email activity → sent as a brief).</p>"
               },
               {
                 "type": "text",
-                "content": "<p>Build incrementally: Week 1 — SessionStart STATE.md load. Week 2 — staleness check. Week 3 — Stop reminder. Week 4 — first PreToolUse hard block (force-push to main).</p>"
+                "content": "<p>The approval gate rule: every trigger workflow that sends something external (email, Slack, publish) must route through human review first. Automate the drafting. Approve the sending. A weekly digest that auto-sends without review will eventually send something wrong.</p>"
               },
               {
                 "type": "exercise",
@@ -53,15 +53,11 @@
               },
               {
                 "type": "text",
-                "content": "<p>Hard block vs soft reminder: if a false positive would only mildly annoy you, hard block. If it would disrupt legitimate work, soft reminder. Force-push to main = hard block.</p>"
-              },
-              {
-                "type": "text",
-                "content": "<p>Monthly hook health check (2 min): verify STATE.md loads, confirm a blocked command is blocked, confirm the Stop reminder fires. Four checks, two minutes catches broken hooks.</p>"
+                "content": "<p>Build trigger workflows in order of stakes: internal (low risk) first, external (email, posts) second. Prove the trigger is reliable, the prompt produces good output, and the output goes to the right place before expanding. One solid workflow beats five broken ones.</p>"
               },
               {
                 "type": "summary",
-                "content": "<p>Four events: SessionStart, Stop, PreToolUse, PostToolUse. Use matchers to target specific tools. Exit 0 = allow, exit 2 = block. Keep under 5 seconds. Two targeted hooks beat ten fragile ones.</p>"
+                "content": "<p>Zapier for speed, Make for complex logic. Trigger → ChatGPT prompt → output. Approval gate before anything external sends. Build internal workflows first, prove them, then expand.</p>"
               }
             ]
           },
@@ -70,27 +66,27 @@
               "id": "ex_hm_01",
               "order_index": 1,
               "type": "matching_pairs",
-              "prompt": "Match each automation need to the correct hook event.",
+              "prompt": "Match each automation need to the right trigger workflow component.",
               "pairs": [
                 {
-                  "left": "Load STATE.md and MEMORY.md at the start of every session",
-                  "right": "SessionStart — fires once when the session opens"
+                  "left": "A new support ticket arrives in your helpdesk",
+                  "right": "Trigger — the event that starts the workflow"
                 },
                 {
-                  "left": "Remind to update STATE.md before closing",
-                  "right": "Stop — fires when the session ends"
+                  "left": "ChatGPT drafts a categorized response using the ticket text",
+                  "right": "Action — ChatGPT processes the trigger data"
                 },
                 {
-                  "left": "Block git push --force to main",
-                  "right": "PreToolUse with Bash matcher — fires before the push command"
+                  "left": "The draft is saved to a Google Doc for human review",
+                  "right": "Output — where the result goes before approval"
                 },
                 {
-                  "left": "Warn about RLS policies after writing a SQL file",
-                  "right": "PostToolUse with Write|Edit matcher — fires after the file is saved"
+                  "left": "You review and send the response from the Google Doc",
+                  "right": "Approval gate — human review before anything external sends"
                 }
               ],
               "hints": [
-                "Think about timing: before the session, before the tool call, after the tool call, after the session."
+                "Think about timing: what fires first, what processes it, where does it go, who approves?"
               ],
               "xp_reward": 10
             },
@@ -98,10 +94,11 @@
               "id": "ex_hm_02",
               "order_index": 2,
               "type": "scenario_walkthrough",
-              "prompt": "You want to prevent ChatGPT from ever running `git push --force` to main or master. Write the PreToolUse hook configuration. Include the matcher, command, timeout, and explain why you chose exit code 2 instead of a reminder.",
-              "expected_approach": "Hook: matcher 'Bash', command reads tool_input.command via jq, greps for 'git push --force' combined with 'main' or 'master', exits 2 on match. Timeout: 3 seconds. Exit code 2 because force-push to main is destructive and irreversible — a reminder is not strong enough. You want the operation to fail, not just warn. Example command: jq -r '.tool_input.command' | grep -qE 'git push.*--force.*(main|master)' && echo 'BLOCKED: force push to main/master' >&2 && exit 2 || true",
+              "prompt": "You want to build a Zapier workflow that automatically drafts a reply when a new lead fills out a contact form. Walk through: what the trigger is, what data you pass to ChatGPT, what the prompt looks like, and where the draft goes.",
+              "evaluation_criteria": "Should identify: Trigger = new Typeform/form submission. Data passed to ChatGPT = lead's name, company, message, and any context about your services. Prompt should include the lead data and ask for a personalized first response in a specific tone. Output should go to a draft location (Gmail drafts, Google Doc, or Slack channel) for human review — not auto-send. Should explain that auto-sending first responses to leads is too high-stakes to fully automate.",
               "hints": [
-                "What exit code blocks the tool call entirely? What makes force-push different from a regular commit?"
+                "What information from the form does ChatGPT need to personalize the reply?",
+                "Where should the draft land so you can review it before sending?"
               ],
               "xp_reward": 15
             },
@@ -109,19 +106,20 @@
               "id": "ex_hm_03",
               "order_index": 3,
               "type": "prompt_lab",
-              "prompt": "Design a PreToolUse hook that checks for .env files in the git staging area before any commit. If a .env file is staged, the hook should block the commit and explain why. Write the full JSON configuration.",
-              "expected_approach": "Something like: matcher 'Bash', command checks if tool_input.command contains 'git commit', then runs 'git diff --cached --name-only' and greps for '.env'. If found, prints a warning about secrets in version control and exits 2. Key elements: two-step check (is this a commit? are .env files staged?), exit 2 for hard block, clear error message, timeout 5 seconds. The || true at the end ensures the hook does not fail when the command is not a commit.",
+              "prompt": "Design a weekly digest workflow using Make or Zapier. Describe: the trigger, what data sources it pulls from, the ChatGPT prompt you would use, and what the final output looks like.",
+              "evaluation_criteria": "Must identify a specific trigger (Friday at 5pm, or similar scheduled trigger). Must name at least two data sources (Slack, email, project tracker, CRM, etc.). ChatGPT prompt must specify what to summarize, the length, the audience, and the format. Output must go somewhere reviewable (email, Slack DM, Google Doc) with explicit mention of human review before distribution. Should note the difference between Make and Zapier for this use case.",
               "hints": [
-                "You need two checks: is this a git commit, and is a .env file in the staging area. What git command shows staged files?"
+                "What information from your week would you most want summarized?",
+                "Who is the audience for the digest — just you, or your team?"
               ],
               "xp_reward": 10
             }
           ]
         },
         {
-          "title": "Bridges & Integrations",
-          "slug": "bridges-integrations",
-          "description": "MCP servers, activity bridges, and cross-system workflows. Connecting autonomous agents to interactive sessions.",
+          "title": "Context Documents as Persistent Memory",
+          "slug": "context-documents-persistent-memory",
+          "description": "Build a context document system that makes every ChatGPT session start fully briefed — without burning tokens on history reconstruction.",
           "order_index": 2,
           "xp_reward": 100,
           "estimated_minutes": 6,
@@ -129,23 +127,23 @@
             "sections": [
               {
                 "type": "text",
-                "content": "<p>Without a bridge: agents post at 3 AM, you manually copy-paste at 9 AM. With a bridge: output is auto-captured, surfaced at session open, triaged in 3 minutes.</p>"
+                "content": "<p>ChatGPT doesn't remember your last session. Every conversation starts fresh. Power users solve this with <strong>context documents</strong>: short, structured files you paste at session start that load all the context ChatGPT needs in one shot.</p>"
               },
               {
                 "type": "text",
-                "content": "<p>Activity bridge: <strong>Listener</strong> appends each item to a JSONL file (<code>reconciled: false</code>). <strong>Reconcile CLI</strong> — <code>--count</code>, <code>--list</code>, <code>--mark</code>.</p>"
+                "content": "<p>Three document types, each handles a different layer: <strong>Role doc</strong> (who you are, your role, your audience — permanent, changes rarely), <strong>Project doc</strong> (current status, key decisions, blockers — updated weekly), <strong>Decision log</strong> (record of choices made and why — append-only, never delete).</p>"
               },
               {
                 "type": "text",
-                "content": "<p>MCP servers expose external tools as first-class ChatGPT tools. High-value: <strong>Obsidian MCP</strong> (vault search), <strong>GitHub MCP</strong> (live PRs), <strong>Supabase MCP</strong> (queries).</p>"
+                "content": "<p>Role doc template: <em>\"I am [role] at [company type]. My audience is [audience]. I write for [platform]. My voice: [3 rules]. I never: [2 anti-patterns].\"</em> Under 100 words. Paste this at the start of any writing or strategy session.</p>"
               },
               {
                 "type": "text",
-                "content": "<p>Bridge + MCP morning workflow: SessionStart shows 3 unreconciled items → <code>reconcile --list</code> in 30 seconds → ChatGPT searches your vault via MCP → recommendation in context.</p>"
+                "content": "<p>Project doc template: <em>\"Project: [name]. Status: [current state]. Last decision: [decision + rationale]. In progress: [active task]. Blockers: [what's stuck].\"</em> Under 150 words. Update at the end of each work session. Paste at the start of the next.</p>"
               },
               {
                 "type": "text",
-                "content": "<p>Build in three steps: (1) Listener — verify messages appear in JSONL. (2) Reconcile CLI — verify counts and marks. (3) SessionStart hook — verify it surfaces the count.</p>"
+                "content": "<p>Decision log format: append-only. Each entry: <em>\"[Date]: Decided [X] because [Y]. Alternative considered: [Z].\"</em> Ask ChatGPT to reference the log when a new decision connects to a past one. This is how you stop re-litigating the same decisions.</p>"
               },
               {
                 "type": "exercise",
@@ -161,15 +159,11 @@
               },
               {
                 "type": "text",
-                "content": "<p>Triage discipline: each unreconciled item is (1) material — update STATE.md, (2) useful later — note in memory and mark reconciled, or (3) noise — mark reconciled, done.</p>"
-              },
-              {
-                "type": "text",
-                "content": "<p>Use JSONL for the bridge file. Append-only writes are atomic at the line level. Store a byte offset for streaming reads. Deduplicate by source message ID.</p>"
+                "content": "<p>Maintenance: update the project doc at the end of every session that changes status (5 minutes). Monthly: review the role doc for drift. Quarterly: archive old decision log entries that are no longer relevant. Stale context is worse than none — ChatGPT will apply old context confidently.</p>"
               },
               {
                 "type": "summary",
-                "content": "<p>Bridge: listener (capture to JSONL) + reconcile CLI (triage) + SessionStart hook (surface counts). MCP: external tools as first-class ChatGPT tools. Combine for cross-system workflows.</p>"
+                "content": "<p>Three docs: role (permanent), project (weekly), decision log (append-only). Paste the relevant ones at session start. Update the project doc at session end. Stale context = wrong answers confidently delivered.</p>"
               }
             ]
           },
@@ -178,48 +172,56 @@
               "id": "ex_hm_04",
               "order_index": 1,
               "type": "multiple_choice",
-              "prompt": "Your autonomous agent posted 12 items to Slack overnight. You open ChatGPT and your SessionStart hook says '0 items unreconciled.' What is the most likely problem?",
+              "prompt": "You start a ChatGPT session to work on a proposal for a client you've been working with for three weeks. ChatGPT gives you generic output that ignores the context from previous sessions. What is the most likely cause and fix?",
               "options": [
-                "The agent did not actually post anything.",
-                "The listener daemon is down — it stopped capturing Slack messages to the JSONL file.",
-                "The reconcile CLI is broken.",
-                "SessionStart hooks cannot read files."
+                "ChatGPT forgot — start a new account.",
+                "You didn't paste your project context doc at session start. ChatGPT has no memory of previous conversations.",
+                "Use a longer prompt in this session.",
+                "ChatGPT doesn't support ongoing projects."
               ],
               "correct_answer": "1",
-              "explanation": "The listener daemon is the capture layer. If it stops, the JSONL file stops growing, and reconcile --count sees nothing new. First debug step: check if the daemon process is running and if the JSONL file has recent entries.",
+              "explanation": "ChatGPT does not retain memory between sessions by default. Without a context doc, every session starts blank. The fix: paste your project doc (current status, key decisions, client context) at the start of any work session. 15 seconds of pasting gives ChatGPT three weeks of context.",
               "hints": [
-                "Trace the data flow: agent posts to Slack, listener captures to JSONL, reconcile reads JSONL, hook calls reconcile. Which link broke?"
+                "What does ChatGPT know about your previous conversations with it?"
               ],
-              "xp_reward": 5
+              "xp_reward": 10
             },
             {
               "id": "ex_hm_05",
               "order_index": 2,
-              "type": "scenario_walkthrough",
-              "prompt": "You want to build an activity bridge for a new autonomous agent that monitors your GitHub repos for new issues and PRs. Sketch the three components: what does the listener watch, what does a JSONL entry look like, and what does the SessionStart hook message say?",
-              "expected_approach": "Listener: a script (cron or daemon) that polls the GitHub API for new issues and PRs, appending each new item to a JSONL file. Each line: {\"ts\": \"2026-05-12T03:14:00Z\", \"source\": \"github-watcher\", \"type\": \"new_issue\", \"repo\": \"claude-academy\", \"title\": \"Bug in lesson loader\", \"url\": \"https://github.com/...\", \"reconciled\": false}. SessionStart hook message: 'N GitHub activity items unreconciled — new issues/PRs across your repos. Run reconcile --list --source github-watcher to inspect.' The key insight: the bridge pattern is the same regardless of the source — only the listener changes.",
-              "hints": [
-                "The bridge pattern is source-agnostic. What changes between a Slack bridge and a GitHub bridge? Only the listener."
+              "type": "multiple_choice",
+              "prompt": "You want ChatGPT to know you're a senior marketing manager, your audience is B2B CFOs, you write LinkedIn posts in a direct non-salesy voice, and you never use buzzwords. Where does this information belong?",
+              "options": [
+                "Re-type it at the start of every conversation.",
+                "In your Custom Instructions (persistent, loads automatically) AND in a role context doc for detailed sessions.",
+                "In a saved ChatGPT conversation you can scroll back to.",
+                "In the ChatGPT memory — it will learn over time."
               ],
-              "xp_reward": 15
+              "correct_answer": "1",
+              "explanation": "Custom Instructions loads automatically in every session — ideal for persistent role context. A role doc is useful for detailed sessions where you need to paste more specifics than Custom Instructions can hold. The two work together: Custom Instructions for the essentials, role doc for the details.",
+              "hints": [
+                "Which approach loads without you doing anything? Which handles more detail?"
+              ],
+              "xp_reward": 10
             },
             {
               "id": "ex_hm_06",
               "order_index": 3,
-              "type": "prompt_lab",
-              "prompt": "You have an Obsidian vault with 25 strategy docs and a reconcile CLI showing 3 unprocessed agent items. Write the ChatGPT session flow: what do you type, what tools does ChatGPT call, and how do the bridge and MCP work together to give you a full-context answer?",
-              "expected_approach": "Step 1: SessionStart hook fires, reports '3 items unreconciled.' Step 2: You type 'reconcile --list'. See three items — one is a job match from a scout agent. Step 3: You ask ChatGPT 'Is this company a fit for my positioning?' Step 4: ChatGPT calls the Obsidian MCP to search the vault for your positioning doc. Finds q2-positioning.md. Reads it. Step 5: ChatGPT compares the job description from the agent item against your positioning and gives a recommendation. The bridge surfaced the item. The MCP provided the context. You made the decision.",
+              "type": "scenario_walkthrough",
+              "prompt": "You are starting a new work session on a product launch that's been in flight for two weeks. You have a project context doc but haven't updated it since Tuesday (it's Friday). Walk through: what you update before pasting, what you paste, and what you ask ChatGPT first to verify it understood the context.",
+              "evaluation_criteria": "Should update the project doc with: new status, any decisions made since Tuesday, and current blockers. Then paste the updated doc. Then verify context by asking ChatGPT to summarize what it knows about the project — not to start working yet. This verification step catches missing context before it causes bad output three messages in. Should distinguish between the project doc (current state) and the decision log (historical choices).",
               "hints": [
-                "Think about the data flow: bridge surfaces the item, MCP provides the strategic context. What connects them?"
+                "What changed since Tuesday that ChatGPT needs to know?",
+                "How do you verify ChatGPT understood your context before starting real work?"
               ],
-              "xp_reward": 10
+              "xp_reward": 15
             }
           ]
         },
         {
-          "title": "Memory Architecture",
-          "slug": "memory-architecture",
-          "description": "CLAUDE.md, STATE.md, MEMORY.md, typed memory files, the digest pattern. A tiered context system that scales past 50 files.",
+          "title": "Building a Prompt Library",
+          "slug": "building-a-prompt-library",
+          "description": "Capture your best prompts as reusable templates. Build a personal library that compounds over time and eliminates starting from scratch on recurring tasks.",
           "order_index": 3,
           "xp_reward": 100,
           "estimated_minutes": 7,
@@ -227,23 +229,23 @@
             "sections": [
               {
                 "type": "text",
-                "content": "<p>At 50+ memory files you burn 30%+ of context before typing a prompt. Fix it with tiered loading: STATE.md (always), MEMORY.md index, STRATEGY-DIGEST.md (summaries), full files (on demand).</p>"
+                "content": "<p>Most people type new prompts from scratch every session. Power users have a <strong>prompt library</strong>: a set of tested, reusable templates for their recurring tasks. When a prompt produces great output, capture it. Next time, paste it and swap in the new specifics.</p>"
               },
               {
                 "type": "text",
-                "content": "<p>Four types: <strong>user_*</strong> (durable facts), <strong>feedback_*</strong> (confidence 0.3→1.0, promote to CLAUDE.md at 0.9+), <strong>project_*</strong> (dated, archive on ship), <strong>reference_*</strong>.</p>"
+                "content": "<p>When to capture a prompt: it produced output you'd actually use, it required three or more rounds of iteration to get right, or it's a task you do more than twice a month. Those three conditions together mean the template will pay back many times over.</p>"
               },
               {
                 "type": "text",
-                "content": "<p>Feedback confidence loop: observe → write at 0.3 → re-validate → bump to 0.5, 0.7, 0.9+ → promote to CLAUDE.md. Confidence rises from re-validation, not from time passing.</p>"
+                "content": "<p>Template format: mark variables with <code>[BRACKETS]</code>. Example: <em>\"Write a follow-up email to [NAME] who [ACTION]. Tone: [TONE]. Goal: [GOAL]. Under [WORD COUNT] words. Never: [ANTI-PATTERN].\"</em> Variables are what changes. Everything else is tested logic you don't want to rebuild.</p>"
               },
               {
                 "type": "text",
-                "content": "<p>Monthly maintenance: archive shipped project_* entries, merge duplicates, promote 0.9+ rules to CLAUDE.md, verify MEMORY.md under 200 lines.</p>"
+                "content": "<p>Organize by job type, not by tool: <strong>Writing</strong> (emails, posts, reports), <strong>Analysis</strong> (contracts, data, research), <strong>Decision support</strong> (pre-mortems, comparisons, critiques), <strong>Operations</strong> (status updates, meeting prep, handoffs). A small, organized library beats a large unstructured one.</p>"
               },
               {
                 "type": "text",
-                "content": "<p>Bump confidence when: you applied the rule and the outcome occurred, you violated it and got the consequence, or you found another context where it applies. Time alone doesn't count.</p>"
+                "content": "<p>Store your library in Notion, Google Docs, or a plain text file — wherever you can paste from in under 10 seconds. The best storage system is the one you actually use. Complexity kills the habit.</p>"
               },
               {
                 "type": "exercise",
@@ -259,11 +261,11 @@
               },
               {
                 "type": "text",
-                "content": "<p>Multi-project: use per-project <code>.claude/MEMORY.md</code> files. Global <code>~/.claude/MEMORY.md</code> holds only user_*, feedback_*, and reference_* entries.</p>"
+                "content": "<p>Monthly review: scan your library for templates you haven't used in 30 days. Archive or delete them. A library of 10 prompts you use weekly beats 100 you never open. The signal is usage frequency.</p>"
               },
               {
                 "type": "summary",
-                "content": "<p>Four tiers: STATE.md (80-line cap), MEMORY.md index (200-line cap), STRATEGY-DIGEST.md (summaries), full files (on demand). Four types: user, feedback, project, reference.</p>"
+                "content": "<p>Capture prompts that worked, mark variables with brackets, organize by job type. Store where you can paste in under 10 seconds. Monthly review: archive unused templates.</p>"
               }
             ]
           },
@@ -272,27 +274,27 @@
               "id": "ex_hm_07",
               "order_index": 1,
               "type": "matching_pairs",
-              "prompt": "Match each scenario to the correct memory type.",
+              "prompt": "Match each scenario to the correct prompt library category.",
               "pairs": [
                 {
-                  "left": "You discovered that swallowing exceptions caused silent data loss in three separate projects.",
-                  "right": "feedback_* — a lesson learned from repeated mistakes"
+                  "left": "You spend 20 minutes crafting the perfect cold email prompt after 4 iterations.",
+                  "right": "Capture it — multiple iterations means high template value"
                 },
                 {
-                  "left": "Your colleague Laura is the partnerships gatekeeper. Her email is contacto@dotcsv.com.",
-                  "right": "reference_* — a lookup fact about a person"
+                  "left": "You ask ChatGPT a one-off question about a topic you'll never revisit.",
+                  "right": "Don't capture — no recurrence value"
                 },
                 {
-                  "left": "You shipped an affiliate coupon fix on May 2nd. Root cause: codes never wired to Stripe checkout.",
-                  "right": "project_* — dated state and decisions for specific work"
+                  "left": "A prompt that produces a weekly status report you send every Friday.",
+                  "right": "Capture it — recurring task with consistent format"
                 },
                 {
-                  "left": "You are based in San Diego, Pacific Time, two-party consent state.",
-                  "right": "user_* — a durable personal fact"
+                  "left": "You tried a prompt, it failed, and you had to rewrite it entirely.",
+                  "right": "Capture the fixed version — not the failed one"
                 }
               ],
               "hints": [
-                "Ask: is this a lesson, a fact about a person/tool, a project event, or a fact about me?"
+                "The capture decision comes down to: will I need this again, and was it hard to get right?"
               ],
               "xp_reward": 10
             },
@@ -300,11 +302,10 @@
               "id": "ex_hm_08",
               "order_index": 2,
               "type": "scenario_walkthrough",
-              "prompt": "You are starting a new session. Your task is to draft a LinkedIn post about a project you shipped last week. Walk through the exact tier-by-tier loading sequence you would follow.",
-              "expected_approach": "Step 1 (Tier 1): SessionStart hook loads STATE.md automatically. Check if the shipped project is mentioned with enough detail to draft from. Step 2 (Tier 2): If not enough detail, scan MEMORY.md index for a project_* entry about the shipped project. Find the one-line pointer. Step 3 (Tier 4): Open the linked project memory file. Read the root cause, the fix, and the meta-lesson — this is draft material. Step 4 (Tier 2 again): Scan MEMORY.md for feedback_* entries about LinkedIn voice rules. Step 5 (Tier 4): Open the LinkedIn voice rules feedback memory. Apply all voice constraints. Step 6: Draft the post. You loaded exactly three files beyond auto-loaded STATE.md and MEMORY.md. ~4K tokens of targeted context instead of 60K of everything.",
+              "prompt": "You just got a great ChatGPT response for a performance review for one of your direct reports. The prompt took three rounds to get right. Walk through converting it into a reusable template for all future performance reviews.",
+              "evaluation_criteria": "Should identify what's specific to this review (employee name, specific achievements, areas for growth) and what's structural logic (tone, format, what sections to include, what to avoid). Variables should be bracketed: [EMPLOYEE NAME], [KEY ACHIEVEMENTS], [DEVELOPMENT AREAS], [RATING]. The structural logic (what to include, how to frame development areas constructively, length constraints) stays fixed. Should note that the template is tested — it produced good output once, so the structure is validated.",
               "hints": [
-                "What loads automatically before you type anything?",
-                "You need two kinds of context: what happened (project) and how to write (voice rules). Where does each live?"
+                "What parts of the prompt are specific to this employee vs. what would apply to every performance review?"
               ],
               "xp_reward": 15
             },
@@ -312,20 +313,19 @@
               "id": "ex_hm_09",
               "order_index": 3,
               "type": "prompt_lab",
-              "prompt": "Write a properly structured feedback memory file for this scenario: You learned that every time you deploy a cron job to a remote agent, you need to verify it actually fires by checking the output channel within 24 hours. You have been burned twice by crons that were syntactically valid but silently failing due to timezone mismatches.",
-              "expected_approach": "---\nname: Verify cron jobs fire within 24 hours of deploy\ndescription: Every remote cron must be verified via its output channel within 24h of deployment. Timezone mismatches cause silent failures.\ntype: feedback\n---\nEvery cron job deployed to a remote agent must be verified within 24 hours by checking its output channel (Slack, logs, webhook).\n\nWhy: Twice burned by crons that were syntactically valid but silently failed due to timezone mismatches between the cron expression (UTC) and the expected local fire time.\n\nHow to apply:\n1. After deploying any cron, note the next expected fire time.\n2. Check the output channel within 24 hours.\n3. If nothing appears, check the cron daemon logs.\n4. Always specify timezone explicitly in cron expressions.",
+              "prompt": "Convert this specific prompt into a reusable template by identifying the variables and keeping the tested logic fixed. Original prompt: 'Write a LinkedIn post about the lesson I learned from losing a $200K client to a competitor. The competitor won because of pricing, not quality. My voice: direct, no buzzwords, first-person. Lead with the loss, not the lesson. Under 200 words. No engagement-bait ending.'",
+              "evaluation_criteria": "Should produce a template that replaces the specifics with brackets: [LOSS/SETBACK], [ROOT CAUSE], [DOLLAR AMOUNT or METRIC] (optional), while keeping the structural logic fixed: voice rules (direct, no buzzwords, first-person), structure rule (lead with the loss not the lesson), length constraint (under 200 words), anti-pattern rule (no engagement-bait ending). The template should be general enough to use for any lesson-from-setback post, but specific enough to preserve what made the original prompt work.",
               "hints": [
-                "Start with the frontmatter block: name, description, type.",
-                "The body needs three parts: the rule, Why it exists, and How to apply it."
+                "What changes between posts (the specific story) vs. what stays the same (how you want it written)?"
               ],
               "xp_reward": 10
             }
           ]
         },
         {
-          "title": "The Full Stack",
-          "slug": "full-stack-capstone",
-          "description": "Hooks + bridges + memory as a complete operating system. The 5-minute session start. The compound effect. Building it incrementally.",
+          "title": "The Full Operating System",
+          "slug": "full-operating-system",
+          "description": "Custom Instructions + Memory + context docs + prompt library + Zapier triggers assembled as a complete system. The compound effect and the weekly maintenance habit that keeps it working.",
           "order_index": 4,
           "xp_reward": 100,
           "estimated_minutes": 7,
@@ -333,19 +333,19 @@
             "sections": [
               {
                 "type": "text",
-                "content": "<p>At 9 AM: SessionStart loads STATE.md + \"3 items unreconciled\" → <code>reconcile --list</code> → one is material → ChatGPT searches vault via MCP → recommendation in context. Five minutes total.</p>"
+                "content": "<p>The full system has four layers, each handling a different scope: <strong>Custom Instructions</strong> (who you are, how you want responses — permanent), <strong>Memory</strong> (durable facts ChatGPT saves across sessions), <strong>Context docs</strong> (current project state — updated weekly), <strong>Prompt library</strong> (tested templates for recurring tasks).</p>"
               },
               {
                 "type": "text",
-                "content": "<p>Six layers: <strong>CLAUDE.md</strong> (rules), <strong>STATE.md</strong> (current state), <strong>MEMORY.md</strong> (index), <strong>Hooks</strong> (automation), <strong>Bridges</strong> (capture), <strong>Vault</strong> (search).</p>"
+                "content": "<p>A mature morning workflow: open ChatGPT — Custom Instructions and Memory already loaded. Paste your project context doc (15 seconds). Open your prompt library, pick the template for today's work. Swap in the variables. First message is already 80% of the way to a great response.</p>"
               },
               {
                 "type": "text",
-                "content": "<p>One layer per week: Week 1 — CLAUDE.md + STATE.md. Week 2 — MEMORY.md + memory files. Week 3 — SessionStart + Stop hooks. Week 4 — activity bridge. Week 5 — MCP server.</p>"
+                "content": "<p>Layer in one at a time: Week 1 — Custom Instructions. Week 2 — project context doc. Week 3 — start capturing prompts to your library. Week 4 — build your first Zapier trigger. Each layer becomes a habit before you add the next. All four at once is how you abandon all four.</p>"
               },
               {
                 "type": "text",
-                "content": "<p>The compound effect: Month 3, ChatGPT applies a voice rule from 15 iterations ago. Month 6, it catches a security pattern from 6 months back. The system remembers so you don't have to.</p>"
+                "content": "<p>The compound effect: Month 3, ChatGPT applies voice rules you set up in month 1 without reminders. Month 6, your prompt library handles 80% of your recurring tasks. Month 12, your Zapier triggers run daily workflows while you sleep. The system works harder as it matures.</p>"
               },
               {
                 "type": "exercise",
@@ -361,15 +361,11 @@
               },
               {
                 "type": "text",
-                "content": "<p>Performance baselines for a mature setup: session start under 60 seconds, morning triage 5-8 minutes for 8-12 bridge items, context load under 12K tokens before the first prompt.</p>"
-              },
-              {
-                "type": "text",
-                "content": "<p>Maintenance calendar: weekly (5 min) — clear bridge items older than 7 days. Monthly (20-30 min) — archive shipped projects, promote 0.9+ memories, verify MEMORY.md under 180 lines.</p>"
+                "content": "<p>Weekly maintenance (10 minutes): update your project context doc, add any new prompt templates you captured this week, check Zapier for failed workflows. Monthly maintenance (20 minutes): review Custom Instructions for drift, archive unused prompt templates, update Memory entries that are stale. Discipline at 10 minutes a week beats rebuilding from scratch every month.</p>"
               },
               {
                 "type": "summary",
-                "content": "<p>Six layers: CLAUDE.md + STATE.md + MEMORY.md + hooks + bridges + vault. Five minutes to full context, once built. One layer per week — form the habit before adding the next.</p>"
+                "content": "<p>Four layers: Custom Instructions, Memory, context docs, prompt library. Add one per week. Weekly 10-minute maintenance keeps the system current. The compound effect hits at month 3 and accelerates from there.</p>"
               }
             ]
           },
@@ -381,20 +377,20 @@
               "prompt": "Match each layer of the operating system to its update frequency.",
               "pairs": [
                 {
-                  "left": "CLAUDE.md",
-                  "right": "Rarely — when project conventions or stack change"
+                  "left": "Custom Instructions",
+                  "right": "Rarely — when your role or core preferences change"
                 },
                 {
-                  "left": "STATE.md",
-                  "right": "Every session — updated at the end with decisions, in-flight, blockers"
+                  "left": "Project context doc",
+                  "right": "Every session — updated at the end with new status and decisions"
                 },
                 {
-                  "left": "MEMORY.md + memory files",
-                  "right": "Weekly — grows as new durable knowledge is captured"
+                  "left": "Prompt library",
+                  "right": "As needed — add when a prompt works, archive when unused for 30 days"
                 },
                 {
-                  "left": "STRATEGY-DIGEST.md",
-                  "right": "Monthly — regenerated when strategy files change"
+                  "left": "Zapier/Make triggers",
+                  "right": "Monthly — check for failures, update prompts when output drifts"
                 }
               ],
               "hints": [
@@ -406,15 +402,15 @@
               "id": "ex_hm_11",
               "order_index": 2,
               "type": "multiple_choice",
-              "prompt": "You set up the full operating system in a weekend: CLAUDE.md, STATE.md, MEMORY.md, hooks, vault, activity bridge. Two weeks later you have stopped updating STATE.md and the vault feels stale. What went wrong?",
+              "prompt": "You built all four layers in one weekend: Custom Instructions, project context doc, prompt library with 20 templates, and two Zapier triggers. Two weeks later you have stopped updating the project doc and haven't used the prompt library. What went wrong?",
               "options": [
                 "The system is too complex to maintain.",
-                "You built everything at once instead of layering it in. Start with CLAUDE.md + STATE.md, add one layer per week.",
+                "You built everything at once instead of layering it in. Start with Custom Instructions, form the habit, then add the next layer.",
                 "You need better tools.",
-                "The Stop hook should force you to update STATE.md, not just remind you."
+                "Two weeks is too short to evaluate — keep going."
               ],
               "correct_answer": "1",
-              "explanation": "Building the full stack in a weekend creates maintenance debt before the habit is formed. The fix is incremental adoption: two files first, then memory, then hooks, then the bridge. Each layer becomes a habit before the next one arrives.",
+              "explanation": "Building all four layers at once creates maintenance overhead before the habits are formed. The fix is incremental adoption: Custom Instructions first (form the habit of trusting them), then the project doc (form the habit of updating it), then the prompt library (form the habit of capturing), then triggers. Each layer becomes reflexive before the next arrives.",
               "hints": [
                 "How do habits form? All at once or one at a time?"
               ],
@@ -424,10 +420,11 @@
               "id": "ex_hm_12",
               "order_index": 3,
               "type": "scenario_walkthrough",
-              "prompt": "A friend asks you to help them set up this operating system from scratch. They have zero context files today. Write a 4-week adoption plan: what do they build each week, and what habit do they form before moving to the next layer?",
-              "expected_approach": "Week 1: Create CLAUDE.md (stack, conventions, don't-do-this) and STATE.md (decisions, in-flight, blockers). Habit: update STATE.md at the end of every session. Do not move on until this is automatic. Week 2: Create MEMORY.md and 3-5 memory files (user facts, one feedback rule, one project pointer). Habit: when you learn something durable, write a memory file and index it. Week 3: Add SessionStart and Stop hooks. SessionStart loads STATE.md + MEMORY.md. Stop reminds to update STATE.md. Habit: trust the hooks — stop manually loading context. Week 4: Create a vault directory structure (strategy/, resources/, content/, products/) and write STRATEGY-DIGEST.md. Habit: write decisions into the vault at the point of decision. Activity bridge comes in week 5+ only if they have an autonomous agent producing output.",
+              "prompt": "A colleague asks you to help them set up this operating system from scratch. They have nothing configured today. Write a 4-week adoption plan: what do they build each week, what habit must be solid before moving to the next layer, and what does success look like at the end of week 4?",
+              "evaluation_criteria": "Week 1: Set up Custom Instructions. Habit: trust that every session starts with your context loaded — stop re-explaining yourself. Success: 5 conversations that started without pasting any context. Week 2: Write a project context doc for one active project. Habit: paste it at every work session start, update it at session end. Success: used on 3 sessions with one update after each. Week 3: Start the prompt library with 3-5 templates from prompts that worked this week. Habit: when a prompt works, capture it. Success: used one saved template from the library at least twice. Week 4: Build one Zapier trigger for a high-frequency task (email triage, form responses, weekly digest). Habit: review Zapier dashboard once a week for failures. Success: trigger fired at least 3 times without manual intervention.",
               "hints": [
-                "Each week adds one layer. The habit from the previous week must be solid before adding the next. What is the simplest possible starting point?"
+                "Each week adds one layer. What habit from the previous week must be automatic before adding the next?",
+                "Define success for each week in terms of concrete behavior, not just setup."
               ],
               "xp_reward": 15
             }

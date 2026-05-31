@@ -12,7 +12,7 @@
       "lessons": [
         {
           "title": "Make ChatGPT Sound Like You",
-          "slug": "make-claude-sound-like-you",
+          "slug": "make-chatgpt-sound-like-you",
           "description": "The show-don't-tell prompt engineering pattern: use real examples to capture your voice instead of describing it with adjectives.",
           "order_index": 1,
           "xp_reward": 100,

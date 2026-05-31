@@ -98,7 +98,7 @@
         },
         {
           "title": "Build a Custom GPT",
-          "slug": "set-up-claude-code",
+          "slug": "build-a-custom-gpt",
           "description": "Open GPT Builder, configure instructions and knowledge, test with real prompts, and publish.",
           "order_index": 2,
           "xp_reward": 100,

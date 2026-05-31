@@ -3,7 +3,7 @@
   "courses": [
     {
       "title": "Why ChatGPT?",
-      "slug": "why-claude",
+      "slug": "why-chatgpt",
       "description": "Go from zero to actually useful with ChatGPT in 30 minutes. Hands-on from the first minute.",
       "difficulty": "beginner",
       "order_index": 1,
@@ -12,7 +12,7 @@
       "lessons": [
         {
           "title": "Meet ChatGPT",
-          "slug": "meet-claude",
+          "slug": "meet-chatgpt",
           "description": "What ChatGPT is, how it thinks, what makes it powerful, and your first real interaction.",
           "order_index": 1,
           "xp_reward": 50,

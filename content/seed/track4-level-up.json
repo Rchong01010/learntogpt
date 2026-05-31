@@ -151,7 +151,7 @@
         },
         {
           "title": "ChatGPT Memory & Persistent Context",
-          "slug": "give-claude-your-context",
+          "slug": "chatgpt-memory-persistent-context",
           "description": "How to use ChatGPT Memory, Custom GPT knowledge, and conversation history to eliminate re-explaining yourself every session.",
           "order_index": 3,
           "xp_reward": 100,

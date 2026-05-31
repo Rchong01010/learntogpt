@@ -12,7 +12,7 @@
       "lessons": [
         {
           "title": "The Three Ways to Use ChatGPT",
-          "slug": "three-ways-to-use-claude",
+          "slug": "three-ways-to-use-chatgpt",
           "description": "Chat, Canvas, Code Interpreter. Three modes, three superpowers. Get the mental model in 5 minutes.",
           "order_index": 1,
           "xp_reward": 50,
@@ -77,7 +77,7 @@
         },
         {
           "title": "ChatGPT Chat: Think and Write",
-          "slug": "claude-ai-chat-that-thinks",
+          "slug": "chatgpt-chat-think-and-write",
           "description": "When to use ChatGPT chat, how to give it context, and how to iterate toward great results.",
           "order_index": 2,
           "xp_reward": 75,
@@ -168,7 +168,7 @@
         },
         {
           "title": "Canvas: Your Collaborative Workspace",
-          "slug": "claude-co-work-thinking-partner",
+          "slug": "canvas-collaborative-workspace",
           "description": "When ChatGPT opens a persistent document alongside the chat, everything changes for long-form writing and code editing.",
           "order_index": 3,
           "xp_reward": 75,
@@ -259,7 +259,7 @@
         },
         {
           "title": "Code Interpreter: Real Data Analysis",
-          "slug": "claude-code-build-with-words",
+          "slug": "code-interpreter-real-data-analysis",
           "description": "Code Interpreter tutorial: upload real data files, run actual Python analysis, generate real charts, and build automation without writing code yourself.",
           "order_index": 4,
           "xp_reward": 75,
