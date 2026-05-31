@@ -1,0 +1,1935 @@
+{
+  "track": "architect_prep",
+  "courses": [
+    {
+      "title": "Domain 1 — Agentic Architecture",
+      "slug": "domain-1-agentic-architecture",
+      "description": "Master agentic loops, multi-agent coordination, subagent spawning, hooks, and task decomposition. Covers 27% of the Certified Architect exam.",
+      "difficulty": "expert",
+      "order_index": 1,
+      "is_free": false,
+      "icon": "Award",
+      "lessons": [
+        {
+          "title": "Agentic Loops & Orchestration Patterns",
+          "slug": "agentic-loops-orchestration",
+          "description": "Master the three core orchestration patterns — single-agent loops, pipelines, and coordinator patterns — and learn when to use each.",
+          "order_index": 1,
+          "xp_reward": 30,
+          "estimated_minutes": 15,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>Agentic Loops & Orchestration Patterns</h3><p>Agentic loops are the foundational pattern for Claude-based systems that need to accomplish multi-step tasks autonomously. An agentic loop follows a cycle: observe the current state, decide on the next action, execute it via a tool call, and evaluate the result before continuing or stopping.</p><p>The key architectural decision is loop termination. An agent must know when to stop — either because the task is complete, an error is unrecoverable, or a human review is needed. Without explicit termination logic, agents can spin indefinitely, burning tokens and producing garbage.</p><h4>Orchestration Patterns</h4><p>Orchestration patterns fall into three categories:</p><ol><li><strong>Single-agent loop</strong> — One agent with access to multiple tools, iterating until done. Best for tasks where context must be preserved across steps.</li><li><strong>Pipeline</strong> — Sequential handoff between specialized agents. Each agent completes its phase and passes structured output to the next. Best for well-defined workflows like code review → test → deploy.</li><li><strong>Coordinator pattern</strong> — A coordinator agent that spawns and manages worker agents. The coordinator decomposes the task, delegates subtasks, and synthesizes results. This is the most powerful pattern and the one most tested on the exam.</li></ol><p>The coordinator pattern transforms a single agent into parallel workers. The coordinator maintains the high-level plan while workers operate independently on subtasks. Workers report back structured results, and the coordinator decides whether to accept, retry, or reassign work.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ap1_01"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ap1_02"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ap1_03"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_ap1_01",
+              "type": "scenario",
+              "difficulty": "expert",
+              "question": "You're building a system that processes 200 legal documents daily. Each document needs: (1) entity extraction, (2) clause classification, (3) risk scoring, and (4) summary generation. Steps 2 and 3 depend on step 1, but are independent of each other. Step 4 depends on all previous steps. The current single-agent implementation takes 45 minutes per document. Which architecture would you recommend?",
+              "options": [
+                "A routing agent that assigns each document to one of four specialized single-agent loops randomly",
+                "A coordinator agent that spawns workers: one for entity extraction, then fans out parallel workers for clause classification and risk scoring, then a final worker for summary generation",
+                "Four independent agents in a strict pipeline, each processing the full batch before handing off to the next stage",
+                "A single agent with all four tools, processing documents sequentially with a longer context window"
+              ],
+              "correct_answer": 1,
+              "explanation": "The coordinator pattern is ideal here. The dependency graph shows entity extraction must complete first, then clause classification and risk scoring can run in parallel (they're independent), and summary generation depends on all three. A coordinator can exploit this parallelism. The pipeline approach (C) would work but misses the parallelism between steps 2 and 3. A single agent (A) can't parallelize at all. Random routing (D) doesn't respect the dependency chain.",
+              "xp_reward": 15
+            },
+            {
+              "id": "ex_ap1_02",
+              "type": "multiple_choice",
+              "difficulty": "expert",
+              "question": "In an agentic loop, what is the PRIMARY risk of not implementing explicit termination conditions?",
+              "options": [
+                "The agent will produce incorrect results on the first iteration",
+                "The agent will refuse to start because it detects missing termination logic",
+                "The agent will loop indefinitely, consuming tokens without making progress toward the goal",
+                "The agent will crash with an out-of-memory error"
+              ],
+              "correct_answer": 2,
+              "explanation": "Without explicit termination conditions, an agent can enter infinite loops — retrying failed actions, oscillating between states, or continuing past task completion. This burns tokens and compute without progress. The API doesn't enforce termination logic (D is wrong), and the agent won't necessarily crash (A) — it'll just keep going.",
+              "xp_reward": 10
+            },
+            {
+              "id": "ex_ap1_03",
+              "type": "scenario",
+              "difficulty": "expert",
+              "question": "Your team has a single-agent system that reviews pull requests. It reads the diff, checks for security issues, runs linting rules, and posts comments. The agent works well but takes 8 minutes per PR, and your team opens 50 PRs per day. Your manager asks you to 'make it faster by adding more agents.' What is the BEST first step?",
+              "options": [
+                "Immediately implement a coordinator pattern with 10 parallel worker agents, each handling a different PR",
+                "Replace the single agent with a pipeline of four specialized agents (diff reading, security, linting, commenting)",
+                "Profile the existing agent to identify which steps are bottlenecks before adding complexity",
+                "Add a routing layer that distributes PRs across multiple identical single-agent instances"
+              ],
+              "correct_answer": 2,
+              "explanation": "Always profile before optimizing. The bottleneck might be a single slow tool call (e.g., running the linter), in which case adding more agents won't help — you need to fix the tool. The exam philosophy emphasizes the simplest, most direct fix. Jumping to a coordinator pattern (A) or pipeline (C) adds complexity without knowing if it addresses the actual bottleneck.",
+              "xp_reward": 15
+            }
+          ]
+        },
+        {
+          "title": "Multi-Agent Coordination & Subagent Spawning",
+          "slug": "multi-agent-coordination",
+          "description": "Design multi-agent systems with proper task decomposition, information sharing, and result aggregation using subagent spawning.",
+          "order_index": 2,
+          "xp_reward": 30,
+          "estimated_minutes": 15,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>Multi-Agent Coordination & Subagent Spawning</h3><p>Multi-agent coordination requires careful design around three concerns: task decomposition, information sharing, and result aggregation.</p><h4>Task Decomposition</h4><p>The coordinator must break work into subtasks that are independently executable. If subtasks have hidden dependencies, workers will produce inconsistent results or block waiting for information they don't have. Good decomposition means each subtask has a clear input, a clear output, and no side-channel dependencies.</p><h4>Subagent Spawning</h4><p>Use <code>fork_session</code> or the Task tool to create isolated agent instances. Each subagent gets its own context window and tool access. Key design decisions:</p><ul><li>What tools does each subagent need? (Principle of least privilege)</li><li>What context does the subagent need from the coordinator? (Minimize to reduce confusion)</li><li>How does the subagent report results back? (Structured output for reliable aggregation)</li></ul><h4>AgentDefinition</h4><p>Defines the capabilities and constraints of a subagent. Includes the system prompt, available tools, and any guardrails. Think of it as a job description — it tells the subagent what it can do, what it should do, and what it must not do.</p><h4>Agent Isolation</h4><p>Subagents should not share state directly. The coordinator is the single source of truth. If two subagents need to coordinate, they should do so through the coordinator, not by reading each other's output directly. This prevents race conditions and makes the system easier to debug.</p><h4>Result Aggregation</h4><p>The coordinator must handle partial failures gracefully. If 3 out of 4 workers succeed, does the coordinator retry the failed worker, proceed with partial results, or fail the entire task? This decision depends on the use case and should be explicit in the coordinator's logic.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ap1_04"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ap1_05"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ap1_06"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_ap1_04",
+              "type": "scenario",
+              "difficulty": "expert",
+              "question": "You're designing a multi-agent code migration system. A coordinator spawns subagents to migrate individual files from Python 2 to Python 3. Subagent A migrates `utils.py` and renames a function from `get_items()` to `fetch_items()`. Subagent B migrates `main.py` which imports and calls `get_items()` from utils. Neither subagent knows about the other's changes. What is the BEST architectural fix?",
+              "options": [
+                "Have the coordinator perform a dependency analysis first, then sequence the migrations so dependent files are handled together by the same subagent",
+                "Instruct each subagent via prompt to avoid renaming any functions",
+                "Give all subagents access to a shared mutable state so they can see each other's changes in real time",
+                "Add a post-processing step where another agent reviews all changes for cross-file consistency"
+              ],
+              "correct_answer": 0,
+              "explanation": "The root cause is hidden dependencies between subtasks. The coordinator should analyze file dependencies before decomposing, and either group dependent files into the same subtask or sequence them with context passing. Shared mutable state (A) creates race conditions and breaks agent isolation. Post-processing (C) catches errors but doesn't prevent them — it's a bandaid. Avoiding renames (D) cripples the migration. The exam favors solving the root cause at the architecture level.",
+              "xp_reward": 15
+            },
+            {
+              "id": "ex_ap1_05",
+              "type": "multiple_choice",
+              "difficulty": "expert",
+              "question": "When using AgentDefinition to configure a subagent that will only read files and report findings, which principle should guide your tool access configuration?",
+              "options": [
+                "Give the subagent only read-related tools, following the principle of least privilege",
+                "Give the subagent all available tools so it can handle unexpected situations",
+                "Give the subagent no tools and have it request tools from the coordinator as needed",
+                "Give the subagent read and write tools but instruct it via prompt to only use read tools"
+              ],
+              "correct_answer": 0,
+              "explanation": "Principle of least privilege: the subagent should only have the tools it needs for its specific task. If it only needs to read, only give it read tools. Relying on prompt instructions to restrict tool use (C) is prompt-based guidance, which is less reliable than programmatic enforcement. The exam consistently tests this: programmatic enforcement > prompt-based guidance for critical constraints.",
+              "xp_reward": 10
+            },
+            {
+              "id": "ex_ap1_06",
+              "type": "scenario",
+              "difficulty": "expert",
+              "question": "A coordinator spawns 5 subagents to analyze different sections of a codebase. 4 complete successfully, but 1 fails due to a context window overflow on an unusually large file. What is the BEST approach?",
+              "options": [
+                "Fail the entire task and ask the user to reduce the codebase size",
+                "Retry the failed subagent with the same configuration, hoping for a different result",
+                "Ignore the failure and return partial results without indicating anything is missing",
+                "Have the coordinator retry the failed subtask with a modified strategy — e.g., splitting the large file analysis into smaller chunks — while preserving the 4 successful results"
+              ],
+              "correct_answer": 3,
+              "explanation": "Graceful degradation with intelligent retry. The coordinator should preserve successful results and adapt the strategy for the failed subtask (e.g., chunking the large file). Failing entirely (A) wastes the 4 successful results. Retrying with the same config (B) will hit the same error. Silently returning partial results (D) violates reliability principles — the user must know what's missing.",
+              "xp_reward": 15
+            }
+          ]
+        },
+        {
+          "title": "Hooks: PreToolUse & PostToolUse",
+          "slug": "hooks-pre-post-tool-use",
+          "description": "Implement deterministic enforcement with hooks that fire before and after tool calls, and learn when hooks beat prompts.",
+          "order_index": 3,
+          "xp_reward": 30,
+          "estimated_minutes": 15,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>Hooks: PreToolUse & PostToolUse</h3><p>Hooks are deterministic code that runs before or after tool calls, providing programmatic enforcement of policies that prompts alone cannot guarantee.</p><h4>PreToolUse Hooks</h4><p>PreToolUse hooks fire before a tool is executed. They can:</p><ul><li>Validate parameters (e.g., reject file writes to protected paths)</li><li>Add required parameters (e.g., inject authentication headers)</li><li>Block the tool call entirely (e.g., prevent destructive operations in production)</li><li>Transform inputs (e.g., sanitize file paths)</li></ul><h4>PostToolUse Hooks</h4><p>PostToolUse hooks fire after a tool returns. They can:</p><ul><li>Validate outputs (e.g., check that generated SQL is parameterized)</li><li>Log tool usage for audit trails</li><li>Transform outputs (e.g., redact sensitive data before it enters context)</li><li>Trigger follow-up actions (e.g., run tests after a file write)</li></ul><h4>Hooks vs. Prompts</h4><p>This is a critical exam concept. Hooks provide deterministic enforcement — they will always run, always check, always block. Prompts provide probabilistic guidance — the model will usually follow them, but not always.</p><p>Use hooks for: security constraints, compliance requirements, audit requirements, hard business rules. Use prompts for: style preferences, soft guidelines, contextual decisions.</p><p>The exam tests whether you know when to use hooks vs. prompts. The rule: if the consequence of non-compliance is a security breach, data loss, or compliance violation, use a hook. If it's a code style issue, use a prompt.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ap1_07"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ap1_08"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ap1_09"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_ap1_07",
+              "type": "scenario",
+              "difficulty": "expert",
+              "question": "Your company has a compliance requirement: no agent may write files containing PII (Social Security numbers, credit card numbers) to disk. An engineer proposes adding this instruction to the system prompt: 'Never write files containing PII such as SSNs or credit card numbers.' What is the BEST approach?",
+              "options": [
+                "Implement a PreToolUse hook on file write tools that scans the content parameter for PII patterns before the write occurs, blocking it if detected",
+                "The prompt instruction is sufficient because Claude is very reliable at following instructions",
+                "Add both the prompt instruction and a PreToolUse hook for defense in depth",
+                "Implement a PostToolUse hook on file write tools that scans the written content with regex patterns for SSN and credit card formats, blocking the write if detected"
+              ],
+              "correct_answer": 2,
+              "explanation": "Defense in depth is the best approach: the prompt reduces the frequency of attempts (the model will try to avoid writing PII), and the PreToolUse hook catches any that slip through. However, if forced to choose only one, the PreToolUse hook (C) is better than PostToolUse (B) because it prevents the write entirely rather than writing then detecting. The exam philosophy: programmatic enforcement (hooks) for compliance, prompt for guidance, and ideally both.",
+              "xp_reward": 15
+            },
+            {
+              "id": "ex_ap1_08",
+              "type": "multiple_choice",
+              "difficulty": "expert",
+              "question": "Which of the following is BEST implemented as a PreToolUse hook rather than a prompt instruction?",
+              "options": [
+                "Requiring all SQL queries to use parameterized inputs before execution",
+                "Suggesting the agent check for existing tests before writing new code",
+                "Recommending the agent use TypeScript instead of JavaScript for new files",
+                "Encouraging the agent to write descriptive commit messages"
+              ],
+              "correct_answer": 0,
+              "explanation": "SQL injection prevention is a security requirement with severe consequences if violated. This must be enforced deterministically via a PreToolUse hook that inspects SQL queries before execution. The other options (A, C, D) are style/process preferences where non-compliance doesn't cause security breaches — prompts are appropriate for those.",
+              "xp_reward": 10
+            },
+            {
+              "id": "ex_ap1_09",
+              "type": "scenario",
+              "difficulty": "expert",
+              "question": "You have a PostToolUse hook that logs all file reads to an audit trail. The hook is working correctly, but you notice the audit logs contain the full file contents, including API keys from .env files. What should you change?",
+              "options": [
+                "Add a prompt instruction telling the agent not to read .env files",
+                "Modify the PostToolUse hook to redact known secret patterns (API keys, tokens) from the logged content before writing to the audit trail",
+                "Remove the audit logging entirely to avoid the risk",
+                "Switch from PostToolUse to PreToolUse and block all reads of .env files"
+              ],
+              "correct_answer": 1,
+              "explanation": "The hook itself needs to redact sensitive data from its logs. Blocking .env reads entirely (D) would break legitimate workflows. Removing audit logging (C) loses a security capability. Prompt instructions (A) are unreliable for security. The correct fix is to keep the audit logging but add redaction logic to the hook itself.",
+              "xp_reward": 15
+            }
+          ]
+        },
+        {
+          "title": "Task Decomposition Strategies",
+          "slug": "task-decomposition-strategies",
+          "description": "Learn the principles and anti-patterns of decomposing complex goals into executable subtasks for multi-agent systems.",
+          "order_index": 4,
+          "xp_reward": 30,
+          "estimated_minutes": 15,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>Task Decomposition Strategies</h3><p>Task decomposition is how a coordinator transforms a complex goal into executable subtasks. Poor decomposition is the #1 cause of multi-agent system failures.</p><h4>Decomposition Principles</h4><ol><li><strong>Independence</strong>: Each subtask should be executable without knowledge of other subtasks' results (unless explicitly sequenced). If subtask B needs subtask A's output, they must be sequenced, not parallelized.</li><li><strong>Completeness</strong>: The union of all subtasks must cover the original task. Missing subtasks mean missing work.</li><li><strong>Minimal overlap</strong>: Subtasks should not duplicate effort. If two workers analyze the same code, you're wasting tokens and risking conflicting results.</li><li><strong>Right-sized</strong>: Subtasks should be small enough to fit in a single agent's context window but large enough to be meaningful.</li></ol><h4>Decomposition Strategies</h4><ul><li><strong>By file/module</strong>: Each worker handles one file or module. Works well when files are independent.</li><li><strong>By concern</strong>: Each worker handles one aspect (security, performance, correctness). Works well for review tasks.</li><li><strong>By phase</strong>: Sequential phases where each phase's output feeds the next. Works well for transformation pipelines.</li><li><strong>By data partition</strong>: Each worker handles a subset of the data. Works well for batch processing.</li></ul><h4>Anti-patterns</h4><ul><li>Decomposing by arbitrary boundaries (e.g., first half of a file vs. second half)</li><li>Creating subtasks with circular dependencies</li><li>Over-decomposing (100 subtasks for a 10-file project)</li><li>Under-decomposing (1 subtask that's really 5 tasks bundled together)</li></ul>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ap1_10"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ap1_11"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ap1_12"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_ap1_10",
+              "type": "scenario",
+              "difficulty": "expert",
+              "question": "You need to build an agent system that refactors a monolithic 500-file Node.js application into microservices. The coordinator must decompose the work. Which decomposition strategy is BEST?",
+              "options": [
+                "By phase: first analyze dependencies across all files, then identify service boundaries, then refactor files grouped by target service",
+                "By alphabet: group files A-F to worker 1, G-M to worker 2, etc.",
+                "By line count: split files into groups of equal total line counts for balanced worker load",
+                "By file: assign each of the 500 files to a worker agent for independent refactoring"
+              ],
+              "correct_answer": 0,
+              "explanation": "Monolith-to-microservices requires understanding the full dependency graph before making any changes. By-phase decomposition is correct: (1) analyze dependencies, (2) identify service boundaries, (3) refactor grouped by service. By-file (A) fails because files have interdependencies. By line count (C) and by alphabet (D) are arbitrary boundaries that ignore logical groupings — a classic anti-pattern.",
+              "xp_reward": 15
+            },
+            {
+              "id": "ex_ap1_11",
+              "type": "multiple_choice",
+              "difficulty": "expert",
+              "question": "A coordinator decomposes a code review task into subtasks by concern: Worker A checks security, Worker B checks performance, Worker C checks correctness. All three workers need to read the same files. What is the PRIMARY trade-off of this approach?",
+              "options": [
+                "Each worker consumes tokens reading the same code, tripling the total token cost for file reading, but each worker produces more focused, higher-quality analysis in its domain",
+                "Workers cannot read the same files simultaneously",
+                "This decomposition violates the independence principle because workers share input files",
+                "The workers will produce conflicting recommendations that cannot be resolved"
+              ],
+              "correct_answer": 0,
+              "explanation": "By-concern decomposition trades higher token cost (redundant file reads) for higher quality (specialized focus). This is often a worthwhile trade-off for review tasks. Workers CAN read the same files (A is wrong). Conflicting recommendations (C) are expected and the coordinator resolves them. Sharing input files (D) does NOT violate independence — independence means subtasks don't depend on each other's *output*, not that they can't read the same *input*.",
+              "xp_reward": 10
+            },
+            {
+              "id": "ex_ap1_12",
+              "type": "scenario",
+              "difficulty": "expert",
+              "question": "Your coordinator decomposes a data processing task into 50 subtasks and spawns 50 subagents simultaneously. The system crashes due to resource exhaustion. What is the SIMPLEST fix?",
+              "options": [
+                "Rewrite the entire system to use a single-agent pipeline instead",
+                "Upgrade the hardware to handle 50 simultaneous agents",
+                "Add a concurrency limiter to the coordinator so it runs at most N subagents at a time (e.g., 5-10), queuing the rest",
+                "Reduce the task to only 5 subtasks by grouping files arbitrarily"
+              ],
+              "correct_answer": 2,
+              "explanation": "The simplest fix is a concurrency limiter. The decomposition into 50 subtasks may be correct, but running them all simultaneously is the problem. A concurrency pool (run 5-10 at a time) solves resource exhaustion without changing the decomposition logic. Rewriting to single-agent (A) throws away parallelism. Arbitrary grouping (C) may produce bad decomposition. Hardware upgrades (D) are expensive and not always possible. The exam favors the simplest, most direct fix.",
+              "xp_reward": 15
+            }
+          ]
+        },
+        {
+          "title": "Session Management & Agent Isolation",
+          "slug": "session-management-isolation",
+          "description": "Understand session lifecycles, fork_session semantics, isolation boundaries, and common pitfalls in multi-agent state management.",
+          "order_index": 5,
+          "xp_reward": 30,
+          "estimated_minutes": 15,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>Session Management & Agent Isolation</h3><p>Session management determines how agent state persists, is shared, and is cleaned up. Agent isolation ensures that agents don't interfere with each other or leak information across boundaries.</p><h4>Session Lifecycle</h4><ol><li><strong>Creation</strong>: A session is initialized with a system prompt, tool configuration, and optional context. Use <code>fork_session</code> to create child sessions from a parent.</li><li><strong>Execution</strong>: The agent operates within its session, making tool calls and receiving results. All context accumulates in the session's conversation history.</li><li><strong>Reporting</strong>: The agent produces a structured result that the coordinator can consume.</li><li><strong>Cleanup</strong>: The session is terminated and resources are freed. Context is not persisted unless explicitly saved.</li></ol><h4>fork_session</h4><p>Creates a new session that inherits configuration from the parent but operates independently. Changes in the child session do not affect the parent's context window. This is essential for parallel execution — workers in forked sessions can operate simultaneously without corrupting each other's state.</p><h4>Isolation Boundaries</h4><ul><li><strong>Context isolation</strong>: Each agent has its own context window. One agent's conversation history is invisible to others.</li><li><strong>Tool isolation</strong>: Agents can be given different tool sets. A read-only agent should not have write tools.</li><li><strong>File system isolation</strong>: Agents share the file system by default. If agents write to the same files, use coordination (locks, sequential access) or partition the file space.</li><li><strong>Secret isolation</strong>: Agents should only receive the secrets they need. Don't pass the database admin password to an agent that only needs read access.</li></ul><h4>Common Pitfalls</h4><ul><li>Assuming forked sessions share context (they don't)</li><li>Not cleaning up sessions after use (resource leak)</li><li>Giving all agents identical tool sets (violates least privilege)</li><li>Using the file system as an implicit communication channel between agents without coordination</li></ul>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ap1_13"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ap1_14"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ap1_15"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_ap1_13",
+              "type": "scenario",
+              "difficulty": "expert",
+              "question": "Two subagents are spawned in parallel to refactor different modules. Both need to update a shared `config.ts` file — Agent A adds a new config key for Module A, and Agent B adds a different config key for Module B. Both agents complete successfully, but when you check `config.ts`, only Agent B's changes are present. What happened, and what is the BEST fix?",
+              "options": [
+                "Agent A's session crashed silently. The fix is to add better error handling",
+                "The context windows merged and confused the results. The fix is to use longer system prompts",
+                "Agent B's write overwrote Agent A's write because file system operations are not isolated between agents. The fix is to have both agents report their config changes to the coordinator, which makes a single consolidated write",
+                "Agent A's changes were automatically merged with Agent B's changes but a bug in the merge caused data loss"
+              ],
+              "correct_answer": 2,
+              "explanation": "This is a classic race condition. Both agents read the file, both make their change in memory, and both write the file. The second write overwrites the first. The fix is coordination through the coordinator: agents report their intended changes, and the coordinator makes a single, consolidated write. This is a key isolation concept — context is isolated, but the file system is shared.",
+              "xp_reward": 15
+            },
+            {
+              "id": "ex_ap1_14",
+              "type": "multiple_choice",
+              "difficulty": "expert",
+              "question": "What is the PRIMARY purpose of fork_session in multi-agent architectures?",
+              "options": [
+                "To create a backup of the parent session in case of failure",
+                "To allow the child session to modify the parent session's state remotely",
+                "To create an independent session with its own context window that inherits configuration but operates in isolation",
+                "To share the parent's context window with the child for faster startup"
+              ],
+              "correct_answer": 2,
+              "explanation": "fork_session creates an independent child session. It inherits configuration (system prompt, tool access) but gets its own context window. The child cannot see or modify the parent's context, and the parent cannot see the child's conversation. This isolation is what makes parallel execution safe.",
+              "xp_reward": 10
+            },
+            {
+              "id": "ex_ap1_15",
+              "type": "scenario",
+              "difficulty": "expert",
+              "question": "You're debugging a multi-agent system where a coordinator spawns 3 workers. The coordinator passes each worker a large context block (5,000 tokens) describing the full project, even though each worker only needs ~500 tokens of relevant context for its specific subtask. What is the impact and the BEST fix?",
+              "options": [
+                "No impact — more context is always better for agent performance",
+                "The extra context will cause all workers to exceed their context windows and crash",
+                "The extra context improves worker reliability because they understand the full picture",
+                "The extra context wastes tokens and may confuse workers with irrelevant information. The fix is to have the coordinator pass only the minimal context each worker needs for its specific subtask"
+              ],
+              "correct_answer": 3,
+              "explanation": "Minimal, targeted context is better than dumping everything. Irrelevant context wastes tokens and can confuse the worker — it might act on information not relevant to its subtask. The coordinator should curate context per worker: only pass what that worker needs. This also relates to the lost-in-the-middle problem: burying relevant information in irrelevant context reduces reliability.",
+              "xp_reward": 15
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Domain 2 — Tool Design & MCP",
+      "slug": "domain-2-tool-design-mcp",
+      "description": "Master tool descriptions, structured errors, MCP servers, tool_choice modes, and input/output schemas. Covers 18% of the Certified Architect exam.",
+      "difficulty": "expert",
+      "order_index": 2,
+      "is_free": false,
+      "icon": "Award",
+      "lessons": [
+        {
+          "title": "Writing Effective Tool Descriptions",
+          "slug": "effective-tool-descriptions",
+          "description": "Write tool descriptions that enable accurate tool selection without routing layers, including disambiguation and parameter documentation.",
+          "order_index": 1,
+          "xp_reward": 30,
+          "estimated_minutes": 15,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>Writing Effective Tool Descriptions</h3><p>Tool descriptions are the single most important factor in whether Claude selects the right tool. Better tool descriptions beat routing layers every time.</p><h4>Why Descriptions Matter More Than Routing</h4><p>A common anti-pattern is building a routing layer that analyzes the user's request and selects tools before Claude sees them. This adds latency, complexity, and a new failure mode (the router picks wrong). Instead, write clear tool descriptions and let Claude's native tool selection do the work.</p><h4>Anatomy of a Great Tool Description</h4><ol><li><strong>What it does</strong> (first sentence): Clear, concise statement of the tool's purpose.</li><li><strong>When to use it</strong>: Conditions under which this tool is the right choice.</li><li><strong>When NOT to use it</strong>: Disambiguation from similar tools.</li><li><strong>Parameters</strong>: What each parameter means, valid values, defaults.</li><li><strong>Return value</strong>: What the tool returns and in what format.</li><li><strong>Side effects</strong>: Any state changes the tool causes.</li></ol><h4>Common Mistakes</h4><ul><li>Descriptions that are too short (Claude can't differentiate between tools)</li><li>Descriptions that overlap (Claude picks randomly between similar tools)</li><li>Missing parameter descriptions (Claude guesses at parameter format)</li><li>No disambiguation (when you have search_internal and search_external, each must explain when to use it vs. the other)</li></ul>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ap2_01"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ap2_02"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ap2_03"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_ap2_01",
+              "type": "scenario",
+              "difficulty": "expert",
+              "question": "Your agent has three search tools: `search_docs`, `search_code`, and `search_tickets`. Users report that the agent frequently calls `search_docs` when it should call `search_tickets` for support-related queries. An engineer proposes building a routing classifier that analyzes the query first and forces the correct tool. What is the BEST approach?",
+              "options": [
+                "Add few-shot examples to the system prompt showing correct tool selection for each query type",
+                "Merge all three tools into one universal search tool to eliminate the selection problem",
+                "Build the routing classifier as proposed — it will be more reliable than Claude's tool selection",
+                "Improve the tool descriptions to clearly differentiate when each should be used, especially adding 'Use this for support tickets, bug reports, and customer issues' to search_tickets and 'Do NOT use for support tickets' to search_docs"
+              ],
+              "correct_answer": 3,
+              "explanation": "Better tool descriptions > routing layers. The exam consistently tests this principle. The root cause is ambiguous descriptions, not broken tool selection. Adding clear 'when to use' and 'when NOT to use' guidance to descriptions is simpler, lower-latency, and more maintainable than a routing classifier. Merging tools (C) loses specialization. Few-shot examples (D) can help but are secondary to good descriptions.",
+              "xp_reward": 15
+            },
+            {
+              "id": "ex_ap2_02",
+              "type": "multiple_choice",
+              "difficulty": "expert",
+              "question": "Which tool description is MOST effective for helping Claude select the right tool?",
+              "options": [
+                "\"read_file(path: string) -> string\"",
+                "\"Reads a file from disk.\"",
+                "\"This is a really powerful tool that can read any file on the system. It's great for all kinds of file reading tasks and returns the contents.\"",
+                "\"Reads the contents of a file at the specified path. Returns the full file contents as a string. Use for reading source code, config files, and text documents. For binary files (images, PDFs), use read_binary instead. The file must exist — returns an error if not found.\""
+              ],
+              "correct_answer": 3,
+              "explanation": "Option B includes all elements of a great description: what it does, what it returns, when to use it, when NOT to use it (binary files), and error behavior. Option A is too terse. Option C is vague and uses filler words. Option D is a type signature, not a description.",
+              "xp_reward": 10
+            },
+            {
+              "id": "ex_ap2_03",
+              "type": "scenario",
+              "difficulty": "expert",
+              "question": "You have 15 tools available to your agent, but users only ever use 5 of them. The other 10 are for admin tasks. You notice Claude occasionally selects admin tools for user tasks. What is the SIMPLEST fix?",
+              "options": [
+                "Add a PreToolUse hook that blocks admin tools when the user is not an admin",
+                "Only provide the 5 user-facing tools to non-admin sessions, and provide all 15 to admin sessions",
+                "Rewrite all 15 tool descriptions to be more specific",
+                "Add a routing layer that filters tool calls based on user role"
+              ],
+              "correct_answer": 1,
+              "explanation": "The simplest fix: don't show tools the agent shouldn't use. If the tools aren't in the tool list, Claude can't select them. This is tool distribution by role — admin sessions get admin tools, user sessions get user tools. A hook (A) adds complexity. Rewriting descriptions (B) might help but doesn't solve the root cause. A routing layer (D) is over-engineering.",
+              "xp_reward": 15
+            }
+          ]
+        },
+        {
+          "title": "Structured Errors & Tool Distribution",
+          "slug": "structured-errors-tool-distribution",
+          "description": "Design structured error responses that enable intelligent recovery, and distribute tools by role, phase, and risk level.",
+          "order_index": 2,
+          "xp_reward": 30,
+          "estimated_minutes": 15,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>Structured Errors & Tool Distribution</h3><h4>Structured Errors</h4><p>When a tool fails, the error should be structured and actionable, not a raw stack trace. Claude needs to understand what went wrong and whether to retry, try an alternative, or escalate.</p><p>A good tool error includes:</p><ol><li><strong>Error type</strong>: A machine-readable category (e.g., <code>not_found</code>, <code>permission_denied</code>, <code>rate_limited</code>, <code>validation_error</code>)</li><li><strong>Message</strong>: A human-readable explanation</li><li><strong>Retryable</strong>: Whether the agent should retry</li><li><strong>Suggested action</strong>: What the agent should do next</li></ol><p>Bad error: <code>\"Error: ENOENT\"</code> — Claude doesn't know what to do.<br/>Good error: <code>{\"type\": \"not_found\", \"message\": \"File /src/utils.ts does not exist\", \"retryable\": false, \"suggestion\": \"Check if the file path is correct. Use the list_files tool to see available files.\"}</code></p><h4>Tool Distribution</h4><p>Not every agent needs every tool. Tool distribution is the practice of giving each agent only the tools it needs.</p><p>Strategies:</p><ul><li><strong>Role-based</strong>: Admin agents get admin tools, user agents get user tools</li><li><strong>Phase-based</strong>: Planning agents get read-only tools, execution agents get write tools</li><li><strong>Risk-based</strong>: High-risk tools (delete, deploy) only available to agents with explicit authorization</li></ul><p>Tool distribution reduces hallucinated tool calls, security surface area, and decision complexity.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ap2_04"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ap2_05"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ap2_06"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_ap2_04",
+              "type": "scenario",
+              "difficulty": "expert",
+              "question": "Your tool returns this error when a database query fails: `{\"error\": \"Internal Server Error\"}`. The agent responds to the user with 'I encountered an internal server error and cannot complete your request.' How should you improve the error handling?",
+              "options": [
+                "Return the full stack trace so Claude can debug the issue",
+                "Catch all errors in the tool and return a successful empty result to prevent error messages from reaching the user",
+                "Return a structured error with type, retryable flag, and suggestion: `{\"type\": \"database_timeout\", \"message\": \"Query timed out after 30s\", \"retryable\": true, \"suggestion\": \"Retry with a narrower date range or fewer columns\"}`",
+                "Return `{\"error\": \"Something went wrong, please try again\"}` to be user-friendly"
+              ],
+              "correct_answer": 2,
+              "explanation": "Structured errors give Claude the information needed to take intelligent recovery action. The agent can retry with modified parameters (narrower query), try an alternative approach, or give the user specific guidance. Raw stack traces (A) may leak sensitive data. Generic messages (C) don't help recovery. Swallowing errors (D) hides failures and produces incorrect results.",
+              "xp_reward": 15
+            },
+            {
+              "id": "ex_ap2_05",
+              "type": "multiple_choice",
+              "difficulty": "expert",
+              "question": "In a multi-phase workflow (planning -> execution -> review), which tool distribution approach is MOST secure?",
+              "options": [
+                "All phases get all tools for maximum flexibility",
+                "Only the first phase gets tools; subsequent phases work from the first phase's output",
+                "Planning phase gets read-only tools, execution phase gets read-write tools, review phase gets read-only tools",
+                "Each phase gets a random subset of tools to test robustness"
+              ],
+              "correct_answer": 2,
+              "explanation": "Phase-based tool distribution matches access to intent. The planning phase only needs to read the current state — giving it write tools risks unintended modifications. The execution phase needs write access. The review phase should only read, not modify. This follows least privilege by phase.",
+              "xp_reward": 10
+            },
+            {
+              "id": "ex_ap2_06",
+              "type": "scenario",
+              "difficulty": "expert",
+              "question": "Your agent has 25 tools available. Users report that the agent is slow and often picks the wrong tool. You profile the system and find that tool selection is the bottleneck — Claude is spending significant tokens evaluating all 25 tool descriptions. What is the BEST optimization?",
+              "options": [
+                "Remove the least-used 15 tools to reduce the total to 10",
+                "Build a routing classifier that selects 3-5 relevant tools based on the query, then pass only those tools to Claude",
+                "Group tools by category and only provide the relevant category's tools based on the conversation context",
+                "Shorten all tool descriptions to one word each"
+              ],
+              "correct_answer": 2,
+              "explanation": "This is the one case where reducing the tool set dynamically makes sense — but it should be context-based grouping, not a routing classifier. Group tools by category (file ops, search, database, etc.) and provide only the relevant category. This is simpler than a routing classifier (B), preserves tool quality unlike shortening descriptions (A), and doesn't remove functionality like dropping tools (D). Note: the exam usually says 'better descriptions > routing layers,' but when you have 25+ tools, dynamic filtering by context is a valid optimization.",
+              "xp_reward": 15
+            }
+          ]
+        },
+        {
+          "title": "MCP Servers & Built-in Tools",
+          "slug": "mcp-servers-built-in-tools",
+          "description": "Understand MCP architecture, transport protocols, tool/resource/prompt discovery, and when to build vs. reuse MCP servers.",
+          "order_index": 3,
+          "xp_reward": 30,
+          "estimated_minutes": 15,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>MCP Servers & Built-in Tools</h3><p>The Model Context Protocol (MCP) provides a standardized way to connect Claude to external tools and data sources. MCP servers expose tools, resources, and prompts through a common protocol.</p><h4>MCP Architecture</h4><ul><li><strong>MCP Server</strong>: A process that exposes tools via the MCP protocol. Can be local (stdio) or remote (SSE/HTTP).</li><li><strong>MCP Client</strong>: Claude Code or the Claude API, which discovers and calls tools on MCP servers.</li><li><strong>Transport</strong>: How client and server communicate — stdio for local, SSE for remote.</li></ul><h4>Key MCP Concepts</h4><ul><li><strong>Tool discovery</strong>: The client queries the server for available tools, including their schemas</li><li><strong>inputSchema</strong>: JSON Schema defining what parameters a tool accepts (aligned with MCP spec)</li><li><strong>Resource discovery</strong>: Servers can expose read-only data resources (files, database records, API responses)</li><li><strong>Prompt templates</strong>: Servers can expose pre-built prompt templates for common tasks</li></ul><h4>Built-in Tools</h4><p>Claude Code includes built-in tools like Read, Write, Edit, Bash, Glob, Grep. These are always available and don't require MCP configuration. Key architectural decision: use built-in tools when they suffice; add MCP tools only for capabilities built-in tools can't provide.</p><h4>When to Build an MCP Server</h4><p>Build when: you need to connect to a proprietary API or database, share tools across multiple agents or projects, encapsulate complex tool logic (auth, pagination, rate limiting), or want tool behavior to be updatable without changing agent configuration.</p><p>Don't build when: a built-in tool already does what you need, the tool is a one-off script for one agent, or the overhead of running a server process isn't justified.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ap2_07"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ap2_08"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ap2_09"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_ap2_07",
+              "type": "scenario",
+              "difficulty": "expert",
+              "question": "Your team wants to give Claude access to your company's internal JIRA instance. An engineer proposes writing a custom Bash script that uses curl to call the JIRA API, and having the agent call it via the Bash tool. Another engineer proposes building an MCP server that wraps the JIRA API. Which approach is BEST for a production system?",
+              "options": [
+                "The Bash + curl approach is better because it's simpler and faster to implement",
+                "Both are equivalent; it doesn't matter which you choose",
+                "Neither — use an existing JIRA MCP server from the community instead of building your own",
+                "The MCP server approach is better because it provides structured tool interfaces, proper error handling, auth encapsulation, and is reusable across agents"
+              ],
+              "correct_answer": 2,
+              "explanation": "First check if a community MCP server already exists for JIRA (several do). Using an existing, maintained server is simpler than building your own and more robust than Bash + curl. If no community server fits, then build an MCP server (B) for production use — it provides structured schemas, proper error handling, and reusability. Bash + curl (A) works for prototyping but is fragile in production. The exam favors the simplest approach that meets requirements.",
+              "xp_reward": 15
+            },
+            {
+              "id": "ex_ap2_08",
+              "type": "multiple_choice",
+              "difficulty": "expert",
+              "question": "What is the PRIMARY benefit of MCP's inputSchema for tool parameters?",
+              "options": [
+                "It makes tools run faster by pre-validating inputs",
+                "It encrypts tool parameters for security",
+                "It automatically converts parameters to the correct type regardless of what Claude sends",
+                "It allows Claude to understand the expected parameter types and structure, generating valid tool calls without trial and error"
+              ],
+              "correct_answer": 3,
+              "explanation": "inputSchema (JSON Schema) tells Claude exactly what parameters a tool expects — types, required fields, enums, descriptions. This allows Claude to generate valid tool calls on the first attempt, rather than guessing and failing. It's about communication between Claude and the tool, not performance (A), security (C), or auto-conversion (D).",
+              "xp_reward": 10
+            },
+            {
+              "id": "ex_ap2_09",
+              "type": "scenario",
+              "difficulty": "expert",
+              "question": "You have an MCP server running locally via stdio that provides database query tools. You want to make this available to agents running in CI/CD pipelines on remote machines. What architectural change is needed?",
+              "options": [
+                "Run the MCP server on one machine and share its stdio pipe across the network",
+                "Embed the database queries directly in the agent's system prompt instead",
+                "Convert the MCP server transport from stdio to SSE/HTTP so it can be accessed remotely over the network",
+                "Copy the MCP server binary to each CI/CD machine and run it locally via stdio"
+              ],
+              "correct_answer": 2,
+              "explanation": "Stdio transport only works locally — the client and server must be on the same machine. For remote access, convert to SSE or HTTP transport. This lets CI/CD agents connect to the MCP server over the network. Copying binaries (A) creates maintenance burden. Embedding queries in prompts (C) loses the tool abstraction. Sharing stdio across network (D) is not how stdio works.",
+              "xp_reward": 15
+            }
+          ]
+        },
+        {
+          "title": "tool_choice Modes & Forcing",
+          "slug": "tool-choice-modes",
+          "description": "Master the three tool_choice modes (auto, any, forced) and learn architectural patterns for validation-retry loops and workflow enforcement.",
+          "order_index": 4,
+          "xp_reward": 30,
+          "estimated_minutes": 15,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>tool_choice Modes & Forcing</h3><p>The <code>tool_choice</code> parameter controls how Claude selects tools. Understanding the three modes is essential for architecting reliable systems.</p><h4>Mode: \"auto\" (default)</h4><p>Claude decides whether to use a tool and which tool to use. This is the most flexible mode and correct for most use cases. Claude may decide not to use any tool if it can answer directly. Use auto when the agent should have discretion over tool use.</p><h4>Mode: \"any\"</h4><p>Claude MUST use at least one tool but can choose which one. It cannot respond with text only — it must make a tool call. Use any when you know a tool call is required but don't know which tool.</p><h4>Mode: forced — {\"type\": \"tool\", \"name\": \"specific_tool\"}</h4><p>Claude MUST call the specific named tool. No discretion — it must use exactly this tool. Use forced when the next step is deterministic and must be a specific tool call.</p><h4>Architectural Patterns</h4><ol><li><strong>Validation-retry loops</strong>: Force <code>validate_output</code> after each generation step. If validation fails, the error feeds back and the agent retries.</li><li><strong>Structured extraction</strong>: Force a <code>extract_data</code> tool with a strict JSON schema to ensure structured output.</li><li><strong>Workflow steps</strong>: Force specific tools at each step of a deterministic workflow.</li></ol><h4>Anti-patterns</h4><ul><li>Using forced mode for every tool call (removes Claude's reasoning ability)</li><li>Using auto when a specific tool call is always required (introduces unnecessary variability)</li><li>Using any when you know exactly which tool should be called (adds ambiguity)</li></ul>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ap2_10"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ap2_11"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ap2_12"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_ap2_10",
+              "type": "scenario",
+              "difficulty": "expert",
+              "question": "You're building a data extraction pipeline. Step 1: read a PDF. Step 2: extract structured data from the PDF content into a JSON schema. Step 3: validate the extracted data. The pipeline must ALWAYS follow these steps in order. What tool_choice configuration should you use for each step?",
+              "options": [
+                "forced for step 1, auto for steps 2 and 3 to give Claude flexibility",
+                "auto for all three steps — let Claude decide the best approach",
+                "any for all three steps — ensure Claude always uses a tool but let it choose",
+                "forced `read_pdf` for step 1, forced `extract_data` for step 2, forced `validate_data` for step 3"
+              ],
+              "correct_answer": 3,
+              "explanation": "When a workflow is deterministic and every step must use a specific tool, use forced mode for each step. This removes variability and ensures the pipeline executes exactly as designed. Auto (A) risks Claude skipping a step or choosing the wrong tool. Any (C) risks Claude choosing the wrong tool. Mixed (D) only partially enforces the workflow.",
+              "xp_reward": 15
+            },
+            {
+              "id": "ex_ap2_11",
+              "type": "multiple_choice",
+              "difficulty": "expert",
+              "question": "When should you use tool_choice: \"any\" instead of \"auto\"?",
+              "options": [
+                "When you want Claude to respond with text only, without calling any tools",
+                "When you want Claude to call all available tools simultaneously",
+                "When you want to force a specific tool to be called",
+                "When you know a tool call is required for the next step but the specific tool should be Claude's choice based on context"
+              ],
+              "correct_answer": 3,
+              "explanation": "\"any\" means: a tool call is required, but which tool is Claude's decision. This is the middle ground between \"auto\" (tool call optional) and forced (specific tool required). Use it when you know the agent must take action (not just respond with text) but the right action depends on context.",
+              "xp_reward": 10
+            },
+            {
+              "id": "ex_ap2_12",
+              "type": "scenario",
+              "difficulty": "expert",
+              "question": "Your agent generates legal contract text, then must validate it against compliance rules. Currently using auto mode, but 15% of the time Claude skips the validation step and returns the unvalidated contract directly. What is the BEST fix?",
+              "options": [
+                "Log when validation is skipped and manually review those contracts",
+                "Use forced tool_choice for the validation tool after the generation step, creating a validation-retry loop",
+                "Add a second agent that monitors the first and reminds it to validate",
+                "Add a stronger prompt instruction: 'You MUST always validate the contract'"
+              ],
+              "correct_answer": 1,
+              "explanation": "Programmatic enforcement > prompt-based guidance for critical business logic. Forcing the validation tool ensures it ALWAYS runs — the 15% skip rate drops to 0%. A stronger prompt (A) might reduce skips but won't eliminate them. A monitoring agent (C) adds complexity. Manual review (D) doesn't scale. This is a textbook case for forced tool_choice.",
+              "xp_reward": 15
+            }
+          ]
+        },
+        {
+          "title": "Input/Output Schemas & Validation",
+          "slug": "input-output-schemas",
+          "description": "Design JSON schemas that constrain tool inputs and outputs, and implement validation-retry patterns for reliable structured data.",
+          "order_index": 5,
+          "xp_reward": 30,
+          "estimated_minutes": 15,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>Input/Output Schemas & Validation</h3><p>Schemas define the contract between Claude and tools. Well-designed schemas prevent malformed inputs and ensure structured, parseable outputs.</p><h4>inputSchema (JSON Schema)</h4><p>Defines what parameters a tool accepts. Best practices:</p><ul><li>Use <code>required</code> to mark mandatory parameters</li><li>Use <code>enum</code> for parameters with a fixed set of valid values</li><li>Use <code>description</code> on every property to explain its purpose</li><li>Use <code>default</code> for optional parameters with sensible defaults</li><li>Use <code>pattern</code> for string formats (e.g., date patterns, IDs)</li><li>Avoid overly permissive schemas (<code>type: any</code>) — the more specific, the better</li></ul><h4>outputSchema</h4><p>Defines what a tool returns. Valuable for ensuring consistent output format across tool versions, enabling downstream processing without parsing guesswork, and documentation for agents consuming tool results.</p><h4>Validation-Retry Pattern</h4><p>When structured output is critical:</p><ol><li>Generate output with tool_use (schema-enforced)</li><li>Validate the output against the schema</li><li>If validation fails, feed the error back to Claude with the specific validation failure</li><li>Claude corrects and regenerates</li><li>Repeat until valid or max retries reached</li></ol><p>This pattern is more reliable than hoping Claude generates valid output on the first try. The schema acts as the ground truth, not the prompt.</p><h4>Common Schema Mistakes</h4><ul><li>Missing descriptions (Claude guesses parameter meaning)</li><li>Too loose (accepts anything, fails downstream)</li><li>Too strict (rejects valid inputs due to overly narrow patterns)</li><li>No error messages in validation (Claude can't fix what it can't see)</li></ul>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ap2_13"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ap2_14"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ap2_15"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_ap2_13",
+              "type": "scenario",
+              "difficulty": "expert",
+              "question": "Your tool accepts a `date` parameter as a string. Users report that the agent sometimes sends dates as 'March 5, 2025', sometimes as '2025-03-05', and sometimes as '03/05/2025'. The tool only accepts ISO 8601 format (YYYY-MM-DD). What is the BEST fix?",
+              "options": [
+                "Add a validation-retry loop that checks date format and retries if wrong",
+                "Add a prompt instruction: 'Always format dates as YYYY-MM-DD'",
+                "Add `\"pattern\": \"^\\\\d{4}-\\\\d{2}-\\\\d{2}$\"` to the inputSchema for the date parameter, with a description stating 'Date in ISO 8601 format (YYYY-MM-DD)'",
+                "Parse all date formats in the tool and convert to ISO 8601 internally"
+              ],
+              "correct_answer": 2,
+              "explanation": "The schema should constrain the format using a pattern. This tells Claude upfront what format is expected, and schema validation will reject invalid formats before the tool executes. Parsing all formats (C) is a workaround that doesn't teach Claude the correct format. Prompt instructions (A) are unreliable. Retry loops (D) work but are more expensive than getting it right the first time via schema.",
+              "xp_reward": 15
+            },
+            {
+              "id": "ex_ap2_14",
+              "type": "multiple_choice",
+              "difficulty": "expert",
+              "question": "In a validation-retry loop, what information should be included in the error feedback to Claude when validation fails?",
+              "options": [
+                "The entire previous conversation history to refresh Claude's memory",
+                "Just 'Validation failed, try again'",
+                "The full schema definition so Claude can re-read it",
+                "The specific validation error (which field failed, what was expected vs. received, and the constraint that was violated)"
+              ],
+              "correct_answer": 3,
+              "explanation": "Specific error feedback enables targeted correction. If Claude knows that the 'amount' field expected a number but received a string, it can fix exactly that. Generic errors (A) don't help. Re-sending the full schema (B) wastes tokens. Full conversation history (D) is irrelevant to the validation error.",
+              "xp_reward": 10
+            },
+            {
+              "id": "ex_ap2_15",
+              "type": "scenario",
+              "difficulty": "expert",
+              "question": "You're designing an inputSchema for a tool that creates database records. The tool has 20 parameters, 5 of which are required and 15 are optional with sensible defaults. An engineer suggests making all 20 required to 'ensure complete data.' What is the BEST approach?",
+              "options": [
+                "Remove the optional parameters entirely and hardcode defaults in the tool",
+                "Keep 5 required and 15 optional with defaults and clear descriptions. Mark optional parameters with sensible defaults in the schema",
+                "Make all 20 optional and let Claude figure out which ones to fill",
+                "Make all 20 required as suggested — more data is always better"
+              ],
+              "correct_answer": 1,
+              "explanation": "Schema design should match reality. If 15 parameters have sensible defaults, making them required forces Claude to specify them even when the defaults are correct — wasting tokens and increasing error surface. Keep required/optional as designed, with clear descriptions and defaults in the schema so Claude knows what happens when it omits a parameter. Removing optionals (C) removes flexibility. All-optional (D) risks missing critical fields.",
+              "xp_reward": 15
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Domain 3 — Claude Code Config",
+      "slug": "domain-3-claude-code-config",
+      "description": "Master CLAUDE.md hierarchy, custom commands and skills, path-specific rules, plan mode, and CI/CD integration. Covers 20% of the Certified Architect exam.",
+      "difficulty": "expert",
+      "order_index": 3,
+      "is_free": false,
+      "icon": "Award",
+      "lessons": [
+        {
+          "title": "CLAUDE.md Hierarchy & Configuration",
+          "slug": "claude-md-hierarchy",
+          "description": "Master the CLAUDE.md hierarchy (user, project, directory) and understand how configuration merging and precedence work.",
+          "order_index": 1,
+          "xp_reward": 30,
+          "estimated_minutes": 15,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>CLAUDE.md Hierarchy & Configuration</h3><p>CLAUDE.md files form a hierarchical configuration system that controls Claude Code's behavior at different scopes.</p><h4>Hierarchy (highest to lowest priority)</h4><ol><li><strong>User-level</strong>: <code>~/.claude/CLAUDE.md</code> — Applies to ALL projects for this user. Personal preferences, global rules.</li><li><strong>Project-level</strong>: <code>&lt;project-root&gt;/CLAUDE.md</code> — Applies to the entire project. Coding standards, tech stack info, project-specific rules.</li><li><strong>Directory-level</strong>: <code>&lt;subdirectory&gt;/CLAUDE.md</code> — Applies to files within that directory. Module-specific conventions.</li></ol><h4>How Merging Works</h4><p>All applicable CLAUDE.md files are merged, with more specific files taking precedence. If <code>~/CLAUDE.md</code> says 'use tabs' and <code>&lt;project&gt;/CLAUDE.md</code> says 'use spaces', spaces win within that project.</p><h4>What Belongs in CLAUDE.md</h4><ul><li>Project architecture overview</li><li>Coding conventions (naming, formatting, patterns)</li><li>Tech stack and framework details</li><li>Testing requirements</li><li>Security policies</li><li>Common pitfalls and how to avoid them</li></ul><h4>What Does NOT Belong</h4><ul><li>Secrets, API keys, or credentials</li><li>Extremely long documentation (keep it focused)</li><li>Information that changes frequently (use dynamic sources)</li><li>Instructions that contradict the tool's built-in safety measures</li></ul><h4>Path-Specific Rules</h4><p>For granular control, use <code>.claude/rules/</code> directory with markdown files. Each file can apply rules to specific paths or file patterns.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ap3_01"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ap3_02"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ap3_03"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_ap3_01",
+              "type": "scenario",
+              "difficulty": "expert",
+              "question": "Your organization has 20 developers working across 5 projects. All projects must follow the same security policy (no hardcoded secrets, parameterized SQL, etc.), but each project has its own coding conventions. Where should the security policy be configured?",
+              "options": [
+                "In each project's CLAUDE.md file, copied 5 times",
+                "In each developer's ~/.claude/CLAUDE.md file, copied 20 times",
+                "In a separate security.md file that's not part of the CLAUDE.md hierarchy",
+                "In the organization's shared user-level rules (~/.claude/rules/) that all developers sync, containing the security policy"
+              ],
+              "correct_answer": 3,
+              "explanation": "Organization-wide policies belong in shared user-level rules that all developers sync. This ensures consistency without duplication. Copying to each project (A) creates 5 copies to maintain. Per-developer copies (B) create 20 copies. A file outside the hierarchy (D) won't be read by Claude Code. The rules directory under ~/.claude/ is the right place for cross-project policies.",
+              "xp_reward": 15
+            },
+            {
+              "id": "ex_ap3_02",
+              "type": "multiple_choice",
+              "difficulty": "expert",
+              "question": "A project's CLAUDE.md says 'Always use async/await for asynchronous code.' A subdirectory's CLAUDE.md says 'Use callbacks for compatibility with legacy code in this module.' Which takes effect for files in the subdirectory?",
+              "options": [
+                "The subdirectory-level rule (callbacks) because more specific rules take precedence",
+                "Both rules apply simultaneously, causing a conflict error",
+                "Neither rule applies — conflicting rules cancel each other out",
+                "The project-level rule (async/await) because project-level has higher priority"
+              ],
+              "correct_answer": 0,
+              "explanation": "More specific rules take precedence. The subdirectory CLAUDE.md is more specific than the project CLAUDE.md, so its instructions win within that subdirectory. Files outside the subdirectory still follow the project-level async/await rule. This is how hierarchical configuration should work — specificity wins.",
+              "xp_reward": 10
+            },
+            {
+              "id": "ex_ap3_03",
+              "type": "scenario",
+              "difficulty": "expert",
+              "question": "A developer puts their personal API key in their ~/.claude/CLAUDE.md so Claude can call their private tools. What is the security risk and the correct alternative?",
+              "options": [
+                "The API key could be accidentally committed to version control. The correct approach is to use environment variables and reference them in CLAUDE.md without exposing the value",
+                "No risk — ~/.claude/ files are private and secure",
+                "The API key will be visible in Claude's context window and could leak in logs or error messages. Use environment variables instead",
+                "Both B and C are correct risks and the alternative is the same: use environment variables"
+              ],
+              "correct_answer": 3,
+              "explanation": "Both risks are real. Even though ~/.claude/ is usually gitignored, API keys in any file can leak — through context window exposure, logging, error messages, or accidental commits. Environment variables are the correct approach: CLAUDE.md can reference them (e.g., 'the API key is in $MY_API_KEY') without containing the actual value.",
+              "xp_reward": 15
+            }
+          ]
+        },
+        {
+          "title": "Custom Commands & Skills",
+          "slug": "custom-commands-skills",
+          "description": "Create custom slash commands and skills to encapsulate reusable workflows, using $ARGUMENTS and multi-mode support.",
+          "order_index": 2,
+          "xp_reward": 30,
+          "estimated_minutes": 15,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>Custom Commands & Skills</h3><p>Custom commands (slash commands) and skills extend Claude Code with reusable, project-specific capabilities.</p><h4>Custom Commands</h4><p>Defined in <code>.claude/commands/</code> as markdown files. Each file becomes a slash command (e.g., <code>.claude/commands/review.md</code> becomes <code>/review</code>).</p><p>A command file contains instructions for what Claude should do when the command is invoked. Can reference <code>$ARGUMENTS</code> for user-provided input. Can include specific tool usage patterns, prompts, and workflows.</p><h4>Skills</h4><p>More sophisticated than commands. Skills are packaged capabilities that can include detailed instructions and domain knowledge, tool configurations, multi-step workflows, and integration with external systems.</p><h4>When to Use Commands vs. Skills</h4><ul><li><strong>Commands</strong>: Simple, project-specific workflows. Quick to create. Good for team conventions (e.g., /lint, /deploy, /review).</li><li><strong>Skills</strong>: Complex, reusable capabilities. Include domain expertise. Good for standardized workflows across projects.</li></ul><h4>Command Design Best Practices</h4><ol><li>Keep commands focused — one command, one purpose</li><li>Use <code>$ARGUMENTS</code> for flexibility</li><li>Include clear success/failure criteria</li><li>Reference other project conventions from CLAUDE.md</li><li>Test commands with edge cases before sharing</li></ol><h4>Anti-patterns</h4><ul><li>Commands that try to do everything (monolithic commands)</li><li>Commands that duplicate built-in functionality</li><li>Commands without clear documentation</li><li>Skills that hardcode project-specific details (reducing reusability)</li></ul>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ap3_04"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ap3_05"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ap3_06"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_ap3_04",
+              "type": "scenario",
+              "difficulty": "expert",
+              "question": "Your team frequently needs to add new API endpoints. The process is always the same: create the route file, add the handler, update the OpenAPI spec, and write tests. Currently, developers manually instruct Claude each time. What is the BEST approach?",
+              "options": [
+                "Write a shell script that generates boilerplate and have developers run it manually",
+                "Create four separate commands: /new-route, /new-handler, /update-spec, /write-tests",
+                "Create a custom command `/new-endpoint` that takes the endpoint path and method as arguments and contains instructions for all four steps",
+                "Add detailed instructions to CLAUDE.md describing the endpoint creation process"
+              ],
+              "correct_answer": 2,
+              "explanation": "A single custom command that encapsulates the entire workflow is the best approach. It's reusable, consistent, and takes arguments for customization. CLAUDE.md instructions (A) require developers to remember to reference them. A shell script (C) doesn't leverage Claude's intelligence for generating context-specific code. Four separate commands (D) violates the principle of one workflow = one command — developers would have to remember to run all four in order.",
+              "xp_reward": 15
+            },
+            {
+              "id": "ex_ap3_05",
+              "type": "multiple_choice",
+              "difficulty": "expert",
+              "question": "What is the correct way to reference user-provided arguments in a custom command file?",
+              "options": [
+                "Use `$ARGUMENTS` to reference the arguments",
+                "Use `${args}` to reference the arguments",
+                "Arguments are automatically appended to the end of the command instructions",
+                "Custom commands cannot accept arguments"
+              ],
+              "correct_answer": 0,
+              "explanation": "$ARGUMENTS is the placeholder in custom command files that gets replaced with whatever the user types after the slash command. For example, if the user types `/review src/main.ts`, and the command file contains 'Review the file at $ARGUMENTS', Claude sees 'Review the file at src/main.ts'.",
+              "xp_reward": 10
+            },
+            {
+              "id": "ex_ap3_06",
+              "type": "scenario",
+              "difficulty": "expert",
+              "question": "You want to create a custom command that runs your project's test suite and analyzes failures. The command should work in CI/CD (non-interactive) mode as well as interactive mode. What should you consider?",
+              "options": [
+                "Only support interactive mode — CI/CD should use standard test runners directly",
+                "Create two separate commands: /test-interactive and /test-ci",
+                "Create the command as a skill instead, since it needs to handle multiple modes",
+                "Create one command that works in both modes, using $ARGUMENTS to accept a --ci flag that adjusts the output format"
+              ],
+              "correct_answer": 3,
+              "explanation": "A single command with a flag for CI mode keeps things simple and maintainable. The command instructions can include: 'If $ARGUMENTS contains --ci, format output as JSON and exit with appropriate status code. Otherwise, provide interactive analysis of failures.' Two separate commands (A) creates duplication. Ignoring CI (C) misses a key use case. A full skill (D) is overkill for this.",
+              "xp_reward": 15
+            }
+          ]
+        },
+        {
+          "title": "Plan Mode vs Direct Execution",
+          "slug": "plan-mode-vs-direct",
+          "description": "Choose between plan mode and direct execution based on task complexity, and integrate plan mode with CI/CD safety layers.",
+          "order_index": 3,
+          "xp_reward": 30,
+          "estimated_minutes": 15,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>Plan Mode vs Direct Execution</h3><p>Claude Code offers two execution strategies: plan mode and direct execution. Choosing the right mode is an architectural decision that affects quality, speed, and cost.</p><h4>Plan Mode</h4><p>Claude first creates a detailed plan describing what changes it will make, then executes the plan step by step. Best for:</p><ul><li>Complex, multi-file changes</li><li>Refactoring that touches many interconnected parts</li><li>Tasks where mistakes are costly to undo</li><li>Unfamiliar codebases where exploration is needed</li></ul><p>Advantages: catches issues before they become code, creates a reviewable artifact, reduces tunnel vision, better results on complex tasks.</p><h4>Direct Execution</h4><p>Claude makes changes immediately without explicit planning. Best for:</p><ul><li>Simple, single-file changes</li><li>Well-understood tasks (fix this typo, add this import)</li><li>Time-sensitive operations</li><li>Tasks where the 'plan' is obvious</li></ul><h4>When to Override</h4><p>Claude Code automatically chooses plan vs. direct based on task complexity. You can override with 'Plan first' in your prompt to force planning.</p><h4>Integration with CI/CD</h4><p>In CI/CD, plan mode can be used for automated code review: generate a plan, review it programmatically, then execute only if the plan passes review. This adds a safety layer for automated changes.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ap3_07"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ap3_08"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ap3_09"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_ap3_07",
+              "type": "scenario",
+              "difficulty": "expert",
+              "question": "A developer asks Claude Code to rename a function from `processData` to `transformData` across a 50-file TypeScript project. The function is imported and called in 30 files. Which execution mode is BEST?",
+              "options": [
+                "Direct execution — it's just a rename, which is simple",
+                "Plan mode — the change touches 30+ files and incorrect renames could break imports, type references, and tests",
+                "Neither — use the IDE's built-in rename refactoring instead of Claude",
+                "Split into 30 direct executions, one per file"
+              ],
+              "correct_answer": 1,
+              "explanation": "Despite being 'just a rename,' this is a complex multi-file change. The function might be referenced in imports, type definitions, string literals, comments, and tests. Plan mode lets Claude map all references first, then make changes systematically. Direct execution (A) risks incomplete renames. IDE rename (C) is valid but the question asks about Claude Code modes. Splitting (D) loses cross-file awareness.",
+              "xp_reward": 15
+            },
+            {
+              "id": "ex_ap3_08",
+              "type": "multiple_choice",
+              "difficulty": "expert",
+              "question": "In CI/CD, which Claude Code flags are used for non-interactive, machine-readable output?",
+              "options": [
+                "--headless and --machine-readable",
+                "-p/--print for non-interactive mode and --output-format json for structured output",
+                "--batch and --format json",
+                "--ci-mode and --json"
+              ],
+              "correct_answer": 1,
+              "explanation": "-p (or --print) runs Claude Code in non-interactive mode suitable for CI/CD. --output-format json produces structured JSON output that can be parsed by downstream CI/CD steps. These flags are essential for integrating Claude Code into automated pipelines.",
+              "xp_reward": 10
+            },
+            {
+              "id": "ex_ap3_09",
+              "type": "scenario",
+              "difficulty": "expert",
+              "question": "Your CI/CD pipeline uses Claude Code to auto-fix linting errors on PRs. The pipeline runs `-p 'Fix all ESLint errors in the changed files' --output-format json`. Sometimes Claude makes additional 'improvements' beyond just fixing lint errors (e.g., refactoring code, adding comments). How do you constrain Claude to ONLY fix lint errors?",
+              "options": [
+                "Add 'Do not make any other changes' to the prompt (prompt-based guidance)",
+                "Run a diff check after Claude's changes and reject any changes that don't correspond to a lint error",
+                "Use --json-schema to enforce that Claude's output contains only lint fix descriptions, and add explicit constraints in the prompt: 'Fix ONLY the ESLint errors listed. Do NOT refactor, add comments, or make any other changes.'",
+                "Use plan mode and manually review the plan before execution"
+              ],
+              "correct_answer": 2,
+              "explanation": "Combine programmatic constraints (--json-schema for structured output) with explicit prompt instructions. The schema enforces output structure, and the detailed prompt constrains scope. A diff check (C) is a good secondary defense but doesn't prevent the changes from being made. Manual review (D) defeats the purpose of automation. A vague 'don't change anything else' (A) is less effective than explicit enumeration of what NOT to do.",
+              "xp_reward": 15
+            }
+          ]
+        },
+        {
+          "title": "Path-Specific Rules & Project Configuration",
+          "slug": "path-specific-rules",
+          "description": "Apply fine-grained behavior controls with .claude/rules/, settings.json, and the three-layer configuration model.",
+          "order_index": 4,
+          "xp_reward": 30,
+          "estimated_minutes": 15,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>Path-Specific Rules & Project Configuration</h3><p>Path-specific rules allow fine-grained control over Claude's behavior for different parts of your codebase.</p><h4>Rules Directory</h4><p><code>.claude/rules/</code> contains markdown files that define rules for specific paths or file patterns. Each rule file typically specifies which files/paths the rule applies to, what conventions or constraints apply, and any exceptions or special cases.</p><h4>Use Cases</h4><ol><li><strong>Frontend vs. Backend conventions</strong>: Frontend files use camelCase, backend uses snake_case</li><li><strong>Test file conventions</strong>: Test files must follow specific patterns</li><li><strong>Generated code protection</strong>: Files in <code>generated/</code> should never be manually modified</li><li><strong>API version conventions</strong>: <code>v1/</code> endpoints follow REST, <code>v2/</code> endpoints use GraphQL</li><li><strong>Security zones</strong>: Files in <code>internal/</code> have different access patterns than <code>public/</code></li></ol><h4>Configuration Layers</h4><p><strong>settings.json</strong> in <code>.claude/settings.json</code> controls: allowed/denied tools, MCP server configurations, hook definitions, permission settings.</p><p><strong>CLAUDE.md + Rules + Settings = Full Configuration:</strong></p><ul><li>CLAUDE.md: High-level project context and conventions</li><li>Rules: Path-specific overrides and constraints</li><li>Settings: Tool access, hooks, and system-level configuration</li></ul><h4>Key Principle</h4><p>Use the most specific configuration mechanism available. Don't put path-specific rules in CLAUDE.md (use rules files). Don't put coding conventions in settings.json (use CLAUDE.md). Don't put security constraints in CLAUDE.md (use hooks in settings.json).</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ap3_10"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ap3_11"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ap3_12"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_ap3_10",
+              "type": "scenario",
+              "difficulty": "expert",
+              "question": "Your project has a `src/generated/` directory containing auto-generated TypeScript types from your GraphQL schema. Developers sometimes accidentally edit these files, which get overwritten on the next schema generation. How should you configure Claude Code to prevent edits to generated files?",
+              "options": [
+                "Create a PreToolUse hook in settings.json that blocks Write and Edit tools when the target path is under src/generated/",
+                "Both B and C — the hook for enforcement and the rule for guidance",
+                "Add 'Never edit files in src/generated/' to CLAUDE.md",
+                "Create a rule in .claude/rules/generated.md saying 'Files in src/generated/ are auto-generated and must not be edited'"
+              ],
+              "correct_answer": 1,
+              "explanation": "Defense in depth. The PreToolUse hook (B) provides deterministic enforcement — Claude literally cannot write to those files. The rule file (C) provides context so Claude understands WHY and suggests alternatives (e.g., 'modify the GraphQL schema instead'). Together they prevent the edit and guide Claude toward the correct action. CLAUDE.md alone (A) is prompt-based guidance and might be ignored.",
+              "xp_reward": 15
+            },
+            {
+              "id": "ex_ap3_11",
+              "type": "multiple_choice",
+              "difficulty": "expert",
+              "question": "Which configuration mechanism should you use to restrict Claude Code from executing the `rm -rf` command?",
+              "options": [
+                "A custom command that overrides the Bash tool",
+                "An instruction in CLAUDE.md",
+                "A rule in .claude/rules/safety.md",
+                "A PreToolUse hook in .claude/settings.json that inspects Bash tool arguments and blocks destructive commands"
+              ],
+              "correct_answer": 3,
+              "explanation": "Security constraints require deterministic enforcement via hooks. A PreToolUse hook on the Bash tool can inspect the command string and block patterns like 'rm -rf'. Rules (A) and CLAUDE.md (B) are prompt-based guidance — they might work most of the time but can't guarantee prevention. Custom commands (D) don't override built-in tools.",
+              "xp_reward": 10
+            },
+            {
+              "id": "ex_ap3_12",
+              "type": "scenario",
+              "difficulty": "expert",
+              "question": "Your monorepo has three packages: `packages/api` (Python), `packages/web` (TypeScript/React), and `packages/mobile` (React Native). Each has different linting rules, testing frameworks, and coding conventions. What is the BEST configuration structure?",
+              "options": [
+                "No CLAUDE.md — rely entirely on inline comments in the code",
+                "A root CLAUDE.md with shared conventions, plus a CLAUDE.md in each package directory with package-specific conventions",
+                "Three separate rule files in .claude/rules/ — one per package",
+                "One large CLAUDE.md at the root with sections for each package"
+              ],
+              "correct_answer": 1,
+              "explanation": "Hierarchical CLAUDE.md is designed for exactly this case. The root CLAUDE.md contains shared conventions (git workflow, PR format, monorepo structure). Each package's CLAUDE.md contains package-specific conventions (Python style for api, TypeScript conventions for web, React Native patterns for mobile). This leverages the hierarchy: package-level overrides root-level where they differ.",
+              "xp_reward": 15
+            }
+          ]
+        },
+        {
+          "title": "CI/CD Integration & Automation",
+          "slug": "ci-cd-integration",
+          "description": "Integrate Claude Code into CI/CD pipelines with non-interactive mode, structured output, Batch API cost optimization, and safety patterns.",
+          "order_index": 5,
+          "xp_reward": 30,
+          "estimated_minutes": 15,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>CI/CD Integration & Automation</h3><p>Claude Code integrates with CI/CD pipelines for automated code review, fix generation, and quality enforcement.</p><h4>Non-Interactive Mode</h4><p><code>-p</code> / <code>--print</code> flag runs Claude Code without interactive input. Essential for CI/CD where there's no human to interact with.</p><h4>Structured Output</h4><p><code>--output-format json</code> returns results as JSON, parseable by downstream pipeline steps. Combined with <code>--json-schema</code>, you can enforce a specific output structure.</p><h4>Common CI/CD Patterns</h4><ol><li><strong>Automated Code Review</strong>: Review changes in a PR for security, performance, and quality. JSON output feeds into your PR comment system.</li><li><strong>Auto-Fix Pipeline</strong>: Fix TypeScript type errors or lint issues in changed files.</li><li><strong>Documentation Generation</strong>: Generate JSDoc comments for undocumented functions.</li><li><strong>Migration Scripts</strong>: Migrate React class components to functional components with hooks.</li></ol><h4>Safety in CI/CD</h4><ul><li>Always run in a clean branch or worktree</li><li>Review Claude's changes before merging</li><li>Set up hooks to prevent destructive operations</li><li>Use <code>--json-schema</code> to validate output structure</li><li>Set appropriate timeouts</li><li>Limit tool access in CI</li></ul><h4>Cost Management</h4><p>Use the Batch API (Message Batches) for non-urgent CI jobs — 50% cost savings. Batch jobs process within 24 hours, suitable for nightly runs. Real-time jobs use the standard API for PR-blocking checks.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ap3_13"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ap3_14"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ap3_15"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_ap3_13",
+              "type": "scenario",
+              "difficulty": "expert",
+              "question": "Your team wants to add Claude-powered code review to every PR. Reviews should block merge until complete. The team opens ~100 PRs per day. Cost is a concern. What is the BEST architecture?",
+              "options": [
+                "Skip automated review and have developers use Claude Code locally before submitting PRs",
+                "Use the standard API for PRs marked 'urgent' and the Batch API for all others, with a CI step that unblocks merge when the review arrives",
+                "Use the standard API for all 100 PRs in real-time to ensure reviews complete quickly",
+                "Use the Batch API for all reviews — 50% cost savings and reviews complete within 24 hours"
+              ],
+              "correct_answer": 1,
+              "explanation": "Hybrid approach optimizes both cost and speed. Urgent PRs get real-time review (standard API). Non-urgent PRs get batch review (50% savings) with a CI step that unblocks merge when the review completes. Pure real-time (A) is expensive at 100 PRs/day. Pure batch (B) blocks all PRs for up to 24 hours. Local review (D) isn't enforceable and misses the automation goal.",
+              "xp_reward": 15
+            },
+            {
+              "id": "ex_ap3_14",
+              "type": "multiple_choice",
+              "difficulty": "expert",
+              "question": "What is the PRIMARY purpose of --json-schema when used with Claude Code in CI/CD?",
+              "options": [
+                "To speed up Claude's response time by constraining the output",
+                "To validate that Claude's output conforms to a specific structure, ensuring downstream pipeline steps can parse it reliably",
+                "To encrypt the output for security in CI/CD environments",
+                "To compress the output and reduce bandwidth"
+              ],
+              "correct_answer": 1,
+              "explanation": "--json-schema validates output structure. In CI/CD, downstream steps (PR commenters, dashboards, alerting systems) need predictable JSON shapes. Without schema validation, a malformed response could break the pipeline. The schema ensures structural reliability.",
+              "xp_reward": 10
+            },
+            {
+              "id": "ex_ap3_15",
+              "type": "scenario",
+              "difficulty": "expert",
+              "question": "Your CI/CD pipeline runs Claude Code to auto-fix linting errors, then commits the changes. A developer reports that Claude sometimes modifies files it shouldn't — adding extra 'improvements' beyond lint fixes. The changes make tests fail. What is the MOST robust solution?",
+              "options": [
+                "Add 'Only fix linting errors, make no other changes' to the prompt",
+                "After Claude runs, use `git diff` to check each changed file, and only stage hunks that correspond to known lint error locations. Reject all other changes.",
+                "Reduce Claude's available tools to only Edit (no Write, no Bash) so it can only make targeted changes",
+                "Run the linter again after Claude's changes — if new errors appear, revert all changes"
+              ],
+              "correct_answer": 1,
+              "explanation": "The most robust approach is post-processing validation: use git diff to inspect changes and only accept hunks that fix known lint errors. This is programmatic enforcement at the pipeline level. Prompt instructions (A) are unreliable. Re-running the linter (C) catches new errors but allows non-lint changes that don't cause errors. Tool restriction (D) helps but doesn't prevent Claude from making unwanted edits within allowed tools.",
+              "xp_reward": 15
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Domain 4 — Prompt Engineering",
+      "slug": "domain-4-prompt-engineering",
+      "description": "Master explicit criteria, few-shot prompting, structured output with tool_use, validation-retry loops, Batch API, and multi-pass review workflows. Covers 20% of the Certified Architect exam.",
+      "difficulty": "expert",
+      "order_index": 4,
+      "is_free": false,
+      "icon": "Award",
+      "lessons": [
+        {
+          "title": "Explicit Criteria & Few-Shot Prompting",
+          "slug": "explicit-criteria-few-shot",
+          "description": "Transform vague requirements into explicit, checkable criteria, and use few-shot examples to lock down output format and style.",
+          "order_index": 1,
+          "xp_reward": 30,
+          "estimated_minutes": 15,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>Explicit Criteria & Few-Shot Prompting</h3><h4>Explicit Criteria</h4><p>The most common prompt engineering failure is implicit requirements. When you tell Claude 'write good code,' you're relying on Claude's interpretation of 'good.' Instead, make your criteria explicit.</p><p>Bad: 'Write a function to process user data.'<br/>Good: 'Write a Python function that: (1) accepts a dict with keys name (str), age (int), email (str), (2) validates all fields are present and correctly typed, (3) returns a sanitized copy with email lowercased and name stripped of whitespace, (4) raises ValueError with a descriptive message if validation fails, (5) includes a docstring with usage example.'</p><p>Explicit criteria turn a subjective evaluation ('is this code good?') into an objective checklist ('does it do these 5 things?').</p><h4>Few-Shot Prompting</h4><p>Few-shot examples show Claude the exact format and style you expect. Especially valuable for consistent output formatting, domain-specific conventions, edge case handling, and style matching.</p><h4>Few-Shot Best Practices</h4><ol><li>Include 2-3 examples (more = more tokens, diminishing returns)</li><li>Show both input and expected output</li><li>Include at least one edge case example</li><li>Make examples representative of real workloads</li><li>Place examples BEFORE the actual task</li></ol><h4>Combining Criteria + Few-Shot</h4><p>The most effective prompts combine explicit criteria with few-shot examples. The criteria define WHAT is required; the examples show HOW it should look. This eliminates ambiguity from both the requirement and the format.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ap4_01"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ap4_02"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ap4_03"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_ap4_01",
+              "type": "scenario",
+              "difficulty": "expert",
+              "question": "You're building a system that uses Claude to generate SQL queries from natural language. The queries must use parameterized inputs (no string interpolation), follow your company's naming conventions (snake_case tables, prefixed columns), and include comments explaining the query logic. Currently, Claude generates correct queries 70% of the time. What is the BEST prompt engineering approach to improve reliability?",
+              "options": [
+                "Use a longer system prompt explaining SQL theory in detail",
+                "Increase the temperature to encourage more creative query generation",
+                "Add 'Write good SQL queries' to the system prompt",
+                "Provide explicit criteria listing each requirement (parameterized inputs, naming conventions, comments) plus 2-3 few-shot examples showing the exact format expected, including one example with a complex JOIN"
+              ],
+              "correct_answer": 3,
+              "explanation": "Explicit criteria + few-shot examples is the most effective approach. The criteria ensure all requirements are stated clearly (parameterized inputs, naming conventions, comments). The few-shot examples show exactly what a correct query looks like in your company's style. This eliminates ambiguity from both the requirements and the format. Vague instructions (A) don't help. Higher temperature (C) increases randomness. SQL theory (D) is background knowledge Claude already has.",
+              "xp_reward": 15
+            },
+            {
+              "id": "ex_ap4_02",
+              "type": "multiple_choice",
+              "difficulty": "expert",
+              "question": "How many few-shot examples should you typically include in a prompt?",
+              "options": [
+                "10+ examples to cover every possible scenario",
+                "Zero — explicit criteria alone are always enough",
+                "1 example is always sufficient",
+                "2-3 examples covering typical cases and at least one edge case, balancing effectiveness against token cost"
+              ],
+              "correct_answer": 3,
+              "explanation": "2-3 examples is the sweet spot. One example might not convey the pattern. 10+ examples waste tokens with diminishing returns and can overwhelm the context. Zero examples work for simple tasks but miss the formatting and style guidance that examples provide. The key is including at least one edge case alongside typical cases.",
+              "xp_reward": 10
+            },
+            {
+              "id": "ex_ap4_03",
+              "type": "scenario",
+              "difficulty": "expert",
+              "question": "Your team uses Claude to generate API documentation. The generated docs are technically accurate but don't match your company's documentation style (they use passive voice, miss the required 'Parameters' table format, and don't include the standard disclaimer footer). What is the MOST effective fix?",
+              "options": [
+                "Provide 2 few-shot examples of correctly-formatted documentation pages showing the active voice, Parameters table format, and disclaimer footer, along with explicit criteria stating each style requirement",
+                "Add 'Match our documentation style' to the prompt",
+                "Switch to a template-based documentation generator instead of using Claude",
+                "Post-process the generated documentation with a formatter script"
+              ],
+              "correct_answer": 0,
+              "explanation": "Few-shot examples ARE the style guide. When Claude sees 2 examples of your exact documentation format, it will replicate the style — active voice, table format, footer, and all. Explicit criteria reinforce each requirement. Vague style matching (A) is ambiguous. Post-processing (C) is fragile and expensive to maintain. Switching tools (D) loses Claude's ability to generate context-aware content.",
+              "xp_reward": 15
+            }
+          ]
+        },
+        {
+          "title": "Structured Output with tool_use",
+          "slug": "structured-output-tool-use",
+          "description": "Use tool_use with JSON schemas to force reliable structured output, and implement validation-retry loops for semantic correctness.",
+          "order_index": 2,
+          "xp_reward": 30,
+          "estimated_minutes": 15,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>Structured Output with tool_use</h3><p>Structured output is the practice of using JSON schemas to constrain Claude's output into a predictable, parseable format. The most reliable way to get structured output from Claude is through <code>tool_use</code> with JSON schemas.</p><h4>Why tool_use for Structured Output</h4><p>When Claude calls a tool, it must provide parameters that match the tool's inputSchema. By defining a 'tool' whose purpose is output formatting, you force Claude to produce data that conforms to your schema.</p><p>Example: Define a tool called <code>report_results</code> with an inputSchema that matches your desired output format. Force Claude to call this tool (via tool_choice). The tool call's arguments are your structured output.</p><h4>Schema Design for Outputs</h4><ul><li>Use <code>enum</code> for categorical fields</li><li>Use <code>required</code> for mandatory fields</li><li>Use <code>description</code> on every field so Claude understands intent</li><li>Use nested objects for complex structures</li><li>Use <code>additionalProperties: false</code> to prevent unexpected fields</li></ul><h4>Validation-Retry Loops</h4><p>Even with schemas, Claude can produce technically valid but semantically wrong output. A validation-retry loop:</p><ol><li>Force Claude to produce structured output via tool_use</li><li>Validate the output beyond schema conformance (business rules, consistency checks)</li><li>If invalid, feed the specific validation error back to Claude</li><li>Claude corrects and retries</li><li>Repeat until valid or max retries exhausted</li></ol><p>Key exam concept: Programmatic enforcement (schemas + validation) > prompt-based guidance for critical structured output.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ap4_04"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ap4_05"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ap4_06"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_ap4_04",
+              "type": "scenario",
+              "difficulty": "expert",
+              "question": "You need Claude to extract structured data from legal contracts: party names, effective date, termination clause, and governing law. The output must be JSON that feeds into your contract management system. Currently, you use a prompt asking Claude to 'output the data as JSON,' but the format is inconsistent — sometimes fields are missing, sometimes field names vary. What is the BEST approach?",
+              "options": [
+                "Parse Claude's free-text output with regex to extract the fields",
+                "Add more explicit prompt instructions specifying exact field names",
+                "Define a tool called `submit_contract_data` with an inputSchema specifying all required fields, their types, and descriptions. Use forced tool_choice to ensure Claude always produces conforming output",
+                "Use a separate LLM to clean up Claude's inconsistent JSON output"
+              ],
+              "correct_answer": 2,
+              "explanation": "tool_use with a schema is the right approach for reliable structured output. The schema defines exact field names, types, and required fields. Forced tool_choice ensures Claude always produces conforming output. This eliminates the inconsistency at the source. Regex parsing (C) is fragile. A cleanup LLM (D) adds cost and a new failure point. More prompt instructions (A) improve things but can't guarantee schema conformance.",
+              "xp_reward": 15
+            },
+            {
+              "id": "ex_ap4_05",
+              "type": "multiple_choice",
+              "difficulty": "expert",
+              "question": "In a validation-retry loop, what should happen when the maximum retry count is reached without producing valid output?",
+              "options": [
+                "Silently return an empty result",
+                "Return the last invalid output anyway — something is better than nothing",
+                "Retry indefinitely until valid output is produced",
+                "Escalate to a human reviewer with the validation errors and all attempted outputs, so they can correct or make a judgment call"
+              ],
+              "correct_answer": 3,
+              "explanation": "When automated correction fails, escalate to a human. Returning invalid output (A) pushes bad data downstream. Empty results (C) hide the failure. Infinite retries (D) waste resources. Human escalation with full context (validation errors + all attempts) enables informed decision-making.",
+              "xp_reward": 10
+            },
+            {
+              "id": "ex_ap4_06",
+              "type": "scenario",
+              "difficulty": "expert",
+              "question": "Your structured output schema requires a `risk_score` field that's an integer between 1-10. Claude consistently produces valid JSON, but the risk scores cluster around 5-7 and don't differentiate between clearly high-risk and low-risk items. The schema validation passes (1-10 is valid). How do you improve the output quality?",
+              "options": [
+                "Widen the range to 1-100 for more granularity",
+                "Add a validation rule that rejects scores between 4-7 to force differentiation",
+                "Switch from numeric scores to categorical labels (Low/Medium/High/Critical)",
+                "Add explicit scoring criteria to the prompt: 'Score 1-3 for items with no security impact, 4-6 for moderate impact with mitigations available, 7-9 for high impact requiring immediate attention, 10 for critical unmitigated vulnerabilities.' Include few-shot examples with scores at each end of the range"
+              ],
+              "correct_answer": 3,
+              "explanation": "The problem is semantic, not structural — the schema validates fine but the output lacks discrimination. Explicit scoring criteria with calibrating examples solve this by defining what each score range means in concrete terms. Widening the range (A) doesn't help if Claude still clusters. Rejecting middle scores (C) is arbitrary. Categories (D) lose granularity. This is a case where the prompt complements the schema.",
+              "xp_reward": 15
+            }
+          ]
+        },
+        {
+          "title": "Batch API & Cost Optimization",
+          "slug": "batch-api-cost-optimization",
+          "description": "Architect cost-efficient systems using the Message Batches API for non-urgent workloads, with structured custom_ids and hybrid real-time/batch strategies.",
+          "order_index": 3,
+          "xp_reward": 30,
+          "estimated_minutes": 15,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>Batch API & Cost Optimization</h3><p>The Message Batches API processes multiple requests at 50% cost savings with up to 24-hour completion windows. Understanding when to use batch vs. real-time is an architectural decision.</p><h4>Message Batches API</h4><ul><li>Submit a batch of up to 10,000 message requests</li><li>Each request has a <code>custom_id</code> for tracking</li><li>Results are processed within 24 hours</li><li>50% cost reduction vs. standard API pricing</li><li>No streaming — results are available when the batch completes</li></ul><h4>When to Use Batch</h4><p>Nightly code analysis runs, weekly documentation generation, bulk data processing that isn't time-sensitive, training data preparation, large-scale content generation, any workload where 24-hour SLA is acceptable.</p><h4>When NOT to Use Batch</h4><p>Real-time user interactions, PR-blocking checks, interactive coding sessions, urgent incident response, any workflow where latency matters.</p><h4>custom_id Pattern</h4><p>Each request gets a <code>custom_id</code> string (max 64 chars). Best practice: Use structured IDs like <code>review_pr-123_file-utils.ts</code> so you can parse the ID to understand what the result is for.</p><h4>Cost Architecture</h4><p>For organizations running Claude at scale: identify which workloads can tolerate 24h latency, route those to batch for 50% savings, keep real-time for user-facing and time-sensitive workflows, monitor batch completion times and adjust if needed.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ap4_07"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ap4_08"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ap4_09"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_ap4_07",
+              "type": "scenario",
+              "difficulty": "expert",
+              "question": "Your company runs Claude-powered code review on every PR (real-time) and a nightly security scan across all repositories (200 repos, ~50 files each). Monthly API cost is $15,000 — $5,000 for PR reviews and $10,000 for nightly scans. How would you optimize costs?",
+              "options": [
+                "Move everything to the Batch API for maximum savings",
+                "Move PR reviews to batch and keep nightly scans on real-time",
+                "Keep PR reviews on the standard API (real-time) and move nightly security scans to the Batch API, saving ~$5,000/month (50% of the $10,000 scan cost)",
+                "Reduce the number of repositories scanned to cut costs"
+              ],
+              "correct_answer": 2,
+              "explanation": "PR reviews need real-time responses (they block merge). Nightly scans already run overnight and can easily tolerate 24-hour SLA. Moving $10,000 of scan workload to batch saves $5,000/month. Moving PR reviews to batch (A, D) would delay merge feedback. Reducing scan coverage (C) weakens security.",
+              "xp_reward": 15
+            },
+            {
+              "id": "ex_ap4_08",
+              "type": "multiple_choice",
+              "difficulty": "expert",
+              "question": "What is the maximum number of requests in a single Message Batch?",
+              "options": [
+                "Unlimited",
+                "1,000",
+                "10,000",
+                "100"
+              ],
+              "correct_answer": 2,
+              "explanation": "The Message Batches API supports up to 10,000 requests per batch. Each request has its own custom_id and can have different prompts, models, and parameters. For workloads larger than 10,000 items, submit multiple batches.",
+              "xp_reward": 10
+            },
+            {
+              "id": "ex_ap4_09",
+              "type": "scenario",
+              "difficulty": "expert",
+              "question": "You're designing a batch job that reviews 5,000 code files nightly. Each file needs a separate API request. You need to correlate each review result back to its file and repository. What is the BEST custom_id strategy?",
+              "options": [
+                "Use structured IDs that encode the context: 'review_repo-myapp_file-src/utils.ts_date-2025-03-15'",
+                "Use sequential numbers: '1', '2', '3', ... '5000'",
+                "Don't set custom_ids — let the API assign them automatically",
+                "Use random UUIDs for each request"
+              ],
+              "correct_answer": 0,
+              "explanation": "Structured IDs let you parse the ID to understand what each result is for — which repo, which file, which date. This is essential for correlating 5,000 results back to their source files. Sequential numbers (A) require a separate lookup table. Random UUIDs (C) are unparseable. The API doesn't auto-assign (D) — custom_id is required.",
+              "xp_reward": 15
+            }
+          ]
+        },
+        {
+          "title": "Multi-Pass Review Workflows",
+          "slug": "multi-pass-review",
+          "description": "Design multi-pass review patterns (generate-review-revise, specialist review, adversarial review) for high-stakes content generation.",
+          "order_index": 4,
+          "xp_reward": 30,
+          "estimated_minutes": 15,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>Multi-Pass Review Workflows</h3><p>Multi-pass review is a workflow pattern where content passes through multiple review stages, each catching different types of issues.</p><h4>Why Multi-Pass</h4><p>A single-pass review tends to focus on the most obvious issues and miss subtle ones. By running multiple focused passes, you improve coverage and accuracy.</p><h4>Common Multi-Pass Patterns</h4><ol><li><strong>Generate -> Review -> Revise:</strong> Pass 1 generates the initial content, Pass 2 reviews against explicit criteria, Pass 3 revises based on review feedback.</li><li><strong>Specialist Review:</strong> Pass 1 for security review, Pass 2 for performance review, Pass 3 for correctness review. Each pass uses a specialized system prompt.</li><li><strong>Adversarial Review:</strong> Pass 1 generates a solution, Pass 2 tries to break it (find edge cases, security holes, failure modes), Pass 3 fixes the issues found.</li></ol><h4>Implementation</h4><p>Multi-pass workflows can run within a single agent (sequential prompts) or across agents (each pass is a separate agent). Cross-agent passes provide stronger isolation — the reviewer can't be biased by the generator's reasoning.</p><h4>Cost vs. Quality Tradeoff</h4><p>Each pass costs tokens. For critical outputs (legal contracts, security configurations, public-facing content), the cost is justified. For internal, low-stakes content, a single pass may suffice.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ap4_10"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ap4_11"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ap4_12"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_ap4_10",
+              "type": "scenario",
+              "difficulty": "expert",
+              "question": "Your agent generates infrastructure-as-code (Terraform) for client deployments. A recent deployment failed because the generated code had a security group that allowed unrestricted inbound access (0.0.0.0/0 on port 22). The generation prompt includes security guidelines, but they were missed. What is the BEST workflow improvement?",
+              "options": [
+                "Run `terraform validate` after generation and trust it to catch security issues",
+                "Add more security guidelines to the generation prompt",
+                "Have a human review every generated Terraform file before deployment",
+                "Implement a multi-pass workflow: (1) generate Terraform, (2) security review pass checking for common misconfigurations (open ports, missing encryption, overly permissive IAM), (3) revise to fix any issues found"
+              ],
+              "correct_answer": 3,
+              "explanation": "Multi-pass with a dedicated security review pass is the best approach. The security review pass uses a specialized prompt focused only on security misconfigurations — it's more likely to catch issues than the generation prompt which juggles many concerns. More guidelines in the generation prompt (A) already failed. terraform validate (C) checks syntax, not security. Human review (D) is expensive and doesn't scale. The multi-pass approach automates the security check as a reliable gate.",
+              "xp_reward": 15
+            },
+            {
+              "id": "ex_ap4_11",
+              "type": "multiple_choice",
+              "difficulty": "expert",
+              "question": "In an adversarial review workflow, why should the review pass be done by a SEPARATE agent rather than the same agent that generated the content?",
+              "options": [
+                "The API requires separate agents for multi-pass workflows",
+                "Separate agents are faster because they run in parallel",
+                "Separate agents use less total tokens",
+                "The generating agent has its reasoning in context and may be biased toward defending its own output. A fresh agent reviews without that bias"
+              ],
+              "correct_answer": 3,
+              "explanation": "The generator has its own reasoning in the conversation history and may unconsciously defend its choices rather than critically evaluating them. A separate agent approaches the output fresh, without the generator's justifications in context, making it more likely to identify issues. This is analogous to why code review should be done by someone other than the author.",
+              "xp_reward": 10
+            },
+            {
+              "id": "ex_ap4_12",
+              "type": "scenario",
+              "difficulty": "expert",
+              "question": "You have a 3-pass review workflow for generating customer-facing email content: (1) generate, (2) review for tone and accuracy, (3) revise. The workflow works well but costs $0.15 per email. Your company sends 10,000 automated emails per month. Your manager asks you to reduce costs without sacrificing quality for important emails. What do you recommend?",
+              "options": [
+                "Use the Batch API for all 3 passes — saves 50% with no quality change",
+                "Both B and C — classify by importance AND use batch for non-urgent emails",
+                "Eliminate the review pass for all emails to cut costs by 33%",
+                "Classify emails by importance: high-importance emails (contract renewals, escalations) get the full 3-pass treatment; low-importance emails (status updates, confirmations) get single-pass generation only"
+              ],
+              "correct_answer": 1,
+              "explanation": "Combine both strategies. Classification by importance (B) reduces the number of emails going through expensive multi-pass review. Batch API (C) saves 50% on the emails that aren't time-sensitive. Together: important emails get full review at 50% cost via batch (unless urgent), and low-importance emails get single-pass at 50% cost via batch. Maximum savings, no quality compromise on emails that matter.",
+              "xp_reward": 15
+            }
+          ]
+        },
+        {
+          "title": "Programmatic vs. Prompt-Based Enforcement",
+          "slug": "programmatic-vs-prompt-enforcement",
+          "description": "Apply the decision framework for choosing programmatic enforcement (schemas, hooks, code) vs. prompt-based guidance, and implement defense in depth.",
+          "order_index": 5,
+          "xp_reward": 30,
+          "estimated_minutes": 15,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>Programmatic vs. Prompt-Based Enforcement</h3><p>This is the single most tested concept on the exam: knowing when to use programmatic enforcement (schemas, hooks, code) versus prompt-based guidance (instructions, examples, system prompts).</p><h4>Programmatic Enforcement</h4><p>Deterministic. Always runs. Cannot be bypassed by the model.</p><p>Mechanisms: JSON schemas, PreToolUse/PostToolUse hooks, forced tool_choice, validation-retry loops, code-level checks in tool implementations.</p><p>Use for: security requirements, compliance requirements, data format requirements, business-critical logic, any requirement where violation has serious consequences.</p><h4>Prompt-Based Guidance</h4><p>Probabilistic. Usually followed. Can be missed under certain conditions.</p><p>Mechanisms: System prompts, user instructions, few-shot examples, CLAUDE.md rules, custom command instructions.</p><p>Use for: style preferences, soft guidelines, contextual decisions, creative direction, exploratory tasks.</p><h4>The Decision Framework</h4><ol><li><strong>What happens if violated?</strong> Security breach/data loss/compliance failure -> Programmatic. Inconsistent style/suboptimal code -> Prompt.</li><li><strong>Objective or subjective?</strong> Objective (parameterized SQL, valid JSON) -> Programmatic. Subjective (readable code, clear naming) -> Prompt.</li><li><strong>Can you write a deterministic check?</strong> Yes -> Programmatic. No -> Prompt.</li></ol><h4>Defense in Depth</h4><p>The best systems use both: prompts to reduce the frequency of violations, and programmatic enforcement to catch any that slip through. This is the ideal answer on the exam when both options are available.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ap4_13"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ap4_14"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ap4_15"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_ap4_13",
+              "type": "scenario",
+              "difficulty": "expert",
+              "question": "Your agent generates database migration scripts. A critical requirement: migrations must never contain DROP TABLE statements in production. An engineer adds 'Never generate DROP TABLE statements' to the system prompt. Is this sufficient?",
+              "options": [
+                "No — instead of a hook, add a PostToolUse hook that checks the generated SQL after execution",
+                "No — replace the prompt with a validation-retry loop that rejects SQL containing DROP TABLE",
+                "Yes — Claude follows system prompt instructions reliably",
+                "No — add a PreToolUse hook that scans SQL for DROP TABLE and blocks execution, plus keep the prompt instruction as an additional layer"
+              ],
+              "correct_answer": 3,
+              "explanation": "PreToolUse hook is essential: it blocks the destructive SQL BEFORE it executes. PostToolUse (C) checks AFTER execution — the table is already dropped. A validation-retry loop (D) catches it but is more complex than a simple hook. The prompt alone (A) is probabilistic guidance for a critical safety requirement. The correct answer uses both the hook (enforcement) and the prompt (guidance) for defense in depth.",
+              "xp_reward": 15
+            },
+            {
+              "id": "ex_ap4_14",
+              "type": "multiple_choice",
+              "difficulty": "expert",
+              "question": "Which of these requirements should use prompt-based guidance rather than programmatic enforcement?",
+              "options": [
+                "All API responses must include a request_id field",
+                "User-uploaded files must be scanned for malware before storage",
+                "Authentication tokens must be validated before processing any request",
+                "Generated code should prefer descriptive variable names over abbreviations"
+              ],
+              "correct_answer": 3,
+              "explanation": "Variable naming is a style preference — it's subjective, non-critical if violated, and can't easily be checked deterministically (what counts as 'descriptive' is judgment-based). The other three are objective, security-relevant requirements with deterministic checks: schema validation for request_id (A), code-level auth checks (C), and automated malware scanning (D).",
+              "xp_reward": 10
+            },
+            {
+              "id": "ex_ap4_15",
+              "type": "scenario",
+              "difficulty": "expert",
+              "question": "You're reviewing an agent architecture. The system has these controls:\n- System prompt: 'Always use HTTPS URLs, never HTTP'\n- System prompt: 'Validate all email addresses before sending'\n- PreToolUse hook: Blocks any Bash command containing `rm -rf /`\n- inputSchema: Requires `recipient_email` field to match email regex pattern\n- No validation on URL format in any schema or hook\n\nWhich security gap is MOST critical?",
+              "options": [
+                "The email schema regex might be too strict and reject valid addresses",
+                "The HTTPS requirement is only enforced via prompt — there's no programmatic check. An HTTP URL could slip through, causing data to be transmitted unencrypted",
+                "The rm -rf hook is too narrow — it should block all rm commands",
+                "The email validation is redundant (both prompt and schema)"
+              ],
+              "correct_answer": 1,
+              "explanation": "HTTPS enforcement is security-critical but relies solely on a prompt instruction — there's no hook or schema validation for URLs. Claude might generate an HTTP URL under certain conditions, transmitting sensitive data unencrypted. This is the exam pattern: identify the security requirement that lacks programmatic enforcement. The email validation (A) being redundant is actually good (defense in depth). The rm hook (C) might need broadening but at least has some programmatic enforcement.",
+              "xp_reward": 15
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Domain 5 — Context Management",
+      "slug": "domain-5-context-management",
+      "description": "Master context preservation, escalation patterns, error propagation, codebase exploration, human review workflows, and the lost-in-the-middle problem. Covers 15% of the Certified Architect exam.",
+      "difficulty": "expert",
+      "order_index": 5,
+      "is_free": false,
+      "icon": "Award",
+      "lessons": [
+        {
+          "title": "Context Preservation & Compression",
+          "slug": "context-preservation-compression",
+          "description": "Mitigate the lost-in-the-middle problem and design context that survives compression in long-running agent sessions.",
+          "order_index": 1,
+          "xp_reward": 30,
+          "estimated_minutes": 15,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>Context Preservation & Compression</h3><p>Context management is about ensuring Claude has the right information at the right time, structured so that critical details survive context window pressure.</p><h4>The Lost-in-the-Middle Problem</h4><p>Research shows that LLMs pay more attention to information at the beginning and end of the context window, and less attention to information in the middle. This means critical information buried in the middle of a long conversation may be missed.</p><h4>Mitigation Strategies</h4><ol><li><strong>Front-load critical information</strong>: Put the most important context at the beginning of the system prompt or conversation</li><li><strong>Repeat critical constraints</strong>: State key requirements in both the system prompt and the user message</li><li><strong>Structure with headers</strong>: Use clear headers and formatting to make important sections visually distinct</li><li><strong>Summarize periodically</strong>: In long conversations, periodically summarize the current state and requirements</li><li><strong>Use structured formats</strong>: JSON, XML tags, and markdown sections are easier to parse than prose</li></ol><h4>Context Compression Survival</h4><p>When context windows fill up, systems may compress or truncate conversation history. Design your critical information to survive:</p><ul><li>Put constraints in the system prompt (rarely compressed)</li><li>Use tool results for factual data (structured, easier to preserve)</li><li>Avoid relying on information mentioned once in a long conversation</li><li>Re-state critical requirements near the point of use</li></ul><h4>Context Window Budget</h4><p>For long-running agents, plan the budget: System prompt ~10-15%, Conversation history ~50-60%, Working memory ~25-30%. When the window fills, older turns get compressed. Design so critical information is in the system prompt (permanent) or re-derived from tools (refreshable), not dependent on conversation history (ephemeral).</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ap5_01"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ap5_02"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ap5_03"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_ap5_01",
+              "type": "scenario",
+              "difficulty": "expert",
+              "question": "Your agent processes customer support tickets in a long-running session. After handling 50 tickets, the agent starts ignoring a critical constraint from the system prompt: 'Never share internal pricing with customers.' The constraint is still in the system prompt, but it's now buried under a large conversation history. What is the BEST fix?",
+              "options": [
+                "Start a fresh session every 10 tickets to reset the context window, passing the current state via a structured handoff",
+                "Add the constraint as a PreToolUse hook that scans outgoing messages for pricing patterns",
+                "Shorten the system prompt to make the constraint more prominent",
+                "Move the constraint to the end of the system prompt so it's closer to the active conversation"
+              ],
+              "correct_answer": 1,
+              "explanation": "This is a critical security constraint ('never share internal pricing'). Prompt-based enforcement is failing due to context pressure. The correct answer is programmatic enforcement via a hook that scans outgoing messages for pricing patterns. Session rotation (B) helps with context window management but doesn't prevent the constraint from being missed. Moving the constraint (C) is a prompt-level fix for a problem that needs enforcement-level solution. The exam philosophy: use hooks for security constraints, not just prompts.",
+              "xp_reward": 15
+            },
+            {
+              "id": "ex_ap5_02",
+              "type": "multiple_choice",
+              "difficulty": "expert",
+              "question": "What is the 'lost-in-the-middle' problem in the context of LLM architectures?",
+              "options": [
+                "LLMs forget their system prompt after processing too many user messages",
+                "LLMs lose the ability to process information after their context window fills up",
+                "LLMs pay less attention to information in the middle of the context window compared to the beginning and end, potentially missing critical details placed in the middle",
+                "LLMs cannot process information that spans multiple context windows"
+              ],
+              "correct_answer": 2,
+              "explanation": "The lost-in-the-middle phenomenon means LLMs attend more strongly to the beginning and end of their context. Information placed in the middle — especially in long contexts — receives less attention and is more likely to be missed. This isn't about context window limits (A, C) or forgetting system prompts (D), but about attention distribution within the available context.",
+              "xp_reward": 10
+            },
+            {
+              "id": "ex_ap5_03",
+              "type": "scenario",
+              "difficulty": "expert",
+              "question": "You're designing a system prompt for an agent that must follow 15 critical rules. The system prompt is 3,000 tokens. You're concerned about the lost-in-the-middle effect. How should you structure the rules?",
+              "options": [
+                "Put the 5 most critical rules at the very beginning, 5 in the middle, and 5 at the end — prioritized by importance",
+                "Spread the rules throughout the system prompt, each near the relevant context",
+                "List all 15 rules in a single numbered list in the middle of the system prompt",
+                "Put ALL 15 rules at the very beginning of the system prompt, before any other content, using clear formatting (headers, bullet points)"
+              ],
+              "correct_answer": 3,
+              "explanation": "Front-loading all critical rules ensures maximum attention. Placing them at the beginning of the system prompt, before other content, leverages the primacy effect. Clear formatting (headers, bullets) makes them visually distinct and easier to locate. Spreading rules throughout (D) risks some getting lost. Splitting by importance (B) still puts some critical rules in the low-attention middle zone.",
+              "xp_reward": 15
+            }
+          ]
+        },
+        {
+          "title": "Error Propagation & Recovery",
+          "slug": "error-propagation-recovery",
+          "description": "Design error propagation paths in multi-agent systems with retry, fallback, degradation, and escalation strategies.",
+          "order_index": 2,
+          "xp_reward": 30,
+          "estimated_minutes": 15,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>Error Propagation & Recovery</h3><p>Error propagation determines how failures flow through a multi-agent system. Good error propagation means failures are visible, actionable, and don't cascade silently.</p><h4>Error Propagation Principles</h4><ol><li><strong>Fail loudly</strong>: Never swallow errors. If a tool fails, the error must be visible to the agent and, ultimately, to the user or monitoring system.</li><li><strong>Fail with context</strong>: Include enough information to diagnose and fix the error.</li><li><strong>Fail at the right level</strong>: Tool-level errors handled by the agent. Agent-level errors handled by the coordinator. System-level errors trigger monitoring alerts.</li><li><strong>Fail gracefully</strong>: When possible, provide partial results with clear indication of what's missing.</li></ol><h4>Recovery Strategies</h4><ol><li><strong>Retry with backoff</strong>: For transient errors (network timeouts, rate limits). Include a maximum retry count.</li><li><strong>Fallback</strong>: When the primary approach fails, try an alternative.</li><li><strong>Degradation</strong>: Continue with reduced capability when a component fails.</li><li><strong>Escalation</strong>: When automated recovery fails, escalate to a human with full context.</li></ol><h4>Error Propagation in Multi-Agent Systems</h4><ul><li>Subagent errors should propagate to the coordinator, not to the user directly</li><li>The coordinator decides whether to retry, fall back, or escalate</li><li>Each agent should handle errors at its level before propagating</li><li>Error context should accumulate as it propagates (don't lose details)</li></ul>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ap5_04"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ap5_05"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ap5_06"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_ap5_04",
+              "type": "scenario",
+              "difficulty": "expert",
+              "question": "A coordinator spawns 4 subagents for a code review. Subagent 3 encounters a rate limit from the API and retries 3 times before giving up. It returns an error to the coordinator. What should the coordinator do?",
+              "options": [
+                "Fail the entire review and report that it couldn't complete",
+                "Return results from the 3 successful subagents, clearly indicate that subagent 3's review (e.g., performance analysis) is missing due to rate limiting, and suggest the user retry that portion later",
+                "Retry subagent 3 immediately with the same parameters",
+                "Ignore the error and return results from the 3 successful subagents as a complete review"
+              ],
+              "correct_answer": 1,
+              "explanation": "Graceful degradation with transparency. Return what you have (3/4 reviews), clearly flag what's missing and why, and suggest a recovery action. Failing entirely (A) wastes the 3 successful reviews. Silent partial results (B) hides the gap. Immediate retry (D) will likely hit the same rate limit. The user gets maximum value with full awareness of what was and wasn't checked.",
+              "xp_reward": 15
+            },
+            {
+              "id": "ex_ap5_05",
+              "type": "multiple_choice",
+              "difficulty": "expert",
+              "question": "When should an agent escalate an error to a human rather than attempting automated recovery?",
+              "options": [
+                "When automated recovery has been attempted and failed, or when the error involves ambiguous data that requires human judgment to resolve correctly",
+                "Never — agents should always handle errors autonomously",
+                "Only for errors that occur more than 10 times",
+                "On any error, always escalate immediately"
+              ],
+              "correct_answer": 0,
+              "explanation": "Escalate after automated recovery fails or when human judgment is needed. Some errors are ambiguous — for example, conflicting data from two sources that requires domain expertise to resolve. Agents should attempt recovery first (A is too aggressive), but should not try forever (C is unrealistic). Frequency (D) is not the right criterion — a single critical error may warrant immediate escalation.",
+              "xp_reward": 10
+            },
+            {
+              "id": "ex_ap5_06",
+              "type": "scenario",
+              "difficulty": "expert",
+              "question": "Your agent calls a database tool that returns: `{\"error\": \"Connection refused\"}`. The agent responds to the user: 'I encountered a database connection error (connection refused). This usually means the database server is down or unreachable.' However, your monitoring shows the database is running fine. What is the MOST LIKELY issue and the BEST debugging approach?",
+              "options": [
+                "The connection string or credentials in the tool configuration are incorrect. Check the tool's database connection parameters (host, port, credentials) in the MCP server or tool config",
+                "The database has too many connections. Increase the connection pool size",
+                "The agent is hallucinating the error — ignore it and retry",
+                "The agent is using the wrong tool. Check if there's a different database tool it should be using"
+              ],
+              "correct_answer": 0,
+              "explanation": "Connection refused with a running database usually means wrong host, wrong port, or wrong credentials in the tool configuration. This is a configuration error, not a database issue. The debugging approach: check the tool's connection parameters. This is a common real-world issue when tools are configured with environment variables that might be missing or incorrect.",
+              "xp_reward": 15
+            }
+          ]
+        },
+        {
+          "title": "Codebase Exploration Strategies",
+          "slug": "codebase-exploration",
+          "description": "Apply systematic exploration strategies (top-down, bottom-up, search-first) to build codebase understanding efficiently within context budgets.",
+          "order_index": 3,
+          "xp_reward": 30,
+          "estimated_minutes": 15,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>Codebase Exploration Strategies</h3><p>Agents exploring unfamiliar codebases need systematic strategies to build understanding efficiently without wasting context window tokens on irrelevant files.</p><h4>Exploration Strategies</h4><ol><li><strong>Top-down</strong>: Start with project root — read README, package.json/pyproject.toml, project config. Then explore directory structure. Then dive into specific areas. Best for getting a broad understanding before going deep.</li><li><strong>Bottom-up</strong>: Start from the specific file or function you need to understand. Trace its imports, callers, and dependencies outward. Best when you know what you're looking for.</li><li><strong>Search-first</strong>: Use grep/search to find relevant files based on keywords, function names, or patterns. Skip irrelevant files entirely. Best for targeted investigations.</li></ol><h4>Context Budget Management</h4><p>Every file read consumes context window tokens. Be efficient:</p><ul><li>Read file structure (ls, glob) before reading file contents</li><li>Read specific line ranges, not entire files</li><li>Use search to find the exact location before reading</li><li>Stop exploring when you have enough information to proceed</li></ul><h4>Information Provenance</h4><p>When an agent makes claims about the codebase, those claims should be traceable to specific files and line numbers. Best practices: reference file paths and line numbers, distinguish between information read from code vs. inferred, state uncertainty explicitly, re-read files before making changes.</p><h4>Anti-patterns</h4><ul><li>Reading every file in a directory</li><li>Guessing file locations without searching</li><li>Making claims about code without reading it</li><li>Reading a file once and assuming it hasn't changed in a long session</li></ul>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ap5_07"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ap5_08"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ap5_09"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_ap5_07",
+              "type": "scenario",
+              "difficulty": "expert",
+              "question": "An agent needs to fix a bug where the `calculateDiscount()` function returns incorrect values for bulk orders. The codebase has 2,000 files. What is the MOST efficient exploration strategy?",
+              "options": [
+                "Read the README and project architecture docs first, then explore each module systematically",
+                "Ask the user where the bug is located rather than exploring the codebase",
+                "Read every file in the `src/` directory to understand the full codebase before looking for the bug",
+                "Use search to find `calculateDiscount`, read that function and its tests, trace its callers and dependencies, then identify the bug"
+              ],
+              "correct_answer": 3,
+              "explanation": "Search-first + bottom-up: find the specific function, read it, read its tests, trace its dependencies. This is the most token-efficient approach for a targeted bug fix. Reading all of src/ (A) wastes tokens on 1,990+ irrelevant files. Top-down exploration (C) is valuable for broad understanding but overkill for a targeted fix. Asking the user (D) abdicates the agent's responsibility to investigate.",
+              "xp_reward": 15
+            },
+            {
+              "id": "ex_ap5_08",
+              "type": "multiple_choice",
+              "difficulty": "expert",
+              "question": "Why should an agent re-read a file before modifying it in a long-running session?",
+              "options": [
+                "To consume more context window tokens for better accuracy",
+                "To refresh its memory because LLMs forget file contents quickly",
+                "Because the file may have been modified by another agent, a user, or a tool since it was last read, and changes based on stale content could cause conflicts or data loss",
+                "The API requires a read before every write operation"
+              ],
+              "correct_answer": 2,
+              "explanation": "In multi-agent systems or long sessions, files can change between reads. Another agent may have modified the file, a hook may have triggered changes, or the user may have edited it externally. Making changes based on stale content can overwrite others' work or introduce conflicts. Re-reading ensures the agent operates on current state.",
+              "xp_reward": 10
+            },
+            {
+              "id": "ex_ap5_09",
+              "type": "scenario",
+              "difficulty": "expert",
+              "question": "Your agent is exploring a new codebase and reports: 'The application uses PostgreSQL for its database, based on the import statements I found.' However, the project actually uses MySQL — the PostgreSQL imports are in a deprecated module that's no longer used. What information provenance principle was violated?",
+              "options": [
+                "The agent's search was correct — PostgreSQL imports mean PostgreSQL is used",
+                "The agent made a codebase-wide claim based on evidence from a single location without verifying it against project configuration (package.json, docker-compose, .env) or checking if the module is actively used",
+                "The agent should have asked the user what database is used instead of investigating",
+                "The agent should have read more files to gather more evidence"
+              ],
+              "correct_answer": 1,
+              "explanation": "The agent drew a broad conclusion from narrow evidence without cross-referencing. Good information provenance requires: (1) checking multiple sources (import != usage), (2) verifying against authoritative sources (config files, docker-compose), and (3) checking if the source is current (deprecated module). The agent should have stated: 'Found PostgreSQL imports in [file], but should verify against project config.'",
+              "xp_reward": 15
+            }
+          ]
+        },
+        {
+          "title": "Human Review Workflows & Escalation",
+          "slug": "human-review-escalation",
+          "description": "Design escalation patterns (approval gates, confidence-based routing, exception handling) and package information for effective human review.",
+          "order_index": 4,
+          "xp_reward": 30,
+          "estimated_minutes": 15,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>Human Review Workflows & Escalation</h3><p>Human review workflows define when and how an agent should involve a human in its decision-making process. This is a critical safety pattern for production systems.</p><h4>When to Escalate to Human Review</h4><ol><li><strong>High-stakes decisions</strong>: Deploying to production, deleting data, financial transactions</li><li><strong>Ambiguous situations</strong>: Conflicting requirements, unclear specifications, edge cases not covered by rules</li><li><strong>Confidence thresholds</strong>: When the agent's confidence in its output is below a defined threshold</li><li><strong>Policy violations</strong>: When the agent detects potential violations it can't resolve automatically</li><li><strong>Recovery failure</strong>: When automated error recovery has been exhausted</li></ol><h4>Escalation Design Patterns</h4><ol><li><strong>Approval gate</strong>: Agent proposes an action and waits for human approval before executing. For destructive or irreversible operations.</li><li><strong>Review + modify</strong>: Agent produces output for human review. Human can approve, reject, or modify.</li><li><strong>Exception handling</strong>: Agent operates autonomously for normal cases, escalates exceptions only.</li><li><strong>Confidence-based</strong>: Below-threshold outputs are automatically routed to human review.</li></ol><h4>Information Packaging for Escalation</h4><p>Provide: the decision or action that needs review, the context that led to escalation, the specific reason for escalation, the agent's recommendation (if any), and all relevant data the human needs.</p><h4>Anti-patterns</h4><ul><li>Escalating everything (defeats automation)</li><li>Escalating without context (human can't decide)</li><li>Not escalating critical decisions (agent overreaches)</li><li>Blocking on human review for non-critical decisions (slows the system)</li></ul>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ap5_10"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ap5_11"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ap5_12"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_ap5_10",
+              "type": "scenario",
+              "difficulty": "expert",
+              "question": "Your agent auto-fixes security vulnerabilities in PRs. It finds a dependency with a known CVE and wants to upgrade it from v2.3 to v3.0 (a major version bump that may have breaking changes). What is the BEST workflow?",
+              "options": [
+                "Skip the upgrade since it's a major version bump and might break things",
+                "Auto-upgrade to v3.0 since it fixes a security vulnerability — security always takes priority",
+                "Propose the upgrade with an explanation of the CVE severity, potential breaking changes from the v3.0 changelog, and a recommendation. Present to a human for approval before applying",
+                "Downgrade to v1.x which doesn't have the CVE"
+              ],
+              "correct_answer": 2,
+              "explanation": "Major version bumps with potential breaking changes require human judgment. The agent should: (1) identify the vulnerability, (2) research the upgrade implications, (3) package all this information, and (4) present it for human decision. Auto-upgrading (A) risks breaking the application. Skipping (B) leaves the vulnerability. Downgrading (D) likely introduces other issues. This is a textbook approval gate pattern.",
+              "xp_reward": 15
+            },
+            {
+              "id": "ex_ap5_11",
+              "type": "multiple_choice",
+              "difficulty": "expert",
+              "question": "What information should an agent include when escalating a decision to a human reviewer?",
+              "options": [
+                "The complete conversation history so the human can trace every step",
+                "The decision needed, the context that led to the escalation, the specific reason the agent can't decide, the agent's recommendation with reasoning, and all relevant data",
+                "A summary of what the agent did, without including its recommendation to avoid biasing the human",
+                "Only the question: 'Should I proceed?'"
+              ],
+              "correct_answer": 1,
+              "explanation": "Comprehensive escalation packaging enables informed decisions. The human needs: what decision is needed, why the agent is escalating, what the agent recommends (with reasoning — this helps, not biases), and all relevant data. A bare question (A) provides no context. Full conversation history (C) is too much noise. Omitting the recommendation (D) wastes the agent's analysis.",
+              "xp_reward": 10
+            },
+            {
+              "id": "ex_ap5_12",
+              "type": "scenario",
+              "difficulty": "expert",
+              "question": "Your automated code review agent escalates 60% of PRs to human review, creating a backlog. The team is overwhelmed and starting to rubber-stamp approvals. How should you tune the system?",
+              "options": [
+                "Hire more reviewers to handle the volume",
+                "Analyze the 60% of escalated PRs to find patterns: if most escalations are for the same low-risk reasons (e.g., style issues, minor refactors), add rules to handle those automatically. Reserve escalation for genuinely ambiguous or high-risk situations",
+                "Disable human review entirely to eliminate the backlog",
+                "Increase the confidence threshold so fewer PRs are escalated, accepting higher risk"
+              ],
+              "correct_answer": 1,
+              "explanation": "The high escalation rate suggests the agent is escalating cases it could handle automatically. Analyze the patterns: if 40% of escalations are for style issues, add style rules so the agent handles those without escalation. This reduces volume while maintaining escalation for truly ambiguous cases. Disabling review (A) removes a safety net. More reviewers (C) treats symptoms. Blindly raising the threshold (D) may miss genuine issues.",
+              "xp_reward": 15
+            }
+          ]
+        },
+        {
+          "title": "Context Architecture for Production Systems",
+          "slug": "context-architecture-production",
+          "description": "Design four-layer context architectures (permanent, semi-permanent, dynamic, on-demand) that maintain reliability under context pressure.",
+          "order_index": 5,
+          "xp_reward": 30,
+          "estimated_minutes": 15,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>Context Architecture for Production Systems</h3><p>Designing context architecture for production Claude deployments requires balancing information completeness, token efficiency, and reliability.</p><h4>Context Layering Strategy</h4><p><strong>Layer 1 — System Prompt (Permanent Context):</strong> Always present, never compressed. Contains identity, constraints, security rules, output format requirements. Keep concise. Budget: 10-15% of context window.</p><p><strong>Layer 2 — Session Context (Semi-permanent):</strong> Project information, user preferences, session goals. Loaded at session start, persists through the session. Budget: 15-20%.</p><p><strong>Layer 3 — Working Context (Dynamic):</strong> Current task information, recent tool results, file contents. Changes with every turn. Most likely to be compressed. Budget: 50-60%.</p><p><strong>Layer 4 — Retrieved Context (On-demand):</strong> Pulled from tools, databases, or files when needed. Not stored unless needed for follow-up. Refreshable at any time.</p><h4>Design Principles</h4><ol><li><strong>Critical info in Layer 1</strong>: Security constraints, output format, identity must survive any context pressure</li><li><strong>Refreshable over memorable</strong>: Prefer re-reading a file (Layer 4) over relying on a previous read in conversation history (Layer 3)</li><li><strong>Structure for scanning</strong>: Use XML tags, JSON, markdown headers. Claude can locate structured information faster than prose</li><li><strong>Separate concerns</strong>: Don't mix security constraints with coding style preferences</li><li><strong>Test under pressure</strong>: Verify your system works correctly when the context window is 80%+ full</li></ol>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ap5_13"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ap5_14"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ap5_15"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_ap5_13",
+              "type": "scenario",
+              "difficulty": "expert",
+              "question": "You're designing the context architecture for a customer service agent that handles 50+ turn conversations. By turn 40, the agent starts giving inconsistent answers because it's lost track of the customer's earlier statements. What is the BEST architectural solution?",
+              "options": [
+                "Increase the context window size to handle longer conversations",
+                "Implement a structured session state that summarizes key customer information (issue, preferences, previous resolutions) at each turn and places it in the system prompt or at the beginning of each new message, ensuring it's always in the high-attention zone",
+                "Limit conversations to 20 turns and force the customer to start a new session",
+                "Record the entire conversation and replay it at each turn"
+              ],
+              "correct_answer": 1,
+              "explanation": "A structured session state acts as a running summary that's always in the high-attention zone (beginning of context). It captures key facts without storing the full conversation. Increasing context window (A) doesn't solve the lost-in-the-middle problem. Limiting turns (C) creates bad customer experience. Full replay (D) fills the context window even faster. The session state pattern keeps critical information visible regardless of conversation length.",
+              "xp_reward": 15
+            },
+            {
+              "id": "ex_ap5_14",
+              "type": "multiple_choice",
+              "difficulty": "expert",
+              "question": "Why should security constraints be placed in the system prompt (Layer 1) rather than in conversation history (Layer 3)?",
+              "options": [
+                "Users can see conversation history but not system prompts",
+                "System prompts are encrypted; conversation history is not",
+                "System prompts are always present and never compressed, ensuring security constraints survive any context window pressure. Conversation history can be compressed or truncated, potentially losing constraints",
+                "System prompts are processed faster by the model"
+              ],
+              "correct_answer": 2,
+              "explanation": "System prompts are permanent context — they're always present in full, regardless of conversation length or context pressure. If security constraints were in conversation history, they could be compressed or truncated in long sessions, potentially leaving the agent operating without those constraints. This is a direct application of the context layering principle: critical info in Layer 1.",
+              "xp_reward": 10
+            },
+            {
+              "id": "ex_ap5_15",
+              "type": "scenario",
+              "difficulty": "expert",
+              "question": "Your production agent uses structured XML tags in the system prompt for different sections: <security_rules>, <output_format>, <domain_knowledge>. The total system prompt is 4,000 tokens. A new team member suggests converting everything to plain prose to 'make it more readable.' What is your recommendation?",
+              "options": [
+                "Use JSON instead of XML for better compatibility",
+                "Remove the system prompt entirely and put everything in CLAUDE.md",
+                "Convert to prose — it's easier for the team to maintain",
+                "Keep the XML structure — it helps Claude parse and locate specific sections faster than prose, which is especially important under context pressure. Structured formats also make it easier to update specific sections without affecting others"
+              ],
+              "correct_answer": 3,
+              "explanation": "Structured formats (XML tags, markdown headers) serve two purposes: (1) Claude can locate and reference specific sections more reliably than scanning prose, and (2) maintainability — you can update <security_rules> without touching <output_format>. This is especially important under context pressure, where Claude needs to quickly find relevant constraints. Prose (A) is harder to scan. JSON (C) works but XML is the conventional choice for system prompts. Moving to CLAUDE.md (D) changes the context layer and behavior.",
+              "xp_reward": 15
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "title": "Prompting for Different Outcomes",
+  "slug": "prompting-for-different-outcomes",
+  "description": "Analysis, creative work, and decisions each need a different prompting strategy. Learn to match your approach to the output you need.",
+  "order_index": 3,
+  "xp_reward": 75,
+  "estimated_minutes": 8,
+  "content": {
+    "sections": [
+      {
+        "type": "text",
+        "content": "<p>Claude can write, analyze, brainstorm, plan, and decide. But you don't talk to it the same way for each one. A prompt that works great for brainstorming will fall flat for analysis. A prompt that nails a decision framework will feel suffocating for creative work. <strong>The skill isn't just knowing what to say — it's knowing what kind of conversation you're starting.</strong></p>"
+      },
+      {
+        "type": "text",
+        "content": "<p><strong>Analysis prompting</strong> needs structure and specificity. Give Claude the data, tell it exactly what to look for, and specify the output format. \"Analyze this quarterly report\" is vague — Claude doesn't know what matters to you. \"Find the 3 biggest risks in this report and explain each in 2 sentences\" is actionable. You're telling Claude what to look for, how many, and how to present it. The more specific your analytical prompt, the more useful the output.</p>"
+      },
+      {
+        "type": "exercise",
+        "exercise_id": "ex_sp_03a"
+      },
+      {
+        "type": "text",
+        "content": "<p><strong>Creative prompting</strong> needs room to breathe. Instead of rigid instructions, give Claude examples of what you like, describe the vibe, and let it explore. \"Write a tagline\" gets you something generic and forgettable. \"Write 10 taglines that feel like Apple's 'Think Different' — short, bold, slightly rebellious\" gives Claude a creative direction and the freedom to generate options. Quantity and tone guidance beat rigid templates for creative work.</p>"
+      },
+      {
+        "type": "text",
+        "content": "<p><strong>Decision-making prompting</strong> needs frameworks and constraints. Give Claude the options, the criteria that matter to you, and ask it to argue both sides before recommending. \"Should I take this job?\" gets platitudes. \"Here are two job offers — Offer A pays $120K remote, Offer B pays $95K but at a company I admire. Argue the case for each based on career growth, lifestyle, and finances, then tell me which one you'd take and why\" gets real thinking. Force Claude to reason, not just reassure.</p>"
+      },
+      {
+        "type": "exercise",
+        "exercise_id": "ex_sp_03b"
+      },
+      {
+        "type": "text",
+        "content": "<p>Here's the pattern: <strong>match your prompt style to the output you need.</strong> Analysis needs precision — what, how many, what format. Creative work needs inspiration — examples, vibes, room to explore. Decisions need structure — options, criteria, argue both sides. Once you start seeing every prompt through this lens, your results improve immediately.</p>"
+      },
+      {
+        "type": "exercise",
+        "exercise_id": "ex_sp_03c"
+      },
+      {
+        "type": "summary",
+        "content": "<p>Different tasks demand different prompting strategies. Analysis needs structure and specificity. Creative work needs examples and room to explore. Decision-making needs frameworks that force real reasoning. The best prompters don't use the same approach for everything — they match their style to the outcome they need. Next up: advanced techniques that change how Claude thinks and responds.</p>"
+      }
+    ]
+  },
+  "exercises": [
+    {
+      "id": "ex_sp_03a",
+      "order_index": 1,
+      "type": "multiple_choice",
+      "prompt": "You need Claude to analyze a competitor's website and tell you what they're doing better than you. Which prompt would produce the most useful analysis?",
+      "options": [
+        "Analyze this website for me.",
+        "What do you think of this competitor's website?",
+        "Compare this competitor's homepage to mine. Identify 3 specific things they do better in terms of messaging clarity, call-to-action placement, and trust signals. For each one, explain what they did and what I should change.",
+        "Tell me everything about this website."
+      ],
+      "correct_answer": "2",
+      "explanation": "Analytical prompts need three things: what to look for (messaging, CTAs, trust signals), how many (3 things), and the format (what they did + what to change). The other prompts leave Claude guessing about what matters to you, which means you'll get a generic overview instead of actionable insights.",
+      "hints": [
+        "Think about what makes analysis useful: is it breadth or specificity?"
+      ],
+      "xp_reward": 5
+    },
+    {
+      "id": "ex_sp_03b",
+      "order_index": 2,
+      "type": "scenario_walkthrough",
+      "prompt": "Three tasks land on your desk. Each one needs a different prompting strategy. Pick the right approach for each.",
+      "options": null,
+      "correct_answer": "{\"title\":\"Match the Strategy to the Task\",\"steps\":[{\"type\":\"context\",\"text\":\"You're using Claude for three different things today. Each task needs a different prompting approach. Let's see if you can spot which strategy fits each situation.\"},{\"type\":\"choice\",\"claude_response\":\"Task 1: Your boss wants you to review last month's sales data and flag anything concerning before the board meeting tomorrow.\",\"question\":\"What prompting strategy should you use?\",\"options\":[\"Give Claude examples of reports you admire and ask it to write something with that vibe\",\"Give Claude the data, tell it to find the 3 biggest concerns, and format each as a bullet with the metric, the trend, and the risk\",\"Ask Claude to argue for and against whether sales performance was good\",\"Just paste the data and say 'what do you think?'\"],\"correct\":1,\"feedback\":\"This is analysis. Your boss needs specific, structured findings — not creative prose or a philosophical debate. Telling Claude exactly what to look for (concerns), how many (3), and the format (metric + trend + risk) gets you board-ready output.\"},{\"type\":\"choice\",\"claude_response\":\"Task 2: You're launching a podcast and need a name that's catchy, memorable, and signals 'insider knowledge' without being pretentious.\",\"question\":\"What prompting strategy should you use?\",\"options\":[\"Ask Claude to analyze the top 10 podcast names in your category and identify naming patterns\",\"Tell Claude to generate exactly one podcast name that is 3 words or fewer\",\"Give Claude examples of names you like (like 'The Daily' or 'How I Built This'), describe the tone you want, and ask for 15 options\",\"Ask Claude to argue for and against three name options you already have\"],\"correct\":2,\"feedback\":\"This is creative work. You need options, not a single answer. Giving Claude examples sets the tone, describing the vibe gives direction, and asking for 15 options gives it room to explore. Some will miss, but the best ones will be things you never would have thought of.\"},{\"type\":\"choice\",\"claude_response\":\"Task 3: You got two freelance offers — one pays double but sounds boring, the other is exciting but pays less and the client seems disorganized. You need to decide by Friday.\",\"question\":\"What prompting strategy should you use?\",\"options\":[\"Ask Claude to write a creative pro/con list for each option\",\"Paste both offers, list your priorities (income, fulfillment, reliability), and ask Claude to argue the strongest case for each before making a recommendation\",\"Ask Claude to analyze the market rate for freelance work in your field\",\"Ask Claude to just pick one for you\"],\"correct\":1,\"feedback\":\"This is decision-making. You need Claude to reason through tradeoffs, not brainstorm or analyze data. Giving it both options, your criteria, and asking it to argue both sides before recommending forces it to do the hard thinking instead of defaulting to safe, noncommittal advice.\"}]}",
+      "explanation": "Analysis needs specificity and structure. Creative work needs examples and room to explore. Decision-making needs options, criteria, and both-sides reasoning. The task type determines the prompting strategy.",
+      "hints": [
+        "For each task, ask: do I need specific findings, creative options, or a reasoned recommendation?"
+      ],
+      "xp_reward": 15
+    },
+    {
+      "id": "ex_sp_03c",
+      "order_index": 3,
+      "type": "matching_pairs",
+      "prompt": "Match each task type to the prompting strategy that works best for it.",
+      "options": null,
+      "correct_answer": "{\"Analyzing a financial report\":\"Specify what to find, how many items, and the output format\",\"Brainstorming product names\":\"Give examples of what you like, describe the tone, ask for many options\",\"Choosing between two apartments\":\"Present both options with your criteria, ask Claude to argue each side then recommend\",\"Writing a creative bio\":\"Describe the vibe you want and share examples you admire\",\"Reviewing a contract for risks\":\"Tell Claude exactly what to look for and how to present each finding\"}",
+      "explanation": "Analysis and review tasks need precision — what to find and how to format it. Creative tasks need inspiration — examples, tone, and quantity. Decision tasks need structure — options, criteria, and both-sides reasoning. The more naturally you match strategy to task, the better every prompt becomes.",
+      "hints": [
+        "Group the tasks: which ones need specific findings? Which need creative options? Which need a recommendation?"
+      ],
+      "xp_reward": 10
+    }
+  ]
+}

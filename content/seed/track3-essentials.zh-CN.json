@@ -1,0 +1,444 @@
+{
+  "track": "essentials",
+  "courses": [
+    {
+      "title": "掌握核心技能",
+      "slug": "essentials",
+      "description": "写作、文档、研究和决策。五项实用技能，让ChatGPT在真正的工作中派上用场，而不只是演示。",
+      "difficulty": "intermediate",
+      "order_index": 1,
+      "is_free": true,
+      "icon": "Target",
+      "lessons": [
+        {
+          "title": "让ChatGPT听起来像你",
+          "slug": "make-claude-sound-like-you",
+          "description": "范例胜过指令。向ChatGPT展示你的声音，而不是描述它。",
+          "order_index": 1,
+          "xp_reward": 100,
+          "estimated_minutes": 6,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<p>ChatGPT写出通用文本是因为你给了它通用的提示。停止用形容词描述你的语气。转而粘贴三篇你实际写过的东西，说“模仿这种语气。“ChatGPT在模式匹配方面表现出色——给它模式去匹配。</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_es_01"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>层叠你的具体要求：</strong>你的写作范例、明确的风格规则（“永远不要说'希望这封邮件一切安好'”），以及长度和格式等限制。你的提示越具体，ChatGPT需要猜测的就越少。</p><p>设置方式取决于层级。<strong>在ChatGPT中，</strong>创建一个项目，包含5-10个写作样本加上简短的风格指南。<strong>在Co-work中，</strong>ChatGPT会阅读你打开的文档并自动匹配语气。<strong>在Code中，</strong>创建一个内置风格的可重用提示模板。</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_es_02"
+              },
+              {
+                "type": "text",
+                "content": "<p>三个层级的共同模式：展示，而非讲述。范例优于描述。上下文优于指令。</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_es_03"
+              },
+              {
+                "type": "summary",
+                "content": "<p>声音匹配始于你写作的真实范例，而非形容词列表。在你最常用的层级中设置你的风格系统——项目、Co-work上下文或Code模板。</p>"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_es_01",
+              "type": "matching_pairs",
+              "prompt": "将每个语气描述词与实际听起来像那样的句子配对。描述是抽象的——范例才是ChatGPT学习你声音的方式。",
+              "options": null,
+              "correct_answer": "{\"Punchy and opinionated\":\"Hot take: your standup is a performance review in disguise. Kill it. Ship a Loom instead.\",\"Warm and story-driven\":\"When I got fired in 2019, I thought my career was over. Turns out it was just starting.\",\"Authoritative and analytical\":\"The data is clear: remote teams ship 23% faster when async defaults are enforced. Three factors drive this.\",\"Playful and self-deprecating\":\"I spent six months building the wrong feature. On the bright side, my Jira board has never looked better.\",\"Blunt and contrarian\":\"Everyone's wrong about onboarding. Your new hire doesn't need a 90-day plan. They need one unambiguous win in week one.\",\"Reflective and personal\":\"I've been thinking about why I say yes to meetings I don't want. It's not politeness. It's fear dressed up as collaboration.\"}",
+              "explanation": "每种语气都体现在句子结构中：犀利的写作使用短动词和鲜明观点。温暖的写作以故事开头。权威的写作以数据引领。向ChatGPT展示句子模式，而不是形容词。",
+              "hints": [
+                "句子结构会透露答案。短动词 vs. 长从句。统计数据 vs. 故事。主张 vs. 提问。"
+              ],
+              "xp_reward": 10,
+              "order_index": 1
+            },
+            {
+              "id": "ex_es_02",
+              "type": "prompt_lab",
+              "prompt": "你正在设置一个ChatGPT项目来捕捉你为客户邮件撰写时的声音。写出你会添加到项目中的自定义指令。",
+              "options": null,
+              "correct_answer": "{\"scenario\":\"你正在ChatGPT中创建一个“客户邮件“项目。你已经上传了5封你发送过的示例邮件。现在你需要编写自定义指令，告诉ChatGPT你的风格规则。写出能让这个项目中每封邮件都像你的指令。\",\"scoring_criteria\":[{\"keyword_group\":[\"short\",\"concise\",\"brief\",\"under\",\"words\",\"sentences\",\"length\"],\"label\":\"设置了长度或简洁度限制\",\"points\":1},{\"keyword_group\":[\"never\",\"don't\",\"avoid\",\"no\",\"stop\",\"skip\",\"without\"],\"label\":\"包含了要避免的反模式\",\"points\":2},{\"keyword_group\":[\"value\",\"lead with\",\"open with\",\"start with\",\"first\",\"begin\"],\"label\":\"指定了如何开头或引导\",\"points\":1},{\"keyword_group\":[\"tone\",\"voice\",\"casual\",\"formal\",\"direct\",\"peer\",\"friendly\",\"professional\"],\"label\":\"定义了整体语气\",\"points\":1},{\"keyword_group\":[\"CTA\",\"next step\",\"action\",\"end with\",\"close with\",\"sign off\"],\"label\":\"指定了结尾或行动号召风格\",\"points\":1},{\"keyword_group\":[\"example\",\"sample\",\"uploaded\",\"attached\",\"reference\",\"match\",\"like the\"],\"label\":\"引用了上传的范例\",\"points\":1}],\"max_points\":7,\"pass_threshold\":4,\"ideal_prompt\":\"匹配上传邮件范例的语气。规则：邮件保持在100字以内。以价值开头，而非客套话。永远不要说'希望这封邮件一切安好'或'请不要犹豫'。以具体的下一步结束，而非模糊的'请告知'。语气：直接、平等、像给专业朋友发短信。\",\"tips\":[\"反模式（'永远不要说X'）往往比正面指令更有用，因为它们能最有效地消除AI废话。\",\"引用上传的范例告诉ChatGPT将它们作为主要风格指南。\",\"具体限制（字数、开头风格、CTA格式）消除了歧义。\"]}",
+              "explanation": "项目自定义指令在结合风格规则、反模式和对上传范例的引用时效果最好。限制胜过描述。",
+              "hints": [
+                "想想哪些具体短语和模式让邮件听起来像AI废话。告诉ChatGPT避免那些。"
+              ],
+              "xp_reward": 10,
+              "order_index": 2
+            },
+            {
+              "id": "ex_es_03",
+              "type": "scenario_walkthrough",
+              "prompt": "走一遍让ChatGPT匹配你写作声音的过程，从通用的第一次尝试到打磨好的结果。",
+              "options": null,
+              "correct_answer": "{\"title\": \"从AI废话到你的声音\", \"steps\": [{\"type\": \"context\", \"text\": \"你让ChatGPT写一篇关于招聘的LinkedIn帖子。结果是：'招聘是企业能做出的最关键决策之一。正确的人才获取策略可以加速增长，而糟糕的招聘决策可能使企业大幅倒退。'典型的AI废话。让我们修复它。\"}, {\"type\": \"choice\", \"claude_response\": \"帖子技术上正确，但听起来像出自任何AI工具。零个性。你的第一步是什么？\", \"question\": \"你如何让ChatGPT带着个性重写？\", \"options\": [\"说'写好点'然后听天由命\", \"粘贴你实际写作的一个范例，说'匹配这个语气'\", \"让ChatGPT'更有创意'\", \"多加感叹号让它看起来有活力\"], \"correct\": 1, \"feedback\": \"向ChatGPT展示你实际写作的范例给了它一个具体目标。'写好点'太模糊。'有创意'没有具体含义。感叹号不等于个性。\"}, {\"type\": \"choice\", \"claude_response\": \"你粘贴了一个范例，ChatGPT用更多个性重写了。现在读起来是：'你没有招聘问题。你有筛选问题。200个申请人，你把每份简历当小说读。'好多了，但以通用的行动号召结尾：'你对招聘怎么看？在评论中告诉我！'\", \"question\": \"如何在不丢失强开头的情况下修复弱结尾？\", \"options\": [\"从头重写整篇\", \"告诉ChatGPT：'开头完美。保留它。把结尾替换成一个具体的、有立场的观点。不要用乞求互动的问题。'\", \"说'让结尾更好'\", \"接受现状\"], \"correct\": 1, \"feedback\": \"保护好的部分同时针对弱的部分是核心迭代技能。告诉ChatGPT确切地保留什么、改变什么，避免你丢失进展。\"}, {\"type\": \"prompt\", \"context\": \"现在写最终打磨提示。帖子已经完成90%，但有一句话说'利用人才获取策略'。消除行话，让它听起来像真人。\", \"placeholder\": \"写你的最终打磨提示...\", \"scoring_criteria\": [{\"keyword_group\": [\"kill\", \"remove\", \"cut\", \"replace\", \"drop\", \"delete\", \"leveraging\", \"jargon\"], \"label\": \"针对了具体行话\", \"points\": 2}, {\"keyword_group\": [\"plain\", \"simple\", \"real\", \"human\", \"specific\", \"concrete\", \"English\"], \"label\": \"要求了通俗语言\", \"points\": 2}, {\"keyword_group\": [\"keep\", \"don't change\", \"rest is good\", \"everything else\"], \"label\": \"保护了帖子的其余部分\", \"points\": 1}], \"ideal\": \"几乎完美。删掉'利用人才获取策略'，用你实际做的事情的具体描述替换，用通俗语言。其他什么都不要改。\", \"max_points\": 5, \"pass_threshold\": 3}]}",
+              "explanation": "声音匹配是一个三步过程：向ChatGPT展示范例，在保护好的部分的同时迭代特定段落，然后打磨个别用词。每一轮都更精准。",
+              "hints": [
+                "想想从大修改（声音和结构）到小修改（个别词和短语）的过程。"
+              ],
+              "xp_reward": 15,
+              "order_index": 3
+            }
+          ]
+        },
+        {
+          "title": "迭代循环",
+          "slug": "the-iteration-loop",
+          "description": "将通用输出转化为你真正会发送的东西的来回过程。",
+          "order_index": 2,
+          "xp_reward": 100,
+          "estimated_minutes": 6,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<p>第一次输出几乎不会直接使用。迭代循环是品质提升最大的突破。<strong>从宽泛开始，然后缩小。</strong>第一轮：修正声音和结构。第二轮：修正特定段落。第三轮：打磨用词。</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_es_04"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>具体说明哪里不对。</strong>”写好点“毫无用处。“第二段听起来太企业化“给了ChatGPT可以处理的东西。<strong>告诉ChatGPT保留什么。</strong>”开头完美。别动它。修正第一段之后的所有内容。“两三轮就够了。</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_es_05"
+              },
+              {
+                "type": "text",
+                "content": "<p>迭代是过程，不是失败。每个专业作家都会修改。区别在于，有了ChatGPT，每次修改只需几秒而不是几小时。</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_es_06"
+              },
+              {
+                "type": "summary",
+                "content": "<p>从宽泛开始，具体说明哪里不对，告诉ChatGPT保留什么。两三轮就能将通用输出变成打磨好的作品。</p>"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_es_04",
+              "type": "multiple_choice",
+              "prompt": "你正在和ChatGPT编辑博客文章的第2轮。引言完美但结论感觉仓促。你怎么说？",
+              "options": [
+                "重写整篇。",
+                "引言很棒——别动它。结论感觉仓促。用一个具体的行动号召和一个回扣开头故事的结尾想法来扩展它。",
+                "把结尾写好点。",
+                "给结论多加些词。"
+              ],
+              "correct_answer": "1",
+              "explanation": "选项B做对了三件事：保护好的部分（'别动引言'），识别具体问题（'结论仓促'），给出方向（'用CTA扩展，回扣开头'）。其他选项要么太模糊，要么太有破坏性。",
+              "hints": [
+                "最好的迭代反馈保护有效的部分，指出哪里坏了，给出具体方向。"
+              ],
+              "xp_reward": 5,
+              "order_index": 1
+            },
+            {
+              "id": "ex_es_05",
+              "type": "prompt_lab",
+              "prompt": "ChatGPT给你写了一封通用又企业化的冷邮件。写一个修改提示，一轮修正声音和结构。",
+              "options": null,
+              "correct_answer": "{\"scenario\":\"ChatGPT写了这封冷邮件：'尊敬的[姓名]，希望这封邮件一切安好。我写信是为了介绍我们的咨询服务，帮助企业优化运营并推动增长。凭借超过10年的经验，我们已经帮助众多企业实现了目标。我非常希望有机会讨论我们如何帮助贵组织。如果您方便的话，请告知是否可以安排一次简短通话。此致敬上。'写一个修改提示，将其转变为你真正会发送的东西。\",\"scoring_criteria\":[{\"keyword_group\":[\"drop\",\"cut\",\"remove\",\"kill\",\"no\",\"don't\",\"pleasantries\",\"hope this finds\"],\"label\":\"告诉ChatGPT要删除什么\",\"points\":2},{\"keyword_group\":[\"open\",\"lead\",\"start\",\"begin\",\"first\",\"hook\",\"observation\",\"specific\"],\"label\":\"指定了新的开头方式\",\"points\":1},{\"keyword_group\":[\"short\",\"under\",\"words\",\"concise\",\"brief\",\"100\"],\"label\":\"设置了长度限制\",\"points\":1},{\"keyword_group\":[\"tone\",\"sound\",\"peer\",\"casual\",\"direct\",\"not a salesperson\",\"human\",\"friend\"],\"label\":\"定义了语气转变\",\"points\":1},{\"keyword_group\":[\"question\",\"CTA\",\"end with\",\"close\",\"next step\",\"ask\"],\"label\":\"指定了结尾格式\",\"points\":1},{\"keyword_group\":[\"their\",\"business\",\"company\",\"about them\",\"specific\",\"research\",\"personalize\"],\"label\":\"要求个性化\",\"points\":1}],\"max_points\":7,\"pass_threshold\":4,\"ideal_prompt\":\"重写这封邮件。完全去掉客套话。用对他们业务的具体观察开头，而非问候。保持在100字以内。听起来像同行，不像推销员。以问题结尾，而非要求通话。写成如果出现在我收件箱里我真的想读的东西。\",\"tips\":[\"告诉ChatGPT删什么往往比告诉它加什么更有效。\",\"长度限制迫使ChatGPT优先考虑实质内容而非填充物。\",\"'听起来像同行，不像推销员'给了ChatGPT一个明确的角色目标。\"]}",
+              "explanation": "最好的修改提示告诉ChatGPT删什么、如何重构、什么语气、如何结尾。一个具体的修改提示胜过五轮'写好点。'",
+              "hints": [
+                "想想让这封邮件听起来像AI废话的所有因素。然后告诉ChatGPT一次性全部修正。"
+              ],
+              "xp_reward": 10,
+              "order_index": 2
+            },
+            {
+              "id": "ex_es_06",
+              "type": "scenario_walkthrough",
+              "prompt": "走一遍冷邮件的三轮迭代，从通用AI输出到你真正会发送的东西。",
+              "options": null,
+              "correct_answer": "{\"title\": \"三轮迭代循环\", \"steps\": [{\"type\": \"context\", \"text\": \"你让ChatGPT给潜在咨询客户写封冷邮件。结果很通用：'尊敬的[姓名]，希望这封邮件一切安好。我写信是为了介绍我们的咨询服务...'典型AI废话。该迭代了。\"}, {\"type\": \"choice\", \"claude_response\": \"第1轮：邮件很通用，听起来和其他所有冷邮件一样。你的第一个修改提示是什么？\", \"question\": \"哪个修改提示一轮修正最多？\", \"options\": [\"写好点\", \"重写。去掉客套话。用对他们业务的具体观察开头。保持100字以内。\", \"能让它听起来更专业吗？\", \"加点幽默让它脱颖而出\"], \"correct\": 1, \"feedback\": \"选项B一次修正了声音、结构、长度和语气。'写好点'什么也没给。'更专业'让它更糟。不修正基础就加幽默是画蛇添足。\"}, {\"type\": \"choice\", \"claude_response\": \"ChatGPT用关于他们最近产品发布的更犀利开头重写了。但后半部分仍然生硬，CTA要求他们'在方便时安排通话。'\", \"question\": \"第2轮：开头很棒但后半部分仍然生硬。你怎么说？\", \"options\": [\"全部改掉\", \"开头很棒，保留。但第二段太正式了。写得像我给一个恰好是CEO的朋友发短信一样。\", \"让CTA更好\", \"可以了，直接发\"], \"correct\": 1, \"feedback\": \"保护有效的部分（'保留开头'）同时针对无效的部分（'第二段太正式'）是核心迭代技能。让ChatGPT全部重写会丢失你的进展。\"}, {\"type\": \"prompt\", \"context\": \"第3轮：快完成了。邮件犀利且个人化，但有一句说'利用协同效应。'写你的最终打磨提示来消除行话。\", \"placeholder\": \"写你的第3轮打磨提示...\", \"scoring_criteria\": [{\"keyword_group\": [\"kill\", \"remove\", \"cut\", \"replace\", \"drop\", \"leveraging\", \"synergies\", \"jargon\"], \"label\": \"针对了具体行话\", \"points\": 2}, {\"keyword_group\": [\"plain\", \"simple\", \"real\", \"human\", \"English\", \"specific\", \"what you actually do\"], \"label\": \"要求了通俗语言替换\", \"points\": 2}, {\"keyword_group\": [\"keep\", \"don't change\", \"rest\", \"everything else\", \"almost\"], \"label\": \"保护了邮件其余部分\", \"points\": 1}], \"ideal\": \"快完成了。删掉'利用协同效应'，用你实际做的事情的具体描述替换，用通俗语言。不要咨询行话。其他什么都不要改。\", \"max_points\": 5, \"pass_threshold\": 3}]}",
+              "explanation": "三轮，四分钟。第1轮设定声音和结构。第2轮在保护好的部分的同时针对弱点。第3轮打磨个别用词。每一轮都更精准。",
+              "hints": [
+                "第1轮：修正大的问题。第2轮：修正特定段落。第3轮：打磨个别用词。"
+              ],
+              "xp_reward": 15,
+              "order_index": 3
+            }
+          ]
+        },
+        {
+          "title": "文档分析",
+          "slug": "document-analysis",
+          "description": "上传文档并与之对话，而不是自己苦读。",
+          "order_index": 3,
+          "xp_reward": 100,
+          "estimated_minutes": 7,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<p>ChatGPT的文档超能力不是搜索——而是理解。上传合同、电子表格或报告，ChatGPT会同时将所有内容保持在上下文中。不要让ChatGPT”总结这份合同。“而是让它“找到每个如果我错过截止日期就可能让我花钱的条款。“你的问题越有针对性，分析就越有用。</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_es_07"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>跨文档分析是关键技能。</strong>上传三份季度报告，问“正在出现什么趋势？“上传一份租赁合同和你所在地区的租户权利摘要，让ChatGPT标记冲突。ChatGPT能连接你分别阅读时会错过的跨文档模式。</p><p>专业提示：“从这份合同中按时间顺序提取所有日期和截止日期到表格中“每次都胜过“总结一下“。</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_es_08"
+              },
+              {
+                "type": "text",
+                "content": "<p>根据任务选择合适的层级：ChatGPT用于一次性深度分析，Co-work用于上下文内文档编辑，Code用于大规模批量处理。</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_es_09"
+              },
+              {
+                "type": "summary",
+                "content": "<p>上传文档并提出有针对性的问题，而不是通用摘要。跨文档分析能发现你会错过的模式。深度分析用ChatGPT，编辑用Co-work，批量处理用Code。</p>"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_es_07",
+              "type": "multiple_choice",
+              "prompt": "老板在你桌上放了3份供应商提案（42、28和35页）。你需要在下班前完成比较。用ChatGPT的第一步是什么？",
+              "options": [
+                "先自己读完三份，然后让ChatGPT帮你整理笔记格式",
+                "同时上传三份到ChatGPT，要求按价格、条款、SLA、时间线和风险信号做比较表",
+                "在单独的ChatGPT对话中总结每份提案，然后自己比较摘要",
+                "让ChatGPT只总结每份的执行摘要"
+              ],
+              "correct_answer": "1",
+              "explanation": "同时上传三份让ChatGPT能直接跨文档比较。单独对话失去了跨文档比较的能力。自己阅读违背了目的。执行摘要会遗漏重要细节。",
+              "hints": [
+                "想想是什么让ChatGPT的文档分析如此强大：同时将所有数据保持在上下文中。"
+              ],
+              "xp_reward": 5,
+              "order_index": 1
+            },
+            {
+              "id": "ex_es_08",
+              "type": "prompt_lab",
+              "prompt": "你有一份30页的供应商合同。写一个提示，让ChatGPT找到对你真正重要的条款，而不只是通用摘要。",
+              "options": null,
+              "correct_answer": "{\"scenario\":\"你刚收到一份30页的供应商合同，用于你公司想要采用的SaaS平台。你需要在签署前审查。写一个提示，让ChatGPT找到可能伤害你的具体条款，而不只是总结文档。\",\"scoring_criteria\":[{\"keyword_group\":[\"auto-renewal\",\"renewal\",\"termination\",\"cancel\",\"exit\",\"lock-in\",\"commitment\"],\"label\":\"询问了续约或退出条款\",\"points\":2},{\"keyword_group\":[\"liability\",\"indemnification\",\"damages\",\"risk\",\"penalty\",\"cost\",\"fee\"],\"label\":\"询问了责任或成本风险\",\"points\":1},{\"keyword_group\":[\"IP\",\"intellectual property\",\"ownership\",\"data\",\"rights\",\"who owns\"],\"label\":\"询问了知识产权或数据所有权\",\"points\":1},{\"keyword_group\":[\"flag\",\"red flag\",\"concern\",\"unusual\",\"deviate\",\"non-standard\",\"watch out\"],\"label\":\"要求ChatGPT标记问题\",\"points\":2},{\"keyword_group\":[\"deadline\",\"notice\",\"days\",\"period\",\"timeline\",\"date\"],\"label\":\"询问了截止日期或通知期\",\"points\":1}],\"max_points\":7,\"pass_threshold\":4,\"ideal_prompt\":\"审查这份30页的供应商合同。我需要你找到：1）任何自动续约条款以及取消需要多长的通知期。2）严重偏向供应商的责任上限或赔偿条款。3）合作期间产生的数据和知识产权归谁所有。4）任何偏离典型SaaS协议的非标准条款。标记任何可能让我花钱或被锁定的内容。\",\"tips\":[\"具体的提取请求（'找到自动续约条款'）胜过通用请求（'总结这份合同'）。\",\"要求ChatGPT标记非标准条款利用了它对典型合同模式的了解。\",\"将分析与后果联系起来（'可能让我花钱'）帮助ChatGPT优先考虑重要的事情。\"]}",
+              "explanation": "最好的文档提示准确告诉ChatGPT要找什么以及为什么重要。'总结这份合同'给你一个摘要。'找到任何可能让我花钱的东西'给你可行动的情报。",
+              "hints": [
+                "想想签完合同后什么让你夜不能寐。让ChatGPT找到那些具体的东西。"
+              ],
+              "xp_reward": 10,
+              "order_index": 2
+            },
+            {
+              "id": "ex_es_09",
+              "type": "scenario_walkthrough",
+              "prompt": "走一遍分析一个看起来标准但实际包含隐藏风险的合同条款。",
+              "options": null,
+              "correct_answer": "{\"title\": \"读出字里行间的含义\", \"steps\": [{\"type\": \"context\", \"text\": \"你将一份供应商合同上传到ChatGPT。大部分看起来标准。但ChatGPT标记了第12条中的一个条款：'服务提供商应在约定的时间表内交付所有里程碑。如因合理控制范围之外的情况导致延迟，时间表可由提供商自行决定延长。客户同意在收到发票后15日内支付所有开票金额，无论里程碑完成状态如何。'\"}, {\"type\": \"choice\", \"claude_response\": \"ChatGPT说：'我在这个条款中发现了两个可能伤害你的问题。'\", \"question\": \"'时间表可由提供商自行决定延长'的第一个问题是什么？\", \"options\": [\"这是标准的不可抗力语言——没什么不寻常的\", \"这意味着供应商可以无限期延迟而你没有追索权，因为'自行决定'不需要双方同意\", \"只要他们沟通了，时间表延长就没问题\", \"这只适用于极端情况，所以不必担心\"], \"correct\": 1, \"feedback\": \"'由提供商自行决定'是关键用语。标准不可抗力需要双方同意或定义的触发条件。这让供应商可以单方面决定。改为'经双方书面同意。'\"}, {\"type\": \"choice\", \"claude_response\": \"ChatGPT说：'第二个问题更令人担忧。看看付款条款。'\", \"question\": \"'无论里程碑完成状态如何，在15日内支付所有开票金额'有什么问题？\", \"options\": [\"净15天太短了——应该是净30天\", \"你在为尚未交付的工作付款，没有任何杠杆来确保质量或完成\", \"这种合同类型的付款条款是标准的\", \"如果现金流没问题，15天就行\"], \"correct\": 1, \"feedback\": \"'无论里程碑完成状态如何'意味着无论工作是否完成你都要付款。标准做法是将付款与里程碑验收挂钩。这消除了你最大的杠杆：在交付之前扣留付款。\"}, {\"type\": \"prompt\", \"context\": \"ChatGPT发现了问题。现在写一个提示，要求ChatGPT起草你会提出的替代这两个问题条款的具体合同语言。\", \"placeholder\": \"写你的提示让ChatGPT起草替代条款语言...\", \"scoring_criteria\": [{\"keyword_group\": [\"mutual\", \"agreement\", \"both parties\", \"written\", \"consent\"], \"label\": \"要求延期需双方同意\", \"points\": 2}, {\"keyword_group\": [\"milestone\", \"delivery\", \"completion\", \"acceptance\", \"tied to\", \"upon\"], \"label\": \"将付款与里程碑完成挂钩\", \"points\": 2}, {\"keyword_group\": [\"replace\", \"rewrite\", \"redline\", \"alternative\", \"propose\", \"counter\"], \"label\": \"要求替代语言\", \"points\": 1}], \"ideal\": \"为这两个条款起草替代语言。1）时间表延长应要求双方书面同意，而非提供商自行决定。2）付款应与里程碑验收挂钩——我们在批准每个交付物后15天内付款，而非在收到发票时无论完成与否付款。保持语言正式且可直接用于合同。\", \"max_points\": 5, \"pass_threshold\": 3}]}",
+              "explanation": "ChatGPT能捕捉到人们忽略的合同风险。关键用语（'由提供商自行决定，''无论里程碑完成状态如何'）看起来无害但将所有风险转移给你。ChatGPT以同等注意力阅读每个字。",
+              "hints": [
+                "注意'由其自行决定'和'无论……如何'这样的用语——它们将风险完全转移到一方。"
+              ],
+              "xp_reward": 15,
+              "order_index": 3
+            }
+          ]
+        },
+        {
+          "title": "研究与思考",
+          "slug": "research-and-thinking",
+          "description": "将ChatGPT作为思考伙伴，而非搜索引擎。构建累积知识的渐进式研究。",
+          "order_index": 4,
+          "xp_reward": 100,
+          "estimated_minutes": 7,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<p>大多数人把ChatGPT当作语法更好的搜索引擎。问个问题，得到答案，继续前进。这把90%的价值留在了桌上。当你问“法律科技的市场规模是多少？“你得到一个数字。当你问“我正在考虑用AI接案产品进入法律科技领域。我没看到的三个最大风险是什么？“——那才是一次思考对话。</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_es_10"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>渐进式研究会话是关键技能。</strong>从宽泛开始：“X的主要方法有哪些？“深入下去：“展开第二种方法。真正的挑战是什么？“然后具体化：“综合以上所有，如果我带着小团队和6个月时间在这个领域构建，差距在哪里？“每一轮都建立在上一轮基础上。最终，你得到一份本来需要好几天的综合分析。</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_es_11"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>关键习惯：和ChatGPT辩论。</strong>反驳它。“我不同意你的第二点，因为……”ChatGPT会调整。“你假设了X，但在我们的市场Y才是对的“ChatGPT会重新计算。停止用ChatGPT来确认你已经相信的。开始用它来挑战你相信的。</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_es_12"
+              },
+              {
+                "type": "summary",
+                "content": "<p>渐进式研究跨轮次构建累积知识。和ChatGPT辩论而不是接受第一个答案。最好的洞见来自于来回交锋。</p>"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_es_10",
+              "type": "multiple_choice",
+              "prompt": "你正在评估一个商业机会。哪个提示将ChatGPT变成思考伙伴而非搜索引擎？",
+              "options": [
+                "法律科技的市场规模是多少？",
+                "给我一份法律科技公司列表。",
+                "我正在考虑用AI接案产品针对人身伤害律所进入法律科技领域。我没看到的三个最大风险是什么，我做出的哪些假设可能是错的？",
+                "法律科技是个好市场吗？"
+              ],
+              "correct_answer": "2",
+              "explanation": "第三个提示给了ChatGPT你的具体情境，询问你没考虑到的风险，并明确要求检验假设。其他的把ChatGPT当作返回通用信息的搜索引擎。",
+              "hints": [
+                "思考伙伴需要了解你的情况，而非仅仅是主题。哪个提示给了ChatGPT足够的上下文来真正挑战你的思维？"
+              ],
+              "xp_reward": 5,
+              "order_index": 1
+            },
+            {
+              "id": "ex_es_11",
+              "type": "prompt_lab",
+              "prompt": "写关于AI驱动客户服务渐进式研究序列的第二个提示。第一个提示是'中端SaaS中AI客户服务的主要方法有哪些？'ChatGPT给了你概述。现在深入。",
+              "options": null,
+              "correct_answer": "{\"scenario\":\"ChatGPT刚给了你AI客户服务方法的概述：聊天机器人、对话式AI、工单路由、知识库自动化和坐席增强。对话式AI引起了你的注意。写第二个提示，深入这个具体方法。\",\"scoring_criteria\":[{\"keyword_group\":[\"conversational\",\"AI\",\"approach\",\"second\",\"that\",\"expand\",\"deeper\",\"more\"],\"label\":\"引用了ChatGPT之前的回答\",\"points\":2},{\"keyword_group\":[\"challenge\",\"problem\",\"fail\",\"difficulty\",\"hard\",\"struggle\",\"risk\",\"limitation\"],\"label\":\"询问了挑战或失败模式\",\"points\":2},{\"keyword_group\":[\"implement\",\"build\",\"deploy\",\"real\",\"practice\",\"actually\",\"work\"],\"label\":\"询问了实际实施\",\"points\":1},{\"keyword_group\":[\"differ\",\"separate\",\"good\",\"bad\",\"effective\",\"versus\",\"compared\",\"what makes\"],\"label\":\"询问了好坏之分\",\"points\":1},{\"keyword_group\":[\"cost\",\"ROI\",\"reduce\",\"save\",\"result\",\"outcome\",\"metric\"],\"label\":\"询问了结果或指标\",\"points\":1}],\"max_points\":7,\"pass_threshold\":4,\"ideal_prompt\":\"展开对话式AI方法。中端SaaS企业面临的最大实施挑战是什么？真正降低支持成本的方案和只是添加了没人用的聊天机器人的方案，区别在哪里？给我真实的失败模式，不要营销话术。\",\"tips\":[\"引用ChatGPT之前的回答（'展开对话式AI方法'）保持了渐进的脉络。\",\"询问失败模式能得到营销材料隐藏的信息。\",\"'好的和坏的区别在哪里'迫使ChatGPT给你判别标准，而非仅仅是描述。\"]}",
+              "explanation": "渐进序列中的第二个提示应引用ChatGPT之前的回答，深入最有趣的领域，询问表面概述遗漏的细微差别。",
+              "hints": [
+                "你已经有了概述。现在询问区分理论和实践的细微差别、挑战和失败模式。"
+              ],
+              "xp_reward": 10,
+              "order_index": 2
+            },
+            {
+              "id": "ex_es_12",
+              "type": "scenario_walkthrough",
+              "prompt": "走一遍思考伙伴对话，ChatGPT挑战一个创始人的扩张计划并揭示盲点。",
+              "options": null,
+              "correct_answer": "{\"title\": \"思考伙伴实战\", \"steps\": [{\"type\": \"context\", \"text\": \"一位创始人问ChatGPT：'我们在考虑下季度从1个城市扩展到5个城市。我们的产品市场匹配很强。好主意吗？'ChatGPT通过质疑假设来回应：'PMF很强——但在多少个客户细分中？如果只在一个城市的一个利基中强，那和地理上可转移的PMF是不同的。'\"}, {\"type\": \"choice\", \"claude_response\": \"ChatGPT识别了三个风险：1）你的城市可能竞争对手弱，接下来5个可能不是。2）从1到5是5倍运营复杂度，不是5倍收入。3）五个同时启动意味着五个同时烧钱。\", \"question\": \"ChatGPT建议先扩展到2个城市而非5个。你应该如何回应？\", \"options\": [\"忽略建议——我们需要在竞争对手赶上之前快速行动\", \"让ChatGPT解释推理：'为什么2而不是5？从2中我们能学到什么具体的东西是从5中学不到的？'\", \"立即同意并放弃5城市计划\", \"让ChatGPT做更乐观的分析\"], \"correct\": 1, \"feedback\": \"参与推理是思考伙伴的做法。你在压力测试建议，而非盲目接受或拒绝。ChatGPT的推理可能改变你的想法。你的反驳可能改变ChatGPT的想法。\"}, {\"type\": \"choice\", \"claude_response\": \"ChatGPT解释：'两个城市测试你的打法是否可转移。如果两个都成功，你就有了剩余三个的证据。如果一个失败，你用五分之一的成本了解了原因。五个同时失败是致命事件。两个给你一个对照组。'\", \"question\": \"你意识到ChatGPT在风险方面是对的，但你担心时机。如何建设性地反驳？\", \"options\": [\"直接同意ChatGPT然后继续\", \"告诉ChatGPT：'我理解风险。但我们的投资人期望激进增长。我们如何两者兼顾——降低风险同时展示势头？'\", \"完全放弃扩张计划\", \"让ChatGPT无论如何写一个5城市的计划\"], \"correct\": 1, \"feedback\": \"这是建设性反驳。你接受了风险分析但引入了一个ChatGPT不知道的约束（投资人期望）。现在ChatGPT可以将两个因素综合成一个更好的计划。\"}, {\"type\": \"prompt\", \"context\": \"ChatGPT修改了建议：第1个月在2个城市启动，评估60天，如果指标达标则启动剩余3个。现在写一个提示，让ChatGPT定义'指标达标'具体意味着什么——什么具体数字能证明打法可转移。\", \"placeholder\": \"写你定义成功指标的提示...\", \"scoring_criteria\": [{\"keyword_group\": [\"metric\", \"number\", \"target\", \"KPI\", \"benchmark\", \"measure\", \"threshold\"], \"label\": \"要求了具体可衡量的目标\", \"points\": 2}, {\"keyword_group\": [\"playbook\", \"transfer\", \"replicate\", \"work\", \"prove\", \"validate\"], \"label\": \"将指标与打法验证联系起来\", \"points\": 2}, {\"keyword_group\": [\"timeline\", \"60 days\", \"when\", \"by when\", \"deadline\", \"evaluate\"], \"label\": \"引用了评估时间线\", \"points\": 1}], \"ideal\": \"定义能证明我们的打法可转移的具体指标。我们需要在2个测试城市60天内达到什么数字才能自信地为剩余3个开绿灯？给我实际门槛，不要模糊目标。\", \"max_points\": 5, \"pass_threshold\": 3}]}",
+              "explanation": "高效的思考伙伴对话包括ChatGPT挑战假设、你用新约束反驳、双方迭代出更好的答案。最好的决策来自这种来回交锋。",
+              "hints": [
+                "目标不是同意或不同意ChatGPT。而是通过来回交锋来打磨决策。"
+              ],
+              "xp_reward": 15,
+              "order_index": 3
+            }
+          ]
+        },
+        {
+          "title": "决策框架",
+          "slug": "decision-frameworks",
+          "description": "事前验尸、钢人论证和红队演练。为你最重要的决策注入严谨性。",
+          "order_index": 5,
+          "xp_reward": 100,
+          "estimated_minutes": 7,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<p>你已经做了研究。现在要做决定。这是大多数人关闭ChatGPT跟着直觉走的时候。别这样。ChatGPT在决策支持方面表现出色——不是因为它替你做决定，而是因为它迫使你的思维更加严谨。</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_es_13"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>三个揭示隐藏风险的框架：</strong>”做个事前验尸。假设我们执行了但失败了。出了什么问题？“”钢人论证反对意见。给我一个支持我倾向反对的选项的最强论据。“”运用后悔最小化。10年后我会最不后悔哪个选择？“</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_es_14"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>红队是高级技能。</strong>在任何重大决定之前，告诉ChatGPT：“攻击这个计划。找到每个弱点、每个可能错误的假设、每种失败的方式。残酷一点。“然后为你的计划辩护，对抗ChatGPT的攻击。存活下来的更强了。没存活的本来就会失败。</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_es_15"
+              },
+              {
+                "type": "summary",
+                "content": "<p>在承诺之前用事前验尸、钢人论证和红队来压力测试决策。ChatGPT不替代你的判断——它给你的判断提供更好的输入。</p>"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_es_13",
+              "type": "multiple_choice",
+              "prompt": "你在三个供应商之间选择，无法决定。哪个ChatGPT提示给你最有用的分析？",
+              "options": [
+                "我该选哪个供应商？",
+                "列出每个供应商的优缺点。",
+                "我在三个供应商之间选择。我的标准：成本（30%）、集成便利性（25%）、支持质量（25%）、可扩展性（20%）。以下是我对每个的了解。构建加权决策矩阵并解释你的评分。",
+                "告诉我对初创公司最好的供应商。"
+              ],
+              "correct_answer": "2",
+              "explanation": "带有明确标准的加权决策矩阵给你结构化的、可辩护的分析。'该选哪个？'太模糊。优缺点列表没有加权。'初创公司最好的'忽略了你的具体情况。",
+              "hints": [
+                "最有用的分析给你一个可以调整的框架，而非仅仅一个意见。"
+              ],
+              "xp_reward": 5,
+              "order_index": 1
+            },
+            {
+              "id": "ex_es_14",
+              "type": "prompt_lab",
+              "prompt": "你即将发布产品。写一个使用事前验尸框架来揭示你未考虑的风险的提示。",
+              "options": null,
+              "correct_answer": "{\"scenario\":\"你下个月要发布一款B2B SaaS产品。你有3个测试客户、一个Product Hunt发布计划和5千美元预算。写一个提示让ChatGPT做事前验尸——想象发布已经失败——来揭示你没看到的风险。\",\"scoring_criteria\":[{\"keyword_group\":[\"pre-mortem\",\"failed\",\"imagine\",\"assume\",\"went wrong\",\"didn't work\",\"flopped\"],\"label\":\"使用了事前验尸框架\",\"points\":2},{\"keyword_group\":[\"launch\",\"product\",\"SaaS\",\"B2B\",\"Product Hunt\"],\"label\":\"提供了发布上下文\",\"points\":1},{\"keyword_group\":[\"3\",\"beta\",\"customer\",\"user\",\"traction\"],\"label\":\"提到了当前牵引力\",\"points\":1},{\"keyword_group\":[\"risk\",\"blind spot\",\"miss\",\"not seeing\",\"assumption\",\"overlooked\"],\"label\":\"要求了隐藏风险\",\"points\":2},{\"keyword_group\":[\"$5K\",\"budget\",\"resource\",\"constraint\",\"limited\"],\"label\":\"包含了资源约束\",\"points\":1}],\"max_points\":7,\"pass_threshold\":4,\"ideal_prompt\":\"对我们的产品发布做个事前验尸。想象现在是3个月后，发布失败了。我们有3个测试客户、Product Hunt发布和5千美元预算。出了什么问题？给我5个最可能的失败模式，特别是我可能没想到的那些。别粉饰。\",\"tips\":[\"事前验尸框架（'想象它失败了'）比问'可能出什么问题'能解锁更诚实的风险分析。\",\"询问你'没想到'的失败模式将ChatGPT推到明显风险之外。\",\"'别粉饰'表明你想要诚实评估，而非安慰。\"]}",
+              "explanation": "事前验尸提示想象未来的失败并反向追溯找到原因。这种框架揭示了前瞻性分析遗漏的风险，因为它绕过了乐观偏差。",
+              "hints": [
+                "事前验尸的诀窍是问'出了什么问题？'而不是'可能出什么问题？'过去时框架产生更具体、更诚实的答案。"
+              ],
+              "xp_reward": 10,
+              "order_index": 2
+            },
+            {
+              "id": "ex_es_15",
+              "type": "scenario_walkthrough",
+              "prompt": "走一遍使用事前验尸和钢人论证框架来压力测试产品发布决策的过程。",
+              "options": null,
+              "correct_answer": "{\"title\": \"压力测试你的发布\", \"steps\": [{\"type\": \"context\", \"text\": \"你下个月要发布一款B2B SaaS产品。你有3个测试客户、Product Hunt发布计划和5千美元预算。你让ChatGPT做了事前验尸。ChatGPT回复：'失败模式#1：你从Product Hunt获得了流量但零转化，因为你的落地页对开发者说话，而不是真正签支票的买家。'\"}, {\"type\": \"choice\", \"claude_response\": \"ChatGPT的事前验尸触动了要害。你的3个测试客户都是通过技术渠道找到你的开发者。你没有验证决策者会付费。\", \"question\": \"进一步探索这个风险最有效的方式是什么？\", \"options\": [\"不予理会——开发者是我们的用户，他们会说服经理购买的\", \"问ChatGPT：'如果这是风险，在我们花5千美元发布之前，验证决策者会付费的最快方式是什么？'\", \"完全取消Product Hunt发布\", \"让ChatGPT做更乐观的分析\"], \"correct\": 1, \"feedback\": \"正视风险并询问验证路径是有建设性的。不予理会留下盲点。取消发布是过度反应。要求乐观违背了事前验尸的目的。\"}, {\"type\": \"choice\", \"claude_response\": \"ChatGPT提出钢人论证：'在你承诺发布之前，让我提出推迟60天的最强论据。1）你没有和网络之外的人验证定价。2）你的落地页针对开发者但你的买家是VP。3）Product Hunt只给你一次机会——用未验证的信息发布是浪费它。'\", \"question\": \"你应该如何回应推迟的钢人论证？\", \"options\": [\"拒绝听取——我们必须现在发布\", \"听完三个要点，然后睁大眼睛决定时机风险是否超过推迟风险\", \"立即同意并推迟60天\", \"让ChatGPT也对现在发布做钢人论证，这样可以权衡两面\"], \"correct\": 1, \"feedback\": \"听取钢人论证不意味着你会推迟。意味着如果你发布，这个决定是知情的而非本能的。你可能仍然发布——但你会先解决信息差距。\"}, {\"type\": \"prompt\", \"context\": \"你决定发布但先解决信息差距。写一个提示让ChatGPT对你的落地页文案进行红队——攻击每一个主张和假设，在你花5千美元给它导流之前找到弱点。\", \"placeholder\": \"写你的落地页红队提示...\", \"scoring_criteria\": [{\"keyword_group\": [\"red team\", \"attack\", \"critique\", \"tear apart\", \"brutal\", \"weakness\", \"flaw\"], \"label\": \"使用了红队框架\", \"points\": 2}, {\"keyword_group\": [\"landing page\", \"copy\", \"messaging\", \"headline\", \"value prop\"], \"label\": \"具体针对了落地页\", \"points\": 1}, {\"keyword_group\": [\"buyer\", \"VP\", \"decision maker\", \"who pays\", \"non-technical\", \"manager\"], \"label\": \"提到了买家角色差距\", \"points\": 1}, {\"keyword_group\": [\"claim\", \"assumption\", \"promise\", \"believe\", \"trust\"], \"label\": \"询问了主张或假设\", \"points\": 1}], \"ideal\": \"对我们的落地页做红队。攻击每一个主张、每一个假设、每一段文案。我需要你残酷。具体地：这个页面能说服VP或部门负责人购买吗，还是只对开发者有意义？我们做了哪些无法支撑的主张？持怀疑态度的买家会在哪里失去兴趣？\", \"max_points\": 5, \"pass_threshold\": 3}]}",
+              "explanation": "事前验尸揭示风险。钢人论证呈现最强的反对意见。红队攻击你的具体执行。组合使用，它们将直觉决策变为经过压力测试的决策。",
+              "hints": [
+                "每个框架服务于不同目的：事前验尸发现风险，钢人论证呈现替代方案，红队攻击执行。"
+              ],
+              "xp_reward": 15,
+              "order_index": 3
+            }
+          ]
+        }
+      ],
+      "campaign_order": 5,
+      "level_required": 4,
+      "prerequisite_slug": "setup-environment"
+    }
+  ]
+}

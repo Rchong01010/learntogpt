@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CLAUD Academy — Font Comparison</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Sora:wght@400;500;600;700&family=Bricolage+Grotesque:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+  :root {
+    --bg: #f0ebe3;
+    --surface: #faf7f2;
+    --border: #e2ddd4;
+    --walnut: #8b572a;
+    --gold: #d4a373;
+    --text: #1c1917;
+    --text2: #78716c;
+    --btn: #1c1917;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+  }
+
+  .page-header {
+    padding: 48px 48px 32px;
+    border-bottom: 1px solid var(--border);
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .page-header h1 {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    font-size: 2rem;
+    color: var(--walnut);
+    margin-bottom: 8px;
+  }
+
+  .page-header p {
+    font-size: 0.9rem;
+    color: var(--text2);
+    max-width: 600px;
+    line-height: 1.6;
+  }
+
+  .comparison-grid {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 32px 48px 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .font-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.3s;
+  }
+
+  .font-card:hover {
+    border-color: var(--walnut);
+    box-shadow: 0 8px 32px rgba(139, 87, 42, 0.08);
+  }
+
+  .font-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 32px;
+    border-bottom: 1px solid var(--border);
+    background: var(--bg);
+  }
+
+  .font-name {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--walnut);
+  }
+
+  .font-vibe {
+    font-size: 0.75rem;
+    color: var(--text2);
+    font-style: italic;
+  }
+
+  .font-number {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem;
+    background: var(--walnut);
+    color: var(--surface);
+    padding: 3px 10px;
+    border-radius: 999px;
+    letter-spacing: 0.1em;
+  }
+
+  /* Each font card has a mini hero mockup */
+  .font-hero {
+    padding: 48px 40px;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 40px;
+    align-items: center;
+  }
+
+  .font-hero-left {}
+
+  .fh-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 5px 14px 5px 5px;
+    margin-bottom: 20px;
+  }
+
+  .fh-badge-dot {
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(135deg, var(--walnut), var(--gold));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.5rem;
+    font-weight: 800;
+    color: var(--surface);
+  }
+
+  .fh-badge-text {
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--walnut);
+  }
+
+  .fh-title {
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    margin-bottom: 16px;
+    color: var(--text);
+  }
+
+  .fh-title em {
+    color: var(--walnut);
+    font-style: italic;
+  }
+
+  .fh-body {
+    font-size: 0.9rem;
+    color: var(--text2);
+    line-height: 1.65;
+    margin-bottom: 24px;
+    max-width: 400px;
+  }
+
+  .fh-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--btn);
+    color: var(--surface);
+    padding: 12px 28px;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  /* Right side: track card mini */
+  .font-hero-right {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .mini-track {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: border-color 0.2s;
+  }
+
+  .mini-track:hover { border-color: var(--walnut); }
+
+  .mt-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .mt-num {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .mt-num.active { background: var(--walnut); color: var(--surface); }
+  .mt-num.done { background: #4a7c59; color: var(--surface); }
+  .mt-num.locked { background: var(--border); color: #a8a29e; }
+
+  .mt-name {
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+
+  .mt-name.locked { color: var(--locked, #a8a29e); }
+
+  .mt-meta {
+    font-size: 0.65rem;
+    color: var(--text2);
+  }
+
+  .mt-xp {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem;
+    color: var(--gold);
+    font-weight: 600;
+    background: rgba(212, 163, 115, 0.12);
+    padding: 3px 10px;
+    border-radius: 999px;
+  }
+
+  /* NAV preview */
+  .font-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 32px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .fn-logo {
+    font-size: 1.2rem;
+    color: var(--walnut);
+  }
+
+  .fn-links {
+    display: flex;
+    gap: 24px;
+    list-style: none;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text2);
+  }
+
+  .fn-cta {
+    background: var(--btn);
+    color: var(--surface);
+    padding: 8px 18px;
+    border-radius: 999px;
+    font-size: 0.7rem;
+    font-weight: 600;
+  }
+
+  .fn-xp {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .fn-xp-bar {
+    width: 100px;
+    height: 4px;
+    background: var(--border);
+    border-radius: 999px;
+    overflow: hidden;
+  }
+
+  .fn-xp-fill {
+    width: 35%;
+    height: 100%;
+    background: linear-gradient(90deg, var(--walnut), var(--gold));
+    border-radius: 999px;
+  }
+
+  .fn-xp-text {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.55rem;
+    color: var(--text2);
+  }
+
+  /* --- FONT-SPECIFIC FAMILIES --- */
+
+  /* Option 1: Space Grotesk */
+  .font-1 .fn-logo,
+  .font-1 .fh-badge-text,
+  .font-1 .fn-links,
+  .font-1 .fn-cta,
+  .font-1 .fh-btn,
+  .font-1 .fh-body,
+  .font-1 .mt-name,
+  .font-1 .mt-meta {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+  .font-1 .fh-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+  }
+  .font-1 .fh-title em { font-style: normal; }
+  .font-1 .fn-logo { font-weight: 700; letter-spacing: -0.02em; }
+
+  /* Option 2: Sora */
+  .font-2 .fn-logo,
+  .font-2 .fh-badge-text,
+  .font-2 .fn-links,
+  .font-2 .fn-cta,
+  .font-2 .fh-btn,
+  .font-2 .fh-body,
+  .font-2 .mt-name,
+  .font-2 .mt-meta {
+    font-family: 'Sora', sans-serif;
+  }
+  .font-2 .fh-title {
+    font-family: 'Sora', sans-serif;
+    font-weight: 700;
+  }
+  .font-2 .fh-title em { font-style: normal; }
+  .font-2 .fn-logo { font-weight: 700; letter-spacing: -0.02em; }
+
+  /* Option 3: Bricolage Grotesque */
+  .font-3 .fn-logo,
+  .font-3 .fh-badge-text,
+  .font-3 .fn-links,
+  .font-3 .fn-cta,
+  .font-3 .fh-btn,
+  .font-3 .fh-body,
+  .font-3 .mt-name,
+  .font-3 .mt-meta {
+    font-family: 'Bricolage Grotesque', sans-serif;
+  }
+  .font-3 .fh-title {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 700;
+  }
+  .font-3 .fh-title em { font-style: normal; }
+  .font-3 .fn-logo { font-weight: 700; letter-spacing: -0.01em; }
+
+  /* Option 4: Plus Jakarta Sans */
+  .font-4 .fn-logo,
+  .font-4 .fh-badge-text,
+  .font-4 .fn-links,
+  .font-4 .fn-cta,
+  .font-4 .fh-btn,
+  .font-4 .fh-body,
+  .font-4 .mt-name,
+  .font-4 .mt-meta {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+  .font-4 .fh-title {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 800;
+  }
+  .font-4 .fh-title em { font-style: normal; }
+  .font-4 .fn-logo { font-weight: 800; letter-spacing: -0.02em; }
+
+  /* Option 5: Hybrid — Space Grotesk headings + Instrument Serif logo only */
+  .font-5 .fn-logo {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    font-weight: 400;
+  }
+  .font-5 .fh-badge-text,
+  .font-5 .fn-links,
+  .font-5 .fn-cta,
+  .font-5 .fh-btn,
+  .font-5 .fh-body,
+  .font-5 .mt-name,
+  .font-5 .mt-meta {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+  .font-5 .fh-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+  }
+  .font-5 .fh-title em {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  /* Option 6: Hybrid — Sora body/UI + Instrument Serif logo + Claude accent */
+  .font-6 .fn-logo {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    font-weight: 400;
+  }
+  .font-6 .fh-badge-text,
+  .font-6 .fn-links,
+  .font-6 .fn-cta,
+  .font-6 .fh-btn,
+  .font-6 .fh-body,
+  .font-6 .mt-name,
+  .font-6 .mt-meta {
+    font-family: 'Sora', sans-serif;
+  }
+  .font-6 .fh-title {
+    font-family: 'Sora', sans-serif;
+    font-weight: 700;
+  }
+  .font-6 .fh-title em {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  @media (max-width: 900px) {
+    .font-hero { grid-template-columns: 1fr; }
+    .page-header, .comparison-grid { padding-left: 20px; padding-right: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <h1>Font Comparison</h1>
+  <p>Same layout, same content, same palette. Five different fonts. See which one gives the right energy for a gamified learning platform.</p>
+</div>
+
+<div class="comparison-grid">
+
+  <!-- FONT 1: Space Grotesk -->
+  <div class="font-card font-1">
+    <div class="font-label">
+      <span class="font-name">Space Grotesk</span>
+      <span class="font-vibe">Geometric, techy, slightly playful — modern game UI</span>
+      <span class="font-number">01</span>
+    </div>
+    <div class="font-nav">
+      <div class="fn-logo">CLAUD Academy</div>
+      <div class="fn-xp">
+        <div class="fn-xp-bar"><div class="fn-xp-fill"></div></div>
+        <span class="fn-xp-text">350 / 1,000 XP</span>
+      </div>
+      <ul class="fn-links"><li>Tracks</li><li>Achievements</li><li>Pricing</li></ul>
+      <div class="fn-cta">Start Free</div>
+    </div>
+    <div class="font-hero">
+      <div class="font-hero-left">
+        <div class="fh-badge">
+          <div class="fh-badge-dot">1</div>
+          <span class="fh-badge-text">Level 1 — Novice Prompter</span>
+        </div>
+        <h2 class="fh-title">Learn <em>Claude</em><br>like a game.</h2>
+        <p class="fh-body">Four tracks. Forty lessons. Each one hands-on with real Claude. Earn XP, unlock tracks, collect badges.</p>
+        <a href="#" class="fh-btn">Start Track 1 Free &rarr;</a>
+      </div>
+      <div class="font-hero-right">
+        <div class="mini-track">
+          <div class="mt-left">
+            <div class="mt-num done">&#10003;</div>
+            <div><div class="mt-name">Foundations</div><div class="mt-meta">10 lessons &middot; Complete</div></div>
+          </div>
+          <span class="mt-xp">+250 XP</span>
+        </div>
+        <div class="mini-track">
+          <div class="mt-left">
+            <div class="mt-num active">02</div>
+            <div><div class="mt-name">Prompt Craft</div><div class="mt-meta">Lesson 5 of 12</div></div>
+          </div>
+          <span class="mt-xp">+400 XP</span>
+        </div>
+        <div class="mini-track">
+          <div class="mt-left">
+            <div class="mt-num locked">&#128274;</div>
+            <div><div class="mt-name locked">Agent Building</div><div class="mt-meta">Level 3 required</div></div>
+          </div>
+          <span class="mt-xp">+600 XP</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FONT 2: Sora -->
+  <div class="font-card font-2">
+    <div class="font-label">
+      <span class="font-name">Sora</span>
+      <span class="font-vibe">Clean, digital-native, fresh — modern app feel</span>
+      <span class="font-number">02</span>
+    </div>
+    <div class="font-nav">
+      <div class="fn-logo">CLAUD Academy</div>
+      <div class="fn-xp">
+        <div class="fn-xp-bar"><div class="fn-xp-fill"></div></div>
+        <span class="fn-xp-text">350 / 1,000 XP</span>
+      </div>
+      <ul class="fn-links"><li>Tracks</li><li>Achievements</li><li>Pricing</li></ul>
+      <div class="fn-cta">Start Free</div>
+    </div>
+    <div class="font-hero">
+      <div class="font-hero-left">
+        <div class="fh-badge">
+          <div class="fh-badge-dot">1</div>
+          <span class="fh-badge-text">Level 1 — Novice Prompter</span>
+        </div>
+        <h2 class="fh-title">Learn <em>Claude</em><br>like a game.</h2>
+        <p class="fh-body">Four tracks. Forty lessons. Each one hands-on with real Claude. Earn XP, unlock tracks, collect badges.</p>
+        <a href="#" class="fh-btn">Start Track 1 Free &rarr;</a>
+      </div>
+      <div class="font-hero-right">
+        <div class="mini-track">
+          <div class="mt-left">
+            <div class="mt-num done">&#10003;</div>
+            <div><div class="mt-name">Foundations</div><div class="mt-meta">10 lessons &middot; Complete</div></div>
+          </div>
+          <span class="mt-xp">+250 XP</span>
+        </div>
+        <div class="mini-track">
+          <div class="mt-left">
+            <div class="mt-num active">02</div>
+            <div><div class="mt-name">Prompt Craft</div><div class="mt-meta">Lesson 5 of 12</div></div>
+          </div>
+          <span class="mt-xp">+400 XP</span>
+        </div>
+        <div class="mini-track">
+          <div class="mt-left">
+            <div class="mt-num locked">&#128274;</div>
+            <div><div class="mt-name locked">Agent Building</div><div class="mt-meta">Level 3 required</div></div>
+          </div>
+          <span class="mt-xp">+600 XP</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FONT 3: Bricolage Grotesque -->
+  <div class="font-card font-3">
+    <div class="font-label">
+      <span class="font-name">Bricolage Grotesque</span>
+      <span class="font-vibe">Quirky, handcrafted, warm — distinctive character</span>
+      <span class="font-number">03</span>
+    </div>
+    <div class="font-nav">
+      <div class="fn-logo">CLAUD Academy</div>
+      <div class="fn-xp">
+        <div class="fn-xp-bar"><div class="fn-xp-fill"></div></div>
+        <span class="fn-xp-text">350 / 1,000 XP</span>
+      </div>
+      <ul class="fn-links"><li>Tracks</li><li>Achievements</li><li>Pricing</li></ul>
+      <div class="fn-cta">Start Free</div>
+    </div>
+    <div class="font-hero">
+      <div class="font-hero-left">
+        <div class="fh-badge">
+          <div class="fh-badge-dot">1</div>
+          <span class="fh-badge-text">Level 1 — Novice Prompter</span>
+        </div>
+        <h2 class="fh-title">Learn <em>Claude</em><br>like a game.</h2>
+        <p class="fh-body">Four tracks. Forty lessons. Each one hands-on with real Claude. Earn XP, unlock tracks, collect badges.</p>
+        <a href="#" class="fh-btn">Start Track 1 Free &rarr;</a>
+      </div>
+      <div class="font-hero-right">
+        <div class="mini-track">
+          <div class="mt-left">
+            <div class="mt-num done">&#10003;</div>
+            <div><div class="mt-name">Foundations</div><div class="mt-meta">10 lessons &middot; Complete</div></div>
+          </div>
+          <span class="mt-xp">+250 XP</span>
+        </div>
+        <div class="mini-track">
+          <div class="mt-left">
+            <div class="mt-num active">02</div>
+            <div><div class="mt-name">Prompt Craft</div><div class="mt-meta">Lesson 5 of 12</div></div>
+          </div>
+          <span class="mt-xp">+400 XP</span>
+        </div>
+        <div class="mini-track">
+          <div class="mt-left">
+            <div class="mt-num locked">&#128274;</div>
+            <div><div class="mt-name locked">Agent Building</div><div class="mt-meta">Level 3 required</div></div>
+          </div>
+          <span class="mt-xp">+600 XP</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FONT 4: Plus Jakarta Sans -->
+  <div class="font-card font-4">
+    <div class="font-label">
+      <span class="font-name">Plus Jakarta Sans</span>
+      <span class="font-vibe">Rounded, friendly, approachable — grown-up Duolingo</span>
+      <span class="font-number">04</span>
+    </div>
+    <div class="font-nav">
+      <div class="fn-logo">CLAUD Academy</div>
+      <div class="fn-xp">
+        <div class="fn-xp-bar"><div class="fn-xp-fill"></div></div>
+        <span class="fn-xp-text">350 / 1,000 XP</span>
+      </div>
+      <ul class="fn-links"><li>Tracks</li><li>Achievements</li><li>Pricing</li></ul>
+      <div class="fn-cta">Start Free</div>
+    </div>
+    <div class="font-hero">
+      <div class="font-hero-left">
+        <div class="fh-badge">
+          <div class="fh-badge-dot">1</div>
+          <span class="fh-badge-text">Level 1 — Novice Prompter</span>
+        </div>
+        <h2 class="fh-title">Learn <em>Claude</em><br>like a game.</h2>
+        <p class="fh-body">Four tracks. Forty lessons. Each one hands-on with real Claude. Earn XP, unlock tracks, collect badges.</p>
+        <a href="#" class="fh-btn">Start Track 1 Free &rarr;</a>
+      </div>
+      <div class="font-hero-right">
+        <div class="mini-track">
+          <div class="mt-left">
+            <div class="mt-num done">&#10003;</div>
+            <div><div class="mt-name">Foundations</div><div class="mt-meta">10 lessons &middot; Complete</div></div>
+          </div>
+          <span class="mt-xp">+250 XP</span>
+        </div>
+        <div class="mini-track">
+          <div class="mt-left">
+            <div class="mt-num active">02</div>
+            <div><div class="mt-name">Prompt Craft</div><div class="mt-meta">Lesson 5 of 12</div></div>
+          </div>
+          <span class="mt-xp">+400 XP</span>
+        </div>
+        <div class="mini-track">
+          <div class="mt-left">
+            <div class="mt-num locked">&#128274;</div>
+            <div><div class="mt-name locked">Agent Building</div><div class="mt-meta">Level 3 required</div></div>
+          </div>
+          <span class="mt-xp">+600 XP</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FONT 6: Sora + Instrument Serif Hybrid -->
+  <div class="font-card font-6">
+    <div class="font-label">
+      <span class="font-name">Hybrid — Sora + Instrument Serif (logo + "Claude" accent)</span>
+      <span class="font-vibe">Digital-native freshness + premium serif signature</span>
+      <span class="font-number">06 — YOUR PICK</span>
+    </div>
+    <div class="font-nav">
+      <div class="fn-logo">CLAUD Academy</div>
+      <div class="fn-xp">
+        <div class="fn-xp-bar"><div class="fn-xp-fill"></div></div>
+        <span class="fn-xp-text">350 / 1,000 XP</span>
+      </div>
+      <ul class="fn-links"><li>Tracks</li><li>Achievements</li><li>Pricing</li></ul>
+      <div class="fn-cta">Start Free</div>
+    </div>
+    <div class="font-hero">
+      <div class="font-hero-left">
+        <div class="fh-badge">
+          <div class="fh-badge-dot">1</div>
+          <span class="fh-badge-text">Level 1 — Novice Prompter</span>
+        </div>
+        <h2 class="fh-title">Learn <em>Claude</em><br>like a game.</h2>
+        <p class="fh-body">Four tracks. Forty lessons. Each one hands-on with real Claude. Earn XP, unlock tracks, collect badges.</p>
+        <a href="#" class="fh-btn">Start Track 1 Free &rarr;</a>
+      </div>
+      <div class="font-hero-right">
+        <div class="mini-track">
+          <div class="mt-left">
+            <div class="mt-num done">&#10003;</div>
+            <div><div class="mt-name">Foundations</div><div class="mt-meta">10 lessons &middot; Complete</div></div>
+          </div>
+          <span class="mt-xp">+250 XP</span>
+        </div>
+        <div class="mini-track">
+          <div class="mt-left">
+            <div class="mt-num active">02</div>
+            <div><div class="mt-name">Prompt Craft</div><div class="mt-meta">Lesson 5 of 12</div></div>
+          </div>
+          <span class="mt-xp">+400 XP</span>
+        </div>
+        <div class="mini-track">
+          <div class="mt-left">
+            <div class="mt-num locked">&#128274;</div>
+            <div><div class="mt-name locked">Agent Building</div><div class="mt-meta">Level 3 required</div></div>
+          </div>
+          <span class="mt-xp">+600 XP</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FONT 5: Hybrid -->
+  <div class="font-card font-5">
+    <div class="font-label">
+      <span class="font-name">Hybrid — Space Grotesk + Instrument Serif (logo only)</span>
+      <span class="font-vibe">Best of both: game energy + premium logo signature</span>
+      <span class="font-number">05</span>
+    </div>
+    <div class="font-nav">
+      <div class="fn-logo">CLAUD Academy</div>
+      <div class="fn-xp">
+        <div class="fn-xp-bar"><div class="fn-xp-fill"></div></div>
+        <span class="fn-xp-text">350 / 1,000 XP</span>
+      </div>
+      <ul class="fn-links"><li>Tracks</li><li>Achievements</li><li>Pricing</li></ul>
+      <div class="fn-cta">Start Free</div>
+    </div>
+    <div class="font-hero">
+      <div class="font-hero-left">
+        <div class="fh-badge">
+          <div class="fh-badge-dot">1</div>
+          <span class="fh-badge-text">Level 1 — Novice Prompter</span>
+        </div>
+        <h2 class="fh-title">Learn <em>Claude</em><br>like a game.</h2>
+        <p class="fh-body">Four tracks. Forty lessons. Each one hands-on with real Claude. Earn XP, unlock tracks, collect badges.</p>
+        <a href="#" class="fh-btn">Start Track 1 Free &rarr;</a>
+      </div>
+      <div class="font-hero-right">
+        <div class="mini-track">
+          <div class="mt-left">
+            <div class="mt-num done">&#10003;</div>
+            <div><div class="mt-name">Foundations</div><div class="mt-meta">10 lessons &middot; Complete</div></div>
+          </div>
+          <span class="mt-xp">+250 XP</span>
+        </div>
+        <div class="mini-track">
+          <div class="mt-left">
+            <div class="mt-num active">02</div>
+            <div><div class="mt-name">Prompt Craft</div><div class="mt-meta">Lesson 5 of 12</div></div>
+          </div>
+          <span class="mt-xp">+400 XP</span>
+        </div>
+        <div class="mini-track">
+          <div class="mt-left">
+            <div class="mt-num locked">&#128274;</div>
+            <div><div class="mt-name locked">Agent Building</div><div class="mt-meta">Level 3 required</div></div>
+          </div>
+          <span class="mt-xp">+600 XP</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

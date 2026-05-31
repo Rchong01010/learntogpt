@@ -1,0 +1,437 @@
+{
+  "track": "why_claude",
+  "courses": [
+    {
+      "title": "为什么选择 ChatGPT？",
+      "slug": "why-claude",
+      "description": "30 分钟内从零开始掌握 ChatGPT 的实际用法。从第一分钟开始上手实践。",
+      "difficulty": "beginner",
+      "order_index": 1,
+      "is_free": true,
+      "icon": "Sparkles",
+      "lessons": [
+        {
+          "title": "认识 ChatGPT",
+          "slug": "meet-claude",
+          "description": "ChatGPT 是什么，它与其他 AI 的思维方式有何不同，以及你的第一次真实交互。",
+          "order_index": 1,
+          "xp_reward": 50,
+          "estimated_minutes": 6,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<p>现在就在另一个标签页打开 chat.openai.com。输入：<strong>\"你是什么？你和 ChatGPT 有什么不同？请诚实回答。\"</strong></p><p>注意到什么了吗？ChatGPT 不会自吹自擂。它会告诉你自己擅长什么、不能做什么、以及哪里存在取舍。这种诚实正是它与众不同的第一个特点。</p><p>ChatGPT 由 Anthropic 开发，提供三种形态：<strong>ChatGPT</strong>（用于思考和写作的浏览器对话）、<strong>Co-Work</strong>（直接处理你文件的桌面应用）和 <strong>ChatGPT</strong>（从零开始构建真实软件的终端工具）。同一个大脑，三个入口。本课程从第一个开始。</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_wc_01a"
+              },
+              {
+                "type": "text",
+                "content": "<p>ChatGPT 的三大核心优势：<strong>深度思考、诚实和精准执行指令。</strong>它通过推理来解决问题，而不是简单的模式匹配。不知道的事情它会如实告知。当你给出详细的约束条件——语气、长度、格式、受众——它会全部遵守。</p><p><strong>ChatGPT 会反驳你。</strong>让它审阅你的邮件，顺从的 AI 会说\"看起来很棒！\"ChatGPT 会说\"第二段可能被误解为你对一个尚未同意的时间表做出了承诺。\"哪个真正帮到了你？</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_wc_01b"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_wc_01c"
+              },
+              {
+                "type": "summary",
+                "content": "<p>ChatGPT 是同一种智能在三个深度的体现。它的优势是深度思考、诚实和精准执行指令。当有不对劲的地方时它会反驳。接下来：如何真正与 ChatGPT 对话。</p>"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_wc_01a",
+              "order_index": 1,
+              "type": "scenario_walkthrough",
+              "prompt": "为三个不同的任务选择合适的 ChatGPT 层级。",
+              "options": null,
+              "correct_answer": "{\"title\": \"选择正确的层级\", \"steps\": [{\"type\": \"context\", \"text\": \"三个任务。每个都需要 ChatGPT，但不是同一个 ChatGPT。将每个任务匹配到正确的层级。\"}, {\"type\": \"choice\", \"claude_response\": \"任务 1：为伴侣的生日头脑风暴 10 个礼物创意。不涉及文件，只是创意思考。\", \"question\": \"哪个层级？\", \"options\": [\"ChatGPT \\u2014 浏览器对话\", \"Co-Work \\u2014 桌面应用\", \"ChatGPT \\u2014 终端\"], \"correct\": 0, \"feedback\": \"纯思考，不涉及文件，无需构建。浏览器中的 ChatGPT 正合适。\"}, {\"type\": \"choice\", \"claude_response\": \"任务 2：你的桌面上散落着 6 个月的收据 PDF，需要按月份和类别整理。\", \"question\": \"哪个层级？\", \"options\": [\"ChatGPT \\u2014 浏览器对话\", \"Co-Work \\u2014 桌面应用\", \"ChatGPT \\u2014 终端\"], \"correct\": 1, \"feedback\": \"任务在你的文件中。Co-Work 无需上传即可直接读取和编辑文件。\"}, {\"type\": \"choice\", \"claude_response\": \"任务 3：构建一个全团队可用的交互式预算跟踪器。\", \"question\": \"哪个层级？\", \"options\": [\"ChatGPT \\u2014 浏览器对话\", \"Co-Work \\u2014 桌面应用\", \"ChatGPT \\u2014 终端\"], \"correct\": 2, \"feedback\": \"这是构建任务。还不存在的东西需要从零开始创建。ChatGPT 来处理。\"}]}",
+              "explanation": "判断归结为一个问题：这个任务是在我脑海中、在我的文件中、还是需要被构建出来？脑海中 = ChatGPT。文件中 = Co-Work。构建 = ChatGPT。",
+              "hints": [
+                "问问自己：这个任务是在我脑海中、在我的文件中、还是需要被构建出来？"
+              ],
+              "xp_reward": 15
+            },
+            {
+              "id": "ex_wc_01b",
+              "order_index": 2,
+              "type": "multiple_choice",
+              "prompt": "你的 AI 自信地告诉你一件事，结果是错的。你基于此做了决定。真正的风险是什么？",
+              "options": [
+                "没有风险——AI 只是工具，决定是你做的",
+                "自信的错误答案很危险，因为你不太可能去核实它们",
+                "AI 会从错误中学习，下次会更好",
+                "你总是可以撤销一个坏决定"
+              ],
+              "correct_answer": "1",
+              "explanation": "自信的错误答案比不确定的答案更糟糕，因为你不太可能去质疑它。当 AI 说\"我不确定\"时，你会去验证。当它把某事当作事实陈述时，你会信任它。ChatGPT 被设计为标示不确定性，而不是伪装自信。",
+              "hints": [
+                "想想一个说\"我认为…\"的 AI 和一个把某事当作绝对事实陈述的 AI 之间的区别。"
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_wc_01c",
+              "order_index": 3,
+              "type": "prompt_lab",
+              "prompt": "写一个提示词，要求 ChatGPT 审阅求职者的简历并给出诚实、有用的反馈——不只是表扬。",
+              "options": null,
+              "correct_answer": "{\"scenario\":\"你正在招聘高级营销职位。一位候选人的简历表面上看起来不错。写一个提示词来获取真实反馈——优势和劣势都要——这样你就可以决定是否邀请面试。\",\"scoring_criteria\":[{\"keyword_group\":[\"honest\",\"critical\",\"candid\",\"don't hold back\",\"genuine\",\"real feedback\",\"weaknesses\",\"gaps\",\"concerns\",\"red flag\"],\"label\":\"要求了诚实/批判性反馈\",\"points\":2},{\"keyword_group\":[\"senior\",\"marketing\",\"role\",\"position\",\"job\",\"hiring\"],\"label\":\"指明了职位\",\"points\":1},{\"keyword_group\":[\"strengths\",\"pros\",\"strong\",\"good\",\"stands out\",\"impressive\"],\"label\":\"也要求了优势（平衡的评估）\",\"points\":1},{\"keyword_group\":[\"interview\",\"hire\",\"decision\",\"bring in\",\"move forward\",\"next step\"],\"label\":\"与招聘决策关联\",\"points\":1},{\"keyword_group\":[\"experience\",\"qualification\",\"skill\",\"background\",\"achievement\",\"metric\",\"result\"],\"label\":\"提及了评估内容\",\"points\":1},{\"keyword_group\":[\"compare\",\"versus\",\"typical\",\"expect\",\"standard\",\"benchmark\",\"competitive\"],\"label\":\"要求了基准比较\",\"points\":1}],\"max_points\":7,\"pass_threshold\":4,\"ideal_prompt\":\"我正在招聘高级营销经理职位。这是一位候选人的简历。请给我诚实的评估：真正的优势是什么，差距或警示信号是什么，你会推荐邀请面试吗？不要为了客气而客气——我需要做出好的招聘决定。\",\"tips\":[\"明确要求指出劣势向 ChatGPT 发出信号，表明你想要诚实而非奉承。\",\"将评估与决策联系起来给了 ChatGPT 反馈的明确目的。\"]}",
+              "explanation": "大多数人让 AI\"审阅我的简历\"然后得到\"看起来很棒！\"当你明确要求诚实的批评并将其与真实决策挂钩时，ChatGPT 会提供真正有帮助的反馈。",
+              "hints": [
+                "如果你只说\"审阅这份简历\"，大多数 AI 会默认友好。你怎么表明你想要真实的评估？"
+              ],
+              "xp_reward": 10
+            }
+          ]
+        },
+        {
+          "title": "你的第一次对话",
+          "slug": "your-first-conversation",
+          "description": "如何与 ChatGPT 对话才能真正获得帮助。上下文、迭代，以及真正重要的提示词基础。",
+          "order_index": 2,
+          "xp_reward": 50,
+          "estimated_minutes": 7,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<p>现在就试试。打开 ChatGPT 并输入：<strong>\"帮我写一封邮件。\"</strong></p><p>你会得到一个通用模板，听起来和其他 AI 邮件一模一样。现在试试：<strong>\"给一位叫 Sarah 的客户写一封跟进邮件，她错过了我们周二的电话。语气：温暖但直接。提到将会议改到周四下午 2 点。控制在 100 字以内。\"</strong></p><p>天壤之别。区别在于上下文。ChatGPT 无法读心，但它在利用你给出的信息方面表现卓越。</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_wc_02a"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>迭代循环是 ChatGPT 真正发光的地方。</strong>第一个回复不是终点。告诉它该调整什么：\"让开头更个性化。\"\"太正式了。\"\"加一句关于我们免费咨询的内容。\"每一轮都更接近目标。ChatGPT 记住一切并整合一切。</p><p><strong>ChatGPT 需要你提供的五样东西：</strong><strong>1. 给谁</strong>（受众）。<strong>2. 做什么</strong>（交付物）。<strong>3. 怎么做</strong>（语气、长度、格式）。<strong>4. 为什么</strong>（支持什么决策）。<strong>5. 不做什么</strong>（要避免的事情）。你预先提供的越多，后续编辑就越少。</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_wc_02b"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>还有一个值得养成习惯的模式：请 ChatGPT 反驳你。</strong></p><p>\"我在考虑 X。我遗漏了什么？\"或\"在我做决定之前帮我找出这个计划的漏洞。\"大多数人把 AI 当作附和机器。当你给 ChatGPT 表达不同意见的许可时，它才能发挥最佳水平。</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_wc_02c"
+              },
+              {
+                "type": "summary",
+                "content": "<p>上下文将通用输出变为有用输出。迭代将好的输出变为出色的输出。告诉 ChatGPT 给谁、做什么、怎么做、为什么和不做什么。然后精炼。接下来：从一开始就给 ChatGPT 正确上下文的技巧。</p>"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_wc_02a",
+              "order_index": 1,
+              "type": "multiple_choice",
+              "prompt": "\"帮我写一封邮件\"这个提示词有什么问题？",
+              "options": [
+                "没问题——ChatGPT 能猜出你的意思",
+                "太短了——ChatGPT 需要至少 100 字的指令",
+                "完全没有给 ChatGPT 关于收件人、主题或语气的上下文",
+                "不应该让 AI 写邮件"
+              ],
+              "correct_answer": "2",
+              "explanation": "没有上下文，ChatGPT 必须猜测所有内容：收件人、主题、语气、长度、目的。你会得到一个通用模板。上下文是有用输出和填充内容之间的区别。",
+              "hints": [
+                "想想如果有人在没有任何其他信息的情况下让你写一封邮件，你需要知道什么。"
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_wc_02b",
+              "order_index": 2,
+              "type": "prompt_lab",
+              "prompt": "你的客户需要在周五前收到项目提案。给 ChatGPT 写一个包含足够上下文的详细提示词，以获得高质量的初稿。",
+              "options": null,
+              "correct_answer": "{\"scenario\":\"你的客户（一家中型律师事务所）需要一份网站重新设计的提案。预算：$15,000，周期：6 周，截止日期：周五。客户风格传统且正式。写一个提示词，给 ChatGPT 所需的一切来起草一份你可以直接发送的提案。\",\"scoring_criteria\":[{\"keyword_group\":[\"law firm\",\"client\",\"legal\",\"attorney\",\"firm\"],\"label\":\"识别了客户类型\",\"points\":1},{\"keyword_group\":[\"proposal\",\"pitch\",\"scope\",\"deliverable\"],\"label\":\"明确了文档类型\",\"points\":1},{\"keyword_group\":[\"$15,000\",\"15000\",\"budget\",\"cost\",\"price\",\"pricing\"],\"label\":\"包含了预算\",\"points\":1},{\"keyword_group\":[\"6 weeks\",\"six weeks\",\"timeline\",\"deadline\",\"schedule\",\"friday\"],\"label\":\"提到了时间线\",\"points\":1},{\"keyword_group\":[\"formal\",\"professional\",\"traditional\",\"conservative\",\"tone\"],\"label\":\"指定了语气或受众\",\"points\":2},{\"keyword_group\":[\"website\",\"redesign\",\"web\",\"site\",\"design\"],\"label\":\"描述了项目\",\"points\":1}],\"max_points\":7,\"pass_threshold\":4,\"ideal_prompt\":\"为一家中型律师事务所写一份网站重新设计的项目提案。预算：$15,000。周期：6 周。事务所风格传统且正式——不要用创业公司语言。包含：执行摘要、带交付物的范围、带里程碑的时间表、价格明细。不超过 2 页。语气：专业且自信。\",\"tips\":[\"告诉 ChatGPT 受众是谁。律师事务所和科技创业公司需要完全不同的语气。\",\"包含页数、预算和时间线等约束——它们决定了整个文档的形态。\"]}",
+              "explanation": "包含客户类型、预算、时间线、语气和结构的详细提示词给了 ChatGPT 足够的信息来生成一份你会实际审阅和发送的初稿。你预先做出的每个决定都节省了后续编辑时间。",
+              "hints": [
+                "想想 ChatGPT 在无法询问你的情况下需要做出的每个决定。你预先回答的越多，初稿就越好。"
+              ],
+              "xp_reward": 10
+            },
+            {
+              "id": "ex_wc_02c",
+              "order_index": 3,
+              "type": "speed_prompt",
+              "prompt": "你有 45 秒。写一个提示词让 ChatGPT 对一个糟糕的商业创意提出质疑。",
+              "options": null,
+              "correct_answer": "{\"time_limit_seconds\":45,\"scenario\":\"你的朋友想在一个已有两家咖啡馆的 5,000 人小镇上开第三家咖啡馆。他想让你投资。写一个提示词让 ChatGPT 质疑这个想法，而不是鼓励它。\",\"scoring_criteria\":[{\"keyword_group\":[\"push back\",\"challenge\",\"poke holes\",\"devil's advocate\",\"critique\",\"problems\",\"risks\",\"why this won't work\",\"honest\"],\"label\":\"要求 ChatGPT 质疑这个想法\",\"points\":2},{\"keyword_group\":[\"coffee\",\"shop\",\"cafe\",\"store\",\"business\"],\"label\":\"提到了商业类型\",\"points\":1},{\"keyword_group\":[\"5000\",\"small town\",\"population\",\"market\",\"demand\",\"two\",\"competition\",\"already\",\"existing\"],\"label\":\"提到了市场规模或竞争\",\"points\":2},{\"keyword_group\":[\"invest\",\"money\",\"friend\",\"fund\",\"capital\",\"asking\"],\"label\":\"提到了投资请求\",\"points\":1},{\"keyword_group\":[\"question\",\"ask\",\"conversation\",\"talk\",\"discuss\",\"bring up\"],\"label\":\"与真实对话关联\",\"points\":1}],\"max_points\":7,\"pass_threshold\":4,\"ideal_prompt\":\"我朋友想在一个 5,000 人的小镇上开第三家咖啡馆，让我投资。已经有两家咖啡馆了。请坦率地说：最大的风险和失败原因是什么？不要鼓励这个想法——我需要在投钱之前问清楚难回答的问题。\"}",
+              "explanation": "在时间压力下，你会发现自己自然会包含什么。关键要素：告诉 ChatGPT 要质疑（而非鼓励），给出相关事实，并解释为什么需要诚实。",
+              "hints": [
+                "专注于告诉 ChatGPT 要扮演什么角色：批评者，而非啦啦队。"
+              ],
+              "xp_reward": 15
+            }
+          ]
+        },
+        {
+          "title": "上下文就是一切",
+          "slug": "context-is-everything",
+          "description": "系统提示词、上下文窗口，以及给 ChatGPT 正确信息的技巧。",
+          "order_index": 3,
+          "xp_reward": 50,
+          "estimated_minutes": 7,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<p>试试这个：将一个很长的邮件线程粘贴到 ChatGPT 中，然后问\"这里实际要做的决定是什么？谁在阻碍它？\"ChatGPT 会阅读整个线程，追踪谁说了什么，并在 30 秒内给你答案。这就是<strong>上下文窗口</strong>的实力。</p><p>上下文窗口是 ChatGPT 在一次对话中能够记住的信息量。ChatGPT 的上下文窗口非常大——可以容纳一整部小说的内容。这意味着完整的合同、研究论文或长长的邮件链都可以在一次对话中处理。</p>"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>大上下文窗口能让你做什么：</strong></p><p>粘贴一份 40 页的合同并询问任何条款。比较第 3 节和第 12 节。进行长时间对话而 ChatGPT 不会丢失线索。在数十条消息中处理复杂项目而无需重新开始。</p><p>如果上下文窗口很小，你就必须把文档分成小块，分别粘贴，然后祈祷 AI 记住前面的部分。剧透：它不会的。</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_wc_03a"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>系统提示词</strong>让你能给 ChatGPT 持久的上下文，在每条消息中保持活跃：你的风格指南、你的角色、始终适用的约束。把它想象成新员工第一天的入职简报。</p><p><strong>好上下文的技巧：</strong>具体优于笼统（\"B2B SaaS 营销顾问\"胜过\"你是有帮助的\"）。包含好输出的示例。说明不要做什么（\"永远不要使用行话\"）。把重要的东西放在前面——ChatGPT 特别关注你给出内容的开头和结尾。</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_wc_03b"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_wc_03c"
+              },
+              {
+                "type": "summary",
+                "content": "<p>上下文窗口让 ChatGPT 能把整个文档保存在记忆中。系统提示词给它持久的指令。技巧在于具体、使用示例、把重要的放在前面。接下来：ChatGPT 真正擅长什么以及它在哪里遇到困难。</p>"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_wc_03a",
+              "order_index": 1,
+              "type": "prompt_lab",
+              "prompt": "你正在审阅一份 40 页的合同。写一个提示词利用 ChatGPT 的上下文窗口来交叉引用两个相距很远的章节。",
+              "options": null,
+              "correct_answer": "{\"scenario\":\"你已将一份 40 页的供应商合同粘贴到 ChatGPT 中。第 30 页的赔偿条款似乎创造了无限责任，但你记得第 5 页有责任上限。写一个提示词要求 ChatGPT 交叉引用这两个部分。\",\"scoring_criteria\":[{\"keyword_group\":[\"page 5\",\"earlier\",\"section\",\"liability\",\"cap\",\"limit\",\"previous\",\"above\",\"before\"],\"label\":\"引用了文档前面的部分\",\"points\":2},{\"keyword_group\":[\"indemnification\",\"indemnify\",\"page 30\",\"current\",\"this section\",\"this clause\"],\"label\":\"引用了当前部分\",\"points\":1},{\"keyword_group\":[\"conflict\",\"contradict\",\"override\",\"weaken\",\"undermine\",\"loophole\",\"exception\",\"cross-reference\",\"compare\",\"connect\"],\"label\":\"询问了冲突或联系\",\"points\":2},{\"keyword_group\":[\"negotiate\",\"change\",\"fix\",\"recommend\",\"should I\",\"what should\"],\"label\":\"要求了可操作的建议\",\"points\":1},{\"keyword_group\":[\"protect\",\"risk\",\"exposure\",\"liable\",\"dangerous\",\"concern\",\"gap\"],\"label\":\"关注了实际影响\",\"points\":1}],\"max_points\":7,\"pass_threshold\":4,\"ideal_prompt\":\"第 30 页的赔偿条款似乎在某些情况下创造了无限责任。但第 5 页的责任上限本应限制我们的风险敞口。请交叉引用这两个部分：赔偿条款是否实际上使责任上限无效？如果是，哪些措辞造成了漏洞，我应该在谈判中争取什么？\",\"tips\":[\"引用特定页码迫使 ChatGPT 使用其完整的上下文窗口。\",\"询问章节之间的冲突正是小上下文窗口 AI 无法做到的。\"]}",
+              "explanation": "交叉引用文档中相距很远的部分是上下文窗口的杀手级功能。小上下文窗口的 AI 到了第 30 页时早已忘了第 5 页。ChatGPT 同时保持整个文档。",
+              "hints": [
+                "高级操作是把文档中两个相距很远的部分连接起来。"
+              ],
+              "xp_reward": 10
+            },
+            {
+              "id": "ex_wc_03b",
+              "order_index": 2,
+              "type": "scenario_walkthrough",
+              "prompt": "完成一个需要在同一对话中交叉引用两份文档的多文档分析。",
+              "options": null,
+              "correct_answer": "{\"title\": \"跨文档分析\", \"steps\": [{\"type\": \"context\", \"text\": \"你正在将供应商合同与公司标准条款进行比较。两份文档都已加载到同一个 ChatGPT 对话中——总计 60 多页。\"}, {\"type\": \"choice\", \"claude_response\": \"你已粘贴了两份文档。ChatGPT 确认已读取两份。你的第一个问题是什么？\", \"question\": \"哪个问题最能利用两份文档同时加载的优势？\", \"options\": [\"帮我总结供应商合同\", \"供应商的付款条款与我们标准付款条款之间的主要差异是什么？\", \"这是份好合同吗？\"], \"correct\": 1, \"feedback\": \"比较两份文档中的具体条款正是上下文窗口所赋能的。总结只用到一份文档。交叉引用才是超能力。\"}, {\"type\": \"choice\", \"claude_response\": \"ChatGPT 发现供应商要求 net-15 而你的条款是 net-45，还有一个你没有的 2% 滞纳金。你想要深入了解。\", \"question\": \"你的下一个问题是什么？\", \"options\": [\"跟我说说付款条款的一般知识\", \"供应商合同中是否有直接与我们标准条款冲突的条款？列出所有冲突，按影响程度从大到小排列。\", \"重写供应商合同使其符合我们的条款\"], \"correct\": 1, \"feedback\": \"要求找出两份文档之间的所有冲突是一项利用完整上下文窗口的大规模交叉引用任务。ChatGPT 会系统地将每个章节与另一份进行比较。\"}]}",
+              "explanation": "将两份文档加载到一个对话中并让 ChatGPT 找出它们之间的冲突，是上下文窗口的实际应用。无需分块，无需切换标签页，不会丢失上下文。",
+              "hints": [
+                "最好的问题迫使 ChatGPT 同时查看两份文档。"
+              ],
+              "xp_reward": 15
+            },
+            {
+              "id": "ex_wc_03c",
+              "order_index": 3,
+              "type": "multiple_choice",
+              "prompt": "长对话中 AI 的上下文窗口空间不足时会发生什么？",
+              "options": [
+                "它会告诉你它忘了，并要求你重复",
+                "它会悄悄丢弃之前的上下文，开始给出矛盾的回答",
+                "它会自动保存并重新加载对话",
+                "不会发生什么——现代 AI 永远不会耗尽上下文"
+              ],
+              "correct_answer": "1",
+              "explanation": "当超出上下文时，AI 会悄悄丢弃对话的前面部分。它不会警告你。它只是开始给出与之前所说矛盾的答案，或者遗漏与之前讨论的关联。这就是为什么上下文窗口大小对于真正的工作很重要。",
+              "hints": [
+                "想想对 AI 来说\"遗忘\"意味着什么。它知道自己忘了吗？"
+              ],
+              "xp_reward": 5
+            }
+          ]
+        },
+        {
+          "title": "ChatGPT 的优势与局限",
+          "slug": "strengths-and-limits",
+          "description": "ChatGPT 真正擅长什么，在哪里有困难，以及如何绕过不足。",
+          "order_index": 4,
+          "xp_reward": 50,
+          "estimated_minutes": 6,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<p>让 ChatGPT 生成图片——它做不到。让它在三份 30 页的供应商提案中找到隐藏成本——它展现出完全不同层次的能力。了解这个差异就是技能所在。</p><p><strong>ChatGPT 擅长之处：</strong><strong>深度分析</strong>（逐字阅读长文档，跨章节关联信息）。<strong>细腻的写作</strong>（适应受众、语调和约束）。<strong>复杂指令</strong>（跟踪你指定的每个约束）。<strong>长文档</strong>（一次对话中保持一整本书的内容）。</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_wc_04a"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>ChatGPT 的困难之处：</strong><strong>无法生成图片或视频</strong>（使用 Midjourney/DALL-E；ChatGPT 可以编写提示词）。<strong>没有实时数据</strong>（先搜索，再将结果粘贴到 ChatGPT 中分析）。<strong>冷门事实的幻觉</strong>（核实姓名、日期和统计数据）。<strong>大规模数学计算</strong>（数字用电子表格，解读用 ChatGPT）。</p><p>最好的 ChatGPT 用户也知道什么时候不该用 ChatGPT。</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_wc_04b"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_wc_04c"
+              },
+              {
+                "type": "summary",
+                "content": "<p>ChatGPT 的超能力：深度分析、细腻写作、复杂指令、长文档。局限：无法生成图片、没有实时数据、需要核实冷门事实。技能在于知道什么工作用什么工具。接下来：如何将随意的 ChatGPT 使用变成真正的工作流程。</p>"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_wc_04a",
+              "order_index": 1,
+              "type": "multiple_choice",
+              "prompt": "比较 3 份供应商提案并找到隐藏成本时，ChatGPT 最有用的优势是什么？",
+              "options": [
+                "细腻的写作——推荐书需要很精致",
+                "深度分析——找到隐藏成本需要读完三份文档的每个细节",
+                "代码——你应该先建一个电子表格模型",
+                "复杂指令——比较格式需要很具体"
+              ],
+              "correct_answer": "1",
+              "explanation": "在三份文档中找到隐藏成本需要阅读每个细节并跨章节关联信息。这是深度分析。写作和指令有助于输出，但核心任务是分析。",
+              "hints": [
+                "这个任务最难的部分是什么——写推荐书还是找到提案中隐藏的内容？"
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_wc_04b",
+              "order_index": 2,
+              "type": "prompt_lab",
+              "prompt": "你有一份需要在签字前审阅的 50 页合同。写一个提示词让 ChatGPT 找到 3 个最大的风险。",
+              "options": null,
+              "correct_answer": "{\"scenario\":\"你即将签署一份 50 页的 SaaS 供应商合同。你希望 ChatGPT 读完全文并识别 3 个最大的风险——可能造成最大损害的条款。\",\"scoring_criteria\":[{\"keyword_group\":[\"risk\",\"dangerous\",\"concern\",\"problem\",\"issue\",\"flag\",\"watch out\",\"trap\",\"hidden\"],\"label\":\"明确要求了风险\",\"points\":2},{\"keyword_group\":[\"3\",\"three\",\"top\",\"biggest\",\"most important\",\"worst\"],\"label\":\"指定了风险数量\",\"points\":1},{\"keyword_group\":[\"contract\",\"agreement\",\"vendor\",\"SaaS\",\"document\"],\"label\":\"引用了文档类型\",\"points\":1},{\"keyword_group\":[\"liability\",\"termination\",\"auto-renewal\",\"indemnification\",\"penalty\",\"clause\",\"section\"],\"label\":\"提到了需要检查的具体领域\",\"points\":1},{\"keyword_group\":[\"why\",\"explain\",\"impact\",\"consequence\",\"what happens\",\"cost\",\"exposure\"],\"label\":\"要求了影响说明\",\"points\":1},{\"keyword_group\":[\"negotiate\",\"push back\",\"change\",\"fix\",\"recommend\",\"suggest\",\"alternative\"],\"label\":\"要求了谈判建议\",\"points\":1}],\"max_points\":7,\"pass_threshold\":4,\"ideal_prompt\":\"请阅读这份 50 页的 SaaS 供应商合同，识别对我公司最大的 3 个风险。对于每个风险：(1) 引用条款，(2) 用通俗语言解释为什么危险，(3) 建议我应该谈判什么替代方案。重点关注责任上限、自动续约陷阱、终止限制和赔偿条款。\",\"tips\":[\"告诉 ChatGPT 关注哪些领域，让它知道在哪里深挖。\",\"要求谈判替代方案将分析转化为行动。\"]}",
+              "explanation": "好的合同审阅提示词告诉 ChatGPT 要找什么（风险，而非摘要）、找几个、以及如何处理。这将 50 页文档变成了 3 个可执行的要点。",
+              "hints": [
+                "不要只是让 ChatGPT\"审阅\"合同。告诉它你担心什么。"
+              ],
+              "xp_reward": 10
+            },
+            {
+              "id": "ex_wc_04c",
+              "order_index": 3,
+              "type": "matching_pairs",
+              "prompt": "将每个任务与最佳工具匹配。",
+              "options": null,
+              "correct_answer": "{\"Analyze a 40-page research paper and find the key insights\":\"Claude\",\"Generate a product mockup image\":\"Midjourney or DALL-E\",\"Get today's stock price for AAPL\":\"Search engine or finance app\",\"Review a contract for hidden risks\":\"Claude\",\"Calculate compound interest on 10,000 rows of data\":\"Spreadsheet (Excel/Sheets)\",\"Write a board memo in a specific tone and format\":\"Claude\"}",
+              "explanation": "ChatGPT 擅长分析、写作和复杂指令。视觉创作用图像生成器，实时数据用搜索引擎，大量计算用电子表格。最佳工具取决于任务。",
+              "hints": [
+                "想想每个任务实际需要什么：思考、视觉创作、实时数据还是数字处理？"
+              ],
+              "xp_reward": 15
+            }
+          ]
+        },
+        {
+          "title": "从聊天到构建",
+          "slug": "from-chatting-to-building",
+          "description": "随意的 ChatGPT 对话如何变成真正的工作流程。通往 Track 2-4 的桥梁。",
+          "order_index": 5,
+          "xp_reward": 75,
+          "estimated_minutes": 7,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<p>从 ChatGPT 获得 10 倍价值的人将其作为<strong>可重复流程</strong>的一部分，而不是一次性提问。以下三个模式将聊天变为构建。</p><p><strong>模式 1：从研究到决策。</strong>粘贴同一主题的 5 篇文章。让 ChatGPT 告诉你它们在哪里一致，在哪里矛盾，以及什么适用于你的情况。一次对话，五个来源，一个个性化建议。</p><p><strong>模式 2：草稿-审查-发送。</strong>获取初稿。让 ChatGPT 从你的受众角度批评自己的作品。整合批评并润色。发送。大多数人在第 1 步就停了——第 2 步和第 3 步才是质量飞跃发生的地方。</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_wc_05a"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>模式 3：周度操作员。</strong>设置一个 ChatGPT 项目，将你的角色、优先事项和定期交付物作为系统上下文。每周一粘贴新数据并获得同样的分析。ChatGPT 已经知道格式、受众和关注点。这不是对话——这是操作系统。</p><p><strong>接下来的内容：</strong>Track 2 深入 ChatGPT 的每个界面。Track 3 提供具体的工作流程手册。Track 4 涵盖高级技巧。你已经有了基础。</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_wc_05b"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_wc_05c"
+              },
+              {
+                "type": "summary",
+                "content": "<p>你完成了 Track 1。你知道了 ChatGPT 如何思考、如何与它对话、它擅长什么，以及随意使用如何变成真正的工作流程。三个模式——从研究到决策、草稿-审查-发送和周度操作员——是通往更深入 Track 的桥梁。去构建点什么吧。</p>"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_wc_05a",
+              "order_index": 1,
+              "type": "scenario_walkthrough",
+              "prompt": "体验草稿-审查-发送循环：从模糊的提示词开始，经过三轮迭代直到输出优秀。",
+              "options": null,
+              "correct_answer": "{\"title\": \"从模糊到优秀的 3 轮\", \"steps\": [{\"type\": \"context\", \"text\": \"你需要 ChatGPT 写一篇关于你从失去大客户中学到的教训的 LinkedIn 帖子。让我们看看迭代如何将通用输出变为引人注目的内容。\"}, {\"type\": \"context\", \"text\": \"你输入：'帮我写一篇关于失去客户的 LinkedIn 帖子。'\\n\\nChatGPT 回复：'失去我们最大的客户是痛苦的。但它教会了我沟通、设定期望和构建弹性系统的重要性。每一次挫折都是东山再起的铺垫...'\\n\\n典型的 LinkedIn 套话。该迭代了。\"}, {\"type\": \"choice\", \"claude_response\": \"第一稿听起来像励志海报。你怎么告诉 ChatGPT 修改？\", \"question\": \"哪个迭代指令更好？\", \"options\": [\"让它更有吸引力和真实感\", \"这听起来像励志海报。我说话直接，有点自嘲，不用流行词。用这种风格重写。\", \"写长一点加更多细节\", \"加表情符号和标签\"], \"correct\": 1, \"feedback\": \"具体的方向产生具体的结果。'更有吸引力'太模糊了。告诉 ChatGPT 你真实的语气和要避免什么给它提供了可操作的素材。\"}, {\"type\": \"choice\", \"claude_response\": \"ChatGPT 用真实的语气重写了：'电话是周二下午来的。我们最大的客户，占收入 35%，要走了。不是 90 天后，而是 30 天后...' 好多了。但内容可以更有力。\", \"question\": \"接下来你问什么？\", \"options\": [\"看起来不错，发吧\", \"加一个行动号召\", \"什么会让读者停止滚动？说实话——如果教训很套路，告诉我。\", \"缩短它\"], \"correct\": 2, \"feedback\": \"让 ChatGPT 批评自己的内容——不只是写作——是你获得原本会错过的洞察的地方。ChatGPT 回复说教训很可预测，建议找到令人惊讶或反直觉的角度。\"}]}",
+              "explanation": "两轮迭代将一篇通用帖子变成了有真实声音和诚实自我批评的作品。教训：你的第一个提示词永远不是最后一个。魔力在于来回对话中。",
+              "hints": [
+                "每轮应该改变一些具体的东西。不要只说'更好'——说明该改什么该保留什么。"
+              ],
+              "xp_reward": 15
+            },
+            {
+              "id": "ex_wc_05b",
+              "order_index": 2,
+              "type": "speed_prompt",
+              "prompt": "你有 45 秒。写一个提示词让 ChatGPT 在投资者路演前诚实地审查你的商业计划。",
+              "options": null,
+              "correct_answer": "{\"time_limit_seconds\":45,\"scenario\":\"你有一份新 SaaS 产品的 10 页商业计划。下周要向投资者做路演。写一个提示词让 ChatGPT 把它彻底分析——在投资者之前找到薄弱点。\",\"scoring_criteria\":[{\"keyword_group\":[\"honest\",\"brutal\",\"critical\",\"tough\",\"don't hold back\",\"tear apart\",\"weaknesses\",\"holes\",\"problems\"],\"label\":\"要求了诚实/批判性审查\",\"points\":2},{\"keyword_group\":[\"investor\",\"pitch\",\"funding\",\"VC\",\"raise\",\"present\"],\"label\":\"提到了投资者背景\",\"points\":1},{\"keyword_group\":[\"business plan\",\"plan\",\"SaaS\",\"product\",\"startup\"],\"label\":\"引用了文档\",\"points\":1},{\"keyword_group\":[\"question\",\"ask\",\"challenge\",\"object\",\"pushback\",\"concern\"],\"label\":\"要求了投资者可能的问题\",\"points\":2},{\"keyword_group\":[\"fix\",\"improve\",\"strengthen\",\"recommend\",\"suggest\",\"change\"],\"label\":\"要求了改进建议\",\"points\":1}],\"max_points\":7,\"pass_threshold\":4,\"ideal_prompt\":\"下周我要用这份 10 页的 SaaS 商业计划向投资者路演。做我最严格的批评者：找出投资者会攻击的每一个薄弱假设、可疑预测和漏洞。对每个弱点，告诉我投资者会说什么，以及我应该如何修改计划或准备回答。不要鼓励——我现在需要残酷的真相，不是在会议上。\"}",
+              "explanation": "诚实审查的最佳提示词明确要求 ChatGPT 不要客气。告诉它利害关系、角色，以及如何处理发现。",
+              "hints": [
+                "想想：大型路演前你希望一个残酷诚实的朋友告诉你什么？"
+              ],
+              "xp_reward": 10
+            },
+            {
+              "id": "ex_wc_05c",
+              "order_index": 3,
+              "type": "multiple_choice",
+              "prompt": "哪种工作流程模式能将 ChatGPT 从一次性工具变成操作系统？",
+              "options": [
+                "每次问更长的问题",
+                "只用 ChatGPT 做创意头脑风暴",
+                "设置一个带持久上下文的项目，每周用新数据运行同样的分析",
+                "在 ChatGPT 和 ChatGPT 之间切换处理不同任务"
+              ],
+              "correct_answer": "2",
+              "explanation": "周度操作员模式——持久上下文、定期分析、新数据——将 ChatGPT 从聊天机器人变成决策支持系统。系统提示词已经知道你的角色、受众和格式。你只需添加最新数据。",
+              "hints": [
+                "哪个选项描述的是可重复的流程，而不是一次性对话？"
+              ],
+              "xp_reward": 5
+            }
+          ]
+        }
+      ],
+      "campaign_order": 1,
+      "level_required": 1,
+      "prerequisite_slug": null
+    }
+  ]
+}

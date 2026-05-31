@@ -1,0 +1,2340 @@
+{
+  "track": "work",
+  "courses": [
+    {
+      "title": "Claude for Legal Professionals",
+      "slug": "claude-for-legal",
+      "description": "Use Claude to draft contracts, research case law, summarize depositions, and craft client communications — without learning to code.",
+      "difficulty": "beginner",
+      "order_index": 1,
+      "is_free": false,
+      "icon": "Briefcase",
+      "lessons": [
+        {
+          "title": "Drafting and Reviewing Contracts",
+          "slug": "drafting-reviewing-contracts",
+          "description": "Use Claude to draft contract clauses, spot missing provisions, and redline agreements in minutes instead of hours.",
+          "order_index": 1,
+          "xp_reward": 10,
+          "estimated_minutes": 8,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>Drafting and Reviewing Contracts</h3><p>Contract review is one of the most time-consuming tasks in legal work. A standard NDA review might take 30-45 minutes. With Claude, you can cut that to under 10 minutes while catching issues you might miss under time pressure.</p><h4>How to prompt Claude for contract drafting</h4><p>The key is giving Claude your specific context. Don't just say \"write me an NDA.\" Instead, provide:</p><ul><li>The type of agreement and governing law</li><li>Key terms (duration, scope, exclusions)</li><li>Your client's position (disclosing party, receiving party, mutual)</li><li>Any unusual provisions you need</li></ul><h4>Example: NDA Review Prompt</h4><pre><code>Review this NDA for a California-based SaaS company (disclosing party). Flag any provisions that:\n1. Allow the receiving party to share with unnamed affiliates\n2. Have a carve-out broader than standard exclusions\n3. Lack a residuals clause\n4. Have a term shorter than 3 years\n\nHere is the agreement:\n[paste agreement]</code></pre><h4>Redlining with Claude</h4><p>Paste the contract and ask Claude to suggest specific redline edits. Claude will output the original language, the proposed change, and a brief explanation of why — exactly the format you need for a markup.</p><h4>Important: Always verify</h4><p>Claude is a drafting assistant, not a lawyer. Every output should be reviewed by a licensed attorney before sending to clients or counterparties. Claude can miss jurisdiction-specific nuances and doesn't have access to your client's full history.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w1_01"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w1_02"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w1_03"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_w1_01",
+              "type": "multiple_choice",
+              "question": "What is the most effective way to ask Claude to review a contract?",
+              "options": [
+                "Provide the agreement type, governing law, your client's position, and specific issues to flag",
+                "Ask Claude to rewrite the entire contract from scratch",
+                "Say 'review this contract' and paste it in",
+                "Send the contract as a file attachment without any instructions"
+              ],
+              "correct_answer": 0,
+              "explanation": "Giving Claude specific context — agreement type, governing law, client position, and what to look for — produces far more useful and accurate output than a generic 'review this' request.",
+              "hints": [
+                "Think about what a senior partner would tell a first-year associate before handing them a contract."
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_w1_02",
+              "type": "multiple_choice",
+              "question": "After Claude drafts contract language, what should you do before sending it to a counterparty?",
+              "options": [
+                "Have a licensed attorney review it for accuracy and jurisdiction-specific issues",
+                "Send it immediately — Claude's output is reliable",
+                "Ask Claude to verify its own work",
+                "Run it through a second AI for confirmation"
+              ],
+              "correct_answer": 0,
+              "explanation": "Claude is a drafting assistant, not a substitute for legal judgment. A licensed attorney must review all output before it goes to clients or counterparties, especially for jurisdiction-specific nuances.",
+              "hints": [
+                "Consider who bears the professional responsibility for legal advice."
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_w1_03",
+              "type": "fill_in_blank",
+              "question": "When asking Claude to redline a contract, Claude will output three things for each suggested change: the original language, the proposed change, and a brief ____.",
+              "correct_answer": "explanation",
+              "options": ["explanation", "summary", "redline", "citation"],
+              "explanation": "For each redline, Claude provides the original text, the suggested revision, and an explanation of why the change is recommended — matching the standard redline markup format used in legal practice.",
+              "hints": [
+                "Think about what makes a redline useful to the reviewing attorney."
+              ],
+              "xp_reward": 5
+            }
+          ]
+        },
+        {
+          "title": "Case Law Research with Claude",
+          "slug": "case-law-research",
+          "description": "Learn to use Claude as a research assistant for finding relevant precedents, summarizing holdings, and building legal arguments.",
+          "order_index": 2,
+          "xp_reward": 10,
+          "estimated_minutes": 8,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>Case Law Research with Claude</h3><p>Legal research traditionally means hours on Westlaw or LexisNexis, scanning headnotes and reading through dozens of cases. Claude can dramatically speed up the initial research phase — with an important caveat about verification.</p><h4>What Claude can do well</h4><ul><li>Summarize the holding and reasoning of cases you paste in</li><li>Identify the key legal tests and standards from a body of law</li><li>Suggest search terms and legal theories you might not have considered</li><li>Organize your research into a structured memo format</li></ul><h4>What Claude cannot reliably do</h4><p>Claude can generate case citations that don't exist (\"hallucinations\"). Never cite a case from Claude without verifying it in a legal database. Courts have sanctioned attorneys for citing AI-generated fake cases.</p><h4>Effective research workflow</h4><ol><li>Ask Claude to outline the key legal issues and relevant standards</li><li>Use those concepts to search in Westlaw/Lexis for real cases</li><li>Paste actual case text into Claude for summarization and analysis</li><li>Ask Claude to help organize findings into a memo</li></ol><h4>Example prompt for issue spotting</h4><pre><code>I'm representing a plaintiff in a slip-and-fall case in Florida. The incident occurred in a grocery store. The floor was wet from a leaking refrigerator unit. No warning signs were posted. What are the key legal issues I should research, and what Florida-specific standards apply?</code></pre>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w1_04"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w1_05"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w1_06"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_w1_04",
+              "type": "multiple_choice",
+              "question": "Why should you never cite a case directly from Claude's output without verification?",
+              "options": [
+                "Claude only has access to cases before 2020",
+                "Claude can generate citations to cases that don't actually exist",
+                "Legal databases have a monopoly on case citations",
+                "Claude's case summaries are always inaccurate"
+              ],
+              "correct_answer": 1,
+              "explanation": "Claude can 'hallucinate' case citations — generating plausible-sounding but nonexistent cases. Courts have sanctioned attorneys for citing AI-generated fake cases. Always verify in Westlaw or Lexis.",
+              "hints": [
+                "Think about what 'hallucination' means in the context of AI."
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_w1_05",
+              "type": "multiple_choice",
+              "question": "What is the recommended workflow for using Claude in legal research?",
+              "options": [
+                "Use Claude to identify issues and search terms, verify cases in legal databases, then use Claude to organize findings",
+                "Have Claude write the entire legal memo from scratch",
+                "Ask Claude for cases, cite them directly in your brief",
+                "Only use Claude after all research is complete"
+              ],
+              "correct_answer": 0,
+              "explanation": "The most effective workflow uses Claude for issue-spotting and organization while relying on verified legal databases for actual case citations. This combines AI speed with legal accuracy.",
+              "hints": [
+                "Consider which steps benefit from AI speed and which require verified sources."
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_w1_06",
+              "type": "multiple_choice",
+              "question": "Which of these is Claude most reliable at during legal research?",
+              "options": [
+                "Guaranteeing that a legal theory will succeed in court",
+                "Providing accurate case citations with correct page numbers",
+                "Predicting how a specific judge will rule",
+                "Summarizing the holding and reasoning of cases you paste into it"
+              ],
+              "correct_answer": 3,
+              "explanation": "When you paste actual case text into Claude, it excels at summarizing holdings, identifying key reasoning, and extracting the legal tests applied. It works best with text you've verified, not generating citations on its own.",
+              "hints": [
+                "Think about the difference between generating information and analyzing information you provide."
+              ],
+              "xp_reward": 5
+            }
+          ]
+        },
+        {
+          "title": "Summarizing Depositions and Discovery",
+          "slug": "summarizing-depositions",
+          "description": "Turn 200-page deposition transcripts into actionable summaries with key admissions, contradictions, and timeline entries.",
+          "order_index": 3,
+          "xp_reward": 10,
+          "estimated_minutes": 7,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>Summarizing Depositions and Discovery</h3><p>A typical deposition transcript runs 150-300 pages. A paralegal might spend 4-6 hours creating a summary. Claude can produce a first-pass summary in minutes, letting you focus on strategy instead of reading.</p><h4>What to ask for</h4><p>Don't just say \"summarize this deposition.\" Structure your request:</p><pre><code>Summarize this deposition transcript of [witness name], a [role] in a [case type] case. For each topic area, provide:\n1. Key admissions or statements against interest\n2. Any contradictions with prior testimony or documents\n3. Timeline entries with specific dates mentioned\n4. Areas where the witness was evasive or non-responsive\n\nOrganize by topic, not chronologically.</code></pre><h4>Handling long transcripts</h4><p>If the transcript exceeds Claude's context window, break it into sections (e.g., 50 pages at a time) and ask Claude to summarize each section, then combine the summaries. Label each section with page ranges so you can reference back.</p><h4>Discovery document review</h4><p>For document review in discovery, Claude can categorize documents by relevance, identify privileged communications, and flag documents that support or undermine specific claims. Give Claude your privilege log criteria and relevance standards upfront.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w1_07"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w1_08"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w1_09"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_w1_07",
+              "type": "multiple_choice",
+              "question": "When summarizing a deposition with Claude, what should you ask for beyond a basic summary?",
+              "options": [
+                "Only the witness's name and date",
+                "Key admissions, contradictions with prior testimony, timeline entries, and evasive responses",
+                "Just the first and last pages",
+                "A word-for-word transcript in a different format"
+              ],
+              "correct_answer": 1,
+              "explanation": "Structured requests that ask for admissions, contradictions, timelines, and evasiveness produce summaries that are immediately useful for case strategy, unlike generic summaries.",
+              "hints": [
+                "Think about what a trial attorney actually needs from a deposition summary."
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_w1_08",
+              "type": "multiple_choice",
+              "question": "How should you handle a 300-page deposition transcript that exceeds Claude's context window?",
+              "options": [
+                "Ask Claude to summarize it anyway and hope for the best",
+                "Give up and do it manually",
+                "Break it into labeled sections, summarize each, then combine the summaries",
+                "Only submit the first 50 pages"
+              ],
+              "correct_answer": 2,
+              "explanation": "Breaking long transcripts into labeled sections (with page ranges) lets you summarize each part accurately and then combine them, while maintaining the ability to reference back to specific pages.",
+              "hints": [
+                "Consider how you'd handle any document that's too large to process at once."
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_w1_09",
+              "type": "fill_in_blank",
+              "question": "When using Claude for discovery document review, you should give Claude your privilege log criteria and ____ standards upfront.",
+              "correct_answer": "relevance",
+              "explanation": "Providing both privilege log criteria and relevance standards upfront allows Claude to categorize documents accurately in a single pass, saving you from multiple review rounds.",
+              "hints": [
+                "What determines whether a document matters to the case?"
+              ],
+              "xp_reward": 5
+            }
+          ]
+        },
+        {
+          "title": "Client Communications",
+          "slug": "client-communications",
+          "description": "Draft engagement letters, status updates, demand letters, and client-facing explanations that are clear, professional, and appropriately cautious.",
+          "order_index": 4,
+          "xp_reward": 10,
+          "estimated_minutes": 7,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>Client Communications</h3><p>Clear client communication builds trust and reduces malpractice risk. Claude helps you draft professional communications faster while maintaining the right tone — whether that's reassuring a nervous client or writing a firm demand letter.</p><h4>Engagement letters</h4><p>Provide Claude with the scope of representation, fee structure, and any special terms. Ask it to draft in plain language that a non-lawyer client can understand while still covering the necessary legal bases.</p><h4>Status updates</h4><pre><code>Draft a client status update email for a personal injury case. The client is [name]. Key updates:\n- We received the defendant's discovery responses last week\n- Their responses were incomplete — we're filing a motion to compel\n- The mediation is scheduled for [date]\n- We need the client to gather their medical bills from [provider]\n\nTone: reassuring but honest. The client is anxious about the timeline. Explain in plain language.</code></pre><h4>Demand letters</h4><p>Claude can draft demand letters that are assertive without being inflammatory. Provide the facts, the legal basis for the claim, the damages, and the demand amount. Specify the tone — a demand to an insurance adjuster reads differently from one to opposing counsel.</p><h4>Translating legal concepts</h4><p>One of Claude's strongest uses: taking complex legal concepts and explaining them in plain English for clients. Instead of spending 15 minutes on the phone explaining summary judgment, draft a brief explanation with Claude and send it ahead of your call.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w1_10"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w1_11"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w1_12"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_w1_10",
+              "type": "multiple_choice",
+              "question": "What information should you provide Claude when drafting a client status update?",
+              "options": [
+                "Only the billing information",
+                "The entire case file from beginning to end",
+                "Key developments, next steps, anything needed from the client, and the desired tone",
+                "Just the client's name and case number"
+              ],
+              "correct_answer": 2,
+              "explanation": "Effective status updates require specific developments, next steps, client action items, and tone guidance. This produces a communication that's immediately useful rather than generic.",
+              "hints": [
+                "Think about what the client actually wants to know when they get an update."
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_w1_11",
+              "type": "multiple_choice",
+              "question": "Why is Claude particularly useful for translating legal concepts for clients?",
+              "options": [
+                "It guarantees the client will understand the legal strategy",
+                "It replaces the need for attorney-client calls entirely",
+                "It can take complex legal concepts and explain them in plain English, saving you time preparing for client conversations",
+                "Clients prefer reading AI-generated text over talking to their attorney"
+              ],
+              "correct_answer": 2,
+              "explanation": "Claude excels at turning legal jargon into plain English explanations. Sending a clear written explanation before a call helps the client come prepared, making your conversation more productive.",
+              "hints": [
+                "Think about how you'd prepare a non-lawyer to understand a legal motion."
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_w1_12",
+              "type": "multiple_choice",
+              "question": "When asking Claude to draft a demand letter, what should you specify about the tone?",
+              "options": [
+                "Always make it as aggressive as possible",
+                "Keep it as vague as possible to leave room for interpretation",
+                "Don't worry about tone — Claude picks the right one automatically",
+                "Specify the audience and desired tone, since a letter to an insurance adjuster differs from one to opposing counsel"
+              ],
+              "correct_answer": 3,
+              "explanation": "Different audiences require different tones. A demand to an insurance adjuster typically focuses on policy limits and documentation, while one to opposing counsel may emphasize legal theories and litigation risk.",
+              "hints": [
+                "Consider how the same demand might land differently depending on who reads it."
+              ],
+              "xp_reward": 5
+            }
+          ]
+        },
+        {
+          "title": "Ethical Guardrails and Confidentiality",
+          "slug": "ethical-guardrails",
+          "description": "Understand the ethical obligations around using AI in legal practice — confidentiality, supervision duties, and disclosure requirements.",
+          "order_index": 5,
+          "xp_reward": 10,
+          "estimated_minutes": 7,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>Ethical Guardrails and Confidentiality</h3><p>Using AI in legal practice raises real ethical questions. Several state bar associations have issued guidance, and the landscape is evolving. Here's what you need to know today.</p><h4>Confidentiality (Model Rule 1.6)</h4><p>When you paste client information into Claude, you're sharing confidential data with a third party. Key considerations:</p><ul><li>Review Anthropic's data usage policies — Claude doesn't train on your conversations</li><li>Consider anonymizing client details before pasting (\"Client A\" instead of real names)</li><li>Your firm may need to update its technology use policy</li><li>Some jurisdictions require informed client consent for AI tool usage</li></ul><h4>Competence and supervision (Model Rules 1.1, 5.1, 5.3)</h4><p>You must understand AI well enough to supervise its output. This means:</p><ul><li>Verifying all case citations independently</li><li>Reviewing all drafted language before sending</li><li>Understanding Claude's limitations (training data cutoff, no real-time access to legal databases)</li><li>Not delegating legal judgment to AI</li></ul><h4>Disclosure requirements</h4><p>Some courts now require disclosure of AI use in filings. Check your jurisdiction's rules. Even where not required, consider whether disclosure serves your client's interests.</p><h4>Billing considerations</h4><p>If a task that previously took 3 hours now takes 30 minutes with AI, how do you bill? Many firms are shifting toward value-based billing for AI-assisted work rather than billing the reduced hours at the old rate.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w1_13"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w1_14"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w1_15"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_w1_13",
+              "type": "multiple_choice",
+              "question": "Under Model Rule 1.6, what should you consider before pasting client information into Claude?",
+              "options": [
+                "Only use Claude for non-legal work to avoid the issue entirely",
+                "Nothing — AI tools are covered under attorney-client privilege automatically",
+                "Anonymizing client details, reviewing data usage policies, and checking whether your jurisdiction requires client consent",
+                "Get a court order authorizing AI use for each case"
+              ],
+              "correct_answer": 2,
+              "explanation": "Confidentiality obligations require you to consider anonymization, understand the AI provider's data policies, and check jurisdictional requirements for client consent before sharing any confidential information.",
+              "hints": [
+                "Think about your duties when sharing client information with any third party."
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_w1_14",
+              "type": "multiple_choice",
+              "question": "What does the duty of competence (Model Rule 1.1) require when using AI tools?",
+              "options": [
+                "Only attorneys under 40 should use AI tools",
+                "Attorneys must understand AI well enough to supervise its output, verify citations, and review all drafted language",
+                "The duty of competence doesn't apply to AI-assisted work",
+                "Attorneys must become AI experts before using any AI tool"
+              ],
+              "correct_answer": 1,
+              "explanation": "The duty of competence requires understanding AI's capabilities and limitations well enough to properly supervise its output. This includes verifying citations, reviewing language, and not delegating legal judgment to AI.",
+              "hints": [
+                "Consider what 'competent supervision' means for any tool or assistant."
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_w1_15",
+              "type": "fill_in_blank",
+              "question": "Many firms are shifting toward ____-based billing for AI-assisted work rather than billing reduced hours at the old rate.",
+              "correct_answer": "value",
+              "explanation": "Value-based billing charges for the outcome and expertise rather than time spent. When AI reduces a 3-hour task to 30 minutes, value-based billing better reflects the worth of the work product to the client.",
+              "hints": [
+                "Think about billing for the result rather than the time."
+              ],
+              "xp_reward": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Claude for Marketing & Sales",
+      "slug": "claude-for-marketing-sales",
+      "description": "Create compelling content, analyze competitors, write outreach sequences, and build sales materials — all with Claude as your marketing co-pilot.",
+      "difficulty": "beginner",
+      "order_index": 2,
+      "is_free": false,
+      "icon": "Briefcase",
+      "lessons": [
+        {
+          "title": "Content Creation at Scale",
+          "slug": "content-creation-at-scale",
+          "description": "Write blog posts, social media copy, email newsletters, and landing pages faster without sacrificing quality.",
+          "order_index": 1,
+          "xp_reward": 10,
+          "estimated_minutes": 7,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>Content Creation at Scale</h3><p>Most marketing teams are bottlenecked on content production. You know what to write — you just don't have enough hours. Claude changes that math entirely.</p><h4>The brand voice brief</h4><p>Before creating any content, give Claude your brand voice. This is a one-time setup you'll reuse across every conversation:</p><pre><code>Our brand voice is:\n- Professional but not stuffy (think helpful expert, not textbook)\n- We use short sentences. Avoid jargon unless our audience uses it daily.\n- We always lead with the benefit, not the feature\n- Tone: confident, direct, slightly irreverent\n- Never use: \"synergy,\" \"leverage,\" \"circle back,\" \"at the end of the day\"\n- Our audience: B2B SaaS marketing managers, 28-45 years old</code></pre><h4>Blog posts</h4><p>Give Claude an outline and your key points. Ask for a first draft, then iterate. A 1,500-word blog post that used to take 3 hours can be drafted in 15 minutes, leaving you 2+ hours for editing, adding data, and making it genuinely useful.</p><h4>Social media batching</h4><p>Draft a week's worth of LinkedIn posts in one sitting:</p><pre><code>Write 5 LinkedIn posts for a B2B SaaS company. Each post should:\n- Be 150-200 words\n- Start with a hook (question, bold claim, or story)\n- End with a question to drive comments\n- Topics: [list your 5 topics]\n- Voice: [paste your brand voice brief]</code></pre><h4>Email newsletters</h4><p>Provide Claude with your key updates and ask it to draft in your newsletter format. Include your typical section structure (e.g., intro, 3 stories, CTA) so the output matches your template.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w2_01"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w2_02"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w2_03"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_w2_01",
+              "type": "multiple_choice",
+              "question": "What should you provide Claude before creating any marketing content?",
+              "options": [
+                "Your company's stock price",
+                "A list of all your competitors' content",
+                "A brand voice brief describing tone, audience, and language guidelines",
+                "Your entire marketing budget"
+              ],
+              "correct_answer": 2,
+              "explanation": "A brand voice brief ensures consistency across all content Claude helps create. It defines tone, audience, vocabulary preferences, and style — the same guardrails you'd give a new copywriter.",
+              "hints": [
+                "Think about what you'd put in a brief for a freelance writer on their first day."
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_w2_02",
+              "type": "multiple_choice",
+              "question": "What's the recommended approach for blog posts with Claude?",
+              "options": [
+                "Ask Claude to write the entire post with no direction and publish it as-is",
+                "Only use Claude for the headline",
+                "Give Claude an outline and key points, get a first draft, then iterate and add your data and expertise",
+                "Have Claude research the topic from scratch with no input from you"
+              ],
+              "correct_answer": 2,
+              "explanation": "The most effective approach is providing an outline and key points for a quick first draft, then spending your time editing, adding real data, and injecting your expertise. This is where the time savings come from.",
+              "hints": [
+                "Think about which parts of writing take the most time vs. add the most value."
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_w2_03",
+              "type": "fill_in_blank",
+              "question": "When batching social media posts, each LinkedIn post should start with a ____ to grab attention.",
+              "correct_answer": "hook",
+              "explanation": "A strong hook (question, bold claim, or short story) is essential for stopping the scroll on LinkedIn. Without it, even great content gets buried in the feed.",
+              "hints": [
+                "What makes you stop scrolling on social media?"
+              ],
+              "xp_reward": 5
+            }
+          ]
+        },
+        {
+          "title": "Competitive Analysis",
+          "slug": "competitive-analysis",
+          "description": "Use Claude to analyze competitor positioning, identify gaps in their messaging, and find your differentiation angles.",
+          "order_index": 2,
+          "xp_reward": 10,
+          "estimated_minutes": 7,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>Competitive Analysis</h3><p>Understanding your competitors is essential, but most teams do it once a quarter at best. Claude makes competitive analysis something you can do weekly.</p><h4>Messaging teardown</h4><p>Paste a competitor's homepage, landing page, or sales deck into Claude and ask for a structured analysis:</p><pre><code>Analyze this competitor's messaging. Identify:\n1. Their primary value proposition (what they lead with)\n2. Their target audience (based on language and examples used)\n3. Differentiation claims (what they say makes them different)\n4. Proof points (case studies, numbers, testimonials)\n5. Gaps or weaknesses in their positioning\n6. How our positioning differs: [describe your positioning]</code></pre><h4>Feature comparison matrices</h4><p>Give Claude your product's features and your competitor's features (from their website or documentation). Ask it to build a comparison matrix highlighting where you win, where they win, and where it's a tie.</p><h4>Battlecards</h4><p>Sales teams need quick-reference battlecards for each competitor. Claude can draft these in minutes:</p><pre><code>Create a sales battlecard for [Competitor]. Include:\n- Their pitch in one sentence\n- Top 3 objections our reps hear when competing against them\n- Our counter-arguments for each objection\n- Where we win and where they win\n- Questions reps should ask prospects to expose their weaknesses</code></pre>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w2_04"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w2_05"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w2_06"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_w2_04",
+              "type": "multiple_choice",
+              "question": "What makes Claude useful for competitive analysis compared to doing it manually?",
+              "options": [
+                "Claude can structure and analyze competitor messaging quickly, making weekly analysis feasible instead of quarterly",
+                "Claude has secret access to competitor internal documents",
+                "Claude can hack into competitor systems for data",
+                "Claude's analysis is always 100% accurate without verification"
+              ],
+              "correct_answer": 0,
+              "explanation": "Claude's speed at structuring and analyzing text makes it practical to do competitive analysis frequently. The barrier was always time, not complexity — Claude removes that barrier.",
+              "hints": [
+                "Think about why most teams only do competitive analysis quarterly."
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_w2_05",
+              "type": "multiple_choice",
+              "question": "What should a good sales battlecard include?",
+              "options": [
+                "A full 20-page analysis of the competitor's history",
+                "The competitor's pitch, common objections, counter-arguments, win/lose areas, and discovery questions",
+                "Just the competitor's pricing",
+                "Only your product's features"
+              ],
+              "correct_answer": 1,
+              "explanation": "Battlecards are quick-reference tools for sales reps. They need the competitor's core pitch, objections reps actually hear, ready-made counters, honest win/lose areas, and questions that expose competitor weaknesses.",
+              "hints": [
+                "Think about what a sales rep needs in the middle of a call with a prospect."
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_w2_06",
+              "type": "fill_in_blank",
+              "question": "When analyzing a competitor's messaging, you should ask Claude to identify gaps or ____ in their positioning.",
+              "correct_answer": "weaknesses",
+              "explanation": "Identifying positioning weaknesses reveals opportunities for your own differentiation. These gaps are where your messaging can win — claims competitors can't credibly make.",
+              "hints": [
+                "What's the opposite of a strength in a SWOT analysis?"
+              ],
+              "xp_reward": 5
+            }
+          ]
+        },
+        {
+          "title": "Sales Outreach and Prospecting",
+          "slug": "sales-outreach-prospecting",
+          "description": "Write personalized cold emails, LinkedIn messages, and follow-up sequences that actually get responses.",
+          "order_index": 3,
+          "xp_reward": 10,
+          "estimated_minutes": 7,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>Sales Outreach and Prospecting</h3><p>Generic outreach gets ignored. Personalized outreach gets responses. The problem is that true personalization takes time — researching each prospect, finding a relevant hook, crafting a tailored message. Claude makes personalization at scale actually possible.</p><h4>Research-first outreach</h4><p>Before writing any email, give Claude the prospect's context:</p><pre><code>Research context for outreach:\n- Prospect: [Name], [Title] at [Company]\n- Company: [what they do, recent news, size]\n- Their likely pain points based on role: [your hypothesis]\n- Our solution: [one sentence on what we do]\n- Connection point: [anything you have in common]\n\nWrite a cold email that:\n- Is under 100 words\n- Opens with something specific to them (not \"I hope this finds you well\")\n- States our value in one sentence tied to their pain\n- Has a soft CTA (\"Worth a 15-minute call?\" not \"Book a demo now\")</code></pre><h4>Follow-up sequences</h4><p>Most deals close after 5-7 touches. Ask Claude to draft a 5-email sequence where each email adds new value instead of just saying \"bumping this up\":</p><ul><li>Email 1: Personalized intro</li><li>Email 2: Share a relevant case study or data point</li><li>Email 3: Address their likely objection</li><li>Email 4: Social proof from a similar company</li><li>Email 5: Breakup email (\"Should I close your file?\")</li></ul><h4>LinkedIn messages</h4><p>LinkedIn outreach has a 300-character sweet spot for connection requests. Ask Claude to write short, specific messages that reference something real about the prospect.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w2_07"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w2_08"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w2_09"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_w2_07",
+              "type": "multiple_choice",
+              "question": "What is the most important element of effective cold outreach?",
+              "options": [
+                "Personalization tied to the prospect's specific context and pain points",
+                "Sending the same template to everyone to save time",
+                "Making the email as long and detailed as possible",
+                "Using as many buzzwords as possible"
+              ],
+              "correct_answer": 0,
+              "explanation": "Personalization based on real research is what separates outreach that gets responses from outreach that gets deleted. Claude makes it feasible to personalize at scale.",
+              "hints": [
+                "Think about which cold emails you actually read vs. delete."
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_w2_08",
+              "type": "multiple_choice",
+              "question": "In a 5-email follow-up sequence, what should each subsequent email do?",
+              "options": [
+                "Shorten by 50% each time",
+                "Repeat the same message with \"just following up\"",
+                "Add new value — a case study, data point, objection handling, or social proof",
+                "Get progressively more aggressive in tone"
+              ],
+              "correct_answer": 2,
+              "explanation": "Each follow-up should add something new — a relevant case study, a data point, objection handling, or social proof. This gives the prospect a reason to engage rather than just reminding them you exist.",
+              "hints": [
+                "What would make you open a fifth email from someone you haven't replied to?"
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_w2_09",
+              "type": "multiple_choice",
+              "question": "What is the ideal length for a cold email written with Claude's help?",
+              "options": [
+                "Under 100 words with a soft CTA",
+                "500+ words to show you've done your research",
+                "As short as a text message",
+                "Exactly 3 paragraphs regardless of content"
+              ],
+              "correct_answer": 0,
+              "explanation": "Cold emails under 100 words with a soft CTA ('Worth a 15-minute call?') have the highest response rates. Busy executives won't read a novel from someone they don't know.",
+              "hints": [
+                "Think about how much time a busy VP spends deciding whether to read or delete an email."
+              ],
+              "xp_reward": 5
+            }
+          ]
+        },
+        {
+          "title": "Sales Materials and Proposals",
+          "slug": "sales-materials-proposals",
+          "description": "Draft proposals, one-pagers, ROI calculators, and case study narratives that help close deals.",
+          "order_index": 4,
+          "xp_reward": 10,
+          "estimated_minutes": 7,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>Sales Materials and Proposals</h3><p>Creating sales materials is a constant bottleneck. Every deal seems to need a custom proposal, a tailored one-pager, or a specific case study angle. Claude turns these from multi-hour projects into 30-minute tasks.</p><h4>Custom proposals</h4><p>The best proposals feel custom even when they follow a template. Give Claude your template structure and the deal-specific details:</p><pre><code>Draft a proposal for [Company]. Use this structure:\n1. Executive summary (their challenge, our solution, expected outcome)\n2. Proposed approach (3-4 phases)\n3. Timeline and milestones\n4. Investment (present our pricing of $X/month)\n5. Why us (2-3 differentiators relevant to this prospect)\n\nContext:\n- Their challenge: [specific problem]\n- Their industry: [industry]\n- Deal size: [amount]\n- Key stakeholder concerns: [what the decision-maker cares about]</code></pre><h4>ROI narratives</h4><p>Claude can build ROI stories from basic inputs. Provide the time or cost savings, the current state metrics, and the projected improvements. Claude will structure it into a compelling before/after narrative.</p><h4>Case study drafts</h4><p>Give Claude the raw facts of a customer success story — the problem, what you did, and the results — and ask it to structure it as a narrative case study. This transforms a bulleted list of outcomes into a story prospects can relate to.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w2_10"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w2_11"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w2_12"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_w2_10",
+              "type": "multiple_choice",
+              "question": "What makes a proposal feel custom even when it follows a standard template?",
+              "options": [
+                "Adding a personal photo of the sales rep",
+                "Using fancy fonts and graphics",
+                "Including the prospect's specific challenge, industry context, and stakeholder concerns",
+                "Making it longer than competitors' proposals"
+              ],
+              "correct_answer": 2,
+              "explanation": "Proposals feel custom when they reference the prospect's specific situation — their challenge, industry, and what the decision-maker cares about. The template provides structure; the context provides relevance.",
+              "hints": [
+                "Think about what makes you feel like someone actually understands your problem."
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_w2_11",
+              "type": "multiple_choice",
+              "question": "What should you provide Claude to build a compelling ROI narrative?",
+              "options": [
+                "The prospect's entire financial history",
+                "Just the price of your product",
+                "Your competitor's pricing",
+                "Time or cost savings, current state metrics, and projected improvements"
+              ],
+              "correct_answer": 3,
+              "explanation": "A compelling ROI narrative needs the baseline (current state), the improvement (savings), and the projected outcome. Claude structures these into a before/after story that makes the value tangible.",
+              "hints": [
+                "What does a decision-maker need to see to justify a purchase?"
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_w2_12",
+              "type": "fill_in_blank",
+              "question": "Claude can transform a bulleted list of customer outcomes into a ____ case study that prospects can relate to.",
+              "correct_answer": "narrative",
+              "explanation": "Narrative case studies tell a story — problem, solution, result — that prospects can see themselves in. Raw bullet points convey data but lack the emotional connection that drives buying decisions.",
+              "hints": [
+                "What's the storytelling format that takes facts and makes them engaging?"
+              ],
+              "xp_reward": 5
+            }
+          ]
+        },
+        {
+          "title": "Marketing Analytics and Reporting",
+          "slug": "marketing-analytics-reporting",
+          "description": "Use Claude to interpret campaign data, write performance reports, and extract insights from marketing metrics.",
+          "order_index": 5,
+          "xp_reward": 10,
+          "estimated_minutes": 7,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>Marketing Analytics and Reporting</h3><p>You have the data. What you lack is time to turn it into insights. Claude bridges the gap between raw numbers and actionable recommendations.</p><h4>Campaign performance analysis</h4><p>Paste your campaign metrics into Claude and ask for analysis:</p><pre><code>Here are the results from our Q1 email campaigns:\n\nCampaign A: 5,000 sent, 22% open rate, 3.1% CTR, 12 conversions\nCampaign B: 5,000 sent, 18% open rate, 4.5% CTR, 23 conversions\nCampaign C: 3,000 sent, 31% open rate, 2.8% CTR, 8 conversions\n\nAnalyze these results. Which campaign performed best and why? What should we change for Q2? Consider the full funnel from open to conversion, not just any single metric.</code></pre><h4>Weekly/monthly reports</h4><p>Give Claude your key metrics and ask it to draft the narrative section of your report. This is the part that takes the longest — explaining what happened, why it matters, and what you're doing about it.</p><h4>A/B test interpretation</h4><p>Paste your A/B test results and ask Claude to determine whether the results are meaningful or just noise. Provide sample sizes, conversion rates, and the test duration. Claude can explain statistical significance in plain language your stakeholders will understand.</p><h4>Trend identification</h4><p>Give Claude several months of metrics data and ask it to identify trends, seasonality patterns, and anomalies. This is especially useful for spotting gradual changes that are hard to see when you're looking at data week by week.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w2_13"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w2_14"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w2_15"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_w2_13",
+              "type": "multiple_choice",
+              "question": "In the example campaigns, Campaign B had a lower open rate (18%) than Campaign A (22%) but more conversions (23 vs 12). What does this suggest?",
+              "options": [
+                "Campaign A is better because open rate is the most important metric",
+                "Campaign B's content was more relevant to the people who did open — it converted better through the full funnel",
+                "The data is too small to draw any conclusions",
+                "Both campaigns performed equally well"
+              ],
+              "correct_answer": 1,
+              "explanation": "Campaign B's higher click-through rate (4.5% vs 3.1%) and nearly double the conversions suggest its content resonated more strongly with its audience. Open rate alone doesn't tell the full story — the entire funnel matters.",
+              "hints": [
+                "Which metric is closest to actual business results — opens, clicks, or conversions?"
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_w2_14",
+              "type": "multiple_choice",
+              "question": "What's the hardest part of marketing reporting that Claude helps with most?",
+              "options": [
+                "Creating charts and graphs",
+                "Pulling numbers from analytics platforms",
+                "Writing the narrative — explaining what happened, why it matters, and what to do next",
+                "Sending the report to stakeholders"
+              ],
+              "correct_answer": 2,
+              "explanation": "The narrative section — interpreting data, explaining significance, and recommending actions — is the most time-consuming part of reporting. Claude can draft this narrative from your raw metrics in minutes.",
+              "hints": [
+                "Think about which part of report writing takes you the longest."
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_w2_15",
+              "type": "fill_in_blank",
+              "question": "When giving Claude several months of metrics, ask it to identify trends, seasonality patterns, and ____.",
+              "correct_answer": "anomalies",
+              "explanation": "Anomalies — unexpected spikes or drops — often reveal important events (a viral post, a broken link, a competitor launch). Spotting them is hard when you look at data week by week but easy when you analyze months at once.",
+              "hints": [
+                "What's the word for data points that don't fit the expected pattern?"
+              ],
+              "xp_reward": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Claude for Operations",
+      "slug": "claude-for-operations",
+      "description": "Streamline your operations workflow — build SOPs, summarize meetings, plan projects, and create documentation that teams actually follow.",
+      "difficulty": "intermediate",
+      "order_index": 3,
+      "is_free": false,
+      "icon": "Briefcase",
+      "lessons": [
+        {
+          "title": "Building SOPs That People Follow",
+          "slug": "building-sops",
+          "description": "Create standard operating procedures that are clear, actionable, and actually get used by your team.",
+          "order_index": 1,
+          "xp_reward": 10,
+          "estimated_minutes": 7,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>Building SOPs That People Follow</h3><p>Most SOPs fail because they're either too vague to be useful or so detailed nobody reads them. Claude helps you hit the sweet spot: clear enough to follow, concise enough to read.</p><h4>The SOP prompt formula</h4><pre><code>Create an SOP for [process name]. Context:\n- Who performs this: [role]\n- When it's triggered: [what kicks off this process]\n- Systems involved: [tools, platforms]\n- Current pain points: [what goes wrong today]\n\nFormat requirements:\n- Numbered steps (not paragraphs)\n- Each step should be a single action\n- Include decision points as if/then statements\n- Add \"watch out for\" callouts for common mistakes\n- Include a checklist summary at the end</code></pre><h4>Turning tribal knowledge into documentation</h4><p>The hardest SOPs to write are for processes that live in one person's head. Interview that person (or record a voice note), paste the transcript into Claude, and ask it to extract the process into a structured SOP. This turns 30 minutes of rambling into a clean document.</p><h4>Keeping SOPs current</h4><p>SOPs rot fast. Set a quarterly reminder to paste each SOP into Claude with the prompt: \"Review this SOP. Flag any steps that might be outdated, redundant, or unclear. Suggest improvements based on common operational best practices.\"</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w3_01"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w3_02"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w3_03"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_w3_01",
+              "type": "multiple_choice",
+              "question": "What is the main reason most SOPs fail?",
+              "options": [
+                "They're written by the wrong department",
+                "They use the wrong file format",
+                "They're not stored in the right folder",
+                "They're either too vague to follow or so detailed nobody reads them"
+              ],
+              "correct_answer": 3,
+              "explanation": "SOPs fail at the extremes: too vague provides no guidance, too detailed discourages reading. The goal is clear, concise, and actionable — single-action steps with decision points called out.",
+              "hints": [
+                "Think about the last SOP you actually followed vs. one you ignored."
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_w3_02",
+              "type": "multiple_choice",
+              "question": "How can Claude help document tribal knowledge — processes that exist only in one person's head?",
+              "options": [
+                "Claude can read the person's mind directly",
+                "Claude can observe the person working and document automatically",
+                "Record the person explaining the process, transcribe it, and have Claude structure it into an SOP",
+                "Ask Claude to guess what the process probably is"
+              ],
+              "correct_answer": 2,
+              "explanation": "Recording a knowledge holder's explanation and having Claude structure the transcript into an SOP is the fastest way to document tribal knowledge. It turns rambling expertise into a clean, usable document.",
+              "hints": [
+                "Think about the fastest way to get information out of an expert's head."
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_w3_03",
+              "type": "fill_in_blank",
+              "question": "SOPs should be reviewed on a ____ basis by pasting them into Claude to flag outdated, redundant, or unclear steps.",
+              "correct_answer": "quarterly",
+              "explanation": "Quarterly reviews prevent SOP rot — the gradual drift between documented processes and actual practice. Claude makes these reviews fast enough to actually do consistently.",
+              "hints": [
+                "Think about a reasonable cadence that balances freshness with effort."
+              ],
+              "xp_reward": 5
+            }
+          ]
+        },
+        {
+          "title": "Meeting Notes and Action Items",
+          "slug": "meeting-notes-action-items",
+          "description": "Transform raw meeting transcripts into structured summaries with clear owners, deadlines, and decisions.",
+          "order_index": 2,
+          "xp_reward": 10,
+          "estimated_minutes": 6,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>Meeting Notes and Action Items</h3><p>The average professional spends 23 hours per week in meetings. Most of those meetings produce vague notes that nobody acts on. Claude changes the output quality of every meeting you attend.</p><h4>The structured meeting summary</h4><pre><code>Summarize this meeting transcript. Produce:\n1. DECISIONS MADE (what was agreed, by whom)\n2. ACTION ITEMS (task, owner, deadline — be specific)\n3. OPEN QUESTIONS (unresolved items that need follow-up)\n4. KEY DISCUSSION POINTS (2-3 sentence summary of each major topic)\n5. PARKING LOT (topics raised but deferred)\n\nFormat action items as: \"[Owner] will [specific action] by [date]\"</code></pre><h4>From recording to action</h4><p>Most meeting recording tools (Otter, Fireflies, Zoom) produce transcripts. Paste those transcripts into Claude for structured summaries. The key is being specific about what you want extracted — decisions, owners, and deadlines are more valuable than a general summary.</p><h4>Follow-up emails</h4><p>After summarizing, ask Claude to draft a follow-up email based on the summary. This turns your meeting notes into an accountability tool: \"Hi team, here's what we agreed on and who's doing what by when.\"</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w3_04"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w3_05"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w3_06"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_w3_04",
+              "type": "multiple_choice",
+              "question": "What format should action items from meetings follow?",
+              "options": [
+                "A paragraph explaining the context behind each task",
+                "\"[Owner] will [specific action] by [date]\"",
+                "A general description of what needs to happen",
+                "Just a list of topics that were discussed"
+              ],
+              "correct_answer": 1,
+              "explanation": "Action items with a specific owner, concrete action, and deadline create accountability. Vague action items ('we should look into X') almost never get done.",
+              "hints": [
+                "What three pieces of information turn a vague idea into a trackable task?"
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_w3_05",
+              "type": "multiple_choice",
+              "question": "What should you do after Claude summarizes your meeting notes?",
+              "options": [
+                "Delete the original transcript",
+                "Wait for the next meeting to review them",
+                "Ask Claude to draft a follow-up email with decisions and action items so it becomes an accountability tool",
+                "File the summary and forget about it"
+              ],
+              "correct_answer": 2,
+              "explanation": "Turning meeting summaries into follow-up emails creates accountability. When everyone gets an email saying 'here's what we agreed and who's doing what by when,' tasks are far more likely to get done.",
+              "hints": [
+                "How do you make sure meeting agreements actually turn into completed work?"
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_w3_06",
+              "type": "fill_in_blank",
+              "question": "In a structured meeting summary, topics raised but deferred to a future discussion belong in the ____ section.",
+              "correct_answer": "parking lot",
+              "explanation": "The 'parking lot' captures important topics that came up but couldn't be addressed in the current meeting. This ensures they don't get lost while keeping the meeting focused.",
+              "hints": [
+                "Where do you put something temporarily when you're not ready to deal with it?"
+              ],
+              "xp_reward": 5
+            }
+          ]
+        },
+        {
+          "title": "Project Planning with Claude",
+          "slug": "project-planning",
+          "description": "Break down projects into phases, estimate timelines, identify risks, and create RACI matrices — all through conversation.",
+          "order_index": 3,
+          "xp_reward": 10,
+          "estimated_minutes": 7,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>Project Planning with Claude</h3><p>Project planning is where many initiatives die. The gap between \"great idea\" and \"structured plan with milestones\" stops more projects than lack of budget. Claude bridges that gap in a single conversation.</p><h4>Work breakdown structure</h4><pre><code>Break down this project into a work breakdown structure:\n\nProject: [name and one-paragraph description]\nTimeline: [target completion date]\nTeam: [roles available]\nConstraints: [budget, dependencies, known risks]\n\nFor each phase, provide:\n- Tasks and sub-tasks\n- Estimated duration for each\n- Dependencies (what must finish before this starts)\n- Who owns it (from the roles listed above)\n- Deliverables (what \"done\" looks like)</code></pre><h4>RACI matrices</h4><p>Confused accountability kills projects. Ask Claude to create a RACI matrix (Responsible, Accountable, Consulted, Informed) for your project. Provide the tasks and team members — Claude will draft the matrix and flag any tasks missing an accountable owner.</p><h4>Risk assessment</h4><p>Ask Claude to identify risks for your project type. It draws on patterns from thousands of similar projects to flag risks you might not think of — vendor delays, scope creep triggers, approval bottlenecks, and resource conflicts.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w3_07"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w3_08"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w3_09"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_w3_07",
+              "type": "multiple_choice",
+              "question": "What does RACI stand for?",
+              "options": [
+                "Research, Analyze, Create, Iterate",
+                "Review, Approve, Complete, Implement",
+                "Risk, Assessment, Control, Improvement",
+                "Responsible, Accountable, Consulted, Informed"
+              ],
+              "correct_answer": 3,
+              "explanation": "RACI defines four levels of involvement: Responsible (does the work), Accountable (owns the outcome), Consulted (provides input), and Informed (needs to know). Every task should have exactly one Accountable person.",
+              "hints": [
+                "Think about the different ways someone can be involved in a task."
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_w3_08",
+              "type": "multiple_choice",
+              "question": "When asking Claude for a work breakdown structure, what should you include for each phase?",
+              "options": [
+                "Only the budget for each phase",
+                "Just the task names",
+                "Tasks, estimated duration, dependencies, owners, and what 'done' looks like",
+                "A paragraph describing why each phase matters"
+              ],
+              "correct_answer": 2,
+              "explanation": "A useful WBS includes tasks with durations, dependencies between them, assigned owners, and clear deliverables. This gives you enough detail to actually manage the project, not just describe it.",
+              "hints": [
+                "What would a project manager need to create a Gantt chart?"
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_w3_09",
+              "type": "fill_in_blank",
+              "question": "Claude can flag project risks you might miss, such as vendor delays, approval bottlenecks, resource conflicts, and scope ____.",
+              "correct_answer": "creep",
+              "explanation": "Scope creep — the gradual expansion of project requirements beyond the original plan — is one of the most common and dangerous risks. Claude can identify the triggers for scope creep specific to your project type.",
+              "hints": [
+                "What's the term for when a project slowly grows beyond its original boundaries?"
+              ],
+              "xp_reward": 5
+            }
+          ]
+        },
+        {
+          "title": "Internal Communications",
+          "slug": "internal-communications",
+          "description": "Draft company announcements, policy updates, change communications, and all-hands presentations that land with clarity.",
+          "order_index": 4,
+          "xp_reward": 10,
+          "estimated_minutes": 6,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>Internal Communications</h3><p>Bad internal comms create confusion, anxiety, and rumor cycles. Good internal comms are clear, honest, and structured. Claude helps you draft communications that land correctly the first time.</p><h4>Change announcements</h4><p>Announcing organizational changes (reorgs, policy changes, tool migrations) is high-stakes writing. Use this structure:</p><pre><code>Draft an internal announcement about [change]. Include:\n1. What is changing (clear, factual)\n2. Why it's changing (the business reason, not corporate-speak)\n3. What it means for employees (specific impact)\n4. What stays the same (reduce anxiety by naming what's not changing)\n5. Timeline (when this takes effect)\n6. Where to go with questions (specific person or channel)\n\nTone: direct and empathetic. Don't sugarcoat, but acknowledge this affects people.</code></pre><h4>Policy updates</h4><p>When policies change, employees need to know what's different and what they need to do. Ask Claude to draft a policy update that leads with the change, explains the \"why,\" and includes specific actions required.</p><h4>All-hands talking points</h4><p>Preparing for an all-hands? Give Claude the topics you need to cover and ask for talking points, anticipated questions, and suggested answers. This turns prep time from 2 hours into 20 minutes.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w3_10"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w3_11"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w3_12"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_w3_10",
+              "type": "multiple_choice",
+              "question": "When announcing organizational changes, why should you include 'what stays the same'?",
+              "options": [
+                "To reduce anxiety by showing that not everything is changing",
+                "To distract from the actual changes",
+                "Because it's a legal requirement",
+                "To make the announcement longer"
+              ],
+              "correct_answer": 0,
+              "explanation": "During change, people's anxiety focuses on uncertainty. Naming what's NOT changing provides stability anchors and prevents the rumor mill from assuming everything is up in the air.",
+              "hints": [
+                "Think about how you feel when you hear 'big changes are coming' without details."
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_w3_11",
+              "type": "multiple_choice",
+              "question": "What should a good change announcement include at the end?",
+              "options": [
+                "A reminder about company values",
+                "An announcement about the next change coming",
+                "A motivational quote",
+                "A specific person or channel where employees can go with questions"
+              ],
+              "correct_answer": 3,
+              "explanation": "Ending with a clear path for questions (specific person, Slack channel, or email) prevents confusion from festering. People need to know where to go when they have concerns.",
+              "hints": [
+                "What do people need most after hearing about a change?"
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_w3_12",
+              "type": "fill_in_blank",
+              "question": "When preparing for an all-hands, Claude can generate talking points, anticipated questions, and suggested ____.",
+              "correct_answer": "answers",
+              "explanation": "Having pre-drafted answers to likely questions means you won't be caught off-guard during Q&A. Claude can anticipate the tough questions employees will ask based on the topics you're covering.",
+              "hints": [
+                "What pairs with 'anticipated questions' to complete your prep?"
+              ],
+              "xp_reward": 5
+            }
+          ]
+        },
+        {
+          "title": "Vendor Evaluation and Decision Memos",
+          "slug": "vendor-evaluation",
+          "description": "Structure vendor comparisons, write decision memos, and build evaluation frameworks for any procurement decision.",
+          "order_index": 5,
+          "xp_reward": 10,
+          "estimated_minutes": 6,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>Vendor Evaluation and Decision Memos</h3><p>Operations teams constantly evaluate tools, vendors, and service providers. The evaluation is usually in someone's head or scattered across email threads. Claude helps you build structured frameworks that lead to defensible decisions.</p><h4>Evaluation framework</h4><pre><code>Create a vendor evaluation matrix for [category, e.g., \"project management software\"]. We need to evaluate [Vendor A, Vendor B, Vendor C].\n\nCriteria to evaluate (weight each by importance):\n- Functionality fit (must-have features: [list])\n- Cost (budget: $X/year)\n- Implementation timeline\n- Integration with our existing tools: [list tools]\n- Support and reliability\n- Security and compliance requirements: [list any]\n\nScore each vendor 1-5 on each criterion and calculate a weighted total.</code></pre><h4>Decision memos</h4><p>When you need leadership approval, a well-structured decision memo beats a 30-minute meeting. Ask Claude to draft a one-page memo with:</p><ul><li>The decision needed (one sentence)</li><li>Background (2-3 sentences)</li><li>Options evaluated with pros/cons</li><li>Recommendation and rationale</li><li>Cost and timeline</li><li>Risks of action and inaction</li></ul>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w3_13"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w3_14"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w3_15"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_w3_13",
+              "type": "multiple_choice",
+              "question": "Why should vendor evaluation criteria be weighted by importance?",
+              "options": [
+                "So that must-have features count more than nice-to-haves in the final score",
+                "Weighting is only needed for enterprise purchases",
+                "Because all criteria are equally important",
+                "To make the spreadsheet look more professional"
+              ],
+              "correct_answer": 0,
+              "explanation": "Weighting ensures that critical criteria (like security compliance or must-have features) have more influence on the final score than less important factors. Without weighting, a vendor could win on minor features while lacking essentials.",
+              "hints": [
+                "Think about what happens when a 'nice-to-have' feature ties with a 'must-have' in an unweighted score."
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_w3_14",
+              "type": "multiple_choice",
+              "question": "What should a decision memo include that most informal recommendations miss?",
+              "options": [
+                "Personal opinions without supporting data",
+                "Risks of both taking action AND doing nothing",
+                "A list of everyone who was consulted",
+                "A detailed history of the company"
+              ],
+              "correct_answer": 1,
+              "explanation": "Including risks of inaction is powerful because it frames the decision as a choice between two sets of risks, not between change and safety. Doing nothing always has its own risks.",
+              "hints": [
+                "What does leadership need to see to understand the cost of not deciding?"
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_w3_15",
+              "type": "fill_in_blank",
+              "question": "A well-structured decision memo beats a 30-minute ____ when you need leadership approval.",
+              "correct_answer": "meeting",
+              "explanation": "Written decision memos respect leadership's time, provide a permanent record, and allow asynchronous review. They also force the recommender to think through the decision more rigorously.",
+              "hints": [
+                "What's the alternative to a written memo when seeking approval?"
+              ],
+              "xp_reward": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Claude for Data Analysis",
+      "slug": "claude-for-data-analysis",
+      "description": "Turn raw data into insights — analyze spreadsheets, build reports, spot trends, and make data-driven recommendations without writing code.",
+      "difficulty": "intermediate",
+      "order_index": 4,
+      "is_free": false,
+      "icon": "Briefcase",
+      "lessons": [
+        {
+          "title": "Analyzing Spreadsheet Data",
+          "slug": "analyzing-spreadsheet-data",
+          "description": "Paste CSV or tabular data into Claude for quick analysis, pattern detection, and summary statistics.",
+          "order_index": 1,
+          "xp_reward": 10,
+          "estimated_minutes": 7,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>Analyzing Spreadsheet Data</h3><p>You have a spreadsheet with 500 rows and 12 columns. Your boss wants insights by end of day. Normally you'd spend hours building pivot tables and trying to figure out what the data is telling you. Claude can give you a first pass in minutes.</p><h4>How to get data into Claude</h4><p>The simplest approach: copy your data from Excel or Google Sheets and paste it directly. Claude handles tabular data well. For larger datasets, export as CSV and paste that. Claude can work with up to several thousand rows in a single conversation.</p><h4>First-pass analysis prompt</h4><pre><code>Analyze this data and provide:\n1. Summary statistics for each numerical column (min, max, mean, median)\n2. Distribution patterns (are values clustered or spread out?)\n3. Notable outliers or anomalies\n4. Correlations between columns (what moves together?)\n5. Your top 3 observations — things that would matter to a business leader\n\n[paste your data]</code></pre><h4>Asking follow-up questions</h4><p>After the initial analysis, ask targeted questions: \"Which customer segment has the highest average order value?\" or \"Is there a correlation between deal size and sales cycle length?\" Claude keeps the data in context, so you can explore without re-pasting.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w4_01"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w4_02"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w4_03"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_w4_01",
+              "type": "multiple_choice",
+              "question": "What is the simplest way to get spreadsheet data into Claude for analysis?",
+              "options": [
+                "Copy the data from Excel/Google Sheets and paste it directly",
+                "Manually retype each value",
+                "Email the file to Anthropic",
+                "Take a screenshot of the spreadsheet"
+              ],
+              "correct_answer": 0,
+              "explanation": "Claude handles tabular data well when you copy-paste directly from spreadsheets. For larger datasets, exporting to CSV and pasting works equally well. No special formatting needed.",
+              "hints": [
+                "Think about the most straightforward way to transfer text between apps."
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_w4_02",
+              "type": "multiple_choice",
+              "question": "After Claude analyzes your data, what should you do next?",
+              "options": [
+                "Re-paste the data for a second opinion",
+                "Ask targeted follow-up questions to explore specific insights deeper",
+                "Close the conversation and start a new one",
+                "Accept the analysis as final and present it to your boss"
+              ],
+              "correct_answer": 1,
+              "explanation": "Claude keeps the data in context throughout the conversation, so you can ask follow-up questions without re-pasting. This lets you explore specific angles — segments, correlations, time periods — interactively.",
+              "hints": [
+                "What's the advantage of a conversation over a one-time analysis?"
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_w4_03",
+              "type": "fill_in_blank",
+              "question": "When asking Claude for a first-pass analysis, include your top 3 observations framed as things that would matter to a business ____.",
+              "correct_answer": "leader",
+              "explanation": "Framing observations for a business leader forces Claude to prioritize actionable insights over statistical trivia. Your boss doesn't care about standard deviations — they care about what to do differently.",
+              "hints": [
+                "Who usually requests data analysis and needs to act on the findings?"
+              ],
+              "xp_reward": 5
+            }
+          ]
+        },
+        {
+          "title": "Building Reports and Dashboards",
+          "slug": "building-reports",
+          "description": "Structure data into executive reports, weekly dashboards, and board-ready presentations.",
+          "order_index": 2,
+          "xp_reward": 10,
+          "estimated_minutes": 7,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>Building Reports and Dashboards</h3><p>Raw data is useless to decision-makers. They need structured reports that answer \"so what?\" and \"what should we do?\" Claude helps you build the narrative layer on top of your numbers.</p><h4>Executive summary format</h4><pre><code>I have these KPIs for Q1:\n[paste your metrics]\n\nCreate an executive summary that includes:\n1. Headline: one sentence on overall performance\n2. Wins: top 3 things that went well with specific numbers\n3. Misses: areas below target with root cause hypotheses\n4. Actions: what we're doing to address the misses\n5. Outlook: what to expect in Q2 based on current trajectory</code></pre><h4>Weekly dashboard narratives</h4><p>Dashboards show what happened. Narratives explain why it matters. Ask Claude to write the commentary for each section of your dashboard — the 2-3 sentences that explain the numbers in context.</p><h4>Formatting for different audiences</h4><p>The same data needs different presentations for different audiences. Ask Claude to reformat:</p><ul><li><strong>Board level:</strong> high-level trends, strategic implications, 1-page max</li><li><strong>VP level:</strong> department performance, resource requests, risk flags</li><li><strong>Team level:</strong> tactical metrics, individual contributions, action items</li></ul>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w4_04"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w4_05"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w4_06"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_w4_04",
+              "type": "multiple_choice",
+              "question": "What makes a report useful to executives versus just a data dump?",
+              "options": [
+                "Using smaller font to fit more information",
+                "More charts and colors",
+                "A narrative that answers 'so what?' — wins, misses, root causes, actions, and outlook",
+                "Including every data point available"
+              ],
+              "correct_answer": 2,
+              "explanation": "Executives need interpretation, not just numbers. A good report tells them what went well, what didn't, why, what's being done about it, and what to expect next. This is the 'so what?' layer Claude excels at.",
+              "hints": [
+                "What questions does an executive ask when they look at a report?"
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_w4_05",
+              "type": "multiple_choice",
+              "question": "How should a board-level report differ from a team-level report?",
+              "options": [
+                "Board level should be longer since board members have more time",
+                "Board level focuses on high-level trends and strategic implications (1-page max); team level focuses on tactical metrics and action items",
+                "Team level should be more visual and board level more text",
+                "They should be identical — consistency matters"
+              ],
+              "correct_answer": 1,
+              "explanation": "Different audiences need different levels of detail. Board members need strategic context in one page. Team members need tactical metrics and specific action items. Same data, different framing.",
+              "hints": [
+                "Think about what a board member cares about vs. what a team lead needs to act on."
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_w4_06",
+              "type": "fill_in_blank",
+              "question": "Dashboards show what happened. ____ explain why it matters.",
+              "correct_answer": "Narratives",
+              "explanation": "Dashboard narratives — the 2-3 sentences of commentary alongside each metric — transform numbers into context. They explain whether a change is good or bad, expected or surprising, and what it means.",
+              "hints": [
+                "What's the written component that gives meaning to charts and numbers?"
+              ],
+              "xp_reward": 5
+            }
+          ]
+        },
+        {
+          "title": "Trend Analysis and Forecasting",
+          "slug": "trend-analysis-forecasting",
+          "description": "Identify patterns in historical data and build simple forecasts for planning and budgeting.",
+          "order_index": 3,
+          "xp_reward": 10,
+          "estimated_minutes": 7,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>Trend Analysis and Forecasting</h3><p>Spotting trends in data is hard when you're looking at it day by day. Claude can analyze months or years of data at once to identify patterns, seasonal effects, and trajectory changes.</p><h4>Trend identification</h4><pre><code>Here is our monthly revenue data for the past 24 months:\n[paste data]\n\nAnalyze this data for:\n1. Overall trend (growing, declining, flat — and at what rate)\n2. Seasonal patterns (do certain months consistently over/underperform?)\n3. Inflection points (when did the trend change direction?)\n4. Anomalies (months that broke the pattern and possible explanations)\n5. Based on these patterns, project the next 6 months</code></pre><h4>Simple forecasting</h4><p>Claude can build straightforward projections based on historical patterns. It won't replace a statistical model, but for planning purposes (headcount, budget, inventory), a Claude-generated forecast based on trends is often good enough — and it takes minutes instead of days.</p><h4>Scenario planning</h4><p>Ask Claude to build three scenarios: optimistic (best reasonable case), baseline (current trajectory continues), and conservative (if headwinds increase). Provide the assumptions for each scenario and let Claude project the numbers.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w4_07"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w4_08"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w4_09"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_w4_07",
+              "type": "multiple_choice",
+              "question": "What are the three scenarios commonly used in scenario planning?",
+              "options": [
+                "Past, present, and future",
+                "Revenue, cost, and profit",
+                "Short-term, medium-term, and long-term",
+                "Optimistic, baseline, and conservative"
+              ],
+              "correct_answer": 3,
+              "explanation": "Three-scenario planning covers the optimistic (best reasonable case), baseline (current trajectory), and conservative (headwinds increase) outcomes. This gives decision-makers a range rather than a single number.",
+              "hints": [
+                "Think about the range of outcomes a CFO would want to plan for."
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_w4_08",
+              "type": "multiple_choice",
+              "question": "When is a Claude-generated forecast 'good enough' vs. when should you use a proper statistical model?",
+              "options": [
+                "Never use Claude for forecasting",
+                "For planning purposes like headcount and budgets, Claude's trend-based projections are often sufficient; for financial reporting or regulated forecasts, use statistical models",
+                "Statistical models are outdated — always use Claude",
+                "Claude forecasts are always better than statistical models"
+              ],
+              "correct_answer": 1,
+              "explanation": "Claude's forecasts work well for internal planning (headcount, budgets, inventory) where a reasonable estimate is enough. For regulated financial forecasts, investor communications, or high-precision needs, proper statistical models are necessary.",
+              "hints": [
+                "Consider the consequences if the forecast is off by 10%."
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_w4_09",
+              "type": "fill_in_blank",
+              "question": "An ____ point in a data trend is when the direction of the trend changes.",
+              "correct_answer": "inflection",
+              "explanation": "An inflection point is where growth turns to decline (or vice versa). Identifying these moments helps you understand what caused the change — a new competitor, a product launch, a policy shift — and whether it's likely to continue.",
+              "hints": [
+                "What's the mathematical term for when a curve changes direction?"
+              ],
+              "xp_reward": 5
+            }
+          ]
+        },
+        {
+          "title": "Survey and Feedback Analysis",
+          "slug": "survey-feedback-analysis",
+          "description": "Analyze open-ended survey responses, customer feedback, and NPS comments to extract themes and sentiment.",
+          "order_index": 4,
+          "xp_reward": 10,
+          "estimated_minutes": 7,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>Survey and Feedback Analysis</h3><p>Quantitative survey data is easy — calculate averages and percentages. Open-ended responses are where the real insights live, but analyzing 500 free-text comments manually takes days. Claude does it in minutes.</p><h4>Theme extraction</h4><pre><code>Here are 200 open-ended responses from our employee engagement survey. The question was: \"What would improve your day-to-day work experience?\"\n\n[paste responses]\n\nAnalyze these responses and provide:\n1. Top 5 themes with the approximate percentage of responses mentioning each\n2. Representative quotes for each theme (pick the most articulate ones)\n3. Sentiment breakdown (positive, negative, neutral)\n4. Surprising findings — themes that appear frequently but might not be expected\n5. Recommended actions for each theme, ordered by potential impact</code></pre><h4>NPS comment analysis</h4><p>NPS scores tell you the number. The comments tell you why. Paste your NPS comments and ask Claude to categorize them by theme, separating promoter themes (what people love) from detractor themes (what drives them away).</p><h4>Customer feedback clustering</h4><p>For product feedback, ask Claude to group responses by feature area, urgency, and whether they're requests for new features vs. complaints about existing ones. This directly feeds your product roadmap prioritization.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w4_10"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w4_11"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w4_12"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_w4_10",
+              "type": "multiple_choice",
+              "question": "Why are open-ended survey responses more valuable than multiple-choice answers?",
+              "options": [
+                "Multiple-choice answers are never useful",
+                "They're easier to analyze",
+                "They reveal the 'why' behind the numbers — themes, language, and insights you didn't think to ask about",
+                "They're always more accurate"
+              ],
+              "correct_answer": 2,
+              "explanation": "Multiple-choice answers tell you 'what' — open-ended responses tell you 'why.' They surface themes you didn't think to ask about, use language that reveals emotional intensity, and provide the context behind the scores.",
+              "hints": [
+                "What can a written comment tell you that a 1-5 scale can't?"
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_w4_11",
+              "type": "multiple_choice",
+              "question": "When analyzing NPS comments, how should Claude categorize them?",
+              "options": [
+                "By the date they were submitted",
+                "By separating promoter themes (what people love) from detractor themes (what drives people away)",
+                "By length of the comment",
+                "Alphabetically by the first word"
+              ],
+              "correct_answer": 1,
+              "explanation": "Separating promoter and detractor themes tells you two critical things: what to double down on (what fans love) and what to fix (what detractors complain about). This directly informs product and service decisions.",
+              "hints": [
+                "What's the whole point of NPS — and what do promoters and detractors represent?"
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_w4_12",
+              "type": "fill_in_blank",
+              "question": "For product feedback analysis, Claude should group responses by feature area, urgency, and whether they are requests for ____ features vs. complaints about existing ones.",
+              "correct_answer": "new",
+              "explanation": "Distinguishing new feature requests from complaints about existing features is critical for roadmap planning. Feature requests indicate growth opportunities; complaints indicate reliability issues that need fixing first.",
+              "hints": [
+                "What's the opposite of 'existing' when talking about product features?"
+              ],
+              "xp_reward": 5
+            }
+          ]
+        },
+        {
+          "title": "Data Cleaning and Preparation",
+          "slug": "data-cleaning-preparation",
+          "description": "Use Claude to clean messy data — standardize formats, find duplicates, fix inconsistencies, and prepare data for analysis.",
+          "order_index": 5,
+          "xp_reward": 10,
+          "estimated_minutes": 6,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>Data Cleaning and Preparation</h3><p>Data scientists say 80% of their time goes to cleaning data. For non-technical professionals working with spreadsheets, the proportion is even higher. Claude can handle many common data cleaning tasks through conversation.</p><h4>Standardizing formats</h4><pre><code>Clean this data by:\n1. Standardizing date formats to YYYY-MM-DD\n2. Normalizing company names (e.g., \"IBM\", \"I.B.M.\", \"International Business Machines\" should all be \"IBM\")\n3. Fixing phone number formats to (XXX) XXX-XXXX\n4. Removing duplicate rows (keep the most recent entry)\n5. Flagging rows with missing critical fields\n\n[paste your data]</code></pre><h4>Finding inconsistencies</h4><p>Paste your dataset and ask Claude to identify inconsistencies: misspelled categories, values that seem out of range, entries that contradict each other. Claude is particularly good at catching the subtle inconsistencies that spreadsheet formulas miss.</p><h4>Generating formulas</h4><p>If you need to do the cleaning in Excel or Google Sheets, describe what you want and ask Claude to write the formulas. For example: \"Write a Google Sheets formula that extracts the domain from an email address in column B and puts it in column C.\"</p><h4>Merge preparation</h4><p>Before merging datasets from different sources, paste samples from each and ask Claude to identify the join key, flag format mismatches, and suggest a merge strategy.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w4_13"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w4_14"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w4_15"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_w4_13",
+              "type": "multiple_choice",
+              "question": "What percentage of data work typically goes to cleaning and preparation?",
+              "options": [
+                "About 10%",
+                "About 50%",
+                "About 80%",
+                "About 30%"
+              ],
+              "correct_answer": 2,
+              "explanation": "Data professionals consistently report that roughly 80% of their time goes to data cleaning and preparation. This is the unglamorous but essential work that makes accurate analysis possible.",
+              "hints": [
+                "It's a surprisingly high number that most people underestimate."
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_w4_14",
+              "type": "multiple_choice",
+              "question": "Before merging two datasets from different sources, what should you ask Claude to identify?",
+              "options": [
+                "The join key, format mismatches between the datasets, and a merge strategy",
+                "Which dataset is more interesting",
+                "Which dataset to delete",
+                "How many rows each dataset has"
+              ],
+              "correct_answer": 0,
+              "explanation": "Before merging, you need to know the common field to join on (the key), whether formats match between datasets, and the right merge strategy (inner, left, full). Claude can spot these issues from sample data.",
+              "hints": [
+                "What goes wrong when you try to combine two datasets without preparation?"
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_w4_15",
+              "type": "fill_in_blank",
+              "question": "Claude is particularly good at catching subtle ____ that spreadsheet formulas miss, such as misspelled categories and out-of-range values.",
+              "correct_answer": "inconsistencies",
+              "explanation": "Claude can spot pattern-based inconsistencies that are hard to catch with formulas — like 'Marketing' vs 'Markting' or a salary of $5,000,000 in a dataset where everyone else earns $50,000-$150,000.",
+              "hints": [
+                "What's the word for data that doesn't match the expected pattern?"
+              ],
+              "xp_reward": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Claude for HR & People",
+      "slug": "claude-for-hr",
+      "description": "Streamline HR workflows — write job descriptions, prepare interview guides, draft policies, and build people analytics reports.",
+      "difficulty": "intermediate",
+      "order_index": 5,
+      "is_free": false,
+      "icon": "Briefcase",
+      "lessons": [
+        {
+          "title": "Writing Job Descriptions That Attract Talent",
+          "slug": "writing-job-descriptions",
+          "description": "Draft inclusive, compelling job descriptions that accurately represent the role and attract the right candidates.",
+          "order_index": 1,
+          "xp_reward": 10,
+          "estimated_minutes": 7,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>Writing Job Descriptions That Attract Talent</h3><p>A bad job description attracts the wrong candidates and repels the right ones. Most JDs are written by copying the last one and tweaking it. Claude helps you write JDs from scratch based on the actual role.</p><h4>The JD prompt</h4><pre><code>Write a job description for [Title] at [Company]. Context:\n- Reports to: [role]\n- Team size: [number]\n- Key responsibilities: [3-5 bullet points of what they'll actually do]\n- Must-have skills: [hard requirements only]\n- Nice-to-have skills: [genuinely optional]\n- Salary range: [range]\n- Work arrangement: [remote/hybrid/onsite]\n\nRequirements:\n- Use inclusive language (no gendered terms, no unnecessary jargon)\n- Lead with impact (what they'll accomplish, not just what they'll do)\n- Keep requirements realistic — don't ask for 10 years of experience in a 5-year-old technology\n- Include what makes this role unique or exciting</code></pre><h4>Bias check</h4><p>After drafting, ask Claude to review the JD for potentially biased language. Research shows certain words discourage specific demographic groups from applying. Claude can flag these and suggest neutral alternatives.</p><h4>Leveling check</h4><p>Paste the JD and ask: \"Based on the responsibilities and requirements listed, is this appropriately leveled as a [Senior/Mid/Junior] role? Are we asking for too much or too little for this level?\"</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w5_01"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w5_02"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w5_03"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_w5_01",
+              "type": "multiple_choice",
+              "question": "What should a job description lead with to attract strong candidates?",
+              "options": [
+                "The organizational chart showing reporting lines",
+                "A long list of required certifications",
+                "The company's founding story",
+                "Impact — what the person will accomplish, not just what they'll do"
+              ],
+              "correct_answer": 3,
+              "explanation": "Leading with impact ('You'll build the analytics platform that drives $10M in decisions') is more compelling than listing tasks ('Manage database queries'). Strong candidates are motivated by meaningful work.",
+              "hints": [
+                "Think about what makes you excited about a role vs. what makes you scroll past it."
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_w5_02",
+              "type": "multiple_choice",
+              "question": "After Claude drafts a job description, what additional review should you request?",
+              "options": [
+                "No additional review is needed",
+                "Ask Claude to check for biased language that might discourage specific groups from applying",
+                "Ask Claude to make it longer",
+                "Ask Claude to add more corporate jargon"
+              ],
+              "correct_answer": 1,
+              "explanation": "Research shows certain words and phrases discourage specific demographic groups from applying. A bias check catches terms like 'rockstar' or 'aggressive' and suggests inclusive alternatives without weakening the description.",
+              "hints": [
+                "What might prevent a qualified candidate from even applying?"
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_w5_03",
+              "type": "fill_in_blank",
+              "question": "A common mistake in job descriptions is asking for 10 years of experience in a technology that has only existed for ____ years.",
+              "correct_answer": "5",
+              "explanation": "This classic JD mistake — requiring more years of experience than a technology has existed — signals that the requirements weren't thoughtfully written. Claude can flag these unrealistic demands.",
+              "hints": [
+                "Think about the mismatch between experience requirements and technology timelines."
+              ],
+              "xp_reward": 5
+            }
+          ]
+        },
+        {
+          "title": "Interview Preparation and Scorecards",
+          "slug": "interview-prep-scorecards",
+          "description": "Build structured interview guides with competency-based questions, evaluation rubrics, and scorecards.",
+          "order_index": 2,
+          "xp_reward": 10,
+          "estimated_minutes": 7,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>Interview Preparation and Scorecards</h3><p>Unstructured interviews are barely better than a coin flip at predicting job performance. Structured interviews with consistent questions and scoring rubrics are significantly more predictive — and Claude makes them easy to build.</p><h4>Building an interview guide</h4><pre><code>Create a structured interview guide for a [Title] role. The key competencies we're evaluating are:\n1. [Competency 1, e.g., \"Technical problem-solving\"]\n2. [Competency 2, e.g., \"Cross-functional collaboration\"]\n3. [Competency 3, e.g., \"Stakeholder management\"]\n4. [Competency 4, e.g., \"Adaptability\"]\n\nFor each competency, provide:\n- 2 behavioral questions (\"Tell me about a time when...\")\n- What a strong answer looks like (specific indicators)\n- What a weak answer looks like (red flags)\n- A 1-5 scoring rubric with descriptions for each level</code></pre><h4>Debrief facilitation</h4><p>After interviews, paste the interviewers' notes into Claude and ask it to organize feedback by competency, identify areas of agreement and disagreement between interviewers, and flag potential biases in the feedback.</p><h4>Reducing bias</h4><p>Ask Claude to review your interview questions for bias. Questions that reference specific cultural experiences, assume certain educational backgrounds, or test for personality traits instead of competencies should be revised.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w5_04"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w5_05"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w5_06"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_w5_04",
+              "type": "multiple_choice",
+              "question": "Why are structured interviews with scorecards better than unstructured conversations?",
+              "options": [
+                "They're faster to conduct",
+                "They're more fun for the interviewer",
+                "They're significantly more predictive of job performance because every candidate is evaluated on the same criteria",
+                "Candidates prefer them"
+              ],
+              "correct_answer": 2,
+              "explanation": "Research consistently shows structured interviews predict job performance far better than unstructured ones. Consistent questions and scoring criteria reduce the impact of interviewer bias and gut feelings.",
+              "hints": [
+                "What makes one evaluation method more reliable than another?"
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_w5_05",
+              "type": "multiple_choice",
+              "question": "What type of interview questions are most effective for evaluating competencies?",
+              "options": [
+                "Behavioral questions ('Tell me about a time when...')",
+                "Questions about their hobbies and interests",
+                "Brainteasers and puzzle questions",
+                "Yes/no questions about their resume"
+              ],
+              "correct_answer": 0,
+              "explanation": "Behavioral questions ask candidates to describe real past experiences, which are the best predictor of future behavior. They reveal how someone actually handled situations rather than how they think they would.",
+              "hints": [
+                "Which type of question asks about what someone has actually done, not what they would theoretically do?"
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_w5_06",
+              "type": "fill_in_blank",
+              "question": "After interviews, Claude can organize feedback by competency and flag potential ____ in the interviewers' feedback.",
+              "correct_answer": "biases",
+              "explanation": "Interviewers can unconsciously favor candidates who share their background, communication style, or alma mater. Claude can spot patterns in feedback that suggest bias — like consistently rating certain demographics lower on 'culture fit.'",
+              "hints": [
+                "What might cause interviewers to evaluate candidates unfairly without realizing it?"
+              ],
+              "xp_reward": 5
+            }
+          ]
+        },
+        {
+          "title": "Policy Drafting and Updates",
+          "slug": "policy-drafting",
+          "description": "Draft company policies, update handbooks, and translate complex regulations into clear employee-facing documents.",
+          "order_index": 3,
+          "xp_reward": 10,
+          "estimated_minutes": 7,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>Policy Drafting and Updates</h3><p>HR policies need to be legally compliant AND readable by employees. Most policies fail on the second part. Claude helps you draft policies that are clear, comprehensive, and actually followed.</p><h4>New policy drafting</h4><pre><code>Draft a [policy name, e.g., \"Remote Work Policy\"] for a [company size] company in [state/country]. Include:\n- Purpose and scope (who it applies to)\n- Key provisions with specific guidelines (not vague language)\n- Employee responsibilities\n- Manager responsibilities\n- Exceptions process (how to request one)\n- Effective date and review schedule\n\nTone: clear and direct. Write for a new employee who doesn't know corporate jargon. Avoid legalese where possible while maintaining compliance.</code></pre><h4>Translating regulations</h4><p>New regulations drop and you need to update policies fast. Paste the regulation text into Claude and ask: \"Summarize the key requirements of this regulation. What changes do we need to make to our existing [policy name]? Draft the updated sections.\"</p><h4>FAQ generation</h4><p>After drafting a new policy, ask Claude to generate the 10 most likely employee questions and answers. This preempts confusion and gives managers ready-made responses for when their team asks about the new policy.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w5_07"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w5_08"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w5_09"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_w5_07",
+              "type": "multiple_choice",
+              "question": "What makes an HR policy effective for employees?",
+              "options": [
+                "Only including what's legally required",
+                "Making it as short as possible, even if details are missing",
+                "Using as much legal terminology as possible",
+                "Being clear, specific, and written in language employees understand without jargon"
+              ],
+              "correct_answer": 3,
+              "explanation": "Effective policies are both compliant and readable. They use plain language, provide specific guidelines (not vague platitudes), and are structured so employees can quickly find what applies to them.",
+              "hints": [
+                "What determines whether an employee actually reads and follows a policy?"
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_w5_08",
+              "type": "multiple_choice",
+              "question": "What should you ask Claude to generate after drafting a new policy?",
+              "options": [
+                "An FAQ with the 10 most likely employee questions and answers",
+                "Performance reviews for all employees",
+                "A legal brief defending the policy",
+                "A press release about the policy"
+              ],
+              "correct_answer": 0,
+              "explanation": "An FAQ preempts the most common questions employees will have, reducing confusion and giving managers ready-made answers. This is especially valuable during policy rollouts when questions spike.",
+              "hints": [
+                "What happens the day after a new policy is announced?"
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_w5_09",
+              "type": "fill_in_blank",
+              "question": "Every HR policy should include an ____ process so employees know how to request a deviation from the standard guidelines.",
+              "correct_answer": "exceptions",
+              "explanation": "An exceptions process prevents rigid policies from creating absurd outcomes. It gives employees a clear path to request deviations for legitimate reasons, and gives managers a framework to evaluate those requests.",
+              "hints": [
+                "What's the formal process for when someone needs a policy to bend for a good reason?"
+              ],
+              "xp_reward": 5
+            }
+          ]
+        },
+        {
+          "title": "Performance Review Support",
+          "slug": "performance-review-support",
+          "description": "Write effective performance reviews, self-assessments, and development plans with Claude's help.",
+          "order_index": 4,
+          "xp_reward": 10,
+          "estimated_minutes": 7,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>Performance Review Support</h3><p>Performance reviews take managers hours to write and often end up vague and unhelpful. Claude helps you write specific, constructive reviews that actually drive development.</p><h4>Manager reviews</h4><pre><code>Help me write a performance review for [Name], a [Title] on my team. Here are my notes:\n\nStrengths:\n- [specific example with results]\n- [specific example with results]\n\nAreas for growth:\n- [specific behavior I'd like to see change]\n- [skill gap with examples]\n\nKey accomplishments this period:\n- [project/result]\n- [project/result]\n\nWrite a review that:\n- Leads with strengths and specific impact\n- Frames development areas as growth opportunities with concrete suggestions\n- Avoids vague language (\"good communicator\" → \"presents complex data clearly to non-technical stakeholders\")\n- Ends with 2-3 goals for next period</code></pre><h4>Self-assessment assistance</h4><p>Writing your own self-assessment is hard. Give Claude your accomplishments, projects, and feedback received, and ask it to draft a self-assessment that's confident without being boastful, and honest about growth areas without being self-deprecating.</p><h4>Development plans</h4><p>Ask Claude to build a development plan with specific, measurable goals, suggested resources (courses, books, stretch assignments), and milestones for 30/60/90 days.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w5_10"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w5_11"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w5_12"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_w5_10",
+              "type": "multiple_choice",
+              "question": "What's wrong with writing 'good communicator' in a performance review?",
+              "options": [
+                "It's grammatically incorrect",
+                "You should never give positive feedback in reviews",
+                "Communication isn't important enough to mention",
+                "It's too vague — a review should specify what the person does well, like 'presents complex data clearly to non-technical stakeholders'"
+              ],
+              "correct_answer": 3,
+              "explanation": "Vague praise doesn't help the employee understand their specific strengths or know what to keep doing. 'Good communicator' could mean anything. Specific observations give actionable feedback they can build on.",
+              "hints": [
+                "If you read 'good communicator' about yourself, would you know exactly what to keep doing?"
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_w5_11",
+              "type": "multiple_choice",
+              "question": "How should a good performance review frame areas where an employee needs to improve?",
+              "options": [
+                "Avoid mentioning weaknesses entirely to keep morale high",
+                "Compare them unfavorably to their colleagues",
+                "Frame development areas as growth opportunities with concrete suggestions for improvement",
+                "List everything they did wrong with specific dates"
+              ],
+              "correct_answer": 2,
+              "explanation": "Framing development areas as growth opportunities with specific suggestions is constructive and actionable. It acknowledges the gap while providing a path forward, which is more motivating than a list of failures.",
+              "hints": [
+                "What framing makes someone want to improve rather than feel defeated?"
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_w5_12",
+              "type": "fill_in_blank",
+              "question": "A good development plan includes specific goals, suggested resources, and milestones for 30/60/____ days.",
+              "correct_answer": "90",
+              "explanation": "The 30/60/90 day framework provides short-term milestones that keep development on track. It's close enough to feel urgent but long enough to show meaningful progress on skill development.",
+              "hints": [
+                "What's the standard time framework used in onboarding and development plans?"
+              ],
+              "xp_reward": 5
+            }
+          ]
+        },
+        {
+          "title": "People Analytics and Reporting",
+          "slug": "people-analytics",
+          "description": "Analyze workforce data — attrition trends, engagement scores, diversity metrics, and compensation benchmarking.",
+          "order_index": 5,
+          "xp_reward": 10,
+          "estimated_minutes": 7,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>People Analytics and Reporting</h3><p>HR sits on a goldmine of data — headcount, attrition, engagement, compensation, tenure, demographics. Most teams barely scratch the surface because analysis takes too long. Claude changes that equation.</p><h4>Attrition analysis</h4><pre><code>Analyze this attrition data from the past 12 months:\n[paste data with: department, role level, tenure at departure, reason code, performance rating]\n\nProvide:\n1. Overall attrition rate and trend (increasing or decreasing?)\n2. Department breakdown — which teams are losing the most people?\n3. Tenure analysis — when are people most likely to leave? (90-day, 1-year, 2-year patterns)\n4. Performance correlation — are we losing high performers or low performers?\n5. Root cause hypotheses based on the patterns\n6. Recommended interventions ordered by likely impact</code></pre><h4>Engagement survey analysis</h4><p>Paste engagement survey results and ask Claude to compare scores across departments, identify the biggest gaps between importance and satisfaction, and draft talking points for managers on their team's specific results.</p><h4>Compensation analysis</h4><p>Give Claude your compensation data (anonymized) and market benchmarks. Ask it to identify roles where you're significantly above or below market, flag internal equity concerns (same role, different pay without justification), and suggest adjustment priorities.</p><h4>Privacy note</h4><p>When analyzing people data, always anonymize before pasting into Claude. Remove names, employee IDs, and any personally identifiable information. Work with aggregated data where possible.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w5_13"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w5_14"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w5_15"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_w5_13",
+              "type": "multiple_choice",
+              "question": "Before pasting employee data into Claude for analysis, what must you do?",
+              "options": [
+                "Anonymize the data by removing names, employee IDs, and personally identifiable information",
+                "Only use data from the last 30 days",
+                "Nothing — Claude is secure enough",
+                "Get each employee's permission individually"
+              ],
+              "correct_answer": 0,
+              "explanation": "Anonymizing people data before analysis protects employee privacy. Remove names, IDs, and anything that could identify individuals. Use aggregated data where possible. This is both an ethical obligation and often a legal requirement.",
+              "hints": [
+                "What's the standard practice when sharing employee data with any external tool?"
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_w5_14",
+              "type": "multiple_choice",
+              "question": "In attrition analysis, what does the tenure-at-departure pattern reveal?",
+              "options": [
+                "When employees are most likely to leave — common at 90 days, 1 year, and 2 years, each pointing to different root causes",
+                "How quickly new hires learn their jobs",
+                "The average age of departing employees",
+                "How long the company has existed"
+              ],
+              "correct_answer": 0,
+              "explanation": "Tenure patterns reveal different problems: 90-day departures suggest onboarding failures, 1-year departures suggest unmet expectations, and 2-year departures often indicate lack of growth opportunities. Each requires a different intervention.",
+              "hints": [
+                "Why might someone leave at 3 months vs. 2 years?"
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_w5_15",
+              "type": "fill_in_blank",
+              "question": "In compensation analysis, an internal ____ concern arises when employees in the same role receive significantly different pay without clear justification.",
+              "correct_answer": "equity",
+              "explanation": "Internal equity — paying people fairly relative to their peers in similar roles — is both a legal and retention issue. Unjustified pay gaps erode trust and increase attrition risk when employees compare notes.",
+              "hints": [
+                "What's the principle that everyone doing the same job should be paid fairly relative to each other?"
+              ],
+              "xp_reward": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Building AI Workflows",
+      "slug": "building-ai-workflows",
+      "description": "Go beyond single prompts — chain Claude tasks together, build reusable templates, measure ROI, and create AI-powered workflows your whole team can use.",
+      "difficulty": "intermediate",
+      "order_index": 6,
+      "is_free": false,
+      "icon": "Briefcase",
+      "lessons": [
+        {
+          "title": "Chaining Tasks for Complex Work",
+          "slug": "chaining-tasks",
+          "description": "Break complex projects into sequential Claude tasks where each step feeds the next.",
+          "order_index": 1,
+          "xp_reward": 10,
+          "estimated_minutes": 7,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>Chaining Tasks for Complex Work</h3><p>A single prompt handles a single task. But real work is multi-step: research leads to analysis, analysis leads to a report, the report needs a presentation version. Task chaining connects these steps so Claude's output from one step becomes input for the next.</p><h4>The chain concept</h4><p>Instead of one massive prompt, break your work into steps:</p><ol><li><strong>Step 1 — Research:</strong> \"Summarize these 5 articles about [topic]. Extract the key findings and data points.\"</li><li><strong>Step 2 — Analysis:</strong> \"Using the research summary above, identify the 3 most important trends and explain why they matter for our business.\"</li><li><strong>Step 3 — Report:</strong> \"Turn the analysis into a 1-page executive brief with recommendations.\"</li><li><strong>Step 4 — Presentation:</strong> \"Create 5 slide outlines from the executive brief, with speaker notes.\"</li></ol><h4>Why chaining works better than one big prompt</h4><ul><li>Each step produces better output when focused on one task</li><li>You can review and correct between steps</li><li>If one step is wrong, you only redo that step, not everything</li><li>You build a library of reusable chains for recurring work</li></ul><h4>In-conversation chaining</h4><p>The simplest form: do everything in one Claude conversation. Each response becomes context for the next prompt. This works well for chains up to 4-5 steps.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w6_01"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w6_02"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w6_03"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_w6_01",
+              "type": "multiple_choice",
+              "question": "Why does task chaining produce better results than one massive prompt?",
+              "options": [
+                "It uses fewer tokens overall",
+                "Claude works faster with shorter prompts",
+                "Claude's memory is unlimited in chained conversations",
+                "Each step is focused on one task, you can review between steps, and if one step fails you only redo that step"
+              ],
+              "correct_answer": 3,
+              "explanation": "Chaining improves quality through focus (one task at a time), control (review between steps), and efficiency (redo only the broken step). A single massive prompt forces Claude to juggle too many objectives at once.",
+              "hints": [
+                "Think about why assembly lines work better than one person doing everything."
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_w6_02",
+              "type": "multiple_choice",
+              "question": "What is the simplest form of task chaining with Claude?",
+              "options": [
+                "Opening multiple browser tabs with different Claude conversations",
+                "Doing all steps in one conversation where each response becomes context for the next prompt",
+                "Writing a Python script to automate the chain",
+                "Using Claude's API to connect multiple models"
+              ],
+              "correct_answer": 1,
+              "explanation": "In-conversation chaining is the simplest approach: ask Claude for step 1, review the output, then ask for step 2 using that output as context. No coding required — just sequential prompts in one conversation.",
+              "hints": [
+                "What's the approach that requires zero technical setup?"
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_w6_03",
+              "type": "fill_in_blank",
+              "question": "Task chaining lets you build a library of reusable ____ for recurring work.",
+              "correct_answer": "chains",
+              "explanation": "Once you build a chain that works (e.g., research → analysis → report → presentation), you can reuse it every time you need that type of output. This turns one-time efficiency into permanent time savings.",
+              "hints": [
+                "What do you call a sequence of steps you can repeat?"
+              ],
+              "xp_reward": 5
+            }
+          ]
+        },
+        {
+          "title": "Building Reusable Templates",
+          "slug": "building-reusable-templates",
+          "description": "Create prompt templates your team can use consistently for recurring tasks like reports, reviews, and communications.",
+          "order_index": 2,
+          "xp_reward": 10,
+          "estimated_minutes": 7,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>Building Reusable Templates</h3><p>Every time someone on your team writes a fresh prompt for the same recurring task, they're reinventing the wheel. Templates standardize quality and save everyone time.</p><h4>Anatomy of a good template</h4><p>A reusable template has three parts:</p><ol><li><strong>Context block:</strong> Background that rarely changes (company info, brand voice, output format)</li><li><strong>Variable block:</strong> Placeholders for the specific input ([CLIENT NAME], [QUARTER], [DATA])</li><li><strong>Quality criteria:</strong> What \"good\" looks like for this output</li></ol><h4>Example: Monthly report template</h4><pre><code>CONTEXT:\nYou are writing a monthly performance report for [COMPANY].\nOur reporting format includes: executive summary, key metrics with MoM comparison, wins, misses, and next month's priorities.\nTone: data-driven but readable. Write for a VP audience.\n\nVARIABLES:\nMonth: [MONTH]\nKey metrics: [PASTE METRICS]\nNotable events: [LIST ANY EVENTS]\n\nQUALITY CRITERIA:\n- Executive summary is 3 sentences max\n- Every claim has a number behind it\n- Misses include a root cause and action plan\n- Priorities for next month are specific and measurable</code></pre><h4>Sharing templates with your team</h4><p>Store templates in a shared document (Google Doc, Notion, wiki). Include usage instructions, example outputs, and tips for customization. The best templates are ones anyone on the team can use without training.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w6_04"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w6_05"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w6_06"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_w6_04",
+              "type": "multiple_choice",
+              "question": "What are the three parts of a good reusable prompt template?",
+              "options": [
+                "Context block, variable block, and quality criteria",
+                "Question, answer, and follow-up",
+                "Header, content, and footer",
+                "Introduction, body, and conclusion"
+              ],
+              "correct_answer": 0,
+              "explanation": "The three parts serve distinct purposes: the context block provides stable background, the variable block has placeholders for each use, and quality criteria define what 'good output' looks like. This structure ensures consistent results.",
+              "hints": [
+                "Think about what changes each time vs. what stays the same."
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_w6_05",
+              "type": "multiple_choice",
+              "question": "What should you include when sharing templates with your team?",
+              "options": [
+                "A legal disclaimer about AI usage",
+                "A recording of yourself using it",
+                "Usage instructions, example outputs, and tips for customization",
+                "Just the template text and nothing else"
+              ],
+              "correct_answer": 2,
+              "explanation": "Templates are most useful when accompanied by usage instructions (when and how to use it), example outputs (what good looks like), and customization tips. This lets anyone on the team use the template effectively without training.",
+              "hints": [
+                "What would a new team member need to use the template on their first try?"
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_w6_06",
+              "type": "fill_in_blank",
+              "question": "The context block of a template contains background that rarely changes, like company info, brand voice, and output ____.",
+              "correct_answer": "format",
+              "explanation": "The output format (report structure, slide layout, email template) is stable context that shouldn't need re-specifying each time. Including it in the context block ensures consistent formatting across all uses.",
+              "hints": [
+                "What else besides content stays consistent across uses of the same template?"
+              ],
+              "xp_reward": 5
+            }
+          ]
+        },
+        {
+          "title": "Quality Control and Verification",
+          "slug": "quality-control",
+          "description": "Build review steps into your AI workflows to catch errors, verify accuracy, and maintain quality standards.",
+          "order_index": 3,
+          "xp_reward": 10,
+          "estimated_minutes": 7,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>Quality Control and Verification</h3><p>AI speed is only valuable if the output is accurate. Building verification steps into your workflows prevents embarrassing errors and builds trust in AI-assisted work.</p><h4>The reviewer prompt</h4><p>After Claude produces output, use a separate prompt to review it:</p><pre><code>Review the following [report/email/analysis] for:\n1. Factual accuracy — are all numbers and claims correct based on the source data?\n2. Logical consistency — does the argument flow? Are there contradictions?\n3. Completeness — is anything missing that the audience would expect?\n4. Tone — does it match the intended audience and purpose?\n5. Actionability — are recommendations specific enough to act on?\n\nList any issues found and suggest specific fixes.\n\n[paste the output to review]</code></pre><h4>The \"red team\" prompt</h4><p>For high-stakes outputs (board presentations, public communications, legal documents), ask Claude to poke holes in its own work:</p><pre><code>Act as a skeptical reviewer. Your job is to find problems with this [document]. What would a hostile audience question? What data is missing? What assumptions are unsupported? Where could someone reasonably disagree?</code></pre><h4>Spot-checking</h4><p>For data-heavy outputs, verify a random sample of facts and calculations. If 3 out of 3 spot checks pass, the output is likely reliable. If any fail, review everything.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w6_07"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w6_08"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w6_09"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_w6_07",
+              "type": "multiple_choice",
+              "question": "What is a 'red team' prompt used for?",
+              "options": [
+                "Asking a different AI to review Claude's work",
+                "Asking Claude to format output in red text",
+                "Reporting errors to Anthropic",
+                "Asking Claude to find problems, question assumptions, and identify weaknesses in its own output"
+              ],
+              "correct_answer": 3,
+              "explanation": "Red teaming asks Claude to act as a skeptical reviewer, finding holes in arguments, missing data, unsupported assumptions, and points of disagreement. It's most valuable for high-stakes outputs like board presentations.",
+              "hints": [
+                "In security, what does a 'red team' do?"
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_w6_08",
+              "type": "multiple_choice",
+              "question": "What's the recommended approach for spot-checking data-heavy AI outputs?",
+              "options": [
+                "Only check the first and last items",
+                "Verify a random sample of facts and calculations — if any fail, review everything",
+                "Trust the output entirely if it looks reasonable",
+                "Spot-checking is unnecessary for AI outputs"
+              ],
+              "correct_answer": 1,
+              "explanation": "Random spot-checking is an efficient verification strategy. If sample checks all pass, the output is likely reliable. If any fail, it signals systematic issues requiring a full review.",
+              "hints": [
+                "How do quality control inspectors handle large batches?"
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_w6_09",
+              "type": "fill_in_blank",
+              "question": "For high-stakes outputs like board presentations, use a \"____\" prompt to have Claude poke holes in its own work.",
+              "correct_answer": "red team",
+              "explanation": "Red team prompts force Claude to switch from 'helper' to 'critic' mode, catching issues that the initial creation prompt missed. This is especially important for outputs where errors have significant consequences.",
+              "hints": [
+                "What's the security term for a team whose job is to find vulnerabilities?"
+              ],
+              "xp_reward": 5
+            }
+          ]
+        },
+        {
+          "title": "Measuring ROI of AI Workflows",
+          "slug": "measuring-roi",
+          "description": "Track time savings, quality improvements, and cost reductions to build the business case for AI adoption.",
+          "order_index": 4,
+          "xp_reward": 10,
+          "estimated_minutes": 7,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>Measuring ROI of AI Workflows</h3><p>\"It saves time\" isn't enough to justify AI adoption to leadership. You need numbers. Here's how to build a compelling ROI case for Claude-powered workflows.</p><h4>The time audit</h4><p>Before implementing AI workflows, measure your baseline:</p><ul><li>How long does this task take today? (track for 2 weeks)</li><li>How often is it performed? (weekly, monthly, per project)</li><li>Who performs it? (their hourly cost)</li><li>What is the quality of the current output?</li></ul><p>After implementing the AI workflow, measure the same things. The ROI formula:</p><pre><code>Time Saved = (Old Time - New Time) x Frequency x Hourly Cost\nQuality Value = Reduction in errors x Cost per error\nTotal ROI = Time Saved + Quality Value - AI Tool Cost</code></pre><h4>Building the business case</h4><p>Ask Claude to help build the case:</p><pre><code>Build a business case for AI adoption using these measurements:\n- Tasks automated: [list with time savings per task]\n- Team size: [number of people affected]\n- Current tool costs: [what we pay now]\n- Proposed AI tool cost: [Claude subscription]\n- Quality improvements: [error reduction, consistency gains]\n\nFormat as a one-page executive brief with a clear ROI number.</code></pre><h4>Beyond time savings</h4><p>Some ROI is harder to quantify but equally real: faster speed-to-market, better employee satisfaction (less tedious work), improved consistency across outputs, and the ability to do work that was previously impossible due to time constraints.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w6_10"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w6_11"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w6_12"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_w6_10",
+              "type": "multiple_choice",
+              "question": "What should you measure BEFORE implementing AI workflows to calculate ROI?",
+              "options": [
+                "The company's total revenue",
+                "How much the AI tool costs",
+                "The baseline: how long the task takes today, how often it's performed, who does it, and current quality",
+                "How many people in the company have heard of Claude"
+              ],
+              "correct_answer": 2,
+              "explanation": "Without a baseline measurement, you can't prove improvement. Track task duration, frequency, performer cost, and quality for at least 2 weeks before implementing the AI workflow.",
+              "hints": [
+                "How do you prove something got better if you don't know where it started?"
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_w6_11",
+              "type": "multiple_choice",
+              "question": "What intangible benefits of AI workflows should you include in a business case even if they're hard to quantify?",
+              "options": [
+                "Social media bragging rights",
+                "Faster speed-to-market, better employee satisfaction, improved consistency, and ability to do previously impossible work",
+                "Reduced office space needs",
+                "The fun factor of using new technology"
+              ],
+              "correct_answer": 1,
+              "explanation": "Beyond direct time savings, AI workflows deliver strategic benefits: getting to market faster, freeing employees from tedious work, consistent quality, and unlocking work that was previously impractical. These often matter more than raw time savings.",
+              "hints": [
+                "What benefits matter to a CEO beyond just saving hours?"
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_w6_12",
+              "type": "fill_in_blank",
+              "question": "Total ROI = Time Saved + Quality Value - AI Tool ____.",
+              "correct_answer": "Cost",
+              "explanation": "The ROI formula subtracts the cost of the AI tool from the combined value of time savings and quality improvements. This gives leadership a clear net number to evaluate the investment.",
+              "hints": [
+                "What do you subtract from benefits to get net return?"
+              ],
+              "xp_reward": 5
+            }
+          ]
+        },
+        {
+          "title": "Rolling Out AI to Your Team",
+          "slug": "rolling-out-ai",
+          "description": "Plan an AI adoption rollout — from pilot programs to full team adoption, handling resistance, and building internal champions.",
+          "order_index": 5,
+          "xp_reward": 10,
+          "estimated_minutes": 7,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>Rolling Out AI to Your Team</h3><p>The hardest part of AI adoption isn't the technology — it's the people. Even when Claude saves hours per week, teams resist change. Here's how to run a rollout that sticks.</p><h4>Start with a pilot</h4><p>Don't roll out to everyone at once. Pick 3-5 team members who are:</p><ul><li>Open to trying new tools (not necessarily the most technical)</li><li>Working on tasks where AI has clear, measurable impact</li><li>Willing to share their experience with the broader team</li></ul><p>Run the pilot for 2-4 weeks. Document time savings, quality improvements, and any issues.</p><h4>Address the fear</h4><p>The unspoken concern: \"Will AI take my job?\" Address this directly. AI handles the tedious parts of work (first drafts, data cleaning, formatting). Your team's judgment, relationships, and expertise become MORE valuable when they're not buried in grunt work.</p><h4>Build internal champions</h4><p>Your pilot users become your champions. Have them present their wins (with specific numbers) to the broader team. Peer recommendations are 10x more persuasive than management directives.</p><h4>Create a shared resource library</h4><p>Build a shared folder with:</p><ul><li>Approved templates for common tasks</li><li>Best practices and tips from the pilot</li><li>A FAQ addressing common concerns</li><li>Example outputs showing before/after quality</li></ul>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w6_13"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w6_14"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_w6_15"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_w6_13",
+              "type": "multiple_choice",
+              "question": "Why should you start an AI rollout with a small pilot group instead of the entire team?",
+              "options": [
+                "Because most of the team isn't smart enough to use AI",
+                "To document time savings and quality improvements, fix issues, and build internal champions who can advocate to the broader team",
+                "To see if anyone gets fired from using AI",
+                "To save money on AI subscriptions"
+              ],
+              "correct_answer": 1,
+              "explanation": "Pilots let you prove ROI with real numbers, work out issues in a controlled setting, and build advocates who can champion the tool to peers — which is far more persuasive than a top-down mandate.",
+              "hints": [
+                "How do successful products typically launch — to everyone at once, or in phases?"
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_w6_14",
+              "type": "multiple_choice",
+              "question": "How should you address team members' fear that AI will replace their jobs?",
+              "options": [
+                "Promise no one will lose their job (even if you're not sure)",
+                "Ignore it — the fear will go away on its own",
+                "Only roll out AI to people who aren't worried about it",
+                "Address it directly — AI handles tedious work while their judgment, relationships, and expertise become more valuable"
+              ],
+              "correct_answer": 3,
+              "explanation": "Addressing the fear head-on with a clear message — AI handles grunt work, freeing you for higher-value work that requires human judgment — is more effective than avoidance. People need to see how AI makes their role better, not obsolete.",
+              "hints": [
+                "What's the most effective way to handle an unspoken concern?"
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_w6_15",
+              "type": "fill_in_blank",
+              "question": "Peer recommendations from pilot users are ____ times more persuasive than management directives when rolling out new tools.",
+              "correct_answer": "10",
+              "explanation": "When a colleague says 'this tool saved me 3 hours last week on the quarterly report,' it's far more convincing than a management email saying 'please use this new AI tool.' Pilot users become your most effective evangelists.",
+              "hints": [
+                "The lesson content mentioned a specific multiplier for peer vs. management persuasion."
+              ],
+              "xp_reward": 5
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

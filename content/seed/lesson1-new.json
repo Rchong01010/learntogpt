@@ -1,0 +1,86 @@
+{
+  "title": "Meet Claude",
+  "slug": "meet-claude",
+  "description": "Claude isn't one thing — it's three. Here's what each one does and why it matters.",
+  "order_index": 1,
+  "xp_reward": 50,
+  "estimated_minutes": 7,
+  "content": {
+    "sections": [
+      {
+        "type": "text",
+        "content": "<p>You've probably used ChatGPT. Maybe you've tried Gemini or Copilot. You typed something in, got something back, and thought: <strong>they're all basically the same thing, right?</strong></p><p>Claude isn't a ChatGPT clone. It's something different — and not just in how it answers, but in how deep it can go.</p><p>Claude is actually <strong>three depths of the same intelligence:</strong></p><p><strong>Claude AI</strong> — a browser conversation. Your thinking partner.</p><p><strong>Co-Work</strong> — a desktop app. Works with your actual files.</p><p><strong>Claude Code</strong> — a terminal tool. Builds things from scratch.</p><p>Same brain. Three different access points. Think of it like water: a glass, a pool, and an ocean. Same substance — completely different experience depending on how you interact with it.</p>"
+      },
+      {
+        "type": "exercise",
+        "exercise_id": "ex_wc_01a"
+      },
+      {
+        "type": "text",
+        "content": "<p>Let's make those three tiers concrete.</p><p><strong>Claude AI</strong> is the Claude most people know. You open it in your browser and have a conversation. Plan a date night with dietary restrictions and a budget. Brainstorm 20 names for your startup. Analyze a 30-page report someone emailed you. Ask it to think through a hard decision with you. It's fast, it's smart, and for most people, this is all they've ever used.</p><p><strong>Co-Work</strong> is Claude on your desktop. It can see and work with your actual files — no copy-pasting required. Sort your messy Downloads folder into organized categories. Edit a spreadsheet of 500 customer records. Review a contract sitting on your desktop without uploading it anywhere. Claude works alongside you, on your actual computer, touching your actual files.</p><p><strong>Claude Code</strong> is Claude in your terminal with full access to your development environment. Build a portfolio website from scratch. Create animated data visualizations. Automate a workflow that saves you 2 hours every week. Ship a full application. And yes — non-developers are using it too.</p><p>Here's the contrast that matters: <strong>ChatGPT lives in a browser tab. Claude lives in your browser, on your desktop, AND in your terminal.</strong> That's not a small difference — it's a fundamentally different relationship with AI.</p>"
+      },
+      {
+        "type": "exercise",
+        "exercise_id": "ex_wc_01b"
+      },
+      {
+        "type": "text",
+        "content": "<p>You might be wondering: if Claude has three tiers, why not just use ChatGPT for the browser stuff and skip the rest?</p><p>Fair question. Here's the honest answer.</p><p>ChatGPT tries to be everything — image generation, web browsing, plugins, app store. Claude takes a different approach: it goes deep on <strong>thinking, honesty, and following complex instructions.</strong> It won't generate images. But when you need to actually think through a hard problem, write something nuanced, or work through a 50-page document — that's where Claude is in a different league.</p><p>Most people only ever use the first level — Claude AI in the browser. And honestly, that alone is more powerful than most people realize. <strong>This course will show you how to get the most out of it.</strong> By the end, you'll understand what makes Claude different and how to use it for real work — not party tricks, not demos, real output you'd actually use. Then, when you're ready to go deeper, we'll show you what Co-Work and Claude Code can do.</p>"
+      },
+      {
+        "type": "exercise",
+        "exercise_id": "ex_wc_01c"
+      },
+      {
+        "type": "summary",
+        "content": "<p>Claude isn't one thing — it's three depths of the same intelligence. Claude AI for thinking and conversation. Co-Work for working with your files. Claude Code for building from scratch. This course focuses on the first level — which is already more powerful than most people realize. Next up: what actually makes Claude different from every other AI out there.</p>"
+      }
+    ]
+  },
+  "exercises": [
+    {
+      "id": "ex_wc_01a",
+      "order_index": 1,
+      "type": "multiple_choice",
+      "prompt": "What's the relationship between Claude AI, Co-Work, and Claude Code?",
+      "options": [
+        "Three completely different AI models made by different teams",
+        "Three subscription tiers — you pay more for better answers",
+        "The same intelligence accessed at three different depths — browser, desktop, and terminal",
+        "Three names for the same product — they all do the same thing"
+      ],
+      "correct_answer": "2",
+      "explanation": "Claude AI, Co-Work, and Claude Code are the same brain accessed at three different depths. The browser for conversation, the desktop for working with your files, and the terminal for building things from scratch. The intelligence is identical — what changes is how much access it has to your world. Knowing this changes what you think is possible.",
+      "hints": [
+        "Think about the water analogy — glass, pool, ocean. Same water, different experience."
+      ],
+      "xp_reward": 5
+    },
+    {
+      "id": "ex_wc_01b",
+      "order_index": 2,
+      "type": "scenario_walkthrough",
+      "prompt": "Pick the right Claude tier for three different tasks. Each one needs Claude, but not the same Claude.",
+      "options": null,
+      "correct_answer": "{\"title\": \"Pick the Right Tier\", \"steps\": [{\"type\": \"context\", \"text\": \"You have three tasks today. Each one needs Claude, but not the same Claude. Let's match each task to the right tier.\"}, {\"type\": \"choice\", \"claude_response\": \"Task 1: You want to brainstorm 10 gift ideas for your partner's birthday. No files involved, just creative thinking.\", \"question\": \"Which Claude tier is best for this task?\", \"options\": [\"Claude AI — browser conversation\", \"Co-Work — desktop app\", \"Claude Code — terminal\", \"Any tier works the same\"], \"correct\": 0, \"feedback\": \"This is pure thinking — no files to touch, nothing to build. You just need a creative conversation partner. Claude AI in the browser is exactly the right tool. You don't need file access or a terminal for brainstorming.\"}, {\"type\": \"choice\", \"claude_response\": \"Task 2: You have 6 months of receipt PDFs scattered across your desktop that need to be sorted into folders by month and category.\", \"question\": \"Which Claude tier is best for this task?\", \"options\": [\"Claude AI — browser conversation\", \"Co-Work — desktop app\", \"Claude Code — terminal\", \"Just do it manually\"], \"correct\": 1, \"feedback\": \"This task lives in your files. You need Claude to see your desktop, read the PDFs, and move them into organized folders. That's exactly what Co-Work does — it works directly with your actual files without you needing to upload or copy-paste anything.\"}, {\"type\": \"choice\", \"claude_response\": \"Task 3: You want to build an interactive budget tracker that your whole team can use.\", \"question\": \"Which Claude tier is best for this task?\", \"options\": [\"Claude AI — browser conversation\", \"Co-Work — desktop app\", \"Claude Code — terminal\", \"You need to hire a developer\"], \"correct\": 2, \"feedback\": \"This isn't a conversation or a file task — it's a build task. You need something created from scratch: a working application with a database, a user interface, the whole thing. Claude Code has full access to your development environment and can ship real software. And no, you don't need to hire a developer for this.\"}]}",
+      "explanation": "The key is matching where the task lives to the right tier. Thinking and brainstorming live in conversation (Claude AI). Tasks involving your existing files live on your desktop (Co-Work). Things that need to be built from scratch live in the terminal (Claude Code).",
+      "hints": [
+        "Ask yourself: does this task live in my head, in my files, or does it need to be built?"
+      ],
+      "xp_reward": 15
+    },
+    {
+      "id": "ex_wc_01c",
+      "order_index": 3,
+      "type": "speed_prompt",
+      "prompt": "Your coworker just Slacked you: 'What even is Claude? Is it just another ChatGPT?' Write a quick response explaining the three tiers with one real example for each.",
+      "options": null,
+      "correct_answer": "{\"time_limit_seconds\": 45, \"scenario\": \"Your coworker just Slacked you: 'What even is Claude? Is it just another ChatGPT?' Write a quick response that explains the three tiers with one real example for each.\", \"scoring_criteria\": [{\"keyword_group\": [\"Claude AI\", \"browser\", \"conversation\", \"chat\", \"thinking\"], \"label\": \"Mentions Claude AI with an example\", \"points\": 2}, {\"keyword_group\": [\"Co-Work\", \"desktop\", \"files\", \"file\", \"computer\", \"organize\", \"spreadsheet\", \"folder\"], \"label\": \"Mentions Co-Work or desktop tier with an example\", \"points\": 2}, {\"keyword_group\": [\"Claude Code\", \"terminal\", \"build\", \"code\", \"website\", \"app\", \"automate\"], \"label\": \"Mentions Claude Code or terminal tier with an example\", \"points\": 2}, {\"keyword_group\": [\"same brain\", \"same intelligence\", \"same AI\", \"three depths\", \"three levels\", \"different depths\", \"not just\", \"more than\"], \"label\": \"Conveys same-brain or different-depths concept\", \"points\": 1}], \"max_points\": 7, \"pass_threshold\": 4, \"ideal_prompt\": \"It's not just a chatbot. Claude is actually three things: (1) Claude AI — a browser conversation for thinking stuff through, like brainstorming or analyzing documents. (2) Co-Work — a desktop app that works directly with your files, like organizing folders or editing spreadsheets. (3) Claude Code — a terminal tool that builds things from scratch, like websites and automations. It's the same AI brain at three different depths. Way more than a ChatGPT clone.\"}",
+      "explanation": "Under time pressure, you find out what you actually retained. The key pieces: three tiers (Claude AI, Co-Work, Claude Code), a concrete example for each, and the idea that it's the same intelligence at different depths.",
+      "hints": [
+        "Don't overthink it — just explain it like you're actually replying to a coworker on Slack."
+      ],
+      "xp_reward": 15
+    }
+  ]
+}

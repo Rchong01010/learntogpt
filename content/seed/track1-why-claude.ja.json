@@ -1,0 +1,437 @@
+{
+  "track": "why_claude",
+  "courses": [
+    {
+      "title": "なぜChatGPTなのか？",
+      "slug": "why-claude",
+      "description": "30分でChatGPTをゼロから本当に使えるレベルへ。最初の1分から実践的。",
+      "difficulty": "beginner",
+      "order_index": 1,
+      "is_free": true,
+      "icon": "Sparkles",
+      "lessons": [
+        {
+          "title": "ChatGPTのご紹介",
+          "slug": "meet-claude",
+          "description": "ChatGPTとは何か、他のAIとどう違うか、そしてあなたの最初の本格的なインタラクション。",
+          "order_index": 1,
+          "xp_reward": 50,
+          "estimated_minutes": 6,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<p>今すぐ別のタブでchat.openai.comを開いてください。次のように入力してください：<strong>「あなたは何ですか？ChatGPTとの違いは何ですか？正直に答えてください。」</strong></p><p>何か気づきましたか？ChatGPTは自分を大げさに売り込みません。自分が得意なこと、できないこと、そしてどこにトレードオフがあるかを教えてくれます。この正直さこそが、ChatGPTを他と異なるものにする最初のポイントです。</p><p>ChatGPTはAnthropicによって開発され、3つの形態があります：<strong>ChatGPT</strong>（思考と執筆のためのブラウザ対話）、<strong>Co-Work</strong>（ファイルと直接連携するデスクトップアプリ）、そして<strong>ChatGPT</strong>（ゼロからソフトウェアを構築するターミナルツール）。同じ頭脳、3つのアクセスポイントです。このコースは最初のものから始めます。</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_wc_01a"
+              },
+              {
+                "type": "text",
+                "content": "<p>ChatGPTの3つの核心的な強み：<strong>深い思考、正直さ、そして指示への忠実な従順。</strong>パターンマッチングではなく、問題を考え抜きます。わからないことはわからないと言います。そして、トーン、長さ、フォーマット、対象読者などの詳細な制約を与えれば、それらすべてに従います。</p><p><strong>ChatGPTは反論します。</strong>メールのレビューを頼むと、迎合的なAIは「素晴らしいです！」と言います。ChatGPTは「2段落目は、まだ合意していないスケジュールへのコミットメントと誤解される可能性があります」と言います。どちらが本当に役に立ちましたか？</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_wc_01b"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_wc_01c"
+              },
+              {
+                "type": "summary",
+                "content": "<p>ChatGPTは3つの深さで提供される同じ知能です。その強みは深い思考、正直さ、そして正確な指示への従順です。何かがおかしいときは反論します。次は：ChatGPTとの実際の会話の仕方です。</p>"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_wc_01a",
+              "order_index": 1,
+              "type": "scenario_walkthrough",
+              "prompt": "3つの異なるタスクに適したChatGPTの階層を選んでください。",
+              "options": null,
+              "correct_answer": "{\"title\": \"適切な階層を選ぶ\", \"steps\": [{\"type\": \"context\", \"text\": \"3つのタスクがあります。それぞれにChatGPTが必要ですが、同じChatGPTではありません。各タスクを適切な階層にマッチングさせましょう。\"}, {\"type\": \"choice\", \"claude_response\": \"タスク1：パートナーの誕生日のためにギフトのアイデアを10個ブレインストーミングする。ファイルは不要、創造的な思考のみ。\", \"question\": \"どの階層？\", \"options\": [\"ChatGPT \\u2014 ブラウザ対話\", \"Co-Work \\u2014 デスクトップアプリ\", \"ChatGPT \\u2014 ターミナル\"], \"correct\": 0, \"feedback\": \"純粋な思考、ファイル不要、構築するものなし。ブラウザのChatGPTが最適です。\"}, {\"type\": \"choice\", \"claude_response\": \"タスク2：デスクトップに散らばる6ヶ月分の領収書PDFを月別・カテゴリ別に整理する必要がある。\", \"question\": \"どの階層？\", \"options\": [\"ChatGPT \\u2014 ブラウザ対話\", \"Co-Work \\u2014 デスクトップアプリ\", \"ChatGPT \\u2014 ターミナル\"], \"correct\": 1, \"feedback\": \"タスクはファイルの中にあります。Co-Workはアップロードなしで直接ファイルを読み取り、編集します。\"}, {\"type\": \"choice\", \"claude_response\": \"タスク3：チーム全員が使えるインタラクティブな予算トラッカーを構築する。\", \"question\": \"どの階層？\", \"options\": [\"ChatGPT \\u2014 ブラウザ対話\", \"Co-Work \\u2014 デスクトップアプリ\", \"ChatGPT \\u2014 ターミナル\"], \"correct\": 2, \"feedback\": \"これは構築タスクです。まだ存在しないものをゼロから作る必要があります。ChatGPTが対応します。\"}]}",
+              "explanation": "判断は1つの質問に集約されます：このタスクは頭の中にありますか、ファイルの中にありますか、それとも構築する必要がありますか？頭の中 = ChatGPT。ファイル = Co-Work。構築 = ChatGPT。",
+              "hints": [
+                "自問してみてください：このタスクは頭の中にありますか、ファイルの中にありますか、それとも構築する必要がありますか？"
+              ],
+              "xp_reward": 15
+            },
+            {
+              "id": "ex_wc_01b",
+              "order_index": 2,
+              "type": "multiple_choice",
+              "prompt": "AIが自信を持って言ったことが間違いだったとします。あなたはそれに基づいて判断を下しました。本当のリスクは何ですか？",
+              "options": [
+                "リスクはない -- AIは単なるツールで、判断は自分のもの",
+                "自信を持った間違いは、確認する可能性が低いため危険",
+                "AIはミスから学び、次回はもっと正確になる",
+                "悪い判断はいつでも取り消せる"
+              ],
+              "correct_answer": "1",
+              "explanation": "自信を持った間違いは、不確かな答えよりも悪いです。なぜなら、あなたがそれを疑問に思う可能性が低いからです。AIが「わかりません」と言えば、あなたは確認します。事実として述べられれば、あなたはそれを信じます。ChatGPTは、自信を偽るのではなく、不確実性を示すように設計されています。",
+              "hints": [
+                "「～と思います」と言うAIと、絶対的な事実として述べるAIの違いを考えてみてください。"
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_wc_01c",
+              "order_index": 3,
+              "type": "prompt_lab",
+              "prompt": "応募者の履歴書をレビューし、称賛だけでなく正直で有用なフィードバックを求めるプロンプトを書いてください。",
+              "options": null,
+              "correct_answer": "{\"scenario\":\"あなたはシニアマーケティング職の採用を行っています。候補者の履歴書は表面上よく見えます。実際のフィードバック -- 強みと弱みの両方 -- を得るプロンプトを書き、面接に招くかどうかを判断できるようにしましょう。\",\"scoring_criteria\":[{\"keyword_group\":[\"honest\",\"critical\",\"candid\",\"don't hold back\",\"genuine\",\"real feedback\",\"weaknesses\",\"gaps\",\"concerns\",\"red flag\"],\"label\":\"正直で批判的なフィードバックを求めた\",\"points\":2},{\"keyword_group\":[\"senior\",\"marketing\",\"role\",\"position\",\"job\",\"hiring\"],\"label\":\"役職を特定した\",\"points\":1},{\"keyword_group\":[\"strengths\",\"pros\",\"strong\",\"good\",\"stands out\",\"impressive\"],\"label\":\"強みも求めた（バランスの取れたレビュー）\",\"points\":1},{\"keyword_group\":[\"interview\",\"hire\",\"decision\",\"bring in\",\"move forward\",\"next step\"],\"label\":\"採用判断に結び付けた\",\"points\":1},{\"keyword_group\":[\"experience\",\"qualification\",\"skill\",\"background\",\"achievement\",\"metric\",\"result\"],\"label\":\"評価すべき点に言及した\",\"points\":1},{\"keyword_group\":[\"compare\",\"versus\",\"typical\",\"expect\",\"standard\",\"benchmark\",\"competitive\"],\"label\":\"ベンチマークを求めた\",\"points\":1}],\"max_points\":7,\"pass_threshold\":4,\"ideal_prompt\":\"シニアマーケティングマネージャー職の採用を行っています。候補者の履歴書がこちらです。正直な評価をしてください：本当の強みは何か、ギャップやレッドフラグは何か、面接に招くことを推奨しますか？お世辞は不要です -- 良い採用判断を下す必要があります。\",\"tips\":[\"明示的に弱みを求めることで、お世辞ではなく正直さを求めているとChatGPTに伝わります。\",\"レビューを判断に結び付けることで、ChatGPTにフィードバックの明確な目的を与えます。\"]}",
+              "explanation": "ほとんどの人はAIに「履歴書をレビューして」と頼んで「素晴らしいですね！」という返事をもらいます。明示的に正直な批評を求め、実際の判断に結び付けると、ChatGPTは本当に役立つフィードバックを提供します。",
+              "hints": [
+                "「この履歴書をレビューして」とだけ言うと、ほとんどのAIはデフォルトで好意的になります。本当の評価を求めていることをどう示しますか？"
+              ],
+              "xp_reward": 10
+            }
+          ]
+        },
+        {
+          "title": "最初の会話",
+          "slug": "your-first-conversation",
+          "description": "ChatGPTに本当に助けてもらうための話し方。コンテキスト、イテレーション、そして重要なプロンプティングの基本。",
+          "order_index": 2,
+          "xp_reward": 50,
+          "estimated_minutes": 7,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<p>今すぐ試してみてください。ChatGPTを開いて入力してください：<strong>「メールを書いて。」</strong></p><p>他のAIメールと同じように聞こえる汎用テンプレートが返ってきます。次にこう試してください：<strong>「火曜日の電話に出られなかったクライアントのSarahへのフォローアップメールを書いてください。トーン：温かいが直接的。木曜日の午後2時への変更を提案。100語以内で。」</strong></p><p>まるで別物です。違いはコンテキストです。ChatGPTはあなたの心を読めませんが、あなたが与えた情報を活用することには卓越しています。</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_wc_02a"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>イテレーションループこそChatGPTが輝く場所です。</strong>最初の回答で終わりではありません。何を調整すべきか伝えましょう：「冒頭をもっと個人的に。」「堅すぎる。」「無料相談についての一文を追加して。」各ラウンドでより近づきます。ChatGPTはすべてを覚えて、すべてを反映します。</p><p><strong>ChatGPTがあなたから必要とする5つのこと：</strong> <strong>1. 誰に</strong>（対象読者）。<strong>2. 何を</strong>（成果物）。<strong>3. どのように</strong>（トーン、長さ、フォーマット）。<strong>4. なぜ</strong>（どの判断に役立つか）。<strong>5. 何を避けるか</strong>（やってはいけないこと）。これらを事前に提供するほど、後の編集が減ります。</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_wc_02b"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>もう1つ習慣にすべきパターン：ChatGPTに反論を求めること。</strong></p><p>「Xについて考えています。見落としていることは？」や「コミットする前にこの計画の穴を見つけて。」ほとんどの人はAIをイエスマンとして使います。ChatGPTは異論を許可されたときに最も力を発揮します。</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_wc_02c"
+              },
+              {
+                "type": "summary",
+                "content": "<p>コンテキストは汎用出力を有用な出力に変えます。イテレーションは良い出力を素晴らしい出力に変えます。ChatGPTに誰に、何を、どのように、なぜ、何を避けるかを伝えましょう。そして洗練させましょう。次は：最初から正しいコンテキストをChatGPTに与える技術です。</p>"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_wc_02a",
+              "order_index": 1,
+              "type": "multiple_choice",
+              "prompt": "「メールを書いて」というプロンプトの何が問題ですか？",
+              "options": [
+                "問題なし -- ChatGPTはあなたの意図を推測できる",
+                "短すぎる -- ChatGPTには最低100語の指示が必要",
+                "誰宛か、何についてか、どんなトーンかというコンテキストが一切ない",
+                "AIにメールを書かせるべきではない"
+              ],
+              "correct_answer": "2",
+              "explanation": "コンテキストがなければ、ChatGPTは受信者、トピック、トーン、長さ、目的すべてを推測しなければなりません。汎用テンプレートが返ってきます。コンテキストこそが、有用な出力と埋め合わせの違いを生みます。",
+              "hints": [
+                "もし誰かが他の情報なしにメールを書いてほしいと頼んだら、あなたなら何を知る必要があるか考えてみてください。"
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_wc_02b",
+              "order_index": 2,
+              "type": "prompt_lab",
+              "prompt": "クライアントが金曜日までにプロジェクト提案書を必要としています。強力な初稿を得るのに十分なコンテキストを含む詳細なプロンプトをChatGPTに書いてください。",
+              "options": null,
+              "correct_answer": "{\"scenario\":\"あなたのクライアント（中規模の法律事務所）がウェブサイトリニューアルの提案書を必要としています。予算：150万円、期間：6週間、期限：金曜日。クライアントは伝統的でフォーマルです。ChatGPTが実際に送れる提案書を作成するために必要なすべてを含むプロンプトを書いてください。\",\"scoring_criteria\":[{\"keyword_group\":[\"law firm\",\"client\",\"legal\",\"attorney\",\"firm\"],\"label\":\"クライアントの種類を特定した\",\"points\":1},{\"keyword_group\":[\"proposal\",\"pitch\",\"scope\",\"deliverable\"],\"label\":\"ドキュメントの種類を特定した\",\"points\":1},{\"keyword_group\":[\"$15,000\",\"15000\",\"budget\",\"cost\",\"price\",\"pricing\"],\"label\":\"予算を含めた\",\"points\":1},{\"keyword_group\":[\"6 weeks\",\"six weeks\",\"timeline\",\"deadline\",\"schedule\",\"friday\"],\"label\":\"期間を記載した\",\"points\":1},{\"keyword_group\":[\"formal\",\"professional\",\"traditional\",\"conservative\",\"tone\"],\"label\":\"トーンまたは対象読者を特定した\",\"points\":2},{\"keyword_group\":[\"website\",\"redesign\",\"web\",\"site\",\"design\"],\"label\":\"プロジェクトを説明した\",\"points\":1}],\"max_points\":7,\"pass_threshold\":4,\"ideal_prompt\":\"中規模の法律事務所向けのウェブサイトリニューアルのプロジェクト提案書を作成してください。予算：150万円。期間：6週間。事務所は伝統的でフォーマル -- スタートアップ用語は不要。含むもの：エグゼクティブサマリー、成果物付きスコープ、マイルストーン付きスケジュール、価格内訳。2ページ以内。トーン：プロフェッショナルで自信に満ちたもの。\",\"tips\":[\"ChatGPTに対象読者を伝えましょう。法律事務所とテックスタートアップでは全く異なるトーンが必要です。\",\"ページ数、予算、期間などの制約を含めましょう -- ドキュメント全体の形を決めます。\"]}",
+              "explanation": "クライアントの種類、予算、期間、トーン、構成を含む詳細なプロンプトは、実際にレビューして送信できるドラフトをChatGPTに作成させるのに十分な情報を与えます。事前に行うすべての決定が、後の編集時間を節約します。",
+              "hints": [
+                "ChatGPTがあなたに質問できない状況で下す必要があるすべての判断を考えてみてください。事前に答えるほど、初稿の質が上がります。"
+              ],
+              "xp_reward": 10
+            },
+            {
+              "id": "ex_wc_02c",
+              "order_index": 3,
+              "type": "speed_prompt",
+              "prompt": "45秒あります。悪いビジネスアイデアに反論するようChatGPTに求めるプロンプトを書いてください。",
+              "options": null,
+              "correct_answer": "{\"time_limit_seconds\":45,\"scenario\":\"あなたの友人が人口5,000人ですでに2軒あるカフェがある町で3軒目のカフェを開きたいと言っています。あなたにお金を貸してほしいと頼んでいます。ChatGPTにそのアイデアを励ますのではなく、疑問を投げかけさせるプロンプトを書いてください。\",\"scoring_criteria\":[{\"keyword_group\":[\"push back\",\"challenge\",\"poke holes\",\"devil's advocate\",\"critique\",\"problems\",\"risks\",\"why this won't work\",\"honest\"],\"label\":\"ChatGPTにアイデアを疑問視するよう求めた\",\"points\":2},{\"keyword_group\":[\"coffee\",\"shop\",\"cafe\",\"store\",\"business\"],\"label\":\"ビジネスの種類に言及した\",\"points\":1},{\"keyword_group\":[\"5000\",\"small town\",\"population\",\"market\",\"demand\",\"two\",\"competition\",\"already\",\"existing\"],\"label\":\"市場規模または競合に言及した\",\"points\":2},{\"keyword_group\":[\"invest\",\"money\",\"friend\",\"fund\",\"capital\",\"asking\"],\"label\":\"投資の依頼に言及した\",\"points\":1},{\"keyword_group\":[\"question\",\"ask\",\"conversation\",\"talk\",\"discuss\",\"bring up\"],\"label\":\"実際の会話に結び付けた\",\"points\":1}],\"max_points\":7,\"pass_threshold\":4,\"ideal_prompt\":\"友人が人口5,000人の町で3軒目のカフェを開きたいと言い、投資を求めています。すでに2軒のカフェがあります。率直に教えてください：最大のリスクと失敗する理由は何ですか？そのアイデアを励まさないでください -- お金を出す前に厳しい質問が必要です。\"}",
+              "explanation": "時間的プレッシャーの中で、自分が自然に何を含めるかがわかります。重要な要素：ChatGPTに疑問を投げかける（励ますのではなく）よう伝え、関連する事実を提供し、なぜ正直さが必要かを説明すること。",
+              "hints": [
+                "ChatGPTにどんな役割を演じてほしいかに集中しましょう：応援団ではなく、批評家です。"
+              ],
+              "xp_reward": 15
+            }
+          ]
+        },
+        {
+          "title": "コンテキストがすべて",
+          "slug": "context-is-everything",
+          "description": "システムプロンプト、コンテキストウィンドウ、そしてChatGPTに正しい情報を与える技術。",
+          "order_index": 3,
+          "xp_reward": 50,
+          "estimated_minutes": 7,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<p>これを試してみてください：長いメールスレッドをChatGPTに貼り付けて「ここで実際に行われている意思決定は何ですか？誰がそれを阻んでいますか？」と聞いてください。ChatGPTはスレッド全体を読み、誰が何を言ったかを追跡し、30秒で答えを出します。これが<strong>コンテキストウィンドウ</strong>の実力です。</p><p>コンテキストウィンドウとは、1つの会話中にChatGPTが記憶できる情報量のことです。ChatGPTのコンテキストウィンドウは巨大で、小説1冊分を保持できます。つまり、契約書全体、研究論文、または長いメールチェーンを1つの会話で扱えるということです。</p>"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>大きなコンテキストウィンドウでできること：</strong></p><p>40ページの契約書を貼り付けて、どの条項についても質問できます。セクション3とセクション12を比較できます。ChatGPTが話の流れを見失うことなく長い会話ができます。最初からやり直すことなく、数十のメッセージにわたって複雑なプロジェクトに取り組めます。</p><p>小さなコンテキストウィンドウでは、ドキュメントを分割し、それぞれを別々に貼り付け、AIが以前のセクションを覚えていることを祈るしかありません。ネタバレ：覚えていません。</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_wc_03a"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>システムプロンプト</strong>を使えば、すべてのメッセージにわたって有効な永続的コンテキストをChatGPTに与えられます：あなたのスタイルガイド、役割、常に適用される制約。新入社員への初日のブリーフィングのようなものです。</p><p><strong>良いコンテキストの技術：</strong>一般的より具体的に（「B2B SaaSマーケティングコンサルタント」は「あなたは役に立つ」に勝ります）。良い出力の例を含めましょう。やってはいけないことを述べましょう（「専門用語を使わないで」）。重要なことを最初に置きましょう -- ChatGPTは与えられた情報の最初と最後に特に注意を払います。</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_wc_03b"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_wc_03c"
+              },
+              {
+                "type": "summary",
+                "content": "<p>コンテキストウィンドウにより、ChatGPTはドキュメント全体を記憶に保持できます。システムプロンプトは永続的な指示を与えます。技術は具体性、例の使用、そして重要なことの前置きにあります。次は：ChatGPTが本当に得意なこと、苦手なことです。</p>"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_wc_03a",
+              "order_index": 1,
+              "type": "prompt_lab",
+              "prompt": "40ページの契約書をレビューしています。ChatGPTのコンテキストウィンドウを使って、離れた2つのセクションを照合するプロンプトを書いてください。",
+              "options": null,
+              "correct_answer": "{\"scenario\":\"40ページのベンダー契約書をChatGPTに貼り付けました。30ページの免責条項が無制限の責任を生じさせるように見えますが、5ページの責任上限を思い出しました。ChatGPTにこの2つのセクションを照合するよう求めるプロンプトを書いてください。\",\"scoring_criteria\":[{\"keyword_group\":[\"page 5\",\"earlier\",\"section\",\"liability\",\"cap\",\"limit\",\"previous\",\"above\",\"before\"],\"label\":\"ドキュメントの前の部分を参照した\",\"points\":2},{\"keyword_group\":[\"indemnification\",\"indemnify\",\"page 30\",\"current\",\"this section\",\"this clause\"],\"label\":\"現在のセクションを参照した\",\"points\":1},{\"keyword_group\":[\"conflict\",\"contradict\",\"override\",\"weaken\",\"undermine\",\"loophole\",\"exception\",\"cross-reference\",\"compare\",\"connect\"],\"label\":\"矛盾やつながりについて質問した\",\"points\":2},{\"keyword_group\":[\"negotiate\",\"change\",\"fix\",\"recommend\",\"should I\",\"what should\"],\"label\":\"実行可能な推奨を求めた\",\"points\":1},{\"keyword_group\":[\"protect\",\"risk\",\"exposure\",\"liable\",\"dangerous\",\"concern\",\"gap\"],\"label\":\"実際的な影響に焦点を当てた\",\"points\":1}],\"max_points\":7,\"pass_threshold\":4,\"ideal_prompt\":\"30ページの免責条項は、一部のシナリオで無制限の責任を生じさせるように見えます。しかし、5ページの責任上限が当社のリスクを制限するはずでした。この2つのセクションを照合してください：免責条項は実質的に責任上限を無効にしていますか？もしそうなら、どの文言が抜け穴を作っており、交渉で何を主張すべきですか？\",\"tips\":[\"特定のページを参照することで、ChatGPTにコンテキストウィンドウ全体を使わせることができます。\",\"セクション間の矛盾について質問することは、小さなコンテキストウィンドウのAIにはできないことです。\"]}",
+              "explanation": "ドキュメントの離れた部分を照合することは、コンテキストウィンドウの最強機能です。小さなコンテキストウィンドウのAIは30ページに到達する頃には5ページを忘れています。ChatGPTはドキュメント全体を同時に保持します。",
+              "hints": [
+                "パワームーブは、ドキュメントの離れた2つの部分を結び付けることです。"
+              ],
+              "xp_reward": 10
+            },
+            {
+              "id": "ex_wc_03b",
+              "order_index": 2,
+              "type": "scenario_walkthrough",
+              "prompt": "同じ会話内で2つのドキュメントを照合するマルチドキュメント分析を体験しましょう。",
+              "options": null,
+              "correct_answer": "{\"title\": \"ドキュメント横断分析\", \"steps\": [{\"type\": \"context\", \"text\": \"ベンダーの契約書と自社の標準条件を比較しています。両方のドキュメントが同じClaude会話に読み込まれています -- 合計60ページ以上です。\"}, {\"type\": \"choice\", \"claude_response\": \"両方のドキュメントを貼り付けました。ChatGPTは両方を読んだことを確認しました。最初の質問は何ですか？\", \"question\": \"両方のドキュメントが読み込まれていることを最も活用できる質問はどれですか？\", \"options\": [\"ベンダー契約書を要約して\", \"ベンダーの支払条件と当社の標準支払条件の主な違いは何ですか？\", \"これは良い契約ですか？\"], \"correct\": 1, \"feedback\": \"2つのドキュメント間で特定の条件を比較することは、まさにコンテキストウィンドウが可能にすることです。要約は1つのドキュメントしか使いません。照合が超能力です。\"}, {\"type\": \"choice\", \"claude_response\": \"ChatGPTは、ベンダーがネット15日を要求し、あなたの条件はネット45日を指定していること、さらにあなた側にはない2%の延滞料があることを発見しました。さらに深掘りしたいです。\", \"question\": \"次の質問は何ですか？\", \"options\": [\"支払条件全般について教えて\", \"ベンダー契約書に当社の標準条件と直接矛盾する条項はありますか？すべての矛盾を影響が大きい順にリストしてください。\", \"ベンダー契約書を当社の条件に合わせて書き直して\"], \"correct\": 1, \"feedback\": \"2つのドキュメント間のすべての矛盾を求めることは、コンテキストウィンドウ全体を活用する大規模な照合タスクです。ChatGPTは各セクションを体系的にもう一方と比較します。\"}]}",
+              "explanation": "2つのドキュメントを1つの会話に読み込み、ChatGPTにそれらの間の矛盾を見つけさせることは、コンテキストウィンドウの実用的な応用です。分割なし、タブ切り替えなし、コンテキストの喪失なし。",
+              "hints": [
+                "最良の質問は、ChatGPTに両方のドキュメントを同時に見ることを強制するものです。"
+              ],
+              "xp_reward": 15
+            },
+            {
+              "id": "ex_wc_03c",
+              "order_index": 3,
+              "type": "multiple_choice",
+              "prompt": "長い会話中にAIのコンテキストウィンドウのスペースが不足すると何が起きますか？",
+              "options": [
+                "忘れたことを伝え、繰り返すよう求める",
+                "以前のコンテキストを黙って切り捨て、矛盾した回答をし始める",
+                "会話を自動的に保存して再読み込みする",
+                "何も起きない -- 現代のAIはコンテキスト不足にならない"
+              ],
+              "correct_answer": "1",
+              "explanation": "コンテキストが超過すると、AIは会話の以前の部分を黙って切り捨てます。警告はしません。以前に言ったことと矛盾する回答をしたり、以前の議論とのつながりを見逃したりするだけです。だからこそ、コンテキストウィンドウのサイズは実際の仕事にとって重要なのです。",
+              "hints": [
+                "AIにとって「忘れる」とはどういう意味か考えてみてください。AIは自分が忘れたことを知っていますか？"
+              ],
+              "xp_reward": 5
+            }
+          ]
+        },
+        {
+          "title": "ChatGPTの強みと限界",
+          "slug": "strengths-and-limits",
+          "description": "ChatGPTが本当に優れていること、苦手なこと、そしてギャップを回避する方法。",
+          "order_index": 4,
+          "xp_reward": 50,
+          "estimated_minutes": 6,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<p>ChatGPTに画像を生成するよう頼んでみてください -- できません。3つの30ページのベンダー提案書から隠れたコストを見つけるよう頼んでみてください -- 別次元の能力を発揮します。この違いを知ることがスキルです。</p><p><strong>ChatGPTが優れている点：</strong> <strong>深い分析</strong>（長いドキュメントの一語一語を読み、セクション間で情報をつなげます）。<strong>ニュアンスのある文章</strong>（対象読者、声、制約に適応します）。<strong>複雑な指示</strong>（指定したすべての制約を追跡します）。<strong>長いドキュメント</strong>（1つの会話で本一冊分を保持します）。</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_wc_04a"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>ChatGPTが苦手な点：</strong> <strong>画像や動画なし</strong>（Midjourney/DALL-Eを使いましょう。ChatGPTはプロンプトを書けます）。<strong>リアルタイムデータなし</strong>（まず検索し、結果をChatGPTに貼り付けて分析させましょう）。<strong>マイナーな事実のハルシネーション</strong>（名前、日付、統計は確認しましょう）。<strong>大規模な計算</strong>（数字にはスプレッドシート、解釈にはChatGPTを使いましょう）。</p><p>最高のClaudeユーザーは、ChatGPTを使うべきでないタイミングも知っています。</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_wc_04b"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_wc_04c"
+              },
+              {
+                "type": "summary",
+                "content": "<p>ChatGPTのスーパーパワー：深い分析、ニュアンスのある文章、複雑な指示、長いドキュメント。限界：画像なし、リアルタイムデータなし、マイナーな事実の確認が必要。スキルは、どの仕事にどのツールを使うかを知ることです。次は：カジュアルなClaude利用を本格的なワークフローに変える方法です。</p>"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_wc_04a",
+              "order_index": 1,
+              "type": "multiple_choice",
+              "prompt": "3つのベンダー提案書を比較して隠れたコストを見つけるのに最も役立つChatGPTの強みはどれですか？",
+              "options": [
+                "ニュアンスのある文章 -- 推奨文は洗練されている必要がある",
+                "深い分析 -- 隠れたコストを見つけるには3つのドキュメントすべての細部を読む必要がある",
+                "コード -- まずスプレッドシートモデルを構築すべき",
+                "複雑な指示 -- 比較フォーマットは具体的でなければならない"
+              ],
+              "correct_answer": "1",
+              "explanation": "3つのドキュメントにわたって隠れたコストを見つけるには、すべての細部を読み、セクション間で情報をつなげる必要があります。それは深い分析です。文章と指示は出力に役立ちますが、中核のタスクは分析です。",
+              "hints": [
+                "このタスクで最も難しい部分は何ですか -- 推奨文を書くことですか、それとも提案書に埋もれているものを見つけることですか？"
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_wc_04b",
+              "order_index": 2,
+              "type": "prompt_lab",
+              "prompt": "署名前に確認すべき50ページの契約書があります。ChatGPTに3つの最大リスクを見つけさせるプロンプトを書いてください。",
+              "options": null,
+              "correct_answer": "{\"scenario\":\"50ページのSaaSベンダー契約書に署名しようとしています。ChatGPTに全体を読んで、最も大きな被害をもたらす可能性のある条項 -- 3つの最大リスクを特定させたいです。\",\"scoring_criteria\":[{\"keyword_group\":[\"risk\",\"dangerous\",\"concern\",\"problem\",\"issue\",\"flag\",\"watch out\",\"trap\",\"hidden\"],\"label\":\"具体的にリスクを求めた\",\"points\":2},{\"keyword_group\":[\"3\",\"three\",\"top\",\"biggest\",\"most important\",\"worst\"],\"label\":\"リスクの数を指定した\",\"points\":1},{\"keyword_group\":[\"contract\",\"agreement\",\"vendor\",\"SaaS\",\"document\"],\"label\":\"ドキュメントの種類を参照した\",\"points\":1},{\"keyword_group\":[\"liability\",\"termination\",\"auto-renewal\",\"indemnification\",\"penalty\",\"clause\",\"section\"],\"label\":\"確認すべき特定の領域に言及した\",\"points\":1},{\"keyword_group\":[\"why\",\"explain\",\"impact\",\"consequence\",\"what happens\",\"cost\",\"exposure\"],\"label\":\"影響の説明を求めた\",\"points\":1},{\"keyword_group\":[\"negotiate\",\"push back\",\"change\",\"fix\",\"recommend\",\"suggest\",\"alternative\"],\"label\":\"交渉の推奨を求めた\",\"points\":1}],\"max_points\":7,\"pass_threshold\":4,\"ideal_prompt\":\"この50ページのSaaSベンダー契約書を読んで、当社にとっての3つの最大リスクを特定してください。それぞれについて：(1) 条項を引用、(2) なぜ危険かを平易な言葉で説明、(3) 代わりに何を交渉すべきかを提案。責任上限、自動更新の落とし穴、解約制限、免責条項に焦点を当ててください。\",\"tips\":[\"ChatGPTにどの領域に焦点を当てるかを伝えれば、どこを最も深く掘るべきかがわかります。\",\"交渉の代替案を求めることで、分析がアクションに変わります。\"]}",
+              "explanation": "良い契約書レビュープロンプトは、何を探すべきか（要約ではなくリスク）、いくつ、そしてそれらをどうするかをChatGPTに伝えます。50ページのドキュメントが3つのアクション可能な項目に変わります。",
+              "hints": [
+                "ChatGPTに単に契約書を「レビューして」と頼まないでください。何が心配かを伝えましょう。"
+              ],
+              "xp_reward": 10
+            },
+            {
+              "id": "ex_wc_04c",
+              "order_index": 3,
+              "type": "matching_pairs",
+              "prompt": "各タスクを最適なツールとマッチングしてください。",
+              "options": null,
+              "correct_answer": "{\"Analyze a 40-page research paper and find the key insights\":\"Claude\",\"Generate a product mockup image\":\"Midjourney or DALL-E\",\"Get today's stock price for AAPL\":\"Search engine or finance app\",\"Review a contract for hidden risks\":\"Claude\",\"Calculate compound interest on 10,000 rows of data\":\"Spreadsheet (Excel/Sheets)\",\"Write a board memo in a specific tone and format\":\"Claude\"}",
+              "explanation": "ChatGPTは分析、文章、複雑な指示に優れています。ビジュアルには画像生成ツール、リアルタイムデータには検索エンジン、大量計算にはスプレッドシートを使いましょう。最適なツールはタスクによって異なります。",
+              "hints": [
+                "各タスクが実際に何を必要としているか考えてみてください：思考、ビジュアル作成、ライブデータ、それとも数値処理？"
+              ],
+              "xp_reward": 15
+            }
+          ]
+        },
+        {
+          "title": "チャットから構築へ",
+          "slug": "from-chatting-to-building",
+          "description": "カジュアルなChatGPT会話が本格的なワークフローに変わる方法。Track 2-4への橋渡し。",
+          "order_index": 5,
+          "xp_reward": 75,
+          "estimated_minutes": 7,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<p>ChatGPTから10倍の価値を引き出す人たちは、一度きりの質問ではなく、<strong>繰り返し可能なプロセス</strong>の一部として使っています。チャットを構築に変える3つのパターンを紹介します。</p><p><strong>パターン1：リサーチから決定へ。</strong>同じトピックの5つの記事を貼り付けます。どこで一致し、どこで矛盾し、あなたの状況に何が当てはまるかをChatGPTに聞きます。1つの会話、5つの情報源、パーソナライズされた推奨。</p><p><strong>パターン2：ドラフト-レビュー-送信。</strong>最初のドラフトを取得します。あなたの対象読者の視点からChatGPTに自身の仕事を批評させます。批評を反映させて仕上げます。送信。ほとんどの人はステップ1で止まります -- ステップ2と3こそ品質の飛躍が起きるところです。</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_wc_05a"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>パターン3：週次オペレーター。</strong>あなたの役割、優先事項、定期的な成果物をシステムコンテキストとしてClaudeプロジェクトを設定します。毎週月曜日に新しいデータを貼り付け、同じ分析を受け取ります。ChatGPTはすでにフォーマット、対象読者、注目すべきポイントを知っています。これは会話ではありません -- オペレーティングシステムです。</p><p><strong>この先に待っているもの：</strong>Track 2はChatGPTの各サーフェスを深掘りします。Track 3は具体的なワークフロープレイブックを提供します。Track 4はパワーテクニックをカバーします。基盤はできました。</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_wc_05b"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_wc_05c"
+              },
+              {
+                "type": "summary",
+                "content": "<p>Track 1を完了しました。ChatGPTの考え方、話し方、得意なこと、そしてカジュアルな使用が本格的なワークフローになる方法を理解しました。3つのパターン -- リサーチから決定、ドラフト-レビュー-送信、週次オペレーター -- がより深いTrackへの橋渡しです。さあ、何かを構築しましょう。</p>"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_wc_05a",
+              "order_index": 1,
+              "type": "scenario_walkthrough",
+              "prompt": "ドラフト-レビュー-送信ループを体験しましょう：漠然としたプロンプトから始めて、3ラウンドのイテレーションで出力を素晴らしいものにします。",
+              "options": null,
+              "correct_answer": "{\"title\": \"漠然から素晴らしいへ：3ラウンド\", \"steps\": [{\"type\": \"context\", \"text\": \"大口クライアントを失った教訓についてのLinkedIn投稿をChatGPTに書いてもらう必要があります。イテレーションが汎用的な出力を魅力的なものに変える様子を見てみましょう。\"}, {\"type\": \"context\", \"text\": \"あなたは入力します：「クライアントを失ったことについてのLinkedIn投稿を書いて。」\\n\\nChatGPTの回答：「最大のクライアントを失うのは辛い経験でした。しかし、コミュニケーション、期待値の設定、レジリエントなシステム構築の重要性を教えてくれました。すべての挫折は復活への準備です...」\\n\\n典型的なLinkedInの汎用コンテンツです。イテレーションの時間です。\"}, {\"type\": \"choice\", \"claude_response\": \"最初のドラフトはモチベーションポスターのように聞こえます。ChatGPTにどう修正させますか？\", \"question\": \"どちらのイテレーション指示が良いですか？\", \"options\": [\"もっと魅力的で本物らしくして\", \"これはモチベーションポスターみたいです。私は率直で、少し自虐的で、バズワードは使いません。その声で書き直してください。\", \"もっと長く詳細にして\", \"絵文字とハッシュタグを追加して\"], \"correct\": 1, \"feedback\": \"具体的な方向性は具体的な結果を生みます。「もっと魅力的」は漠然としています。ChatGPTにあなたの実際の声と避けるべきことを伝えれば、作業の手がかりになります。\"}, {\"type\": \"choice\", \"claude_response\": \"ChatGPTは本物の声で書き直します：「電話は火曜日の午後に来た。最大のクライアント、売上の35%が離れると。90日後ではなく、30日後に...」良くなりました。でも内容はもっと強くできます。\", \"question\": \"次に何を聞きますか？\", \"options\": [\"素晴らしい、送ろう\", \"コールトゥアクションを追加して\", \"読者がスクロールを止めるものは何ですか？正直に -- 教訓が汎用的なら教えてください。\", \"短くして\"], \"correct\": 2, \"feedback\": \"ChatGPTに自身のコンテンツを批評させること -- 文章だけでなく -- は、あなたが見逃すインサイトを得る場所です。ChatGPTは教訓が予測可能であり、驚くべきまたは直感に反する角度を見つけることを提案します。\"}]}",
+              "explanation": "2ラウンドのイテレーションが、汎用的な投稿を本物の声と正直な自己批判を持つものに変えました。教訓：最初のプロンプトが最後ではありません。魔法はやり取りの中にあります。",
+              "hints": [
+                "各ラウンドは何か具体的なことを変えるべきです。「もっと良く」とだけ言わず、何を変え何を残すかを伝えましょう。"
+              ],
+              "xp_reward": 15
+            },
+            {
+              "id": "ex_wc_05b",
+              "order_index": 2,
+              "type": "speed_prompt",
+              "prompt": "45秒あります。投資家ピッチの前に、ビジネスプランを正直にレビューしてもらうプロンプトを書いてください。",
+              "options": null,
+              "correct_answer": "{\"time_limit_seconds\":45,\"scenario\":\"新しいSaaS製品の10ページのビジネスプランがあります。来週投資家にピッチします。ChatGPTに徹底的に分析させるプロンプトを書いてください -- 投資家より先に弱点を見つけましょう。\",\"scoring_criteria\":[{\"keyword_group\":[\"honest\",\"brutal\",\"critical\",\"tough\",\"don't hold back\",\"tear apart\",\"weaknesses\",\"holes\",\"problems\"],\"label\":\"正直で批判的なレビューを求めた\",\"points\":2},{\"keyword_group\":[\"investor\",\"pitch\",\"funding\",\"VC\",\"raise\",\"present\"],\"label\":\"投資家のコンテキストに言及した\",\"points\":1},{\"keyword_group\":[\"business plan\",\"plan\",\"SaaS\",\"product\",\"startup\"],\"label\":\"ドキュメントを参照した\",\"points\":1},{\"keyword_group\":[\"question\",\"ask\",\"challenge\",\"object\",\"pushback\",\"concern\"],\"label\":\"投資家が出しそうな質問を求めた\",\"points\":2},{\"keyword_group\":[\"fix\",\"improve\",\"strengthen\",\"recommend\",\"suggest\",\"change\"],\"label\":\"改善提案を求めた\",\"points\":1}],\"max_points\":7,\"pass_threshold\":4,\"ideal_prompt\":\"来週この10ページのSaaSビジネスプランを投資家にピッチします。最も厳しい批評家になってください：投資家が攻撃するであろう弱い仮定、疑わしい予測、ギャップをすべて見つけてください。各弱点について、投資家が何を言うか、プランをどう修正すべきか、または回答をどう準備すべきかを教えてください。励ましは不要です -- ミーティングではなく今、厳しい真実が必要です。\"}",
+              "explanation": "正直なレビューのための最良のプロンプトは、明示的にChatGPTに優しくしないよう求めます。何が懸かっているか、役割、そして発見をどうするかを伝えましょう。",
+              "hints": [
+                "考えてみてください：大きなピッチの前に、率直に正直な友人に何を言ってほしいですか？"
+              ],
+              "xp_reward": 10
+            },
+            {
+              "id": "ex_wc_05c",
+              "order_index": 3,
+              "type": "multiple_choice",
+              "prompt": "ChatGPTを一度きりのツールからオペレーティングシステムに変えるワークフローパターンはどれですか？",
+              "options": [
+                "毎回より長い質問をする",
+                "ChatGPTを創造的なブレインストーミングだけに使う",
+                "永続的なコンテキストを持つプロジェクトを設定し、毎週新しいデータで同じ分析を実行する",
+                "異なるタスクでChatGPTとChatGPTを切り替える"
+              ],
+              "correct_answer": "2",
+              "explanation": "週次オペレーターパターン -- 永続的コンテキスト、定期的な分析、新しいデータ -- は、ChatGPTをチャットボットから意思決定支援システムに変えます。システムプロンプトはあなたの役割、対象読者、フォーマットを知っています。最新の数字を追加するだけです。",
+              "hints": [
+                "どの選択肢が繰り返し可能なプロセスを説明していますか？一度きりの会話ではなく。"
+              ],
+              "xp_reward": 5
+            }
+          ]
+        }
+      ],
+      "campaign_order": 1,
+      "level_required": 1,
+      "prerequisite_slug": null
+    }
+  ]
+}

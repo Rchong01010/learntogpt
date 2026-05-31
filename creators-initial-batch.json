@@ -1,0 +1,174 @@
+[
+  {
+    "name": "Matthew Berman",
+    "handle": "@matthew_berman",
+    "email": "matt@forwardfuture.ai",
+    "channel": "youtube",
+    "language": "en",
+    "reach_estimate": 400000,
+    "suggested_code": "BERMAN20"
+  },
+  {
+    "name": "AI Jason (Jason Zhou)",
+    "handle": "@jasonzhou1993",
+    "channel": "twitter",
+    "language": "en",
+    "reach_estimate": 300000,
+    "suggested_code": "JASON20"
+  },
+  {
+    "name": "Riley Brown",
+    "handle": "@rileybrown_ai",
+    "channel": "twitter",
+    "language": "en",
+    "reach_estimate": 50000,
+    "suggested_code": "RILEY20"
+  },
+  {
+    "name": "Nick Saraev",
+    "handle": "@nicksaraev",
+    "email": "business@nicksaraev.com",
+    "channel": "youtube",
+    "language": "en",
+    "reach_estimate": 300000,
+    "suggested_code": "SARAEV20"
+  },
+  {
+    "name": "David Shapiro",
+    "handle": "@daveshap",
+    "channel": "substack",
+    "language": "en",
+    "reach_estimate": 180000,
+    "suggested_code": "SHAP20"
+  },
+  {
+    "name": "Dan Shipper (Every)",
+    "handle": "@danshipper",
+    "email": "dan@every.to",
+    "channel": "newsletter",
+    "language": "en",
+    "reach_estimate": 100000,
+    "suggested_code": "EVERY20"
+  },
+  {
+    "name": "Simon Willison",
+    "handle": "@simonw",
+    "channel": "blog",
+    "language": "en",
+    "reach_estimate": 50000,
+    "suggested_code": "SIMONW20"
+  },
+  {
+    "name": "Greg Isenberg",
+    "handle": "@gregisenberg",
+    "channel": "twitter",
+    "language": "en",
+    "reach_estimate": 700000,
+    "suggested_code": "GREG20"
+  },
+  {
+    "name": "Matt Wolfe",
+    "handle": "@mreflow",
+    "channel": "twitter",
+    "language": "en",
+    "reach_estimate": 600000,
+    "suggested_code": "WOLFE20"
+  },
+  {
+    "name": "James Briggs",
+    "handle": "@jamesbriggs",
+    "channel": "youtube",
+    "language": "en",
+    "reach_estimate": 80000,
+    "suggested_code": "BRIGGS20"
+  },
+  {
+    "name": "Nathan Lambert (Interconnects)",
+    "handle": "@natolambert",
+    "channel": "substack",
+    "language": "en",
+    "reach_estimate": 60000,
+    "suggested_code": "NATHAN20"
+  },
+  {
+    "name": "Dot CSV (Carlos Santana)",
+    "handle": "@DotCSV",
+    "channel": "youtube",
+    "language": "es",
+    "reach_estimate": 800000,
+    "suggested_code": "DOTCSV20"
+  },
+  {
+    "name": "AMP Tech (Álvaro Félix)",
+    "handle": "@AMPTech",
+    "channel": "youtube",
+    "language": "es",
+    "reach_estimate": 400000,
+    "suggested_code": "AMPTECH20"
+  },
+  {
+    "name": "La Hora Maker (Cesar Garcia)",
+    "handle": "@lahoramaker",
+    "channel": "youtube",
+    "language": "es",
+    "reach_estimate": 20000,
+    "suggested_code": "HORAMAKER20"
+  },
+  {
+    "name": "Filipe Deschamps",
+    "handle": "@FilipeDeschamps",
+    "channel": "youtube",
+    "language": "pt",
+    "reach_estimate": 1300000,
+    "suggested_code": "DESCHAMPS20"
+  },
+  {
+    "name": "Código Fonte TV",
+    "handle": "@CodigoFonteTV",
+    "channel": "youtube",
+    "language": "pt",
+    "reach_estimate": 750000,
+    "suggested_code": "CODIGOFONTE20"
+  },
+  {
+    "name": "Diolinux (Dionatan Simioni)",
+    "handle": "@Diolinux",
+    "channel": "youtube",
+    "language": "pt",
+    "reach_estimate": 400000,
+    "suggested_code": "DIOLINUX20"
+  },
+  {
+    "name": "The Morpheus Tutorials (Cedric Mössner)",
+    "handle": "@TheMorpheus407",
+    "channel": "youtube",
+    "language": "de",
+    "reach_estimate": 440000,
+    "suggested_code": "MORPHEUS20"
+  },
+  {
+    "name": "Simon Høiberg",
+    "handle": "@SimonHoiberg",
+    "channel": "youtube",
+    "language": "de",
+    "reach_estimate": 200000,
+    "suggested_code": "HOIBERG20"
+  },
+  {
+    "name": "Philipp Lackner",
+    "handle": "@PhilippLackner",
+    "channel": "youtube",
+    "language": "de",
+    "reach_estimate": 244000,
+    "suggested_code": "LACKNER20"
+  },
+  {
+    "name": "Junus Ergin (Developer Akademie)",
+    "handle": "junus-ergin",
+    "email": "kontakt@developerakademie.com",
+    "channel": "linkedin",
+    "language": "de",
+    "reach_estimate": 60000,
+    "suggested_code": "AKADEMIE20"
+  }
+]

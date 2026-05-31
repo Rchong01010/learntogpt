@@ -1,0 +1,1149 @@
+{
+  "common": {
+    "save": "保存",
+    "cancel": "取消",
+    "delete": "删除",
+    "loading": "加载中...",
+    "saving": "保存中...",
+    "savedBang": "已保存！",
+    "signIn": "登录",
+    "signUp": "注册",
+    "getStarted": "开始",
+    "home": "首页",
+    "close": "关闭",
+    "back": "返回",
+    "next": "下一步",
+    "continue": "继续",
+    "finish": "完成",
+    "tryAgain": "再试一次",
+    "dismiss": "关闭",
+    "upgrade": "升级",
+    "learnMore": "了解更多",
+    "levelLabel": "等级 {level}",
+    "xpOutOf": "{current} / {total} 经验值",
+    "dayStreak": "天连胜",
+    "atRisk": "有风险！",
+    "bestStreak": "最佳：{count}",
+    "lessonsProgress": "已完成 {done}/{total} 节课",
+    "xpBonusPlus": "+{xp} 经验值",
+    "shareCongratulations": "恭喜！",
+    "shareAchievementPrompt": "分享你的成就",
+    "shareOnLinkedIn": "分享到领英",
+    "shareOnX": "分享到 X",
+    "shareCopyLink": "复制分享链接",
+    "shareButtonShare": "分享",
+    "shareButtonPost": "发布",
+    "shareButtonCopy": "复制",
+    "shareButtonCopied": "已复制！",
+    "closeLabel": "关闭",
+    "shareDialogLabel": "分享你的成就"
+  },
+  "nav": {
+    "dashboard": "仪表盘",
+    "courses": "课程",
+    "missions": "任务",
+    "leaderboard": "排行榜",
+    "profile": "个人资料",
+    "settings": "设置",
+    "signOut": "退出登录",
+    "brandName": "Learn to GPT",
+    "levelLabel": "等级 {level}"
+  },
+  "dashboard": {
+    "welcomeNewTitle": "欢迎来到 Learn to GPT，{name}！",
+    "welcomeNewSubtitleMissions": "你想构建什么？选择一个任务开始吧。",
+    "welcomeNewSubtitleDefault": "开始你的 ChatGPT 精通之旅。选择下方课程或直接进入你的第一节课。",
+    "startLearning": "开始学习",
+    "welcomeBack": "欢迎回来，{name}",
+    "streakMessage": "保持势头！你已连续学习 {streak} 天！",
+    "noStreakMessage": "今天开始一节课，建立你的连胜纪录！",
+    "dailyChallengeTitle": "每日挑战",
+    "dailyChallengeBody": "完成 1 节课以保持你的连胜纪录",
+    "dailyChallengeButton": "标记完成",
+    "dailyChallengeComplete": "已完成！",
+    "dailyChallengeXp": "+{xp} XP",
+    "continueHeader": "从上次中断的地方继续",
+    "startJourneyLabel": "开始你的学习之旅",
+    "startJourneySubtitle": "开始你的第一节课并获得经验值",
+    "courseProgress": "{progress}% 已完成",
+    "resumeButton": "继续",
+    "startButton": "开始",
+    "skillTreeHeading": "探索课程",
+    "achievementsHeading": "成就",
+    "whatBuildHeading": "你想构建什么？",
+    "missionHoursShort": "约 {hours} 小时",
+    "missionXp": "{xp} 经验值",
+    "missionSteps": "{count} 步",
+    "justExploreCourses": "直接浏览课程"
+  },
+  "courses": {
+    "eyebrow": "选择你的世界",
+    "heading": "课程世界",
+    "subheading": "从基础到 Architect 级别专业知识，精通 ChatGPT。每个世界都是一次新冒险。",
+    "filterAll": "所有课程",
+    "filterWhyClaude": "为何选择 ChatGPT？",
+    "filterThreeLevels": "三个级别",
+    "filterEssentials": "基础",
+    "filterLevelUp": "升级",
+    "filterBuildSomething": "构建项目",
+    "filterPractitionerSetup": "实践者设置",
+    "filterAdvancedWorkflows": "高级工作流",
+    "badgeFree": "免费",
+    "badgePro": "专业版",
+    "lessonsCount": "{count} 节课",
+    "minutesShort": "约 {minutes} 分钟",
+    "xpShort": "{xp} 经验值",
+    "backAll": "所有课程",
+    "levelProgressionHeading": "等级进度",
+    "progressLabel": "进度",
+    "progressLessons": "已完成 {done}/{total} 节课",
+    "ctaStart": "开始课程",
+    "ctaContinue": "继续",
+    "badgeProShort": "专业版",
+    "badgeFreeShort": "免费",
+    "minutesAbbrev": "{minutes}分"
+  },
+  "lessons": {
+    "backToCourse": "返回课程",
+    "progressCouldNotBeSaved": "进度无法保存：{error}",
+    "lessonCompleteBang": "课程完成！",
+    "savingEllipsis": "保存中...",
+    "xpPlus": "+{xp} 经验值",
+    "achievementUnlocked": "成就解锁：{name}",
+    "shareProgress": "分享你的进度",
+    "backToCourseButton": "返回课程",
+    "nextLesson": "下一节课",
+    "completeCourse": "完成课程",
+    "courseCompleteShareTitle": "已完成：{title}",
+    "achievementShareTitle": "成就：{name}",
+    "finishedCourseDesc": "刚刚在 Learn to GPT 完成了一门课程！",
+    "stepOfTotal": "第 {current} 步，共 {total} 步",
+    "completeExerciseToContinue": "完成练习以继续",
+    "skipExercise": "跳过练习",
+    "exerciseOfTotal": "第 {current} 题，共 {total} 题",
+    "xpEarnedBadge": "{xp} 经验值",
+    "xpSuffix": "经验值",
+    "challenge": "挑战",
+    "exerciseLabel": "练习",
+    "unknownExerciseType": "未知练习类型。",
+    "correctBang": "正确！",
+    "notQuite": "不完全正确。请回顾上面的解释。",
+    "submitAnswer": "提交答案",
+    "checkingEllipsis": "检查中...",
+    "showHint": "显示提示",
+    "nextHint": "下一条提示",
+    "explanation": "解释",
+    "matchingTerms": "术语",
+    "matchingDefinitions": "定义",
+    "allPairsMatched": "所有配对完成！",
+    "failedToCheckAnswer": "检查答案失败。请重试。",
+    "typeLabels": {
+      "multiple_choice": "选择正确答案",
+      "fill_blank": "填空",
+      "drag_drop": "排序",
+      "code_exercise": "代码挑战",
+      "scenario": "场景挑战",
+      "matching_pairs": "配对",
+      "speed_round": "速答",
+      "bug_hunt": "找 Bug",
+      "flash_cards": "闪卡",
+      "word_scramble": "单词拼图",
+      "typing_challenge": "打字挑战",
+      "whack_a_mole": "打地鼠",
+      "prompt_builder": "构建提示词",
+      "conversation_sim": "对话模拟",
+      "spot_the_difference": "找出不同",
+      "prompt_lab": "提示词实验室",
+      "speed_prompt": "快速提示词",
+      "scenario_walkthrough": "场景演练",
+      "exercise": "练习"
+    },
+    "signUpToSave": "注册以保存进度并赚取经验值",
+    "signUpToSaveBody": "创建免费账户来跟踪进度、解锁所有课程并开始连续学习。",
+    "signUpFree": "免费注册",
+    "continueExploring": "继续探索",
+    "advancedCta": {
+      "heading": "准备深入学习？",
+      "masterclassTitle": "大师课",
+      "masterclassBody": "完整指南。我将逐步带你了解本课程的设置、配置和工作流程模式。你将获得提示词、模板和整个系统。",
+      "masterclassButton": "获取大师课",
+      "setupTitle": "或者让我为你设置",
+      "setupBody": "预约一对一会议，我会在你的电脑上完成所有设置。你将带走一套为你项目量身配置的完整系统。",
+      "setupButton": "与 Reid 预约通话"
+    }
+  },
+  "pricing": {
+    "metaTitle": "定价 — Learn to GPT",
+    "metaDescription": "免费开始学习 ChatGPT，或升级专业版解锁全部内容。175+ 节课，700+ 练习，以及 Architect 考试准备。",
+    "navHome": "首页",
+    "navGetStarted": "开始",
+    "headline": "选择你的计划",
+    "subhead": "免费开始，准备好后随时升级。所有计划都包含核心学习体验。",
+    "mostPopular": "最受欢迎",
+    "freeName": "免费版",
+    "freeTagline": "先试用再决定",
+    "freePrice": "$0",
+    "perMonth": " /月",
+    "freeBody": "访问每个课程的预览课程，看看 Learn to GPT 是否适合你。无需信用卡。",
+    "freeBullet1": "每个课程 2-3 节预览课",
+    "freeBullet2": "基本进度跟踪",
+    "freeBullet3": "社区访问",
+    "freeCtaLoggedIn": "前往仪表盘",
+    "freeCtaGuest": "免费开始",
+    "proName": "专业版",
+    "proTagline": "精通 ChatGPT 所需的一切",
+    "proPrice": "Free",
+    "proBody": "无限制访问所有课程、练习和学习路径。完整的游戏化体验、Architect 考试准备，以及每周更新的新内容。",
+    "proBullet1": "5 个课程中的所有 175+ 节课",
+    "proBullet2": "700+ 动手练习",
+    "proBullet3": "连胜、排行榜和成就",
+    "proBullet4": "Architect 考试准备课程",
+    "proBullet5": "每周新增内容",
+    "proBullet6": "优先支持",
+    "proCtaLoggedIn": "升级到专业版",
+    "proCtaGuest": "开始专业版免费试用",
+    "compareHeading": "比较计划",
+    "headerFeature": "功能",
+    "headerFree": "免费版",
+    "headerPro": "专业版",
+    "featureFundamentalsPreview": "基础课程预览 (2-3 节课)",
+    "featureClaudeForWorkPreview": "ChatGPT for Work 预览 (2-3 节课)",
+    "featureBasicProgress": "基本进度跟踪",
+    "featureAllLessons": "5 个课程中的所有 175+ 节课",
+    "featureAllExercises": "700+ 动手练习",
+    "featureCodeChallenges": "代码挑战和真实世界场景",
+    "featureArchitectPrep": "Architect 考试准备课程",
+    "featureXpStreaks": "经验值、连胜和成就",
+    "featureLeaderboard": "排行榜访问权限",
+    "featureWeeklyContent": "每周新增内容",
+    "featurePrioritySupport": "优先支持",
+    "featureLimited": "有限",
+    "fineprint": "随时取消。无长期合同。所有价格均以美元计。",
+    "bottomHeadline": "准备好精通 ChatGPT 了吗？",
+    "bottomSubhead": "从免费计划开始，随时升级。",
+    "bottomCta": "创建免费账户",
+    "footerBrand": "Learn to GPT",
+    "footerHome": "首页",
+    "footerPrivacy": "隐私",
+    "footerTerms": "条款",
+    "copyright": "为使用 ChatGPT 进行学习的人而生。Learn to GPT 是一个独立项目。ChatGPT 和 OpenAI 是 OpenAI 的商标。"
+  },
+  "auth": {
+    "signInTitle": "登录",
+    "signInDescription": "登录你的 Learn to GPT 账户",
+    "emailLabel": "电子邮件",
+    "emailPlaceholder": "you@example.com",
+    "passwordLabel": "密码",
+    "passwordPlaceholder": "你的密码",
+    "signInSubmit": "登录",
+    "signingIn": "登录中...",
+    "orContinueWith": "或使用以下方式继续",
+    "signInWithGoogle": "使用 Google 登录",
+    "noAccountPrompt": "还没有账户？",
+    "signUpLink": "注册",
+    "signUpTitle": "创建账户",
+    "signUpDescription": "开始你的 ChatGPT 学习之旅",
+    "passwordHintMinChars": "至少 8 个字符",
+    "signUpSubmit": "创建账户",
+    "creatingAccount": "创建账户中...",
+    "signUpWithGoogle": "使用 Google 注册",
+    "hasAccountPrompt": "已有账户？",
+    "signInLink": "登录",
+    "checkEmailTitle": "检查你的电子邮件",
+    "checkEmailDescription": "我们已向 <strong>{email}</strong> 发送了一封确认链接。点击链接以激活你的账户。",
+    "alreadyConfirmed": "已确认？",
+    "passwordTooShort": "密码必须至少包含 8 个字符",
+    "pleaseCompleteVerification": "请完成验证",
+    "verificationFailed": "验证失败。请重试。",
+    "authCallbackError": "登录失败。请重试。"
+  },
+  "profile": {
+    "defaultLearnerName": "学习者",
+    "joinedLabel": "加入于 {date}",
+    "statTotalXp": "总经验值",
+    "statLevel": "等级",
+    "statLessons": "课程",
+    "statCourses": "学习路径",
+    "xpProgressHeading": "经验值进度",
+    "streakHeading": "连胜",
+    "trackProgressHeading": "学习路径进度",
+    "trackProgressCaption": "已完成 {done}/{total} 节课 ({pct}%)",
+    "achievementsHeading": "成就 ({unlocked}/{total})"
+  },
+  "settings": {
+    "heading": "设置",
+    "subheading": "管理你的账户和订阅。",
+    "profileHeading": "个人资料",
+    "profileSubheading": "更新你的显示名称和偏好设置。",
+    "displayNameLabel": "显示名称",
+    "emailLabel": "电子邮件",
+    "emailManagedNote": "电子邮件由你的身份验证提供商管理，无法在此处更改。",
+    "savedBang": "已保存！",
+    "savingEllipsis": "保存中...",
+    "saveChanges": "保存更改",
+    "subscriptionHeading": "订阅",
+    "subscriptionSubheading": "管理你的 Learn to GPT 计划。",
+    "freePlan": "免费计划",
+    "proPlan": "专业版计划",
+    "freeBadge": "免费",
+    "proBadge": "专业版",
+    "freeDescription": "仅可访问免费课程。升级以完全访问所有课程、练习和任务。",
+    "proDescription": "完全访问所有课程、练习和任务。",
+    "memberSince": "会员自 {date} 起",
+    "upgradeToPro": "升级到专业版",
+    "manageSubscription": "管理订阅",
+    "loadingEllipsis": "加载中...",
+    "signOutHeading": "退出登录",
+    "signOutSubheading": "在此设备上退出你的 Learn to GPT 账户。",
+    "signOutButton": "退出登录",
+    "deleteAccountHeading": "删除账户",
+    "deleteAccountSubheading": "永久删除你的账户及所有相关数据。此操作无法撤销。",
+    "deleteButton": "删除",
+    "deleteConfirmTitle": "删除账户",
+    "deleteConfirmBody": "这将永久删除你的账户、所有课程进度、成就和订阅数据。如果你有活跃订阅，它将被取消。此操作无法撤销。",
+    "deleteConfirmPrompt": "输入 DELETE 以确认",
+    "deleteConfirmPlaceholder": "DELETE",
+    "cancelButton": "取消",
+    "deleteConfirmButton": "是的，删除我的账户",
+    "deletingEllipsis": "删除中...",
+    "displayNameValidation": "显示名称必须为 2-50 个字符",
+    "somethingWentWrong": "出错了",
+    "failedToOpenPortal": "未能打开订阅门户",
+    "failedToDeleteAccount": "未能删除账户",
+    "allFreeHeading": "所有课程均免费。",
+    "allFreeBody": "Learn to GPT 没有付费方案。如果你希望我一对一为你配置，请发邮件至 reid@getateam.ai。"
+  },
+  "leaderboard": {
+    "heading": "排行榜",
+    "subheading": "按总经验值排名的顶尖学习者。",
+    "colRank": "排名",
+    "colPlayer": "玩家",
+    "colXp": "经验值",
+    "colLevel": "等级",
+    "colStreak": "连胜",
+    "emptyState": "排行榜上还没有学习者。成为第一个吧！",
+    "youLabel": "(你)",
+    "anonymous": "匿名",
+    "tabLocal": "你的语言",
+    "tabGlobal": "全球"
+  },
+  "errors": {
+    "somethingWentWrong": "出错了",
+    "failedToSaveProgress": "未能保存进度",
+    "failedToGenerateShareLink": "未能生成分享链接",
+    "generatingShareLink": "生成分享链接中..."
+  },
+  "landing": {
+    "meta": {
+      "title": "Learn to GPT — 从第一性原理精通 ChatGPT",
+      "description": "ChatGPT 的游戏化学习平台。从初学者到 Architect 认证，提供互动课程、动手练习和真实项目。"
+    },
+    "nav": {
+      "worlds": "世界",
+      "curriculum": "课程大纲",
+      "logIn": "登录",
+      "signIn": "登录",
+      "getStarted": "开始",
+      "masterclass": "Masterclass"
+    },
+    "hero": {
+      "eyebrow": "现已教授 ChatGPT",
+      "headline": "",
+      "headlineAccent": "把ChatGPT变成你的武器",
+      "subtitle": "做团队里遇到AI问题第一个想到你的人。",
+      "body": "每一关都是你真正想打通的挑战。写真实的提示词，构建真实的东西，带走一个明天就能用在工作上的成果。",
+      "subhead": "游戏化学习平台，让你在 30 天内从好奇的初学者成长为 ChatGPT 原生构建者——互动课程、动手练习和你真正会使用的项目。",
+      "ctaNew": "初次使用ChatGPT？从这里开始",
+      "ctaExisting": "直接跳到进阶内容 →",
+      "fine": "无需信用卡。没有视频。与OpenAI无关。",
+      "ctaPrimary": "免费开始",
+      "ctaSecondary": "查看定价",
+      "reassurance": "免费开始。无需信用卡。第一课免费。"
+    },
+    "benefits": {
+      "handsOn": {
+        "title": "从第一节课就开始动手实践",
+        "body": "没有被动的视频讲座。每节课都是一个互动练习，你将使用真实的 ChatGPT 提示词完成，并即时获得评分和解释。"
+      },
+      "builtByBuilders": {
+        "title": "由日常使用 ChatGPT 的构建者打造",
+        "body": "我们使用 ChatGPT 交付生产代码、管道和产品。我们的课程正是我们开始时希望拥有的。"
+      },
+      "certification": {
+        "title": "获得 Architect 认证",
+        "body": "跟踪你通过 5 个级别的进度。毕业时获得雇主和团队真正看重的可验证证书。"
+      }
+    },
+    "anti": {
+      "labelOld": "传统方式",
+      "labelNew": "Learn to GPT",
+      "old1": "闪卡",
+      "old2": "讲座视频",
+      "old3": "选择题",
+      "old4": "抽象理论",
+      "new1": "实时沙盒",
+      "new2": "真实提示词",
+      "new3": "构建真实项目",
+      "new4": "部署到生产环境",
+      "tagline": "不是闪卡，是真正的能力。",
+      "stakes": "动手学习的人比只看视频的人记住的多3倍。这里从第一分钟就是实操。"
+    },
+    "paths": {
+      "label": "选择你的任务",
+      "heading": "想从哪里开始？",
+      "a": {
+        "badge": "免费",
+        "title": "从零开始",
+        "desc": "从没用过ChatGPT？完美。我们会在一小时内带你从\"这是什么？\"到构建自定义角色。",
+        "step1": "基础",
+        "step2": "专业",
+        "step3": "ChatGPT Code Interpreter",
+        "cta": "开始第一关 — 8分钟"
+      },
+      "b": {
+        "badge": "跳过基础",
+        "title": "直接升级",
+        "desc": "已经在写提示词了？跳过基础。直接进入系统提示词、ChatGPT Code Interpreter或API。",
+        "step1": "系统提示词",
+        "step2": "ChatGPT Code Interpreter",
+        "step3": "API",
+        "cta": "跳到你的关卡 →"
+      }
+    },
+    "tracks": {
+      "label": "冒险之旅",
+      "heading": "五个世界。从第一个提示词到完全精通。",
+      "world1": {
+        "num": "世界 01",
+        "badge": "免费",
+        "title": "基础",
+        "desc": "ChatGPT的思维方式。你的第一个提示词。对话模式。系统提示词。",
+        "tagline": "\"像ChatGPT一样思考\""
+      },
+      "world2": {
+        "num": "世界 02",
+        "title": "专业",
+        "desc": "面向实际工作的高级提示技巧。思维链、结构化输出、少样本、评估。",
+        "tagline": "\"应用到工作中\""
+      },
+      "world3": {
+        "num": "世界 03",
+        "title": "ChatGPT Code Interpreter",
+        "desc": "构建软件的CLI。项目脚手架、调试、多文件编辑、部署。",
+        "tagline": "\"用ChatGPT编程\""
+      },
+      "world4": {
+        "num": "世界 04",
+        "title": "API与智能体",
+        "desc": "工具使用、多步骤工作流、智能体循环、错误处理、生产模式。",
+        "tagline": "\"用ChatGPT构建\""
+      },
+      "world5": {
+        "num": "世界 05",
+        "badge": "最终BOSS",
+        "title": "架构师",
+        "desc": "评估、监控、成本优化、安全性、企业模式。完整蓝图。",
+        "tagline": "\"精通ChatGPT\""
+      }
+    },
+    "game": {
+      "label": "游戏机制",
+      "heading": "严肃的内容。上瘾的形式。",
+      "xp": {
+        "title": "获取经验值",
+        "desc": "每完成一个挑战都会增加分数"
+      },
+      "badges": {
+        "title": "收集徽章",
+        "desc": "掌握每项技能时解锁成就"
+      },
+      "levels": {
+        "title": "升级",
+        "desc": "每个世界解锁下一个层级"
+      },
+      "streaks": {
+        "title": "保持连续",
+        "desc": "每日练习建立持久的能力"
+      },
+      "caption": "每个关卡赚取经验值。每个世界解锁下一个。追踪你的连续记录。攀登排行榜。"
+    },
+    "sandbox": {
+      "label": "交互式沙盒",
+      "heading": "每个关卡都是动手实践。不是观看。不是阅读。你来编写。ChatGPT来回应。",
+      "filename": "level-03-system-prompts.py",
+      "comment1": "# 第3关：给ChatGPT一个角色",
+      "comment2": "# 你来编写。ChatGPT成为它。",
+      "stamp": "+25 XP",
+      "footerText": "真实的代码。真实的API调用。真实的结果。每一个关卡。",
+      "cta": "免费试用"
+    },
+    "build": {
+      "label": "你将构建什么",
+      "heading": "每完成一关，你都会带走一个真实的成果。",
+      "item1": {
+        "title": "定制AI助手",
+        "desc": "针对你角色调优的ChatGPT角色 — 像队友一样回答，而不是聊天机器人。"
+      },
+      "item2": {
+        "title": "自动化工作流",
+        "desc": "处理重复性工作的多步骤流水线，让你专注于决策。"
+      },
+      "item3": {
+        "title": "生产级ChatGPT Code Interpreter项目",
+        "desc": "完全从终端搭建、调试和部署的完整应用。"
+      },
+      "item4": {
+        "title": "智能体系统",
+        "desc": "能使用工具、自主决策、代替你自动运行的AI智能体。"
+      },
+      "caption": "这不是假设。学习者在World 4之前就能全部构建完成。"
+    },
+    "cred": {
+      "badge": "由实践者构建",
+      "headline": "加入来自97个国家的1,200多名学习者，一起掌握 ChatGPT。",
+      "levels": {
+        "num": "1,200+",
+        "label": "学习者"
+      },
+      "challenges": {
+        "num": "97",
+        "label": "个国家"
+      },
+      "worlds": {
+        "num": "7",
+        "label": "学习路径"
+      },
+      "achievement": {
+        "num": "7",
+        "label": "语言"
+      }
+    },
+    "finalCta": {
+      "headline": "你的团队已经在问AI的问题了。",
+      "headlineAccent": "成为那个有答案的人。",
+      "subtitle": "一关。八分钟。你就能知道这适不适合你。",
+      "cta": "开始第一关 →"
+    },
+    "pricing": {
+      "headline": "所有课程均免费。",
+      "body": "定价已调整。所有课程均免费 — 前往课程大纲。",
+      "cta": "查看课程大纲"
+    },
+    "faq": {
+      "label": "常见问题",
+      "heading": "常见问题",
+      "q1": "Learn to GPT 是什么？",
+      "a1": "Learn to GPT 是 ChatGPT 的游戏化学习平台。通过互动课程、动手练习和真实项目，帮助你从第一个提示词到 Architect 认证，全面掌握 ChatGPT。平台包含 5 个学习路径、175 多节课程和 700 多个练习，是目前最全面的 ChatGPT 专项培训。",
+      "q2": "Learn to GPT 免费吗？",
+      "a2": "是的。路径 1（基础）完全免费，无需信用卡。你将学习 ChatGPT 的思维方式、编写第一个提示词并掌握对话模式。大师班可解锁全部路径、所有课程、练习、成就系统和排行榜。",
+      "q3": "我能学到什么？",
+      "a3": "五个学习路径带你从初学者到专家：(1) 基础 — ChatGPT 的思维方式和第一个提示词，(2) 专业提示工程 — 思维链、结构化输出、少样本学习，(3) ChatGPT Code Interpreter — 用于构建软件的 CLI，(4) API 和智能体 — 工具使用和智能体工作流，(5) Architect — 评估、监控和企业级模式。",
+      "q4": "这与 OpenAI 有关联吗？",
+      "a4": "没有。Learn to GPT 是一个独立的学习平台，与 OpenAI 没有任何关联、背书或官方联系。我们基于公开文档和实际开发经验教授 ChatGPT 技能。",
+      "q5": "Learn to GPT 支持哪些语言？",
+      "a5": "Learn to GPT 支持 7 种语言：英语、日语、韩语、简体中文、德语、法语和西班牙语。完整的界面、所有课程和练习都已翻译，你可以用自己偏好的语言学习 ChatGPT。"
+    },
+    "footer": {
+      "tagline": "Learn to GPT",
+      "worlds": "世界",
+      "curriculum": "课程大纲",
+      "community": "社区",
+      "blog": "博客",
+      "support": "支持",
+      "privacy": "隐私",
+      "terms": "条款",
+      "copyright": "为使用 ChatGPT 进行学习的人而生。Learn to GPT 是一个独立项目。ChatGPT 和 OpenAI 是 OpenAI 的商标。",
+      "masterclass": "Masterclass"
+    }
+  },
+  "localeSwitcher": {
+    "label": "语言"
+  },
+  "curriculum": {
+    "meta": {
+      "title": "ChatGPT 课程 — 免费互动培训 | Learn to GPT",
+      "description": "浏览所有 ChatGPT 课程。免费互动课程、实践练习和实战项目。用 7 种语言学习提示词工程、ChatGPT Code Interpreter 和 AI 开发。从初学者到高级。"
+    },
+    "heading": "ChatGPT 课程大纲",
+    "subheading": "5 个学习轨道带你从第一个 ChatGPT 提示到 Architect 认证。每节课都是实践式的 — 你写，ChatGPT 回应。",
+    "nav": {
+      "getStarted": "开始使用",
+      "curriculum": "课程大纲",
+      "privacy": "隐私",
+      "terms": "条款",
+      "masterclass": "Masterclass"
+    },
+    "tracks": {
+      "why_claude": "轨道 1：基础",
+      "three_levels": "轨道 2：专业提示工程",
+      "essentials": "轨道 3：ChatGPT Code Interpreter",
+      "level_up": "轨道 4：API 与智能体",
+      "build_something": "轨道 5：Architect",
+      "practitioner_setup": "轨道 6：实践者设置",
+      "advanced_workflows": "轨道 7：高级工作流"
+    },
+    "free": "免费",
+    "pro": "Pro",
+    "lessons": "课程",
+    "cta": {
+      "heading": "准备好掌握 ChatGPT 了吗？",
+      "body": "从轨道 1 免费开始。无需信用卡。",
+      "button": "免费开始学习"
+    },
+    "pathways": {
+      "starter": {
+        "label": "入门路径 · 免费",
+        "heading": "从这里开始。",
+        "body": "ChatGPT 基础知识。为什么重要，三个级别在实践中的样子，以及第一天必备。免费。"
+      },
+      "advanced": {
+        "label": "高级实践者 · 免费",
+        "heading": "我实际使用的方式。",
+        "body": "这是我用来运营自己业务的系统。记忆文件、智能体技能、MCP、自动化。免费。"
+      }
+    }
+  },
+  "learn": {
+    "meta": {
+      "title": "学习 ChatGPT — 免费互动课程 | Learn to GPT",
+      "description": "通过免费互动课程、实操练习和真实项目掌握 ChatGPT。从入门到高级，支持 7 种语言。"
+    },
+    "heading": "学习 ChatGPT",
+    "subheading": "适合所有水平的免费互动课程。",
+    "intro": "Learn to GPT 通过实操练习和真实项目教你 ChatGPT——不是视频，不是记忆卡。从基础开始或直接跳到高级工作流。一切免费开始。",
+    "cta": "免费开始学习",
+    "ctaFine": "免费开始，无需信用卡。与 OpenAI 无关。",
+    "freeCourses": {
+      "label": "免费课程",
+      "heading": "从这里开始——完全免费。",
+      "freeBadge": "免费",
+      "startLearning": "开始学习"
+    },
+    "course1": {
+      "title": "认识 ChatGPT — 基础篇",
+      "description": "迈出使用 ChatGPT 的第一步。了解 ChatGPT 的思维方式，编写你的第一个 prompt，发现能带来实际效果的对话模式。"
+    },
+    "course2": {
+      "title": "从业者设置",
+      "description": "为日常专业工作配置 ChatGPT。记忆文件、上下文管理，以及专业人士实际使用的工作流。"
+    },
+    "why": {
+      "heading": "为什么在 Learn to GPT 学习 ChatGPT？",
+      "point1": {
+        "title": "第一课就开始实操",
+        "body": "没有被动观看的视频。每一课都是你用真实 ChatGPT prompt 完成的互动练习，即时评分和讲解。"
+      },
+      "point2": {
+        "title": "由每天使用 ChatGPT 的开发者打造",
+        "body": "我们每天用 ChatGPT 交付生产代码、流水线和产品。这套课程就是我们当初希望拥有的。"
+      },
+      "point3": {
+        "title": "支持 7 种语言",
+        "body": "整个平台——课程、练习和界面——提供英语、日语、韩语、中文、德语、法语和西班牙语版本。"
+      }
+    },
+    "finalCta": {
+      "headline": "准备好学习 ChatGPT 了吗？",
+      "subtitle": "Track 1 免费。无需信用卡。看看这种学习方式是否适合你。"
+    },
+    "nav": {
+      "home": "首页",
+      "curriculum": "课程大纲",
+      "logIn": "登录",
+      "getStarted": "免费开始",
+      "terms": "条款",
+      "privacy": "隐私",
+      "copyright": "© 2026 Learn to GPT。与 OpenAI 无关。"
+    }
+  },
+  "claude-code": {
+    "meta": {
+      "title": "ChatGPT Code Interpreter 教程 — 掌握 AI 驱动开发 | Learn to GPT",
+      "description": "通过实操练习学习 ChatGPT Code Interpreter。掌握斜杠命令、记忆系统、智能体工作流和钩子。从初学者到专家的互动教程。"
+    },
+    "heading": "教程",
+    "subheading": "从终端掌握 AI 驱动开发",
+    "intro": "ChatGPT Code Interpreter 是 OpenAI 的 AI 驱动开发 CLI。学习如何配置它，构建智能体工作流，并通过实操练习更快地开发。",
+    "trackInfo": "Track 7 — 高级",
+    "cta": "免费开始学习",
+    "viewCurriculum": "查看课程大纲",
+    "whatIs": {
+      "heading": "什么是 ChatGPT Code Interpreter？",
+      "body": "ChatGPT Code Interpreter 是 OpenAI 的命令行工具，将 ChatGPT 直接带入你的终端。它读取你的代码库，执行命令，编辑文件，管理多步骤工作流——全部通过自然语言。可以把它想象成一位住在你终端里、理解你整个项目的资深工程师。"
+    },
+    "whatYouLearn": {
+      "label": "课程大纲",
+      "heading": "你将学到什么"
+    },
+    "features": {
+      "0": {
+        "title": "斜杠命令",
+        "desc": "掌握让 ChatGPT Code Interpreter 强大的内置命令——从 /init 和 /compact 到你自己构建的自定义斜杠命令。"
+      },
+      "1": {
+        "title": "记忆系统",
+        "desc": "配置 GPT.md 文件，在会话之间为 ChatGPT 提供关于项目、编码标准和偏好的持久上下文。"
+      },
+      "2": {
+        "title": "智能体工作流",
+        "desc": "构建多步骤智能体工作流，在人类监督下自主规划、执行和验证复杂任务。"
+      },
+      "3": {
+        "title": "钩子",
+        "desc": "设置事件驱动的钩子，在 ChatGPT Code Interpreter 操作前后触发自定义动作。"
+      },
+      "4": {
+        "title": "GPT.md 配置",
+        "desc": "编写有效的项目规则和配置文件，针对你的特定代码库塑造 ChatGPT 的行为。"
+      },
+      "5": {
+        "title": "高级模式",
+        "desc": "将斜杠命令、记忆、智能体和钩子组合成生产级工作流，成倍提升你的开发速度。"
+      }
+    },
+    "preview": {
+      "caption": "学习为任何项目配置 ChatGPT Code Interpreter"
+    },
+    "finalCta": {
+      "headline": "准备好掌握",
+      "subtitle": "实操练习。真实工作流。没有废话。"
+    },
+    "nav": {
+      "curriculum": "课程大纲",
+      "logIn": "登录",
+      "getStarted": "免费开始",
+      "home": "首页",
+      "terms": "条款",
+      "privacy": "隐私",
+      "copyright": "© 2026 Learn to GPT。与 OpenAI 无关。"
+    }
+  },
+  "ai-training": {
+    "meta": {
+      "title": "AI培训项目 — 从初学者到专家学习ChatGPT | Learn to GPT",
+      "description": "全面的ChatGPT培训项目。通过互动课程、实践练习和认证，从初学者成为专家。支持7种语言。"
+    },
+    "heading": "ChatGPT培训",
+    "subheading": "从初学者到专家 — 按自己的节奏",
+    "badge": "全面培训",
+    "intro": "Learn to GPT提供结构化的AI培训项目，从您与ChatGPT的第一次对话到构建高级代理工作流程。互动课程、实践练习和真实项目 — 全部免费开始。",
+    "tracks": {
+      "heading": "培训路径",
+      "label": "选择您的级别",
+      "beginner": {
+        "level": "初级",
+        "title": "认识ChatGPT",
+        "desc": "学习使用ChatGPT的基础知识。无需经验。"
+      },
+      "intermediate": {
+        "level": "中级",
+        "title": "上下文与提示工程",
+        "desc": "掌握上下文管理、提示工程和高级对话技巧。"
+      },
+      "advanced": {
+        "level": "高级",
+        "title": "ChatGPT Code Interpreter与代理",
+        "desc": "构建代理工作流程，自动化开发，掌握ChatGPT Code Interpreter。"
+      },
+      "explore": "探索路径"
+    },
+    "benefits": {
+      "heading": "为什么选择Learn to GPT培训",
+      "gamified": {
+        "title": "游戏化学习",
+        "body": "获得经验值，解锁成就，在排行榜上竞争。"
+      },
+      "languages": {
+        "title": "7种语言",
+        "body": "支持中文、英语、西班牙语、法语、德语、日语、韩语学习。"
+      },
+      "teams": {
+        "title": "团队培训",
+        "body": "通过我们250美元的大师班项目提升团队能力。"
+      }
+    },
+    "masterclass": {
+      "heading": "大师班",
+      "body": "通过指导教学、实践工作坊和认证加速团队的AI培训。",
+      "cta": "了解更多"
+    },
+    "cta": "免费开始培训",
+    "ctaFine": "无需信用卡",
+    "finalCta": {
+      "headline": "准备好开始AI培训了吗？",
+      "subtitle": "加入数千名正在掌握ChatGPT的学习者。"
+    },
+    "viewCurriculum": "查看完整课程",
+    "nav": {
+      "home": "首页",
+      "curriculum": "课程",
+      "getStarted": "开始",
+      "logIn": "登录",
+      "privacy": "隐私",
+      "terms": "条款",
+      "copyright": "Learn to GPT"
+    }
+  },
+  "prompt-engineering": {
+    "meta": {
+      "title": "ChatGPT提示工程 — 互动课程 | Learn to GPT",
+      "description": "掌握ChatGPT提示工程。学习上下文管理、系统提示、少样本示例和高级技巧，配合实践练习。"
+    },
+    "heading": "ChatGPT提示工程",
+    "subheading": "掌握与AI沟通的艺术",
+    "intro": "学习编写有效的提示，从ChatGPT获得最佳结果。",
+    "whatIs": {
+      "heading": "什么是提示工程？",
+      "body": "提示工程是创建指令帮助AI模型产生准确、有用和相关输出的技能。"
+    },
+    "skillsSection": {
+      "heading": "您将学到什么",
+      "label": "核心技能"
+    },
+    "skills": {
+      "0": {
+        "title": "上下文窗口管理",
+        "desc": "学习构建对话和最优管理ChatGPT的上下文窗口。"
+      },
+      "1": {
+        "title": "系统提示",
+        "desc": "设计设置正确语调、约束和行为的有效系统提示。"
+      },
+      "2": {
+        "title": "少样本示例",
+        "desc": "使用示例引导ChatGPT的输出格式、风格和推理模式。"
+      },
+      "3": {
+        "title": "思维链",
+        "desc": "为复杂问题和多步任务启用逐步推理。"
+      },
+      "4": {
+        "title": "工具使用",
+        "desc": "将ChatGPT与外部工具和API集成。"
+      },
+      "5": {
+        "title": "高级模式",
+        "desc": "掌握宪法AI、自我反思和多轮策略。"
+      }
+    },
+    "trackInfo": "此内容在我们的初级和中级路径中涵盖。",
+    "cta": "免费开始",
+    "viewCurriculum": "查看完整课程",
+    "finalCta": {
+      "headline": "准备好掌握提示工程了吗？",
+      "subtitle": "今天就开始免费的互动课程。"
+    },
+    "preview": {
+      "caption": "示例：一个结构良好的系统提示"
+    },
+    "nav": {
+      "home": "首页",
+      "curriculum": "课程",
+      "getStarted": "开始",
+      "logIn": "登录",
+      "privacy": "隐私",
+      "terms": "条款",
+      "copyright": "Learn to GPT"
+    }
+  },
+  "getting-started": {
+    "meta": {
+      "title": "开始使用ChatGPT — 免费初学者指南 | Learn to GPT",
+      "description": "今天开始学习ChatGPT。免费的分步初学者指南，包含互动课程和实践练习。无需经验。"
+    },
+    "heading": "开始使用ChatGPT",
+    "subheading": "迈向AI流利的第一步",
+    "intro": "无需经验。Learn to GPT从您的第一次AI对话到构建真实工作流程，全程指导您。免费开始，按自己的节奏学习。",
+    "cta": "创建免费账户",
+    "ctaFine": "无需信用卡",
+    "steps": {
+      "heading": "如何使用",
+      "step1": {
+        "title": "创建免费账户",
+        "desc": "几秒钟即可注册。无需信用卡，无需承诺。"
+      },
+      "step2": {
+        "title": "从免费课程开始",
+        "desc": "从我们的初学者课程「认识ChatGPT」开始。"
+      },
+      "step3": {
+        "title": "通过实践练习",
+        "desc": "每节课都包含互动练习和即时反馈。"
+      },
+      "step4": {
+        "title": "升级到高级路径",
+        "desc": "掌握提示工程、ChatGPT Code Interpreter和代理工作流程。"
+      }
+    },
+    "included": {
+      "heading": "免费获得的内容",
+      "item1": "涵盖ChatGPT基础的互动课程",
+      "item2": "带有即时反馈和XP奖励的实践练习",
+      "item3": "支持7种语言 — 中文、英语、西班牙语、法语、德语、日语、韩语",
+      "item4": "带有成就和排行榜的进度跟踪"
+    },
+    "finalCta": {
+      "headline": "准备好开始了吗？",
+      "subtitle": "加入数百名正在掌握ChatGPT的学习者。"
+    },
+    "nav": {
+      "home": "首页",
+      "curriculum": "课程",
+      "getStarted": "开始",
+      "logIn": "登录",
+      "privacy": "隐私",
+      "terms": "条款",
+      "copyright": "Learn to GPT"
+    }
+  },
+  "masterclass-page": {
+    "meta": {
+      "title": "ChatGPT大师课 — 指导培训 | Learn to GPT",
+      "description": "大师课，涵盖高级ChatGPT工作流程、ChatGPT Code Interpreter、提示工程和团队培训。带有指导教学的实践工作坊。"
+    },
+    "heading": "ChatGPT大师课",
+    "subheading": "通过一次指导培训，从入门到精通。",
+    "intro": "Learn to GPT大师课是一个实践性的指导培训课程，带您超越基础。高级提示工程、ChatGPT Code Interpreter工作流程、智能体模式和真实项目 — 全部融入一个密集课程。",
+    "hero": {
+      "badge": "指导培训"
+    },
+    "price": "一次性付款",
+    "cta": "立即报名",
+    "ctaFine": "一次性付款。终身访问。与OpenAI无关联。",
+    "included": {
+      "heading": "课程包含",
+      "item1": {
+        "title": "指导教学",
+        "desc": "逐步引导您学习高级ChatGPT概念。无需猜测 — 学习从业者实际使用的模式。"
+      },
+      "item2": {
+        "title": "实践工作坊",
+        "desc": "在培训过程中构建真实项目。每个概念都通过您亲自完成的练习来巩固。"
+      },
+      "item3": {
+        "title": "高级ChatGPT Code Interpreter内容",
+        "desc": "掌握ChatGPT Code Interpreter工作流程 — 斜杠命令、记忆文件、钩子、智能体和多文件架构模式。"
+      },
+      "item4": {
+        "title": "团队培训就绪",
+        "desc": "让您的团队跟上节奏。大师课内容旨在在组织中扩展，从个人贡献者到管理者。"
+      }
+    },
+    "topics": {
+      "heading": "您将学到什么",
+      "item1": "获得一致、生产级结果的高级提示工程技术",
+      "item2": "ChatGPT Code Interpreter设置、自定义和日常工作流程集成",
+      "item3": "记忆文件、GPT.md和长期项目的上下文管理",
+      "item4": "智能体模式 — 构建自主运行的AI工作流程",
+      "item5": "多文件架构和代码库规模的ChatGPT Code Interpreter操作",
+      "item6": "从入门到部署的真实项目演练"
+    },
+    "audience": {
+      "heading": "适合谁",
+      "point1": {
+        "title": "个人从业者",
+        "body": "您已经使用过ChatGPT，但想更深入。您已准备好构建真实的工作流程，而不仅仅是聊天。"
+      },
+      "point2": {
+        "title": "团队负责人和管理者",
+        "body": "您需要让团队在ChatGPT上提高生产力。大师课为您提供可在整个组织中推广的结构化课程。"
+      },
+      "point3": {
+        "title": "开发者和技术专业人员",
+        "body": "您想掌握ChatGPT Code Interpreter — 终端原生AI编码工具。学习让您的开发工作流程提升10倍的模式。"
+      }
+    },
+    "finalCta": {
+      "headline": "准备好掌握ChatGPT了吗？",
+      "subtitle": "一次付款。终身访问。今天就开始构建。"
+    },
+    "nav": {
+      "home": "首页",
+      "curriculum": "课程",
+      "getStarted": "开始",
+      "logIn": "登录",
+      "privacy": "隐私",
+      "terms": "条款",
+      "copyright": "Learn to GPT"
+    }
+  },
+  "certification": {
+    "meta": {
+      "title": "ChatGPT认证 — 证明您的AI技能 | Learn to GPT",
+      "description": "获得ChatGPT认证。通过实践评估和验证资质证明您的专业能力。"
+    },
+    "heading": "ChatGPT认证",
+    "subheading": "用验证资质证明您的技能",
+    "intro": "完成结构化学习路径，通过实践评估，获得认证。",
+    "title": "ChatGPT认证",
+    "description": "AI认证项目",
+    "levels": {
+      "heading": "认证级别",
+      "label": "选择您的路径",
+      "popularBadge": "最受欢迎",
+      "beginner": {
+        "title": "ChatGPT初级",
+        "description": "证明基础理解。",
+        "skill1": "基础提示技巧",
+        "skill2": "对话管理",
+        "skill3": "理解AI能力"
+      },
+      "practitioner": {
+        "title": "ChatGPT中级",
+        "description": "证明中级熟练度。",
+        "skill1": "高级提示工程",
+        "skill2": "上下文优化",
+        "skill3": "多轮策略"
+      },
+      "architect": {
+        "title": "ChatGPT架构师",
+        "description": "专家级技能。",
+        "skill1": "ChatGPT Code Interpreter精通",
+        "skill2": "工作流程设计",
+        "skill3": "企业AI架构"
+      }
+    },
+    "proves": {
+      "heading": "认证证明什么",
+      "point1": {
+        "title": "验证技能",
+        "body": "每个级别需要实践评估。"
+      },
+      "point2": {
+        "title": "系统掌握",
+        "body": "从基础到专家的清晰进阶。"
+      },
+      "point3": {
+        "title": "职业优势",
+        "body": "用验证资质脱颖而出。"
+      }
+    },
+    "howItWorks": {
+      "heading": "如何使用",
+      "label": "3个简单步骤",
+      "step1": {
+        "title": "完成路径",
+        "body": "完成所有课程和练习。"
+      },
+      "step2": {
+        "title": "通过评估",
+        "body": "证明实践能力。"
+      },
+      "step3": {
+        "title": "获得资质",
+        "body": "获得验证的数字资质。"
+      }
+    },
+    "cta": "开始认证",
+    "ctaFine": "从免费课程开始",
+    "finalCta": {
+      "headline": "准备好证明您的AI技能了吗？",
+      "subtitle": "今天就开始认证之旅。"
+    },
+    "nav": {
+      "home": "首页",
+      "curriculum": "课程",
+      "getStarted": "开始",
+      "logIn": "登录",
+      "privacy": "隐私",
+      "terms": "条款",
+      "copyright": "Learn to GPT"
+    }
+  },
+  "for-teams": {
+    "meta": {
+      "title": "团队版ChatGPT — 企业AI培训 | Learn to GPT",
+      "description": "培训整个团队使用ChatGPT。标准化技能、统一工作流程、可衡量的进步。"
+    },
+    "heading": "团队版ChatGPT",
+    "subheading": "在组织中标准化AI技能",
+    "hero": {
+      "label": "团队培训"
+    },
+    "intro": "为团队提供ChatGPT的共同基础。",
+    "title": "团队版ChatGPT",
+    "description": "企业AI培训",
+    "benefits": {
+      "label": "团队选择我们的原因",
+      "heading": "规模化构建AI能力",
+      "point1": {
+        "title": "标准化技能",
+        "body": "每位成员学习相同的基础和最佳实践。"
+      },
+      "point2": {
+        "title": "统一工作流程",
+        "body": "团队共享GPT.md配置和代理模式。"
+      },
+      "point3": {
+        "title": "可衡量的进步",
+        "body": "追踪团队的完成率和分数。"
+      }
+    },
+    "howItWorks": {
+      "heading": "如何使用",
+      "step1": {
+        "title": "选择套餐",
+        "body": "从大师班开始或联系我们。"
+      },
+      "step2": {
+        "title": "团队入职",
+        "body": "我们设置账户并自定义工作流程。"
+      },
+      "step3": {
+        "title": "一起学习",
+        "body": "通过结构化路径实践学习。"
+      },
+      "step4": {
+        "title": "衡量成果",
+        "body": "追踪进度并识别技能差距。"
+      }
+    },
+    "pricing": {
+      "heading": "价格",
+      "subheading": "适合各种规模团队的灵活选项",
+      "masterclass": {
+        "title": "Masterclass",
+        "label": "大师班",
+        "per": "一次性",
+        "feature1": "最多10人指导教学",
+        "feature2": "实践工作坊形式",
+        "feature3": "包含全部7个路径",
+        "feature4": "90天访问权限"
+      },
+      "enterprise": {
+        "badge": "定制",
+        "title": "Enterprise",
+        "label": "企业设置",
+        "per": "每次合作",
+        "feature1": "与团队1:1设置",
+        "feature2": "定制GPT.md配置",
+        "feature3": "代理工作流程设计",
+        "feature4": "持续咨询支持"
+      }
+    },
+    "cta": "开始",
+    "ctaFine": "企业价格请联系我们",
+    "finalCta": {
+      "headline": "准备好培训团队了吗？",
+      "subtitle": "从大师班开始或联系我们了解定制方案。"
+    },
+    "nav": {
+      "home": "首页",
+      "curriculum": "课程",
+      "getStarted": "开始",
+      "logIn": "登录",
+      "privacy": "隐私",
+      "terms": "条款",
+      "copyright": "Learn to GPT"
+    }
+  },
+  "paywall": {
+    "heading": "您已完成 {count} 门免费课程",
+    "subheading": "无限制访问所有课程、练习和学习路径。",
+    "feature1": "全部 7 条学习路径",
+    "feature2": "375+ 实践练习",
+    "feature3": "终身访问 — 一次性付款",
+    "cta": "解锁所有课程",
+    "dismiss": "以后再说"
+  }
+}

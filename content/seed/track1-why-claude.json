@@ -1,0 +1,477 @@
+{
+  "track": "why_claude",
+  "courses": [
+    {
+      "title": "Why ChatGPT?",
+      "slug": "why-claude",
+      "description": "Go from zero to actually useful with ChatGPT in 30 minutes. Hands-on from the first minute.",
+      "difficulty": "beginner",
+      "order_index": 1,
+      "is_free": true,
+      "icon": "Sparkles",
+      "lessons": [
+        {
+          "title": "Meet ChatGPT",
+          "slug": "meet-claude",
+          "description": "What ChatGPT is, how it thinks, what makes it powerful, and your first real interaction.",
+          "order_index": 1,
+          "xp_reward": 50,
+          "estimated_minutes": 6,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<p>Open chat.openai.com right now in another tab. Type: <strong>\"What are you, and what can you actually do that's useful to me?\"</strong></p><p>Notice the response? ChatGPT is built by OpenAI, one of the most prominent AI research companies in the world. Unlike a search engine that retrieves existing pages, ChatGPT generates responses by reasoning through your question — synthesizing knowledge, following instructions, and adapting to your context in real time.</p><p>ChatGPT comes in several access modes: <strong>ChatGPT (browser)</strong> for conversation, writing, and analysis; <strong>Canvas</strong> for collaborative document and code editing; <strong>Code Interpreter</strong> for running actual Python code and analyzing data; and <strong>Custom GPTs</strong> — specialized versions of ChatGPT built for specific tasks. Same underlying intelligence, multiple ways to access it. This course starts with the browser conversation — that's where most people get 80% of their value.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>Your first five prompts to try — right now, in another tab:</strong></p><p>These aren't synthetic examples. Each one reveals a specific ChatGPT capability in under two minutes.</p><ol><li><strong>Complexity test:</strong> <em>\"Compare working from home versus office for a 30-person company with a sales team. I want a nuanced answer that doesn't pretend one is obviously better.\"</em> — Tests whether ChatGPT holds complexity without collapsing to a simple answer.</li><li><strong>Instruction precision:</strong> <em>\"Write a professional email declining a meeting. Under 80 words. Don't start with 'I.' Don't use the word 'unfortunately.' Suggest an async alternative.\"</em> — Count how many constraints it hits.</li><li><strong>Voice matching:</strong> <em>\"Here are two emails I wrote: [paste two emails]. Write a third email in my voice, declining a project but keeping the relationship warm.\"</em> — ChatGPT reads your style and matches it.</li><li><strong>Pushback test:</strong> <em>\"I want to quit my job and open a restaurant. Give me honest advice, not just encouragement.\"</em> — Watch whether it surfaces real considerations or just validates the idea.</li><li><strong>Code helper:</strong> <em>\"I have a spreadsheet with 200 rows of sales data. How would I calculate total revenue by region using a formula?\"</em> — Tests practical problem-solving without needing to be technical.</li></ol><p>Each prompt reveals something about how ChatGPT handles instructions, holds complexity, and adapts to your context. Run at least two before continuing.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_wc_01a"
+              },
+              {
+                "type": "text",
+                "content": "<p>ChatGPT's three core strengths: <strong>versatile generation, instruction-following, and reasoning.</strong></p><p><strong>Versatile generation</strong> means ChatGPT can write, code, analyze, translate, summarize, and brainstorm across an enormous range of domains. Ask it to draft a contract clause, explain quantum entanglement to a teenager, debug Python code, or write a birthday message — it switches registers fluently.</p><p><strong>Instruction-following</strong> is where ChatGPT earns its keep in professional settings. Give it specific constraints — tone, length, format, audience, what to include, what to avoid — and it tracks them throughout. Power users layer many constraints at once and ChatGPT holds them all.</p><p><strong>Reasoning</strong> means ChatGPT doesn't just pattern-match to common answers. It works through logical steps, weighs trade-offs, and applies your context to produce answers tailored to your situation. This is the difference between a search engine and a thinking partner.</p><p><strong>ChatGPT's expanding toolkit:</strong> Beyond conversation, ChatGPT includes tools like DALL-E image generation, Browse with Bing for real-time web search, Code Interpreter for running Python and analyzing files, and Canvas for collaborative editing. Knowing which tool to reach for — and when — is what separates casual users from people who get real leverage from the platform.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>How to get honest, useful responses from ChatGPT:</strong></p><p>ChatGPT is trained to be helpful, which means it can sometimes lean toward validation over candor. Three prompting patterns that unlock more honest responses:</p><p><strong>The explicit permission pattern:</strong> <em>\"I want your honest assessment, including the parts I might not want to hear.\"</em> This signals you're not looking for flattery. ChatGPT responds differently when you explicitly ask for critique.</p><p><strong>The uncertainty probe:</strong> <em>\"How confident are you in that answer? Where might you be wrong or outdated?\"</em> This prompts ChatGPT to flag where it's extrapolating versus where information is well-established.</p><p><strong>The devil's advocate:</strong> <em>\"Now make the strongest argument against your own recommendation.\"</em> This pressure-tests the analysis before you act on it — and is one of the most underused prompting patterns available.</p><p>These three patterns are the difference between using ChatGPT as a yes-machine and using it as a genuine thinking partner. The capability is there from day one — you just have to ask for it.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_wc_01b"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_wc_01c"
+              },
+              {
+                "type": "summary",
+                "content": "<p>ChatGPT is built by OpenAI and generates responses by reasoning through your questions — it's a thinking partner, not a search engine. Its three strengths are versatile generation, instruction-following, and reasoning. Beyond conversation, it has specialized tools: DALL-E for images, Code Interpreter for data and code, Canvas for editing, and Custom GPTs for specific tasks. Use the explicit permission pattern, the uncertainty probe, and the devil's advocate to get more honest, useful responses. Next: how to actually talk to it effectively.</p>"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_wc_01a",
+              "order_index": 1,
+              "type": "scenario_walkthrough",
+              "prompt": "Pick the right ChatGPT mode for three different tasks.",
+              "options": null,
+              "correct_answer": "{\"title\": \"Pick the Right Mode\", \"steps\": [{\"type\": \"context\", \"text\": \"Three tasks. Each needs ChatGPT, but not the same ChatGPT feature. Match each to the right mode.\"}, {\"type\": \"choice\", \"claude_response\": \"Task 1: Brainstorm 10 gift ideas for your partner's birthday. No files, just creative thinking.\", \"question\": \"Which mode?\", \"options\": [\"ChatGPT chat \\u2014 browser conversation\", \"Canvas \\u2014 collaborative document editor\", \"Code Interpreter \\u2014 run code and analyze data\"], \"correct\": 0, \"feedback\": \"Pure thinking, no files, nothing to build. ChatGPT chat in the browser is exactly right.\"}, {\"type\": \"choice\", \"claude_response\": \"Task 2: You have 6 months of sales data in an Excel file that needs analysis by region and month.\", \"question\": \"Which mode?\", \"options\": [\"ChatGPT chat \\u2014 browser conversation\", \"Canvas \\u2014 collaborative document editor\", \"Code Interpreter \\u2014 upload the file and run Python analysis\"], \"correct\": 2, \"feedback\": \"Code Interpreter runs actual Python on your uploaded file and produces real analysis, charts, and summaries. This is exactly what it's for.\"}, {\"type\": \"choice\", \"claude_response\": \"Task 3: You need to write a long technical proposal that you want to edit collaboratively with AI assistance.\", \"question\": \"Which mode?\", \"options\": [\"ChatGPT chat \\u2014 browser conversation\", \"Canvas \\u2014 persistent document with inline editing\", \"Code Interpreter \\u2014 generate the document as code\"], \"correct\": 1, \"feedback\": \"Canvas gives you a persistent document workspace where you and ChatGPT edit together — ideal for long-form writing that needs revision and structure.\"}]}",
+              "explanation": "The decision is one question: does this task need thinking, data analysis, or collaborative editing? Thinking = chat. Data/code = Code Interpreter. Long-form editing = Canvas.",
+              "hints": [
+                "Ask yourself: is this a thinking task, a data task, or a long document editing task?"
+              ],
+              "xp_reward": 15
+            },
+            {
+              "id": "ex_wc_01b",
+              "order_index": 2,
+              "type": "multiple_choice",
+              "prompt": "An AI gives you a confident answer about a legal question. You make a decision based on it. What's the real risk?",
+              "options": [
+                "No risk -- AI is just a tool, the decision is yours",
+                "Confident wrong answers are dangerous because you're less likely to double-check them",
+                "The AI will learn from the mistake and improve",
+                "You can always reverse a bad decision"
+              ],
+              "correct_answer": "1",
+              "explanation": "A confident wrong answer is worse than an uncertain one because you're less likely to question it. When AI flags uncertainty, you verify. When it states something as fact, you trust it. Prompting ChatGPT to flag its confidence level is a key skill.",
+              "hints": [
+                "Think about the difference between an AI that says 'I think...' vs one that states something as absolute fact."
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_wc_01c",
+              "order_index": 3,
+              "type": "prompt_lab",
+              "prompt": "Write a prompt asking ChatGPT to review a job applicant's resume and give honest, useful feedback -- not just praise.",
+              "options": null,
+              "correct_answer": "{\"scenario\":\"You're hiring for a senior marketing role. A candidate's resume looks decent on the surface. Write a prompt that gets real feedback -- strengths AND weaknesses -- so you can decide whether to bring them in.\",\"scoring_criteria\":[{\"keyword_group\":[\"honest\",\"critical\",\"candid\",\"don't hold back\",\"genuine\",\"real feedback\",\"weaknesses\",\"gaps\",\"concerns\",\"red flag\"],\"label\":\"Asked for honest/critical feedback\",\"points\":2},{\"keyword_group\":[\"senior\",\"marketing\",\"role\",\"position\",\"job\",\"hiring\"],\"label\":\"Specified the role\",\"points\":1},{\"keyword_group\":[\"strengths\",\"pros\",\"strong\",\"good\",\"stands out\",\"impressive\"],\"label\":\"Asked for strengths too (balanced review)\",\"points\":1},{\"keyword_group\":[\"interview\",\"hire\",\"decision\",\"bring in\",\"move forward\",\"next step\"],\"label\":\"Connected to hiring decision\",\"points\":1},{\"keyword_group\":[\"experience\",\"qualification\",\"skill\",\"background\",\"achievement\",\"metric\",\"result\"],\"label\":\"Mentioned what to evaluate\",\"points\":1},{\"keyword_group\":[\"compare\",\"versus\",\"typical\",\"expect\",\"standard\",\"benchmark\",\"competitive\"],\"label\":\"Asked for benchmarking\",\"points\":1}],\"max_points\":7,\"pass_threshold\":4,\"ideal_prompt\":\"I'm hiring for a senior marketing manager role. Here's a candidate's resume. Give me an honest assessment: what are the real strengths, what are the gaps or red flags, and would you recommend bringing them in for an interview? Don't be polite for the sake of it -- I need to make a good hiring decision.\",\"tips\":[\"Explicitly asking for weaknesses signals to ChatGPT that you want honesty, not flattery.\",\"Connecting the review to a hiring decision gives ChatGPT a clear purpose for the feedback.\"]}",
+              "explanation": "Most people ask AI to 'review my resume' and get 'Looks great!' When you explicitly ask for honest critique and tie it to a real decision, ChatGPT delivers the kind of feedback that actually helps.",
+              "hints": [
+                "If you just say 'review this resume,' most AI will default to being nice. How do you signal you want the real assessment?"
+              ],
+              "xp_reward": 10
+            }
+          ]
+        },
+        {
+          "title": "Your First Conversation",
+          "slug": "your-first-conversation",
+          "description": "How to talk to ChatGPT so it actually helps. Context, iteration, and the prompting basics that matter.",
+          "order_index": 2,
+          "xp_reward": 50,
+          "estimated_minutes": 7,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<p>Try this right now. Open ChatGPT and type: <strong>\"Write me an email.\"</strong></p><p>You'll get a generic template that sounds like every other AI email — something with \"I hope this message finds you well\" and placeholder brackets everywhere. Now try: <strong>\"Write a follow-up email to a client named Sarah who missed our Tuesday call. Tone: warm but direct. Mention rescheduling for Thursday at 2pm. Keep it under 100 words.\"</strong></p><p>Night and day. The difference is context. ChatGPT can't read your mind, but it's exceptional at working with whatever you give it. The more specific you are about the situation, the person, the goal, and the constraints — the closer your first response will be to something you can actually use.</p><p>This is the single most important skill in getting value from ChatGPT: front-loading context. Most people treat prompts like they're texting a friend who already knows the backstory. ChatGPT knows nothing until you tell it.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>When to start a new conversation vs. continue an existing one:</strong></p><p>This is a decision people get wrong constantly, and it causes real problems. Here's the rule of thumb: <strong>continue a conversation when the new request builds on what came before. Start fresh when you're switching to a different topic or goal.</strong></p><p>Why it matters: ChatGPT builds on everything earlier in the conversation. If you've established a specific tone, audience, and set of constraints, all of that stays active for every new message. That's powerful when you're iterating on one deliverable. It's a problem when you switch to a new task, because ChatGPT will carry over context you no longer want.</p><p><strong>Continue the conversation when:</strong> You're editing the same document. You're iterating on a draft. You asked a follow-up question to the same topic. You want ChatGPT to remember something from earlier in the session.</p><p><strong>Start a new conversation when:</strong> You're moving to a completely different task. You want fresh context, no preconceptions. You've finished a task and are ready to start the next one.</p><p>The practical habit: treat each conversation like a project file. One conversation per project, new conversation per new project. This keeps ChatGPT's context clean and your outputs consistent.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_wc_02a"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>The five things ChatGPT needs from you — and why each one matters:</strong></p><p><strong>1. Who (the audience).</strong> \"Write a message\" and \"Write a message to a VP at a Fortune 500 company you've never met\" produce completely different outputs. The audience drives tone, vocabulary, assumptions, and length.</p><p><strong>2. What (the deliverable).</strong> Email, memo, analysis, list, script, pitch deck outline — each has conventions. Naming the deliverable type lets ChatGPT follow the right ones.</p><p><strong>3. How (tone, length, format).</strong> \"Professional but warm,\" \"no longer than 150 words,\" \"use bullet points\" — these constraints are what separates a usable output from something you'll spend 20 minutes editing.</p><p><strong>4. Why (what decision this serves).</strong> ChatGPT writes better when it understands the purpose. \"I need this proposal to convince a skeptical CFO\" produces different content than \"I need this proposal for a meeting where everyone already agrees.\"</p><p><strong>5. What not (things to avoid).</strong> Explicit exclusions are powerful. \"Don't mention the price increase yet,\" \"avoid corporate buzzwords,\" \"don't start with a question\" — ChatGPT follows these precisely when you state them.</p><p>You don't need all five for every prompt. A simple task needs one or two. A complex deliverable benefits from all five. The more of these you provide upfront, the less editing you do after.</p><p><strong>The iteration loop is where ChatGPT shines.</strong> Tell it what to adjust: \"Make the opening more personal.\" \"Too formal — strip the corporate language.\" \"Add a line about our free consultation offer.\" Each round gets closer. The best ChatGPT users think of the first response as version 0.5, not the final draft.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>Three conversation patterns that consistently produce great results:</strong></p><p><strong>Pattern A — The Layered Brief:</strong> Start with the full context in one message. Role, audience, deliverable, constraints, what to avoid. Get the first draft. Then iterate with specific feedback. Use it for any deliverable where you know the requirements upfront — proposals, emails, memos, reports.</p><p><em>Template: \"I'm a [role]. Write a [deliverable type] for [audience]. The goal is [purpose]. Tone: [tone]. Length: [constraint]. Include: [key elements]. Avoid: [exclusions].\"</em></p><p><strong>Pattern B — The Progressive Reveal:</strong> Start with a broader question and let ChatGPT's answer shape your next prompt. Useful for research, decision-making, and brainstorming where you don't know exactly what you're looking for until you see some output.</p><p><em>Example sequence: \"What are the main risks in entering the Southeast Asian e-commerce market?\" → [review response] → \"Of these, which risk is most common for B2B companies under $50M?\" → [review] → \"What have successful entrants done to mitigate that specific risk?\"</em></p><p><strong>Pattern C — The Adversarial Check:</strong> After ChatGPT gives you a recommendation, ask it to argue the other side. \"Now make the strongest case against that recommendation.\" This surfaces assumptions, weaknesses, and counterarguments before you act on the analysis.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_wc_02b"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>One more pattern worth building into muscle memory: ask ChatGPT to push back.</strong></p><p>\"I'm thinking about X. What am I missing?\" or \"Poke holes in this plan before I commit.\" Most people use AI as a yes-machine — they paste in their idea and ask ChatGPT to polish it. The far more valuable move is to ask ChatGPT to challenge it.</p><p>This works because ChatGPT will surface assumptions you've made unconsciously, identify risks you haven't considered, and flag where your reasoning might not hold. You're not outsourcing your thinking — you're pressure-testing it before it matters. Use this before important decisions, before pitches, before you commit to a direction.</p><p><strong>Prompt template to use now:</strong> <em>\"Here's my current plan: [paste your plan]. What are the weakest assumptions I'm making? What risks am I not accounting for? What would change your assessment?\"</em></p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_wc_02c"
+              },
+              {
+                "type": "summary",
+                "content": "<p>Context turns generic output into useful output. The five context elements — who, what, how, why, and what not — are your prompting toolkit. Iteration turns good output into great output. The three conversation patterns — Layered Brief, Progressive Reveal, and Adversarial Check — give you a repeatable approach for different kinds of tasks. Start new conversations when switching topics; continue when building on the same project. Next: Custom Instructions and how to shape every ChatGPT response by default.</p>"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_wc_02a",
+              "order_index": 1,
+              "type": "multiple_choice",
+              "prompt": "What's wrong with the prompt 'Write me an email'?",
+              "options": [
+                "Nothing -- ChatGPT can figure out what you mean",
+                "It's too short -- ChatGPT needs at least 100 words of instruction",
+                "It gives ChatGPT zero context about who it's to, what it's about, or what tone to use",
+                "You should never ask AI to write emails"
+              ],
+              "correct_answer": "2",
+              "explanation": "Without context, ChatGPT has to guess everything: recipient, topic, tone, length, purpose. You'll get a generic template. Context is the difference between useful output and filler.",
+              "hints": [
+                "Think about what you'd need to know if someone asked YOU to write an email with no other information."
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_wc_02b",
+              "order_index": 2,
+              "type": "prompt_lab",
+              "prompt": "Your client needs a project proposal by Friday. Write a detailed prompt to ChatGPT with enough context to get a strong first draft.",
+              "options": null,
+              "correct_answer": "{\"scenario\":\"Your client (a mid-size law firm) needs a proposal for a website redesign. Budget: $15K, timeline: 6 weeks, due Friday. The client is traditional and formal. Write a prompt that gives ChatGPT everything it needs to draft a proposal you could actually send.\",\"scoring_criteria\":[{\"keyword_group\":[\"law firm\",\"client\",\"legal\",\"attorney\",\"firm\"],\"label\":\"Identified the client type\",\"points\":1},{\"keyword_group\":[\"proposal\",\"pitch\",\"scope\",\"deliverable\"],\"label\":\"Specified document type\",\"points\":1},{\"keyword_group\":[\"$15,000\",\"15000\",\"budget\",\"cost\",\"price\",\"pricing\"],\"label\":\"Included budget\",\"points\":1},{\"keyword_group\":[\"6 weeks\",\"six weeks\",\"timeline\",\"deadline\",\"schedule\",\"friday\"],\"label\":\"Mentioned timeline\",\"points\":1},{\"keyword_group\":[\"formal\",\"professional\",\"traditional\",\"conservative\",\"tone\"],\"label\":\"Specified tone or audience\",\"points\":2},{\"keyword_group\":[\"website\",\"redesign\",\"web\",\"site\",\"design\"],\"label\":\"Described the project\",\"points\":1}],\"max_points\":7,\"pass_threshold\":4,\"ideal_prompt\":\"Write a project proposal for a website redesign for a mid-size law firm. Budget: $15K. Timeline: 6 weeks. The firm is traditional and formal -- no startup language. Include: executive summary, scope with deliverables, timeline with milestones, pricing breakdown. Keep it under 2 pages. Tone: professional and confident.\",\"tips\":[\"Tell ChatGPT who the audience is. A law firm and a tech startup need completely different tones.\",\"Include constraints like page length, budget, and timeline -- they shape the entire document.\"]}",
+              "explanation": "A detailed prompt with client type, budget, timeline, tone, and structure gives ChatGPT enough to produce a draft you'd actually review and send. Every decision you make upfront saves you editing time on the back end.",
+              "hints": [
+                "Think about every decision ChatGPT would need to make without asking you. The more you answer upfront, the better the first draft."
+              ],
+              "xp_reward": 10
+            },
+            {
+              "id": "ex_wc_02c",
+              "order_index": 3,
+              "type": "speed_prompt",
+              "prompt": "You have 45 seconds. Write a prompt asking ChatGPT to push back on a bad business idea.",
+              "options": null,
+              "correct_answer": "{\"time_limit_seconds\":45,\"scenario\":\"Your friend wants to open a third coffee shop in a town of 5,000 people that already has two. They're asking you for money. Write a prompt that gets ChatGPT to challenge the idea, not encourage it.\",\"scoring_criteria\":[{\"keyword_group\":[\"push back\",\"challenge\",\"poke holes\",\"devil's advocate\",\"critique\",\"problems\",\"risks\",\"why this won't work\",\"honest\"],\"label\":\"Asked ChatGPT to challenge the idea\",\"points\":2},{\"keyword_group\":[\"coffee\",\"shop\",\"cafe\",\"store\",\"business\"],\"label\":\"Referenced the business type\",\"points\":1},{\"keyword_group\":[\"5000\",\"small town\",\"population\",\"market\",\"demand\",\"two\",\"competition\",\"already\",\"existing\"],\"label\":\"Mentioned market size or competition\",\"points\":2},{\"keyword_group\":[\"invest\",\"money\",\"friend\",\"fund\",\"capital\",\"asking\"],\"label\":\"Referenced the investment ask\",\"points\":1},{\"keyword_group\":[\"question\",\"ask\",\"conversation\",\"talk\",\"discuss\",\"bring up\"],\"label\":\"Connected to a real conversation\",\"points\":1}],\"max_points\":7,\"pass_threshold\":4,\"ideal_prompt\":\"My friend wants to open a third coffee shop in a town of 5,000 people and is asking me to invest. Two coffee shops already exist. Be brutally honest: what are the biggest risks and reasons this could fail? Don't encourage the idea -- I need the hard questions before putting money in.\"}",
+              "explanation": "Under time pressure, you find out what you naturally include. The key elements: tell ChatGPT to challenge (not encourage), give the relevant facts, and explain why you need honesty.",
+              "hints": [
+                "Focus on telling ChatGPT what role to play: critic, not cheerleader."
+              ],
+              "xp_reward": 15
+            }
+          ]
+        },
+        {
+          "title": "Custom Instructions & Context",
+          "slug": "context-is-everything",
+          "description": "How ChatGPT's context window works, how Custom Instructions shape every response, and how to give ChatGPT the right information every time.",
+          "order_index": 3,
+          "xp_reward": 50,
+          "estimated_minutes": 7,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<p>Try this: paste a long email thread into ChatGPT and ask \"What's the actual decision being made here, and who's blocking it?\" ChatGPT reads the entire thread, tracks who said what, identifies the subtext, and gives you the answer in 30 seconds. That's the <strong>context window</strong> at work.</p><p>The context window is how much ChatGPT can hold in active memory during one conversation. Modern ChatGPT models support very large context windows — meaning entire contracts, research papers, or months of email threads can fit in a single conversation without ChatGPT losing earlier content.</p><p>This matters more than most people realize. A small context window forces you to chunk your work — paste excerpts, manually cross-reference, and lose continuity. A large context window means you can paste an entire document and ask questions that span from page 1 to page 40 in a single session.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>What a big context window lets you do:</strong></p><p>Paste a 40-page contract and ask about any clause — including how it interacts with a clause 30 pages earlier. Compare two vendor proposals side by side. Upload a full dataset and ask what patterns emerged. Have a two-hour working session on a complex problem without context decay.</p><p>The comparison task is especially powerful. Paste two documents and ask ChatGPT to find every place they contradict each other, every term that appears in one but not the other, every assumption they share. ChatGPT holds both simultaneously and compares them systematically.</p><p><strong>Practical prompt template for context window work:</strong><br><em>\"I'm going to paste [document/email thread/contract]. After reading it, tell me: [specific question that requires reading the whole thing]. Pay particular attention to [section/topic/pattern].\"</em></p>"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>Five strategies for working with large context efficiently:</strong></p><p><strong>1. Front-load your question.</strong> Tell ChatGPT what you're looking for before you paste the document. \"I'm analyzing this contract for indemnification risk. Here's the full document: [paste].\" This primes ChatGPT to read with a specific lens.</p><p><strong>2. Anchor to specific sections.</strong> When cross-referencing, name the sections explicitly. \"Compare section 7.2 (Liability Caps) against section 12.4 (Indemnification). Do these conflict?\"</p><p><strong>3. Ask for a structured summary before the deep dive.</strong> On long documents: \"Read this document and give me a one-paragraph summary plus the five most important sections I should ask you about.\" This calibrates the conversation before you commit to a specific analysis direction.</p><p><strong>4. Use the same conversation for the full project.</strong> Don't start a new conversation mid-analysis. Every message builds on the prior ones. Start a new conversation only when you're done with that document.</p><p><strong>5. Specify what's missing.</strong> \"This contract is missing the payment schedule. Don't assume it's standard — flag every place where the absence of a payment schedule creates ambiguity.\" ChatGPT won't fill in the blanks silently when you've told it not to.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_wc_03a"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>Custom Instructions</strong> let you give ChatGPT persistent context that applies across every new conversation: your role, your audience, preferences that always apply, examples of the output style you want. Think of it as briefing a colleague once so you don't repeat yourself every session.</p><p>To set up Custom Instructions: click your profile → Custom Instructions → fill in what ChatGPT should know about you and how you want it to respond.</p><p><strong>The craft of writing good Custom Instructions:</strong></p><p><strong>Be specific over general.</strong> \"I'm a B2B SaaS marketing consultant who specializes in demand generation for technical products\" beats \"I'm a marketer.\" The more specific the context, the more consistent the outputs.</p><p><strong>Include examples of good output.</strong> Paste two or three examples of the style or tone you want. ChatGPT will match the pattern. \"Here are two examples of emails I consider on-brand: [examples]\" is worth more than 500 words of description.</p><p><strong>State what NOT to do.</strong> Negative constraints are often more powerful. \"Never use jargon,\" \"Don't start with 'I,'\" \"Avoid bullet points when prose flows better\" — ChatGPT follows these consistently when you state them clearly.</p><p><strong>Custom Instructions template:</strong><br><em>\"About me: I am [specific role]. My audience is [specific audience]. My style is [specific style description]. Always [key constraint]. Never [key exclusion]. When I ask you to write, match this example: [paste example].\"</em></p>"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>Four ready-to-use Custom Instructions templates:</strong></p><p><strong>The Writing Assistant:</strong><br><em>\"I'm a [role] writing primarily for [audience]. My tone is [describe — e.g., direct and warm, professional but not formal]. Always match this voice. Never use corporate buzzwords like 'leverage,' 'synergy,' or 'circle back.' When you write something for me, it should sound like me, not like a generic AI assistant. Here are two examples of writing I love: [paste examples].\"</em></p><p><strong>The Strategic Analyst:</strong><br><em>\"I'm a business professional who uses ChatGPT for strategic thinking. When I present an idea or plan, do three things: (1) identify the strongest version of the argument, (2) surface the weakest assumptions, (3) recommend the next question I should answer before acting. Be direct. I don't need encouragement — I need clarity.\"</em></p><p><strong>The Research Synthesizer:</strong><br><em>\"I'm going to paste multiple sources on a topic. Your job is to synthesize them — identify where they agree, where they conflict, and what's missing. Don't just summarize each one. Find the through-lines and contradictions. At the end, tell me what I'd need to read or verify to fill the gaps.\"</em></p><p><strong>The Meeting Prep Coach:</strong><br><em>\"When I'm preparing for a meeting, help me by: (1) generating the 5 hardest questions they're likely to ask, (2) drafting answers to each one, and (3) flagging any information gaps I should address beforehand. Assume the audience is skeptical and well-informed.\"</em></p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_wc_03b"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_wc_03c"
+              },
+              {
+                "type": "summary",
+                "content": "<p>The context window lets ChatGPT hold entire documents in memory. Five strategies maximize it: front-load your question, anchor to specific sections, ask for a structured summary first, keep the same conversation for the full project, and specify what's missing. Custom Instructions give ChatGPT persistent instructions that shape every response — use the four ready-to-use templates as a starting point and adapt them to your specific role. Next: what ChatGPT is genuinely great at and where it struggles.</p>"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_wc_03a",
+              "order_index": 1,
+              "type": "prompt_lab",
+              "prompt": "You're reviewing a 40-page contract. Write a prompt that uses ChatGPT's context window to cross-reference two distant sections.",
+              "options": null,
+              "correct_answer": "{\"scenario\":\"You've pasted a 40-page vendor contract into ChatGPT. The indemnification clause on page 30 seems to create unlimited liability, but you remember the liability cap on page 5. Write a prompt that asks ChatGPT to cross-reference these two sections.\",\"scoring_criteria\":[{\"keyword_group\":[\"page 5\",\"earlier\",\"section\",\"liability\",\"cap\",\"limit\",\"previous\",\"above\",\"before\"],\"label\":\"Referenced an earlier part of the document\",\"points\":2},{\"keyword_group\":[\"indemnification\",\"indemnify\",\"page 30\",\"current\",\"this section\",\"this clause\"],\"label\":\"Referenced the current section\",\"points\":1},{\"keyword_group\":[\"conflict\",\"contradict\",\"override\",\"weaken\",\"undermine\",\"loophole\",\"exception\",\"cross-reference\",\"compare\",\"connect\"],\"label\":\"Asked about conflicts or connections\",\"points\":2},{\"keyword_group\":[\"negotiate\",\"change\",\"fix\",\"recommend\",\"should I\",\"what should\"],\"label\":\"Asked for actionable recommendation\",\"points\":1},{\"keyword_group\":[\"protect\",\"risk\",\"exposure\",\"liable\",\"dangerous\",\"concern\",\"gap\"],\"label\":\"Focused on practical impact\",\"points\":1}],\"max_points\":7,\"pass_threshold\":4,\"ideal_prompt\":\"The indemnification clause on page 30 seems to create unlimited liability in some scenarios. But the liability cap on page 5 was supposed to limit our exposure. Cross-reference these two sections: does the indemnification clause effectively override the liability cap? If so, what language creates the loophole and what should I push back on?\",\"tips\":[\"Referencing specific pages forces ChatGPT to use its full context window.\",\"Asking about conflicts between sections is the context window's killer feature.\"]}",
+              "explanation": "Cross-referencing distant parts of a document is the context window's killer feature. ChatGPT holds the entire document at once and can compare sections systematically.",
+              "hints": [
+                "The power move is connecting two distant parts of the document."
+              ],
+              "xp_reward": 10
+            },
+            {
+              "id": "ex_wc_03b",
+              "order_index": 2,
+              "type": "scenario_walkthrough",
+              "prompt": "Walk through setting up Custom Instructions that make ChatGPT consistently useful for your specific role.",
+              "options": null,
+              "correct_answer": "{\"title\": \"Setting Up Custom Instructions\", \"steps\": [{\"type\": \"context\", \"text\": \"You're a product manager who uses ChatGPT daily for writing, analysis, and decision-making. Let's set up Custom Instructions that make every conversation start in the right context.\"}, {\"type\": \"choice\", \"claude_response\": \"You open Custom Instructions for the first time. What's the most important thing to include in 'What should ChatGPT know about you'?\", \"question\": \"What belongs in the first field?\", \"options\": [\"Your name and location\", \"Your role, industry, and the type of work you do with ChatGPT\", \"Your favorite programming language\", \"Nothing — leave it blank\"], \"correct\": 1, \"feedback\": \"Your role and context is the foundation. 'I'm a product manager at a B2B SaaS company. I write specs, analyze user research, prep for stakeholder meetings, and draft strategic documents' — this shapes every response.\"}, {\"type\": \"choice\", \"claude_response\": \"Now you need to fill in 'How would you like ChatGPT to respond?' What's the most valuable thing to specify here?\", \"question\": \"What response preference makes the most difference?\", \"options\": [\"Always respond in bullet points\", \"Your tone preferences, length defaults, and what to avoid (anti-patterns)\", \"Always start with a summary\", \"Use formal language always\"], \"correct\": 1, \"feedback\": \"Tone + length defaults + anti-patterns. 'Be direct. Lead with the answer, then explain. Avoid corporate jargon like leverage or synergy. Default to under 200 words unless I ask for more.' These three things filter out 80% of bad outputs.\"}]}",
+              "explanation": "Custom Instructions work best when they combine your role context, tone preferences, length defaults, and explicit anti-patterns. Set once, applies to every conversation.",
+              "hints": [
+                "Think about what you'd want ChatGPT to assume about you without being asked every time."
+              ],
+              "xp_reward": 15
+            },
+            {
+              "id": "ex_wc_03c",
+              "order_index": 3,
+              "type": "multiple_choice",
+              "prompt": "What happens when an AI runs out of context window space during a long conversation?",
+              "options": [
+                "It tells you it forgot and asks you to repeat",
+                "It silently drops earlier context and starts giving contradictory answers",
+                "It automatically saves and reloads the conversation",
+                "Nothing -- modern AI never runs out of context"
+              ],
+              "correct_answer": "1",
+              "explanation": "When context is exceeded, AI silently drops earlier parts of the conversation. It doesn't warn you. It just starts giving answers that contradict what it said before, or misses connections to earlier discussion. That's why context window size matters for real work.",
+              "hints": [
+                "Think about what 'forgetting' means for an AI. Does it know it forgot?"
+              ],
+              "xp_reward": 5
+            }
+          ]
+        },
+        {
+          "title": "ChatGPT's Strengths & Limits",
+          "slug": "strengths-and-limits",
+          "description": "What ChatGPT is genuinely great at, where it struggles, and how to work around the gaps.",
+          "order_index": 4,
+          "xp_reward": 50,
+          "estimated_minutes": 6,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<p>Ask ChatGPT to generate an image — it can, via DALL-E. Ask it for today's stock price — it can browse the web to find it. But ask it to run a financial model on your actual spreadsheet — you need Code Interpreter for that. Knowing where ChatGPT excels versus which specific tool to reach for is what separates power users from people who are perpetually disappointed.</p><p><strong>Where ChatGPT genuinely excels:</strong></p><p><strong>Versatile generation across domains.</strong> Writing, coding, analysis, translation, summarization, brainstorming — ChatGPT switches between these fluently. It writes legal summaries, explains machine learning concepts, debugs Python, translates French contracts, and brainstorms marketing angles, often in the same conversation.</p><p><strong>Nuanced writing that adapts to your audience.</strong> Give ChatGPT a style guide, examples of your voice, and specific constraints — it maintains them throughout a long document. This is why it's unusually valuable for deliverables that have strict requirements.</p><p><strong>Complex multi-constraint instructions.</strong> Ask ChatGPT to do many things simultaneously — specific tone, format, length, include these points, avoid those phrases — and it tracks all of them. This is where heavy context-setting pays off.</p><p><strong>Integrated tools that extend its capabilities.</strong> Unlike a basic chatbot, ChatGPT has real tools attached: DALL-E for image generation, Browse with Bing for live web search, Code Interpreter for running actual Python code on your files, and Canvas for collaborative document editing. These tools make it a genuinely multi-modal assistant.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>The ChatGPT tool suite — what each does and when to use it:</strong></p><p><strong>Browse with Bing:</strong> Real-time web search. ChatGPT can look up current events, recent research, live pricing, and anything that happened after its training cutoff. Enable it when you need current information. Without it, ChatGPT's knowledge has a cutoff date.</p><p><strong>DALL-E image generation:</strong> Generate images from text descriptions. Useful for mockups, concept illustrations, social media graphics, and creative assets. Prompt quality matters enormously — describe composition, style, mood, and what to exclude.</p><p><strong>Code Interpreter (Advanced Data Analysis):</strong> Runs actual Python code. Upload a CSV or Excel file and ask ChatGPT to analyze it, chart it, clean it, or calculate statistics. This is real computation, not just describing how to do it. The output is actual files you can download.</p><p><strong>Canvas:</strong> A persistent document editor where you and ChatGPT collaborate on text or code. Unlike chat, Canvas shows the document alongside the conversation so you can make targeted edits to specific sections. Best for long-form writing or iterative code projects.</p><p><strong>Custom GPTs:</strong> Pre-configured versions of ChatGPT built for specific tasks — customer service, legal review, code generation, brand voice. Available in the GPT Store or ones you build yourself. They have baked-in instructions, tools, and sometimes access to specific knowledge bases.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_wc_04a"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>Where ChatGPT struggles — and what to do instead:</strong></p><p><strong>Hallucination on obscure facts.</strong> ChatGPT is excellent on common, well-documented information. On obscure facts — the specific provision of a niche regulation, the exact date of an obscure historical event, a specific person's biographical detail — it can sound confident while being wrong. Verify names, dates, citations, and statistics through primary sources when accuracy matters.</p><p><strong>Stale information without Browse enabled.</strong> ChatGPT's training has a cutoff date. For anything that changes frequently — regulations, pricing, current events, personnel — either enable Browse or bring the current data to ChatGPT yourself by pasting it in.</p><p><strong>Large-scale computation on raw numbers.</strong> ChatGPT can reason about math and catch logical errors, but for spreadsheet-scale computation — financial models, statistical analysis, 10,000-row operations — use Code Interpreter or a dedicated spreadsheet tool. ChatGPT is for interpretation and analysis; Code Interpreter is for the actual computation.</p><p><strong>Maintaining consistency across very long sessions.</strong> In a very long conversation, earlier context can fade. For complex long-running projects, consider starting a new conversation and pasting key context again, or using a Custom GPT that has the context baked in.</p><p><strong>The key insight:</strong> The best ChatGPT users know which tool to reach for at each step. They use Browse for real-time data, DALL-E for visuals, Code Interpreter for data analysis, Canvas for long-form editing, and chat for the thinking, writing, and reasoning that sits on top of all of those.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>Practical workarounds for ChatGPT's most common limitations:</strong></p><p><strong>When you need real-time data:</strong> Enable Browse with Bing, or paste the current data yourself. The workflow: open a browser, get the current data, paste it into ChatGPT with the question \"Given this data: [paste], answer this question: [your question].\"</p><p><strong>When you need to verify a specific fact:</strong> Ask ChatGPT to give you its answer and then flag its confidence level. \"Tell me the EU GDPR maximum penalty for a data breach. After answering, tell me how confident you are and what I should verify independently.\" This produces an answer plus a verification agenda.</p><p><strong>When you need to analyze a data file:</strong> Upload it and use Code Interpreter. Don't describe your data in text — upload the actual file. ChatGPT will run real Python on it and show you the actual output, charts included.</p><p><strong>When you need heavy computation:</strong> Do the math in your spreadsheet or use Code Interpreter, then paste the results into chat for interpretation. \"Here are the results of my financial model: [paste numbers]. What story does this tell and what's missing?\" ChatGPT is an excellent analyst of numbers, even numbers it didn't compute.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_wc_04b"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_wc_04c"
+              },
+              {
+                "type": "summary",
+                "content": "<p>ChatGPT's strengths: versatile generation, multi-constraint instruction-following, and an integrated toolkit (DALL-E, Browse, Code Interpreter, Canvas, Custom GPTs). Its limits: verify obscure facts, enable Browse for current data, use Code Interpreter for large-scale computation. The tool suite extends what's possible — the skill is knowing which tool matches which task. Build hybrid workflows that route each task to the right tool. Next: turning casual ChatGPT use into real, repeatable workflows.</p>"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_wc_04a",
+              "order_index": 1,
+              "type": "multiple_choice",
+              "prompt": "Which ChatGPT feature would you use to analyze an uploaded sales CSV, calculate revenue by region, and create a bar chart?",
+              "options": [
+                "Chat -- describe the analysis in words",
+                "Code Interpreter -- it runs actual Python on your file and produces real charts",
+                "Browse with Bing -- search for sales analysis tools",
+                "DALL-E -- generate an image of a bar chart"
+              ],
+              "correct_answer": "1",
+              "explanation": "Code Interpreter runs actual Python on uploaded files. You get real computed results and downloadable charts — not just descriptions of how to do the analysis. This is the tool for actual data work.",
+              "hints": [
+                "Which feature runs actual code on your actual file?"
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_wc_04b",
+              "order_index": 2,
+              "type": "prompt_lab",
+              "prompt": "You have a 50-page contract to review before signing. Write a prompt that gets ChatGPT to find the 3 biggest risks.",
+              "options": null,
+              "correct_answer": "{\"scenario\":\"You're about to sign a 50-page SaaS vendor contract. You want ChatGPT to read the entire thing and identify the 3 biggest risks -- clauses that could hurt you most.\",\"scoring_criteria\":[{\"keyword_group\":[\"risk\",\"dangerous\",\"concern\",\"problem\",\"issue\",\"flag\",\"watch out\",\"trap\",\"hidden\"],\"label\":\"Asked for risks specifically\",\"points\":2},{\"keyword_group\":[\"3\",\"three\",\"top\",\"biggest\",\"most important\",\"worst\"],\"label\":\"Specified number of risks\",\"points\":1},{\"keyword_group\":[\"contract\",\"agreement\",\"vendor\",\"SaaS\",\"document\"],\"label\":\"Referenced the document type\",\"points\":1},{\"keyword_group\":[\"liability\",\"termination\",\"auto-renewal\",\"indemnification\",\"penalty\",\"clause\",\"section\"],\"label\":\"Mentioned specific areas to check\",\"points\":1},{\"keyword_group\":[\"why\",\"explain\",\"impact\",\"consequence\",\"what happens\",\"cost\",\"exposure\"],\"label\":\"Asked for explanation of impact\",\"points\":1},{\"keyword_group\":[\"negotiate\",\"push back\",\"change\",\"fix\",\"recommend\",\"suggest\",\"alternative\"],\"label\":\"Asked for negotiation recommendations\",\"points\":1}],\"max_points\":7,\"pass_threshold\":4,\"ideal_prompt\":\"Read this 50-page SaaS vendor contract and identify the 3 biggest risks to my company. For each: (1) quote the clause, (2) explain why it's dangerous in plain English, (3) suggest what I should negotiate instead. Focus on liability caps, auto-renewal traps, termination restrictions, and indemnification.\",\"tips\":[\"Tell ChatGPT what areas to focus on so it knows where to dig deepest.\",\"Requesting negotiation alternatives turns analysis into action.\"]}",
+              "explanation": "A good contract review prompt tells ChatGPT what to look for (risks, not summaries), how many, and what to do with them. That turns a 50-page document into 3 actionable items.",
+              "hints": [
+                "Don't just ask ChatGPT to 'review' the contract. Tell it what you're worried about."
+              ],
+              "xp_reward": 10
+            },
+            {
+              "id": "ex_wc_04c",
+              "order_index": 3,
+              "type": "matching_pairs",
+              "prompt": "Match each task to the best ChatGPT tool or feature for the job.",
+              "options": null,
+              "correct_answer": "{\"Analyze an uploaded CSV and create a revenue chart\":\"Code Interpreter\",\"Generate a product mockup image from a description\":\"DALL-E\",\"Get today's news on a merger that was announced this morning\":\"Browse with Bing\",\"Review a contract for hidden risks\":\"Chat (paste the contract)\",\"Write a long proposal with collaborative editing\":\"Canvas\",\"Use a pre-built AI tuned for legal document review\":\"Custom GPT\"}",
+              "explanation": "Each ChatGPT tool has a specific use case: Code Interpreter for data/code, DALL-E for images, Browse for live info, Canvas for long-form editing, Custom GPTs for specialized tasks. The best tool depends on the task.",
+              "hints": [
+                "Think about what each task actually requires: data analysis, visual creation, live information, or long-form editing?"
+              ],
+              "xp_reward": 15
+            }
+          ]
+        },
+        {
+          "title": "From Chatting to Building",
+          "slug": "from-chatting-to-building",
+          "description": "How casual ChatGPT conversations become real workflows. The bridge to Tracks 2-4.",
+          "order_index": 5,
+          "xp_reward": 75,
+          "estimated_minutes": 7,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<p>The people who get 10x the value from ChatGPT use it as part of <strong>repeatable processes</strong>, not one-off questions. There's a specific shift that happens when you stop treating ChatGPT as a search engine with better grammar and start treating it as a workflow partner. Here are three patterns that make that shift concrete.</p><p><strong>Pattern 1: Research-to-decision.</strong> Instead of reading five articles on a topic and trying to synthesize them yourself, paste all five into ChatGPT and ask: \"Where do these sources agree? Where do they conflict? What's the strongest evidence for each side? Given my situation — [describe your situation] — what does this research suggest I should do?\" One conversation, five sources, a personalized recommendation. This is faster than reading the articles yourself and produces better synthesis.</p><p><strong>Pattern 2: Draft-review-ship.</strong> Get a first draft. Ask ChatGPT to critique its own work from your audience's perspective — not to find grammar errors, but to identify where the argument is weak, where the tone misses, where a reader would stop believing you. Incorporate the critique and polish. Most people stop at step 1. Steps 2 and 3 are where the quality jump happens.</p><p><strong>Prompt template for step 2:</strong> <em>\"You just wrote this [email/proposal/memo]. Read it as [target audience] who is skeptical. What would make them stop reading? What would they push back on? What's missing that they'd want to know?\"</em></p>"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>Turning one-off conversations into reusable workflows:</strong></p><p>Every time you have a productive ChatGPT conversation, there's a workflow embedded in it — a sequence of prompts, an approach to a problem, a set of constraints that worked well. The shift from casual user to power user is capturing those workflows and making them repeatable.</p><p>Concretely: if you just had a great session using ChatGPT to prep for a difficult client call, save the prompt sequence as a template. Next time you prep for a difficult call, paste in the new client's context and run the same sequence. Same analysis quality, fraction of the time.</p><p><strong>How to extract a workflow from a successful conversation:</strong></p><ol><li>After a productive ChatGPT session, ask: \"Based on this conversation, write me a reusable template I could use the next time I face a similar situation. Include the key prompts and the order to use them.\"</li><li>ChatGPT will synthesize the conversation into a template. Review it, adapt it to your use case, and save it.</li><li>The next time you face the same type of task, paste the template into a new conversation, fill in the specifics, and run it.</li></ol><p>This is how power users build a personal ChatGPT playbook over time — not by memorizing prompting techniques, but by systematically capturing what worked and reusing it.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_wc_05a"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>Pattern 3: The Custom GPT operator.</strong> Build or find a Custom GPT with your role, priorities, recurring deliverables, and output formats baked in as persistent context. Every time you open it, it already knows what you do, who you write for, and what format works. You're just feeding it new inputs.</p><p>That's not a conversation — that's a decision-support system. And once you've built it for one deliverable, you can adapt it for another in minutes.</p><p><strong>Three real examples of the Custom GPT operator pattern:</strong></p><p><strong>The Sales Manager:</strong> A Custom GPT configured with territory context, deal stage definitions, and report format. Paste CRM data → output: deal-by-deal commentary, top risks, and recommended actions.</p><p><strong>The Content Strategist:</strong> A Custom GPT with brand voice, audience persona, and content pillars. Paste this week's topic → output: headline variations, LinkedIn hook, tweet thread outline, and blog intro — all in brand voice.</p><p><strong>The Operations Lead:</strong> A Custom GPT with team metrics, KPI definitions, and escalation criteria. Paste last week's ops data → output: metric analysis, exceptions flagged with suggested action, and a pre-written team update ready to post.</p><p>The common thread: same Custom GPT configuration, same output format, different data each week. Build it once, run it forever.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>The bridge from chatting to building: three milestones to hit in your first month.</strong></p><p>This sequence is how casual ChatGPT use becomes a real productivity system. Hit each one in order and you'll see the compounding effect clearly.</p><p><strong>Milestone 1: Your best prompt, saved.</strong> Have one great ChatGPT conversation this week. At the end of it, ask ChatGPT to write you a reusable template. Save it somewhere you can find it. The act of saving a prompt is the first step from ad hoc to systematic.</p><p><strong>Milestone 2: Your first Custom Instruction.</strong> Set up Custom Instructions with your role, your audience, and at least three anti-patterns (things ChatGPT should never do). Run five conversations with it. After the fifth, refine based on what came out. You now have a personal ChatGPT configuration.</p><p><strong>Milestone 3: Your first Custom GPT.</strong> Identify one workflow you run at least twice a month. Build a Custom GPT for it — bake in the system instructions, the format, and the constraints. Use it for real work. This is the moment where ChatGPT stops being a tool you use and starts being a system that works for you.</p><p>What's ahead in this course: Track 2 goes deep on each ChatGPT mode — chat, Canvas, Code Interpreter, and Custom GPTs — so you know which to reach for and when. Track 3 gives you specific workflow playbooks for common professional use cases. Track 4 covers the power techniques that compound: Custom GPTs, memory, task chaining, and automation. You have the foundation. The next tracks are where it gets practical fast.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_wc_05b"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_wc_05c"
+              },
+              {
+                "type": "summary",
+                "content": "<p>You completed Track 1. You know how ChatGPT works, how to give it useful context, what it's genuinely good at, and how casual use becomes repeatable workflows. The three patterns — research-to-decision, draft-review-ship, and Custom GPT operator — are your bridge to the deeper tracks. The three milestones — best prompt saved, first Custom Instruction live, first Custom GPT running — give you a concrete roadmap for the next month. Go build something.</p>"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_wc_05a",
+              "order_index": 1,
+              "type": "scenario_walkthrough",
+              "prompt": "Walk through the draft-review-ship loop: start with a vague prompt, iterate through three rounds until the output is great.",
+              "options": null,
+              "correct_answer": "{\"title\": \"From Vague to Great in 3 Rounds\", \"steps\": [{\"type\": \"context\", \"text\": \"You need ChatGPT to write a LinkedIn post about a lesson you learned from losing a major client. Let's see how iteration transforms generic output into something compelling.\"}, {\"type\": \"context\", \"text\": \"You type: 'Write me a LinkedIn post about losing a client.'\\n\\nChatGPT responds: 'Losing our biggest client was tough. But it taught me the importance of communication, setting expectations, and building resilient systems. Every setback is a setup for a comeback...'\\n\\nGeneric LinkedIn slop. Time to iterate.\"}, {\"type\": \"choice\", \"claude_response\": \"That first draft reads like a motivational poster. How do you tell ChatGPT to fix it?\", \"question\": \"Round 1: This draft is stiff and generic. Which feedback will improve it most?\", \"options\": [\"Make it more engaging and authentic\", \"This sounds like a motivational poster. I'm direct, a little self-deprecating, no buzzwords. Rewrite in that voice.\", \"Make it longer with more details\", \"Add emojis and hashtags\"], \"correct\": 1, \"feedback\": \"Specific direction gets specific results. 'More engaging' is vague. Telling ChatGPT your actual voice and what to avoid gives it a clear target.\"}, {\"type\": \"choice\", \"claude_response\": \"ChatGPT rewrites with a real voice: 'Got the call on a Tuesday afternoon. Our biggest client, 35% of revenue, was leaving. Not in 90 days. In 30...' Better. But the content could be stronger.\", \"question\": \"Round 2: What do you ask next?\", \"options\": [\"Looks great, ship it\", \"Add a call to action\", \"What would make a reader stop scrolling? Be honest -- if the lessons are generic, tell me.\", \"Make it shorter\"], \"correct\": 2, \"feedback\": \"Asking ChatGPT to critique its own content — not just the writing — is where you get insights you'd miss. ChatGPT responds that the lessons are predictable and suggests finding the surprising or counterintuitive angle.\"}]}",
+              "explanation": "Two rounds of iteration took a generic post to something with a real voice and honest self-critique. The lesson: your first prompt is never your last. The magic is in the back-and-forth.",
+              "hints": [
+                "Each round should change something specific. Don't just say 'better' -- say what to change and what to keep."
+              ],
+              "xp_reward": 15
+            },
+            {
+              "id": "ex_wc_05b",
+              "order_index": 2,
+              "type": "speed_prompt",
+              "prompt": "You have 45 seconds. Write a prompt for getting ChatGPT to honestly review your business plan before an investor pitch.",
+              "options": null,
+              "correct_answer": "{\"time_limit_seconds\":45,\"scenario\":\"You have a 10-page business plan for a new SaaS product. You're pitching investors next week. Write a prompt that gets ChatGPT to tear it apart -- find the weak spots before the investors do.\",\"scoring_criteria\":[{\"keyword_group\":[\"honest\",\"brutal\",\"critical\",\"tough\",\"don't hold back\",\"tear apart\",\"weaknesses\",\"holes\",\"problems\"],\"label\":\"Asked for honest/critical review\",\"points\":2},{\"keyword_group\":[\"investor\",\"pitch\",\"funding\",\"VC\",\"raise\",\"present\"],\"label\":\"Mentioned the investor context\",\"points\":1},{\"keyword_group\":[\"business plan\",\"plan\",\"SaaS\",\"product\",\"startup\"],\"label\":\"Referenced the document\",\"points\":1},{\"keyword_group\":[\"question\",\"ask\",\"challenge\",\"object\",\"pushback\",\"concern\"],\"label\":\"Asked for likely investor questions\",\"points\":2},{\"keyword_group\":[\"fix\",\"improve\",\"strengthen\",\"recommend\",\"suggest\",\"change\"],\"label\":\"Asked for improvement suggestions\",\"points\":1}],\"max_points\":7,\"pass_threshold\":4,\"ideal_prompt\":\"I'm pitching investors next week on this 10-page SaaS business plan. Be my toughest critic: find every weak assumption, questionable projection, and gap an investor will attack. For each weakness, tell me what the investor will say and how I should fix the plan or prepare to answer. Don't be encouraging -- I need the hard truth now, not in the meeting.\"}",
+              "explanation": "The best prompts for honest review explicitly ask ChatGPT NOT to be nice. Tell it the stakes, the role, and what to do with the findings.",
+              "hints": [
+                "Think: what would you want a brutally honest friend to tell you before a big pitch?"
+              ],
+              "xp_reward": 10
+            },
+            {
+              "id": "ex_wc_05c",
+              "order_index": 3,
+              "type": "multiple_choice",
+              "prompt": "Which workflow pattern turns ChatGPT from a one-off tool into an operating system?",
+              "options": [
+                "Asking longer questions each time",
+                "Using ChatGPT only for creative brainstorming",
+                "Building a Custom GPT with persistent context and running the same analysis weekly with fresh data",
+                "Switching between ChatGPT and other AI tools for different tasks"
+              ],
+              "correct_answer": "2",
+              "explanation": "The Custom GPT operator pattern -- persistent context, recurring analysis, fresh data -- turns ChatGPT from a chatbot into a decision-support system. The Custom GPT knows your role, your audience, and your format. You just add the latest inputs.",
+              "hints": [
+                "Which option describes a repeatable process, not a one-off conversation?"
+              ],
+              "xp_reward": 5
+            }
+          ]
+        }
+      ],
+      "campaign_order": 1,
+      "level_required": 1,
+      "prerequisite_slug": null
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "title": "Claude Code — Build Anything",
+  "slug": "claude-code-build-anything",
+  "description": "You don't need to be a developer. Claude Code lets anyone build real software by describing what they want in plain English.",
+  "order_index": 4,
+  "xp_reward": 75,
+  "estimated_minutes": 8,
+  "content": {
+    "sections": [
+      {
+        "type": "text",
+        "content": "<p>Here's the thing nobody tells you about Claude Code: <strong>most of the people building with it aren't developers.</strong></p><p>They're marketers building landing pages. Operations managers automating reports. Founders shipping MVPs. Teachers building classroom tools. They can't write a line of code. They don't need to. They describe what they want in plain English, and Claude writes every line.</p><p>Think about that. You say \"build me a website with a contact form that emails me when someone submits it.\" Claude does the rest. It's like having a developer on your team who works at 100x speed, never gets annoyed by your questions, and doesn't charge you $200 an hour.</p>"
+      },
+      {
+        "type": "exercise",
+        "exercise_id": "ex_wc_04a"
+      },
+      {
+        "type": "text",
+        "content": "<p>So what are people actually building? Here's a taste: portfolio websites, internal dashboards that pull from company data, browser extensions that automate tedious tasks, automated email workflows, data visualizations, customer intake forms, even full apps with user accounts and databases. The pattern is always the same: you describe the outcome you want, not the technical implementation. You say \"I need a dashboard that shows our monthly sales by region with charts\" — not \"create a React component with a D3.js bar chart connected to a PostgreSQL query.\" Claude figures out the how. You own the what.</p>"
+      },
+      {
+        "type": "exercise",
+        "exercise_id": "ex_wc_04b"
+      },
+      {
+        "type": "text",
+        "content": "<p>Now you've seen all three tiers. Here's the decision framework. <strong>Need to think?</strong> Claude AI — open a browser conversation. <strong>Need to work with files you already have?</strong> Co-Work — it lives on your desktop. <strong>Need something that doesn't exist yet?</strong> Claude Code — describe it, and Claude builds it. One honest note: Claude Code runs in your terminal, which means you need to install it and get comfortable with a text-based interface. There's a small setup curve. But once you're past it, you're building real things — and that's a fundamentally different relationship with technology than typing into a chat box.</p>"
+      },
+      {
+        "type": "exercise",
+        "exercise_id": "ex_wc_04c"
+      },
+      {
+        "type": "summary",
+        "content": "<p>Claude Code is the build tier — and it's not just for developers. You describe what you want in plain English, Claude writes the code. That completes the three-tier picture: Claude AI for thinking, Co-Work for files, Claude Code for building. Next up, we'll explore what makes Claude fundamentally different from every other AI — the traits that show up across all three tiers.</p>"
+      }
+    ]
+  },
+  "exercises": [
+    {
+      "id": "ex_wc_04a",
+      "order_index": 1,
+      "type": "multiple_choice",
+      "prompt": "A marketing manager with zero coding experience wants to build a landing page for an upcoming product launch. What's the most accurate statement about using Claude Code for this?",
+      "options": [
+        "She can't use Claude Code — it's a developer tool that requires programming knowledge",
+        "She should learn basic HTML and CSS first, then use Claude Code to help with the hard parts",
+        "She describes the landing page she wants in plain English, and Claude Code writes all the code for her",
+        "Claude Code can only help with simple text tasks, not building actual websites"
+      ],
+      "correct_answer": "2",
+      "explanation": "This is the core mental shift. Claude Code isn't a tool that helps developers code faster — it's a tool that lets anyone build software by describing what they want. The marketing manager describes her landing page (colors, sections, copy, contact form) and Claude writes every line of code. No programming knowledge required.",
+      "hints": [
+        "Think about what Claude Code actually needs from you. Is it code — or a description of what you want?"
+      ],
+      "xp_reward": 5
+    },
+    {
+      "id": "ex_wc_04b",
+      "order_index": 2,
+      "type": "scenario_walkthrough",
+      "prompt": "You're a non-technical operations manager drowning in repetitive work. Walk through three real problems and figure out what you could build with Claude Code.",
+      "options": null,
+      "correct_answer": "{\"title\": \"What Could You Build?\", \"steps\": [{\"type\": \"context\", \"text\": \"You're an operations manager. No coding background. You spend hours every week on repetitive tasks that feel like they should be automated. Let's look at three real problems and think about what Claude Code could build for each one.\"}, {\"type\": \"choice\", \"claude_response\": \"Problem 1: Every Monday, you manually pull data from three different spreadsheets, combine them, and create a summary report for your boss. It takes 2 hours every single week.\", \"question\": \"What would you ask Claude Code to build?\", \"options\": [\"A PowerPoint presentation that looks nicer than your current report\", \"An automated script that pulls data from all three spreadsheets and generates the summary report for you\", \"A chatbot that answers your boss's questions about the data\", \"A new spreadsheet template that's easier to fill in manually\"], \"correct\": 1, \"feedback\": \"This is the sweet spot for Claude Code — automating repetitive workflows. You'd describe the three spreadsheets, what data you pull from each, and what the final report looks like. Claude builds a script that does the whole thing in seconds instead of 2 hours. You just described the outcome; Claude handled the technical implementation.\"}, {\"type\": \"choice\", \"claude_response\": \"Problem 2: Your team tracks client onboarding in a shared Google Sheet. It's a mess — no one updates it consistently, there's no way to see which clients are stuck, and your boss keeps asking for status updates you have to compile manually.\", \"question\": \"What would you ask Claude Code to build?\", \"options\": [\"A better Google Sheet with nicer formatting and conditional colors\", \"An AI chatbot that answers client questions automatically\", \"A simple web dashboard that shows onboarding status, flags stuck clients, and auto-updates from your data\", \"A Slack bot that reminds people to update the spreadsheet\"], \"correct\": 2, \"feedback\": \"A dashboard is exactly the kind of thing Claude Code excels at building for non-developers. You describe what information matters — which clients are in progress, which are stuck, what your boss wants to see — and Claude builds a real web dashboard with live data. No more compiling updates manually.\"}, {\"type\": \"choice\", \"claude_response\": \"Problem 3: You receive 50+ vendor invoices per month as email attachments. You manually open each one, extract the amount and vendor name, and enter them into your accounting spreadsheet.\", \"question\": \"What would you ask Claude Code to build?\", \"options\": [\"A tool that automatically reads invoice PDFs, extracts vendor names and amounts, and adds them to your spreadsheet\", \"A prettier spreadsheet that's easier to type into\", \"An email template that asks vendors to send invoices in a standard format\", \"A calendar reminder to process invoices every Friday\"], \"correct\": 0, \"feedback\": \"This is automation gold. You describe the pattern — invoices come as PDFs, you need vendor name and amount, they go into a specific spreadsheet — and Claude Code builds a tool that reads the PDFs and populates the spreadsheet automatically. What took hours now takes seconds. You described the problem; Claude built the solution.\"}]}",
+      "explanation": "The pattern across all three problems is the same: describe the tedious thing you do manually, and Claude Code builds the automation. You never mention a programming language, a framework, or a technical detail. You just describe the outcome you want.",
+      "hints": [
+        "For each problem, think about what the end result should be — not how it would be built technically."
+      ],
+      "xp_reward": 15
+    },
+    {
+      "id": "ex_wc_04c",
+      "order_index": 3,
+      "type": "speed_prompt",
+      "prompt": "You have 45 seconds. Your company's VP asks you to handle a complex project: research competitors, organize the findings into a clean report, and build an interactive comparison dashboard the whole team can use. Explain which Claude tier you'd use for each part and why.",
+      "options": null,
+      "correct_answer": "{\"time_limit_seconds\": 45, \"scenario\": \"Your VP just dropped a project on your desk: research your top 5 competitors, organize the findings into a polished report, and build an interactive comparison dashboard the whole team can use. This is a three-part job — and each part calls for a different Claude tier. Explain which tier handles which part and why.\", \"scoring_criteria\": [{\"keyword_group\": [\"Claude AI\", \"browser\", \"research\", \"thinking\", \"analyze\", \"brainstorm\", \"conversation\"], \"label\": \"Uses Claude AI for the research/thinking phase\", \"points\": 2}, {\"keyword_group\": [\"Co-Work\", \"desktop\", \"files\", \"report\", \"document\", \"organize\", \"format\", \"write\"], \"label\": \"Uses Co-Work for organizing files or creating the report\", \"points\": 2}, {\"keyword_group\": [\"Claude Code\", \"terminal\", \"build\", \"dashboard\", \"interactive\", \"create\", \"app\"], \"label\": \"Uses Claude Code for building the dashboard\", \"points\": 2}, {\"keyword_group\": [\"think\", \"file\", \"build\", \"exist\", \"scratch\", \"create\", \"new\", \"different tier\", \"right tool\"], \"label\": \"Explains the logic of matching task to tier\", \"points\": 1}], \"max_points\": 7, \"pass_threshold\": 4, \"ideal_prompt\": \"Three parts, three tiers. First, I'd use Claude AI in the browser to research and analyze the competitors — that's a thinking task where I'm having a conversation, asking questions, and building understanding. Second, I'd use Co-Work to organize my research notes and files into a polished report on my desktop — that's a file task. Third, I'd use Claude Code to build the interactive comparison dashboard from scratch — that's a build task, something that doesn't exist yet. Think for Claude AI, files for Co-Work, build for Claude Code.\"}",
+      "explanation": "This is the three-tier framework in action. Research and analysis is a thinking task (Claude AI). Organizing existing findings into a report is a file task (Co-Work). Building an interactive dashboard from scratch is a build task (Claude Code). Matching the right tier to the right subtask is the skill.",
+      "hints": [
+        "Break the project into three subtasks. For each one, ask: am I thinking, working with files, or building something new?"
+      ],
+      "xp_reward": 15
+    }
+  ]
+}

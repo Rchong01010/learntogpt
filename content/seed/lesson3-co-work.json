@@ -1,0 +1,86 @@
+{
+  "title": "Co-Work — Claude on Your Desktop",
+  "slug": "co-work-desktop",
+  "description": "Stop copy-pasting into the browser. Co-Work reads your files, edits them in place, and works alongside you on your actual computer.",
+  "order_index": 3,
+  "xp_reward": 75,
+  "estimated_minutes": 8,
+  "content": {
+    "sections": [
+      {
+        "type": "text",
+        "content": "<p>Think about how you use Claude AI right now. You find a document you want help with. You open it. You select all, copy, switch to the browser, paste it in, type your question, wait for a response, copy that response, switch back to your document, and paste it in. For one file, that's annoying. For ten files? It's a job in itself.</p><p><strong>Co-Work eliminates all of that.</strong> It's a desktop app that can see your files, read them directly, and edit them in place. No uploading. No copy-pasting. No switching between windows. You just say \"clean up the formatting in this report\" and it does it — right there, in the actual file on your computer.</p>"
+      },
+      {
+        "type": "exercise",
+        "exercise_id": "ex_wc_03a"
+      },
+      {
+        "type": "text",
+        "content": "<p>So where does Co-Work actually shine? Tasks that involve <strong>your files on your computer.</strong> Rename 40 photos from \"IMG_2847.jpg\" to something you can actually find later. Clean up a messy spreadsheet full of duplicate rows and inconsistent formatting. Review a contract or proposal sitting on your desktop and get a summary of the key terms. Organize your Downloads folder — the one with 300 files you've been ignoring for months. Sort your notes from a conference into topics. These are all real tasks that real people use Co-Work for every day. The pattern is always the same: you have existing files, you want something done to them, and you don't want to leave your desktop to get it done.</p>"
+      },
+      {
+        "type": "exercise",
+        "exercise_id": "ex_wc_03b"
+      },
+      {
+        "type": "text",
+        "content": "<p>Here's the mental model that makes the three tiers click. <strong>Claude AI</strong> is for when the work lives in your head — thinking, brainstorming, analyzing ideas, drafting from scratch in a conversation. <strong>Co-Work</strong> is for when the work lives in your files — editing, organizing, reviewing, reformatting things that already exist on your computer. <strong>Claude Code</strong> is for when the work needs to be built — creating something new that doesn't exist yet, like a website, an automation, or a data pipeline. If you catch yourself copy-pasting files into the browser, that's your signal: this task belongs in Co-Work.</p>"
+      },
+      {
+        "type": "exercise",
+        "exercise_id": "ex_wc_03c"
+      },
+      {
+        "type": "summary",
+        "content": "<p>Co-Work is Claude working directly with your files — no copy-pasting, no uploading, no switching windows. If the task involves existing files on your computer, Co-Work is the right tool. If it's pure thinking, use Claude AI. And if you need to build something from scratch? That's where Claude Code comes in — and that's exactly what we'll cover next.</p>"
+      }
+    ]
+  },
+  "exercises": [
+    {
+      "id": "ex_wc_03a",
+      "order_index": 1,
+      "type": "multiple_choice",
+      "prompt": "What's the core problem Co-Work solves compared to using Claude AI in the browser?",
+      "options": [
+        "Claude AI gives worse answers than Co-Work",
+        "Co-Work eliminates the copy-paste loop between your files and the browser",
+        "Co-Work is faster because it uses a different AI model",
+        "You need Co-Work to have longer conversations"
+      ],
+      "correct_answer": "1",
+      "explanation": "The intelligence is the same. The difference is workflow. With Claude AI in the browser, you're constantly copying content out of files, pasting it in, getting a response, and copying it back. Co-Work removes all that friction by reading and editing your files directly. Same brain, dramatically less busywork.",
+      "hints": [
+        "Think about the steps involved in getting Claude to help with a document in the browser vs. on your desktop."
+      ],
+      "xp_reward": 5
+    },
+    {
+      "id": "ex_wc_03b",
+      "order_index": 2,
+      "type": "scenario_walkthrough",
+      "prompt": "You have five tasks on your to-do list. For each one, decide whether Co-Work is the right tool or whether you should use something else.",
+      "options": null,
+      "correct_answer": "{\"title\": \"Co-Work or Not?\", \"steps\": [{\"type\": \"context\", \"text\": \"You just installed Co-Work and you're excited to try it. But not every task needs it. Let's figure out which ones do.\"}, {\"type\": \"choice\", \"claude_response\": \"Task 1: Your Downloads folder has 200+ files — screenshots, PDFs, installers, random images. You want them sorted into labeled folders.\", \"question\": \"Is this a Co-Work task?\", \"options\": [\"Yes — Co-Work can see and organize my files directly\", \"No — I should describe the folder in Claude AI and ask for a plan\", \"No — I need Claude Code for this\", \"No — I should just do this manually\"], \"correct\": 0, \"feedback\": \"This is Co-Work at its best. The task is entirely about existing files on your computer. Co-Work can see every file in that folder, figure out what each one is, create organized subfolders, and move everything into the right place — all without you lifting a finger.\"}, {\"type\": \"choice\", \"claude_response\": \"Task 2: You need to brainstorm a name for your friend's new bakery. No documents or files involved — just creative thinking.\", \"question\": \"Is this a Co-Work task?\", \"options\": [\"Yes — Co-Work is always better than the browser\", \"No — this is a Claude AI task, it's pure conversation\", \"No — this requires Claude Code\", \"No — AI can't help with creative tasks\"], \"correct\": 1, \"feedback\": \"No files, no desktop work. This is just a creative conversation — exactly what Claude AI in the browser is built for. You don't need Co-Work for tasks that live entirely in your head.\"}, {\"type\": \"choice\", \"claude_response\": \"Task 3: You have a 15-page consulting proposal on your desktop. You want Claude to tighten the language, fix inconsistencies, and cut it to 10 pages.\", \"question\": \"Is this a Co-Work task?\", \"options\": [\"No — copy the text into Claude AI and paste the edits back\", \"No — Claude Code is needed for document editing\", \"Yes — Co-Work can read the file and edit it in place\", \"No — use a grammar tool like Grammarly instead\"], \"correct\": 2, \"feedback\": \"This is exactly the kind of task that makes people fall in love with Co-Work. Instead of copying 15 pages into the browser, getting edits back, and carefully pasting them in, you point Co-Work at the file and say 'tighten this up and cut it to 10 pages.' It reads the file, makes the edits, and you review the changes right there.\"}]}",
+      "explanation": "The pattern is simple: if the task involves existing files on your computer, Co-Work is probably the right tool. If it's pure thinking with no files, use Claude AI. Co-Work's superpower is direct file access — that's what makes it different from the browser.",
+      "hints": [
+        "Ask yourself: does this task involve files sitting on my computer right now?"
+      ],
+      "xp_reward": 15
+    },
+    {
+      "id": "ex_wc_03c",
+      "order_index": 3,
+      "type": "speed_prompt",
+      "prompt": "Your friend says: 'I have a spreadsheet with 500 rows of customer data that's full of duplicates and bad formatting. I've been copying chunks into ChatGPT to clean it up, 50 rows at a time. There has to be a better way.' Write a quick message telling them about Co-Work and why it's perfect for this exact task.",
+      "options": null,
+      "correct_answer": "{\"time_limit_seconds\": 45, \"scenario\": \"Your friend has been copy-pasting spreadsheet data into ChatGPT 50 rows at a time to clean it up. Tell them about Co-Work and why it solves their problem.\", \"scoring_criteria\": [{\"keyword_group\": [\"Co-Work\", \"desktop\", \"desktop app\"], \"label\": \"Names Co-Work or desktop app\", \"points\": 2}, {\"keyword_group\": [\"file\", \"files\", \"spreadsheet\", \"directly\", \"read\", \"open\", \"access\"], \"label\": \"Explains direct file access\", \"points\": 2}, {\"keyword_group\": [\"no copy\", \"no pasting\", \"stop copying\", \"without copying\", \"don't copy\", \"don't paste\", \"skip the copy\", \"eliminates\"], \"label\": \"Addresses the copy-paste problem\", \"points\": 2}, {\"keyword_group\": [\"all 500\", \"whole file\", \"entire file\", \"entire spreadsheet\", \"whole spreadsheet\", \"all at once\", \"one shot\", \"at once\"], \"label\": \"Mentions handling the full file at once\", \"points\": 1}], \"max_points\": 7, \"pass_threshold\": 4, \"ideal_prompt\": \"Stop copying 50 rows at a time! Download Co-Work — it's Claude as a desktop app. It can read your entire spreadsheet directly on your computer, clean up all 500 rows at once, remove the duplicates, fix the formatting, and save the changes right back to the file. No copying, no pasting, no browser tabs. Just point it at the file and tell it what to fix.\"}",
+      "explanation": "The key insight: Co-Work removes the copy-paste bottleneck entirely. Instead of feeding a file into the browser in chunks, Co-Work reads the whole file directly and edits it in place. For a 500-row spreadsheet, that's the difference between an hour of tedious work and a single request.",
+      "hints": [
+        "Focus on the specific pain they described — the chunked copy-pasting — and how Co-Work eliminates it."
+      ],
+      "xp_reward": 15
+    }
+  ]
+}

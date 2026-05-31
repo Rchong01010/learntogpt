@@ -1,0 +1,1303 @@
+{
+  "common": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "loading": "Loading...",
+    "saving": "Saving...",
+    "savedBang": "Saved!",
+    "signIn": "Sign in",
+    "signUp": "Sign up",
+    "getStarted": "Get Started",
+    "home": "Home",
+    "close": "Close",
+    "back": "Back",
+    "next": "Next",
+    "continue": "Continue",
+    "finish": "Finish",
+    "tryAgain": "Try again",
+    "dismiss": "Dismiss",
+    "upgrade": "Upgrade",
+    "learnMore": "Learn more",
+    "levelLabel": "Level {level}",
+    "xpOutOf": "{current} / {total} XP",
+    "dayStreak": "day streak",
+    "atRisk": "At risk!",
+    "bestStreak": "Best: {count}",
+    "lessonsProgress": "{done}/{total} lessons",
+    "xpBonusPlus": "+{xp} XP",
+    "shareCongratulations": "Congratulations!",
+    "shareAchievementPrompt": "Share your achievement",
+    "shareOnLinkedIn": "Share on LinkedIn",
+    "shareOnX": "Share on X",
+    "shareCopyLink": "Copy share link",
+    "shareButtonShare": "Share",
+    "shareButtonPost": "Post",
+    "shareButtonCopy": "Copy",
+    "shareButtonCopied": "Copied!",
+    "closeLabel": "Close",
+    "shareDialogLabel": "Share your achievement"
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "courses": "Courses",
+    "missions": "Missions",
+    "leaderboard": "Leaderboard",
+    "profile": "Profile",
+    "settings": "Settings",
+    "signOut": "Sign Out",
+    "brandName": "Learn to GPT",
+    "levelLabel": "Lvl {level}"
+  },
+  "dashboard": {
+    "welcomeNewTitle": "Welcome to Learn to GPT, {name}!",
+    "welcomeNewSubtitleMissions": "What do you want to build? Pick a mission to get started.",
+    "welcomeNewSubtitleDefault": "Start your journey to mastering ChatGPT. Pick a track below or dive into your first lesson.",
+    "startLearning": "Start Learning",
+    "welcomeBack": "Welcome back, {name}",
+    "streakMessage": "Keep the momentum going. You are on a {streak}-day streak!",
+    "noStreakMessage": "Start a lesson today to build your streak!",
+    "dailyChallengeTitle": "Daily Challenge",
+    "dailyChallengeBody": "Complete 1 lesson to keep your streak alive",
+    "dailyChallengeButton": "Mark Complete",
+    "dailyChallengeComplete": "Completed!",
+    "dailyChallengeXp": "+{xp} XP",
+    "continueHeader": "Continue where you left off",
+    "startJourneyLabel": "Start your journey",
+    "startJourneySubtitle": "Begin your first lesson and earn XP",
+    "courseProgress": "{progress}% complete",
+    "resumeButton": "Resume",
+    "startButton": "Start",
+    "skillTreeHeading": "Explore Courses",
+    "achievementsHeading": "Achievements",
+    "whatBuildHeading": "What do you want to build?",
+    "missionHoursShort": "~{hours}h",
+    "missionXp": "{xp} XP",
+    "missionSteps": "{count} steps",
+    "justExploreCourses": "Just explore courses instead"
+  },
+  "courses": {
+    "eyebrow": "Select Your World",
+    "heading": "Course Worlds",
+    "subheading": "Master ChatGPT from basics to architect-level expertise. Each world is a new adventure.",
+    "filterAll": "All Tracks",
+    "filterWhyClaude": "Why ChatGPT?",
+    "filterThreeLevels": "Three Levels",
+    "filterEssentials": "Essentials",
+    "filterLevelUp": "Level Up",
+    "filterBuildSomething": "Build Something",
+    "filterPractitionerSetup": "Practitioner Setup",
+    "filterAdvancedWorkflows": "Advanced Workflows",
+    "badgeFree": "FREE",
+    "badgePro": "PRO",
+    "lessonsCount": "{count} lessons",
+    "minutesShort": "~{minutes} min",
+    "xpShort": "{xp} XP",
+    "backAll": "All Courses",
+    "levelProgressionHeading": "Level Progression",
+    "progressLabel": "Progress",
+    "progressLessons": "{done}/{total} lessons",
+    "ctaStart": "Start Course",
+    "ctaContinue": "Continue",
+    "badgeProShort": "Pro",
+    "badgeFreeShort": "Free",
+    "minutesAbbrev": "{minutes}m"
+  },
+  "lessons": {
+    "backToCourse": "Back to course",
+    "progressCouldNotBeSaved": "Progress could not be saved: {error}",
+    "lessonCompleteBang": "Lesson Complete!",
+    "savingEllipsis": "Saving...",
+    "xpPlus": "+{xp} XP",
+    "achievementUnlocked": "Achievement unlocked: {name}",
+    "shareProgress": "Share your progress",
+    "backToCourseButton": "Back to Course",
+    "nextLesson": "Next Lesson",
+    "completeCourse": "Complete Course",
+    "courseCompleteShareTitle": "Completed: {title}",
+    "achievementShareTitle": "Achievement: {name}",
+    "finishedCourseDesc": "Just finished a course on Learn to GPT!",
+    "stepOfTotal": "Step {current} of {total}",
+    "completeExerciseToContinue": "Complete exercise to continue",
+    "skipExercise": "Skip exercise",
+    "exerciseOfTotal": "Exercise {current} of {total}",
+    "xpEarnedBadge": "{xp} XP",
+    "xpSuffix": "XP",
+    "challenge": "Challenge",
+    "exerciseLabel": "Exercise",
+    "unknownExerciseType": "Unknown exercise type.",
+    "correctBang": "Correct!",
+    "notQuite": "Not quite. Review the explanation above.",
+    "submitAnswer": "Submit Answer",
+    "checkingEllipsis": "Checking...",
+    "showHint": "Show hint",
+    "nextHint": "Next hint",
+    "explanation": "Explanation",
+    "matchingTerms": "Terms",
+    "matchingDefinitions": "Definitions",
+    "allPairsMatched": "All pairs matched!",
+    "failedToCheckAnswer": "Failed to check answer. Please try again.",
+    "typeLabels": {
+      "multiple_choice": "Pick the Right Answer",
+      "fill_blank": "Fill in the Blank",
+      "drag_drop": "Put It in Order",
+      "code_exercise": "Code Challenge",
+      "scenario": "Scenario Challenge",
+      "matching_pairs": "Match the Pairs",
+      "speed_round": "Speed Round",
+      "bug_hunt": "Bug Hunt",
+      "flash_cards": "Flash Cards",
+      "word_scramble": "Word Scramble",
+      "typing_challenge": "Typing Challenge",
+      "whack_a_mole": "Whack-a-Mole",
+      "prompt_builder": "Build a Prompt",
+      "conversation_sim": "Conversation Sim",
+      "spot_the_difference": "Spot the Difference",
+      "prompt_lab": "Prompt Lab",
+      "speed_prompt": "Speed Prompt",
+      "scenario_walkthrough": "Scenario Walkthrough",
+      "exercise": "Exercise"
+    },
+    "signUpToSave": "Sign up to save your progress and earn XP",
+    "signUpToSaveBody": "Create a free account to track your progress, unlock all courses, and start building your streak.",
+    "signUpFree": "Sign Up Free",
+    "continueExploring": "Continue Exploring",
+    "advancedCta": {
+      "heading": "Ready to go deeper?",
+      "masterclassTitle": "The Masterclass",
+      "masterclassBody": "The full walkthrough. I'll walk you through the exact setup, configuration, and workflow patterns from this course. You get the prompts, the templates, and the system.",
+      "masterclassButton": "Get the Masterclass",
+      "setupTitle": "Or have it done for you",
+      "setupBody": "Book a 1:1 and I'll set it up on your machine. You walk away with the full system running, configured for your projects.",
+      "setupButton": "Schedule a call with Reid"
+    }
+  },
+  "pricing": {
+    "metaTitle": "Pricing — Learn to GPT",
+    "metaDescription": "Start learning ChatGPT for free or unlock full access with Pro. 175+ lessons, 700+ exercises, and Architect Exam Prep.",
+    "navHome": "Home",
+    "navGetStarted": "Get Started",
+    "headline": "Pick your plan",
+    "subhead": "Start free and upgrade when you are ready. Every plan includes access to the core learning experience.",
+    "mostPopular": "Most Popular",
+    "freeName": "Free",
+    "freeTagline": "Try before you commit",
+    "freePrice": "$0",
+    "perMonth": " /month",
+    "freeBody": "Access preview lessons from every track to see if Learn to GPT is right for you. No credit card required.",
+    "freeBullet1": "2-3 lessons per track",
+    "freeBullet2": "Basic progress tracking",
+    "freeBullet3": "Community access",
+    "freeCtaLoggedIn": "Go to Dashboard",
+    "freeCtaGuest": "Get Started Free",
+    "proName": "Pro",
+    "proTagline": "Everything you need to master ChatGPT",
+    "proPrice": "Free",
+    "proBody": "Unlimited access to every lesson, exercise, and track. Full gamification, Architect Exam Prep, and new content every week.",
+    "proBullet1": "All 175+ lessons across 5 tracks",
+    "proBullet2": "700+ hands-on exercises",
+    "proBullet3": "Streaks, leaderboard, and achievements",
+    "proBullet4": "Architect Exam Prep track",
+    "proBullet5": "New content added weekly",
+    "proBullet6": "Priority support",
+    "proCtaLoggedIn": "Upgrade to Pro",
+    "proCtaGuest": "Start Pro Free Trial",
+    "compareHeading": "Compare plans",
+    "headerFeature": "Feature",
+    "headerFree": "Free",
+    "headerPro": "Pro",
+    "featureFundamentalsPreview": "Fundamentals track preview (2-3 lessons)",
+    "featureClaudeForWorkPreview": "ChatGPT for Work preview (2-3 lessons)",
+    "featureBasicProgress": "Basic progress tracking",
+    "featureAllLessons": "All 175+ lessons across 5 tracks",
+    "featureAllExercises": "700+ hands-on exercises",
+    "featureCodeChallenges": "Code challenges and real-world scenarios",
+    "featureArchitectPrep": "Architect Exam Prep track",
+    "featureXpStreaks": "XP, streaks, and achievements",
+    "featureLeaderboard": "Leaderboard access",
+    "featureWeeklyContent": "New content added weekly",
+    "featurePrioritySupport": "Priority support",
+    "featureLimited": "Limited",
+    "fineprint": "Cancel anytime. No long-term contracts. All prices in USD.",
+    "bottomHeadline": "Ready to master ChatGPT?",
+    "bottomSubhead": "Start with the free plan and upgrade anytime.",
+    "bottomCta": "Create Free Account",
+    "footerBrand": "Learn to GPT",
+    "footerHome": "Home",
+    "footerPrivacy": "Privacy",
+    "footerTerms": "Terms"
+  },
+  "auth": {
+    "signInTitle": "Sign in",
+    "signInDescription": "Sign in to your Learn to GPT account",
+    "emailLabel": "Email",
+    "emailPlaceholder": "you@example.com",
+    "passwordLabel": "Password",
+    "passwordPlaceholder": "Your password",
+    "signInSubmit": "Sign in",
+    "signingIn": "Signing in...",
+    "orContinueWith": "Or continue with",
+    "signInWithGoogle": "Sign in with Google",
+    "noAccountPrompt": "Don't have an account?",
+    "signUpLink": "Sign up",
+    "signUpTitle": "Create an account",
+    "signUpDescription": "Start your ChatGPT learning journey",
+    "passwordHintMinChars": "At least 8 characters",
+    "signUpSubmit": "Create account",
+    "creatingAccount": "Creating account...",
+    "signUpWithGoogle": "Sign up with Google",
+    "hasAccountPrompt": "Already have an account?",
+    "signInLink": "Sign in",
+    "checkEmailTitle": "Check your email",
+    "checkEmailDescription": "We sent a confirmation link to <strong>{email}</strong>. Click the link to activate your account.",
+    "alreadyConfirmed": "Already confirmed?",
+    "passwordTooShort": "Password must be at least 8 characters",
+    "pleaseCompleteVerification": "Please complete the verification",
+    "verificationFailed": "Verification failed. Please try again.",
+    "authCallbackError": "Sign-in failed. Please try again."
+  },
+  "profile": {
+    "defaultLearnerName": "Learner",
+    "joinedLabel": "Joined {date}",
+    "statTotalXp": "Total XP",
+    "statLevel": "Level",
+    "statLessons": "Lessons",
+    "statCourses": "Courses",
+    "xpProgressHeading": "XP Progress",
+    "streakHeading": "Streak",
+    "trackProgressHeading": "Track Progress",
+    "trackProgressCaption": "{done}/{total} lessons ({pct}%)",
+    "achievementsHeading": "Achievements ({unlocked}/{total})"
+  },
+  "settings": {
+    "heading": "Settings",
+    "subheading": "Manage your account and subscription.",
+    "profileHeading": "Profile",
+    "profileSubheading": "Update your display name and preferences.",
+    "displayNameLabel": "Display Name",
+    "emailLabel": "Email",
+    "emailManagedNote": "Email is managed by your authentication provider and cannot be changed here.",
+    "savedBang": "Saved!",
+    "savingEllipsis": "Saving...",
+    "saveChanges": "Save Changes",
+    "subscriptionHeading": "Subscription",
+    "subscriptionSubheading": "Manage your Learn to GPT plan.",
+    "freePlan": "Free Plan",
+    "proPlan": "Pro Plan",
+    "freeBadge": "Free",
+    "proBadge": "Pro",
+    "freeDescription": "Access to free courses only. Upgrade for full access to all courses, exercises, and missions.",
+    "proDescription": "Full access to all courses, exercises, and missions.",
+    "memberSince": "Member since {date}",
+    "upgradeToPro": "Upgrade to Pro",
+    "manageSubscription": "Manage Subscription",
+    "loadingEllipsis": "Loading...",
+    "signOutHeading": "Sign Out",
+    "signOutSubheading": "Sign out of your Learn to GPT account on this device.",
+    "signOutButton": "Sign Out",
+    "deleteAccountHeading": "Delete Account",
+    "deleteAccountSubheading": "Permanently delete your account and all associated data. This action cannot be undone.",
+    "deleteButton": "Delete",
+    "deleteConfirmTitle": "Delete Account",
+    "deleteConfirmBody": "This will permanently delete your account, all course progress, achievements, and subscription data. If you have an active subscription, it will be canceled. This action cannot be undone.",
+    "deleteConfirmPrompt": "Type DELETE to confirm",
+    "deleteConfirmPlaceholder": "DELETE",
+    "cancelButton": "Cancel",
+    "deleteConfirmButton": "Yes, delete my account",
+    "deletingEllipsis": "Deleting...",
+    "displayNameValidation": "Display name must be 2-50 characters",
+    "somethingWentWrong": "Something went wrong",
+    "failedToOpenPortal": "Failed to open subscription portal",
+    "failedToDeleteAccount": "Failed to delete account",
+    "allFreeHeading": "All courses are free.",
+    "allFreeBody": "There's no paid tier on Learn to GPT. If you want me to set things up with you 1:1, email reid@getateam.ai."
+  },
+  "leaderboard": {
+    "heading": "Leaderboard",
+    "subheading": "Top learners ranked by total XP earned.",
+    "colRank": "#",
+    "colPlayer": "Player",
+    "colXp": "XP",
+    "colLevel": "Lvl",
+    "colStreak": "Streak",
+    "emptyState": "No learners on the leaderboard yet. Be the first!",
+    "youLabel": "(you)",
+    "anonymous": "Anonymous",
+    "tabLocal": "Your Language",
+    "tabGlobal": "Global"
+  },
+  "errors": {
+    "somethingWentWrong": "Something went wrong",
+    "failedToSaveProgress": "Failed to save progress",
+    "failedToGenerateShareLink": "Failed to generate share link",
+    "generatingShareLink": "Generating share link..."
+  },
+  "landing": {
+    "meta": {
+      "title": "Learn to GPT — Master ChatGPT from first principles",
+      "description": "Learn to GPT teaches ChatGPT through 7 structured tracks — from first prompts to production agents. Free interactive lessons, hands-on exercises, and real-world projects in 7 languages. No OpenAI affiliation."
+    },
+    "nav": {
+      "worlds": "Worlds",
+      "curriculum": "Curriculum",
+      "logIn": "Log In",
+      "signIn": "Sign in",
+      "getStarted": "Start Free",
+      "masterclass": "Masterclass"
+    },
+    "hero": {
+      "eyebrow": "Now teaching ChatGPT",
+      "headline": "",
+      "headlineAccent": "Become dangerous with ChatGPT",
+      "subtitle": "Be the person your team asks about AI.",
+      "body": "Every level is a challenge you actually want to finish. Write real prompts, build real things, leave with something you use at work tomorrow.",
+      "ctaNew": "New to ChatGPT? Start here",
+      "ctaExisting": "Skip to advanced →",
+      "fine": "No credit card. No videos. Not affiliated with OpenAI.",
+      "ctaPrimary": "Start free",
+      "ctaSecondary": "See pricing",
+      "subhead": "The gamified learning platform that takes you from curious beginner to ChatGPT-native builder in 30 days — interactive lessons, hands-on exercises, and projects you will actually use.",
+      "reassurance": "Free to start. No credit card. Track 1 is on the house."
+    },
+    "anti": {
+      "labelOld": "The old way",
+      "labelNew": "Learn to GPT",
+      "old1": "Flashcards",
+      "old2": "Lecture videos",
+      "old3": "Multiple choice quizzes",
+      "old4": "Abstract theory",
+      "new1": "Live sandbox",
+      "new2": "Real prompts",
+      "new3": "Build actual things",
+      "new4": "Ship to production",
+      "tagline": "Not flashcards. Real fluency.",
+      "stakes": "People who learn hands-on retain 3x more than video watchers. This is hands-on from minute one."
+    },
+    "paths": {
+      "label": "Choose Your Quest",
+      "heading": "Where do you want to start?",
+      "a": {
+        "badge": "Free",
+        "title": "Start from Zero",
+        "desc": "Never used ChatGPT? Perfect. We'll take you from \"what is this?\" to building Custom GPTs in your first hour.",
+        "step1": "Foundations",
+        "step2": "Professional",
+        "step3": "Custom GPTs",
+        "cta": "Start Level 1 — 8 minutes"
+      },
+      "b": {
+        "badge": "Skip Ahead",
+        "title": "Level Up",
+        "desc": "Already prompting? Skip the basics. Jump into System Prompts, Custom GPTs, or the OpenAI API.",
+        "step1": "System Prompts",
+        "step2": "Custom GPTs",
+        "step3": "API",
+        "cta": "Jump to your level →"
+      }
+    },
+    "tracks": {
+      "label": "The Campaign",
+      "heading": "Five worlds. From first prompt to full mastery.",
+      "world1": {
+        "num": "World 01",
+        "badge": "FREE",
+        "title": "Foundations",
+        "desc": "How ChatGPT thinks. Your first prompts. Conversation patterns. System prompts.",
+        "tagline": "\"Think like ChatGPT\""
+      },
+      "world2": {
+        "num": "World 02",
+        "title": "Professional",
+        "desc": "Advanced prompting for real work. Chain-of-thought, structured output, few-shot, evaluation.",
+        "tagline": "\"Apply it at work\""
+      },
+      "world3": {
+        "num": "World 03",
+        "title": "Custom GPTs",
+        "desc": "Build your own Custom GPT. System prompt design, knowledge files, Actions, and publishing.",
+        "tagline": "\"Build your own GPT\""
+      },
+      "world4": {
+        "num": "World 04",
+        "title": "API & Agents",
+        "desc": "Tool use, multi-step workflows, agentic loops, error handling, production patterns.",
+        "tagline": "\"Build with ChatGPT\""
+      },
+      "world5": {
+        "num": "World 05",
+        "badge": "FINAL BOSS",
+        "title": "Architect",
+        "desc": "Evals, monitoring, cost optimization, safety, enterprise patterns. The full picture.",
+        "tagline": "\"Master ChatGPT\""
+      }
+    },
+    "game": {
+      "label": "Game Mechanics",
+      "heading": "Serious content. Addictive format.",
+      "xp": {
+        "title": "Earn XP",
+        "desc": "Every challenge completed adds to your score"
+      },
+      "badges": {
+        "title": "Collect Badges",
+        "desc": "Unlock achievements as you master each skill"
+      },
+      "levels": {
+        "title": "Level Up",
+        "desc": "Each world unlocks the next tier"
+      },
+      "streaks": {
+        "title": "Keep Your Streak",
+        "desc": "Daily practice builds lasting fluency"
+      },
+      "caption": "Every level earns XP. Every world unlocks the next. Track your streak. Climb the leaderboard."
+    },
+    "sandbox": {
+      "label": "Interactive Sandbox",
+      "heading": "Every level is hands-on. No watching. No reading. You write. ChatGPT responds.",
+      "filename": "level-03-system-prompts.py",
+      "comment1": "# Level 3: Give ChatGPT a Persona",
+      "comment2": "# You write this. ChatGPT becomes it.",
+      "stamp": "+25 XP",
+      "footerText": "Real code. Real API calls. Real results. Every single level.",
+      "cta": "Try It Free"
+    },
+    "build": {
+      "label": "What You'll Build",
+      "heading": "You leave every level with something real.",
+      "item1": {
+        "title": "Custom AI Assistant",
+        "desc": "A ChatGPT persona tuned to your role — answers like a teammate, not a chatbot."
+      },
+      "item2": {
+        "title": "Automated Workflow",
+        "desc": "A multi-step pipeline that handles repetitive work while you focus on decisions."
+      },
+      "item3": {
+        "title": "Custom GPT with Actions",
+        "desc": "A published Custom GPT connected to real APIs — built, tested, and live in the GPT Store."
+      },
+      "item4": {
+        "title": "Agentic System",
+        "desc": "An AI agent that uses tools, makes decisions, and runs autonomously on your behalf."
+      },
+      "caption": "These aren't hypotheticals. Learners build all four by World 4."
+    },
+    "cred": {
+      "badge": "Built by practitioners",
+      "headline": "Join 1,200+ learners across 97 countries.",
+      "levels": {
+        "num": "1,200+",
+        "label": "Learners"
+      },
+      "challenges": {
+        "num": "97",
+        "label": "Countries"
+      },
+      "worlds": {
+        "num": "7",
+        "label": "Tracks"
+      },
+      "achievement": {
+        "num": "7",
+        "label": "Languages"
+      }
+    },
+    "pricing": {
+      "headline": "All courses are free.",
+      "body": "Pricing has moved. Every course is free — head to the curriculum.",
+      "cta": "See the curriculum"
+    },
+    "finalCta": {
+      "headline": "Your team is already asking about AI.",
+      "headlineAccent": "Be the one with answers.",
+      "subtitle": "One level. Eight minutes. You'll know if this is for you.",
+      "cta": "Start Level 1 →"
+    },
+    "benefits": {
+      "handsOn": {
+        "title": "Hands-on from lesson one",
+        "body": "No passive video lectures. Every lesson is an interactive exercise you complete with real ChatGPT prompts, scored and explained instantly."
+      },
+      "builtByBuilders": {
+        "title": "Built by people shipping with ChatGPT daily",
+        "body": "We use ChatGPT to ship production code, pipelines, and products. Our curriculum is what we wish existed when we started."
+      },
+      "certification": {
+        "title": "Earn Architect certification",
+        "body": "Track your progress through 5 levels. Graduate with a verifiable credential that employers and teams actually care about."
+      }
+    },
+    "faq": {
+      "label": "Common Questions",
+      "heading": "Frequently Asked Questions",
+      "q1": "What is Learn to GPT?",
+      "a1": "Learn to GPT is the gamified learning platform for ChatGPT. It teaches you to master ChatGPT through interactive lessons, hands-on exercises, and real-world projects — from your first prompt to building Custom GPTs. With 5 learning tracks, 175+ lessons, and 700+ exercises, it's the most comprehensive ChatGPT training available.",
+      "q2": "Is Learn to GPT free?",
+      "a2": "Yes. Track 1 (Foundations) is completely free — no credit card required. You'll learn how ChatGPT thinks, write your first prompts, and master conversation patterns. All 5 tracks, 175+ lessons, 700+ exercises, achievements, and the leaderboard are free.",
+      "q3": "What will I learn?",
+      "a3": "Five learning tracks take you from beginner to expert: (1) Foundations — how ChatGPT works and first prompts, (2) Professional Prompting — chain-of-thought, structured output, few-shot, (3) Custom GPTs — system prompts, knowledge files, and Actions, (4) API & Agents — tool use and agentic workflows, (5) Architect — evals, monitoring, and enterprise patterns.",
+      "q4": "Is this affiliated with OpenAI?",
+      "a4": "No. Learn to GPT is an independent learning platform. It is not affiliated with, endorsed by, or officially connected to OpenAI. We teach ChatGPT skills based on publicly available documentation and real-world building experience.",
+      "q5": "What languages is Learn to GPT available in?",
+      "a5": "Learn to GPT is available in 7 languages: English, Japanese, Korean, Simplified Chinese, German, French, and Spanish. The full UI, all lessons, and exercises are translated so you can learn ChatGPT in your preferred language.",
+      "q6": "What is a Custom GPT and how do I build one?",
+      "a6": "A Custom GPT is a personalized version of ChatGPT you configure with a system prompt, uploaded knowledge files, and API Actions. Learn to GPT's Track 3 teaches Custom GPTs hands-on: GPT Builder, system prompt design, knowledge file upload, Action integration, and publishing to the GPT Store. Track 6 covers daily setup and workflow integration.",
+      "q7": "How long does it take to complete Learn to GPT?",
+      "a7": "Track 1 (Foundations) takes about 2-3 hours and gets you writing effective ChatGPT prompts immediately. The full curriculum across all tracks can be completed in 20-40 hours depending on your pace. Each lesson is self-contained so you can learn in short sessions.",
+      "q8": "Do I need programming experience to use Learn to GPT?",
+      "a8": "No programming experience is required for Tracks 1 and 2, which cover ChatGPT fundamentals and professional prompting. Tracks 3-5 involve ChatGPT and the API, which benefit from basic coding familiarity, but the lessons teach you step by step."
+    },
+    "footer": {
+      "tagline": "Learn to GPT",
+      "worlds": "Worlds",
+      "curriculum": "Curriculum",
+      "community": "Community",
+      "blog": "Blog",
+      "support": "Support",
+      "terms": "Terms",
+      "privacy": "Privacy",
+      "copyright": "© 2026 Learn to GPT. Not affiliated with OpenAI.",
+      "masterclass": "Masterclass"
+    }
+  },
+  "localeSwitcher": {
+    "label": "Language"
+  },
+  "curriculum": {
+    "meta": {
+      "title": "ChatGPT Courses & Curriculum — Free Interactive Training | Learn to GPT",
+      "description": "Browse all ChatGPT courses. Free interactive lessons, hands-on exercises, and real-world projects. Learn prompt engineering, Custom GPTs, and AI development in 7 languages. Beginner to advanced."
+    },
+    "heading": "Everything You Need to Go from Beginner to Practitioner",
+    "subheading": "5 learning tracks take you from your first ChatGPT prompt to Architect certification. Every lesson is hands-on — you write, ChatGPT responds.",
+    "nav": {
+      "getStarted": "Get Started",
+      "curriculum": "Curriculum",
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "masterclass": "Masterclass"
+    },
+    "tracks": {
+      "why_claude": "Track 1: Foundations",
+      "three_levels": "Track 2: Professional Prompting",
+      "essentials": "Track 3: Custom GPTs",
+      "level_up": "Track 4: API & Agents",
+      "build_something": "Track 5: Architect",
+      "practitioner_setup": "Track 6: The Practitioner Setup",
+      "advanced_workflows": "Track 7: Advanced Workflows"
+    },
+    "free": "Free",
+    "pro": "Pro",
+    "lessons": "lessons",
+    "cta": {
+      "heading": "Ready to master ChatGPT?",
+      "body": "Start with Track 1 for free. No credit card required.",
+      "button": "7 tracks. Start in 5 minutes."
+    },
+    "pathways": {
+      "starter": {
+        "label": "Starter pathway · Free",
+        "heading": "Start here.",
+        "body": "The ChatGPT basics. Why it matters, what the three levels look like in practice, and the day-one essentials. Free."
+      },
+      "advanced": {
+        "label": "Advanced practitioner · Free",
+        "heading": "The way I actually use it.",
+        "body": "This is the system I run my own businesses on. Memory files, agent skills, MCPs, automation. Free."
+      }
+    }
+  },
+  "learn": {
+    "meta": {
+      "title": "Learn ChatGPT — Free Interactive Courses | Learn to GPT",
+      "description": "Learn ChatGPT for free with structured courses covering prompting, Custom GPTs, API integration, and agent workflows. Interactive exercises in 7 languages from beginner to architect level."
+    },
+    "heading": "Go from ChatGPT Curious to ChatGPT Confident",
+    "subheading": "Free interactive courses for every skill level.",
+    "intro": "Learn to GPT teaches you ChatGPT through hands-on exercises and real-world projects — not lectures or flashcards. Start with the fundamentals or jump ahead to advanced workflows. Everything begins free.",
+    "cta": "Your first lesson. 20 minutes.",
+    "ctaFine": "Free to start. No credit card needed. Not affiliated with OpenAI.",
+    "freeCourses": {
+      "label": "Free Courses",
+      "heading": "Start here — completely free.",
+      "freeBadge": "Free",
+      "startLearning": "Start learning"
+    },
+    "course1": {
+      "title": "Meet ChatGPT — Foundations",
+      "description": "Your first steps with ChatGPT. Learn how ChatGPT thinks, write your first prompts, and discover conversation patterns that get real results."
+    },
+    "course2": {
+      "title": "The Practitioner Setup",
+      "description": "Set up ChatGPT for daily professional use. Memory files, context management, and the workflows that practitioners actually rely on."
+    },
+    "why": {
+      "heading": "Why learn ChatGPT at Learn to GPT?",
+      "point1": {
+        "title": "Hands-on from lesson one",
+        "body": "No passive videos. Every lesson is an interactive exercise you complete with real ChatGPT prompts, scored and explained instantly."
+      },
+      "point2": {
+        "title": "Built by people shipping with ChatGPT daily",
+        "body": "We use ChatGPT to ship production code, pipelines, and products every day. The curriculum is what we wish existed when we started."
+      },
+      "point3": {
+        "title": "Available in 7 languages",
+        "body": "The full platform — lessons, exercises, and UI — is available in English, Japanese, Korean, Chinese, German, French, and Spanish."
+      }
+    },
+    "finalCta": {
+      "headline": "Ready to learn ChatGPT?",
+      "subtitle": "Track 1 is free. No credit card. See if you like learning this way."
+    },
+    "nav": {
+      "home": "Home",
+      "curriculum": "Curriculum",
+      "logIn": "Log In",
+      "getStarted": "Start Free",
+      "terms": "Terms",
+      "privacy": "Privacy",
+      "copyright": "© 2026 Learn to GPT. Not affiliated with OpenAI."
+    }
+  },
+  "claude-code": {
+    "meta": {
+      "title": "Custom GPTs Tutorial — Build Your Own ChatGPT | Learn to GPT",
+      "description": "Learn to build Custom GPTs from scratch. System prompt design, knowledge file upload, API Actions, and GPT Store publishing — hands-on exercises from beginner to expert."
+    },
+    "heading": "Build Your Own Custom GPT",
+    "subheading": "Design, configure, and publish a ChatGPT that does exactly what you need",
+    "intro": "Custom GPTs let you create a personalized version of ChatGPT for any use case. Learn how to write effective system prompts, attach knowledge files, connect APIs with Actions, and publish to the GPT Store — with hands-on exercises at every step.",
+    "trackInfo": "Track 7 — Advanced",
+    "cta": "Stop reading about it. Build something.",
+    "viewCurriculum": "View Full Curriculum",
+    "whatIs": {
+      "heading": "What is a Custom GPT?",
+      "body": "A Custom GPT is a personalized version of ChatGPT you configure for a specific purpose. You give it a name, a system prompt that shapes its behavior, knowledge files it can reference, and Actions that connect it to external APIs. When you publish it, anyone can use it — just like a standard ChatGPT conversation, but specialized for your exact use case."
+    },
+    "whatYouLearn": {
+      "label": "Curriculum",
+      "heading": "What You'll Learn"
+    },
+    "features": {
+      "0": {
+        "title": "System Prompt Design",
+        "desc": "Write system instructions that shape your GPT's behavior, tone, and capabilities reliably across every conversation."
+      },
+      "1": {
+        "title": "Knowledge Files",
+        "desc": "Upload PDFs, documents, and data files that your Custom GPT can search and reference when answering questions."
+      },
+      "2": {
+        "title": "Actions and API Integration",
+        "desc": "Connect your GPT to external APIs so it can fetch live data, submit forms, or trigger workflows on behalf of users."
+      },
+      "3": {
+        "title": "Testing and Evaluation",
+        "desc": "Test your Custom GPT for edge cases and failure modes before publishing. Iterate on the system prompt until behavior is reliable."
+      },
+      "4": {
+        "title": "GPT Store Publishing",
+        "desc": "Publish your Custom GPT to the GPT Store, manage visibility, and distribute to your team or the public."
+      },
+      "5": {
+        "title": "Advanced Patterns",
+        "desc": "Chain multiple Actions, build retrieval-augmented GPTs, and design conversation flows that handle complex multi-step tasks."
+      }
+    },
+    "preview": {
+      "caption": "Learn to build a Custom GPT that handles real workflows"
+    },
+    "directAnswer": {
+      "text": "A Custom GPT is a version of ChatGPT you configure for a specific purpose using OpenAI's GPT Builder. You give it a system prompt, optional knowledge files, and Actions that connect it to external APIs. Once published, it behaves like a specialized AI assistant anyone can interact with through a standard ChatGPT conversation interface."
+    },
+    "howToUse": {
+      "label": "Getting Started",
+      "heading": "How to Build a Custom GPT",
+      "step1": {
+        "title": "Open the GPT Builder",
+        "body": "Go to chatgpt.com and click 'Explore GPTs' then 'Create'. You need a ChatGPT Plus, Team, or Enterprise subscription to build and publish Custom GPTs."
+      },
+      "step2": {
+        "title": "Write your system prompt",
+        "body": "In the Configure tab, write a system prompt that describes what your GPT does, how it behaves, and any constraints. Be specific — the system prompt is the biggest lever for GPT quality."
+      },
+      "step3": {
+        "title": "Add knowledge and Actions",
+        "body": "Upload knowledge files your GPT should reference (PDFs, docs, data). Add Actions by providing an OpenAPI schema for any external API you want the GPT to call."
+      },
+      "step4": {
+        "title": "Test, refine, and publish",
+        "body": "Use the Preview panel to test your GPT against real user questions. When behavior is consistent and accurate, publish it — privately, to your team, or to the GPT Store."
+      }
+    },
+    "commonWorkflows": {
+      "label": "Real-World Usage",
+      "heading": "Common Custom GPT Use Cases",
+      "workflow1": {
+        "title": "Customer support GPT",
+        "body": "Upload your product docs, FAQs, and troubleshooting guides. The GPT answers support questions accurately from your knowledge base without hallucinating."
+      },
+      "workflow2": {
+        "title": "Internal knowledge base",
+        "body": "Upload company policies, SOPs, and process docs. Your team GPT answers internal questions 24/7 without someone having to dig through Confluence or Notion."
+      },
+      "workflow3": {
+        "title": "Data lookup and live APIs",
+        "body": "Connect a Custom GPT to your API with Actions. Users ask in plain English, the GPT fetches live data, and returns a formatted answer — no dashboard required."
+      },
+      "workflow4": {
+        "title": "Specialized writing assistant",
+        "body": "Configure a GPT with your brand voice, editorial guidelines, and style rules. It drafts on-brand content consistently without needing a system prompt in every chat."
+      }
+    },
+    "claudeMdExplained": {
+      "heading": "What makes a great Custom GPT system prompt?",
+      "body": "The system prompt is the most important part of any Custom GPT. It defines the GPT's purpose, persona, constraints, and output format. A well-written system prompt produces consistent, reliable responses. A vague one produces inconsistent behavior that frustrates users.",
+      "tip1": {
+        "title": "Define the role clearly",
+        "body": "Start with who the GPT is and what it does. 'You are a customer support assistant for Acme Corp. You answer questions about our SaaS product using the knowledge files provided. If you don't know something, say so.'"
+      },
+      "tip2": {
+        "title": "Set explicit constraints",
+        "body": "Tell the GPT what NOT to do. 'Never make up pricing. Never discuss competitors. If asked about topics outside your scope, redirect to our support team at support@company.com.'"
+      },
+      "tip3": {
+        "title": "Specify output format",
+        "body": "If you want structured responses, specify the format. 'Always respond with a brief answer first, then bullet-point supporting details. Keep responses under 200 words unless the user asks for more detail.'"
+      }
+    },
+    "faq": {
+      "heading": "Frequently Asked Questions",
+      "q1": "Do I need ChatGPT Plus to build Custom GPTs?",
+      "a1": "Yes. Building and publishing Custom GPTs requires a ChatGPT Plus, Team, or Enterprise subscription. Free users can use Custom GPTs that others have published, but cannot create their own.",
+      "q2": "What can I put in a Custom GPT knowledge file?",
+      "a2": "Custom GPTs accept PDFs, Word documents, text files, and spreadsheets up to 512MB total. The GPT uses retrieval-augmented generation to search and reference the content when answering questions.",
+      "q3": "What are Actions in a Custom GPT?",
+      "a3": "Actions let your Custom GPT call external APIs. You provide an OpenAPI schema describing the API, and the GPT automatically decides when to call it based on the user's request. Common uses: fetch live data, submit forms, trigger workflows.",
+      "q4": "How is a Custom GPT different from just using a system prompt?",
+      "a4": "A Custom GPT packages a system prompt, knowledge files, and Actions into a reusable, shareable product. Anyone can open the GPT and start a fresh conversation with all your configuration pre-applied — no copy-pasting a system prompt every time."
+    },
+    "finalCta": {
+      "headline": "Ready to build your first Custom GPT?",
+      "subtitle": "Hands-on exercises. Real workflows. No fluff."
+    },
+    "nav": {
+      "curriculum": "Curriculum",
+      "logIn": "Log in",
+      "getStarted": "Get Started",
+      "home": "Home",
+      "terms": "Terms",
+      "privacy": "Privacy",
+      "copyright": "© 2026 Learn to GPT. Not affiliated with OpenAI."
+    }
+  },
+  "ai-training": {
+    "meta": {
+      "title": "AI Training Program — Learn ChatGPT from Beginner to Expert | Learn to GPT",
+      "description": "AI training program that teaches ChatGPT through structured exercises, not lectures. Covers prompting fundamentals, ChatGPT CLI, API development, and agent architecture. Free to start, available in 7 languages."
+    },
+    "heading": "Train Your Team on ChatGPT Across 3 Skill Levels",
+    "subheading": "From beginner to expert — at your own pace",
+    "badge": "Comprehensive Training",
+    "intro": "Learn to GPT offers a structured AI training program that takes you from your first conversation with ChatGPT to building advanced agent workflows. Interactive lessons, hands-on exercises, and real-world projects — all free to start.",
+    "tracks": {
+      "heading": "Training Tracks",
+      "label": "Choose your level",
+      "beginner": {
+        "level": "Beginner",
+        "title": "Meet ChatGPT",
+        "desc": "Learn the fundamentals of working with ChatGPT. No experience required."
+      },
+      "intermediate": {
+        "level": "Intermediate",
+        "title": "Context & Prompting",
+        "desc": "Master context management, prompt engineering, and advanced conversation techniques."
+      },
+      "advanced": {
+        "level": "Advanced",
+        "title": "ChatGPT & Agents",
+        "desc": "Build agent workflows, automate development, and master Custom GPTs and the OpenAI API."
+      },
+      "explore": "Explore Track"
+    },
+    "benefits": {
+      "heading": "Why Train with Learn to GPT",
+      "gamified": {
+        "title": "Gamified Learning",
+        "body": "Earn XP, unlock achievements, and compete on leaderboards as you progress."
+      },
+      "languages": {
+        "title": "7 Languages",
+        "body": "Learn in English, Spanish, French, German, Japanese, Korean, or Chinese."
+      },
+      "teams": {
+        "title": "Team Training",
+        "body": "Bring your team up to speed with our masterclass program."
+      }
+    },
+    "masterclass": {
+      "heading": "Masterclass",
+      "body": "Accelerate your team's AI training with guided instruction, hands-on workshops, and certification.",
+      "cta": "Learn More"
+    },
+    "cta": "Stop reading about it. Build something.",
+    "ctaFine": "No credit card required",
+    "finalCta": {
+      "headline": "Ready to start your AI training?",
+      "subtitle": "Join thousands of learners mastering ChatGPT."
+    },
+    "viewCurriculum": "View Full Curriculum",
+    "nav": {
+      "home": "Home",
+      "curriculum": "Curriculum",
+      "getStarted": "Get Started",
+      "logIn": "Log In",
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "copyright": "Learn to GPT"
+    }
+  },
+  "prompt-engineering": {
+    "meta": {
+      "title": "Prompt Engineering for ChatGPT — Interactive Course | Learn to GPT",
+      "description": "Master prompt engineering for ChatGPT. Learn context management, system prompts, few-shot examples, and advanced techniques with hands-on exercises."
+    },
+    "heading": "Get Better Results from Every ChatGPT Prompt",
+    "subheading": "Master the art of communicating with AI",
+    "intro": "Learn how to write effective prompts that get the best results from ChatGPT. From basic conversation techniques to advanced strategies like chain-of-thought reasoning and tool use.",
+    "whatIs": {
+      "heading": "What is Prompt Engineering?",
+      "body": "Prompt engineering is the skill of crafting instructions that help AI models produce accurate, useful, and relevant outputs. With ChatGPT, good prompts mean better code, clearer analysis, and more reliable results."
+    },
+    "skillsSection": {
+      "heading": "What You Will Learn",
+      "label": "Core Skills"
+    },
+    "skills": {
+      "0": {
+        "title": "Context Window Management",
+        "desc": "Learn to structure conversations and manage ChatGPT's context window for optimal results."
+      },
+      "1": {
+        "title": "System Prompts",
+        "desc": "Design effective system prompts that set the right tone, constraints, and behavior."
+      },
+      "2": {
+        "title": "Few-Shot Examples",
+        "desc": "Use examples to guide ChatGPT's output format, style, and reasoning patterns."
+      },
+      "3": {
+        "title": "Chain-of-Thought",
+        "desc": "Enable step-by-step reasoning for complex problems and multi-step tasks."
+      },
+      "4": {
+        "title": "Tool Use",
+        "desc": "Integrate ChatGPT with external tools and APIs for real-world automation."
+      },
+      "5": {
+        "title": "Advanced Patterns",
+        "desc": "Master techniques like constitutional AI, self-reflection, and multi-turn strategies."
+      }
+    },
+    "trackInfo": "This content is covered across our beginner and intermediate tracks.",
+    "cta": "You've read enough. Start building.",
+    "viewCurriculum": "View Full Curriculum",
+    "directAnswer": {
+      "text": "Prompt engineering is the practice of writing clear, structured instructions that guide AI models like ChatGPT to produce accurate, useful outputs. It is the single highest-leverage skill for anyone working with AI — the difference between generic responses and production-quality results comes down to how well you communicate what you need."
+    },
+    "techniques": {
+      "label": "Core Techniques",
+      "heading": "5 Prompt Engineering Techniques That Actually Work",
+      "technique1": {
+        "title": "Give ChatGPT a specific role",
+        "body": "Instead of asking a general question, define who ChatGPT is in the context of your task. \"You are a senior data analyst at a healthcare startup\" produces dramatically different output than a bare question. The role sets vocabulary, depth, and perspective.",
+        "example": "You are a senior TypeScript engineer. Review this code for security vulnerabilities, missing error handling, and performance issues. Be specific about line numbers."
+      },
+      "technique2": {
+        "title": "Structure your output format",
+        "body": "Tell ChatGPT exactly what the response should look like. Specify JSON keys, bullet point structure, section headings, or word count limits. ChatGPT follows format constraints reliably when they are explicit in the prompt.",
+        "example": "Respond in JSON with keys: summary (string, under 50 words), risk_level (\"low\" | \"medium\" | \"high\"), and action_items (array of strings)."
+      },
+      "technique3": {
+        "title": "Use chain-of-thought reasoning",
+        "body": "For complex problems, ask ChatGPT to think step by step before giving a final answer. This produces more accurate results on math, logic, and multi-step analysis because it forces the model to show intermediate reasoning.",
+        "example": "Think through this step by step. First, identify the core problem. Then list possible solutions with trade-offs. Finally, recommend the best option and explain why."
+      },
+      "technique4": {
+        "title": "Provide few-shot examples",
+        "body": "Show ChatGPT one or two input-output examples before asking for the real task. This calibrates tone, format, and reasoning style faster than any instruction paragraph. One good example is worth 300 words of explanation.",
+        "example": "Here is an example of the format I want: Input: 'The server crashed at 3am' -> Output: {severity: 'critical', category: 'infrastructure', action: 'page on-call'}. Now classify this: 'User cannot reset password'"
+      },
+      "technique5": {
+        "title": "Set explicit constraints",
+        "body": "Tell ChatGPT what NOT to do. \"Do not use jargon.\" \"Do not exceed 200 words.\" \"If you are uncertain, say so instead of guessing.\" Negative constraints prevent the most common failure modes — over-confidence, verbosity, and off-topic drift.",
+        "example": "Constraints: Never use em dashes. No summary paragraph at the end. If you lack information to answer confidently, say exactly what additional context you would need."
+      }
+    },
+    "commonMistakes": {
+      "label": "What to Avoid",
+      "heading": "Common Prompt Engineering Mistakes",
+      "mistake1": {
+        "title": "Being too vague",
+        "bad": "Write me an email.",
+        "good": "Write a 3-paragraph follow-up email to a job application for a marketing manager role. Professional but warm tone. End with a specific meeting request, not an open-ended question.",
+        "why": "Vague prompts produce generic output. Specificity on audience, tone, length, and purpose improves quality immediately."
+      },
+      "mistake2": {
+        "title": "Not providing context",
+        "bad": "Analyze this data.",
+        "good": "Here is Q3 revenue data for a B2B SaaS startup with 200 customers. Identify the most important trend, what data is missing that would change the interpretation, and what decisions this data supports.",
+        "why": "ChatGPT cannot infer your industry, audience, or goals. Context turns analysis from surface-level to actionable."
+      },
+      "mistake3": {
+        "title": "Asking for everything at once",
+        "bad": "Write a complete marketing strategy with content calendar, ad copy, email sequences, and brand guidelines.",
+        "good": "Let's build a content strategy. Start with: who is the target audience, what are the 3 main content pillars, and what is one piece of content per pillar we should create first?",
+        "why": "Breaking complex tasks into steps lets you review and course-correct. One massive prompt produces shallow output across the board."
+      }
+    },
+    "faq": {
+      "heading": "Frequently Asked Questions",
+      "q1": "Do I need to learn prompt engineering?",
+      "a1": "Yes — if you use AI at all. Prompt engineering is not a niche skill. It is the difference between AI that saves you time and AI that wastes it. The ROI on learning to write clear, structured prompts is immediate and compounds with every interaction.",
+      "q2": "What is the difference between a prompt and a system prompt?",
+      "a2": "A prompt is what you type in a conversation. A system prompt is a set of instructions that runs before any conversation — it defines ChatGPT's role, output format, constraints, and standing context. System prompts shape every response ChatGPT gives.",
+      "q3": "Does prompt engineering work the same for all AI models?",
+      "a3": "The core principles — specificity, structure, examples, constraints — transfer across ChatGPT, Claude, Gemini, and other models. The details differ: ChatGPT responds especially well to role-setting, explicit format contracts, and structured step-by-step instructions.",
+      "q4": "How long should a prompt be?",
+      "a4": "As long as it needs to be. A well-structured 500-word prompt with context, examples, and constraints will outperform a 20-word prompt every time. Length is not the issue — clarity and structure are."
+    },
+    "finalCta": {
+      "headline": "Ready to master prompt engineering?",
+      "subtitle": "Start with free interactive lessons today."
+    },
+    "preview": {
+      "caption": "Example: A well-structured system prompt"
+    },
+    "nav": {
+      "home": "Home",
+      "curriculum": "Curriculum",
+      "getStarted": "Get Started",
+      "logIn": "Log In",
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "copyright": "Learn to GPT"
+    }
+  },
+  "getting-started": {
+    "meta": {
+      "title": "Getting Started with ChatGPT — Free Beginner Guide | Learn to GPT",
+      "description": "Get started with ChatGPT in under 5 minutes. Create a free account, take your first interactive lesson, and learn how ChatGPT thinks — no technical background or credit card required."
+    },
+    "heading": "Be Productive with ChatGPT on Day One",
+    "subheading": "Your first steps to AI fluency",
+    "intro": "No experience required. Learn to GPT guides you from your very first AI conversation to building real workflows. Start free, learn at your own pace, in your language.",
+    "cta": "Your first lesson. 20 minutes.",
+    "ctaFine": "No credit card required",
+    "steps": {
+      "heading": "How It Works",
+      "step1": {
+        "title": "Create Your Free Account",
+        "desc": "Sign up in seconds. No credit card, no commitment. Start learning immediately."
+      },
+      "step2": {
+        "title": "Start with Free Lessons",
+        "desc": "Begin with Meet ChatGPT, our beginner-friendly course. Learn the fundamentals through interactive exercises."
+      },
+      "step3": {
+        "title": "Practice with Hands-on Exercises",
+        "desc": "Every lesson includes interactive exercises. Match prompts, build conversations, and get instant feedback."
+      },
+      "step4": {
+        "title": "Level Up to Advanced Tracks",
+        "desc": "Master prompt engineering, Custom GPTs, and agent workflows. Earn XP and track your progress."
+      }
+    },
+    "included": {
+      "heading": "What You Get for Free",
+      "item1": "Interactive lessons covering ChatGPT fundamentals",
+      "item2": "Hands-on exercises with instant feedback and XP rewards",
+      "item3": "Available in 7 languages — English, Spanish, French, German, Japanese, Korean, and Chinese",
+      "item4": "Progress tracking with achievements and leaderboards"
+    },
+    "finalCta": {
+      "headline": "Ready to get started?",
+      "subtitle": "Join hundreds of learners already mastering ChatGPT."
+    },
+    "nav": {
+      "home": "Home",
+      "curriculum": "Curriculum",
+      "getStarted": "Get Started",
+      "logIn": "Log In",
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "copyright": "Learn to GPT"
+    }
+  },
+  "masterclass-page": {
+    "meta": {
+      "title": "ChatGPT Masterclass — Guided Training | Learn to GPT",
+      "description": "The Learn to GPT Masterclass is a guided, hands-on training covering advanced prompt engineering, ChatGPT workflows, agent architecture, and real-world projects. One-time payment, lifetime access."
+    },
+    "heading": "Master Custom GPTs, Agents, and the OpenAI API",
+    "subheading": "Go from capable to dangerous in one guided training.",
+    "intro": "The Learn to GPT Masterclass is a hands-on, guided training session that takes you beyond the basics. Advanced prompt engineering, ChatGPT workflows, agent patterns, and real-world projects — all in one intensive program.",
+    "hero": {
+      "badge": "Guided Training"
+    },
+    "price": "One-Time Payment",
+    "cta": "Get the Masterclass",
+    "ctaFine": "One-time payment. Lifetime access. Not affiliated with OpenAI.",
+    "included": {
+      "heading": "What's Included",
+      "item1": {
+        "title": "Guided Instruction",
+        "desc": "Step-by-step guidance through advanced ChatGPT concepts. No guesswork — learn the patterns that practitioners actually use."
+      },
+      "item2": {
+        "title": "Hands-on Workshops",
+        "desc": "Build real projects during the training. Every concept is reinforced with exercises you complete yourself, not just watch."
+      },
+      "item3": {
+        "title": "Advanced Custom GPT Content",
+        "desc": "Master Custom GPTs — system prompt design, knowledge files, Actions, multi-GPT architectures, and Assistants API patterns."
+      },
+      "item4": {
+        "title": "Team Training Ready",
+        "desc": "Bring your team up to speed. The masterclass content is designed to scale across organizations, from individual contributors to managers."
+      }
+    },
+    "topics": {
+      "heading": "What You'll Learn",
+      "item1": "Advanced prompt engineering techniques that get consistent, production-quality results",
+      "item2": "Custom GPT setup, system prompt design, and daily workflow integration",
+      "item3": "Knowledge files, Custom Instructions, and context management for long-running tasks",
+      "item4": "Agent patterns — building AI workflows that run autonomously with the Assistants API",
+      "item5": "Multi-GPT architectures and production-scale OpenAI API patterns",
+      "item6": "Real-world project walkthroughs from beginner to deployment"
+    },
+    "audience": {
+      "heading": "Who This Is For",
+      "point1": {
+        "title": "Individual practitioners",
+        "body": "You've used ChatGPT but want to go deeper. You're ready to build real workflows, not just chat."
+      },
+      "point2": {
+        "title": "Team leads and managers",
+        "body": "You need to get your team productive with ChatGPT. The masterclass gives you a structured curriculum to roll out across your organization."
+      },
+      "point3": {
+        "title": "Developers and technical professionals",
+        "body": "You want to build with the OpenAI API — function calling, Assistants, streaming, and agent patterns. Learn the patterns that 10x your development workflow."
+      }
+    },
+    "finalCta": {
+      "headline": "Ready to master ChatGPT?",
+      "subtitle": "One payment. Lifetime access. Start building today."
+    },
+    "nav": {
+      "home": "Home",
+      "curriculum": "Curriculum",
+      "getStarted": "Get Started",
+      "logIn": "Log In",
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "copyright": "Learn to GPT"
+    }
+  },
+  "certification": {
+    "meta": {
+      "title": "ChatGPT Certification — Prove Your AI Skills | Learn to GPT",
+      "description": "ChatGPT certification tracks your progress across 3 levels — Beginner, Practitioner, and Architect. Complete hands-on exercises, earn XP, and receive shareable completion certificates that demonstrate real ChatGPT skills."
+    },
+    "heading": "Prove Your ChatGPT Skills with a Verifiable Certificate",
+    "subheading": "Track your progress from beginner to architect",
+    "intro": "Complete structured learning tracks, earn XP, and receive shareable completion certificates for each course you finish. Build real ChatGPT skills through hands-on exercises.",
+    "title": "ChatGPT Certification",
+    "description": "AI certification program",
+    "levels": {
+      "heading": "Certification Levels",
+      "label": "Choose Your Path",
+      "popularBadge": "Most Popular",
+      "beginner": {
+        "title": "ChatGPT Beginner",
+        "description": "Demonstrates foundational understanding of ChatGPT, basic prompting, and conversation management.",
+        "skill1": "Basic prompting techniques",
+        "skill2": "Conversation management",
+        "skill3": "Understanding AI capabilities"
+      },
+      "practitioner": {
+        "title": "ChatGPT Practitioner",
+        "description": "Proves intermediate mastery of context management, prompt engineering, and practical AI workflows.",
+        "skill1": "Advanced prompt engineering",
+        "skill2": "Context window optimization",
+        "skill3": "Multi-turn strategies"
+      },
+      "architect": {
+        "title": "ChatGPT Architect",
+        "description": "Validates expert-level skills in Custom GPTs, agent workflows, and enterprise AI implementation.",
+        "skill1": "Custom GPT and Assistants API mastery",
+        "skill2": "Agent workflow design",
+        "skill3": "Enterprise AI architecture"
+      }
+    },
+    "proves": {
+      "heading": "What Certification Proves",
+      "point1": {
+        "title": "Verified Skills",
+        "body": "Each level requires passing hands-on assessments that test real-world competency, not just knowledge."
+      },
+      "point2": {
+        "title": "Structured Mastery",
+        "body": "Certification tracks follow a clear progression from fundamentals to expert-level skills."
+      },
+      "point3": {
+        "title": "Career Advantage",
+        "body": "Stand out to employers and clients with verified ChatGPT credentials."
+      }
+    },
+    "howItWorks": {
+      "heading": "How It Works",
+      "label": "3 Simple Steps",
+      "step1": {
+        "title": "Complete the Track",
+        "body": "Work through all lessons and exercises in your chosen certification level."
+      },
+      "step2": {
+        "title": "Pass the Assessment",
+        "body": "Demonstrate your skills with a hands-on assessment that tests real-world competency."
+      },
+      "step3": {
+        "title": "Earn Your Credential",
+        "body": "Receive a verified digital credential you can share with employers and clients."
+      }
+    },
+    "cta": "Your first lesson. 20 minutes.",
+    "ctaFine": "Begin with free lessons — no commitment required",
+    "finalCta": {
+      "headline": "Ready to level up your AI skills?",
+      "subtitle": "Start your learning journey today."
+    },
+    "nav": {
+      "home": "Home",
+      "curriculum": "Curriculum",
+      "getStarted": "Get Started",
+      "logIn": "Log In",
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "copyright": "Learn to GPT"
+    }
+  },
+  "for-teams": {
+    "meta": {
+      "title": "ChatGPT for Teams — Enterprise AI Training | Learn to GPT",
+      "description": "ChatGPT team training gives every team member standardized AI skills — from basic prompting to advanced workflows. Guided masterclass, progress tracking, and enterprise setup options for organizations of any size."
+    },
+    "heading": "Get Your Whole Team Fluent in ChatGPT",
+    "subheading": "Standardize AI skills across your organization",
+    "hero": {
+      "label": "Team Training"
+    },
+    "intro": "Give your team a shared foundation in ChatGPT. From the guided masterclass to full enterprise setup, Learn to GPT helps organizations build consistent AI fluency.",
+    "title": "ChatGPT for Teams",
+    "description": "Enterprise AI training",
+    "benefits": {
+      "label": "Why Teams Choose Us",
+      "heading": "Build AI Fluency at Scale",
+      "point1": {
+        "title": "Standardized Skills",
+        "body": "Every team member learns the same foundations, prompting techniques, and best practices. No more inconsistent AI usage across departments."
+      },
+      "point2": {
+        "title": "Consistent Workflows",
+        "body": "Establish shared Custom GPT configurations, prompt libraries, and agent patterns that your whole team can build on."
+      },
+      "point3": {
+        "title": "Measurable Progress",
+        "body": "Track completion rates, exercise scores, and XP across your team. Know exactly where everyone stands."
+      }
+    },
+    "howItWorks": {
+      "heading": "How It Works",
+      "step1": {
+        "title": "Choose Your Package",
+        "body": "Start with the masterclass for small teams or contact us for enterprise pricing."
+      },
+      "step2": {
+        "title": "Onboard Your Team",
+        "body": "We set up accounts, configure shared Custom GPT templates, and establish team-specific workflows."
+      },
+      "step3": {
+        "title": "Learn Together",
+        "body": "Your team progresses through structured tracks with hands-on exercises and real-world projects."
+      },
+      "step4": {
+        "title": "Measure Results",
+        "body": "Track team progress, identify skill gaps, and demonstrate ROI with completion metrics."
+      }
+    },
+    "pricing": {
+      "heading": "Pricing",
+      "subheading": "Flexible options for teams of every size",
+      "masterclass": {
+        "title": "Masterclass",
+        "label": "Self-Paced",
+        "per": "one-time",
+        "feature1": "Guided instruction for up to 10 people",
+        "feature2": "Hands-on workshop format",
+        "feature3": "All 7 tracks included",
+        "feature4": "90 days of access"
+      },
+      "enterprise": {
+        "badge": "Custom",
+        "title": "Enterprise",
+        "label": "Enterprise Setup",
+        "per": "engagement",
+        "feature1": "1:1 setup with your team",
+        "feature2": "Custom GPT configuration and system prompts",
+        "feature3": "Agent workflow design",
+        "feature4": "Ongoing advisory support"
+      }
+    },
+    "cta": "Stop waiting. Build something together.",
+    "ctaFine": "Contact us for enterprise pricing",
+    "finalCta": {
+      "headline": "Ready to train your team?",
+      "subtitle": "Start with the masterclass or contact us for a custom engagement."
+    },
+    "nav": {
+      "home": "Home",
+      "curriculum": "Curriculum",
+      "getStarted": "Get Started",
+      "logIn": "Log In",
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "copyright": "Learn to GPT"
+    }
+  },
+  "paywall": {
+    "heading": "You've completed {count} free courses",
+    "subheading": "Unlock unlimited access to all courses, exercises, and tracks.",
+    "feature1": "All 7 learning tracks",
+    "feature2": "375+ hands-on exercises",
+    "feature3": "Lifetime access — one payment",
+    "cta": "Unlock All Courses",
+    "dismiss": "Maybe later"
+  },
+  "tips": {
+    "tipOfTheDay": "Tip of the Day",
+    "tipCategory_prompting": "Prompting",
+    "tipCategory_workflow": "Workflow",
+    "tipCategory_feature": "Feature",
+    "tipCategory_mindset": "Mindset",
+    "tipProTip": "Pro tip",
+    "tipTomorrow": "Tomorrow's tip",
+    "tipArchive": "Recent Tips",
+    "tipToday": "Today",
+    "tipsPageSubtitle": "A new ChatGPT tip every day. Use it in the next 5 minutes.",
+    "tipDayAgo": "day ago",
+    "tipDaysAgo": "days ago"
+  }
+}

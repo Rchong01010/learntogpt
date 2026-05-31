@@ -1,0 +1,444 @@
+{
+  "track": "essentials",
+  "courses": [
+    {
+      "title": "Maîtriser les fondamentaux",
+      "slug": "essentials",
+      "description": "Écriture, documents, recherche et décisions. Cinq compétences pratiques qui rendent ChatGPT utile pour le vrai travail, pas seulement pour les démos.",
+      "difficulty": "intermediate",
+      "order_index": 1,
+      "is_free": true,
+      "icon": "Target",
+      "lessons": [
+        {
+          "title": "Fais en sorte que ChatGPT te ressemble",
+          "slug": "make-claude-sound-like-you",
+          "description": "Les exemples surpassent les instructions. Montre ta voix à ChatGPT au lieu de la décrire.",
+          "order_index": 1,
+          "xp_reward": 100,
+          "estimated_minutes": 6,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<p>ChatGPT écrit du texte générique parce que tu lui donnes des prompts génériques. Arrête de décrire ton ton avec des adjectifs. À la place, colle trois choses que tu as réellement écrites et dis « adapte ce ton. » ChatGPT est exceptionnel en reconnaissance de patterns -- donne-lui des patterns à reconnaître.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_es_01"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>Superpose tes spécificités :</strong> des exemples de ton écriture, des règles de style explicites (« ne dis jamais 'j'espère que ce mail vous trouve bien' »), et des contraintes comme la longueur et le format. Plus ton prompt est concret, moins ChatGPT a besoin de deviner.</p><p>La mise en place dépend du niveau. <strong>Dans ChatGPT,</strong> crée un Projet avec 5-10 échantillons d'écriture plus un bref guide de style. <strong>Dans Co-work,</strong> ChatGPT lit ton document ouvert et adapte son ton automatiquement. <strong>Dans Code,</strong> crée un modèle de prompt réutilisable avec ton style intégré.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_es_02"
+              },
+              {
+                "type": "text",
+                "content": "<p>Le pattern commun aux trois niveaux : montrer, pas raconter. Les exemples plutôt que les descriptions. Le contexte plutôt que les instructions.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_es_03"
+              },
+              {
+                "type": "summary",
+                "content": "<p>L'adaptation de voix commence avec de vrais exemples de ton écriture, pas des listes d'adjectifs. Configure ton système de style dans le niveau que tu utilises le plus -- Projets, contexte Co-work ou modèles Code.</p>"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_es_01",
+              "type": "matching_pairs",
+              "prompt": "Associe chaque descripteur de ton à la phrase qui sonne réellement de cette façon. Les descriptions sont abstraites -- les exemples sont la façon dont ChatGPT apprend ta voix.",
+              "options": null,
+              "correct_answer": "{\"Punchy and opinionated\":\"Hot take: your standup is a performance review in disguise. Kill it. Ship a Loom instead.\",\"Warm and story-driven\":\"When I got fired in 2019, I thought my career was over. Turns out it was just starting.\",\"Authoritative and analytical\":\"The data is clear: remote teams ship 23% faster when async defaults are enforced. Three factors drive this.\",\"Playful and self-deprecating\":\"I spent six months building the wrong feature. On the bright side, my Jira board has never looked better.\",\"Blunt and contrarian\":\"Everyone's wrong about onboarding. Your new hire doesn't need a 90-day plan. They need one unambiguous win in week one.\",\"Reflective and personal\":\"I've been thinking about why I say yes to meetings I don't want. It's not politeness. It's fear dressed up as collaboration.\"}",
+              "explanation": "Chaque ton vit dans la mécanique de la phrase : l'écriture percutante utilise des verbes courts et des opinions tranchées. L'écriture chaleureuse ouvre avec une histoire. L'écriture autoritaire mène avec des données. Montre à ChatGPT les patterns de phrases, pas les adjectifs.",
+              "hints": [
+                "La mécanique de la phrase trahit tout. Verbes courts vs. propositions longues. Statistiques vs. histoire. Affirmation vs. question."
+              ],
+              "xp_reward": 10,
+              "order_index": 1
+            },
+            {
+              "id": "ex_es_02",
+              "type": "prompt_lab",
+              "prompt": "Tu configures un Projet ChatGPT pour capturer ta voix d'écriture pour les emails clients. Écris les instructions personnalisées que tu ajouterais au Projet.",
+              "options": null,
+              "correct_answer": "{\"scenario\":\"Tu crées un Projet 'Emails Clients' dans ChatGPT. Tu as déjà téléchargé 5 emails d'exemple que tu as envoyés. Maintenant tu dois écrire les instructions personnalisées qui indiquent à ChatGPT tes règles de style. Écris des instructions qui feraient que chaque email dans ce Projet sonne comme toi.\",\"scoring_criteria\":[{\"keyword_group\":[\"short\",\"concise\",\"brief\",\"under\",\"words\",\"sentences\",\"length\"],\"label\":\"A défini des contraintes de longueur ou de brièveté\",\"points\":1},{\"keyword_group\":[\"never\",\"don't\",\"avoid\",\"no\",\"stop\",\"skip\",\"without\"],\"label\":\"A inclus des anti-patterns à éviter\",\"points\":2},{\"keyword_group\":[\"value\",\"lead with\",\"open with\",\"start with\",\"first\",\"begin\"],\"label\":\"A spécifié comment ouvrir ou mener\",\"points\":1},{\"keyword_group\":[\"tone\",\"voice\",\"casual\",\"formal\",\"direct\",\"peer\",\"friendly\",\"professional\"],\"label\":\"A défini le ton général\",\"points\":1},{\"keyword_group\":[\"CTA\",\"next step\",\"action\",\"end with\",\"close with\",\"sign off\"],\"label\":\"A spécifié le style de clôture ou d'appel à l'action\",\"points\":1},{\"keyword_group\":[\"example\",\"sample\",\"uploaded\",\"attached\",\"reference\",\"match\",\"like the\"],\"label\":\"A fait référence aux exemples téléchargés\",\"points\":1}],\"max_points\":7,\"pass_threshold\":4,\"ideal_prompt\":\"Adapte le ton des exemples d'emails téléchargés. Règles : garde les emails à moins de 100 mots. Commence par la valeur, pas par les politesses. Ne dis jamais 'j'espère que ce mail vous trouve bien' ou 'n'hésitez pas à.' Termine avec une prochaine étape concrète, pas un vague 'tenez-moi au courant.' Ton : direct, d'égal à égal, comme un SMS à un ami professionnel.\",\"tips\":[\"Les anti-patterns ('ne dis jamais X') sont souvent plus utiles que les instructions positives parce qu'ils coupent le charabia d'IA le plus courant.\",\"Faire référence aux exemples téléchargés dit à ChatGPT de les utiliser comme guide de style principal.\",\"Les contraintes spécifiques (nombre de mots, style d'ouverture, format de CTA) éliminent l'ambiguïté.\"]}",
+              "explanation": "Les instructions personnalisées de projet fonctionnent le mieux quand elles combinent règles de style, anti-patterns et références à tes exemples téléchargés. Les contraintes surpassent les descriptions.",
+              "hints": [
+                "Pense aux phrases et patterns spécifiques qui font que les emails sonnent comme du charabia d'IA. Dis à ChatGPT de les éviter."
+              ],
+              "xp_reward": 10,
+              "order_index": 2
+            },
+            {
+              "id": "ex_es_03",
+              "type": "scenario_walkthrough",
+              "prompt": "Parcours le processus pour que ChatGPT adapte ta voix d'écriture, d'un premier essai générique à un résultat poli.",
+              "options": null,
+              "correct_answer": "{\"title\": \"Du charabia d'IA à ta voix\", \"steps\": [{\"type\": \"context\", \"text\": \"Tu as demandé à ChatGPT d'écrire un post LinkedIn sur le recrutement. Le résultat : 'Le recrutement est l'une des décisions les plus critiques qu'une entreprise puisse prendre. La bonne stratégie d'acquisition de talents peut accélérer la croissance, tandis que de mauvaises décisions de recrutement peuvent considérablement freiner une entreprise.' Classique charabia d'IA. Corrigeons ça.\"}, {\"type\": \"choice\", \"claude_response\": \"Le post est techniquement correct mais pourrait venir de n'importe quel outil d'IA. Zéro personnalité. Quel est ton premier geste ?\", \"question\": \"Comment fais-tu réécrire ça à ChatGPT avec de la personnalité ?\", \"options\": [\"Dis 'fais mieux' et espère le meilleur\", \"Colle un exemple de ton écriture réelle et dis 'adapte plutôt ce ton'\", \"Demande à ChatGPT d'être 'plus créatif'\", \"Ajoute plus de points d'exclamation pour que ça paraisse énergique\"], \"correct\": 1, \"feedback\": \"Montrer à ChatGPT un vrai exemple de ton écriture lui donne une cible concrète. 'Fais mieux' est trop vague. 'Sois créatif' ne veut rien dire de spécifique. Les points d'exclamation ne sont pas de la personnalité.\"}, {\"type\": \"choice\", \"claude_response\": \"Tu as collé un exemple et ChatGPT a réécrit avec plus de personnalité. Maintenant ça donne : 'Tu n'as pas un problème de recrutement. Tu as un problème de filtrage. 200 candidats et tu lis chaque CV comme si c'était un roman.' Mieux, mais ça finit avec un appel à l'action générique : 'Que pensez-vous du recrutement ? Dites-le moi en commentaires !'\", \"question\": \"Comment corriges-tu la fin faible sans perdre l'ouverture forte ?\", \"options\": [\"Réécris tout depuis le début\", \"Dis à ChatGPT : 'L'ouverture est parfaite. Garde-la. Remplace la fin par une prise de position spécifique et tranchée. Pas de questions qui mendient de l'engagement.'\", \"Dis 'améliore la fin'\", \"Accepte-le comme suffisant\"], \"correct\": 1, \"feedback\": \"Protéger les bonnes parties tout en ciblant les parties faibles est la compétence centrale d'itération. Dire à ChatGPT exactement quoi garder et quoi changer t'évite de perdre tes progrès.\"}, {\"type\": \"prompt\", \"context\": \"Maintenant écris le prompt de polissage final. Le post est à 90% mais une phrase dit 'en tirant parti des stratégies d'acquisition de talents.' Élimine le jargon et fais que ça sonne comme une vraie personne.\", \"placeholder\": \"Écris ton prompt de polissage final...\", \"scoring_criteria\": [{\"keyword_group\": [\"kill\", \"remove\", \"cut\", \"replace\", \"drop\", \"delete\", \"leveraging\", \"jargon\"], \"label\": \"A ciblé le jargon spécifique\", \"points\": 2}, {\"keyword_group\": [\"plain\", \"simple\", \"real\", \"human\", \"specific\", \"concrete\", \"English\"], \"label\": \"A demandé un langage simple\", \"points\": 2}, {\"keyword_group\": [\"keep\", \"don't change\", \"rest is good\", \"everything else\"], \"label\": \"A protégé le reste du post\", \"points\": 1}], \"ideal\": \"Presque parfait. Supprime 'en tirant parti des stratégies d'acquisition de talents' et remplace par quelque chose de concret sur ce que tu fais vraiment, en langage simple. Ne change rien d'autre.\", \"max_points\": 5, \"pass_threshold\": 3}]}",
+              "explanation": "L'adaptation de voix est un processus en trois étapes : montre un exemple à ChatGPT, itère sur des sections spécifiques en protégeant les bonnes parties, puis polis les mots individuels. Chaque tour devient plus précis.",
+              "hints": [
+                "Pense à aller des grandes corrections (voix et structure) aux petites corrections (mots et phrases individuels)."
+              ],
+              "xp_reward": 15,
+              "order_index": 3
+            }
+          ]
+        },
+        {
+          "title": "La boucle d'itération",
+          "slug": "the-iteration-loop",
+          "description": "L'échange qui transforme un résultat générique en quelque chose que tu enverrais vraiment.",
+          "order_index": 2,
+          "xp_reward": 100,
+          "estimated_minutes": 6,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<p>Le premier résultat n'est presque jamais envoyé. La boucle d'itération est le plus grand déblocage de qualité. <strong>Commence large, puis affine.</strong> Premier tour : corrige la voix et la structure. Deuxième tour : corrige des paragraphes spécifiques. Troisième tour : polie le choix des mots.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_es_04"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>Sois spécifique sur ce qui ne va pas.</strong> « Fais mieux » est inutile. « Le deuxième paragraphe sonne trop corporate » donne quelque chose à ChatGPT pour travailler. <strong>Dis à ChatGPT ce qu'il faut garder.</strong> « L'ouverture est parfaite. Ne la touche pas. Corrige tout après le premier paragraphe. » Deux ou trois tours suffisent.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_es_05"
+              },
+              {
+                "type": "text",
+                "content": "<p>L'itération est le processus, pas un échec. Tout écrivain professionnel révise. La différence, c'est qu'avec ChatGPT, chaque révision prend des secondes au lieu d'heures.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_es_06"
+              },
+              {
+                "type": "summary",
+                "content": "<p>Commence large, sois spécifique sur ce qui ne va pas, dis à ChatGPT ce qu'il faut garder. Deux ou trois tours transforment un résultat générique en travail poli.</p>"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_es_04",
+              "type": "multiple_choice",
+              "prompt": "Tu en es au Tour 2 de l'édition d'un article de blog avec ChatGPT. L'introduction est parfaite mais la conclusion semble bâclée. Que dis-tu ?",
+              "options": [
+                "Réécris tout.",
+                "L'intro est super -- n'y touche pas. La conclusion semble bâclée. Développe-la avec un appel à l'action spécifique et une pensée finale qui relie à l'histoire d'ouverture.",
+                "Améliore la fin.",
+                "Ajoute plus de mots à la conclusion."
+              ],
+              "correct_answer": "1",
+              "explanation": "L'option B fait trois choses bien : protège la bonne partie ('ne touche pas l'intro'), identifie le problème spécifique ('conclusion bâclée') et donne une direction ('développe avec CTA, relie à l'ouverture'). Les autres sont soit trop vagues, soit trop destructrices.",
+              "hints": [
+                "Le meilleur feedback d'itération protège ce qui fonctionne, nomme ce qui est cassé et donne une direction spécifique."
+              ],
+              "xp_reward": 5,
+              "order_index": 1
+            },
+            {
+              "id": "ex_es_05",
+              "type": "prompt_lab",
+              "prompt": "ChatGPT t'a écrit un email de prospection générique et corporate. Écris un prompt de révision qui corrige la voix et la structure en un seul tour.",
+              "options": null,
+              "correct_answer": "{\"scenario\":\"ChatGPT a produit cet email de prospection : 'Cher(e) [Nom], j'espère que cet email vous trouve bien. Je vous écris pour vous présenter nos services de conseil, qui aident les entreprises à optimiser leurs opérations et stimuler la croissance. Avec plus de 10 ans d'expérience, nous avons aidé de nombreuses entreprises à atteindre leurs objectifs. J'aimerais beaucoup avoir l'opportunité de discuter de la façon dont nous pouvons aider votre organisation. N'hésitez pas à me faire savoir si vous seriez disponible pour un bref appel à votre convenance. Cordialement.' Écris un seul prompt de révision qui transforme ça en quelque chose que tu enverrais vraiment.\",\"scoring_criteria\":[{\"keyword_group\":[\"drop\",\"cut\",\"remove\",\"kill\",\"no\",\"don't\",\"pleasantries\",\"hope this finds\"],\"label\":\"A dit à ChatGPT quoi supprimer\",\"points\":2},{\"keyword_group\":[\"open\",\"lead\",\"start\",\"begin\",\"first\",\"hook\",\"observation\",\"specific\"],\"label\":\"A spécifié une nouvelle approche d'ouverture\",\"points\":1},{\"keyword_group\":[\"short\",\"under\",\"words\",\"concise\",\"brief\",\"100\"],\"label\":\"A défini une contrainte de longueur\",\"points\":1},{\"keyword_group\":[\"tone\",\"sound\",\"peer\",\"casual\",\"direct\",\"not a salesperson\",\"human\",\"friend\"],\"label\":\"A défini le changement de ton\",\"points\":1},{\"keyword_group\":[\"question\",\"CTA\",\"end with\",\"close\",\"next step\",\"ask\"],\"label\":\"A spécifié le format de clôture\",\"points\":1},{\"keyword_group\":[\"their\",\"business\",\"company\",\"about them\",\"specific\",\"research\",\"personalize\"],\"label\":\"A demandé de la personnalisation\",\"points\":1}],\"max_points\":7,\"pass_threshold\":4,\"ideal_prompt\":\"Réécris ça. Supprime les politesses entièrement. Ouvre avec une observation spécifique sur leur entreprise, pas une salutation. Garde ça sous 100 mots. Sonne comme un pair, pas comme un commercial. Termine avec une question, pas une demande d'appel. Fais-en quelque chose que j'aurais envie de lire si ça arrivait dans ma boîte.\",\"tips\":[\"Dire à ChatGPT quoi couper est souvent plus efficace que dire quoi ajouter.\",\"Une contrainte de longueur force ChatGPT à prioriser le fond sur le remplissage.\",\"'Sonne comme un pair, pas comme un commercial' donne à ChatGPT un persona clair à viser.\"]}",
+              "explanation": "Les meilleurs prompts de révision disent à ChatGPT quoi couper, comment restructurer, quel ton viser et comment finir. Un prompt de révision spécifique bat cinq tours de 'fais mieux.'",
+              "hints": [
+                "Pense à tout ce qui fait que cet email sonne comme du charabia d'IA. Puis dis à ChatGPT de tout corriger d'un coup."
+              ],
+              "xp_reward": 10,
+              "order_index": 2
+            },
+            {
+              "id": "ex_es_06",
+              "type": "scenario_walkthrough",
+              "prompt": "Parcours trois tours d'itération sur un email de prospection, d'un résultat IA générique à quelque chose que tu enverrais vraiment.",
+              "options": null,
+              "correct_answer": "{\"title\": \"La boucle d'itération en trois tours\", \"steps\": [{\"type\": \"context\", \"text\": \"Tu as demandé à ChatGPT d'écrire un email de prospection à un client potentiel en conseil. Le résultat est générique : 'Cher(e) [Nom], j'espère que cet email vous trouve bien. Je vous écris pour vous présenter nos services de conseil...' Classique charabia d'IA. Il est temps d'itérer.\"}, {\"type\": \"choice\", \"claude_response\": \"Tour 1 : L'email est générique et sonne comme tous les autres emails de prospection. Quel est ton premier prompt de révision ?\", \"question\": \"Quel prompt de révision corrige le plus en un seul tour ?\", \"options\": [\"Fais mieux\", \"Réécris ça. Supprime les politesses. Ouvre avec une observation spécifique sur leur entreprise. Garde ça sous 100 mots.\", \"Peux-tu le rendre plus professionnel ?\", \"Ajoute de l'humour pour qu'il se démarque\"], \"correct\": 1, \"feedback\": \"L'option B corrige la voix, la structure, la longueur et le ton en un seul geste. 'Fais mieux' n'apporte rien. 'Plus professionnel' empire les choses. De l'humour sans corriger les fondamentaux, c'est mettre du rouge à lèvres sur un cochon.\"}, {\"type\": \"choice\", \"claude_response\": \"ChatGPT a réécrit avec une ouverture plus percutante sur leur récent lancement de produit. Mais la deuxième moitié reste rigide et le CTA demande de 'planifier un appel à votre convenance.'\", \"question\": \"Tour 2 : L'ouverture est super mais la seconde moitié est encore rigide. Que dis-tu ?\", \"options\": [\"Change tout\", \"L'ouverture est super, garde-la. Mais le deuxième paragraphe est trop formel. Écris-le comme si j'envoyais un texto à un ami qui se trouve être PDG.\", \"Améliore le CTA\", \"C'est bien, envoie-le\"], \"correct\": 1, \"feedback\": \"Protéger ce qui fonctionne ('garde l'ouverture') tout en ciblant ce qui ne fonctionne pas ('deuxième paragraphe trop formel') est la compétence centrale d'itération. Demander à ChatGPT de tout réécrire jette tes progrès.\"}, {\"type\": \"prompt\", \"context\": \"Tour 3 : Presque terminé. L'email est percutant et personnel mais une phrase dit 'en tirant parti des synergies.' Écris ton prompt de polissage final pour éliminer le jargon.\", \"placeholder\": \"Écris ton prompt de polissage Tour 3...\", \"scoring_criteria\": [{\"keyword_group\": [\"kill\", \"remove\", \"cut\", \"replace\", \"drop\", \"leveraging\", \"synergies\", \"jargon\"], \"label\": \"A ciblé le jargon spécifique\", \"points\": 2}, {\"keyword_group\": [\"plain\", \"simple\", \"real\", \"human\", \"English\", \"specific\", \"what you actually do\"], \"label\": \"A demandé un remplacement en langage simple\", \"points\": 2}, {\"keyword_group\": [\"keep\", \"don't change\", \"rest\", \"everything else\", \"almost\"], \"label\": \"A protégé le reste de l'email\", \"points\": 1}], \"ideal\": \"Presque terminé. Supprime 'en tirant parti des synergies' et remplace par quelque chose de concret sur ce que tu fais vraiment, en langage simple. Pas de jargon de consultant. Ne change rien d'autre.\", \"max_points\": 5, \"pass_threshold\": 3}]}",
+              "explanation": "Trois tours, quatre minutes. Tour 1 définit la voix et la structure. Tour 2 cible les points faibles en protégeant les bonnes parties. Tour 3 polit les mots individuels. Chaque tour devient plus précis.",
+              "hints": [
+                "Tour 1 : corrige les gros problèmes. Tour 2 : corrige des sections spécifiques. Tour 3 : polit les mots individuels."
+              ],
+              "xp_reward": 15,
+              "order_index": 3
+            }
+          ]
+        },
+        {
+          "title": "Analyse de documents",
+          "slug": "document-analysis",
+          "description": "Télécharge des documents et discute-en au lieu de te les infliger toi-même.",
+          "order_index": 3,
+          "xp_reward": 100,
+          "estimated_minutes": 7,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<p>Le superpouvoir documentaire de ChatGPT n'est pas la recherche -- c'est la compréhension. Télécharge un contrat, un tableur ou un rapport et ChatGPT garde tout en contexte simultanément. Ne demande pas à ChatGPT de « résumer ce contrat. » Demande-lui de « trouver chaque clause qui pourrait me coûter de l'argent si je rate une échéance. » Plus ta question est ciblée, plus l'analyse est utile.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_es_07"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>L'analyse croisée de documents est le coup de maître.</strong> Télécharge trois rapports trimestriels et demande « quelles tendances émergent ? » Mets un bail et le résumé des droits des locataires de ton département, demande à ChatGPT de signaler les conflits. ChatGPT connecte des patterns entre documents que tu aurais manqués en les lisant séparément.</p><p>Astuce pro : « Extrais chaque date et échéance de ce contrat dans un tableau trié chronologiquement » bat « résume ça » à chaque fois.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_es_08"
+              },
+              {
+                "type": "text",
+                "content": "<p>Choisis le bon niveau pour la tâche : ChatGPT pour l'analyse approfondie ponctuelle, Co-work pour l'édition de documents en contexte, Code pour le traitement par lots à grande échelle.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_es_09"
+              },
+              {
+                "type": "summary",
+                "content": "<p>Télécharge des documents et pose des questions ciblées, pas des résumés génériques. L'analyse croisée trouve des patterns que tu aurais manqués. Utilise ChatGPT pour les analyses approfondies, Co-work pour l'édition, Code pour le traitement par lots.</p>"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_es_07",
+              "type": "multiple_choice",
+              "prompt": "Ton chef a posé 3 propositions de fournisseurs sur ton bureau (42, 28 et 35 pages). Tu as besoin d'une comparaison avant la fin de la journée. Quel est ton premier geste avec ChatGPT ?",
+              "options": [
+                "Lis les trois toi-même d'abord, puis demande à ChatGPT de t'aider à formater tes notes",
+                "Télécharge les trois à ChatGPT en même temps et demande un tableau comparatif des prix, conditions, SLA, délais et signaux d'alerte",
+                "Résume chaque proposition dans des conversations ChatGPT séparées, puis compare les résumés toi-même",
+                "Demande à ChatGPT de résumer uniquement les résumés exécutifs de chaque proposition"
+              ],
+              "correct_answer": "1",
+              "explanation": "Télécharger les trois ensemble permet à ChatGPT de comparer directement entre les documents. Des conversations séparées perdent le pouvoir de comparaison croisée. Les lire toi-même va à l'encontre du but. Les résumés exécutifs ratent les détails importants.",
+              "hints": [
+                "Pense à ce qui rend l'analyse documentaire de ChatGPT si puissante : garder toutes les données en contexte simultanément."
+              ],
+              "xp_reward": 5,
+              "order_index": 1
+            },
+            {
+              "id": "ex_es_08",
+              "type": "prompt_lab",
+              "prompt": "Tu as un contrat fournisseur de 30 pages. Écris un prompt qui amène ChatGPT à trouver les clauses qui comptent vraiment pour toi, pas juste un résumé générique.",
+              "options": null,
+              "correct_answer": "{\"scenario\":\"Tu viens de recevoir un contrat fournisseur de 30 pages pour une plateforme SaaS que ton entreprise veut adopter. Tu dois le vérifier avant de signer. Écris un prompt qui amène ChatGPT à trouver les clauses spécifiques qui pourraient te nuire, pas juste résumer le document.\",\"scoring_criteria\":[{\"keyword_group\":[\"auto-renewal\",\"renewal\",\"termination\",\"cancel\",\"exit\",\"lock-in\",\"commitment\"],\"label\":\"A demandé sur les conditions de renouvellement ou de sortie\",\"points\":2},{\"keyword_group\":[\"liability\",\"indemnification\",\"damages\",\"risk\",\"penalty\",\"cost\",\"fee\"],\"label\":\"A demandé sur les risques de responsabilité ou de coûts\",\"points\":1},{\"keyword_group\":[\"IP\",\"intellectual property\",\"ownership\",\"data\",\"rights\",\"who owns\"],\"label\":\"A demandé sur la propriété intellectuelle ou des données\",\"points\":1},{\"keyword_group\":[\"flag\",\"red flag\",\"concern\",\"unusual\",\"deviate\",\"non-standard\",\"watch out\"],\"label\":\"A demandé à ChatGPT de signaler les problèmes\",\"points\":2},{\"keyword_group\":[\"deadline\",\"notice\",\"days\",\"period\",\"timeline\",\"date\"],\"label\":\"A demandé sur les échéances ou délais de préavis\",\"points\":1}],\"max_points\":7,\"pass_threshold\":4,\"ideal_prompt\":\"Examine ce contrat fournisseur de 30 pages. J'ai besoin que tu trouves : 1) Toute clause de renouvellement automatique et quel délai de préavis est requis pour annuler. 2) Les plafonds de responsabilité ou conditions d'indemnisation qui favorisent fortement le fournisseur. 3) Qui détient les données et la propriété intellectuelle créées pendant l'engagement. 4) Toute clause non standard qui dévie des accords SaaS typiques. Signale tout ce qui pourrait me coûter de l'argent ou m'enfermer.\",\"tips\":[\"Les demandes d'extraction spécifiques ('trouve les clauses de renouvellement automatique') battent les génériques ('résume ce contrat').\",\"Demander à ChatGPT de signaler les termes non standards exploite sa connaissance des patterns contractuels typiques.\",\"Relier l'analyse aux conséquences ('pourrait me coûter de l'argent') aide ChatGPT à prioriser ce qui compte.\"]}",
+              "explanation": "Les meilleurs prompts documentaires disent exactement à ChatGPT quoi chercher et pourquoi c'est important. 'Résume ce contrat' te donne un résumé. 'Trouve tout ce qui pourrait me coûter de l'argent' te donne des renseignements actionnables.",
+              "hints": [
+                "Pense à ce qui t'empêche de dormir après avoir signé un contrat. Demande à ChatGPT de trouver ces choses précises."
+              ],
+              "xp_reward": 10,
+              "order_index": 2
+            },
+            {
+              "id": "ex_es_09",
+              "type": "scenario_walkthrough",
+              "prompt": "Parcours l'analyse d'une clause contractuelle qui semble standard mais contient en réalité un risque caché.",
+              "options": null,
+              "correct_answer": "{\"title\": \"Lire entre les lignes\", \"steps\": [{\"type\": \"context\", \"text\": \"Tu as téléchargé un contrat fournisseur sur ChatGPT. La plupart semble standard. Mais ChatGPT a signalé une clause de la Section 12 : 'Le Prestataire livrera tous les jalons dans le délai convenu. En cas de retards causés par des circonstances échappant à un contrôle raisonnable, le délai peut être prolongé à la discrétion du Prestataire. Le Client s'engage à payer tous les montants facturés dans les 15 jours suivant leur réception, indépendamment de l'état d'achèvement des jalons.'\"}, {\"type\": \"choice\", \"claude_response\": \"ChatGPT dit : 'J'ai trouvé deux problèmes dans cette clause qui pourraient te nuire.'\", \"question\": \"Quel est le premier problème avec 'le délai peut être prolongé à la discrétion du Prestataire' ?\", \"options\": [\"C'est un langage standard de force majeure -- rien d'inhabituel\", \"Ça signifie que le fournisseur peut retarder indéfiniment sans recours pour toi, puisque 'à sa discrétion' ne requiert pas d'accord mutuel\", \"La prolongation du délai est acceptable tant qu'elle est communiquée\", \"Ça ne s'applique qu'aux circonstances extrêmes donc ce n'est pas préoccupant\"], \"correct\": 1, \"feedback\": \"'À la discrétion du Prestataire' est l'expression clé. La force majeure standard requiert un accord mutuel ou des déclencheurs définis. Ici, le fournisseur décide unilatéralement. Modifie en 'par accord mutuel écrit.'\"}, {\"type\": \"choice\", \"claude_response\": \"ChatGPT dit : 'Le deuxième problème est encore plus inquiétant. Regarde les conditions de paiement.'\", \"question\": \"Quel est le problème avec 'payer tous les montants facturés dans les 15 jours, indépendamment de l'état d'achèvement des jalons' ?\", \"options\": [\"Net-15 est trop court -- ça devrait être net-30\", \"Tu paies pour du travail qui n'a pas encore été livré, sans levier pour assurer la qualité ou l'achèvement\", \"Les conditions de paiement sont standard pour ce type de contrat\", \"15 jours c'est bien si tu as la trésorerie\"], \"correct\": 1, \"feedback\": \"'Indépendamment de l'état d'achèvement des jalons' signifie que tu paies que le travail soit fait ou non. La pratique standard lie le paiement à l'acceptation des jalons. Ça supprime ton plus grand levier : retenir le paiement jusqu'à la livraison.\"}, {\"type\": \"prompt\", \"context\": \"ChatGPT a trouvé les problèmes. Maintenant écris un prompt demandant à ChatGPT de rédiger le langage contractuel spécifique que tu proposerais à la place de ces deux clauses problématiques.\", \"placeholder\": \"Écris ton prompt pour que ChatGPT rédige des clauses de remplacement...\", \"scoring_criteria\": [{\"keyword_group\": [\"mutual\", \"agreement\", \"both parties\", \"written\", \"consent\"], \"label\": \"A demandé un accord mutuel pour les prolongations\", \"points\": 2}, {\"keyword_group\": [\"milestone\", \"delivery\", \"completion\", \"acceptance\", \"tied to\", \"upon\"], \"label\": \"A lié le paiement à l'achèvement des jalons\", \"points\": 2}, {\"keyword_group\": [\"replace\", \"rewrite\", \"redline\", \"alternative\", \"propose\", \"counter\"], \"label\": \"A demandé un langage de remplacement\", \"points\": 1}], \"ideal\": \"Rédige un langage de remplacement pour ces deux clauses. 1) Les prolongations de délai doivent nécessiter un accord mutuel écrit, pas la discrétion du prestataire. 2) Le paiement doit être lié à l'acceptation des jalons -- nous payons dans les 15 jours suivant l'approbation de chaque livrable, pas à la réception de facture indépendamment de l'achèvement. Garde un langage formel et prêt pour le contrat.\", \"max_points\": 5, \"pass_threshold\": 3}]}",
+              "explanation": "ChatGPT repère les risques contractuels que les humains survolent. Les expressions clés ('à la discrétion du Prestataire,' 'indépendamment de l'état d'achèvement des jalons') semblent anodines mais transfèrent tout le risque sur toi. ChatGPT lit chaque mot avec la même attention.",
+              "hints": [
+                "Fais attention aux expressions comme 'à leur discrétion' et 'indépendamment de' -- elles transfèrent le risque entièrement à une partie."
+              ],
+              "xp_reward": 15,
+              "order_index": 3
+            }
+          ]
+        },
+        {
+          "title": "Recherche et réflexion",
+          "slug": "research-and-thinking",
+          "description": "Utilise ChatGPT comme partenaire de réflexion, pas comme moteur de recherche. Une recherche progressive qui construit un savoir cumulatif.",
+          "order_index": 4,
+          "xp_reward": 100,
+          "estimated_minutes": 7,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<p>La plupart des gens utilisent ChatGPT comme un moteur de recherche avec une meilleure grammaire. Poser une question, obtenir une réponse, passer à autre chose. Ça laisse 90% de la valeur sur la table. Quand tu demandes « Quelle est la taille du marché de la legal tech ? » tu obtiens un chiffre. Quand tu demandes « J'envisage d'entrer dans la legal tech avec un produit d'IA pour l'admission de dossiers. Quels sont les trois plus grands risques que je ne vois pas ? » -- c'est une conversation de réflexion.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_es_10"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>La session de recherche progressive est le coup de maître.</strong> Commence large : « Quelles sont les principales approches pour X ? » Va plus profond : « Développe la deuxième approche. Quels sont les vrais défis ? » Puis sois spécifique : « Compte tenu de tout ça, si je construis dans cet espace avec une petite équipe et 6 mois, où est la faille ? » Chaque tour s'appuie sur le précédent. À la fin, tu as une analyse synthétisée qui aurait pris des jours.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_es_11"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>L'habitude clé : argumente avec ChatGPT.</strong> Conteste. « Je ne suis pas d'accord avec ton deuxième point parce que... » et ChatGPT s'ajuste. « Tu supposes X, mais dans notre marché Y est vrai » et ChatGPT recalcule. Arrête d'utiliser ChatGPT pour confirmer ce que tu crois déjà. Commence à l'utiliser pour défier ce que tu crois.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_es_12"
+              },
+              {
+                "type": "summary",
+                "content": "<p>La recherche progressive construit un savoir cumulatif au fil des tours. Argumente avec ChatGPT au lieu d'accepter les premières réponses. Les meilleures idées viennent de l'échange.</p>"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_es_10",
+              "type": "multiple_choice",
+              "prompt": "Tu évalues une opportunité business. Quel prompt transforme ChatGPT en partenaire de réflexion plutôt qu'en moteur de recherche ?",
+              "options": [
+                "Quelle est la taille du marché de la legal tech ?",
+                "Donne-moi une liste d'entreprises de legal tech.",
+                "J'envisage d'entrer dans la legal tech avec un produit d'IA d'admission de dossiers pour les cabinets de préjudice corporel. Quels sont les trois plus grands risques que je ne vois pas, et quelles hypothèses je fais qui pourraient être fausses ?",
+                "Est-ce que la legal tech est un bon marché ?"
+              ],
+              "correct_answer": "2",
+              "explanation": "Le troisième prompt donne à ChatGPT ton contexte spécifique, demande des risques que tu n'as pas envisagés et demande explicitement une vérification des hypothèses. Les autres traitent ChatGPT comme un moteur de recherche qui renvoie des informations génériques.",
+              "hints": [
+                "Un partenaire de réflexion a besoin de connaître TA situation, pas juste le sujet. Quel prompt donne assez de contexte à ChatGPT pour vraiment défier ta pensée ?"
+              ],
+              "xp_reward": 5,
+              "order_index": 1
+            },
+            {
+              "id": "ex_es_11",
+              "type": "prompt_lab",
+              "prompt": "Écris le deuxième prompt dans une séquence de recherche progressive sur le service client IA. Le premier prompt était 'Quelles sont les principales approches du service client IA dans le SaaS mid-market ?' et ChatGPT t'a donné un panorama. Maintenant creuse plus profond.",
+              "options": null,
+              "correct_answer": "{\"scenario\":\"ChatGPT vient de te donner un panorama des approches du service client IA : chatbots, IA conversationnelle, routage de tickets, automatisation de base de connaissances et augmentation d'agents. L'IA conversationnelle a attiré ton attention. Écris le deuxième prompt qui creuse plus profond dans cette approche spécifique.\",\"scoring_criteria\":[{\"keyword_group\":[\"conversational\",\"AI\",\"approach\",\"second\",\"that\",\"expand\",\"deeper\",\"more\"],\"label\":\"A fait référence à la réponse précédente de ChatGPT\",\"points\":2},{\"keyword_group\":[\"challenge\",\"problem\",\"fail\",\"difficulty\",\"hard\",\"struggle\",\"risk\",\"limitation\"],\"label\":\"A demandé sur les défis ou modes d'échec\",\"points\":2},{\"keyword_group\":[\"implement\",\"build\",\"deploy\",\"real\",\"practice\",\"actually\",\"work\"],\"label\":\"A demandé sur l'implémentation réelle\",\"points\":1},{\"keyword_group\":[\"differ\",\"separate\",\"good\",\"bad\",\"effective\",\"versus\",\"compared\",\"what makes\"],\"label\":\"A demandé ce qui sépare le bon du mauvais\",\"points\":1},{\"keyword_group\":[\"cost\",\"ROI\",\"reduce\",\"save\",\"result\",\"outcome\",\"metric\"],\"label\":\"A demandé sur les résultats ou métriques\",\"points\":1}],\"max_points\":7,\"pass_threshold\":4,\"ideal_prompt\":\"Développe l'approche IA conversationnelle. Quels sont les plus grands défis d'implémentation que rencontrent les entreprises SaaS mid-market ? Qu'est-ce qui sépare les solutions qui réduisent vraiment les coûts de support de celles qui ajoutent juste un chatbot que personne n'utilise ? Donne-moi les vrais modes d'échec, pas le pitch marketing.\",\"tips\":[\"Faire référence à la réponse précédente de ChatGPT ('développe l'approche IA conversationnelle') maintient le fil progressif.\",\"Demander les modes d'échec te donne des informations que les supports marketing cachent.\",\"'Qu'est-ce qui sépare le bon du mauvais' force ChatGPT à te donner des critères discriminants, pas juste une description.\"]}",
+              "explanation": "Le deuxième prompt dans une séquence progressive devrait faire référence à la réponse précédente de ChatGPT, creuser dans le domaine le plus intéressant et demander les nuances qu'un panorama superficiel manque.",
+              "hints": [
+                "Tu as déjà le panorama. Maintenant demande les nuances, les défis et les modes d'échec qui séparent la théorie de la pratique."
+              ],
+              "xp_reward": 10,
+              "order_index": 2
+            },
+            {
+              "id": "ex_es_12",
+              "type": "scenario_walkthrough",
+              "prompt": "Parcours une conversation de partenaire de réflexion où ChatGPT remet en question le plan d'expansion d'un fondateur et révèle un angle mort.",
+              "options": null,
+              "correct_answer": "{\"title\": \"Le partenaire de réflexion en action\", \"steps\": [{\"type\": \"context\", \"text\": \"Un fondateur demande à ChatGPT : 'On pense s'étendre de 1 ville à 5 villes le trimestre prochain. Notre product-market fit est solide. Bonne idée ?' ChatGPT répond en questionnant l'hypothèse : 'Le PMF est solide -- mais dans combien de segments clients ? S'il est solide dans un créneau d'une seule ville, c'est différent d'un PMF qui se transfère géographiquement.'\"}, {\"type\": \"choice\", \"claude_response\": \"ChatGPT a identifié trois risques : 1) Ta ville a peut-être des concurrents faibles, les 5 suivantes peut-être pas. 2) Passer de 1 à 5 c'est 5 fois la complexité opérationnelle, pas 5 fois le revenu. 3) Cinq lancements simultanés signifient cinq brûlages de cash simultanés.\", \"question\": \"ChatGPT suggère de s'étendre d'abord à 2 villes au lieu de 5. Comment devrais-tu répondre ?\", \"options\": [\"Ignorer le conseil -- on doit bouger vite avant que les concurrents ne nous rattrapent\", \"Demander à ChatGPT d'expliquer son raisonnement : 'Pourquoi 2 au lieu de 5 ? Qu'apprendrait-on spécifiquement de 2 qu'on ne peut pas apprendre de 5 ?'\", \"Accepter immédiatement et abandonner le plan 5 villes\", \"Demander à ChatGPT une analyse plus optimiste\"], \"correct\": 1, \"feedback\": \"S'engager avec le raisonnement est le réflexe du partenaire de réflexion. Tu stress-testes la suggestion, tu ne l'acceptes ni ne la rejettes aveuglément. Le raisonnement de ChatGPT pourrait changer ton avis. Ta contestation pourrait changer celui de ChatGPT.\"}, {\"type\": \"choice\", \"claude_response\": \"ChatGPT explique : 'Deux villes testent si ton playbook se transfère. Si les deux marchent, tu as la preuve pour les trois restantes. Si une échoue, tu apprends pourquoi pour un cinquième du coût. Cinq échecs simultanés sont un événement qui met fin à l'entreprise. Deux te donnent un groupe de contrôle.'\", \"question\": \"Tu réalises que ChatGPT a raison sur le risque, mais tu t'inquiètes du timing. Comment contestes-tu productivement ?\", \"options\": [\"Accepter simplement ce que dit ChatGPT et passer à autre chose\", \"Dire à ChatGPT : 'Je comprends le risque. Mais notre investisseur attend une croissance agressive. Comment peut-on satisfaire les deux -- réduire le risque ET montrer l'élan ?'\", \"Abandonner complètement le plan d'expansion\", \"Demander à ChatGPT d'écrire un plan pour 5 villes quand même\"], \"correct\": 1, \"feedback\": \"C'est une contestation productive. Tu as accepté l'analyse de risque mais introduit une contrainte que ChatGPT ne connaissait pas (attentes de l'investisseur). Maintenant ChatGPT peut synthétiser les deux facteurs dans un meilleur plan.\"}, {\"type\": \"prompt\", \"context\": \"ChatGPT a révisé sa recommandation : lancer dans 2 villes le mois 1, évaluer pendant 60 jours, puis lancer les 3 restantes si les métriques atteignent les objectifs. Maintenant écris un prompt demandant à ChatGPT de définir ce que 'les métriques atteignent les objectifs' signifie concrètement -- quels chiffres spécifiques prouveraient que le playbook se transfère.\", \"placeholder\": \"Écris ton prompt définissant les métriques de succès...\", \"scoring_criteria\": [{\"keyword_group\": [\"metric\", \"number\", \"target\", \"KPI\", \"benchmark\", \"measure\", \"threshold\"], \"label\": \"A demandé des objectifs mesurables spécifiques\", \"points\": 2}, {\"keyword_group\": [\"playbook\", \"transfer\", \"replicate\", \"work\", \"prove\", \"validate\"], \"label\": \"A relié les métriques à la validation du playbook\", \"points\": 2}, {\"keyword_group\": [\"timeline\", \"60 days\", \"when\", \"by when\", \"deadline\", \"evaluate\"], \"label\": \"A fait référence au délai d'évaluation\", \"points\": 1}], \"ideal\": \"Définis les métriques spécifiques qui prouveraient que notre playbook se transfère. Quels chiffres devons-nous atteindre dans les 2 villes test en 60 jours pour donner confiance au feu vert pour les 3 restantes ? Donne-moi les vrais seuils, pas des objectifs vagues.\", \"max_points\": 5, \"pass_threshold\": 3}]}",
+              "explanation": "Une conversation productive de partenaire de réflexion implique ChatGPT qui remet en question les hypothèses, toi qui contestes avec de nouvelles contraintes, et les deux parties qui itèrent vers une meilleure réponse. Les meilleures décisions viennent de cet échange.",
+              "hints": [
+                "L'objectif n'est pas d'être d'accord ou en désaccord avec ChatGPT. C'est d'affiner la décision à travers l'échange."
+              ],
+              "xp_reward": 15,
+              "order_index": 3
+            }
+          ]
+        },
+        {
+          "title": "Cadres de décision",
+          "slug": "decision-frameworks",
+          "description": "Pré-mortems, steelmanning et red-teaming. Force la rigueur dans tes décisions les plus importantes.",
+          "order_index": 5,
+          "xp_reward": 100,
+          "estimated_minutes": 7,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<p>Tu as fait la recherche. Maintenant tu dois décider. C'est là que la plupart des gens ferment ChatGPT et suivent leur instinct. Ne fais pas ça. ChatGPT est exceptionnel en support de décision -- pas parce qu'il prend des décisions pour toi, mais parce qu'il force la rigueur dans ta réflexion.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_es_13"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>Trois cadres qui révèlent les risques cachés :</strong> « Fais un pré-mortem. Suppose qu'on a lancé et que ça a échoué. Qu'est-ce qui a mal tourné ? » « Steelmanne la position opposée. Donne-moi l'argument le plus fort pour l'option contre laquelle je penche. » « Applique la minimisation du regret. Quel choix regretterai-je le moins dans 10 ans ? »</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_es_14"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>Le red-teaming est le coup avancé.</strong> Avant toute grande décision, dis à ChatGPT : « Attaque ce plan. Trouve chaque faiblesse, chaque hypothèse qui pourrait être fausse, chaque façon dont ça échoue. Sois brutal. » Puis défends ton plan contre les attaques de ChatGPT. Ce qui survit est plus fort. Ce qui ne survit pas allait échouer de toute façon.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_es_15"
+              },
+              {
+                "type": "summary",
+                "content": "<p>Utilise les pré-mortems, le steelmanning et le red-teaming pour stress-tester les décisions avant de t'engager. ChatGPT ne remplace pas ton jugement -- il donne à ton jugement de meilleurs inputs.</p>"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_es_13",
+              "type": "multiple_choice",
+              "prompt": "Tu choisis entre trois fournisseurs et tu n'arrives pas à te décider. Quel prompt ChatGPT te donne l'analyse la plus utile ?",
+              "options": [
+                "Quel fournisseur devrais-je choisir ?",
+                "Liste les pour et les contre de chaque fournisseur.",
+                "Je choisis entre trois fournisseurs. Mes critères : coût (30%), facilité d'intégration (25%), qualité du support (25%), scalabilité (20%). Voici ce que je sais sur chacun. Construis une matrice de décision pondérée et explique ta notation.",
+                "Dis-moi le meilleur fournisseur pour une startup."
+              ],
+              "correct_answer": "2",
+              "explanation": "Une matrice de décision pondérée avec des critères explicites te donne une analyse structurée et défendable. 'Lequel choisir ?' est trop vague. Les listes pour/contre ne sont pas pondérées. 'Meilleur pour une startup' ignore ta situation spécifique.",
+              "hints": [
+                "L'analyse la plus utile te donne un cadre que tu peux ajuster, pas juste une opinion."
+              ],
+              "xp_reward": 5,
+              "order_index": 1
+            },
+            {
+              "id": "ex_es_14",
+              "type": "prompt_lab",
+              "prompt": "Tu es sur le point de lancer un produit. Écris un prompt qui utilise un cadre de pré-mortem pour révéler des risques que tu n'as pas envisagés.",
+              "options": null,
+              "correct_answer": "{\"scenario\":\"Tu lances un produit B2B SaaS le mois prochain. Tu as 3 clients bêta, un lancement Product Hunt planifié et un budget de 5 000 €. Écris un prompt qui amène ChatGPT à faire un pré-mortem -- en imaginant que le lancement a déjà échoué -- pour révéler les risques que tu ne vois pas.\",\"scoring_criteria\":[{\"keyword_group\":[\"pre-mortem\",\"failed\",\"imagine\",\"assume\",\"went wrong\",\"didn't work\",\"flopped\"],\"label\":\"A utilisé le cadrage pré-mortem\",\"points\":2},{\"keyword_group\":[\"launch\",\"product\",\"SaaS\",\"B2B\",\"Product Hunt\"],\"label\":\"A fourni le contexte du lancement\",\"points\":1},{\"keyword_group\":[\"3\",\"beta\",\"customer\",\"user\",\"traction\"],\"label\":\"A mentionné la traction actuelle\",\"points\":1},{\"keyword_group\":[\"risk\",\"blind spot\",\"miss\",\"not seeing\",\"assumption\",\"overlooked\"],\"label\":\"A demandé des risques cachés\",\"points\":2},{\"keyword_group\":[\"$5K\",\"budget\",\"resource\",\"constraint\",\"limited\"],\"label\":\"A inclus les contraintes de ressources\",\"points\":1}],\"max_points\":7,\"pass_threshold\":4,\"ideal_prompt\":\"Fais un pré-mortem de notre lancement produit. Imagine qu'on est 3 mois dans le futur et que le lancement a échoué. On avait 3 clients bêta, un lancement Product Hunt et un budget de 5 000 €. Qu'est-ce qui a mal tourné ? Donne-moi les 5 modes d'échec les plus probables, surtout ceux auxquels je ne pense probablement pas. Ne sucre pas la pilule.\",\"tips\":[\"Le cadrage pré-mortem ('imagine que ça a échoué') débloque une analyse de risque plus honnête que demander 'qu'est-ce qui pourrait mal tourner.'\",\"Demander des modes d'échec auxquels tu 'ne penses pas' pousse ChatGPT au-delà des risques évidents.\",\"'Ne sucre pas la pilule' signale que tu veux une évaluation honnête, pas du réconfort.\"]}",
+              "explanation": "Un prompt de pré-mortem imagine l'échec futur et travaille à rebours pour trouver les causes. Ce cadrage révèle des risques que l'analyse prospective manque parce qu'il contourne le biais d'optimisme.",
+              "hints": [
+                "L'astuce du pré-mortem est de demander 'Qu'est-ce qui a mal tourné ?' au lieu de 'Qu'est-ce qui pourrait mal tourner ?' Le cadrage au passé produit des réponses plus spécifiques et honnêtes."
+              ],
+              "xp_reward": 10,
+              "order_index": 2
+            },
+            {
+              "id": "ex_es_15",
+              "type": "scenario_walkthrough",
+              "prompt": "Parcours l'utilisation d'un cadre pré-mortem et steelman pour stress-tester une décision de lancement produit.",
+              "options": null,
+              "correct_answer": "{\"title\": \"Stress-tester ton lancement\", \"steps\": [{\"type\": \"context\", \"text\": \"Tu lances un produit B2B SaaS le mois prochain. Tu as 3 clients bêta, un lancement Product Hunt planifié et un budget de 5 000 €. Tu as demandé à ChatGPT de faire un pré-mortem. ChatGPT a répondu : 'Mode d'échec #1 : Tu as eu du trafic de Product Hunt mais zéro conversion parce que ta landing page parle aux développeurs, pas aux acheteurs qui signent les chèques.'\"}, {\"type\": \"choice\", \"claude_response\": \"Le pré-mortem de ChatGPT a touché un nerf. Tes 3 clients bêta étaient tous des développeurs qui t'ont trouvé via des canaux techniques. Tu n'as pas validé que les décideurs paieront.\", \"question\": \"Quelle est la façon la plus productive d'explorer ce risque davantage ?\", \"options\": [\"L'écarter -- les développeurs sont nos utilisateurs et ils convaincront leurs managers d'acheter\", \"Demander à ChatGPT : 'Si c'est le risque, quelle est la façon la plus rapide de valider que les décideurs paieront avant qu'on dépense 5 000 € pour un lancement ?'\", \"Annuler complètement le lancement Product Hunt\", \"Demander à ChatGPT une analyse plus optimiste\"], \"correct\": 1, \"feedback\": \"S'engager avec le risque et demander un chemin de validation est productif. L'écarter laisse l'angle mort. Annuler le lancement est une surréaction. Demander de l'optimisme va à l'encontre du pré-mortem.\"}, {\"type\": \"choice\", \"claude_response\": \"ChatGPT propose un steelman : 'Avant de t'engager dans le lancement, laisse-moi te présenter l'argument le plus fort pour reporter de 60 jours. 1) Tu n'as pas validé le prix avec quelqu'un en dehors de ton réseau. 2) Ta landing page cible les développeurs mais ton acheteur est un VP. 3) Product Hunt te donne un seul essai -- lancer avec un message non validé le gaspille.'\", \"question\": \"Comment devrais-tu répondre au cas steelman pour reporter ?\", \"options\": [\"Refuser d'écouter -- on doit lancer maintenant\", \"Écouter les trois points, puis décider en connaissance de cause si le risque de timing l'emporte sur le risque de report\", \"Accepter immédiatement et reporter de 60 jours\", \"Demander à ChatGPT de steelmanné aussi le cas pour lancer maintenant, pour peser les deux côtés\"], \"correct\": 1, \"feedback\": \"Écouter le steelman ne veut pas dire que tu reportes. Ça veut dire que si tu lances, cette décision est éclairée plutôt que réflexive. Tu pourrais quand même lancer -- mais tu adresseras d'abord l'écart de messaging.\"}, {\"type\": \"prompt\", \"context\": \"Tu as décidé de lancer mais d'adresser d'abord l'écart de messaging. Écris un prompt demandant à ChatGPT de red-teamer le texte de ta landing page -- en attaquant chaque affirmation et hypothèse pour trouver les faiblesses avant que tu dépenses 5 000 € pour y envoyer du trafic.\", \"placeholder\": \"Écris ton prompt de red-team pour la landing page...\", \"scoring_criteria\": [{\"keyword_group\": [\"red team\", \"attack\", \"critique\", \"tear apart\", \"brutal\", \"weakness\", \"flaw\"], \"label\": \"A utilisé le cadrage red-team\", \"points\": 2}, {\"keyword_group\": [\"landing page\", \"copy\", \"messaging\", \"headline\", \"value prop\"], \"label\": \"A ciblé spécifiquement la landing page\", \"points\": 1}, {\"keyword_group\": [\"buyer\", \"VP\", \"decision maker\", \"who pays\", \"non-technical\", \"manager\"], \"label\": \"A fait référence à l'écart de persona acheteur\", \"points\": 1}, {\"keyword_group\": [\"claim\", \"assumption\", \"promise\", \"believe\", \"trust\"], \"label\": \"A demandé sur les affirmations ou hypothèses\", \"points\": 1}], \"ideal\": \"Red-teame notre landing page. Attaque chaque affirmation, chaque hypothèse, chaque texte. J'ai besoin que tu sois brutal. Spécifiquement : est-ce que cette page convainc un VP ou un chef de département d'acheter, ou est-ce qu'elle ne parle qu'aux développeurs ? Quelles affirmations faisons-nous qu'on ne peut pas prouver ? Où un acheteur sceptique perdrait-il l'intérêt ?\", \"max_points\": 5, \"pass_threshold\": 3}]}",
+              "explanation": "Le pré-mortem révèle les risques. Le steelman présente le cas opposé le plus fort. Le red-teaming attaque ton exécution spécifique. Utilisés ensemble, ils transforment une décision instinctive en une décision stress-testée.",
+              "hints": [
+                "Chaque cadre sert un objectif différent : le pré-mortem trouve les risques, le steelman présente les alternatives, le red-team attaque l'exécution."
+              ],
+              "xp_reward": 15,
+              "order_index": 3
+            }
+          ]
+        }
+      ],
+      "campaign_order": 5,
+      "level_required": 4,
+      "prerequisite_slug": "setup-environment"
+    }
+  ]
+}

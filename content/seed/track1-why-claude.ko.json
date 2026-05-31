@@ -1,0 +1,437 @@
+{
+  "track": "why_claude",
+  "courses": [
+    {
+      "title": "왜 ChatGPT인가?",
+      "slug": "why-claude",
+      "description": "30분 만에 ChatGPT를 제로에서 진짜 유용한 수준으로. 첫 1분부터 실습.",
+      "difficulty": "beginner",
+      "order_index": 1,
+      "is_free": true,
+      "icon": "Sparkles",
+      "lessons": [
+        {
+          "title": "ChatGPT를 만나보세요",
+          "slug": "meet-claude",
+          "description": "ChatGPT가 무엇이고, 다른 AI와 어떻게 다르게 생각하며, 첫 번째 실제 인터랙션.",
+          "order_index": 1,
+          "xp_reward": 50,
+          "estimated_minutes": 6,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<p>지금 바로 다른 탭에서 chat.openai.com를 열어보세요. 다음을 입력하세요: <strong>\"너는 무엇이고, ChatGPT와 어떤 점이 다른가요? 솔직하게 말해주세요.\"</strong></p><p>뭔가 눈치채셨나요? ChatGPT는 스스로를 과대 포장하지 않습니다. 자신이 잘하는 것, 못하는 것, 그리고 어디에 트레이드오프가 있는지를 알려줍니다. 이 정직함이 ChatGPT를 다르게 만드는 첫 번째 요소입니다.</p><p>ChatGPT는 Anthropic이 만들었으며 세 가지 형태로 제공됩니다: <strong>ChatGPT</strong>(사고와 글쓰기를 위한 브라우저 대화), <strong>Co-Work</strong>(파일과 직접 작업하는 데스크톱 앱), 그리고 <strong>ChatGPT</strong>(처음부터 실제 소프트웨어를 구축하는 터미널 도구). 같은 두뇌, 세 가지 접근 지점. 이 코스는 첫 번째부터 시작합니다.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_wc_01a"
+              },
+              {
+                "type": "text",
+                "content": "<p>ChatGPT의 세 가지 핵심 강점: <strong>깊은 사고, 정직함, 그리고 지시 따르기.</strong> 패턴 매칭이 아니라 문제를 깊이 사고합니다. 모를 때는 모른다고 말합니다. 그리고 톤, 길이, 형식, 대상 독자 등 상세한 제약을 주면 그 모든 것을 따릅니다.</p><p><strong>ChatGPT는 반박합니다.</strong> 이메일 검토를 부탁하면 순종적인 AI는 \"완벽해 보여요!\"라고 합니다. ChatGPT는 \"두 번째 단락이 아직 합의하지 않은 일정에 대한 약속으로 오해될 수 있습니다\"라고 합니다. 어떤 것이 실제로 도움이 됐나요?</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_wc_01b"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_wc_01c"
+              },
+              {
+                "type": "summary",
+                "content": "<p>ChatGPT는 세 가지 깊이의 동일한 지능입니다. 강점은 깊은 사고, 정직함, 정확한 지시 따르기입니다. 뭔가 맞지 않으면 반박합니다. 다음: 실제로 ChatGPT에게 어떻게 말하는지.</p>"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_wc_01a",
+              "order_index": 1,
+              "type": "scenario_walkthrough",
+              "prompt": "세 가지 다른 작업에 맞는 ChatGPT 티어를 선택하세요.",
+              "options": null,
+              "correct_answer": "{\"title\": \"올바른 티어 선택하기\", \"steps\": [{\"type\": \"context\", \"text\": \"세 가지 작업이 있습니다. 각각 ChatGPT가 필요하지만, 동일한 ChatGPT는 아닙니다. 각 작업을 올바른 티어에 매칭하세요.\"}, {\"type\": \"choice\", \"claude_response\": \"작업 1: 파트너의 생일을 위한 선물 아이디어 10가지를 브레인스토밍하세요. 파일 없이 순수한 창의적 사고만.\", \"question\": \"어떤 티어?\", \"options\": [\"ChatGPT \\u2014 브라우저 대화\", \"Co-Work \\u2014 데스크톱 앱\", \"ChatGPT \\u2014 터미널\"], \"correct\": 0, \"feedback\": \"순수한 사고, 파일 없음, 구축할 것 없음. 브라우저의 ChatGPT가 정확히 맞습니다.\"}, {\"type\": \"choice\", \"claude_response\": \"작업 2: 데스크톱에 흩어진 6개월치 영수증 PDF를 월별, 카테고리별로 정리해야 합니다.\", \"question\": \"어떤 티어?\", \"options\": [\"ChatGPT \\u2014 브라우저 대화\", \"Co-Work \\u2014 데스크톱 앱\", \"ChatGPT \\u2014 터미널\"], \"correct\": 1, \"feedback\": \"작업이 파일 안에 있습니다. Co-Work는 업로드 없이 직접 파일을 읽고 편집합니다.\"}, {\"type\": \"choice\", \"claude_response\": \"작업 3: 팀 전체가 사용할 수 있는 인터랙티브 예산 추적기를 구축하세요.\", \"question\": \"어떤 티어?\", \"options\": [\"ChatGPT \\u2014 브라우저 대화\", \"Co-Work \\u2014 데스크톱 앱\", \"ChatGPT \\u2014 터미널\"], \"correct\": 2, \"feedback\": \"이것은 구축 작업입니다. 아직 존재하지 않는 것을 처음부터 만들어야 합니다. ChatGPT가 처리합니다.\"}]}",
+              "explanation": "판단은 하나의 질문으로 귀결됩니다: 이 작업은 내 머릿속에 있나요, 내 파일에 있나요, 아니면 구축해야 하나요? 머릿속 = ChatGPT. 파일 = Co-Work. 구축 = ChatGPT.",
+              "hints": [
+                "스스로에게 물어보세요: 이 작업은 내 머릿속에 있나요, 내 파일에 있나요, 아니면 구축해야 하나요?"
+              ],
+              "xp_reward": 15
+            },
+            {
+              "id": "ex_wc_01b",
+              "order_index": 2,
+              "type": "multiple_choice",
+              "prompt": "AI가 자신 있게 말한 것이 틀린 것으로 드러났습니다. 그것에 기반해 결정을 내렸습니다. 진짜 위험은 무엇인가요?",
+              "options": [
+                "위험 없음 -- AI는 도구일 뿐, 결정은 본인의 것",
+                "자신 있게 주어진 틀린 답변은 확인할 가능성이 낮기 때문에 위험함",
+                "AI가 실수에서 배워 다음번에는 더 나아질 것",
+                "나쁜 결정은 항상 되돌릴 수 있음"
+              ],
+              "correct_answer": "1",
+              "explanation": "자신 있게 주어진 틀린 답변은 불확실한 답변보다 더 나쁩니다. 의심할 가능성이 낮기 때문입니다. AI가 '확실하지 않습니다'라고 하면 확인합니다. 사실로 단정하면 신뢰합니다. ChatGPT는 자신감을 가장하는 대신 불확실성을 표시하도록 설계되었습니다.",
+              "hints": [
+                "'~라고 생각합니다'라고 말하는 AI와 절대적 사실로 단정하는 AI의 차이를 생각해 보세요."
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_wc_01c",
+              "order_index": 3,
+              "type": "prompt_lab",
+              "prompt": "지원자의 이력서를 검토하고 칭찬만이 아닌 솔직하고 유용한 피드백을 요청하는 프롬프트를 작성하세요.",
+              "options": null,
+              "correct_answer": "{\"scenario\":\"시니어 마케팅 직책의 채용을 진행 중입니다. 후보자의 이력서가 표면적으로는 괜찮아 보입니다. 장점과 단점 모두에 대한 진짜 피드백을 얻어 면접에 초대할지 결정할 수 있는 프롬프트를 작성하세요.\",\"scoring_criteria\":[{\"keyword_group\":[\"honest\",\"critical\",\"candid\",\"don't hold back\",\"genuine\",\"real feedback\",\"weaknesses\",\"gaps\",\"concerns\",\"red flag\"],\"label\":\"솔직하고 비판적인 피드백을 요청함\",\"points\":2},{\"keyword_group\":[\"senior\",\"marketing\",\"role\",\"position\",\"job\",\"hiring\"],\"label\":\"직책을 명시함\",\"points\":1},{\"keyword_group\":[\"strengths\",\"pros\",\"strong\",\"good\",\"stands out\",\"impressive\"],\"label\":\"장점도 요청함 (균형 잡힌 검토)\",\"points\":1},{\"keyword_group\":[\"interview\",\"hire\",\"decision\",\"bring in\",\"move forward\",\"next step\"],\"label\":\"채용 결정과 연결함\",\"points\":1},{\"keyword_group\":[\"experience\",\"qualification\",\"skill\",\"background\",\"achievement\",\"metric\",\"result\"],\"label\":\"평가할 내용을 언급함\",\"points\":1},{\"keyword_group\":[\"compare\",\"versus\",\"typical\",\"expect\",\"standard\",\"benchmark\",\"competitive\"],\"label\":\"벤치마크를 요청함\",\"points\":1}],\"max_points\":7,\"pass_threshold\":4,\"ideal_prompt\":\"시니어 마케팅 매니저 직책의 채용을 진행 중입니다. 후보자의 이력서입니다. 솔직한 평가를 해주세요: 진짜 장점은 무엇이고, 갭이나 위험 신호는 무엇이며, 면접에 초대하는 것을 추천하시나요? 예의 바르기 위해 예의 바르게 하지 마세요 -- 좋은 채용 결정을 내려야 합니다.\",\"tips\":[\"명시적으로 단점을 요청하면 아첨이 아닌 정직함을 원한다는 신호를 ChatGPT에게 보냅니다.\",\"검토를 결정과 연결하면 ChatGPT에게 피드백의 명확한 목적을 부여합니다.\"]}",
+              "explanation": "대부분의 사람들은 AI에게 '이력서 검토해줘'라고 하고 '좋아 보여요!'라는 답을 받습니다. 명시적으로 솔직한 비평을 요청하고 실제 결정과 연결하면 ChatGPT는 진짜 도움이 되는 피드백을 제공합니다.",
+              "hints": [
+                "'이 이력서 검토해줘'라고만 하면 대부분의 AI는 기본적으로 친절합니다. 진짜 평가를 원한다는 것을 어떻게 신호하나요?"
+              ],
+              "xp_reward": 10
+            }
+          ]
+        },
+        {
+          "title": "첫 번째 대화",
+          "slug": "your-first-conversation",
+          "description": "ChatGPT가 실제로 도움이 되도록 대화하는 법. 컨텍스트, 반복, 그리고 중요한 프롬프팅 기본.",
+          "order_index": 2,
+          "xp_reward": 50,
+          "estimated_minutes": 7,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<p>지금 바로 시도해 보세요. ChatGPT를 열고 입력하세요: <strong>\"이메일 써줘.\"</strong></p><p>다른 AI 이메일과 똑같이 들리는 범용 템플릿을 받게 됩니다. 이제 이렇게 시도하세요: <strong>\"화요일 통화를 놓친 클라이언트 Sarah에게 후속 이메일을 써줘. 톤: 따뜻하지만 직접적. 목요일 오후 2시로 일정 변경을 언급해. 100단어 이내로.\"</strong></p><p>완전히 다른 결과입니다. 차이는 컨텍스트입니다. ChatGPT는 마음을 읽을 수 없지만, 당신이 제공하는 정보를 활용하는 데는 탁월합니다.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_wc_02a"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>반복 루프야말로 ChatGPT가 빛나는 곳입니다.</strong> 첫 응답 후 끝이 아닙니다. 무엇을 조정해야 하는지 말하세요: \"도입부를 더 개인적으로.\" \"너무 딱딱해.\" \"무료 상담에 대한 문장을 추가해.\" 각 라운드마다 더 가까워집니다. ChatGPT는 모든 것을 기억하고 모든 것을 반영합니다.</p><p><strong>ChatGPT가 당신에게 필요로 하는 다섯 가지:</strong> <strong>1. 누구에게</strong> (대상 독자). <strong>2. 무엇을</strong> (결과물). <strong>3. 어떻게</strong> (톤, 길이, 형식). <strong>4. 왜</strong> (어떤 결정을 지원하는지). <strong>5. 무엇을 하지 말 것</strong> (피할 것). 사전에 더 많이 제공할수록 나중에 편집이 줄어듭니다.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_wc_02b"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>하나 더 습관으로 만들 가치가 있는 패턴: ChatGPT에게 반박을 요청하세요.</strong></p><p>\"X에 대해 생각하고 있어. 놓치고 있는 게 뭐야?\" 또는 \"커밋하기 전에 이 계획의 허점을 찾아줘.\" 대부분의 사람들은 AI를 예스맨으로 사용합니다. ChatGPT는 반대 의견을 허락받았을 때 최고의 성능을 발휘합니다.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_wc_02c"
+              },
+              {
+                "type": "summary",
+                "content": "<p>컨텍스트는 범용 출력을 유용한 출력으로 바꿉니다. 반복은 좋은 출력을 훌륭한 출력으로 바꿉니다. ChatGPT에게 누구, 무엇, 어떻게, 왜, 무엇을 하지 말 것을 알려주세요. 그리고 다듬으세요. 다음: ChatGPT에게 처음부터 올바른 컨텍스트를 주는 기술.</p>"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_wc_02a",
+              "order_index": 1,
+              "type": "multiple_choice",
+              "prompt": "'이메일 써줘'라는 프롬프트의 문제는 무엇인가요?",
+              "options": [
+                "문제 없음 -- ChatGPT가 의도를 파악할 수 있음",
+                "너무 짧음 -- ChatGPT는 최소 100단어의 지시가 필요함",
+                "수신자, 주제, 톤에 대한 컨텍스트가 전혀 없음",
+                "AI에게 이메일을 써달라고 하면 안 됨"
+              ],
+              "correct_answer": "2",
+              "explanation": "컨텍스트 없이는 ChatGPT가 수신자, 주제, 톤, 길이, 목적 모든 것을 추측해야 합니다. 범용 템플릿을 받게 됩니다. 컨텍스트가 유용한 출력과 채우기의 차이를 만듭니다.",
+              "hints": [
+                "누군가가 다른 정보 없이 이메일을 써달라고 하면 당신이 무엇을 알아야 할지 생각해 보세요."
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_wc_02b",
+              "order_index": 2,
+              "type": "prompt_lab",
+              "prompt": "클라이언트가 금요일까지 프로젝트 제안서가 필요합니다. 강력한 초안을 얻기에 충분한 컨텍스트를 포함한 상세한 프롬프트를 ChatGPT에게 작성하세요.",
+              "options": null,
+              "correct_answer": "{\"scenario\":\"클라이언트(중견 법률 사무소)가 웹사이트 리디자인 제안서를 필요로 합니다. 예산: $15,000, 기간: 6주, 마감: 금요일. 클라이언트는 전통적이고 공식적입니다. ChatGPT가 실제로 보낼 수 있는 제안서를 작성하는 데 필요한 모든 것을 포함하는 프롬프트를 작성하세요.\",\"scoring_criteria\":[{\"keyword_group\":[\"law firm\",\"client\",\"legal\",\"attorney\",\"firm\"],\"label\":\"클라이언트 유형을 식별함\",\"points\":1},{\"keyword_group\":[\"proposal\",\"pitch\",\"scope\",\"deliverable\"],\"label\":\"문서 유형을 명시함\",\"points\":1},{\"keyword_group\":[\"$15,000\",\"15000\",\"budget\",\"cost\",\"price\",\"pricing\"],\"label\":\"예산을 포함함\",\"points\":1},{\"keyword_group\":[\"6 weeks\",\"six weeks\",\"timeline\",\"deadline\",\"schedule\",\"friday\"],\"label\":\"기간을 언급함\",\"points\":1},{\"keyword_group\":[\"formal\",\"professional\",\"traditional\",\"conservative\",\"tone\"],\"label\":\"톤 또는 대상 독자를 명시함\",\"points\":2},{\"keyword_group\":[\"website\",\"redesign\",\"web\",\"site\",\"design\"],\"label\":\"프로젝트를 설명함\",\"points\":1}],\"max_points\":7,\"pass_threshold\":4,\"ideal_prompt\":\"중견 법률 사무소를 위한 웹사이트 리디자인 프로젝트 제안서를 작성해줘. 예산: $15,000. 기간: 6주. 사무소는 전통적이고 공식적 -- 스타트업 용어 쓰지 마. 포함할 것: 요약, 산출물 포함 범위, 마일스톤 포함 일정, 가격 분류. 2페이지 이내. 톤: 전문적이고 자신감 있게.\",\"tips\":[\"ChatGPT에게 대상 독자를 알려주세요. 법률 사무소와 테크 스타트업은 완전히 다른 톤이 필요합니다.\",\"페이지 길이, 예산, 기간 같은 제약을 포함하세요 -- 전체 문서의 형태를 결정합니다.\"]}",
+              "explanation": "클라이언트 유형, 예산, 기간, 톤, 구조를 포함한 상세한 프롬프트는 ChatGPT가 실제로 검토하고 보낼 수 있는 초안을 만들기에 충분한 정보를 줍니다. 사전에 내리는 모든 결정이 나중의 편집 시간을 절약합니다.",
+              "hints": [
+                "ChatGPT가 당신에게 물어볼 수 없는 상황에서 내려야 할 모든 결정을 생각해 보세요. 사전에 더 많이 답할수록 초안이 더 좋아집니다."
+              ],
+              "xp_reward": 10
+            },
+            {
+              "id": "ex_wc_02c",
+              "order_index": 3,
+              "type": "speed_prompt",
+              "prompt": "45초입니다. 나쁜 비즈니스 아이디어에 반박하도록 ChatGPT에게 요청하는 프롬프트를 작성하세요.",
+              "options": null,
+              "correct_answer": "{\"time_limit_seconds\":45,\"scenario\":\"친구가 이미 카페가 두 곳 있는 인구 5,000명의 마을에서 세 번째 카페를 열고 싶어 합니다. 당신에게 투자를 요청하고 있습니다. ChatGPT가 아이디어를 격려하지 않고 의문을 제기하게 하는 프롬프트를 작성하세요.\",\"scoring_criteria\":[{\"keyword_group\":[\"push back\",\"challenge\",\"poke holes\",\"devil's advocate\",\"critique\",\"problems\",\"risks\",\"why this won't work\",\"honest\"],\"label\":\"ChatGPT에게 아이디어에 의문을 제기하도록 요청함\",\"points\":2},{\"keyword_group\":[\"coffee\",\"shop\",\"cafe\",\"store\",\"business\"],\"label\":\"비즈니스 유형을 언급함\",\"points\":1},{\"keyword_group\":[\"5000\",\"small town\",\"population\",\"market\",\"demand\",\"two\",\"competition\",\"already\",\"existing\"],\"label\":\"시장 규모 또는 경쟁을 언급함\",\"points\":2},{\"keyword_group\":[\"invest\",\"money\",\"friend\",\"fund\",\"capital\",\"asking\"],\"label\":\"투자 요청을 언급함\",\"points\":1},{\"keyword_group\":[\"question\",\"ask\",\"conversation\",\"talk\",\"discuss\",\"bring up\"],\"label\":\"실제 대화와 연결함\",\"points\":1}],\"max_points\":7,\"pass_threshold\":4,\"ideal_prompt\":\"친구가 인구 5,000명의 마을에서 세 번째 카페를 열고 싶어 하며 투자를 요청합니다. 이미 두 곳의 카페가 있습니다. 솔직하게 말해줘: 가장 큰 위험과 실패 가능성은 무엇인가요? 아이디어를 격려하지 마세요 -- 돈을 넣기 전에 어려운 질문이 필요합니다.\"}",
+              "explanation": "시간 압박 속에서 자연스럽게 무엇을 포함하는지 알 수 있습니다. 핵심 요소: ChatGPT에게 (격려가 아닌) 의문 제기를 요청하고, 관련 사실을 제공하며, 왜 정직함이 필요한지 설명하세요.",
+              "hints": [
+                "ChatGPT에게 어떤 역할을 해야 하는지에 집중하세요: 응원단이 아니라 비평가."
+              ],
+              "xp_reward": 15
+            }
+          ]
+        },
+        {
+          "title": "컨텍스트가 전부다",
+          "slug": "context-is-everything",
+          "description": "시스템 프롬프트, 컨텍스트 윈도우, 그리고 ChatGPT에게 올바른 정보를 주는 기술.",
+          "order_index": 3,
+          "xp_reward": 50,
+          "estimated_minutes": 7,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<p>이것을 시도해 보세요: 긴 이메일 스레드를 ChatGPT에 붙여넣고 \"여기서 실제로 내려지는 결정은 무엇이며, 누가 그것을 막고 있나요?\"라고 물어보세요. ChatGPT는 전체 스레드를 읽고, 누가 무엇을 말했는지 추적하며, 30초 만에 답을 줍니다. 이것이 <strong>컨텍스트 윈도우</strong>의 실력입니다.</p><p>컨텍스트 윈도우는 한 대화 동안 ChatGPT가 기억에 보유할 수 있는 양입니다. ChatGPT의 컨텍스트 윈도우는 거대합니다 -- 소설 한 권 분량을 보유할 수 있습니다. 이는 계약서 전체, 연구 논문, 또는 긴 이메일 체인을 하나의 대화에서 처리할 수 있다는 의미입니다.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>큰 컨텍스트 윈도우로 할 수 있는 것:</strong></p><p>40페이지 계약서를 붙여넣고 어떤 조항이든 질문할 수 있습니다. 섹션 3과 섹션 12를 비교할 수 있습니다. ChatGPT가 맥락을 놓치지 않고 긴 대화를 할 수 있습니다. 처음부터 다시 시작하지 않고 수십 개의 메시지에 걸쳐 복잡한 프로젝트에 작업할 수 있습니다.</p><p>작은 컨텍스트 윈도우에서는 문서를 조각으로 나누고, 각각 별도로 붙여넣고, AI가 이전 섹션을 기억하기를 바라야 합니다. 스포일러: 기억하지 못합니다.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_wc_03a"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>시스템 프롬프트</strong>를 사용하면 모든 메시지에 걸쳐 활성 상태로 유지되는 영구 컨텍스트를 ChatGPT에게 줄 수 있습니다: 스타일 가이드, 역할, 항상 적용되는 제약. 신입 사원의 첫날 브리핑이라고 생각하세요.</p><p><strong>좋은 컨텍스트의 기술:</strong> 일반적인 것보다 구체적으로 (\"B2B SaaS 마케팅 컨설턴트\"가 \"도움이 되어줘\"보다 낫습니다). 좋은 출력의 예시를 포함하세요. 하지 말아야 할 것을 명시하세요 (\"절대 전문 용어를 사용하지 마\"). 중요한 것을 앞에 배치하세요 -- ChatGPT는 당신이 제공하는 것의 처음과 끝에 특히 주의를 기울입니다.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_wc_03b"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_wc_03c"
+              },
+              {
+                "type": "summary",
+                "content": "<p>컨텍스트 윈도우를 통해 ChatGPT는 문서 전체를 기억에 보유할 수 있습니다. 시스템 프롬프트는 영구적인 지시를 줍니다. 기술은 구체성, 예시 사용, 그리고 중요한 것을 앞에 배치하는 것입니다. 다음: ChatGPT가 정말 잘하는 것과 어려워하는 것.</p>"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_wc_03a",
+              "order_index": 1,
+              "type": "prompt_lab",
+              "prompt": "40페이지 계약서를 검토하고 있습니다. ChatGPT의 컨텍스트 윈도우를 사용하여 멀리 떨어진 두 섹션을 교차 참조하는 프롬프트를 작성하세요.",
+              "options": null,
+              "correct_answer": "{\"scenario\":\"40페이지 벤더 계약서를 ChatGPT에 붙여넣었습니다. 30페이지의 면책 조항이 무제한 책임을 만드는 것처럼 보이지만, 5페이지의 책임 한도를 기억합니다. ChatGPT에게 이 두 섹션을 교차 참조하도록 요청하는 프롬프트를 작성하세요.\",\"scoring_criteria\":[{\"keyword_group\":[\"page 5\",\"earlier\",\"section\",\"liability\",\"cap\",\"limit\",\"previous\",\"above\",\"before\"],\"label\":\"문서의 이전 부분을 참조함\",\"points\":2},{\"keyword_group\":[\"indemnification\",\"indemnify\",\"page 30\",\"current\",\"this section\",\"this clause\"],\"label\":\"현재 섹션을 참조함\",\"points\":1},{\"keyword_group\":[\"conflict\",\"contradict\",\"override\",\"weaken\",\"undermine\",\"loophole\",\"exception\",\"cross-reference\",\"compare\",\"connect\"],\"label\":\"충돌 또는 연결에 대해 질문함\",\"points\":2},{\"keyword_group\":[\"negotiate\",\"change\",\"fix\",\"recommend\",\"should I\",\"what should\"],\"label\":\"실행 가능한 추천을 요청함\",\"points\":1},{\"keyword_group\":[\"protect\",\"risk\",\"exposure\",\"liable\",\"dangerous\",\"concern\",\"gap\"],\"label\":\"실질적 영향에 초점을 맞춤\",\"points\":1}],\"max_points\":7,\"pass_threshold\":4,\"ideal_prompt\":\"30페이지의 면책 조항이 일부 시나리오에서 무제한 책임을 만드는 것 같습니다. 하지만 5페이지의 책임 한도가 우리의 노출을 제한하도록 되어 있었습니다. 이 두 섹션을 교차 참조해 주세요: 면책 조항이 사실상 책임 한도를 무효화하나요? 그렇다면 어떤 문구가 허점을 만들고 무엇을 협상해야 하나요?\",\"tips\":[\"특정 페이지를 참조하면 ChatGPT가 전체 컨텍스트 윈도우를 사용하도록 강제합니다.\",\"섹션 간 충돌에 대해 묻는 것은 작은 컨텍스트 윈도우의 AI가 할 수 없는 것입니다.\"]}",
+              "explanation": "문서의 멀리 떨어진 부분을 교차 참조하는 것은 컨텍스트 윈도우의 킬러 기능입니다. 작은 컨텍스트 윈도우의 AI는 30페이지에 도달할 때 5페이지를 잊었을 것입니다. ChatGPT는 전체 문서를 동시에 보유합니다.",
+              "hints": [
+                "파워 무브는 문서의 멀리 떨어진 두 부분을 연결하는 것입니다."
+              ],
+              "xp_reward": 10
+            },
+            {
+              "id": "ex_wc_03b",
+              "order_index": 2,
+              "type": "scenario_walkthrough",
+              "prompt": "같은 대화에서 두 문서를 교차 참조해야 하는 다중 문서 분석을 진행하세요.",
+              "options": null,
+              "correct_answer": "{\"title\": \"문서 간 분석\", \"steps\": [{\"type\": \"context\", \"text\": \"벤더 계약서를 회사의 표준 조건과 비교하고 있습니다. 두 문서 모두 같은 ChatGPT 대화에 로드되어 있습니다 -- 총 60페이지 이상.\"}, {\"type\": \"choice\", \"claude_response\": \"두 문서를 모두 붙여넣었습니다. ChatGPT가 두 문서를 모두 읽었다고 확인했습니다. 첫 번째 질문은 무엇인가요?\", \"question\": \"두 문서가 로드된 것을 가장 잘 활용하는 질문은 무엇인가요?\", \"options\": [\"벤더 계약서를 요약해줘\", \"벤더의 결제 조건과 우리의 표준 결제 조건 사이의 주요 차이점은 무엇인가요?\", \"좋은 계약인가요?\"], \"correct\": 1, \"feedback\": \"두 문서 간 특정 조건을 비교하는 것이 바로 컨텍스트 윈도우가 가능하게 하는 것입니다. 요약은 한 문서만 사용합니다. 교차 참조가 초능력입니다.\"}, {\"type\": \"choice\", \"claude_response\": \"ChatGPT가 벤더가 net-15를 요구하고 당신의 조건은 net-45를 지정하며, 당신에게는 없는 2% 연체료가 있다는 것을 발견했습니다. 더 깊이 파고들고 싶습니다.\", \"question\": \"다음 질문은 무엇인가요?\", \"options\": [\"결제 조건에 대해 일반적으로 알려줘\", \"벤더 계약서에서 우리 표준 조건과 직접 충돌하는 조항이 있나요? 가장 영향력 있는 것부터 모든 충돌을 나열해주세요.\", \"벤더 계약서를 우리 조건에 맞게 다시 써줘\"], \"correct\": 1, \"feedback\": \"두 문서 간 모든 충돌을 요청하는 것은 전체 컨텍스트 윈도우를 활용하는 대규모 교차 참조 작업입니다. ChatGPT는 각 섹션을 체계적으로 다른 것과 비교합니다.\"}]}",
+              "explanation": "두 문서를 하나의 대화에 로드하고 ChatGPT에게 그 사이의 충돌을 찾도록 요청하는 것은 컨텍스트 윈도우의 실용적 응용입니다. 분할 없음, 탭 전환 없음, 컨텍스트 손실 없음.",
+              "hints": [
+                "최고의 질문은 ChatGPT가 두 문서를 동시에 보도록 강제하는 것입니다."
+              ],
+              "xp_reward": 15
+            },
+            {
+              "id": "ex_wc_03c",
+              "order_index": 3,
+              "type": "multiple_choice",
+              "prompt": "긴 대화 중 AI의 컨텍스트 윈도우 공간이 부족해지면 무슨 일이 일어나나요?",
+              "options": [
+                "잊어버렸다고 말하고 반복해달라고 요청함",
+                "조용히 이전 컨텍스트를 버리고 모순된 답변을 하기 시작함",
+                "대화를 자동으로 저장하고 다시 로드함",
+                "아무것도 -- 현대 AI는 컨텍스트가 부족해지지 않음"
+              ],
+              "correct_answer": "1",
+              "explanation": "컨텍스트가 초과되면 AI는 조용히 대화의 이전 부분을 버립니다. 경고하지 않습니다. 단지 이전에 말한 것과 모순되는 답변을 하거나 이전 논의와의 연결을 놓칩니다. 이것이 실제 작업에서 컨텍스트 윈도우 크기가 중요한 이유입니다.",
+              "hints": [
+                "AI에게 '잊는다'는 것이 무엇을 의미하는지 생각해 보세요. AI는 자기가 잊었다는 것을 알까요?"
+              ],
+              "xp_reward": 5
+            }
+          ]
+        },
+        {
+          "title": "ChatGPT의 강점과 한계",
+          "slug": "strengths-and-limits",
+          "description": "ChatGPT가 진짜 뛰어난 것, 어려워하는 것, 그리고 격차를 해결하는 방법.",
+          "order_index": 4,
+          "xp_reward": 50,
+          "estimated_minutes": 6,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<p>ChatGPT에게 이미지를 생성해달라고 하세요 -- 못합니다. 세 개의 30페이지 벤더 제안서에서 숨겨진 비용을 찾아달라고 하세요 -- 다른 차원의 능력을 보여줍니다. 이 차이를 아는 것이 스킬입니다.</p><p><strong>ChatGPT가 뛰어난 곳:</strong> <strong>깊은 분석</strong> (긴 문서의 모든 단어를 읽고, 섹션 간 정보를 연결합니다). <strong>뉘앙스 있는 글쓰기</strong> (대상 독자, 목소리, 제약에 적응합니다). <strong>복잡한 지시</strong> (지정한 모든 제약을 추적합니다). <strong>긴 문서</strong> (한 대화에서 책 한 권을 보유합니다).</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_wc_04a"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>ChatGPT가 어려워하는 곳:</strong> <strong>이미지나 동영상 없음</strong> (Midjourney/DALL-E를 사용하세요. ChatGPT는 프롬프트를 작성할 수 있습니다). <strong>실시간 데이터 없음</strong> (먼저 검색하고, 결과를 ChatGPT에 붙여넣어 분석하세요). <strong>희귀한 사실에 대한 환각</strong> (이름, 날짜, 통계를 확인하세요). <strong>대규모 수학</strong> (숫자에는 스프레드시트, 해석에는 ChatGPT를 사용하세요).</p><p>최고의 ChatGPT 사용자는 ChatGPT를 사용하지 말아야 할 때도 알고 있습니다.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_wc_04b"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_wc_04c"
+              },
+              {
+                "type": "summary",
+                "content": "<p>ChatGPT의 초능력: 깊은 분석, 뉘앙스 있는 글쓰기, 복잡한 지시, 긴 문서. 한계: 이미지 없음, 실시간 데이터 없음, 희귀한 사실 확인 필요. 스킬은 어떤 작업에 어떤 도구를 사용할지 아는 것입니다. 다음: 캐주얼한 ChatGPT 사용을 실제 워크플로우로 전환하는 방법.</p>"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_wc_04a",
+              "order_index": 1,
+              "type": "multiple_choice",
+              "prompt": "3개의 벤더 제안서를 비교하고 숨겨진 비용을 찾는 데 가장 유용한 ChatGPT의 강점은 무엇인가요?",
+              "options": [
+                "뉘앙스 있는 글쓰기 -- 추천서가 세련되어야 함",
+                "깊은 분석 -- 숨겨진 비용을 찾으려면 세 문서 모두의 모든 세부 사항을 읽어야 함",
+                "코드 -- 먼저 스프레드시트 모델을 구축해야 함",
+                "복잡한 지시 -- 비교 형식이 구체적이어야 함"
+              ],
+              "correct_answer": "1",
+              "explanation": "세 문서에서 숨겨진 비용을 찾으려면 모든 세부 사항을 읽고 섹션 간 정보를 연결해야 합니다. 그것이 깊은 분석입니다. 글쓰기와 지시는 출력에 도움이 되지만, 핵심 작업은 분석입니다.",
+              "hints": [
+                "이 작업에서 가장 어려운 부분은 무엇인가요 -- 추천서를 쓰는 것인가요, 제안서에 숨겨진 것을 찾는 것인가요?"
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_wc_04b",
+              "order_index": 2,
+              "type": "prompt_lab",
+              "prompt": "서명 전에 검토해야 할 50페이지 계약서가 있습니다. ChatGPT가 3대 리스크를 찾도록 하는 프롬프트를 작성하세요.",
+              "options": null,
+              "correct_answer": "{\"scenario\":\"50페이지 SaaS 벤더 계약서에 서명하려고 합니다. ChatGPT가 전체를 읽고 가장 큰 피해를 줄 수 있는 조항 -- 3대 리스크를 식별하기를 원합니다.\",\"scoring_criteria\":[{\"keyword_group\":[\"risk\",\"dangerous\",\"concern\",\"problem\",\"issue\",\"flag\",\"watch out\",\"trap\",\"hidden\"],\"label\":\"구체적으로 리스크를 요청함\",\"points\":2},{\"keyword_group\":[\"3\",\"three\",\"top\",\"biggest\",\"most important\",\"worst\"],\"label\":\"리스크 수를 지정함\",\"points\":1},{\"keyword_group\":[\"contract\",\"agreement\",\"vendor\",\"SaaS\",\"document\"],\"label\":\"문서 유형을 참조함\",\"points\":1},{\"keyword_group\":[\"liability\",\"termination\",\"auto-renewal\",\"indemnification\",\"penalty\",\"clause\",\"section\"],\"label\":\"확인할 특정 영역을 언급함\",\"points\":1},{\"keyword_group\":[\"why\",\"explain\",\"impact\",\"consequence\",\"what happens\",\"cost\",\"exposure\"],\"label\":\"영향에 대한 설명을 요청함\",\"points\":1},{\"keyword_group\":[\"negotiate\",\"push back\",\"change\",\"fix\",\"recommend\",\"suggest\",\"alternative\"],\"label\":\"협상 추천을 요청함\",\"points\":1}],\"max_points\":7,\"pass_threshold\":4,\"ideal_prompt\":\"이 50페이지 SaaS 벤더 계약서를 읽고 우리 회사에 대한 3대 리스크를 식별해줘. 각각에 대해: (1) 조항을 인용, (2) 왜 위험한지 평이한 언어로 설명, (3) 대신 무엇을 협상해야 하는지 제안. 책임 한도, 자동 갱신 함정, 해지 제한, 면책에 초점을 맞춰.\",\"tips\":[\"ChatGPT에게 어떤 영역에 집중할지 알려주면 어디를 가장 깊이 파야 하는지 알 수 있습니다.\",\"협상 대안을 요청하면 분석이 행동으로 전환됩니다.\"]}",
+              "explanation": "좋은 계약서 검토 프롬프트는 무엇을 찾을지(요약이 아닌 리스크), 몇 개인지, 그것으로 무엇을 할지를 ChatGPT에게 알려줍니다. 50페이지 문서가 3개의 실행 가능한 항목으로 바뀝니다.",
+              "hints": [
+                "ChatGPT에게 단순히 계약서를 '검토해'라고 하지 마세요. 무엇이 걱정인지 말하세요."
+              ],
+              "xp_reward": 10
+            },
+            {
+              "id": "ex_wc_04c",
+              "order_index": 3,
+              "type": "matching_pairs",
+              "prompt": "각 작업을 최적의 도구에 매칭하세요.",
+              "options": null,
+              "correct_answer": "{\"Analyze a 40-page research paper and find the key insights\":\"Claude\",\"Generate a product mockup image\":\"Midjourney or DALL-E\",\"Get today's stock price for AAPL\":\"Search engine or finance app\",\"Review a contract for hidden risks\":\"Claude\",\"Calculate compound interest on 10,000 rows of data\":\"Spreadsheet (Excel/Sheets)\",\"Write a board memo in a specific tone and format\":\"Claude\"}",
+              "explanation": "ChatGPT는 분석, 글쓰기, 복잡한 지시에 뛰어납니다. 시각적인 것에는 이미지 생성기를, 실시간 데이터에는 검색 엔진을, 대량 계산에는 스프레드시트를 사용하세요. 최고의 도구는 작업에 따라 다릅니다.",
+              "hints": [
+                "각 작업이 실제로 무엇을 필요로 하는지 생각해 보세요: 사고, 시각적 생성, 실시간 데이터, 또는 숫자 처리?"
+              ],
+              "xp_reward": 15
+            }
+          ]
+        },
+        {
+          "title": "채팅에서 구축으로",
+          "slug": "from-chatting-to-building",
+          "description": "캐주얼한 ChatGPT 대화가 실제 워크플로우로 전환되는 방법. Track 2-4로 가는 다리.",
+          "order_index": 5,
+          "xp_reward": 75,
+          "estimated_minutes": 7,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<p>ChatGPT에서 10배의 가치를 얻는 사람들은 일회성 질문이 아닌 <strong>반복 가능한 프로세스</strong>의 일부로 사용합니다. 채팅을 구축으로 바꾸는 세 가지 패턴을 소개합니다.</p><p><strong>패턴 1: 리서치에서 결정으로.</strong> 같은 주제에 대한 5개의 기사를 붙여넣으세요. 어디서 일치하고, 어디서 모순되며, 당신의 상황에 무엇이 적용되는지 ChatGPT에게 물어보세요. 한 대화, 다섯 소스, 맞춤형 추천.</p><p><strong>패턴 2: 초안-검토-전송.</strong> 첫 초안을 받으세요. ChatGPT에게 대상 독자의 관점에서 자신의 작업을 비평하도록 요청하세요. 비평을 반영하고 다듬으세요. 전송하세요. 대부분의 사람들은 1단계에서 멈춥니다 -- 2단계와 3단계에서 품질 도약이 일어납니다.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_wc_05a"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>패턴 3: 주간 오퍼레이터.</strong> 역할, 우선순위, 반복 결과물을 시스템 컨텍스트로 ChatGPT 프로젝트를 설정하세요. 매주 월요일 새로운 데이터를 붙여넣고 같은 분석을 받으세요. ChatGPT는 이미 형식, 대상 독자, 집중할 것을 알고 있습니다. 이것은 대화가 아닙니다 -- 운영 체제입니다.</p><p><strong>앞으로 무엇이 오는지:</strong> Track 2는 ChatGPT의 각 표면을 깊이 다룹니다. Track 3은 구체적인 워크플로우 플레이북을 제공합니다. Track 4는 파워 테크닉을 다룹니다. 기초가 마련되었습니다.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_wc_05b"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_wc_05c"
+              },
+              {
+                "type": "summary",
+                "content": "<p>Track 1을 완료했습니다. ChatGPT가 어떻게 생각하는지, 어떻게 대화하는지, 무엇에 뛰어난지, 그리고 캐주얼한 사용이 어떻게 실제 워크플로우가 되는지 알게 되었습니다. 세 가지 패턴 -- 리서치에서 결정, 초안-검토-전송, 주간 오퍼레이터 -- 이 더 깊은 Track으로 가는 다리입니다. 가서 무언가를 구축하세요.</p>"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_wc_05a",
+              "order_index": 1,
+              "type": "scenario_walkthrough",
+              "prompt": "초안-검토-전송 루프를 진행하세요: 모호한 프롬프트로 시작하여 세 라운드에 걸쳐 출력이 훌륭해질 때까지 반복합니다.",
+              "options": null,
+              "correct_answer": "{\"title\": \"모호함에서 훌륭함으로 3라운드\", \"steps\": [{\"type\": \"context\", \"text\": \"대형 클라이언트를 잃은 교훈에 대한 LinkedIn 게시물을 ChatGPT에게 쓰도록 해야 합니다. 반복이 범용 출력을 매력적인 것으로 변환하는 과정을 봅시다.\"}, {\"type\": \"context\", \"text\": \"입력합니다: '클라이언트를 잃은 것에 대한 LinkedIn 게시물 써줘.'\\n\\nChatGPT 응답: '가장 큰 클라이언트를 잃는 것은 힘든 경험이었습니다. 하지만 커뮤니케이션, 기대 설정, 회복력 있는 시스템 구축의 중요성을 가르쳐 주었습니다. 모든 좌절은 도약의 발판...'\\n\\n전형적인 LinkedIn 범용 콘텐츠입니다. 반복할 시간입니다.\"}, {\"type\": \"choice\", \"claude_response\": \"첫 초안이 동기부여 포스터처럼 들립니다. ChatGPT에게 어떻게 고치라고 하시겠습니까?\", \"question\": \"어떤 반복 지시가 더 나은가요?\", \"options\": [\"더 매력적이고 진짜 같게 만들어\", \"동기부여 포스터처럼 들려. 나는 직접적이고, 약간 자조적이며, 버즈워드를 쓰지 않아. 그 목소리로 다시 써.\", \"더 길게 세부 사항을 추가해\", \"이모지와 해시태그를 추가해\"], \"correct\": 1, \"feedback\": \"구체적인 방향이 구체적인 결과를 만듭니다. '더 매력적'은 모호합니다. ChatGPT에게 실제 목소리와 피할 것을 알려주면 작업할 재료가 생깁니다.\"}, {\"type\": \"choice\", \"claude_response\": \"ChatGPT가 진짜 목소리로 다시 씁니다: '전화는 화요일 오후에 왔다. 가장 큰 클라이언트, 매출의 35%가 떠난다고. 90일 후가 아니라. 30일 후에...' 나아졌습니다. 하지만 내용이 더 강할 수 있습니다.\", \"question\": \"다음에 무엇을 물으시겠습니까?\", \"options\": [\"좋아 보여, 보내자\", \"콜투액션 추가해\", \"독자가 스크롤을 멈출 만한 것은 무엇인가? 솔직하게 -- 교훈이 범용적이면 알려줘.\", \"짧게 만들어\"], \"correct\": 2, \"feedback\": \"ChatGPT에게 글쓰기만이 아닌 자신의 콘텐츠를 비평하도록 요청하는 것이 놓칠 뻔한 통찰을 얻는 곳입니다. ChatGPT는 교훈이 예측 가능하다고 응답하며 놀라운 또는 반직관적인 각도를 찾을 것을 제안합니다.\"}]}",
+              "explanation": "두 라운드의 반복이 범용 게시물을 진짜 목소리와 솔직한 자기 비평을 가진 것으로 바꿨습니다. 교훈: 첫 프롬프트가 마지막이 아닙니다. 마법은 주고받기에 있습니다.",
+              "hints": [
+                "각 라운드는 구체적인 것을 바꿔야 합니다. '더 좋게'라고만 하지 말고, 무엇을 바꾸고 무엇을 유지할지 말하세요."
+              ],
+              "xp_reward": 15
+            },
+            {
+              "id": "ex_wc_05b",
+              "order_index": 2,
+              "type": "speed_prompt",
+              "prompt": "45초입니다. 투자자 피치 전에 비즈니스 플랜을 솔직하게 검토받기 위한 프롬프트를 작성하세요.",
+              "options": null,
+              "correct_answer": "{\"time_limit_seconds\":45,\"scenario\":\"새로운 SaaS 제품을 위한 10페이지 비즈니스 플랜이 있습니다. 다음 주 투자자에게 피치합니다. ChatGPT가 해체하도록 하는 프롬프트를 작성하세요 -- 투자자보다 먼저 약점을 찾으세요.\",\"scoring_criteria\":[{\"keyword_group\":[\"honest\",\"brutal\",\"critical\",\"tough\",\"don't hold back\",\"tear apart\",\"weaknesses\",\"holes\",\"problems\"],\"label\":\"솔직하고 비판적인 검토를 요청함\",\"points\":2},{\"keyword_group\":[\"investor\",\"pitch\",\"funding\",\"VC\",\"raise\",\"present\"],\"label\":\"투자자 컨텍스트를 언급함\",\"points\":1},{\"keyword_group\":[\"business plan\",\"plan\",\"SaaS\",\"product\",\"startup\"],\"label\":\"문서를 참조함\",\"points\":1},{\"keyword_group\":[\"question\",\"ask\",\"challenge\",\"object\",\"pushback\",\"concern\"],\"label\":\"투자자가 할 것 같은 질문을 요청함\",\"points\":2},{\"keyword_group\":[\"fix\",\"improve\",\"strengthen\",\"recommend\",\"suggest\",\"change\"],\"label\":\"개선 제안을 요청함\",\"points\":1}],\"max_points\":7,\"pass_threshold\":4,\"ideal_prompt\":\"다음 주 이 10페이지 SaaS 비즈니스 플랜으로 투자자에게 피치합니다. 가장 엄격한 비평가가 되어주세요: 투자자가 공격할 모든 약한 가정, 의심스러운 예측, 갭을 찾아주세요. 각 약점에 대해 투자자가 무엇을 말할지, 플랜을 어떻게 수정하거나 답변을 준비해야 하는지 알려주세요. 격려하지 마세요 -- 미팅이 아닌 지금 어려운 진실이 필요합니다.\"}",
+              "explanation": "솔직한 검토를 위한 최고의 프롬프트는 명시적으로 ChatGPT에게 친절하지 말라고 요청합니다. 무엇이 걸려 있는지, 역할, 발견 사항으로 무엇을 할지 말하세요.",
+              "hints": [
+                "생각해 보세요: 큰 피치 전에 솔직한 친구에게 무엇을 들고 싶은가요?"
+              ],
+              "xp_reward": 10
+            },
+            {
+              "id": "ex_wc_05c",
+              "order_index": 3,
+              "type": "multiple_choice",
+              "prompt": "ChatGPT를 일회성 도구에서 운영 체제로 바꾸는 워크플로우 패턴은 무엇인가요?",
+              "options": [
+                "매번 더 긴 질문을 하기",
+                "ChatGPT를 창의적 브레인스토밍에만 사용하기",
+                "영구적 컨텍스트가 있는 프로젝트를 설정하고 매주 새 데이터로 같은 분석을 실행하기",
+                "다른 작업에 ChatGPT와 ChatGPT를 번갈아 사용하기"
+              ],
+              "correct_answer": "2",
+              "explanation": "주간 오퍼레이터 패턴 -- 영구적 컨텍스트, 반복 분석, 새 데이터 -- 은 ChatGPT를 챗봇에서 의사결정 지원 시스템으로 바꿉니다. 시스템 프롬프트가 역할, 대상 독자, 형식을 알고 있습니다. 최신 숫자만 추가하면 됩니다.",
+              "hints": [
+                "어떤 옵션이 일회성 대화가 아닌 반복 가능한 프로세스를 설명하나요?"
+              ],
+              "xp_reward": 5
+            }
+          ]
+        }
+      ],
+      "campaign_order": 1,
+      "level_required": 1,
+      "prerequisite_slug": null
+    }
+  ]
+}

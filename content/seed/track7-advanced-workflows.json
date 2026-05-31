@@ -1,0 +1,434 @@
+{
+  "track": "advanced_workflows",
+  "courses": [
+    {
+      "title": "Advanced Workflows & Agents",
+      "slug": "advanced-workflows-agents",
+      "description": "Advanced prompt engineering, Custom GPT agent design, multi-GPT orchestration, and hardening patterns that make AI workflows reliable in production.",
+      "difficulty": "advanced",
+      "order_index": 7,
+      "is_free": false,
+      "icon": "Terminal",
+      "lessons": [
+        {
+          "title": "Advanced Prompt Engineering",
+          "slug": "slash-commands-custom-workflows",
+          "description": "Chain complex workflows with structured prompts, break large tasks into sequenced steps, and build repeatable automation patterns that run consistently every time.",
+          "order_index": 1,
+          "xp_reward": 100,
+          "estimated_minutes": 7,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<p>You have a complex workflow: analyze customer feedback from 50 Zendesk tickets, identify top themes, draft a report for the product team, and create action items for each theme. If you describe all of this in one prompt, you get a mediocre output on every part. If you chain four focused prompts, each output is strong — and each feeds into the next.</p><p><strong>Prompt chaining is the fundamental advanced pattern.</strong> One ChatGPT output becomes the input for the next prompt. The output of Step 1 is copied into Step 2. The output of Step 2 feeds Step 3. Each step is scoped to exactly one job. The result is compoundingly better than a single mega-prompt because each step can apply full attention to one task.</p><p>When to chain vs when to use a single prompt:</p><ul><li><strong>Chain when:</strong> The task has distinct phases (analyze → synthesize → draft → format). The output of one step needs to be correct before the next step starts. Different steps need different expertise or different types of reasoning.</li><li><strong>Single prompt when:</strong> The task is genuinely one step. The output is a simple format from simple input. You are exploring or brainstorming — not executing.</li></ul>"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>The four-step chain anatomy.</strong> Every complex workflow can be decomposed into this structure:</p><p><strong>Step 1: Extract and organize.</strong> Raw input → structured form. Analyze the Zendesk tickets, extract key complaints and requests, organize by category. Output: a structured list ChatGPT and you can both reason about.</p><p><strong>Step 2: Synthesize and prioritize.</strong> Structured list → insights. Which categories appear most often? Which are highest severity? Which cluster around the same root cause? Output: top three to five themes with evidence.</p><p><strong>Step 3: Draft.</strong> Insights → formatted output. Write the product team report using the themes from Step 2. This step focuses entirely on writing quality — the analysis is already done. Output: a draft document.</p><p><strong>Step 4: Refine and format.</strong> Draft → final output. Review for clarity, check format against the template, add action items. Output: the deliverable.</p><p>The discipline: do not skip steps or merge them. Step 2 is better when it works from Step 1's structured output instead of raw tickets. Step 3 is better when it writes from Step 2's themes instead of analyzing and drafting simultaneously. Separation of concerns applies to prompts, not just code.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>The master prompt template for complex workflows.</strong> When starting any multi-step workflow, establish the structure explicitly:</p><p><em>\"We are going to work through [task] in [N] steps. Here is the plan: Step 1: [description]. Step 2: [description — uses output from Step 1]. Step 3: [description — uses output from Step 2]. We will complete one step at a time. After each step, I will confirm before you move to the next. Start with Step 1 only. Here is the input for Step 1: [paste input].\"</em></p><p>The key elements: stating all steps upfront so ChatGPT has the full plan as context, executing one step at a time, and requiring your confirmation before advancing. The confirmation step is not bureaucracy — it is the checkpoint where you catch errors before they compound through subsequent steps.</p><p><strong>When a step fails, fix it before advancing.</strong> The most common workflow mistake: Step 2 output is subtly wrong, you proceed to Step 3 anyway, Step 3 produces confident-looking output based on a flawed Step 2. By Step 4, you have a polished document built on a mistake. The fix is much harder than catching it at Step 2. Confirmation gates are cheap. Rework is expensive.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>Structured output contracts.</strong> When Step 1's output feeds Step 2, the format matters. If Step 1 produces a wall of prose, Step 2 has to parse it before it can synthesize it. If Step 1 produces a structured list with consistent labels, Step 2 starts with organized inputs and produces better outputs.</p><p>The principle: specify the output format at the end of every step in a chain. Not as an afterthought — as a requirement. <em>\"Organize your output as a JSON-compatible list with three fields per item: theme (string), frequency (number of mentions), severity (low/medium/high). Use this exact structure — the next step will use it.\"</em></p><p>Structured output formats for inter-step use:</p><ul><li><strong>Numbered lists with consistent labels:</strong> Easy for both you and ChatGPT to reference in the next step. \"Theme 1: [name] — [count] mentions — [severity]\"</li><li><strong>Markdown tables:</strong> Good for comparisons, rankings, attribute-based data</li><li><strong>JSON-like structures:</strong> Good for data that will be processed programmatically or passed to another system</li><li><strong>Headers with sub-bullets:</strong> Good for hierarchical information where the structure matters</li></ul><p>Do not default to \"just write it naturally.\" Natural formatting for one step is often ambiguous input for the next. Specify the contract between steps explicitly.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>Handling large inputs: the chunking pattern.</strong> ChatGPT has a context window limit. A 200-page document will not fit in a single prompt. The chunking pattern: process the document in segments, extract the key information from each segment, then synthesize across segments.</p><p>The two-pass chunk workflow:</p><p><strong>Pass 1 (extraction):</strong> For each chunk, run: <em>\"This is section [N] of a [type] document. Extract: [specific elements you need]. Ignore everything else. Format as [structure]. Here is the section: [paste section].\"</em> You run this once per chunk and collect the extractions.</p><p><strong>Pass 2 (synthesis):</strong> Run once after all chunks: <em>\"Here are the extractions from all [N] sections of the document: [paste all extractions]. Now synthesize: [your actual question].\"</em></p><p>This pattern scales to documents of any length. The extraction step forces focus on what matters per chunk. The synthesis step works from structured extractions rather than full prose, which produces better synthesis quality.</p><p><strong>Model selection for chains.</strong> Different steps in a chain may warrant different effort. Step 1 (structured extraction from raw data) is mechanical — the default GPT-4o handles it well. Step 4 (final draft review and refinement) benefits from maximum model capability since writing quality is the deliverable. For chains where cost or speed matters, run extraction steps at lower cost and reserve premium model capacity for the steps where quality is highest-stakes.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>Prompt templates for the most common chain patterns.</strong></p><p><strong>For document analysis chains:</strong></p><p><em>\"I am going to give you [document type] in segments. For each segment, extract: [list of what to extract]. Format each extraction as: [structure]. Do not analyze or synthesize yet — just extract. Here is Segment 1: [paste].\"</em></p><p><strong>For decision analysis chains:</strong></p><p><em>\"We are going to analyze [decision] in three steps. Step 1: List all options and their attributes. Step 2: Score each option against [criteria]. Step 3: Recommend based on the scores with rationale. Start with Step 1. The context: [paste context].\"</em></p><p><strong>For content production chains:</strong></p><p><em>\"We are producing [content type] in four steps: (1) outline, (2) draft section by section, (3) review for voice and gaps, (4) final edit. Start with Step 1 — the outline. After I approve the outline, move to Step 2. Context and requirements: [paste brief].\"</em></p><p>These templates encode the chain structure as a starting instruction. The chain does not need to be re-established in every step — the initial instruction carries through as context. Copy, adapt, and save the templates that match your most common workflows.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_aw_01"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_aw_02"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_aw_03"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>The compounding return on chain discipline.</strong> Teams that consistently use structured prompt chains deliver more accurate analysis and better drafts than teams that rely on single mega-prompts — even though chaining feels like it takes longer. The reason: a chain that produces a wrong output at Step 2 and catches it before Step 3 costs one correction. A mega-prompt that produces a subtly wrong synthesis costs a full rewrite at the end when the problem surfaces in the final review.</p><p>The same logic applies to structured output contracts. Specifying the format between steps takes 30 seconds. Parsing ambiguous output from the previous step to feed the next step takes 5 minutes. Small investments in structure at each step compound into significantly better final outputs across a multi-step chain. Start with structure. Resist the temptation to \"just see what it produces.\" Seeing what it produces is fine for exploration. Production workflows need contracts.</p>"
+              },
+              {
+                "type": "summary",
+                "content": "<p>Prompt chaining: one ChatGPT output feeds the next prompt. Four-step anatomy: extract → synthesize → draft → refine. Specify the output format contract between every step. Use the master template to establish the full plan before starting. Confirm each step before advancing. Handle large documents with the chunking pattern: extract per segment, synthesize across segments. Reserve premium model capacity for highest-stakes steps. Chain when the task has distinct phases. Single prompt when the task is genuinely one step.</p>"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_aw_01",
+              "order_index": 1,
+              "type": "prompt_lab",
+              "prompt": "Design a 3-step prompt chain for this task: analyze 20 customer support tickets to identify the top 3 product issues and draft a 1-paragraph summary for the product team. Write the prompt for each step and specify the output format between steps.",
+              "evaluation_criteria": "Must have three clearly defined steps with explicit handoffs. Step 1 should extract issues from tickets in a structured format (list, table, or labeled items). Step 2 should synthesize top issues using the Step 1 output. Step 3 should draft the paragraph using Step 2 output. Output format must be specified between each step.",
+              "hints": [
+                "Each step should do exactly one thing. Specify the output format so the next step knows what it is working with."
+              ],
+              "xp_reward": 10
+            },
+            {
+              "id": "ex_aw_02",
+              "order_index": 2,
+              "type": "scenario_walkthrough",
+              "prompt": "You have a 50-page competitor analysis document to summarize. It does not fit in one ChatGPT context window. Walk through how you would use the chunking pattern: describe the extraction step, the synthesis step, and what format you would use between them.",
+              "evaluation_criteria": "Should describe: (1) breaking the document into segments that fit in context, (2) a consistent extraction prompt run per segment that captures only relevant information in a structured format, (3) collecting all extractions, (4) a synthesis prompt that works from the extractions rather than raw text. Should identify what to extract per segment based on the analysis goal.",
+              "hints": [
+                "What specific information would you extract per chunk? How do you format extractions so the synthesis step can use them?"
+              ],
+              "xp_reward": 15
+            },
+            {
+              "id": "ex_aw_03",
+              "order_index": 3,
+              "type": "scenario_walkthrough",
+              "prompt": "You ran a 4-step prompt chain. Step 2 produced output that you realize is subtly wrong — it miscategorized 3 of 12 themes. You are already in Step 3. What do you do?",
+              "evaluation_criteria": "Should go back to Step 2 and correct it before proceeding — not try to fix Step 3 with a correction instruction. Should explain why: Step 3 built on the wrong Step 2 output, so Step 3 is also wrong (just in a less visible way). Should describe what a corrected Step 2 prompt looks like and confirm the corrected output before re-running Step 3.",
+              "hints": [
+                "What happens to Step 3 if it was built on a wrong Step 2 output?"
+              ],
+              "xp_reward": 15
+            }
+          ]
+        },
+        {
+          "title": "Designing Custom GPT Agents",
+          "slug": "designing-agents",
+          "description": "Write Custom GPT specifications that prevent scope creep. Define system instructions with clear boundaries. Build the five-section configuration template that every production Custom GPT needs.",
+          "order_index": 2,
+          "xp_reward": 100,
+          "estimated_minutes": 7,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<p>A Custom GPT without a well-written specification is a general-purpose assistant with a job title. It will do what you ask, and it will also helpfully do things adjacent to what you asked, and occasionally it will generate output that belongs to a completely different workflow. Scope creep is not malicious — it is what capable models do without clear boundaries.</p><p>A well-specified Custom GPT has five sections in its system instructions. Here is the template that earns its keep:</p><pre><code>ROLE\nYou are Artemis, a QA specialist. Your mission: identify issues in\ncontent, code, or data before it reaches users or customers.\n\nSCOPE\n- Review submitted content for quality, accuracy, and gaps\n- Identify issues and explain why they are problems\n- Suggest specific fixes for each issue found\n\nDOES NOT HANDLE\n- Writing production content from scratch (use a content GPT)\n- Strategic decisions about what to prioritize (out of scope)\n- Tasks unrelated to quality review and issue identification\n\nOUTPUT FORMAT\nAlways return: Issue (what is wrong), Impact (why it matters),\nFix (specific recommended change). One block per issue found.\n\nCONSTRAINTS\n- Flag every issue found — do not silently skip minor ones\n- Do not rewrite content unless explicitly asked — flag and recommend\n- Rate severity: Minor / Moderate / Critical</code></pre>"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>DOES NOT HANDLE is the most important section.</strong> It prevents drift. Without it, a capable GPT will helpfully do things outside its scope because it can. The format \"use a [specific] GPT\" is intentional — naming the alternative makes the boundary concrete and routes the user to the right tool.</p><p>If you cannot write DOES NOT HANDLE with at least three clear boundaries, you do not understand the GPT's scope yet. Write this section first. The scope often clarifies itself once you know what is explicitly excluded.</p><p>Common DOES NOT HANDLE failures: using vague language (\"off-topic requests\" — ChatGPT cannot reliably identify what counts as off-topic), leaving it out entirely, or listing capabilities you simply have not built yet rather than things the GPT must never do.</p><p>Strong DOES NOT HANDLE entry: <em>\"Writing first drafts of content — use the Content Writer GPT for that. This GPT reviews existing drafts, it does not create them.\"</em> Weak entry: <em>\"Tasks that are out of scope.\"</em></p>"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>OUTPUT FORMAT locks in consistency.</strong> Without a format specification, the same input produces differently structured outputs across conversations. A sales coaching GPT that sometimes uses headers, sometimes bullets, and sometimes prose makes it hard to act on the output quickly — you spend time parsing the structure instead of acting on the content.</p><p>The anatomy of a strong output format specification:</p><p><strong>Label every section.</strong> Give each section a name that does not change. \"Issue:\" \"Impact:\" \"Fix:\" — every output has these three labels in this order. The user knows exactly where to look.</p><p><strong>Specify structure within sections.</strong> One sentence? Bullet list? Table row? The more specific, the more consistent. \"Impact: one sentence explaining why this matters to the end user\" beats \"explain the impact.\"</p><p><strong>Specify what to do when nothing is found.</strong> \"If no issues are found, respond with: 'No issues found. [Brief summary of what was reviewed].'\" Without this, the GPT sometimes produces an empty response, sometimes says \"everything looks good,\" and sometimes invents minor issues to have something to report.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>CONSTRAINTS are non-negotiable rules</strong> that survive edge cases. They are the behavioral guarantees you can rely on. Three types:</p><p><strong>Always-do constraints:</strong> Behaviors that must occur regardless of input. <em>\"Always include a severity rating (Minor/Moderate/Critical) for every issue found.\"</em> Without this, severity only appears when the user asks for it — which is inconsistent.</p><p><strong>Never-do constraints:</strong> Behaviors that must never occur regardless of how the user asks. <em>\"Never rewrite the submitted content unless the user explicitly asks for a rewrite. Review and flag only.\"</em> Without this, a helpful GPT will start editing when the user wanted only an assessment.</p><p><strong>Threshold constraints:</strong> Rules that kick in at specific conditions. <em>\"If more than 5 Critical issues are found, start the response with a summary paragraph before listing issues.\"</em> Threshold constraints handle the edge cases that trip up general instructions.</p><p>Write CONSTRAINTS as numbered imperatives, not prose. Prose gets paraphrased or summarized by the model when the conversation gets long. Numbered rules get preserved.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>Testing the specification before deploying.</strong> Before sharing a Custom GPT with your team, run it through five tests:</p><p><strong>1. On-scope test.</strong> Send a message squarely within scope. The response should follow the output format and apply the constraints correctly.</p><p><strong>2. Edge case test.</strong> Send a message at the boundary of scope — close to what the GPT does but slightly different. Does it handle it gracefully or produce confused output?</p><p><strong>3. DOES NOT HANDLE test.</strong> Explicitly ask for something the GPT should refuse. Does it decline and route to the right alternative? Or does it try to help anyway, crossing the stated boundary?</p><p><strong>4. Format consistency test.</strong> Send three different inputs. Do all three outputs follow the same structure? If the format varies, the OUTPUT FORMAT specification needs tightening.</p><p><strong>5. Constraint stress test.</strong> Deliberately create a scenario designed to break a constraint. For a \"never rewrite\" constraint: ask the GPT to fix the content rather than flag it. Does the constraint hold?</p><p>Fix every test that fails before deploying. A specification that passes five tests is ready for real use. A specification that fails three tests will frustrate every user who encounters those failure modes.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>Prompt template for writing a Custom GPT specification.</strong></p><p><em>\"Help me write a Custom GPT specification. The GPT's job: [describe the task in one sentence]. Ask me: (1) what are the 3-5 things it must always do, (2) what are the 3-4 things it must never do (with the alternative to route to), (3) exactly how should every response be structured (label and format each section), and (4) what are the non-negotiable constraints that must hold even when users push back? Draft the five-section spec after getting my answers.\"</em></p><p><strong>The most common spec design mistakes:</strong></p><ul><li><strong>System instructions that are too vague:</strong> \"Be helpful and professional\" is the same as having no instructions. Replace every vague adjective with a specific rule.</li><li><strong>Missing DOES NOT HANDLE:</strong> This is the section that keeps the GPT in its lane. Without it, the GPT's lane is wherever it decides to go.</li><li><strong>Output format that allows variability:</strong> \"Organize your response clearly\" allows any structure. \"Respond with: Issue, Impact, Fix — one block per issue\" allows one structure.</li><li><strong>Constraints that depend on user judgment:</strong> \"Be concise when appropriate\" requires the GPT to judge what is appropriate. \"Responses under 300 words unless the user asks for depth\" removes the judgment.</li></ul>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_aw_04"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_aw_05"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_aw_06"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>Writing DOES NOT HANDLE first.</strong> Most spec writers start with ROLE and SCOPE — what the GPT does. This is the wrong order. Start with DOES NOT HANDLE — what the GPT never does. Why: the boundaries define the scope more precisely than the scope itself. When you list four things the GPT never handles, the space between those boundaries is the actual scope. The scope you write after the boundaries tends to be sharper and more specific than the scope you write before them.</p><p>The secondary benefit: writing DOES NOT HANDLE first forces you to think about what else might be needed. If you say \"Does not handle: writing first drafts,\" you have identified that a separate content creation GPT is needed. This cross-GPT awareness prevents you from building one GPT that implicitly requires another GPT you have not configured. It surfaces gaps in your GPT library before they show up as user complaints about incomplete workflows.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>The full five-section spec for a production content reviewer.</strong></p><pre><code>ROLE\nYou are a senior content reviewer specializing in executive communications.\nYour mission: review drafts for clarity, tone, structure, and impact before\nthey reach C-suite audiences.\n\nSCOPE\n- Review email drafts, memos, and executive summaries\n- Assess clarity, executive-appropriateness, and call-to-action quality\n- Identify specific problems and recommend specific fixes\n- Rate overall readiness: Ready / Needs Minor Revisions / Needs Major Rework\n\nDOES NOT HANDLE\n- Writing first drafts from scratch — use a content creation GPT for that\n- Strategic decisions about what to communicate — that is the user's judgment\n- Requests unrelated to written executive communications review\n\nOUTPUT FORMAT\nFor every review:\n1. READINESS RATING: Ready / Needs Minor Revisions / Needs Major Rework\n2. CRITICAL ISSUES (if any): Label each — one sentence problem, one sentence fix\n3. MODERATE ISSUES (if any): Same format\n4. STRENGTHS: What is working — 2-3 bullet points\n5. RECOMMENDED NEXT STEP: One specific action\n\nIf no issues found: State 'No issues found' and summarize what was reviewed.\n\nCONSTRAINTS\n1. Never rewrite the draft — flag and recommend only, unless user explicitly asks\n2. Always include the readiness rating, even for drafts with no issues\n3. Rate issues honestly — do not soften 'Critical' to 'Moderate' to avoid friction\n4. If the draft is under 100 words, note this as context (may be intentionally brief)\n5. Cap response length at 400 words — tighter review = more actionable review</code></pre><p>Notice the specificity. \"Rate issues honestly — do not soften 'Critical' to 'Moderate' to avoid friction\" exists because GPTs naturally hedge toward diplomatic assessments. This constraint overrides the diplomatic default. Every constraint in the list exists because it addresses a specific failure mode — not because it sounded like a good idea in the abstract.</p>"
+              },
+              {
+                "type": "summary",
+                "content": "<p>Every Custom GPT specification needs five sections: ROLE (who it is and its mission), SCOPE (what it does), DOES NOT HANDLE (write this first — it clarifies scope and surfaces missing GPTs), OUTPUT FORMAT (exact structure every response follows), CONSTRAINTS (numbered, non-negotiable rules that hold even under pressure). Test with on-scope, edge case, DOES NOT HANDLE, format consistency, and constraint stress tests before deploying. An unspecified Custom GPT will drift. A well-specified one delivers consistent output you can rely on.</p>"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_aw_04",
+              "order_index": 1,
+              "type": "matching_pairs",
+              "prompt": "Match each Custom GPT specification section to what it prevents.",
+              "pairs": [
+                {
+                  "left": "DOES NOT HANDLE",
+                  "right": "Prevents scope creep into other GPTs' jobs"
+                },
+                {
+                  "left": "OUTPUT FORMAT",
+                  "right": "Prevents inconsistent structure across conversations"
+                },
+                {
+                  "left": "CONSTRAINTS",
+                  "right": "Prevents behavioral drift under edge cases"
+                },
+                {
+                  "left": "Testing (5 tests before deploy)",
+                  "right": "Prevents shipping a spec that fails on real inputs"
+                }
+              ],
+              "hints": [
+                "Each section is a guardrail. What specific failure does each one guard against?"
+              ],
+              "xp_reward": 10
+            },
+            {
+              "id": "ex_aw_05",
+              "order_index": 2,
+              "type": "prompt_lab",
+              "prompt": "Write a minimal Custom GPT specification for a 'meeting notes summarizer' agent. Include all five sections: ROLE, SCOPE, DOES NOT HANDLE (at least 3 items), OUTPUT FORMAT (with labeled sections), and CONSTRAINTS (at least 3 rules). Keep it under 200 words.",
+              "evaluation_criteria": "Must include all five sections with clear labels. DOES NOT HANDLE must have at least 3 items that reference what the user should do instead. OUTPUT FORMAT must define specific labeled sections, not just 'be clear.' CONSTRAINTS must have at least 3 numbered rules that are specific and testable (not vague). Total should fit within a Custom GPT instructions field.",
+              "hints": [
+                "What should a meeting summarizer never do? Think about the difference between summarizing and making decisions from the meeting."
+              ],
+              "xp_reward": 10
+            },
+            {
+              "id": "ex_aw_06",
+              "order_index": 3,
+              "type": "scenario_walkthrough",
+              "prompt": "You built a customer email responder Custom GPT. Users keep asking it to write first-contact prospecting emails — but it was designed only for responding to existing customer inquiries. The GPT usually tries to help anyway, writing prospecting content instead of declining. What was the specification mistake, and how do you fix it?",
+              "evaluation_criteria": "Should identify missing or weak DOES NOT HANDLE section. The fix: add 'DOES NOT HANDLE: Writing first-contact or prospecting emails — use a sales outreach GPT for that. This GPT responds to existing customer inquiries only.' Should also identify that a CONSTRAINT reinforcing this (numbered rule: 'Never write first-contact emails even if asked') strengthens the boundary. Should explain the test to verify the fix: send a prospecting email request and confirm the GPT declines and routes correctly.",
+              "hints": [
+                "Which section is most responsible for keeping the GPT in its lane?",
+                "What specific instruction would have prevented it from writing prospecting emails?"
+              ],
+              "xp_reward": 15
+            }
+          ]
+        },
+        {
+          "title": "Multi-GPT Workflows & Orchestration",
+          "slug": "multi-agent-systems",
+          "description": "When and how to chain multiple Custom GPTs. Sequential handoffs, parallel workflows, human approval gates, and the orchestrator pattern for complex multi-step AI systems.",
+          "order_index": 3,
+          "xp_reward": 100,
+          "estimated_minutes": 6,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<p><strong>Three signs you need to split across multiple Custom GPTs.</strong></p><p><strong>1. Scope creep.</strong> You asked for a meeting summary and got strategic recommendations. The GPT is capable enough to have opinions beyond its task, and without clear specification boundaries, it expresses them. If you find yourself reminding the GPT of its job regularly, the scope is not defined clearly enough — and the real fix is a tighter spec (Lesson 2) or a split into two GPTs.</p><p><strong>2. Conflicting instructions.</strong> \"Be concise and direct\" and \"provide comprehensive background context\" cannot coexist in a single system instruction set without constant tension. Conflicting rules signal that the spec is covering two different jobs. Split on the conflict.</p><p><strong>3. Quality degradation at scale.</strong> A GPT that does research, writing, and editing in one pass produces lower quality in all three than three GPTs each focused on one. When you find yourself accepting worse output because the GPT is doing too many things at once, it is time to split.</p><p>The test: if two task types need fundamentally different DOES NOT HANDLE lists, they belong in different GPTs. Write both lists. If they do not overlap, you have your architecture.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>Sequential handoff: the most common multi-GPT pattern.</strong> In a sequential handoff, GPT A produces output that becomes the input to GPT B. The output of GPT B feeds GPT C. Each GPT has a specialized role, and the chain produces compoundingly better output than any single GPT trying to do all three jobs.</p><p>Example: Research → Writing → Review pipeline for an executive report.</p><ul><li><strong>Research GPT:</strong> Takes the topic and requirements. Identifies key questions. Synthesizes research findings. Outputs a structured research brief with sources.</li><li><strong>Writing GPT:</strong> Takes the research brief. Drafts the executive report following the established format. Outputs a complete draft.</li><li><strong>Review GPT:</strong> Takes the draft. Reviews against the target audience, format standards, and clarity criteria. Outputs specific revision notes.</li></ul><p>You as the human are the connection between GPTs. You review and approve each handoff before passing output to the next GPT. This human-in-the-loop design means quality problems are caught at each stage rather than compounding through the full pipeline.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>Parallel workflows: multiple GPTs working simultaneously.</strong> Some tasks can be split into parallel branches where different GPTs work simultaneously rather than sequentially. The outputs are merged by a human or an orchestrator at the end.</p><p>Example: Competitive analysis for three competitors. Instead of running one GPT through all three sequentially:</p><ul><li>Run the Research GPT on Competitor A simultaneously while running it on Competitor B and Competitor C (in separate conversations)</li><li>Collect all three outputs</li><li>Run a Synthesis GPT that takes all three competitor analyses and produces a comparison</li></ul><p>Parallel workflows save time when subtasks are independent. The rule: if Task A's output does not affect how Task B should be done, they can run in parallel. If Task A's output changes what Task B needs to do, they must be sequential.</p><p><strong>Human merge at the parallel-to-sequential transition.</strong> Parallel branches must converge before the next sequential step can use them. The human is responsible for collecting the parallel outputs and assembling them into a format the next GPT can use. This is the most error-prone step in parallel workflows — one missing or incomplete parallel output will cause the synthesis step to work from incomplete data. Verify all branches are complete before initiating the synthesis step.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>Approval gates: the human-in-the-loop pattern.</strong> The gate is where human judgment stays in the system. Any multi-GPT workflow that produces externally-facing output — customer emails, published content, documents shared with stakeholders — needs an explicit gate before that output leaves the system.</p><p>The architecture of an approval gate:</p><ol><li>GPT generates and presents the proposed output</li><li>Human reviews, edits if needed</li><li>Human explicitly approves (pastes into the next step, hits send, publishes)</li><li>Execution happens only after human approval</li></ol><p>Research GPTs analyze and present. Writing GPTs draft and present. Review GPTs flag and present. The human decides when to advance each handoff. The gate is not bureaucracy — it is the design pattern that keeps humans in control as workflows grow more automated. An automated workflow that can publish content without human review will eventually publish something wrong — the approval gate prevents that entire category of failure.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>The orchestrator pattern for complex workflows.</strong> At three or more Custom GPTs, you sometimes benefit from an orchestrator — a GPT whose job is to receive a high-level goal and break it into tasks for specialist GPTs, then track completion and synthesize results.</p><p>Example: you say \"prepare the Q3 board update\" to an Orchestrator GPT. It breaks this into: Research GPT gathers Q3 metrics, Writing GPT drafts the narrative, Review GPT reviews the draft, Formatting GPT produces the final deck structure. The orchestrator tracks which outputs are complete and tells you what to run next.</p><p>The orchestrator's critical DOES NOT HANDLE constraint: it does not execute the tasks it routes. An orchestrator that starts doing the work instead of routing it has collapsed into a general-purpose GPT, defeating the purpose of the architecture. The orchestrator's job is sequencing and tracking — this constraint must be explicit in its specification or it will helpfully start doing tasks rather than routing them.</p><p><strong>When NOT to orchestrate.</strong> Orchestration adds coordination overhead. A two-GPT pipeline with clear handoffs does not need an orchestrator. An orchestrator earns its place when: the workflow has four or more steps, the steps have conditional branching (do step B only if step A finds X), or multiple people need to use the same workflow and need guidance on which GPT to run when. For simple sequential pipelines, the human is a better orchestrator than a GPT.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>The handoff format between GPTs.</strong> When GPT A's output feeds GPT B, the format of the handoff matters. The handoff should include: what the receiving GPT needs to know about the work done so far, what its specific task is, any constraints established upstream that it must respect, and the structured output from the previous GPT.</p><p>A well-formed handoff prompt: <em>\"Here is the research brief from the Research GPT: [paste brief]. Your task: draft the executive summary section only (not the full report). Requirements: under 250 words, written for a CFO audience with finance background, lead with the key finding. The brief was reviewed and approved — use it as-is, do not re-research.\"</em></p><p>A poorly-formed handoff: <em>\"Here is some research. Write the executive summary.\"</em> The receiving GPT does not know the audience, the length, whether it should re-research, or what \"executive summary\" means in this context. The output will vary widely across uses.</p><p>Handoff format quality is the interface quality between GPTs. Sloppy handoffs produce inconsistent outputs at every stage they touch.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_aw_07"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_aw_08"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_aw_09"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>The right sequence for building a multi-GPT system.</strong> Most practitioners try to design the full architecture upfront. This produces over-engineered systems with GPTs for problems that have not appeared yet. The better sequence: (1) Start with one Custom GPT that handles the full workflow. Let it do everything. (2) After two to three weeks, identify where output quality is lowest. (3) Split off a specialized GPT for the weakest area — the part that benefits most from focused specialization. (4) Run the two-GPT system. Identify the next weakest area. (5) Split again. Repeat until the system is stable and each GPT performs consistently.</p><p>This bottom-up approach produces GPT architectures that reflect actual quality gaps rather than theoretical ones. The GPTs you end up with after four months of organic splitting will have cleaner specifications, sharper output formats, and DOES NOT HANDLE sections that reflect real boundary problems you have observed — not problems you imagined in a planning session. The architecture earns its complexity.</p>"
+              },
+              {
+                "type": "summary",
+                "content": "<p>Split across Custom GPTs when scope creep, conflicting instructions, or quality degradation signal the need. Sequential handoff: GPT A output feeds GPT B, human reviews at each transition. Parallel workflows: independent tasks run simultaneously, human merges at convergence. Approval gates keep humans in control before any externally-facing output leaves the system. The orchestrator pattern coordinates four-or-more-step workflows. Human is the best orchestrator for simple sequential pipelines. Start with one GPT; split only when you see the signals — not preemptively.</p>"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_aw_07",
+              "order_index": 1,
+              "type": "multiple_choice",
+              "prompt": "Your content GPT has started providing strategic recommendations about what topics to write about, in addition to writing the content you ask for. What is the most likely cause?",
+              "options": [
+                "The content GPT is learning from your conversations and improving.",
+                "The system instructions lack a DOES NOT HANDLE section that excludes strategic topic decisions.",
+                "You need to start a new conversation — the context is too long.",
+                "The GPT model is hallucinating."
+              ],
+              "correct_answer": "1",
+              "explanation": "Scope creep. Without an explicit DOES NOT HANDLE constraint, a capable GPT will helpfully add strategic recommendations it is capable of making. The fix: add 'DOES NOT HANDLE: Strategic decisions about what topics to cover — that is the user's judgment. This GPT writes on topics provided, it does not select them.'",
+              "hints": [
+                "Which section of the specification keeps a Custom GPT in its lane?"
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_aw_08",
+              "order_index": 2,
+              "type": "matching_pairs",
+              "prompt": "Match each workflow component to its correct description.",
+              "pairs": [
+                {
+                  "left": "Sequential handoff",
+                  "right": "GPT A output feeds GPT B — stages must complete in order"
+                },
+                {
+                  "left": "Parallel workflow",
+                  "right": "Multiple GPTs work simultaneously on independent subtasks"
+                },
+                {
+                  "left": "Approval gate",
+                  "right": "Human reviews and approves before output advances to next step"
+                },
+                {
+                  "left": "Orchestrator GPT",
+                  "right": "Routes tasks to specialist GPTs and tracks completion — does not execute tasks"
+                }
+              ],
+              "hints": [
+                "Think about when each pattern is needed and what problem it solves."
+              ],
+              "xp_reward": 10
+            },
+            {
+              "id": "ex_aw_09",
+              "order_index": 3,
+              "type": "prompt_lab",
+              "prompt": "Design a two-GPT sequential workflow for producing a weekly competitive analysis newsletter. GPT 1: Research. GPT 2: Writing. For each GPT, write one sentence describing its scope, one item it does not handle, and describe the handoff format between them.",
+              "evaluation_criteria": "GPT 1 (Research) scope should cover finding and organizing competitive information. Its DOES NOT HANDLE should exclude writing prose or formatting for the newsletter. GPT 2 (Writing) scope should cover drafting the newsletter from the research. Its DOES NOT HANDLE should exclude doing new research. The handoff format should specify what Research GPT outputs (structured findings with source, what changed, why it matters) so Writing GPT can use it without interpretation.",
+              "hints": [
+                "What does Research produce that Writing needs? Write the handoff format as specifically as if you were going to actually use it."
+              ],
+              "xp_reward": 10
+            }
+          ]
+        },
+        {
+          "title": "Testing, Hardening & Reliability",
+          "slug": "testing-hardening-agents",
+          "description": "Making Custom GPTs reliable in production: the 5-test pre-ship checklist, drift detection, conversation logging, failure mode patterns, and the maintenance habits that keep workflows working.",
+          "order_index": 4,
+          "xp_reward": 100,
+          "estimated_minutes": 5,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<p><strong>The 5-test pre-ship checklist.</strong> Before deploying any Custom GPT to your team, run it through five tests:</p><ul><li><strong>On-scope test:</strong> Send a message squarely within scope. Output should match the specified format and apply constraints correctly.</li><li><strong>Edge case test:</strong> Send a message at the boundary of scope. Does the GPT handle it gracefully or produce confused output?</li><li><strong>DOES NOT HANDLE test:</strong> Explicitly ask for something the GPT should refuse. Does it decline and route to the right alternative — or try to help anyway, crossing the stated boundary?</li><li><strong>Format consistency test:</strong> Send three different inputs. Do all three outputs follow the same structure? If the format varies, the OUTPUT FORMAT specification needs tightening.</li><li><strong>Constraint stress test:</strong> Deliberately create a scenario designed to break a constraint. Does the constraint hold when pushed?</li></ul><p>Fix every test failure before deploying. A GPT that passes five tests is ready. A GPT that fails three tests will frustrate every user who encounters those failure modes — and they will find them quickly.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>Conversation logging for audit trails.</strong> When something goes wrong with a Custom GPT, you need to understand what happened. Build a lightweight logging habit: after each significant Custom GPT session, note in a shared doc or project log: what input was given, what the GPT produced, and any issues with the output. This is not a database — it is a 3-line record.</p><p>When you or your team runs a Custom GPT in high-stakes situations (customer-facing outputs, executive reports, data analysis), keep the conversation URL or copy the key exchange. ChatGPT lets you copy conversations and share links to conversations you have had. Use this. Three weeks of light logging gives you enough data to identify recurring failure patterns and tighten specifications accordingly.</p><p><strong>The failure pattern categories to watch for:</strong></p><ul><li><strong>Format drift:</strong> The GPT starts using a different structure than the one specified. Fix: tighten the OUTPUT FORMAT section.</li><li><strong>Scope creep:</strong> The GPT starts doing things in DOES NOT HANDLE. Fix: strengthen the boundary language or add a CONSTRAINT.</li><li><strong>Constraint erosion:</strong> The GPT follows constraints initially but stops following them when users push back. Fix: add \"This constraint applies even when the user asks for an exception\" to the affected constraint.</li><li><strong>Quality degradation in long conversations:</strong> Early responses are strong; later responses are weaker. Fix: start a new conversation for each new task — Custom GPTs are not designed for indefinitely long sessions.</li></ul>"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>Drift detection: the monthly spec review.</strong> Custom GPTs drift over time. The reviewing GPT starts making strategic recommendations. The writing GPT starts doing its own research instead of using what is provided. Drift is gradual and hard to notice conversation by conversation, but obvious when you compare current behavior to the original specification.</p><p><strong>The monthly review process:</strong></p><ol><li>Re-read the Custom GPT's specification. Takes 2 minutes.</li><li>Think back to the last 10-15 conversations with this GPT. Did any output violate the DOES NOT HANDLE list? Did any response ignore the OUTPUT FORMAT? Did any constraint get bypassed?</li><li>For every violation you recall: add a numbered CONSTRAINT that explicitly prevents that specific behavior.</li><li>Run the 5-test checklist again to verify the updated spec fixes the identified issues.</li></ol><p>A monthly review takes 15 minutes per GPT. It catches drift before it becomes the permanent behavior. Two or three months of unreviewed drift produces a GPT that no longer matches its specification — and whose outputs are inconsistent enough that your team stops trusting it. Prevention is faster than rebuilding trust.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>Error handling patterns for team-shared Custom GPTs.</strong> When your team uses a shared Custom GPT and it produces wrong output, you need a way to catch and address failures systematically. Three practices:</p><p><strong>1. A shared feedback channel.</strong> Create a Slack channel or shared doc where team members can report Custom GPT failures. Minimum information: what input was given, what the GPT produced, what was expected. Three lines. The channel creates visibility into failure patterns across users — one person's failure is usually experienced by multiple users.</p><p><strong>2. Designated GPT owners.</strong> Each Custom GPT should have one person responsible for maintaining its specification. When failures are reported, the owner reviews them and decides whether the spec needs updating. Without ownership, failures accumulate without anyone improving the GPT.</p><p><strong>3. Specification versioning.</strong> Keep a record of what the specification said before and after each change. A simple dated comment in the instructions field works: \"— Updated 2026-06-01: Added CONSTRAINT 4 (no strategic recommendations). Previous version allowed this implicitly.\" When a change introduces new problems, you can trace it to the specific specification update.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>The production readiness checklist for a Custom GPT.</strong> Before sharing any Custom GPT with a team, confirm:</p><ul><li>5-test checklist completed. All test failures fixed before deploy.</li><li>All five specification sections present: ROLE, SCOPE, DOES NOT HANDLE, OUTPUT FORMAT, CONSTRAINTS.</li><li>CONSTRAINTS numbered as imperatives, not prose.</li><li>Approval gate identified for any externally-facing output.</li><li>Knowledge files reviewed for accuracy and staleness (if any are uploaded).</li><li>GPT owner designated — one person responsible for ongoing maintenance.</li><li>Monthly review scheduled — calendar reminder set for 30 days out.</li></ul><p><strong>Prompt template for auditing an existing Custom GPT:</strong></p><p><em>\"My Custom GPT has been in use for [time period]. Here is its current specification: [paste spec]. Here are 3 recent outputs that concerned me: [describe outputs]. Audit it for: (1) outputs that violate DOES NOT HANDLE, (2) outputs that deviate from the specified OUTPUT FORMAT, (3) any CONSTRAINT that appears to be getting bypassed, (4) any scope that has grown beyond what the specification intended. Recommend specific changes to the specification for each issue.\"</em></p>"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>The relationship between testing and trust.</strong> You cannot give a Custom GPT more autonomy than you have evidence to support. The 5-test checklist is the evidence. A clean 5-test checklist means: the GPT handles its scope, respects its boundaries, follows its format, and holds its constraints under pressure. With that evidence, you can safely use the GPT for higher-stakes outputs. Each clean month of use — no spec violations, no format drift — is additional evidence that supports expanding the GPT's role in your workflows.</p><p>The inverse: when a GPT violates its spec, trust decreases. The right response is to tighten the specification, run the 5-test checklist again, and verify the fix holds before restoring the GPT to its previous role. Treating a spec violation as a one-off without updating the specification is how drift becomes permanent. The specification is the contract. Violations update the contract.</p><p><strong>When to rebuild vs when to repair.</strong> Most specification problems can be fixed by tightening the relevant section. Rebuild (start the specification from scratch) when: the GPT's actual behavior is so different from the intended behavior that the original specification is misleading, or when the fundamental scope has changed so much that the spec would require more exceptions than rules. The signal for rebuild: if you find yourself adding DOES NOT HANDLE items that were in the original SCOPE, the fundamental design has reversed and a rebuild is cleaner than layering corrections on an inverted specification.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_aw_10"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_aw_11"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_aw_12"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>Specification stability and the cost of over-iteration.</strong> Updating a specification too frequently creates its own reliability problem. When the specification changes weekly, users cannot build a reliable mental model of what the GPT does. They hedge by checking outputs more carefully, which eliminates the efficiency gain the GPT was supposed to provide. Specification changes should be driven by observed failures, not by theoretical improvements.</p><p>The discipline: only update a specification when you have a specific, observed failure the update is designed to prevent. Not when you think of a way the spec could be clearer. Not when a user suggests an enhancement that would be nice to have. Those ideas belong in a backlog. They get evaluated during the monthly review against the failure patterns you have actually seen. The specification exists to prevent observed failures — updates that do not address observed failures introduce instability without solving problems. Stable specifications that handle 95% of cases correctly are more valuable than perfect specifications that get revised constantly and confuse everyone.</p>"
+              },
+              {
+                "type": "summary",
+                "content": "<p>Run the 5-test checklist before every Custom GPT deploy: on-scope, edge case, DOES NOT HANDLE, format consistency, constraint stress. Log failures in a shared channel with input, output, and what was expected. Review specifications monthly for drift — 15 minutes per GPT. Designate one owner per Custom GPT who is responsible for spec maintenance. Keep CONSTRAINTS numbered so they survive long conversations. When in doubt: tighten the specification and re-test before expanding the GPT's role. Reliable Custom GPTs that your team trusts come from consistent specification maintenance, not from getting the initial spec perfect.</p>"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_aw_10",
+              "order_index": 1,
+              "type": "scenario_walkthrough",
+              "prompt": "Your team's customer email responder Custom GPT sent a customer an email that included internal pricing strategy notes that were not in the CONSTRAINTS. Walk through: what was the design mistake, and how would you redesign the specification to prevent this?",
+              "evaluation_criteria": "Should identify missing or weak CONSTRAINT about what not to include in outputs. The fix: add 'CONSTRAINTS: Never include internal pricing, margin, or cost information in customer-facing outputs. If the context contains this information, omit it from the response.' Should also identify the approval gate gap — external customer emails should have a human review step before sending. Should describe the test: paste a context with internal pricing data and verify the GPT omits it from the drafted response.",
+              "hints": [
+                "What constraint would have prevented internal information from appearing in a customer email?",
+                "What approval gate was missing that a human would have caught?"
+              ],
+              "xp_reward": 15
+            },
+            {
+              "id": "ex_aw_11",
+              "order_index": 2,
+              "type": "prompt_lab",
+              "prompt": "Write a 10-message test plan for a 3-Custom-GPT system: Research GPT (scope: finding and organizing information), Writing GPT (scope: drafting content from research), Review GPT (scope: reviewing drafts for quality). Include at least one message that would create an ambiguous handoff, and explain how to resolve it.",
+              "evaluation_criteria": "Must include 10 clearly labeled test messages. Messages should test all three GPTs at least twice each. Must include at least one ambiguous handoff scenario (e.g., the user asks the Writing GPT to 'also do some research on X' while drafting). The ambiguity resolution should redirect to the Research GPT and provide a structured handoff format. Must identify what a successful test looks like for each message (what output is expected).",
+              "hints": [
+                "Deliberately include messages that test the boundaries between GPTs. That is where handoff failures happen."
+              ],
+              "xp_reward": 10
+            },
+            {
+              "id": "ex_aw_12",
+              "order_index": 3,
+              "type": "multiple_choice",
+              "prompt": "Your Custom GPT's system instructions include 'Be concise when appropriate.' After a month of use, some responses are 50 words and some are 500 words for similar inputs. What is the root cause?",
+              "options": [
+                "The GPT needs to be retrained on your specific use cases.",
+                "The constraint 'when appropriate' requires the GPT to judge appropriateness, leading to inconsistency.",
+                "The context window is causing the GPT to forget the instruction.",
+                "Your team is providing inconsistent inputs."
+              ],
+              "correct_answer": "1",
+              "explanation": "Constraints that require model judgment produce inconsistent behavior. 'Be concise when appropriate' means the GPT decides what is appropriate — and different conversations produce different judgments. Replace with: 'Default response: under 150 words. Use more length only when the user explicitly asks for depth or when the input requires a multi-item list.' This removes the judgment requirement and produces consistent behavior.",
+              "hints": [
+                "What makes a constraint testable and consistent?"
+              ],
+              "xp_reward": 5
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

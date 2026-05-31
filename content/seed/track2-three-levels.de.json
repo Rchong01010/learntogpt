@@ -1,0 +1,419 @@
+{
+  "track": "three_levels",
+  "courses": [
+    {
+      "title": "Die drei Ebenen",
+      "slug": "three-levels",
+      "description": "ChatGPT gibt es in drei Modi: Chat, Co-work und Code. Lerne, was jeder Modus kann, wann du ihn einsetzen solltest und wie du die richtige Ebene für jede Aufgabe wählst.",
+      "difficulty": "beginner",
+      "order_index": 1,
+      "is_free": true,
+      "icon": "Layers",
+      "lessons": [
+        {
+          "title": "Die drei Arten, ChatGPT zu nutzen",
+          "slug": "three-ways-to-use-claude",
+          "description": "Chat, Co-work, Code. Drei Modi, drei Superkräfte. Verstehe das mentale Modell in 5 Minuten.",
+          "order_index": 1,
+          "xp_reward": 50,
+          "estimated_minutes": 5,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<p>ChatGPT ist nicht ein einziges Tool. Es sind drei, und jedes funktioniert anders.</p><p><strong>ChatGPT (Chat)</strong> ist eine Konversation. Du tippst, ChatGPT antwortet. Perfekt zum Denken, Schreiben, Brainstormen und für schnelle Antworten. Alles passiert in einem Chat-Fenster.</p><p><strong>ChatGPT Co-work</strong> ist ein Kollaborateur. Es sieht deine Dateien, arbeitet mit deinen Dokumenten und nimmt Änderungen im Kontext vor. Stell dir einen Kollegen vor, der deinen gesamten Ordner lesen und danach handeln kann.</p><p><strong>ChatGPT</strong> ist ein Erbauer. Es schreibt und führt Code aus, automatisiert Workflows und erstellt Dinge, die bestehen bleiben. Wenn du dich dabei ertappst, dieselbe Aufgabe jede Woche zu erledigen, macht Code sie ohne dich.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<p>So merkst du es dir am einfachsten:</p><p><strong>Chat</strong> = mit ChatGPT denken.<br><strong>Co-work</strong> = mit ChatGPT an Dateien arbeiten.<br><strong>Code</strong> = mit ChatGPT Dinge bauen.</p><p>Du brauchst nicht alle drei am ersten Tag. Fang mit dem an, der dein größtes Problem löst. Die meisten Menschen beginnen mit Chat und erweitern von dort.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_tl_01a"
+              },
+              {
+                "type": "text",
+                "content": "<p>Echte Menschen nutzen diese Ebenen ganz natürlich zusammen. Ein Kleinunternehmer chattet jeden Morgen mit ChatGPT, um Prioritäten zu planen, nutzt Co-work, um wöchentlich den Umsatz mit den Zielen abzugleichen, und lässt ChatGPT automatisch monatliche Kundenberichte erstellen. Ein Berater nutzt Chat für die Meeting-Vorbereitung, Co-work für Finanzmodelle und Code für wiederkehrende Lieferungen.</p><p>Das Muster ist immer dasselbe: Chat zum Denken, Co-work für Dateien, Code für Automatisierung.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_tl_01b"
+              },
+              {
+                "type": "summary",
+                "content": "<p>Drei Ebenen, ein Prinzip: Passe das Tool der Aufgabe an. Chat, wenn du denken musst. Co-work, wenn du Dateien bearbeiten musst. Code, wenn du automatisieren musst. Als Nächstes: Wie du großartige Ergebnisse aus dem ChatGPT Chat bekommst.</p>"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_tl_01a",
+              "order_index": 1,
+              "type": "matching_pairs",
+              "prompt": "Ordne jede Aufgabe der am besten geeigneten ChatGPT-Ebene zu.",
+              "options": null,
+              "correct_answer": "{\"Taglines für einen Produktlaunch brainstormen\":\"ChatGPT (Chat)\",\"Daten aus 12 Verträgen in eine Tabelle extrahieren\":\"ChatGPT Co-work\",\"Automatisch jeden Freitag einen Statusbericht generieren\":\"ChatGPT\",\"Feedback zu einer heiklen E-Mail vor dem Versenden einholen\":\"ChatGPT (Chat)\",\"Deinen Projektplan mit deiner Budget-Tabelle vergleichen\":\"ChatGPT Co-work\"}",
+              "explanation": "Denk- und Schreibaufgaben gehen an Chat. Datei-intensive Aufgaben gehen an Co-work. Wiederkehrende Automatisierung geht an Code. Das Signal ist, WOMIT du arbeitest: Ideen (Chat), Dateien (Co-work) oder sich wiederholende Prozesse (Code).",
+              "hints": [
+                "Frag dich: Denke ich, arbeite ich mit Dateien oder automatisiere ich etwas Wiederkehrendes?"
+              ],
+              "xp_reward": 15
+            },
+            {
+              "id": "ex_tl_01b",
+              "order_index": 2,
+              "type": "scenario_walkthrough",
+              "prompt": "Begleite die Woche eines Projektmanagers und wähle für jede Aufgabe die richtige ChatGPT-Ebene.",
+              "options": null,
+              "correct_answer": "{\"title\": \"Eine Woche in drei Ebenen\", \"steps\": [{\"type\": \"context\", \"text\": \"Du bist Projektmanager. Diese Woche landen drei Aufgaben auf deinem Schreibtisch. Jede erfordert eine andere ChatGPT-Ebene.\"}, {\"type\": \"choice\", \"claude_response\": \"Montag: Du brauchst Status-Updates für drei Zielgruppen – eine 5-Punkte-Zusammenfassung für den VP, eine Aufschlüsselung für dein Team und einen Fortschrittsbericht für den Kunden. Dieselbe Info, drei verschiedene Tonalitäten.\", \"question\": \"Welche Ebene nutzt du?\", \"options\": [\"Co-work — Projektdateien lesen und Updates entwerfen\", \"ChatGPT — ein Gespräch, drei maßgeschneiderte Ausgaben\", \"ChatGPT — die Status-Updates automatisieren\", \"Alle drei manuell schreiben\"], \"correct\": 1, \"feedback\": \"Texte für mehrere Zielgruppen zu schreiben ist Chats Stärke. Ein Gespräch, drei unterschiedlich formulierte Ausgaben. Keine Dateien nötig – nur Denken und Schreiben.\"}, {\"type\": \"choice\", \"claude_response\": \"Mittwoch: Du musst ein Kunden-Kickoff vorbereiten. Du hast das Projektbriefing, die Kundenfeedback-Historie und die Team-Kapazitätstabelle – alles auf deinem Computer.\", \"question\": \"Welche Ebene nutzt du?\", \"options\": [\"ChatGPT — nach Tipps für Meeting-Vorbereitung fragen\", \"Co-work — alle drei Dateien abgleichen und eine Agenda erstellen\", \"ChatGPT — Meeting-Vorbereitung automatisieren\", \"Manuell vorbereiten\"], \"correct\": 1, \"feedback\": \"Mehrere Dateien, die abgeglichen werden müssen, sind Co-works Revier. ChatGPT sieht das Briefing, das Feedback und die Kapazitäten gleichzeitig und erstellt eine Agenda, die alles berücksichtigt.\"}, {\"type\": \"choice\", \"claude_response\": \"Freitag: Du erstellst seit sechs Monaten manuell einen Wochenbericht aus drei Tabellen. Derselbe Prozess, 90 Minuten, jede einzelne Woche.\", \"question\": \"Was ist der richtige Schritt?\", \"options\": [\"ChatGPT — dir helfen, es diese Woche schneller zu machen\", \"Co-work — die Tabellen jeden Freitag verarbeiten\", \"ChatGPT — automatisieren, damit es jeden Freitag um 8 Uhr läuft\", \"Weiterhin manuell machen\"], \"correct\": 2, \"feedback\": \"90 Minuten mal 52 Wochen sind 78 Stunden pro Jahr für eine Aufgabe, die ein Computer in Sekunden erledigen kann. Eine wiederkehrende Aufgabe mit denselben Eingaben und demselben Output ist ChatGPTs Revier. Beschreibe sie einmal, und sie läuft jeden Freitag ohne dich.\"}]}",
+              "explanation": "Die Ebenen entsprechen der Art der Aufgabe: Denken und Schreiben geht an Chat, Arbeit mit mehreren Dateien geht an Co-work, wiederkehrende Prozesse gehen an Code. Das Signal liegt immer in der Aufgabe selbst.",
+              "hints": [
+                "Schau dir an, was involviert ist: nur Ideen? Dateien? Wiederholung?"
+              ],
+              "xp_reward": 25
+            }
+          ],
+          "is_free": true
+        },
+        {
+          "title": "ChatGPT: Chat, der mitdenkt",
+          "slug": "claude-ai-chat-that-thinks",
+          "description": "Wann du einfach ChatGPT nutzen solltest, wie du Kontext gibst und wie du iterierst, bis das Ergebnis stimmt.",
+          "order_index": 2,
+          "xp_reward": 75,
+          "estimated_minutes": 7,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<p>ChatGPT ist eine Konversation. Du tippst, es antwortet. Einfach – aber der Unterschied zwischen generischem Output und versandfertigem Output kommt auf eine Fähigkeit an: <strong>Kontext.</strong></p><p>Die meisten Leute tippen: <em>„Schreibe mir eine Marketing-E-Mail.“</em> Power-User tippen: <em>„Schreibe eine Marketing-E-Mail für unser B2B-Steuererklärungstool. Zielgruppe: Einzelunternehmer-Buchhalter, überlastet im April. Empathisch, nicht verkäuferisch. Unter 150 Wörtern.“</em> Dieselbe Aufgabe. Das eine würdest du löschen. Das andere würdest du senden.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<p>Fünf Arten von Kontext machen jedes Mal den Unterschied:</p><p><strong>1. Wer du bist</strong> — deine Rolle.<br><strong>2. Woran du arbeitest</strong> — die Aufgabe.<br><strong>3. Für wen es ist</strong> — die Zielgruppe.<br><strong>4. Welches Format</strong> — E-Mail, Tabelle, Aufzählung.<br><strong>5. Welche Einschränkungen</strong> — Länge, Ton, was vermieden werden soll.</p><p>Du brauchst nicht jedes Mal alle fünf. Je mehr du einbeziehst, desto weniger musst du am Ende bearbeiten.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_tl_02a"
+              },
+              {
+                "type": "text",
+                "content": "<p>Deine erste Antwort von ChatGPT ist ein Ausgangspunkt, kein fertiges Produkt. Die wahre Fähigkeit ist zu wissen, was du <strong>nach</strong> der Antwort tust. Lies sie. Finde, was nicht stimmt. Sag ChatGPT genau, was geändert werden soll.</p><p><strong>Vages Feedback</strong> wie „mach es besser“ bringt vage Ergebnisse. <strong>Spezifisches Feedback</strong> wie „die Einleitung ist zu förmlich – beginne mit einer Frage, die fesselt“ bringt echte Verbesserung. Benenne, was falsch ist UND was du stattdessen möchtest.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_tl_02b"
+              },
+              {
+                "type": "text",
+                "content": "<p>ChatGPT ist am besten, wenn du <strong>denken</strong> musst: Ideen brainstormen, Inhalte entwerfen, Entscheidungen durchgehen, Feedback einholen, dich auf schwierige Gespräche vorbereiten. Wenn du dich dabei ertappst, Dateien ins Chat-Fenster zu kopieren, ist das dein Signal, stattdessen Co-work zu nutzen.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_tl_02c"
+              },
+              {
+                "type": "summary",
+                "content": "<p>ChatGPT ist dein Denkpartner. Gib ihm Kontext (Rolle, Aufgabe, Zielgruppe, Format, Einschränkungen) und iteriere mit spezifischem Feedback. Nutze es für Brainstorming, Schreiben, Analyse und Entscheidungen. Als Nächstes: Wie Co-work alles verändert, wenn Dateien ins Spiel kommen.</p>"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_tl_02a",
+              "order_index": 1,
+              "type": "prompt_lab",
+              "prompt": "Du bist Immobilienmakler und schreibst eine Follow-up-E-Mail an ein Paar, das ein Haus mit 3 Schlafzimmern in Austin, TX, besichtigt hat. Sie liebten den Garten, waren aber besorgt über den Preis ($485K, über dem Budget). Schreibe einen kontextreichen Prompt für ChatGPT.",
+              "options": null,
+              "correct_answer": "{\"scenario\":\"Du bist Immobilienmakler und schreibst eine Follow-up-E-Mail nach einer Hausbesichtigung. Das Paar liebte den Garten, ist aber besorgt über den Preis ($485K, über dem Budget). Schreibe den Prompt, den du ChatGPT geben würdest.\",\"scoring_criteria\":[{\"keyword_group\":[\"real estate\",\"agent\",\"realtor\",\"I'm a\",\"I am a\"],\"label\":\"Gibt an, wer sie sind (Rolle)\",\"points\":3},{\"keyword_group\":[\"follow-up\",\"follow up\",\"toured\",\"showing\",\"house tour\",\"visited\",\"3-bedroom\",\"three bedroom\",\"Austin\"],\"label\":\"Beschreibt die Aufgabe/das Projekt\",\"points\":3},{\"keyword_group\":[\"couple\",\"buyers\",\"clients\",\"they\",\"husband\",\"wife\"],\"label\":\"Identifiziert die Zielgruppe\",\"points\":3},{\"keyword_group\":[\"email\",\"short\",\"brief\",\"concise\",\"warm\",\"friendly\",\"casual\",\"professional\"],\"label\":\"Gibt Format oder Ton an\",\"points\":3},{\"keyword_group\":[\"budget\",\"price\",\"485\",\"over budget\",\"backyard\",\"concern\",\"worried\",\"objection\",\"address\"],\"label\":\"Enthält Einschränkungen oder wichtige Details\",\"points\":3}],\"max_points\":15,\"pass_threshold\":9,\"ideal_prompt\":\"Ich bin Immobilienmakler. Schreibe eine Follow-up-E-Mail an ein Paar (Jake und Maria), das gestern ein Haus mit 3 Schlafzimmern in Austin besichtigt hat. Sie liebten den Garten und die Nachbarschaft, zögern aber, weil der Preis ($485K) leicht über ihrem Budget liegt. Der Ton sollte warm und ermutigend sein, nicht aufdringlich. Gehe behutsam auf die Preisbedenken ein – erwähne, dass der Verkäufer möglicherweise flexibel ist und dass der Gartenbereich, den sie liebten, in dieser Preisklasse selten ist. Halte es unter 150 Wörtern. Unterzeichne mit Sarah.\",\"tips\":[\"Beschreibe nicht nur die Aufgabe – füge die Details hinzu, die die E-Mail persönlich und spezifisch wirken lassen.\",\"Die Erwähnung des Gartens (was sie liebten) und der Preisbedenken (was sie zurückhält) gibt ChatGPT den emotionalen Kontext, um etwas Überzeugendes zu schreiben.\"]}",
+              "explanation": "Ein starker Prompt enthält alle fünf Kontexttypen: wer du bist, woran du arbeitest, für wen es ist, Format und Einschränkungen. Je spezifischer du wirst, desto näher ist ChatGPTs erster Entwurf an etwas, das du tatsächlich versenden würdest.",
+              "hints": [
+                "Überlege, was diese E-Mail persönlich statt vorlagenhaft wirken lassen würde."
+              ],
+              "xp_reward": 25
+            },
+            {
+              "id": "ex_tl_02b",
+              "order_index": 2,
+              "type": "scenario_walkthrough",
+              "prompt": "Gehe drei Iterationsrunden an einer Berater-Bio durch. Sieh, wie spezifisches Feedback vages Feedback jedes Mal schlägt.",
+              "options": null,
+              "correct_answer": "{\"title\": \"Iteriere wie ein Power-User\", \"steps\": [{\"type\": \"context\", \"text\": \"Du hast ChatGPT gefragt: 'Schreibe eine 1-Absatz-Bio für meine Consulting-Website. Ich helfe kleinen Unternehmen, ihre Abläufe mit KI zu automatisieren.' ChatGPTs erster Entwurf ist professionell, liest sich aber wie eine Unternehmens-Über-Uns-Seite – steif, generisch, vergesslich. Zeit zum Iterieren.\"}, {\"type\": \"choice\", \"claude_response\": \"Entwurf: 'Mit über einem Jahrzehnt Erfahrung in der Optimierung von Geschäftsprozessen ist unsere Beratung darauf spezialisiert, modernste künstliche Intelligenz-Lösungen zur Rationalisierung von Abläufen für kleine und mittelständische Unternehmen einzusetzen. Wir sind bestrebt, messbare Ergebnisse zu liefern und Organisationen zu befähigen, durch innovative Technologieimplementierung operative Exzellenz zu erreichen.'\", \"question\": \"Runde 1: Dieser Entwurf ist steif und generisch. Welches Feedback verbessert ihn am meisten?\", \"options\": [\"Mach es besser.\", \"Das klingt wie eine Unternehmensbroschüre von 2005. Schreibe es in der ersten Person um – ich möchte, dass es klingt, als würde ein echter Mensch jemandem auf einer Dinnerparty erklären, was er tut.\", \"Füge mehr Details hinzu.\", \"Kannst du es noch einmal versuchen?\"], \"correct\": 1, \"feedback\": \"'Mach es besser' gibt ChatGPT nichts Konkretes. Das Problem benennen (Unternehmensbroschüren-Ton) und das Gewünschte angeben (erste Person, Dinnerparty-Energie) gibt ein klares Ziel.\"}, {\"type\": \"choice\", \"claude_response\": \"Überarbeitet: 'Ich helfe Kleinunternehmern, nicht mehr in manueller Arbeit zu ertrinken. Wenn dein Team immer noch Daten zwischen Tabellen kopiert und einfügt, Rechnungen von Hand versendet oder Stunden mit Aufgaben verbringt, die Minuten dauern sollten – ich baue KI-Systeme, die all das erledigen. Du bekommst deine Zeit zurück. Ich habe Dutzenden von Unternehmen geholfen, ihre Routinearbeit zu halbieren.'\", \"question\": \"Runde 2: Viel besserer Ton. Aber die letzte Zeile ist vage. Welches Feedback trifft den Punkt?\", \"options\": [\"Mach den Schluss stärker.\", \"Ich mag es insgesamt, nur ein paar Änderungen.\", \"Der letzte Satz ist schwach – ersetze 'Dutzende von Unternehmen' durch ein spezifisches Ergebnis, wie 'Ich habe einer 4-Personen-Agentur geholfen, in ihrem ersten Monat 15 Stunden pro Woche zu sparen.'\", \"Frag ChatGPT, es als Gedicht umzuschreiben.\"], \"correct\": 2, \"feedback\": \"Das gewinnende Feedback weist auf den genauen Satz hin, benennt das Problem (generische Behauptung) und liefert eine konkrete Alternative. Das ist Präzision.\"}, {\"type\": \"choice\", \"claude_response\": \"Final: 'Ich helfe Kleinunternehmern, nicht mehr in manueller Arbeit zu ertrinken. Wenn dein Team immer noch Daten zwischen Tabellen kopiert und einfügt, Rechnungen von Hand versendet oder Stunden mit Aufgaben verbringt, die Minuten dauern sollten – ich baue KI-Systeme, die all das erledigen. Du bekommst deine Zeit zurück. Ich habe einer 4-Personen-Agentur geholfen, in ihrem ersten Monat 15 Stunden pro Woche zu sparen.'\", \"question\": \"Runde 3: Fast fertig. Du möchtest einen CTA am Ende. Welches Feedback schließt es ab?\", \"options\": [\"Füge einen CTA hinzu.\", \"Perfekt, nichts ändern.\", \"Behalte alles genau so bei, aber füge einen letzten Satz hinzu: 'Buche einen kostenlosen 15-minütigen Anruf, und ich zeige dir, was automatisierbar ist.' Verlinke es mit meiner Kalenderseite.\", \"Mach es länger.\"], \"correct\": 2, \"feedback\": \"Zerstöre keine Bio, die dir gefällt. Behalte, was funktioniert, füge genau einen Satz hinzu und gib die Formulierung an. Drei Runden spezifischen Feedbacks schlagen zwanzig Runden von 'mach es besser'.\"}\n]}",
+              "explanation": "Jede Runde demonstrierte ein Schlüsselprinzip: Runde 1 korrigierte den Ton mit einer spezifischen Anweisung. Runde 2 zielte auf einen schwachen Satz mit einem konkreten Ersatz ab. Runde 3 bewahrte das, was funktionierte, und fügte ein präzises Element hinzu. Spezifisches Feedback ist Gold, vages Feedback ist Lärm.",
+              "hints": [
+                "Das beste Feedback benennt genau, was falsch ist, und sagt ChatGPT genau, was du stattdessen möchtest."
+              ],
+              "xp_reward": 25
+            },
+            {
+              "id": "ex_tl_02c",
+              "order_index": 3,
+              "type": "multiple_choice",
+              "prompt": "Du musst dich mit ChatGPT auf eine Vorstandssitzung vorbereiten. Der Umsatz ist gestiegen, aber ihr habt zwei Meilensteine verfehlt. Welcher Ansatz liefert die nützlichste Vorbereitung?",
+              "options": [
+                "Hilf mir, mich auf meine Vorstandssitzung vorzubereiten.",
+                "Der Umsatz ist um 12 % gestiegen, aber wir haben zwei Produkt-Meilensteine verfehlt. Im Vorstand sitzt ein ehemaliger CFO, der bei der Burn-Rate gnadenlos nachbohrt, und ein technischer Gründer, der auf Produktgeschwindigkeit fokussiert ist. Gib mir die 5 härtesten Fragen, denen ich mich stellen werde, wer sie jeweils stellt und wie ich antworten sollte.",
+                "Was soll ich bei meiner Vorstandssitzung sagen?",
+                "Schreibe mir eine Präsentation über unsere Quartalsergebnisse."
+              ],
+              "correct_answer": "1",
+              "explanation": "ChatGPT ist hervorragend bei der adversarialen Vorbereitung. Der gewinnende Prompt gibt konkrete Zahlen (12 %, zwei Meilensteine), benennt die Zielgruppe (CFO, technischer Gründer) und fragt nach einem spezifischen Output (5 härteste Fragen mit Zuordnung und Antworten). Generische Anfragen bekommen generische Vorbereitung.",
+              "hints": [
+                "Überlege, was die Fragen jedes einzelnen Vorstandsmitglieds von generischen 'schwierigen Fragen' unterscheidet."
+              ],
+              "xp_reward": 10
+            }
+          ],
+          "is_free": true
+        },
+        {
+          "title": "ChatGPT Co-work: Dein Denkpartner",
+          "slug": "claude-co-work-thinking-partner",
+          "description": "Wenn ChatGPT deine Dateien sehen kann, ändert sich alles. Dokumente, Tabellen, Analyse über mehrere Dateien – alles ohne Kopieren und Einfügen.",
+          "order_index": 3,
+          "xp_reward": 75,
+          "estimated_minutes": 6,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<p>Wenn du jemals Text aus einem PDF kopiert, in ChatGPT eingefügt und dabei die Formatierung verloren hast – Co-work löst das. ChatGPT Co-work sieht deine tatsächlichen Dateien. Dokumente, Tabellen, Verträge, Meeting-Notizen. Kein Hochladen, kein Kopieren und Einfügen, kein Kontextverlust zwischen Dateien.</p><p>Der Wechsel von Chat zu Co-work ist einfach: <strong>Chat arbeitet mit Ideen. Co-work arbeitet mit Dateien.</strong></p>"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>Dokumente:</strong> Zeige ChatGPT einen 40-seitigen Vertrag und bitte um eine Risikoanalyse. Es liest das Ganze in Sekunden. Bitte es, ein einseitiges Memo aus den Ergebnissen zu erstellen und auf deinem Desktop zu speichern.</p><p><strong>Tabellen:</strong> ChatGPT fügt Formeln hinzu, erstellt Zusammenfassungsblätter, bereinigt unordentliche Daten und gleicht zwischen Dateien ab. Das Killer-Feature: erst prüfen, dann ändern. Bitte ChatGPT, zuerst Probleme zu markieren, dann genehmige die Korrekturen einzeln.</p><p><strong>Arbeit mit mehreren Dateien:</strong> Das ist Co-works Superkraft. Zeige ChatGPT einen ganzen Ordner und verarbeite alles auf einmal. Verlängerungsdaten aus 12 Verträgen extrahieren. Deinen Projektplan mit deinem Budget abgleichen. Meeting-Notizen mit Aufgaben vergleichen.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_tl_03a"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>Die Erst-Prüfen-Regel:</strong> Bei Daten und Dokumenten bitte ChatGPT immer, dir zuerst zu zeigen, was es gefunden hat, bevor es Änderungen vornimmt. „Prüfe diese Tabelle auf Probleme“ ist sicherer als „Räume diese Tabelle auf.“ Du überprüfst die Ergebnisse, genehmigst die Korrekturen und behältst die Kontrolle. Erteile niemals eine pauschale Freigabe für Datenänderungen.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_tl_03b"
+              },
+              {
+                "type": "text",
+                "content": "<p>Das Signal, von Chat zu Co-work zu wechseln, ist Reibung. Wenn du Zeit damit verbringst, Daten in den Browser zu kopieren, Dateien einzeln hochzuladen oder den Kontext zwischen Dokumenten zu verlieren – Co-work beseitigt all das. Deine Dateien bleiben, wo sie sind. ChatGPT kommt zu ihnen.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_tl_03c"
+              },
+              {
+                "type": "summary",
+                "content": "<p>Co-work sieht deine Dateien direkt. Nutze es für Dokumentenanalyse, Tabellenarbeit und Aufgaben mit mehreren Dateien. Prüfe immer zuerst, bevor du Daten änderst. Das Signal zum Wechsel von Chat: Du kopierst und fügst Dateien in den Browser ein. Als Nächstes: Was ChatGPT für dich bauen kann.</p>"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_tl_03a",
+              "order_index": 1,
+              "type": "prompt_lab",
+              "prompt": "Du hast 12 Lieferantenverträge als PDFs in deinem Verträge-Ordner. Dein Einkaufsteam braucht eine Master-Tabelle mit jedem Verlängerungsdatum, Kündigungsdatum und Zahlungstermin. Schreibe einen Prompt für Co-work.",
+              "options": null,
+              "correct_answer": "{\"scenario\":\"Du hast 12 Lieferantenverträge als PDFs in deinem Verträge-Ordner. Dein Einkaufsteam braucht eine Master-Tabelle mit jedem Verlängerungsdatum, Kündigungsdatum und Zahlungstermin über alle Verträge hinweg. Eine Zeile pro Vertrag. Schreibe einen Prompt für Co-work.\",\"scoring_criteria\":[{\"keyword_group\":[\"contract\",\"Contracts folder\",\"PDF\",\"all 12\",\"every\",\"each\"],\"label\":\"Dateien und Speicherort referenziert\",\"points\":1},{\"keyword_group\":[\"renewal\",\"termination\",\"payment\",\"deadline\",\"date\"],\"label\":\"Die zu extrahierenden Daten benannt\",\"points\":2},{\"keyword_group\":[\"spreadsheet\",\"table\",\"CSV\",\"Excel\",\"row\"],\"label\":\"Ausgabeformat angegeben\",\"points\":1},{\"keyword_group\":[\"one row\",\"per contract\",\"organized\",\"each contract\",\"columns\"],\"label\":\"Struktur beschrieben\",\"points\":1},{\"keyword_group\":[\"save\",\"desktop\",\"output\",\"create\",\"export\"],\"label\":\"Speicherort angegeben\",\"points\":1},{\"keyword_group\":[\"vendor\",\"name\",\"company\",\"identify\"],\"label\":\"Nach Vertragsidentifikation gefragt\",\"points\":1}],\"max_points\":7,\"pass_threshold\":4,\"ideal_prompt\":\"Gehe durch jeden Vertrag in meinem Verträge-Ordner. Extrahiere den Lieferantennamen, das Verlängerungsdatum, das Kündigungsdatum und den Zahlungstermin aus jedem Vertrag. Setze die Ergebnisse in eine Tabelle mit einer Zeile pro Vertrag und speichere sie auf meinem Desktop. Falls ein Datum fehlt oder unklar ist, markiere diese Zelle.\",\"tips\":[\"Die Angabe 'eine Zeile pro Vertrag' gibt ChatGPT eine klare Struktur.\",\"Wenn du ChatGPT bittest, fehlende Daten zu markieren, vermeidest du stille Lücken in deiner Tabelle.\",\"Extraktion aus mehreren Dateien ist Co-works Superkraft – es arbeitet systematisch ohne zu ermüden.\"]}",
+              "explanation": "Extraktion aus mehreren Dateien ist Co-work auf seinem besten Niveau. Sage, was extrahiert werden soll, wie der Output strukturiert sein soll und wo er gespeichert werden soll. Bitte es, fehlende Daten zu markieren, damit du keine stillen Lücken bekommst.",
+              "hints": [
+                "Sage Co-work genau, was extrahiert werden soll, wie der Output strukturiert und wo er gespeichert werden soll."
+              ],
+              "xp_reward": 25
+            },
+            {
+              "id": "ex_tl_03b",
+              "order_index": 2,
+              "type": "scenario_walkthrough",
+              "prompt": "Gehe das Bereinigen einer unordentlichen Tabelle mit Co-work durch. Sieh, warum Prüfen vor Ändern entscheidend ist.",
+              "options": null,
+              "correct_answer": "{\"title\": \"Datenbereinigung richtig gemacht\", \"steps\": [{\"type\": \"context\", \"text\": \"Deine Verkaufstabelle hat Probleme: doppelte Zeilen, gemischte Datumsformate und ein verdächtiger Eintrag von $847K, während alles andere zwischen $5K und $50K liegt. Der Quartalsbericht ist morgen.\"}, {\"type\": \"choice\", \"claude_response\": \"Du musst diese Tabelle aufräumen. Wie fängst du an?\", \"question\": \"Was bittest du Co-work zuerst zu tun?\", \"options\": [\"Räume diese Tabelle auf und mach sie hübsch\", \"Behebe alles automatisch, ich vertraue dir\", \"Prüfe diese Tabelle auf Datenqualitätsprobleme. Suche nach Duplikaten, Formatinkonsistenzen und Ausreißern.\", \"Lösche alle schlechten Daten\"], \"correct\": 2, \"feedback\": \"Erst prüfen, dann ändern. Überprüfe zuerst die Probleme, dann genehmige die Korrekturen. 'Räum es auf' ist zu vage und könnte echte Probleme verdecken.\"}, {\"type\": \"choice\", \"claude_response\": \"ChatGPT hat 3 Probleme gefunden:\\n1. Zeilen 47 und 48 sind exakte Duplikate\\n2. Die Datumsspalte mischt MM/TT/JJJJ und TT-MMM-JJ Formate\\n3. Zeile 112 zeigt $847.000 – jeder andere Deal liegt zwischen $5K und $50K (möglicher Dezimalfehler: $8.470?)\\n\\nChatGPT fragt: 'Soll ich die Daten korrigieren und das Duplikat entfernen? Den Ausreißer lasse ich für deine Überprüfung.'\", \"question\": \"Wie antwortest du?\", \"options\": [\"Behebe alles, einschließlich des Ausreißers\", \"Mach weiter mit den Daten und dem Duplikat. Beim Ausreißer prüfe, ob $8.470 im Vergleich zu den anderen Deals dieses Kunden Sinn ergibt.\", \"Fass nichts an, ich mache es manuell\", \"Behebe nur die Datumsformate, lass alles andere\"], \"correct\": 1, \"feedback\": \"Spezifische Regeln für jedes Problem. Sichere Korrekturen genehmigen, Logik für unsichere angeben. So hältst du die Datenqualität aufrecht, während ChatGPT die schwere Arbeit erledigt.\"}, {\"type\": \"choice\", \"claude_response\": \"ChatGPT hat die Daten korrigiert, das Duplikat entfernt und bestätigt, dass $8.470 basierend auf der Kundenhistorie wahrscheinlich korrekt ist. Die Tabelle ist bereinigt.\", \"question\": \"Ein letzter Schritt vor dem Quartalsbericht. Was bittest du?\", \"options\": [\"Sende es an meinen Chef\", \"Markiere jede Zelle, die du geändert hast, gelb, damit ich deine Arbeit vor dem Meeting überprüfen kann.\", \"Lösche die Originalversion\", \"Es ist okay, ich vertraue dem\"], \"correct\": 1, \"feedback\": \"Immer überprüfen. Das Hervorheben von Änderungen lässt dich ChatGPTs Arbeit in Minuten stichprobenartig prüfen, anstatt das ganze Blatt nochmals zu lesen. Vertrauen ist gut, Kontrolle ist besser.\"}]}",
+              "explanation": "Datenbereinigung mit ChatGPT: erst prüfen, dann mit spezifischen Regeln genehmigen, dann die Änderungen überprüfen. Erteile niemals eine pauschale Freigabe. Das Prüfen-dann-Korrigieren-Muster fängt Probleme ab, die 'einfach aufräumen' übersehen würde.",
+              "hints": [
+                "Überlege, wie du ChatGPTs Änderungen sichtbar machen kannst, um sie zu überprüfen."
+              ],
+              "xp_reward": 25
+            },
+            {
+              "id": "ex_tl_03c",
+              "order_index": 3,
+              "type": "multiple_choice",
+              "prompt": "Du nutzt derzeit ChatGPT für alles. Du verbringst jeden Tag 20 Minuten damit, Daten aus Tabellen in den Browser zu kopieren. Was ist das Signal?",
+              "options": [
+                "Du brauchst ChatGPT, um alles zu automatisieren",
+                "Du solltest Co-work für deine Tabellenarbeit nutzen – es liest Dateien direkt",
+                "ChatGPT ist in Ordnung, du musst nur schneller beim Kopieren werden",
+                "Hör auf, ChatGPT für Datenarbeit zu verwenden"
+              ],
+              "correct_answer": "1",
+              "explanation": "Die Kopieren-und-Einfügen-Reibung ist das Signal, dass du für diese Aufgabe über Chat hinausgewachsen bist. Co-work liest deine Dateien direkt. Du musst nicht alles umstellen – nur die datei-intensive Arbeit, die Reibung erzeugt.",
+              "hints": [
+                "Was ist die Reibung, und welche Ebene beseitigt sie?"
+              ],
+              "xp_reward": 10
+            }
+          ],
+          "is_free": true
+        },
+        {
+          "title": "ChatGPT: Bauen mit Worten",
+          "slug": "claude-code-build-with-words",
+          "description": "Automatisiere wiederkehrende Arbeit, baue Tools und erstelle Workflows, die ohne dich laufen. Keine Programmiererfahrung nötig.",
+          "order_index": 4,
+          "xp_reward": 75,
+          "estimated_minutes": 6,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<p>ChatGPT ist der Punkt, an dem du aufhörst, Arbeit zu erledigen, und anfängst, Arbeit zu beschreiben. Du sagst ChatGPT, was passieren soll, und es baut das Ding, das es passieren lässt. Wochenberichte, Daten-Pipelines, automatisierte E-Mails, eigene Tools – alles in einfacher Sprache beschrieben.</p><p>Du musst nicht programmieren können. Du musst wissen, wie du beschreibst, was du willst. Wenn du einem neuen Mitarbeiter einen Prozess erklären kannst, kannst du ihn auch ChatGPT erklären.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<p>Das Signal, ChatGPT einzusetzen, ist <strong>Wiederholung</strong>. Jede Aufgabe, die du mehr als zweimal auf dieselbe Weise erledigst, ist ein Kandidat. Einige echte Beispiele:</p><p><strong>Wöchentlicher Statusbericht</strong> aus drei Tabellen? Beschreibe die Eingaben, die Vorlage und den Ausgabeort. ChatGPT baut es. Es läuft jeden Freitag um 8 Uhr ohne dich.</p><p><strong>Kunden-Onboarding-E-Mails</strong> mit personalisierten Details? Beschreibe die Vorlage, die Datenquelle und den Auslöser. ChatGPT sendet sie, wenn ein neuer Kunde sich anmeldet.</p><p><strong>Monatliche Budget-Konsolidierung</strong> aus vier Tabellen? Dieselben Eingaben, dieselbe Verarbeitung, dieselbe Ausgabe – jeden einzelnen Monat. ChatGPT erledigt es in Sekunden statt in einem halben Tag.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_tl_04a"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>Die natürliche Entwicklung:</strong> Die meisten Menschen entdecken ChatGPT, nachdem sie einen Workflow in Co-work bewiesen haben. Du verarbeitest manuell fünf Kunden-E-Mails mit Co-work. Es funktioniert großartig. Dann merkst du, dass du das alle zwei Wochen machst. Das ist der Moment, es zu ChatGPT zu verschieben – beschreibe das Muster einmal, und es läuft automatisch.</p><p>Co-work beweist den Prozess. Code automatisiert ihn.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_tl_04b"
+              },
+              {
+                "type": "text",
+                "content": "<p>ChatGPT ist auch die Brücke zum Bauen echter Tools. Willst du ein Dashboard, das deine Sales-Pipeline zeigt? Ein Skript, das jeden Morgen deine Inbox aufräumt? Eine eigene App für dein Team? Beschreibe es in Worten. ChatGPT baut es. Hier knüpft der „Etwas Bauen“-Track an – und hier wird ChatGPT vom Assistenten zum Co-Builder.</p>"
+              },
+              {
+                "type": "summary",
+                "content": "<p>ChatGPT automatisiert wiederkehrende Arbeit und baut Tools aus Klartextbeschreibungen. Das Signal: jede Aufgabe, die du mehr als zweimal auf dieselbe Weise erledigst. Der Weg: Beweise es in Co-work, dann automatisiere es in Code. Als Nächstes: Wie du die richtige Ebene für jede Aufgabe wählst.</p>"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_tl_04a",
+              "order_index": 1,
+              "type": "multiple_choice",
+              "prompt": "Jeden Freitag erstellst du einen Statusbericht aus 3 Tabellen. Es dauert 2 Stunden. Dasselbe Format jede Woche. Was würdest du ChatGPT sagen?",
+              "options": [
+                "Hilf mir bei meinem Statusbericht",
+                "Jeden Freitag um 8 Uhr: Ziehe Daten aus den drei Tabellen in meinem Berichte-Ordner, kombiniere sie in die Status-Vorlage in meinem Vorlagen-Ordner und speichere den fertigen Bericht in Berichte/Wöchentlich/ mit dem Datum dieser Woche im Dateinamen",
+                "Schreibe ein Python-Skript, das drei CSVs liest",
+                "Öffne alle drei Tabellen für mich"
+              ],
+              "correct_answer": "1",
+              "explanation": "Option B beschreibt die vollständige Automatisierung: den Zeitplan (Freitag 8 Uhr), die Eingaben (drei Tabellen), die Verarbeitung (mit Vorlage kombinieren) und die Ausgabe (datierte Datei in einem bestimmten Ordner). Das ist alles, was ChatGPT braucht, um es einmal zu bauen und für immer laufen zu lassen.",
+              "hints": [
+                "ChatGPT muss wissen: wann, was kommt rein, was passiert und wohin geht die Ausgabe."
+              ],
+              "xp_reward": 10
+            },
+            {
+              "id": "ex_tl_04b",
+              "order_index": 2,
+              "type": "scenario_walkthrough",
+              "prompt": "Begleite den Weg von manuellen E-Mails zur vollständigen Automatisierung. Sieh, wie Co-work den Prozess beweist und Code ihn automatisiert.",
+              "options": null,
+              "correct_answer": "{\"title\": \"Von manuell zu automatisiert\", \"steps\": [{\"type\": \"context\", \"text\": \"Du sendest alle zwei Wochen 5 personalisierte Projekt-Update-E-Mails. Die Details jedes Kunden befinden sich in separaten Projektordnern. Lass uns den Weg von manueller Arbeit zur Automatisierung nachverfolgen.\"}, {\"type\": \"choice\", \"claude_response\": \"Du brauchst 5 personalisierte Update-E-Mails. Du hast einen Projektordner für jeden Kunden mit Status-Dokumenten, Zeitplänen und Meeting-Notizen.\", \"question\": \"Was ist der effizienteste erste Ansatz?\", \"options\": [\"ChatGPT öffnen und die Dateien jedes Kunden einzeln hineinkopieren\", \"In Co-work: 'Lies den Projektordner jedes Kunden. Erstelle eine personalisierte Update-E-Mail mit Meilensteinen und nächsten Schritten.'\", \"Alle fünf E-Mails von Grund auf schreiben\", \"Ein allgemeines Update an alle fünf Kunden senden\"], \"correct\": 1, \"feedback\": \"Co-work liest alle fünf Projektordner und erstellt fünf personalisierte Entwürfe in Minuten. Jeder erwähnt die richtigen Meilensteine und klingt, als hättest du ihn geschrieben.\"}, {\"type\": \"choice\", \"claude_response\": \"Die fünf Entwürfe sehen großartig aus. Aber du merkst, dass du diese Art von Updates alle zwei Wochen sendest. Dasselbe Format, derselbe Prozess, dieselben 5 Kunden.\", \"question\": \"Was ist der nächste Schritt?\", \"options\": [\"Weiterhin alle zwei Wochen Co-work nutzen – es ist schnell genug\", \"Verschiebe das zu ChatGPT: 'Jeden zweiten Montag um 8 Uhr lies den aktuellen Status jedes Kunden, erstelle Update-E-Mails und speichere sie in meinem Entwürfe-Ordner zur Überprüfung.'\", \"Zurück zum manuellen Schreiben\", \"Aufhören, Updates zu senden\"], \"correct\": 1, \"feedback\": \"Die natürliche Entwicklung: Beweise den Workflow in Co-work, dann automatisiere ihn in Code, wenn du dem Muster vertraust. Deine zweiwöchentlichen Updates generieren sich jetzt von selbst.\"}, {\"type\": \"choice\", \"claude_response\": \"Die Automatisierung läuft seit einem Monat. Kunden reagieren positiv. Jetzt möchtest du, dass jede E-Mail etwas Spezifisches aus den letzten Meeting-Notizen des Kunden enthält.\", \"question\": \"Wie verbesserst du die Automatisierung?\", \"options\": [\"Zurück zum manuellen Schreiben\", \"Sage ChatGPT: 'Lies auch die aktuellsten Meeting-Notizen jedes Kunden und füge ein spezifisches Follow-up oder einen Insight aus dem Meeting in die E-Mail ein.'\", \"Meeting-Notizen als separate E-Mail senden\", \"Meeting-Notizen ignorieren\"], \"correct\": 1, \"feedback\": \"Du kannst die Automatisierung schrittweise mit Personalisierung anreichern. Jede Verbesserung lässt die automatisierten E-Mails menschlicher klingen, nicht weniger.\"}]}",
+              "explanation": "Der Weg von manuell zu automatisiert: Beweise den Prozess mit Co-work, dann steigere auf ChatGPT, wenn er sich wiederholt. Du kannst die Automatisierung jederzeit erweitern, ohne von vorne anzufangen.",
+              "hints": [
+                "Überlege, was jeden Schritt zu einer natürlichen Weiterentwicklung macht, nicht zu einem Sprung."
+              ],
+              "xp_reward": 25
+            }
+          ],
+          "is_free": true
+        },
+        {
+          "title": "Die richtige Ebene wählen",
+          "slug": "choosing-the-right-level",
+          "description": "Ein Entscheidungsrahmen, um für jede Aufgabe Chat, Co-work oder Code zu wählen. Praxisnahe Szenarien, denen du wirklich begegnen wirst.",
+          "order_index": 5,
+          "xp_reward": 75,
+          "estimated_minutes": 6,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<p>Drei Fragen sagen dir, welche Ebene du nutzen sollst:</p><p><strong>1. Arbeite ich mit Dateien?</strong> Nein → Chat. Ja → Co-work (oder Code, wenn es sich wiederholt).</p><p><strong>2. Werde ich das auf dieselbe Weise wieder tun?</strong> Nein → Chat oder Co-work. Ja → Code.</p><p><strong>3. Muss ich denken oder an Dateien arbeiten?</strong> Denken → Chat. An Dateien arbeiten → Co-work. Wiederholt arbeiten → Code.</p><p>Das ist das gesamte Framework. Drei Fragen, klare Antworten jedes Mal.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_tl_05a"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>Häufige Fallen, die du vermeiden solltest:</strong></p><p>Chat nutzen, wenn du Co-work nutzen solltest: Wenn du Dateien ins Browserfenster kopierst und einfügst, wechsle zu Co-work.</p><p>Zu früh zu Code springen: Beweise den Workflow erst manuell. Einen schlechten Prozess zu automatisieren, macht schlechte Ergebnisse nur schneller.</p><p>Für alles auf einer Ebene bleiben: Jede Ebene hat ihre Stärke. Ein Hammer ist großartig, bis du einen Schraubenzieher brauchst.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_tl_05b"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>Fang einfach an, erweitere bei Reibung.</strong> Die meisten beginnen mit Chat und das ist in Ordnung. Wenn du Kopier-Reibung bemerkst, probiere Co-work. Wenn du Wiederholungen bemerkst, probiere Code. Du musst nicht alle drei meistern – erkenne einfach, wann es Zeit ist, nach dem nächsten zu greifen.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_tl_05c"
+              },
+              {
+                "type": "summary",
+                "content": "<p>Drei Fragen: Arbeitest du mit Dateien? Wirst du das wiederholen? Denken oder handeln? Chat zum Denken, Co-work für Dateien, Code für Automatisierung. Fang mit Chat an, erweitere, wenn die Reibung es dir sagt. Du hast jetzt das komplette mentale Modell, um ChatGPT auf jeder Ebene einzusetzen.</p>"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_tl_05a",
+              "order_index": 1,
+              "type": "matching_pairs",
+              "prompt": "Ordne jedes Szenario mit dem Drei-Fragen-Framework der richtigen ChatGPT-Ebene zu.",
+              "options": null,
+              "correct_answer": "{\"Entscheiden, ob man einen Freelancer oder einen Festangestellten einstellt\":\"ChatGPT (Chat) — Denkaufgabe, keine Dateien, einmalig\",\"Dein Q1-Budget mit den tatsächlichen Ausgaben vergleichen\":\"ChatGPT Co-work — Arbeit mit Dateien, nicht wiederkehrend\",\"Automatisch jeden Montag einen Sales-Pipeline-Bericht generieren\":\"ChatGPT — wiederkehrende Automatisierung aus Dateien\",\"Eine schwierige Slack-Nachricht an dein Team formulieren\":\"ChatGPT (Chat) — Denken/Schreiben, keine Dateien\",\"Aufgaben aus 8 Meeting-Protokollen extrahieren\":\"ChatGPT Co-work — Extraktion aus mehreren Dateien, einmalig\",\"Ein Dashboard bauen, das sich täglich aus deinem CRM-Export aktualisiert\":\"ChatGPT — wiederkehrend, dateibasiert, muss gebaut werden\"}",
+              "explanation": "Die drei Fragen sortieren jede Aufgabe: Dateien involviert? (Chat vs. Co-work) Wiederkehrend? (Einmal vs. Code) Denken oder handeln? (Chat vs. die anderen). Stelle die Fragen und die Antwort ergibt sich.",
+              "hints": [
+                "Frage dich bei jedem Szenario: Dateien? Wiederkehrend? Denken oder handeln?"
+              ],
+              "xp_reward": 15
+            },
+            {
+              "id": "ex_tl_05b",
+              "order_index": 2,
+              "type": "scenario_walkthrough",
+              "prompt": "Drei Personen nutzen die falsche ChatGPT-Ebene. Diagnostiziere die Fehlzuordnung und empfiehl die richtige.",
+              "options": null,
+              "correct_answer": "{\"title\": \"Ebenen-Fehlzuordnungs-Klinik\", \"steps\": [{\"type\": \"context\", \"text\": \"Drei echte Situationen, in denen jemand die falsche ChatGPT-Ebene nutzt. Deine Aufgabe: Erkenne die Fehlzuordnung und empfiehl die Lösung.\"}, {\"type\": \"choice\", \"claude_response\": \"Sarah verbringt jeden Morgen 20 Minuten damit, ihre Verkaufstabelle in ChatGPT zu kopieren, nach Erkenntnissen zu fragen und dann ChatGPTs Vorschläge manuell wieder in die Tabelle einzutragen.\", \"question\": \"Was ist die Fehlzuordnung?\", \"options\": [\"Sie sollte aufhören, ChatGPT zu benutzen\", \"Sie sollte zu Co-work wechseln – es liest und bearbeitet ihre Tabelle direkt, ohne Kopieren und Einfügen\", \"Sie sollte zu ChatGPT wechseln, um das Ganze zu automatisieren\", \"Sie sollte ein anderes KI-Tool verwenden\"], \"correct\": 1, \"feedback\": \"Kopier-Reibung ist das klassische Chat-zu-Co-work-Signal. Co-work liest die Tabelle am Speicherort, gibt Erkenntnisse und nimmt Änderungen direkt vor. Das 20-Minuten-Kopier-Ritual verschwindet.\"}, {\"type\": \"choice\", \"claude_response\": \"Marcus hat eine ChatGPT-Code-Automatisierung gebaut, um seine LinkedIn-Posts zu entwerfen. Aber er postet nur einmal pro Woche, jeder Post ist anders, und er verbringt mehr Zeit mit der Feinabstimmung der Automatisierung als mit dem Schreiben.\", \"question\": \"Was ist die Fehlzuordnung?\", \"options\": [\"Er sollte ChatGPT nutzen – wöchentliches kreatives Schreiben mit verschiedenen Themen ist eine Konversation, keine Automatisierung\", \"Er sollte die Automatisierung mit besseren Vorlagen verbessern\", \"Er sollte zu Co-work wechseln\", \"Er sollte häufiger posten, um die Automatisierung zu rechtfertigen\"], \"correct\": 0, \"feedback\": \"Kreative, einmalige Aufgaben profitieren nicht von Automatisierung. Ein wöchentlicher LinkedIn-Post mit jedes Mal unterschiedlichen Themen ist eine Konversation – Chat mit einem Brand-Voice-Projekt erledigt das perfekt.\"}, {\"type\": \"choice\", \"claude_response\": \"Priya nutzt jeden Freitag Co-work, um drei Tabellen zu einem Statusbericht zu verarbeiten. Dieselben drei Dateien, dieselbe Vorlage, derselbe Prozess. Es dauert jedes Mal 15 Minuten.\", \"question\": \"Was ist die Fehlzuordnung?\", \"options\": [\"Sie sollte für schnellere Verarbeitung zu Chat wechseln\", \"Co-work ist in Ordnung – 15 Minuten sind nicht schlimm\", \"Sie sollte das zu ChatGPT verschieben – dieselben Eingaben, derselbe Prozess, jede Woche ist das Automatisierungssignal\", \"Sie sollte es stattdessen manuell machen\"], \"correct\": 2, \"feedback\": \"Dieselben Eingaben + derselbe Prozess + jede Woche = Automatisierungssignal. ChatGPT erledigt das jeden Freitag um 8 Uhr ohne Priyas Zutun. 15 Minuten mal 52 Wochen sind 13 Stunden pro Jahr, die sie zurückbekommt.\"}]}",
+              "explanation": "Ebenen-Fehlzuordnungen verschwenden Zeit. Chat-zu-Co-work-Signal: Kopier-Reibung. Code-zu-Chat-Signal: Kreative Arbeit überautomatisieren. Co-work-zu-Code-Signal: Jede Woche dasselbe tun. Erkenne das Signal, wechsle die Ebene.",
+              "hints": [
+                "Suche nach der Reibung oder Verschwendung im aktuellen Ansatz jeder Person."
+              ],
+              "xp_reward": 25
+            },
+            {
+              "id": "ex_tl_05c",
+              "order_index": 3,
+              "type": "prompt_lab",
+              "prompt": "Denke an deine eigene Arbeit. Beschreibe eine Aufgabe, die du regelmäßig erledigst, und erkläre, welche ChatGPT-Ebene du dafür nutzen würdest und warum. Wende das Drei-Fragen-Framework an.",
+              "options": null,
+              "correct_answer": "{\"scenario\":\"Denke an eine echte Aufgabe aus deiner eigenen Arbeit – etwas, das du mindestens wöchentlich machst. Beschreibe die Aufgabe und erkläre, welche ChatGPT-Ebene (Chat, Co-work oder Code) du nutzen würdest. Wende das Drei-Fragen-Framework an: (1) Arbeite ich mit Dateien? (2) Werde ich das wiederholen? (3) Denke ich oder arbeite ich an Dateien?\",\"scoring_criteria\":[{\"keyword_group\":[\"I\",\"my\",\"we\",\"our\",\"every\",\"weekly\",\"daily\",\"monthly\",\"regularly\"],\"label\":\"Eine echte persönliche Aufgabe beschrieben\",\"points\":2},{\"keyword_group\":[\"chat\",\"co-work\",\"code\",\"ChatGPT\",\"ChatGPT\"],\"label\":\"Eine spezifische ChatGPT-Ebene benannt\",\"points\":2},{\"keyword_group\":[\"file\",\"spreadsheet\",\"document\",\"folder\",\"data\",\"thinking\",\"writing\",\"brainstorm\",\"automate\",\"recurring\",\"repeat\"],\"label\":\"Verbindung zu den Framework-Kriterien hergestellt\",\"points\":3},{\"keyword_group\":[\"because\",\"since\",\"so\",\"which means\",\"that's why\",\"the reason\"],\"label\":\"Die Begründung erklärt\",\"points\":2}],\"max_points\":9,\"pass_threshold\":5,\"ideal_prompt\":\"Jeden Montag erstelle ich eine Team-Standup-Zusammenfassung aus Slack-Nachrichten und Meeting-Notizen als einseitiges Dokument für meinen Vorgesetzten. Es geht um Dateien (Meeting-Notizen), es ist wiederkehrend (jeden Montag) und es ist jedes Mal derselbe Prozess. Ich würde mit Co-work beginnen, um den Workflow zu beweisen, und dann zu ChatGPT wechseln, sobald ich dem Output vertraue. Das Drei-Fragen-Framework: Dateien = ja (Co-work oder Code), wiederkehrend = ja (Code), Denken vs. Handeln = an Dateien arbeiten (Code).\",\"tips\":[\"Wähle eine Aufgabe, die du tatsächlich machst, keine hypothetische.\",\"Gehe alle drei Fragen explizit durch.\",\"Wenn du zwischen zwei Ebenen unsicher bist, erkläre warum – das zeigt echtes Verständnis.\"]}",
+              "explanation": "Das Framework auf die eigene Arbeit anzuwenden, lässt es hängen bleiben. Die drei Fragen (Dateien? Wiederkehrend? Denken oder handeln?) sortieren jede Aufgabe in die richtige Ebene. Das beste Lernen passiert, wenn du es auf etwas Reales abbildest.",
+              "hints": [
+                "Wähle etwas, das du tatsächlich tust, nichts Hypothetisches. Gehe die drei Fragen durch."
+              ],
+              "xp_reward": 25
+            }
+          ],
+          "is_free": true
+        }
+      ]
+    }
+  ]
+}

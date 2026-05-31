@@ -1,0 +1,534 @@
+{
+  "track": "practitioner_setup",
+  "courses": [
+    {
+      "title": "The Practitioner Setup",
+      "slug": "practitioner-setup",
+      "description": "The complete ChatGPT setup for professional workflows. Custom Instructions as your persistent profile. ChatGPT Memory for durable context. Custom GPT configuration, integrations, and workflow design. Everything that makes ChatGPT compound across sessions instead of starting from scratch.",
+      "difficulty": "intermediate",
+      "order_index": 6,
+      "is_free": true,
+      "icon": "Cog",
+      "lessons": [
+        {
+          "title": "Custom Instructions: Your ChatGPT Profile",
+          "slug": "claude-md-project-spine",
+          "description": "The first step in any serious ChatGPT setup: write Custom Instructions that load your context, role, and preferences into every conversation automatically — no re-explaining required.",
+          "order_index": 1,
+          "xp_reward": 75,
+          "estimated_minutes": 6,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<p><strong>Custom Instructions</strong> are two text fields in ChatGPT settings that load into every conversation before your first message. You find them at Settings → Personalization → Custom Instructions. Two fields: \"What would you like ChatGPT to know about you?\" and \"How would you like ChatGPT to respond?\"</p><p>Think of Custom Instructions as the briefing document you give a new consultant who is highly skilled but knows nothing about you or your work. Without it, every conversation begins with ChatGPT making educated guesses about your role, your context, and what kind of responses actually help you. Guesses become generic answers. Generic answers require follow-up. Follow-up takes time you do not have. Custom Instructions short-circuit this entire chain.</p><p>Custom GPTs have their own separate instructions field — more on that in Lesson 3. This lesson covers the account-level Custom Instructions that apply to every standard ChatGPT conversation.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>Field 1: What ChatGPT should know about you.</strong> This is your professional context — the background that makes answers more relevant. Four elements that earn their keep:</p><p><strong>Role and industry.</strong> What you do and where you do it. Not a job title — a description of the work. <em>\"I lead AI strategy at a mid-market SaaS company. I work with C-suite executives on technology decisions and with engineering teams on implementation.\"</em> This changes every answer ChatGPT gives about organizational dynamics, stakeholder communication, and technical trade-offs.</p><p><strong>Current projects.</strong> What you are actively working on. Update this every month. <em>\"Currently evaluating AI tools for our customer support team (50 agents, Zendesk stack) and building an internal prompt library for our sales team.\"</em> Now every answer is grounded in your actual context, not a generic scenario.</p><p><strong>Expertise level.</strong> What you already know, so ChatGPT does not explain it to you. <em>\"I have a strong background in sales operations and revenue analytics. I am comfortable with SQL and spreadsheet modeling. I am newer to LLMs and AI infrastructure.\"</em> This calibrates the depth and vocabulary of every response.</p><p><strong>Communication context.</strong> Who you write for and what voice you use. <em>\"I primarily write for C-suite executives and board-level audiences. Direct, evidence-based, no buzzwords.\"</em> Every draft ChatGPT helps you write now starts closer to your actual needs.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>Field 2: How you want ChatGPT to respond.</strong> This is your response contract — the rules every reply should follow. Four rules that change behavior immediately:</p><p><strong>Length and structure.</strong> <em>\"Default to concise responses unless I ask for depth. Use headers and bullets when structure helps. Avoid long paragraphs unless I am drafting prose.\"</em></p><p><strong>Tone.</strong> <em>\"Direct and professional. No filler phrases like 'Great question!' or 'Certainly!' Start answers immediately.\"</em></p><p><strong>Pushback style.</strong> <em>\"If my plan has a gap or my assumption is wrong, tell me directly. Do not soften criticism to the point where I miss it.\"</em></p><p><strong>Format defaults.</strong> <em>\"When I ask for a draft, give me the draft — not an explanation of how you would approach the draft. When I ask for analysis, lead with the conclusion, then support it.\"</em></p><p>The rule: specific beats general. \"Be concise\" is a wish. \"Responses under 200 words unless I ask for depth\" is a contract. The more specific your response rules, the more consistently ChatGPT follows them.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ps_01"
+              },
+              {
+                "type": "text",
+                "content": "<p>Example Custom Instructions — adapt these to your actual context:</p><p><strong>What ChatGPT should know about you:</strong></p><pre><code>I am the Director of AI Strategy at a B2B SaaS company (200 employees, $25M ARR).\nI work with the executive team on AI adoption strategy and with engineering on implementation.\nBackground: 10 years in enterprise sales, 3 years in AI/ML project work.\nComfortable with SQL, Python basics, and API concepts. Not a developer.\nCurrent projects: internal AI policy framework, prompt library for sales team (40 reps),\nevaluating three AI vendors for CS automation.\nI write primarily for C-suite and board audiences. My team reads my work too.</code></pre><p><strong>How ChatGPT should respond:</strong></p><pre><code>Direct and structured. No filler phrases — start with the answer.\nDefault: concise (under 150 words). Go deeper only when I ask.\nUse bullets and headers when there are 3+ items.\nIf my plan has a flaw, name it clearly. I prefer honest friction to polite evasion.\nWhen drafting: give me the draft, not a description of what the draft would include.\nWhen analyzing: lead with the conclusion, then the supporting evidence.</code></pre><p>Notice the specificity. \"Lead with the conclusion, then the supporting evidence\" changes how every analysis is structured. \"Give me the draft, not a description\" eliminates the most common ChatGPT time-waster. Each rule has a clear behavioral consequence.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>Maintenance discipline.</strong> Custom Instructions are not a set-and-forget configuration. Update them when:</p><ul><li>Your role or company changes</li><li>Your current projects shift significantly</li><li>You notice ChatGPT consistently making the same wrong assumption</li><li>You find yourself correcting the same thing in multiple conversations</li></ul><p>The right habit: when you write the same correction more than twice in separate conversations — \"actually, I am not a developer\" or \"please lead with the conclusion\" — that correction belongs in Custom Instructions. If it was worth saying three times, it belongs in the configuration that means you never have to say it again.</p><p><strong>Length discipline.</strong> Custom Instructions have a character limit (around 1,500 characters per field). Use that space for what matters most. A Custom Instructions set that tries to cover everything covers nothing well. Write the six rules that change the most behavior. Leave out the edge cases. Edge cases belong in per-conversation context.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>Common mistakes when writing Custom Instructions.</strong> The most expensive mistake is writing aspirational instructions instead of behavioral ones. Compare:</p><p>Weak: <em>\"Be helpful and provide good answers.\"</em> — ChatGPT already tries to do this. You have given it no additional signal.</p><p>Strong: <em>\"When I ask a yes/no question, start with yes or no, then explain. Do not bury the answer in qualifications.\"</em> — This changes specific output behavior in ways you can immediately observe.</p><p>The second most common mistake: writing instructions for what you want ChatGPT to know rather than what you want it to do. \"I work in enterprise sales\" is context. \"Frame examples using enterprise sales scenarios with large deal sizes and long sales cycles\" is an instruction. Context informs. Instructions direct.</p><p><strong>Prompt template for creating your Custom Instructions:</strong></p><p><em>\"Help me write Custom Instructions for ChatGPT. Ask me: (1) my role and industry, (2) what I currently work on, (3) my expertise level, (4) who I write for, (5) how I want responses structured, and (6) what corrections I make most often. Then draft both fields.\"</em></p><p>Start with ChatGPT's draft, then edit for what it missed. The draft gets you to 80%. Your edits add the 20% that is specific to how you actually work.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ps_02"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ps_03"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>The three signals that your Custom Instructions need updating.</strong> First: you paste the same context into a conversation for the second time. If you said it once and you are about to say it again, it belongs in Custom Instructions. Second: ChatGPT makes a wrong assumption that a rule would have prevented. The wrong assumption is the rule. Write it before the next conversation. Third: you explain your preferences to ChatGPT in one conversation that would equally apply to all your conversations. Account-level behavior change belongs in Custom Instructions, not in per-conversation context. These three signals are the feedback loop that keeps your Custom Instructions accurate. Instructions you update regularly get better every week. Instructions you wrote once in year one reflect who you were, not who you are now.</p>"
+              },
+              {
+                "type": "summary",
+                "content": "<p>Custom Instructions load your professional context and response preferences into every ChatGPT conversation automatically. Field 1 covers who you are and what you work on. Field 2 covers how you want responses structured. Specific behavioral rules beat general wishes. Update them when you find yourself writing the same correction more than twice. Quick-start prompt: <em>\"Ask me six questions about my role, projects, expertise, audience, response preferences, and common corrections — then draft both Custom Instructions fields.\"</em> Done in 10 minutes.</p>"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_ps_01",
+              "order_index": 1,
+              "type": "multiple_choice",
+              "prompt": "You are starting to use ChatGPT seriously for work and want it to know your role and preferences in every conversation. What is the right move?",
+              "options": [
+                "Paste your background at the start of every new conversation.",
+                "Write Custom Instructions in Settings → Personalization that load automatically every session.",
+                "Ask ChatGPT to memorize your preferences once and assume it remembers.",
+                "Put your context in a pinned message in your first conversation."
+              ],
+              "correct_answer": "1",
+              "explanation": "Custom Instructions load automatically into every conversation. Pasting works once but is easy to forget. ChatGPT does not retain memory across conversations by default. Pinned messages only exist within one conversation.",
+              "hints": [
+                "Think about what loads before your first message without you doing anything."
+              ],
+              "xp_reward": 10
+            },
+            {
+              "id": "ex_ps_02",
+              "order_index": 2,
+              "type": "multiple_choice",
+              "prompt": "You are writing the response instructions for your Custom Instructions. Which line earns its place?",
+              "options": [
+                "Be helpful and provide thoughtful, high-quality answers.",
+                "Lead with the conclusion, then supporting evidence. Default to under 150 words unless I ask for depth.",
+                "Use whatever style feels right for the situation.",
+                "Always be professional and accurate."
+              ],
+              "correct_answer": "1",
+              "explanation": "Specific behavioral rules change output. 'Lead with the conclusion, under 150 words' tells ChatGPT exactly what to do. The others are aspirations with no concrete behavioral consequence.",
+              "hints": [
+                "Which line would you be able to verify ChatGPT is following?"
+              ],
+              "xp_reward": 10
+            },
+            {
+              "id": "ex_ps_03",
+              "order_index": 3,
+              "type": "prompt_lab",
+              "prompt": "Write Custom Instructions for yourself. Include both fields: (1) What ChatGPT should know about you — your role, current projects, expertise level, and who you write for. (2) How ChatGPT should respond — length defaults, tone, structure, and at least one specific behavioral rule.",
+              "evaluation_criteria": "Field 1 must include role/industry, at least one current project, and expertise level. Field 2 must include at least three specific behavioral rules (not vague aspirations). Each rule should have a clear behavioral consequence that could be observed in ChatGPT's output.",
+              "hints": [
+                "Think about corrections you make most often in ChatGPT conversations.",
+                "Specific rules beat general wishes — 'under 150 words' beats 'be concise'."
+              ],
+              "xp_reward": 15
+            }
+          ]
+        },
+        {
+          "title": "ChatGPT Memory & Context Management",
+          "slug": "state-and-memory",
+          "description": "How to use ChatGPT's memory system for durable context across sessions. What memory saves automatically, what you need to save manually, and how to stay in control of what ChatGPT remembers about you.",
+          "order_index": 2,
+          "xp_reward": 75,
+          "estimated_minutes": 7,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<p>The most expensive thing about working with AI is re-explaining context. <strong>ChatGPT Memory</strong> solves part of this problem. With memory enabled, ChatGPT saves facts and preferences from your conversations and recalls them in future ones. You mention you prefer bullet points — ChatGPT remembers. You mention you work in healthcare — ChatGPT remembers. You mention your biggest client is in manufacturing — ChatGPT remembers.</p><p>Without memory: every conversation starts from zero. You re-establish your role, your preferences, your current context. The re-explanation tax is real. Consider how many conversations you have started by explaining who you are before asking your actual question. Memory eliminates that overhead for the facts that do not change.</p><p>Memory is different from Custom Instructions. Custom Instructions are rules you write deliberately. Memory is context that ChatGPT saves automatically from conversations. Both are loaded at the start of each session. Together they give ChatGPT a richer picture of you than either alone.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>How to enable and manage memory.</strong> Memory is found at Settings → Personalization → Memory. You can toggle it on or off, view what ChatGPT has remembered, edit individual memories, and delete memories you want removed.</p><p>When memory is on, ChatGPT may save facts mid-conversation. You will see a notification: \"Memory updated\" or \"Saved to memory.\" You can also ask ChatGPT to remember something explicitly: <em>\"Remember that I am allergic to Python examples — always use JavaScript.\"</em></p><p><strong>What ChatGPT tends to save:</strong> Professional role and industry. Preferences about response format and length. Recurring projects or clients. Facts about your expertise level. Communication style preferences. Important personal or professional context you share repeatedly.</p><p><strong>What ChatGPT does not save automatically:</strong> The contents of specific conversations. Documents you uploaded. Specific data you shared. Analysis results. These exist only within the conversation they were created in.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>The active memory audit.</strong> Memory accumulates over time and can become outdated. A role you held 18 months ago. A project that shipped 6 months ago. A preference that has shifted. Stale memory is worse than no memory — ChatGPT confidently applies wrong context.</p><p>Audit your memories monthly. Settings → Personalization → Memory → Manage Memories. Read through the list and delete anything that is no longer accurate. Update anything that has changed. This 5-minute review prevents most memory-related confusion.</p><p>Three signals that your memory needs auditing:</p><ul><li>ChatGPT makes a wrong assumption about you that used to be right.</li><li>ChatGPT references a project or role you no longer have.</li><li>ChatGPT's responses feel like they're calibrated for who you were, not who you are.</li></ul><p>When in doubt: view all memories (Settings → Personalization → Memory → Manage Memories) and scroll through. The list is short enough to review quickly. Anything that reads strangely probably is stale.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ps_04"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>What memory cannot do — and what fills the gap.</strong> ChatGPT memory saves facts about you. It does not save the full content of conversations, documents you analyzed, or work products you created. For anything that needs to persist across conversations as working context — decisions you are tracking, projects in flight, decisions made — you need a manual system.</p><p>The simplest effective system: a running context document. A Google Doc or Notion page titled \"ChatGPT Context — [Current Month]\" that you maintain with three categories:</p><p><strong>Active projects.</strong> Brief status of current work. Not the full story — just enough for ChatGPT to understand where things stand. <em>\"Customer support AI evaluation: shortlist is Intercom Fin and Zendesk AI. Decision framework built. Final demos scheduled for June 15.\"</em></p><p><strong>Key decisions.</strong> Decisions made and why. The why matters — without it, you may relitigate decisions that were already made for good reasons. <em>\"Chose tRPC over REST for internal API — team already knows it, migration cost lower than adopting REST from scratch.\"</em></p><p><strong>Current blockers.</strong> What is stopping progress. Include what you have tried. <em>\"Budget approval for AI tooling stuck pending board meeting. Next step: prepare ROI summary for CFO.\"</em></p><p>Paste the relevant section into ChatGPT when you start a work session. It takes 15 seconds. The context it provides is worth 10 minutes of re-explanation.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ps_05"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>The separation of concerns: memory vs context vs documents.</strong> Three layers, three purposes:</p><p><strong>Memory (automatic):</strong> Durable facts about you. Role, preferences, expertise, recurring context. Lives in ChatGPT's memory system. Loaded automatically. Managed via settings. Best for: who you are, how you work, what you prefer.</p><p><strong>Custom Instructions (deliberate):</strong> Behavioral rules for how ChatGPT responds. Lives in Settings → Personalization. Loaded automatically. Updated by you. Best for: response format, tone, structure, output defaults.</p><p><strong>Conversation context (manual):</strong> Current working state. Decisions in progress, active projects, specific constraints for this session. You paste it in when relevant. Best for: the content that changes week to week — what you are working on right now, what decisions are pending, what is blocked.</p><p>The confusion happens when people try to use memory for everything. Memory is not designed to hold your project status or this week's decisions. It holds persistent facts about you. Project status belongs in your context document, pasted in when relevant. The three-layer system works when each layer handles what it is designed for.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>Prompt templates for working with context and memory.</strong> Use these to build and maintain the system:</p><p><strong>Starting a work session with fresh context:</strong></p><p><em>\"Before we begin, here is my current context: [paste active projects, decisions, blockers]. Given this, I want to work on [specific task].\"</em></p><p><strong>Creating a memory entry intentionally:</strong></p><p><em>\"Please remember for future conversations: [specific fact you want saved]. This will help you give me more relevant answers.\"</em></p><p><strong>Auditing memory:</strong></p><p><em>\"What do you currently remember about me? List everything in your memory. I want to review it for accuracy.\"</em></p><p><strong>Updating stale context:</strong></p><p><em>\"My situation has changed. Previously I worked on X — that is complete. I am now working on Y. Please update your memory and responses accordingly.\"</em></p><p>These templates handle the four most common friction points: starting sessions with correct context, deliberately building memory, auditing what has accumulated, and updating after changes. Once you have used each a few times, the pattern becomes automatic.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ps_06"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>Memory and privacy.</strong> Before enabling memory, understand what you are signing up for. ChatGPT saves facts from your conversations to OpenAI's systems. If you have privacy concerns about what is retained, review OpenAI's data practices and memory policies at platform.openai.com. You have full control: you can view every memory, delete individual memories, or turn memory off entirely and still use a manual context document system.</p><p>For conversations about sensitive topics — legal matters, HR issues, confidential business data — consider turning memory off for those specific conversations. ChatGPT has a Temporary Chat mode (available via the left sidebar) that does not save to memory and does not affect your account's memory. Use Temporary Chat when you want the session to be truly ephemeral.</p><p><strong>The memory system that earns its keep:</strong> Automatic memory handles the background facts. Your context document handles the active work state. Custom Instructions handle behavioral preferences. After two or three weeks of using all three deliberately, you will notice your ChatGPT conversations require significantly less setup per session. The re-explanation tax drops. The answers get more relevant faster. That compound improvement is the goal — and it comes from maintaining the system, not just setting it up once.</p>"
+              },
+              {
+                "type": "summary",
+                "content": "<p>ChatGPT Memory saves persistent facts about you across conversations. Enable it in Settings → Personalization. Audit monthly — stale memory is worse than no memory. Use a manual context document for active project state that memory is not designed to hold. Three layers: memory (durable facts about you), Custom Instructions (behavioral rules), conversation context (current working state — paste in manually). The re-explanation tax drops when all three layers are working together. Start with enabling memory and auditing what accumulates. Add the context document once you feel the gap it fills.</p>"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_ps_04",
+              "order_index": 1,
+              "type": "multiple_choice",
+              "prompt": "ChatGPT references a role you held 18 months ago and treats you as a beginner in your current field. What is the right move?",
+              "options": [
+                "Live with it — ChatGPT cannot be corrected.",
+                "Go to Settings → Personalization → Memory, find the stale entries, and delete or update them.",
+                "Delete your account and start fresh.",
+                "Write a correction at the start of every conversation."
+              ],
+              "correct_answer": "1",
+              "explanation": "Memory can be managed directly. Stale memories cause wrong assumptions. View and edit memories via Settings → Personalization → Memory → Manage Memories. Delete the stale entries and let accurate context take over.",
+              "hints": [
+                "You have full control over what is in your memory. Where do you manage it?"
+              ],
+              "xp_reward": 10
+            },
+            {
+              "id": "ex_ps_05",
+              "order_index": 2,
+              "type": "multiple_choice",
+              "prompt": "You want ChatGPT to know what projects are currently in flight and what decisions are pending — without re-explaining it every session. What is the right approach?",
+              "options": [
+                "Ask ChatGPT to save the full project status to memory.",
+                "Maintain a short context document and paste the relevant section at the start of work sessions.",
+                "Wait until ChatGPT automatically learns it from your conversations.",
+                "Use a different AI tool that saves everything automatically."
+              ],
+              "correct_answer": "1",
+              "explanation": "ChatGPT memory saves facts about you — not project status or decisions in flight. A short context document that you paste in when relevant handles working state that changes week to week. It takes 15 seconds and provides far more precise context than memory alone.",
+              "hints": [
+                "Memory is for persistent facts. What holds your current working state?"
+              ],
+              "xp_reward": 10
+            },
+            {
+              "id": "ex_ps_06",
+              "order_index": 3,
+              "type": "scenario_walkthrough",
+              "prompt": "You are starting a new work session on a project. You have: a decision made last week (chose vendor A over vendor B and why), an active task in progress (drafting the vendor contract), and a blocker (legal review pending). Write the context paste you would use to open this ChatGPT session, and identify which of these facts (if any) should go into ChatGPT memory instead.",
+              "evaluation_criteria": "The context paste should cover all three elements: the decision with rationale, the in-progress task with specific status, and the blocker with what is pending. None of these are candidates for memory — they are transient working state. Only persistent facts about the user (role, preferences, expertise) belong in memory. The response should demonstrate the distinction between memory (durable) vs context (current state).",
+              "hints": [
+                "Ask yourself: will this still be true in 6 months? If not, it is context, not memory.",
+                "Memory = who you are. Context = what you are working on right now."
+              ],
+              "xp_reward": 15
+            }
+          ]
+        },
+        {
+          "title": "Custom GPT Configuration",
+          "slug": "hooks-and-automation",
+          "description": "Configure Custom GPTs for specific recurring tasks. Write system instructions that enforce consistent behavior. Build the GPTs that eliminate re-setup on your most common workflows.",
+          "order_index": 3,
+          "xp_reward": 75,
+          "estimated_minutes": 7,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<p><strong>Custom GPTs</strong> are purpose-built ChatGPT configurations for specific recurring tasks. Where account-level Custom Instructions apply to every conversation, a Custom GPT is scoped to one job: analyze customer feedback, review contracts, generate social media posts, run a code review checklist. Same powerful model — but constrained, configured, and focused on exactly what you need it to do.</p><p>The key insight: Custom GPTs enforce discipline you would otherwise forget. You intend to include the right context in every customer feedback analysis — but some days you forget, or you are in a hurry. A Custom GPT with the right system instructions makes the discipline automatic. The configuration happens once. The consistency is permanent.</p><p>Access the GPT Builder at chat.openai.com/gpts/editor (or via the left sidebar → Explore GPTs → Create). You do not need to write code. The builder has a configuration form with five areas that map directly to behavior.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ps_07"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>The five configuration areas.</strong></p><p><strong>1. Name and Description.</strong> The name is what you call it. The description is what it does — write this for your own reference and for the GPT Store if you share it. <em>Name: \"Contract Reviewer\" — Description: \"Reviews contract drafts for missing clauses, one-sided terms, and red flags. Returns a structured analysis with recommended changes.\"</em></p><p><strong>2. System Instructions.</strong> The most important field. This is what the GPT always does, how it always responds, and what constraints it never violates. Think of it as CLAUDE.md's equivalent — your persistent configuration that loads into every conversation with this GPT. Instructions should include: the role (\"You are an expert contract reviewer specializing in B2B SaaS agreements\"), the task (\"When given a contract, analyze it for...\"), the output format (\"Return your analysis in three sections: Red Flags, Missing Standard Clauses, Recommended Changes\"), and behavioral constraints (\"Do not give legal advice. Flag items that require attorney review.\").</p><p><strong>3. Knowledge Files.</strong> Documents the GPT references when answering. Upload a style guide, your standard contract templates, a product FAQ, a competitor comparison sheet. The GPT can cite these documents and answer questions about their contents without you pasting them into every conversation.</p><p><strong>4. Capabilities.</strong> Toggles for Web Search, DALL-E image generation, and Code Interpreter. Enable only what the GPT needs for its job. A contract reviewer does not need image generation. A data analysis GPT needs Code Interpreter. A research GPT needs Web Search.</p><p><strong>5. Actions.</strong> API connections that let the GPT call external services. Retrieve live data from your CRM. Post to Slack. Look up records in your database. Actions require an OpenAPI spec for the external service — more on this in Lesson 4.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>Writing system instructions that work.</strong> System instructions are the most powerful configuration lever in a Custom GPT. Weak instructions produce inconsistent output. Strong instructions produce predictable output every time.</p><p>The anatomy of a strong system instruction set:</p><p><strong>Role definition.</strong> Who the GPT is and what expertise it brings. <em>\"You are a senior B2B sales coach specializing in enterprise deals. You have deep familiarity with MEDDIC, Sandler, and Challenger sales methodologies.\"</em></p><p><strong>Task definition.</strong> What it does when given input. <em>\"When I share a prospect interaction (call notes, email thread, or deal summary), analyze it using MEDDIC. Identify what is known, what is missing, and what the next qualifying question should be.\"</em></p><p><strong>Output format.</strong> Exactly how the response is structured. <em>\"Format your response as: MEDDIC Status (one line per dimension, Known/Unknown/Partial), Next Question (one specific qualifying question), Risk Flags (if any), Recommended Next Action.\"</em></p><p><strong>Behavioral constraints.</strong> What it never does. <em>\"Do not tell me to schedule a follow-up — I already know that. Tell me what to say on the follow-up.\"</em></p><p>The test for a well-written system instruction: paste a sample input and see if the output looks exactly how you intended. If the format is off, tighten the format specification. If the content is off, tighten the role or task definition. Iterate until the output is consistently what you need.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ps_08"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>Knowledge files: what to upload and what to skip.</strong> Knowledge files are documents the GPT references. They are powerful for reference material that does not change often. They are not substitutes for conversation context — the GPT reads them when needed, not in place of your specific input.</p><p><strong>Good candidates for knowledge files:</strong></p><ul><li>Style guides and writing standards the GPT should follow</li><li>Product documentation, FAQs, or specifications the GPT should cite</li><li>Reference templates the GPT should use as starting points</li><li>Lookup tables or classification frameworks the GPT should apply</li><li>Background documents about your company, product, or industry</li></ul><p><strong>Bad candidates for knowledge files:</strong></p><ul><li>Frequently changing data (pricing, inventory, live metrics) — it will go stale</li><li>Highly confidential data you do not want stored in OpenAI systems</li><li>Very large documents where only a small section is relevant — extract the relevant section instead</li></ul><p>After uploading a knowledge file, test the GPT by asking questions that require it. Ask the GPT to cite which document it used. This verifies the file was indexed and the GPT is actually referencing it, rather than relying on its training data.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>When to build a Custom GPT vs when to use standard ChatGPT.</strong> The decision rule is simple: if you have done the same setup three times in standard ChatGPT, it is time to build a Custom GPT.</p><p>Three times means: you have pasted the same context, asked the same type of question, and manually specified the same output format three separate times. At that point, the configuration is known. The value is consistent. A Custom GPT captures the configuration and makes it permanent, so you never do the setup again.</p><p>Use cases that almost always warrant a Custom GPT:</p><ul><li>Document review with consistent output format (contracts, proposals, reports)</li><li>Content generation with strict voice/style constraints</li><li>Data analysis that follows a repeatable methodology</li><li>Customer-facing interactions where consistent tone is critical</li><li>Any workflow where you share ChatGPT with teammates and need consistent behavior</li></ul><p>Use cases that belong in standard ChatGPT (with context pasted in):</p><ul><li>One-off analysis with unique inputs</li><li>Open-ended exploration where the format should vary</li><li>Work in progress where the task definition is still evolving</li></ul>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ps_09"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>The progression: from first Custom GPT to a GPT library.</strong> Most practitioners follow a natural progression:</p><ul><li><strong>Phase 1 (first GPT):</strong> Build a Custom GPT for the task you do most often — weekly report drafts, customer email review, data analysis — one that you would configure from scratch at least weekly.</li><li><strong>Phase 2 (team use):</strong> Share the GPT with your team by making it internal (GPT Store → Only me → My organization). Team members get consistent ChatGPT behavior on shared workflows without needing to configure anything themselves.</li><li><strong>Phase 3 (GPT library):</strong> After 4-6 high-value GPTs are built and running, you have a library that covers your core recurring workflows. The library earns its keep when you notice team members defaulting to the Custom GPTs instead of standard ChatGPT for work tasks — because the GPTs reliably produce what they need.</li></ul><p>Start with one GPT for your highest-frequency recurring task. Measure whether it saves meaningful time. If yes, add the next. Build toward a small, high-value library — five GPTs you use daily beat twenty GPTs you forget exist.</p>"
+              },
+              {
+                "type": "summary",
+                "content": "<p>Custom GPTs are purpose-built ChatGPT configurations for specific recurring tasks. Configure via the GPT Builder: name, system instructions, knowledge files, capabilities, and actions. System instructions are the most powerful lever — write them with role, task, output format, and behavioral constraints. Build a Custom GPT when you have done the same ChatGPT setup three times. Start with one GPT for your highest-frequency task, test it with real inputs, then expand to a library. The goal: a small set of Custom GPTs that handle your core recurring work consistently, without you configuring anything from scratch.</p>"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_ps_07",
+              "order_index": 1,
+              "type": "multiple_choice",
+              "prompt": "You run the same type of contract review every week: same format, same criteria, same output structure. ChatGPT does it well but you reconfigure it every time. What is the right move?",
+              "options": [
+                "Keep reconfiguring. The flexibility is worth the overhead.",
+                "Build a Custom GPT with the review criteria and output format in the system instructions.",
+                "Memorize the setup and type it faster each week.",
+                "Use a different tool that saves your configuration automatically."
+              ],
+              "correct_answer": "1",
+              "explanation": "Recurring tasks with consistent configuration are exactly what Custom GPTs are built for. The configuration happens once. Every future use is instant. Reconfiguring weekly is the tax you pay for not building the GPT after the first three sessions.",
+              "hints": [
+                "If you have done the same setup three times, what does that tell you?"
+              ],
+              "xp_reward": 10
+            },
+            {
+              "id": "ex_ps_08",
+              "order_index": 2,
+              "type": "prompt_lab",
+              "prompt": "Write system instructions for a Custom GPT that reviews first drafts of executive communications (emails or memos). Include: a role definition, what to analyze in the draft, the output format (with specific sections), and at least one behavioral constraint.",
+              "evaluation_criteria": "Must include a clear role definition (who the GPT is). Must specify what to analyze (e.g., clarity, tone, executive-appropriateness, call to action). Must define a structured output format with named sections. Must include at least one specific behavioral constraint (what the GPT does NOT do). Instructions should be specific enough that two different GPT Builder sessions would produce similar behavior.",
+              "hints": [
+                "Think about what an experienced executive communications coach would review.",
+                "The output format section is what makes the GPT consistently useful — be specific about sections."
+              ],
+              "xp_reward": 15
+            },
+            {
+              "id": "ex_ps_09",
+              "order_index": 3,
+              "type": "multiple_choice",
+              "prompt": "You want to upload a pricing sheet to a Custom GPT's knowledge files so it can answer pricing questions. Your pricing changes quarterly. What should you consider?",
+              "options": [
+                "Upload it and never think about it again.",
+                "Upload it, but set a reminder to update the knowledge file after each quarterly pricing change.",
+                "Do not use knowledge files for pricing — it will always be stale.",
+                "Upload it to all your Custom GPTs just in case."
+              ],
+              "correct_answer": "1",
+              "explanation": "Knowledge files work well for reference material — but they go stale if the source changes and you do not update them. Quarterly pricing changes require quarterly knowledge file updates. Set the reminder when you upload, not after the GPT starts giving wrong prices.",
+              "hints": [
+                "What happens when the knowledge file is older than the current pricing?"
+              ],
+              "xp_reward": 10
+            }
+          ]
+        },
+        {
+          "title": "ChatGPT Integrations and Plugins",
+          "slug": "skills-and-mcps",
+          "description": "Connect ChatGPT to the tools you already use. Custom Actions for live data. The GPT Store for pre-built integrations. How to get ChatGPT working with your actual stack.",
+          "order_index": 4,
+          "xp_reward": 75,
+          "estimated_minutes": 7,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<p>ChatGPT's real power unlocks when it connects to the tools you already use. Two pathways for integration: <strong>the GPT Store</strong> (pre-built Custom GPTs and integrations built by third parties) and <strong>Custom Actions</strong> (API connections you configure in a Custom GPT to call external services directly).</p><p>Before integrations, connecting ChatGPT to external data means: copy data, paste it into the prompt, ask ChatGPT to analyze, get the answer, manually apply it back. With integrations: ChatGPT calls the tool directly, reads live data, takes actions, and reports results. The copy-paste step disappears.</p><p>Start with the GPT Store for common integrations — Slack, Notion, Google Sheets, GitHub. Move to Custom Actions for internal tools, proprietary data, or workflows where pre-built GPTs do not exist.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>The GPT Store.</strong> The GPT Store (chat.openai.com/gpts) contains thousands of Custom GPTs built by OpenAI and third-party developers. Browse by category: Productivity, Research, Writing, Programming, Education, and more. Search by tool name (\"Notion\", \"Zapier\", \"Google Sheets\") to find integration GPTs.</p><p>High-value GPTs in the Store that practitioners use daily:</p><ul><li><strong>Zapier GPT:</strong> Connect ChatGPT to 7,000+ apps via Zapier. Trigger automations, create records, send notifications — through conversation.</li><li><strong>Canva GPT:</strong> Generate and edit visual designs directly from ChatGPT. Describe what you need, get a Canva template with the content filled in.</li><li><strong>Scholar AI / Consensus:</strong> Research academic papers with citations. Get evidence-based answers instead of ChatGPT's training knowledge.</li><li><strong>Code Copilot:</strong> Enhanced coding assistance with better context management for large codebases.</li></ul><p>Before building a Custom GPT or a Custom Action from scratch: search the GPT Store. If a third party has already built the integration you need and it is well-rated, use it. The build cost is already paid.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ps_10"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>Custom Actions: connecting your Custom GPT to external APIs.</strong> Custom Actions let a Custom GPT call external services directly. The GPT sends a request to an API, receives the response, and uses the data in its reply. You set up the connection once in the GPT Builder. After that, the GPT calls it automatically when needed.</p><p>The configuration requires an OpenAPI specification — a standard JSON or YAML description of the API's endpoints, inputs, and outputs. Many services publish their OpenAPI specs publicly (check the developer documentation). For services that do not, you can write a minimal spec yourself or generate one with ChatGPT.</p><p><strong>What Custom Actions unlock in practice:</strong></p><ul><li><strong>CRM integration:</strong> \"Who are our top 10 accounts by revenue this quarter?\" — GPT calls the CRM API, gets live data, answers with current numbers.</li><li><strong>Database queries:</strong> \"Show me users who signed up last week but have not completed onboarding\" — GPT calls a database API, returns a live result.</li><li><strong>Ticket system lookup:</strong> \"What is the current status of our Zendesk tickets from enterprise customers?\" — GPT queries Zendesk, summarizes the current queue.</li><li><strong>Slack notifications:</strong> After completing an analysis, the GPT posts a summary to a specified Slack channel via the Slack API.</li></ul>"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>Setting up a Custom Action step by step.</strong></p><p>1. Open the GPT Builder for your Custom GPT. Navigate to the Configure tab → Add actions.</p><p>2. Paste the OpenAPI spec for the service you want to connect. GPT Builder will parse it and show you the available endpoints as callable actions.</p><p>3. Set the authentication method. Options: None (public APIs), API key, OAuth. For API key: add the key in the authentication field — it is stored securely and never exposed in the GPT's system instructions.</p><p>4. Test each action. The GPT Builder has a test panel where you can call each action directly and see what it returns. Verify the data format matches what your system instructions expect.</p><p>5. Update system instructions to tell the GPT when to use the action. <em>\"When asked about current sales data, use the get_pipeline_summary action from the CRM integration. Always present numbers rounded to whole dollars.\"</em></p><p><strong>Security rules for Custom Actions:</strong></p><ul><li>Use read-only API credentials when the GPT only needs to read data. Actions that write data need extra care.</li><li>Scope API credentials to the minimum endpoints needed. A CRM GPT that only reads deals should not have credentials that can delete records.</li><li>Test actions with real but non-sensitive data before deploying to your team.</li><li>For actions that write or send data externally, add a confirmation step in the system instructions: \"Before posting to Slack, summarize what you are about to post and ask for confirmation.\"</li></ul>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ps_11"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>ChatGPT connectors via third-party services.</strong> For teams that do not have direct API access or developer resources, third-party automation platforms bridge ChatGPT to your stack:</p><p><strong>Zapier:</strong> The widest integration library. Connect ChatGPT to 7,000+ apps without writing code. Create Zaps where ChatGPT is one step in a larger automation (analyze incoming email → draft response → stage for human review → send). The Zapier GPT in the Store gives you conversational access to Zapier from within ChatGPT.</p><p><strong>Make (formerly Integromat):</strong> More powerful for complex multi-step automations. Better handling of conditional logic and data transformation. Good for workflows where Zapier's linear Zap model feels limiting.</p><p><strong>n8n:</strong> Open-source alternative. Self-hostable, which matters for teams with strict data residency requirements. Good for teams with some technical resources who want control over the infrastructure.</p><p>Choosing: Zapier for speed and breadth. Make for complex logic. n8n for data control. All three can pass data to and receive data from ChatGPT as part of automated workflows — meaning ChatGPT becomes one node in a larger automated system, not a standalone tool.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ps_12"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>How integrations compound with Custom GPT configuration.</strong> A Custom GPT is a specialized AI. A Custom Action is a data connection. When you combine them, you get a specialized AI that operates on live data from your actual systems.</p><p>Example: a sales coaching GPT with a CRM Custom Action. The GPT's system instructions define the coaching methodology (MEDDIC, specific question frameworks, output format). The CRM action lets the GPT pull the live deal data for any account. Instead of pasting deal notes into ChatGPT and getting coaching on your manual summary, you ask the GPT about a deal by name — it pulls the live data, applies the coaching framework, returns structured next steps. The accuracy of the analysis improves because the data is current. The setup per conversation drops to zero because the integration handles data retrieval.</p><p>This compounding is why practitioners invest time in integrations early. The build cost (one to two hours for a well-configured Custom GPT with one Custom Action) pays back on roughly the fifth use for high-frequency workflows. After that, every use is efficiency gain over the copy-paste alternative. A workflow that previously took 15 minutes of manual data gathering plus 5 minutes of ChatGPT interaction now takes 2 minutes of conversation. Multiply by daily use and the return is significant within the first month.</p>"
+              },
+              {
+                "type": "summary",
+                "content": "<p>Integrations connect ChatGPT to your actual data and tools. Start with the GPT Store for pre-built integrations — search before building. Use Custom Actions for internal APIs or integrations not available in the Store. Custom Actions require an OpenAPI spec and proper credential scoping (least privilege). Third-party platforms like Zapier and Make bridge the gap for no-code integration needs. The most powerful setup: a well-configured Custom GPT plus a Custom Action that pulls live data from your primary tool — the combination eliminates both the setup overhead and the copy-paste step. The right first integration: whichever system you currently copy-paste data from before asking ChatGPT to analyze it.</p>"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_ps_10",
+              "order_index": 1,
+              "type": "multiple_choice",
+              "prompt": "You want to connect ChatGPT to Notion so you can query your notes and create pages conversationally. What should you check first?",
+              "options": [
+                "Build a Custom Action from scratch using Notion's API.",
+                "Search the GPT Store for a Notion integration GPT before building anything.",
+                "Contact OpenAI to request the integration.",
+                "Use a different note-taking app that ChatGPT supports natively."
+              ],
+              "correct_answer": "1",
+              "explanation": "The GPT Store is the first stop. Many popular integrations have pre-built GPTs. Checking the Store before building custom saves significant setup time. If a well-rated Notion GPT exists, use it. Build custom only when the Store has no adequate solution.",
+              "hints": [
+                "What is the fastest path to an integration that already exists?"
+              ],
+              "xp_reward": 10
+            },
+            {
+              "id": "ex_ps_11",
+              "order_index": 2,
+              "type": "multiple_choice",
+              "prompt": "You are adding a Custom Action to a sales GPT that can read deal data from your CRM. What credentials should the action use?",
+              "options": [
+                "The admin key with full read-write access — more access means more flexibility.",
+                "A read-only API key scoped to deal and contact data only.",
+                "Your personal login credentials converted to an API token.",
+                "No credentials — if the data is internal, it does not need securing."
+              ],
+              "correct_answer": "1",
+              "explanation": "Least privilege. A read-only key scoped to the data the GPT needs means it can answer questions but cannot modify records, delete data, or access other modules. Full admin access to a CRM via a ChatGPT integration is a significant security risk.",
+              "hints": [
+                "What is the minimum access needed to read deal data?"
+              ],
+              "xp_reward": 10
+            },
+            {
+              "id": "ex_ps_12",
+              "order_index": 3,
+              "type": "prompt_lab",
+              "prompt": "Design an integration workflow that connects ChatGPT to a tool you currently use. Describe: (1) what tool you want to connect, (2) whether you would use a GPT Store integration, Custom Action, or third-party platform like Zapier, (3) what data the connection retrieves or what actions it enables, and (4) what the ChatGPT conversation would look like once the integration is live.",
+              "evaluation_criteria": "Must identify a specific tool (not generic). Must choose and justify the integration method (GPT Store, Custom Action, or Zapier/Make). Must describe specific data or actions the integration enables. Must sketch a realistic conversation showing how the integration changes the workflow vs the current copy-paste approach.",
+              "hints": [
+                "What tool do you currently copy-paste data from before asking ChatGPT a question?",
+                "That copy-paste step is exactly what an integration eliminates."
+              ],
+              "xp_reward": 15
+            }
+          ]
+        },
+        {
+          "title": "Organizing Your ChatGPT Workspace",
+          "slug": "vault-structure-and-debugging",
+          "description": "Organize your conversations, projects, and context files so ChatGPT stays fast and useful as your usage grows. Triage the four failure modes when ChatGPT does something unexpected.",
+          "order_index": 5,
+          "xp_reward": 75,
+          "estimated_minutes": 6,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<p>Custom Instructions and Memory handle what loads automatically. A <strong>workspace system</strong> handles everything else: how you organize conversations by project, how you structure the context documents you paste in, and how you maintain reference material over time.</p><p>Most ChatGPT users start with an undifferentiated conversation list that becomes impossible to navigate after 100 conversations. The solution is intentional organization: use ChatGPT's conversation folders (via Projects, if available on your plan) or a lightweight external system to group conversations by project. More importantly: build context documents that make starting any conversation fast, regardless of what the history looks like.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>The context document system.</strong> The most portable and durable workspace organization is a set of plain text or markdown context documents that you maintain outside of ChatGPT. These documents are what you paste in when you start a relevant conversation. They give ChatGPT the working context it needs without relying on conversation history or memory alone.</p><p>A working context document structure:</p><p><strong>Project context doc</strong> (one per active project):</p><pre><code>## [Project Name] — as of [Month Year]\n\n### Current Status\nBrief one-paragraph summary of where things stand.\n\n### Key Decisions Made\n- Decision 1 and the rationale (1-2 sentences)\n- Decision 2 and the rationale\n\n### In Progress\n- Task A: current state + next step\n- Task B: current state + next step\n\n### Blockers\n- Blocker 1: what was tried, what is pending\n\n### Key Constraints\n- Budget, timeline, stakeholder limits, or technical constraints ChatGPT should know</code></pre><p>Keep each project context doc under 300 words. That is roughly a 10-second read and under 500 tokens — a negligible context cost for the relevance it provides. A project context doc that grows past 500 words is trying to be a project management system. It is not. It is a briefing for a single conversation start.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ps_13"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>When ChatGPT does something unexpected.</strong> Check four failure modes in order — most to least common. Do not skip to hallucination.</p><p><strong>1. Stale or missing context</strong> — the most common cause. ChatGPT does not have the relevant context for this conversation. It is making reasonable guesses from Custom Instructions and memory alone. <em>The triage reflex: paste in the relevant project context doc and re-ask. This resolves 70% of unexpected output.</em></p><p><strong>2. Conflicting instructions</strong> — Custom Instructions say one thing, your conversation says another. ChatGPT tries to reconcile them and sometimes picks the wrong priority. <em>The fix: be explicit in the conversation about which instruction should win. \"Ignore the length limit in my Custom Instructions for this response — I need the full analysis.\"</em></p><p><strong>3. Capability mismatch</strong> — you asked for something that requires a capability the current session does not have. File uploads only work in specific modes. Web browsing requires the right model. DALL-E requires image generation to be enabled. <em>The fix: verify the capability is available in your current plan and model before assuming the output is wrong.</em></p><p><strong>4. Hallucination</strong> — the rarest cause. ChatGPT generated something plausible but factually wrong. Check the other three first. Before assuming hallucination, ask ChatGPT to cite its source or explain its reasoning. Most \"hallucinations\" turn out to be one of the first three failure modes — especially missing context.</p></p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ps_14"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>Maintenance habits that prevent debugging.</strong> Most unexpected ChatGPT behavior is preventable. The maintenance habits that work:</p><ul><li><strong>Update project context docs after every significant work session.</strong> Decisions made, status changed, blockers resolved or added — 5 minutes of updates saves 15 minutes of next-session setup.</li><li><strong>Monthly memory audit.</strong> Settings → Personalization → Memory → Manage Memories. Delete stale entries. A memory that was accurate 6 months ago may actively mislead ChatGPT today.</li><li><strong>Custom Instructions refresh quarterly.</strong> Your role, current projects, and preferences change. Instructions that were written for who you were 6 months ago need to reflect who you are now.</li><li><strong>Consistent project context doc format.</strong> The same structure across all your project docs means pasting them into ChatGPT always works the same way. ChatGPT learns the format from the first section it sees, which improves how it parses subsequent sections.</li></ul><p>Prevention is faster than debugging. Five minutes of end-of-session hygiene saves 20 minutes of next-session triage.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>Building a debugging reflex.</strong> When something goes wrong, walk through the four failure modes in order and ask a diagnostic question for each:</p><ol><li><strong>Stale or missing context:</strong> <em>\"What context do you have about this project?\"</em> If ChatGPT's summary is wrong or outdated, paste in the current project context doc and re-ask.</li><li><strong>Conflicting instructions:</strong> <em>\"What instructions are you following that affected this response?\"</em> If it cites a Custom Instructions rule that should not apply here, override it explicitly in the conversation.</li><li><strong>Capability mismatch:</strong> <em>\"What capabilities do you currently have available?\"</em> Verify web search, file reading, or image generation is actually enabled for this session.</li><li><strong>Hallucination:</strong> <em>\"Can you explain your reasoning for [specific claim] and tell me where that information came from?\"</em> If ChatGPT cannot cite a source or its reasoning is circular, you have a genuine hallucination. Ask it to try again with the instruction to flag uncertainty explicitly.</li></ol><p>This sequence takes two minutes. It finds the cause almost every time. The instinct to assume hallucination is almost always wrong and leads to re-asking the same question rather than fixing the actual root cause.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_ps_15"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>Treating your workspace as a living system.</strong> The biggest mistake with context documents: treating them as one-time artifacts rather than active working documents. An artifact gets created when a project starts and then forgotten. A working document gets updated every time something relevant changes.</p><p>The discipline that makes the difference:</p><ul><li><strong>Write at the moment of decision.</strong> When you decide to change direction on a project, update the context doc now. Context captured at the moment of decision includes the reasoning. Context captured retroactively loses the why — and the why is what prevents relitigating the same decision next week.</li><li><strong>Archive completed projects.</strong> When a project ships, move its context doc to an archive folder. Extract one or two lessons learned into a separate reference document if they apply to future projects. The project becomes history. The lessons stay active.</li><li><strong>Review your Custom GPT library quarterly.</strong> Are all your Custom GPTs still used? Are any using outdated knowledge files? Remove GPTs you have not used in 90 days. Update knowledge files that reference stale data. A small, current GPT library is more useful than a large, stale one.</li></ul><p>The workspace is worth exactly as much as the consistency with which it is maintained. A system you update actively compounds in value. A system you set up once and forget degrades and eventually makes ChatGPT less useful than standard mode — because it is adding stale context rather than accurate context.</p>"
+              },
+              {
+                "type": "summary",
+                "content": "<p>A workspace system starts with project context documents — short, structured briefings you paste in at session start to give ChatGPT current working context. Maintain one per active project, under 300 words, updated after every significant session. When ChatGPT does something unexpected, triage in order: missing context, conflicting instructions, capability mismatch, hallucination — start with \"paste in the current project context and re-ask\" before anything else. This resolves 70% of unexpected output without further investigation. Monthly memory audit. Quarterly Custom Instructions refresh. Quarterly Custom GPT library review. Prevention beats debugging. Five minutes of maintenance per session saves 20 minutes of next-session triage. Start simple: one project context doc for your most active project. Add the rest as the pattern proves useful.</p>"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_ps_13",
+              "order_index": 1,
+              "type": "multiple_choice",
+              "prompt": "You have 150 ChatGPT conversations across six active projects. Starting any new conversation requires re-explaining what you were working on. What is the right pattern?",
+              "options": [
+                "Scroll through conversation history before each session to refresh context.",
+                "Maintain a short project context document per project and paste the relevant one at session start.",
+                "Use only one massive ongoing conversation per project.",
+                "Rely on ChatGPT memory to reconstruct context automatically."
+              ],
+              "correct_answer": "1",
+              "explanation": "Project context documents are the portable, reliable solution. A short briefing document takes 15 seconds to paste and provides 100% accurate context regardless of conversation history. Memory handles persistent facts about you — not current project state. Scrolling history is slow and error-prone.",
+              "hints": [
+                "What gives ChatGPT accurate current context in under 30 seconds?"
+              ],
+              "xp_reward": 10
+            },
+            {
+              "id": "ex_ps_14",
+              "order_index": 2,
+              "type": "multiple_choice",
+              "prompt": "ChatGPT gives you a market size estimate with a specific number that feels wrong. What is the right first move?",
+              "options": [
+                "Assume hallucination and reject the answer immediately.",
+                "Ask ChatGPT to explain its reasoning and tell you where the number came from before concluding it is wrong.",
+                "Restart the conversation and try again.",
+                "Accept it — ChatGPT is usually accurate."
+              ],
+              "correct_answer": "1",
+              "explanation": "Hallucination is the rarest failure mode. Before concluding it, ask ChatGPT to cite its reasoning. Most of the time, either the source is legitimate (and you can evaluate it), or ChatGPT surfaces uncertainty it did not express clearly enough. If it cannot cite a source for a specific factual claim, that is a hallucination — but verify first.",
+              "hints": [
+                "What is the cheapest way to determine if an output is wrong vs just uncited?"
+              ],
+              "xp_reward": 10
+            },
+            {
+              "id": "ex_ps_15",
+              "order_index": 3,
+              "type": "scenario_walkthrough",
+              "prompt": "You start a new ChatGPT conversation about a project and the responses feel generic — ChatGPT is not referencing key context from last week. You have a project context document but did not paste it. Walk through the triage: which failure mode is this, what question would have caught it, and what do you do now?",
+              "evaluation_criteria": "Should identify this as stale/missing context (the most common failure mode). The catch: ask 'what context do you have about this project' before diving into the work — ChatGPT would surface that it has only Custom Instructions and memory, not project-specific context. The fix: paste the project context doc and re-ask. Should distinguish between memory (persistent facts) and project context (current working state) and explain why memory alone is insufficient for project-specific context.",
+              "hints": [
+                "Which failure mode involves ChatGPT not having the relevant information for this conversation?",
+                "What is the one thing you forgot to do at session start?"
+              ],
+              "xp_reward": 15
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

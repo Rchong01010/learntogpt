@@ -1,0 +1,95 @@
+{
+  "title": "Common Mistakes and How to Fix Them",
+  "slug": "common-mistakes-and-fixes",
+  "description": "The 5 most common prompting mistakes — and the exact fixes that turn bad prompts into great ones.",
+  "order_index": 5,
+  "xp_reward": 75,
+  "estimated_minutes": 7,
+  "content": {
+    "sections": [
+      {
+        "type": "text",
+        "content": "<p>You now know the techniques. Let's talk about where most people still go wrong — and how to catch yourself. These five mistakes are the ones we see over and over, even from people who've read every prompting guide on the internet. The good news: each one has a simple fix.</p>"
+      },
+      {
+        "type": "text",
+        "content": "<p><strong>Mistake 1: Being too vague.</strong> \"Help me with my presentation\" gives Claude nothing to work with. It doesn't know the audience, the topic, the goal, or the format. The fix: add audience, purpose, and format. \"Help me build a 10-slide deck for a sales pitch to mid-market SaaS companies. The goal is to get a follow-up meeting, not close a deal.\" Now Claude knows exactly what to do.</p>"
+      },
+      {
+        "type": "text",
+        "content": "<p><strong>Mistake 2: Not iterating.</strong> Most people take Claude's first response as final. They either use it as-is or give up entirely. The fix: treat every first response as a draft. Say \"This is good but too formal — make it sound like I'm talking to a friend\" or \"The second paragraph is strong, but the opening is weak — give me three alternatives.\" The best results almost always come from the second or third pass.</p>"
+      },
+      {
+        "type": "exercise",
+        "exercise_id": "ex_sp_05a"
+      },
+      {
+        "type": "text",
+        "content": "<p><strong>Mistake 3: Asking Claude to do everything at once.</strong> \"Write my entire business plan\" overwhelms even Claude. The output will be surface-level across every section instead of deep on any one. The fix: break big tasks into steps. \"First, help me outline the 6 key sections of my business plan.\" Then: \"Now let's go deep on the market analysis section.\" Sequential prompts beat monolithic ones every time.</p>"
+      },
+      {
+        "type": "text",
+        "content": "<p><strong>Mistake 4: Ignoring Claude's strengths.</strong> People ask Claude for real-time stock prices, today's weather, or to generate images — things it literally cannot do. Meanwhile, they Google things Claude is incredible at, like reasoning through a tough decision or synthesizing a 40-page document. The fix: use Claude for thinking, analysis, writing, and reasoning. Use other tools for real-time data and visual content.</p>"
+      },
+      {
+        "type": "exercise",
+        "exercise_id": "ex_sp_05b"
+      },
+      {
+        "type": "text",
+        "content": "<p><strong>Mistake 5: Not giving Claude permission to push back.</strong> By default, Claude tends to be agreeable. If you ask \"Is my business idea good?\" it will find nice things to say. The fix: explicitly tell Claude you want honest feedback. \"Be brutally honest — I'd rather hear hard truths now than fail later\" or \"Your job is to find the weaknesses, not reassure me.\" Give Claude permission to be the critical friend you actually need.</p>"
+      },
+      {
+        "type": "exercise",
+        "exercise_id": "ex_sp_05c"
+      },
+      {
+        "type": "summary",
+        "content": "<p>Five mistakes, five fixes. Be specific (not vague). Iterate (don't accept the first draft). Break big tasks into steps (don't ask for everything at once). Play to Claude's strengths (thinking and reasoning, not real-time data). And give Claude permission to be honest. That wraps up Strategic Prompting. You now have the tools to get dramatically better results from Claude than 95% of users. Next course: putting all of this to work in your daily life with Claude in Your Daily Work.</p>"
+      }
+    ]
+  },
+  "exercises": [
+    {
+      "id": "ex_sp_05a",
+      "order_index": 1,
+      "type": "scenario_walkthrough",
+      "prompt": "Three prompts went wrong. Diagnose the mistake in each one and pick the right fix.",
+      "options": null,
+      "correct_answer": "{\"title\":\"Diagnose and Fix\",\"steps\":[{\"type\":\"context\",\"text\":\"Each of these prompts produced a disappointing result. Your job: figure out what went wrong and how to fix it.\"},{\"type\":\"choice\",\"claude_response\":\"Prompt: 'Write me an email.' — Claude produced a generic, formal email about nothing in particular. The user was frustrated because they needed a follow-up email to a client who missed a deadline.\",\"question\":\"What's the mistake here?\",\"options\":[\"Claude can't write emails\",\"The prompt was too vague — no audience, purpose, or context\",\"The user should have iterated on the response\",\"The user asked Claude to do too many things at once\"],\"correct\":1,\"feedback\":\"Classic Mistake 1: too vague. 'Write me an email' gives Claude zero context. Who is it to? What's the situation? What tone? Adding 'Write a firm but professional follow-up email to a client who missed their deliverable deadline by a week. I want to hold them accountable without damaging the relationship' would have gotten a usable result on the first try.\"},{\"type\":\"choice\",\"claude_response\":\"Prompt: 'Create a complete marketing strategy for my new fitness app, including brand positioning, target audience analysis, competitive landscape, content calendar, social media strategy, paid acquisition plan, influencer outreach, PR strategy, and a 12-month budget.' — Claude produced a 2,000-word response that covered everything at surface level. None of it was detailed enough to actually use.\",\"question\":\"What's the mistake here?\",\"options\":[\"The prompt was too vague\",\"The user didn't iterate\",\"The user asked Claude to do everything at once instead of breaking it into steps\",\"The user didn't assign a role\"],\"correct\":2,\"feedback\":\"Mistake 3: too much at once. Nine major sections in one prompt means every section gets shallow treatment. The fix: start with 'Help me outline the 5 most important sections for a fitness app marketing strategy.' Then go deep on each one individually. You'll get 10x more useful output from 5 focused prompts than from one monster request.\"},{\"type\":\"choice\",\"claude_response\":\"Prompt: 'I'm thinking about quitting my job to start a company. What do you think?' — Claude responded with an encouraging, supportive message about following your dreams and believing in yourself. The user wanted someone to stress-test the idea, not cheer them on.\",\"question\":\"What's the mistake here?\",\"options\":[\"Claude isn't capable of giving tough feedback\",\"The user didn't give Claude permission to push back or be critical\",\"The prompt was too vague\",\"The user should have broken this into smaller tasks\"],\"correct\":1,\"feedback\":\"Mistake 5: not giving permission to push back. Claude defaults to being supportive and agreeable. If you want it to find holes in your plan, you have to say so explicitly. 'I'm thinking about quitting my job to start a company. Don't be encouraging — I want you to find every reason this could fail and be brutally honest about my blind spots' would have gotten the tough love the user actually needed.\"}]}",
+      "explanation": "Diagnosing prompt failures is a skill. The three most common culprits: too vague (no context), too much at once (shallow on everything), and no permission to push back (Claude defaults to agreeable). Knowing which mistake you're making is the first step to fixing it.",
+      "hints": [
+        "For each one, ask: what information or instruction was missing that caused the bad output?"
+      ],
+      "xp_reward": 15
+    },
+    {
+      "id": "ex_sp_05b",
+      "order_index": 2,
+      "type": "matching_pairs",
+      "prompt": "Match each common prompting mistake to its fix.",
+      "options": null,
+      "correct_answer": "{\"Being too vague\":\"Add audience, purpose, and format to your prompt\",\"Not iterating\":\"Treat the first response as a draft and refine with follow-ups\",\"Asking for everything at once\":\"Break big tasks into focused sequential steps\",\"Ignoring Claude's strengths\":\"Use Claude for reasoning and analysis, other tools for real-time data\",\"Not giving permission to push back\":\"Explicitly ask for honest, critical feedback\"}",
+      "explanation": "Each mistake has a specific, actionable fix. Vague prompts need context. First drafts need iteration. Monster prompts need to be broken down. Mismatched tasks need the right tool. And agreeable responses need explicit permission to be critical. Memorize these five pairs and you'll avoid the traps most people fall into.",
+      "hints": [
+        "Think about what's missing in each mistake — the fix is whatever fills that gap."
+      ],
+      "xp_reward": 10
+    },
+    {
+      "id": "ex_sp_05c",
+      "order_index": 3,
+      "type": "prompt_lab",
+      "prompt": "Here's a terrible prompt: 'Help me with my resume.' Rewrite it using everything you've learned in this course — context, outcome type, advanced techniques, and mistake avoidance. Make it a prompt that would actually produce a useful result.",
+      "options": null,
+      "correct_answer": "{\"scenario\":\"The original prompt is: 'Help me with my resume.' This is vague, has no role, no format, no constraints, and no context. Rewrite it into a prompt that would actually produce useful, actionable resume feedback. Use techniques from across this entire course.\",\"scoring_criteria\":[{\"keyword_group\":[\"you are\",\"you're a\",\"act as\",\"as a\",\"hiring manager\",\"recruiter\",\"reviewer\",\"HR\",\"talent\"],\"label\":\"Assigns a specific expert role\",\"points\":2},{\"keyword_group\":[\"applying for\",\"role\",\"position\",\"job\",\"company\",\"industry\",\"years of experience\",\"background\",\"career\"],\"label\":\"Provides context about the situation\",\"points\":3},{\"keyword_group\":[\"bullet\",\"list\",\"table\",\"format\",\"numbered\",\"top 3\",\"top 5\",\"specific\",\"section by section\",\"for each\"],\"label\":\"Specifies output format or structure\",\"points\":2},{\"keyword_group\":[\"honest\",\"critical\",\"brutal\",\"don't hold back\",\"weaknesses\",\"what's wrong\",\"what would you change\",\"push back\",\"tough\",\"blunt\"],\"label\":\"Gives permission for honest feedback\",\"points\":2},{\"keyword_group\":[\"under\",\"words\",\"focus on\",\"prioritize\",\"most important\",\"biggest\",\"first\",\"before\",\"don't\",\"avoid\",\"skip\"],\"label\":\"Includes constraints that narrow the output\",\"points\":2}],\"max_points\":11,\"pass_threshold\":6,\"ideal_prompt\":\"You're a senior recruiter at a top tech company who has screened 10,000 resumes. I'm applying for a product manager role at a Series B startup. Here's my resume. Review it section by section and give me: (1) the 3 strongest lines that would make you keep reading, (2) the 3 weakest lines that would make you hesitate, and (3) one specific rewrite for each weak line. Be blunt — I'd rather fix problems now than get ghosted later. Keep feedback to 2 sentences per point.\",\"tips\":[\"Start by giving Claude a role — who would give you the best resume feedback in real life?\",\"Include context: what job are you applying for? What's your background?\",\"Tell Claude exactly how to structure the feedback so it's actionable.\",\"Give explicit permission to be critical — otherwise you'll get polite but useless feedback.\",\"Add constraints like word limits or 'focus on the top 3 issues' to keep it tight.\"]}",
+      "explanation": "The rewrite should transform a 5-word throwaway into a prompt that produces genuinely useful resume feedback. The key ingredients: a specific expert role, real context about the job and your background, structured output format, permission to be honest, and constraints that keep the feedback focused and actionable. This is everything from the course in one prompt.",
+      "hints": [
+        "Think about all five lessons: context, iteration mindset, task-type matching, advanced techniques, and mistake avoidance.",
+        "Who would you pay $200/hour to review your resume? Make Claude be that person.",
+        "What format would make the feedback immediately actionable?"
+      ],
+      "xp_reward": 15
+    }
+  ]
+}

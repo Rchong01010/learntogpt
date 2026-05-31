@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claude Academy — Design Comparison</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;1,9..144,400&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Sora:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Space+Mono:wght@400;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #0a0a0a;
+    color: #fff;
+    overflow-x: hidden;
+  }
+
+  /* ========= NAV SWITCHER ========= */
+  .switcher {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    gap: 2px;
+    padding: 16px 20px;
+    background: rgba(10,10,10,0.95);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .switcher button {
+    padding: 10px 24px;
+    border: none;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    border-radius: 8px;
+    transition: all 0.3s;
+    letter-spacing: 0.02em;
+  }
+  .switcher button.active { transform: scale(1.02); }
+  .switcher .btn-a { background: #d97757; color: #1a1712; }
+  .switcher .btn-a.active { box-shadow: 0 0 20px rgba(217,119,87,0.4); }
+  .switcher .btn-b { background: #1e1e1e; color: #d97757; border: 1px solid #d97757; }
+  .switcher .btn-b.active { box-shadow: 0 0 20px rgba(217,119,87,0.3); }
+  .switcher .btn-c { background: #0f1729; color: #f0c8a0; border: 1px solid #f0c8a030; }
+  .switcher .btn-c.active { box-shadow: 0 0 20px rgba(240,200,160,0.2); }
+
+  .design { display: none; min-height: 100vh; padding-top: 70px; }
+  .design.active { display: block; }
+
+  /* ========================================= */
+  /* OPTION A — Inverse Anthropic (Light/Warm) */
+  /* ========================================= */
+  .design-a {
+    background: #f5f4ed;
+    color: #1a1712;
+    font-family: 'Fraunces', serif;
+  }
+
+  .design-a .hero {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 80px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  .design-a .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 800px 600px at 30% 20%, rgba(217,119,87,0.12), transparent),
+      radial-gradient(ellipse 600px 400px at 70% 70%, rgba(237,161,0,0.08), transparent);
+  }
+  .design-a .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 20px;
+    border: 1px solid #d9775740;
+    border-radius: 100px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: #d97757;
+    background: #d977570a;
+    margin-bottom: 32px;
+    position: relative;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .design-a .hero h1 {
+    font-size: clamp(3rem, 8vw, 6.5rem);
+    font-weight: 300;
+    line-height: 1.05;
+    max-width: 900px;
+    position: relative;
+    color: #1a1712;
+    letter-spacing: -0.03em;
+  }
+  .design-a .hero h1 em {
+    font-style: italic;
+    color: #d97757;
+    font-weight: 400;
+  }
+  .design-a .hero p {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.15rem;
+    color: #5a574e;
+    max-width: 540px;
+    line-height: 1.7;
+    margin-top: 28px;
+    position: relative;
+  }
+  .design-a .hero-cta {
+    display: flex;
+    gap: 16px;
+    margin-top: 40px;
+    position: relative;
+  }
+  .design-a .btn-primary {
+    padding: 16px 36px;
+    background: #d97757;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    letter-spacing: 0.01em;
+  }
+  .design-a .btn-primary:hover { background: #c4654a; transform: translateY(-2px); box-shadow: 0 8px 30px rgba(217,119,87,0.3); }
+  .design-a .btn-secondary {
+    padding: 16px 36px;
+    background: transparent;
+    color: #1a1712;
+    border: 1.5px solid #1a171230;
+    border-radius: 12px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  .design-a .btn-secondary:hover { border-color: #d97757; color: #d97757; }
+
+  .design-a .stats {
+    display: flex;
+    justify-content: center;
+    gap: 48px;
+    padding: 48px 24px;
+    border-top: 1px solid #d9d7cc;
+    border-bottom: 1px solid #d9d7cc;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .design-a .stat-num { font-family: 'Fraunces', serif; font-size: 2.5rem; font-weight: 700; color: #d97757; }
+  .design-a .stat-label { font-size: 0.85rem; color: #8a8780; margin-top: 4px; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 500; }
+
+  .design-a .tracks {
+    padding: 80px 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .design-a .tracks h2 {
+    font-size: 2.8rem;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 12px;
+    letter-spacing: -0.02em;
+  }
+  .design-a .tracks h2 em { font-style: italic; color: #d97757; }
+  .design-a .tracks-sub {
+    text-align: center;
+    font-family: 'DM Sans', sans-serif;
+    color: #8a8780;
+    margin-bottom: 48px;
+    font-size: 1.05rem;
+  }
+  .design-a .track-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  .design-a .track-card {
+    background: #fff;
+    border: 1px solid #e8e6dc;
+    border-radius: 16px;
+    padding: 32px;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+  .design-a .track-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.06); border-color: #d97757; }
+  .design-a .track-card .track-icon {
+    width: 48px; height: 48px;
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px;
+    margin-bottom: 16px;
+  }
+  .design-a .track-card h3 { font-size: 1.25rem; font-weight: 500; margin-bottom: 8px; }
+  .design-a .track-card p { font-family: 'DM Sans', sans-serif; color: #6a675f; font-size: 0.9rem; line-height: 1.6; }
+  .design-a .track-card .track-meta {
+    margin-top: 20px;
+    display: flex;
+    gap: 12px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8rem;
+    color: #8a8780;
+  }
+  .design-a .track-card .track-meta span {
+    padding: 4px 10px;
+    background: #f5f4ed;
+    border-radius: 6px;
+  }
+
+  /* ========================================= */
+  /* OPTION B — Brilliant meets Claude (Dark)  */
+  /* ========================================= */
+  .design-b {
+    background: #111111;
+    color: #e8e6dc;
+    font-family: 'Sora', sans-serif;
+  }
+
+  .design-b .hero {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 80px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  .design-b .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle 500px at 50% 40%, rgba(217,119,87,0.15), transparent),
+      radial-gradient(circle 300px at 25% 60%, rgba(237,161,0,0.06), transparent),
+      radial-gradient(circle 400px at 75% 30%, rgba(106,155,204,0.05), transparent);
+  }
+  .design-b .hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(rgba(217,119,87,0.15) 1px, transparent 1px);
+    background-size: 40px 40px;
+    opacity: 0.4;
+  }
+
+  .design-b .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 20px;
+    border: 1px solid #d9775730;
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #d97757;
+    background: rgba(217,119,87,0.08);
+    margin-bottom: 32px;
+    position: relative;
+    z-index: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+  .design-b .hero-badge::before {
+    content: '';
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: #d97757;
+    animation: pulse-b 2s infinite;
+  }
+  @keyframes pulse-b { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+  .design-b .hero h1 {
+    font-size: clamp(3rem, 8vw, 5.5rem);
+    font-weight: 700;
+    line-height: 1.08;
+    max-width: 850px;
+    position: relative;
+    z-index: 1;
+    letter-spacing: -0.04em;
+    background: linear-gradient(135deg, #f5f4ed, #d97757);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .design-b .hero p {
+    font-size: 1.1rem;
+    color: #8a8780;
+    max-width: 520px;
+    line-height: 1.7;
+    margin-top: 24px;
+    position: relative;
+    z-index: 1;
+    font-weight: 300;
+  }
+  .design-b .hero-cta {
+    display: flex;
+    gap: 16px;
+    margin-top: 40px;
+    position: relative;
+    z-index: 1;
+  }
+  .design-b .btn-primary {
+    padding: 16px 36px;
+    background: linear-gradient(135deg, #d97757, #c4654a);
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    font-family: 'Sora', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+  .design-b .btn-primary::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, transparent, rgba(255,255,255,0.1));
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .design-b .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(217,119,87,0.4); }
+  .design-b .btn-primary:hover::after { opacity: 1; }
+
+  .design-b .btn-secondary {
+    padding: 16px 36px;
+    background: rgba(255,255,255,0.04);
+    color: #e8e6dc;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    font-family: 'Sora', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  .design-b .btn-secondary:hover { border-color: #d97757; color: #d97757; background: rgba(217,119,87,0.05); }
+
+  .design-b .stats {
+    display: flex;
+    justify-content: center;
+    gap: 48px;
+    padding: 48px 24px;
+    border-top: 1px solid #ffffff08;
+    border-bottom: 1px solid #ffffff08;
+    background: rgba(217,119,87,0.02);
+  }
+  .design-b .stat-num { font-size: 2.2rem; font-weight: 700; color: #d97757; }
+  .design-b .stat-label { font-size: 0.8rem; color: #6a675f; margin-top: 4px; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 500; }
+
+  .design-b .tracks {
+    padding: 80px 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .design-b .tracks h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 12px;
+    letter-spacing: -0.03em;
+    color: #f5f4ed;
+  }
+  .design-b .tracks-sub { text-align: center; color: #6a675f; margin-bottom: 48px; font-size: 1rem; font-weight: 300; }
+  .design-b .track-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 16px;
+  }
+  .design-b .track-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 16px;
+    padding: 28px;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+  .design-b .track-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--track-color, #d97757), transparent);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .design-b .track-card:hover { border-color: rgba(217,119,87,0.3); transform: translateY(-2px); }
+  .design-b .track-card:hover::before { opacity: 1; }
+  .design-b .track-card .track-icon {
+    width: 44px; height: 44px;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px;
+    margin-bottom: 16px;
+    background: rgba(217,119,87,0.1);
+    border: 1px solid rgba(217,119,87,0.15);
+  }
+  .design-b .track-card h3 { font-size: 1.15rem; font-weight: 600; color: #f5f4ed; margin-bottom: 8px; }
+  .design-b .track-card p { color: #6a675f; font-size: 0.88rem; line-height: 1.6; font-weight: 300; }
+  .design-b .track-card .track-meta {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+    font-size: 0.78rem;
+    color: #5a574e;
+  }
+  .design-b .track-card .track-meta span {
+    padding: 4px 10px;
+    background: rgba(255,255,255,0.04);
+    border-radius: 6px;
+    border: 1px solid rgba(255,255,255,0.04);
+  }
+
+  /* ========================================= */
+  /* OPTION C — Navy + Warm Gold (Editorial)   */
+  /* ========================================= */
+  .design-c {
+    background: #0b1121;
+    color: #f0e6d3;
+    font-family: 'Playfair Display', serif;
+  }
+
+  .design-c .hero {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 80px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  .design-c .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(180deg, #0b1121, #111d35 50%, #0b1121),
+      repeating-linear-gradient(90deg, rgba(240,200,160,0.02) 0px, rgba(240,200,160,0.02) 1px, transparent 1px, transparent 80px),
+      repeating-linear-gradient(0deg, rgba(240,200,160,0.02) 0px, rgba(240,200,160,0.02) 1px, transparent 1px, transparent 80px);
+  }
+  .design-c .hero::after {
+    content: '';
+    position: absolute;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    border: 1px solid rgba(240,200,160,0.05);
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .design-c .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 24px;
+    border: 1px solid rgba(240,200,160,0.2);
+    border-radius: 2px;
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    font-weight: 400;
+    color: #f0c8a0;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: 36px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .design-c .hero h1 {
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 400;
+    line-height: 1.1;
+    max-width: 800px;
+    position: relative;
+    z-index: 1;
+    letter-spacing: -0.02em;
+    color: #f0e6d3;
+  }
+  .design-c .hero h1 em {
+    font-style: italic;
+    background: linear-gradient(135deg, #f0c8a0, #d97757);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .design-c .hero p {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.1rem;
+    color: #7a8599;
+    max-width: 480px;
+    line-height: 1.7;
+    margin-top: 28px;
+    position: relative;
+    z-index: 1;
+  }
+  .design-c .hero-cta {
+    display: flex;
+    gap: 16px;
+    margin-top: 40px;
+    position: relative;
+    z-index: 1;
+  }
+  .design-c .btn-primary {
+    padding: 16px 40px;
+    background: transparent;
+    color: #f0c8a0;
+    border: 1.5px solid #f0c8a0;
+    border-radius: 2px;
+    font-family: 'Space Mono', monospace;
+    font-size: 13px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+  }
+  .design-c .btn-primary:hover { background: #f0c8a0; color: #0b1121; }
+  .design-c .btn-secondary {
+    padding: 16px 40px;
+    background: transparent;
+    color: #7a8599;
+    border: 1px solid #7a859930;
+    border-radius: 2px;
+    font-family: 'Space Mono', monospace;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+  }
+  .design-c .btn-secondary:hover { border-color: #f0c8a0; color: #f0c8a0; }
+
+  .design-c .stats {
+    display: flex;
+    justify-content: center;
+    gap: 64px;
+    padding: 56px 24px;
+    border-top: 1px solid rgba(240,200,160,0.08);
+    border-bottom: 1px solid rgba(240,200,160,0.08);
+  }
+  .design-c .stat-num { font-size: 2.8rem; font-weight: 400; color: #f0c8a0; font-style: italic; }
+  .design-c .stat-label { font-family: 'Space Mono', monospace; font-size: 0.7rem; color: #4a5568; margin-top: 8px; text-transform: uppercase; letter-spacing: 0.2em; }
+
+  .design-c .tracks {
+    padding: 80px 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .design-c .tracks h2 {
+    font-size: 2.8rem;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 12px;
+    color: #f0e6d3;
+  }
+  .design-c .tracks h2 em { font-style: italic; color: #f0c8a0; }
+  .design-c .tracks-sub { text-align: center; font-family: 'DM Sans', sans-serif; color: #4a5568; margin-bottom: 56px; font-size: 1rem; }
+  .design-c .track-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  .design-c .track-card {
+    background: rgba(240,200,160,0.02);
+    border: 1px solid rgba(240,200,160,0.06);
+    border-radius: 2px;
+    padding: 32px;
+    transition: all 0.4s;
+    position: relative;
+  }
+  .design-c .track-card::before {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 32px; right: 32px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #f0c8a030, transparent);
+    opacity: 0;
+    transition: opacity 0.4s;
+  }
+  .design-c .track-card:hover { border-color: rgba(240,200,160,0.2); }
+  .design-c .track-card:hover::before { opacity: 1; }
+  .design-c .track-card .track-icon {
+    width: 40px; height: 40px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #f0c8a0;
+  }
+  .design-c .track-card h3 {
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: #f0e6d3;
+    margin-bottom: 8px;
+  }
+  .design-c .track-card p {
+    font-family: 'DM Sans', sans-serif;
+    color: #5a6577;
+    font-size: 0.88rem;
+    line-height: 1.6;
+  }
+  .design-c .track-card .track-meta {
+    margin-top: 24px;
+    display: flex;
+    gap: 12px;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    color: #4a5568;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  /* Responsive */
+  @media (max-width: 640px) {
+    .switcher { gap: 4px; padding: 12px 8px; }
+    .switcher button { padding: 8px 14px; font-size: 12px; }
+    .stats { flex-wrap: wrap; gap: 24px; }
+    .track-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="switcher">
+  <button class="btn-a active" onclick="show('a')">A: Inverse Anthropic</button>
+  <button class="btn-b" onclick="show('b')">B: Brilliant + Claude</button>
+  <button class="btn-c" onclick="show('c')">C: Navy Editorial</button>
+</div>
+
+<!-- ====== OPTION A ====== -->
+<div class="design design-a active" id="design-a">
+  <div class="hero">
+    <div class="hero-badge">Anthropic Partner Program</div>
+    <h1>Learn to <em>master</em><br>Claude AI</h1>
+    <p>Interactive courses from beginner to Architect certification. Gamified learning with exercises, streaks, and real-world projects.</p>
+    <div class="hero-cta">
+      <button class="btn-primary">Start Learning Free</button>
+      <button class="btn-secondary">View Courses</button>
+    </div>
+  </div>
+  <div class="stats">
+    <div><div class="stat-num">35</div><div class="stat-label">Courses</div></div>
+    <div><div class="stat-num">175</div><div class="stat-label">Lessons</div></div>
+    <div><div class="stat-num">529</div><div class="stat-label">Exercises</div></div>
+    <div><div class="stat-num">10</div><div class="stat-label">Game Types</div></div>
+  </div>
+  <div class="tracks">
+    <h2>Five paths to <em>fluency</em></h2>
+    <p class="tracks-sub">From your first conversation to Architect certification</p>
+    <div class="track-grid">
+      <div class="track-card"><div class="track-icon" style="background:#d9775712;color:#d97757">&#128218;</div><h3>Claude Fundamentals</h3><p>Master the basics of Claude AI. Prompting, conversations, artifacts, and projects.</p><div class="track-meta"><span>8 courses</span><span>Beginner</span><span>Free</span></div></div>
+      <div class="track-card"><div class="track-icon" style="background:#6a9bcc12;color:#6a9bcc">&#128188;</div><h3>Claude for Work</h3><p>Supercharge your professional workflow. Legal, marketing, operations, data analysis.</p><div class="track-meta"><span>6 courses</span><span>Beginner</span></div></div>
+      <div class="track-card"><div class="track-icon" style="background:#788c5d12;color:#788c5d">&#128187;</div><h3>Claude Code Mastery</h3><p>Command the CLI. CLAUDE.md, plan mode, MCP servers, hooks, multi-agent patterns.</p><div class="track-meta"><span>8 courses</span><span>Intermediate</span></div></div>
+      <div class="track-card"><div class="track-icon" style="background:#eda10012;color:#eda100">&#129302;</div><h3>API &amp; Agents</h3><p>Build production AI apps. Tool use, Agent SDK, multi-agent architectures, MCP.</p><div class="track-meta"><span>8 courses</span><span>Advanced</span></div></div>
+      <div class="track-card"><div class="track-icon" style="background:#d9775712;color:#d97757">&#127942;</div><h3>Architect Exam Prep</h3><p>Prepare for Claude Certified Architect. All 5 domains, mock exams, exam strategy.</p><div class="track-meta"><span>5 courses</span><span>Expert</span></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ====== OPTION B ====== -->
+<div class="design design-b" id="design-b">
+  <div class="hero">
+    <div class="hero-badge"><span></span>Anthropic Partner Program</div>
+    <h1>Master Claude AI</h1>
+    <p>Interactive courses, puzzles, and games. From your first prompt to Architect certification.</p>
+    <div class="hero-cta">
+      <button class="btn-primary">Start Learning Free</button>
+      <button class="btn-secondary">View Courses</button>
+    </div>
+  </div>
+  <div class="stats">
+    <div><div class="stat-num">35</div><div class="stat-label">Courses</div></div>
+    <div><div class="stat-num">175</div><div class="stat-label">Lessons</div></div>
+    <div><div class="stat-num">529</div><div class="stat-label">Exercises</div></div>
+    <div><div class="stat-num">10</div><div class="stat-label">Game Types</div></div>
+  </div>
+  <div class="tracks">
+    <h2>Five Tracks to Mastery</h2>
+    <p class="tracks-sub">From beginner to Certified Architect</p>
+    <div class="track-grid">
+      <div class="track-card" style="--track-color:#d97757"><div class="track-icon">&#128218;</div><h3>Claude Fundamentals</h3><p>Master the basics. Prompting, conversations, artifacts, projects.</p><div class="track-meta"><span>8 courses</span><span>Beginner</span><span>Free</span></div></div>
+      <div class="track-card" style="--track-color:#6a9bcc"><div class="track-icon" style="background:rgba(106,155,204,0.1);border-color:rgba(106,155,204,0.15)">&#128188;</div><h3>Claude for Work</h3><p>Legal, marketing, operations, data. No code required.</p><div class="track-meta"><span>6 courses</span><span>Beginner</span></div></div>
+      <div class="track-card" style="--track-color:#788c5d"><div class="track-icon" style="background:rgba(120,140,93,0.1);border-color:rgba(120,140,93,0.15)">&#128187;</div><h3>Claude Code Mastery</h3><p>The CLI, CLAUDE.md, plan mode, MCP servers, hooks.</p><div class="track-meta"><span>8 courses</span><span>Intermediate</span></div></div>
+      <div class="track-card" style="--track-color:#eda100"><div class="track-icon" style="background:rgba(237,161,0,0.1);border-color:rgba(237,161,0,0.15)">&#129302;</div><h3>API &amp; Agents</h3><p>Tool use, Agent SDK, multi-agent architectures, production patterns.</p><div class="track-meta"><span>8 courses</span><span>Advanced</span></div></div>
+      <div class="track-card" style="--track-color:#d97757"><div class="track-icon">&#127942;</div><h3>Architect Exam Prep</h3><p>All 5 domains. Scenario-based practice. Mock exams.</p><div class="track-meta"><span>5 courses</span><span>Expert</span></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ====== OPTION C ====== -->
+<div class="design design-c" id="design-c">
+  <div class="hero">
+    <div class="hero-badge">Est. 2026 &mdash; Anthropic Partner</div>
+    <h1>The art of<br><em>Claude</em></h1>
+    <p>A rigorous curriculum from fundamentals to Architect certification. 35 courses. 529 exercises. One path to mastery.</p>
+    <div class="hero-cta">
+      <button class="btn-primary">Begin</button>
+      <button class="btn-secondary">Explore</button>
+    </div>
+  </div>
+  <div class="stats">
+    <div><div class="stat-num">35</div><div class="stat-label">Courses</div></div>
+    <div><div class="stat-num">175</div><div class="stat-label">Lessons</div></div>
+    <div><div class="stat-num">529</div><div class="stat-label">Exercises</div></div>
+    <div><div class="stat-num">5</div><div class="stat-label">Tracks</div></div>
+  </div>
+  <div class="tracks">
+    <h2>Five disciplines of <em>mastery</em></h2>
+    <p class="tracks-sub">A structured path from novice to architect</p>
+    <div class="track-grid">
+      <div class="track-card"><div class="track-icon">I</div><h3>Claude Fundamentals</h3><p>Master the foundations. Prompting, conversations, artifacts, and projects.</p><div class="track-meta"><span>8 courses</span><span>Beginner</span></div></div>
+      <div class="track-card"><div class="track-icon">II</div><h3>Claude for Work</h3><p>Professional application. Legal, marketing, operations, data analysis.</p><div class="track-meta"><span>6 courses</span><span>Beginner</span></div></div>
+      <div class="track-card"><div class="track-icon">III</div><h3>Claude Code Mastery</h3><p>Command-line mastery. Configuration, automation, multi-agent orchestration.</p><div class="track-meta"><span>8 courses</span><span>Intermediate</span></div></div>
+      <div class="track-card"><div class="track-icon">IV</div><h3>API &amp; Agents</h3><p>Production systems. Tool use, Agent SDK, MCP integration, voice agents.</p><div class="track-meta"><span>8 courses</span><span>Advanced</span></div></div>
+      <div class="track-card"><div class="track-icon">V</div><h3>Architect Exam Prep</h3><p>Certification preparation. Five domains. Scenario practice. Mock examinations.</p><div class="track-meta"><span>5 courses</span><span>Expert</span></div></div>
+    </div>
+  </div>
+</div>
+
+<script>
+function show(id) {
+  document.querySelectorAll('.design').forEach(d => d.classList.remove('active'));
+  document.querySelectorAll('.switcher button').forEach(b => b.classList.remove('active'));
+  document.getElementById('design-' + id).classList.add('active');
+  document.querySelector('.btn-' + id).classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+</body>
+</html>

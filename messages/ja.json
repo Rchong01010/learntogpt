@@ -1,0 +1,1148 @@
+{
+  "common": {
+    "save": "保存",
+    "cancel": "キャンセル",
+    "delete": "削除",
+    "loading": "読み込み中...",
+    "saving": "保存中...",
+    "savedBang": "保存しました！",
+    "signIn": "サインイン",
+    "signUp": "サインアップ",
+    "getStarted": "始める",
+    "home": "ホーム",
+    "close": "閉じる",
+    "back": "戻る",
+    "next": "次へ",
+    "continue": "続ける",
+    "finish": "完了",
+    "tryAgain": "もう一度試す",
+    "dismiss": "閉じる",
+    "upgrade": "アップグレード",
+    "learnMore": "詳細を見る",
+    "levelLabel": "レベル {level}",
+    "xpOutOf": "{current} / {total} XP",
+    "dayStreak": "日連続",
+    "atRisk": "危機一髪！",
+    "bestStreak": "ベスト: {count}",
+    "lessonsProgress": "{done}/{total} レッスン",
+    "xpBonusPlus": "+{xp} XP",
+    "shareCongratulations": "おめでとうございます！",
+    "shareAchievementPrompt": "達成をシェアする",
+    "shareOnLinkedIn": "LinkedInでシェア",
+    "shareOnX": "Xでシェア",
+    "shareCopyLink": "シェアリンクをコピー",
+    "shareButtonShare": "シェア",
+    "shareButtonPost": "投稿",
+    "shareButtonCopy": "コピー",
+    "shareButtonCopied": "コピーしました！",
+    "closeLabel": "閉じる",
+    "shareDialogLabel": "達成をシェアする"
+  },
+  "nav": {
+    "dashboard": "ダッシュボード",
+    "courses": "コース",
+    "missions": "ミッション",
+    "leaderboard": "リーダーボード",
+    "profile": "プロフィール",
+    "settings": "設定",
+    "signOut": "サインアウト",
+    "brandName": "Learn to GPT",
+    "levelLabel": "Lvl {level}"
+  },
+  "dashboard": {
+    "welcomeNewTitle": "Learn to GPTへようこそ、{name}さん！",
+    "welcomeNewSubtitleMissions": "何を構築したいですか？ミッションを選んで始めましょう。",
+    "welcomeNewSubtitleDefault": "ChatGPTをマスターする旅を始めましょう。以下のトラックを選ぶか、最初のレッスンに飛び込みましょう。",
+    "startLearning": "学習を始める",
+    "welcomeBack": "お帰りなさい、{name}さん",
+    "streakMessage": "この勢いを維持しましょう。現在{streak}日連続です！",
+    "noStreakMessage": "今日レッスンを始めて、連続記録を築きましょう！",
+    "dailyChallengeTitle": "デイリーチャレンジ",
+    "dailyChallengeBody": "連続記録を維持するために1つのレッスンを完了しましょう",
+    "dailyChallengeButton": "完了する",
+    "dailyChallengeComplete": "完了！",
+    "dailyChallengeXp": "+{xp} XP",
+    "continueHeader": "中断したところから再開",
+    "startJourneyLabel": "学習を始めよう",
+    "startJourneySubtitle": "最初のレッスンを始めてXPを獲得しましょう",
+    "courseProgress": "{progress}% 完了",
+    "resumeButton": "再開",
+    "startButton": "始める",
+    "skillTreeHeading": "コースを探す",
+    "achievementsHeading": "アチーブメント",
+    "whatBuildHeading": "何を構築したいですか？",
+    "missionHoursShort": "約{hours}時間",
+    "missionXp": "{xp} XP",
+    "missionSteps": "{count} ステップ",
+    "justExploreCourses": "代わりにコースを探索する"
+  },
+  "courses": {
+    "eyebrow": "あなたの世界を選ぼう",
+    "heading": "コースワールド",
+    "subheading": "ChatGPTの基礎からArchitectレベルの専門知識までをマスターしましょう。各ワールドは新しい冒険です。",
+    "filterAll": "すべてのトラック",
+    "filterWhyClaude": "なぜChatGPT？",
+    "filterThreeLevels": "3つのレベル",
+    "filterEssentials": "エッセンシャル",
+    "filterLevelUp": "レベルアップ",
+    "filterBuildSomething": "何か構築する",
+    "filterPractitionerSetup": "実践者セットアップ",
+    "filterAdvancedWorkflows": "高度なワークフロー",
+    "badgeFree": "無料",
+    "badgePro": "プロ",
+    "lessonsCount": "{count} レッスン",
+    "minutesShort": "約{minutes}分",
+    "xpShort": "{xp} XP",
+    "backAll": "すべてのコース",
+    "levelProgressionHeading": "レベル進行",
+    "progressLabel": "進捗",
+    "progressLessons": "{done}/{total} レッスン",
+    "ctaStart": "コースを開始",
+    "ctaContinue": "続ける",
+    "badgeProShort": "プロ",
+    "badgeFreeShort": "無料",
+    "minutesAbbrev": "{minutes}分"
+  },
+  "lessons": {
+    "backToCourse": "コースに戻る",
+    "progressCouldNotBeSaved": "進捗を保存できませんでした: {error}",
+    "lessonCompleteBang": "レッスン完了！",
+    "savingEllipsis": "保存中...",
+    "xpPlus": "+{xp} XP",
+    "achievementUnlocked": "アチーブメント解除: {name}",
+    "shareProgress": "進捗をシェアする",
+    "backToCourseButton": "コースに戻る",
+    "nextLesson": "次のレッスン",
+    "completeCourse": "コースを完了",
+    "courseCompleteShareTitle": "完了: {title}",
+    "achievementShareTitle": "アチーブメント: {name}",
+    "finishedCourseDesc": "Learn to GPTでコースを完了しました！",
+    "stepOfTotal": "ステップ {current} / {total}",
+    "completeExerciseToContinue": "続けるには演習を完了してください",
+    "skipExercise": "演習をスキップ",
+    "exerciseOfTotal": "演習 {current} / {total}",
+    "xpEarnedBadge": "{xp} XP",
+    "xpSuffix": "XP",
+    "challenge": "チャレンジ",
+    "exerciseLabel": "演習",
+    "unknownExerciseType": "不明な演習タイプです。",
+    "correctBang": "正解！",
+    "notQuite": "惜しい！上記の解説を見直してください。",
+    "submitAnswer": "回答を送信",
+    "checkingEllipsis": "確認中...",
+    "showHint": "ヒントを表示",
+    "nextHint": "次のヒント",
+    "explanation": "解説",
+    "matchingTerms": "用語",
+    "matchingDefinitions": "定義",
+    "allPairsMatched": "すべてのペアが一致しました！",
+    "failedToCheckAnswer": "回答の確認に失敗しました。もう一度お試しください。",
+    "typeLabels": {
+      "multiple_choice": "正しい答えを選ぶ",
+      "fill_blank": "空欄を埋める",
+      "drag_drop": "並べ替える",
+      "code_exercise": "コードチャレンジ",
+      "scenario": "シナリオチャレンジ",
+      "matching_pairs": "ペアを一致させる",
+      "speed_round": "スピードラウンド",
+      "bug_hunt": "バグハント",
+      "flash_cards": "フラッシュカード",
+      "word_scramble": "単語スクランブル",
+      "typing_challenge": "タイピングチャレンジ",
+      "whack_a_mole": "モグラ叩き",
+      "prompt_builder": "プロンプトを作成",
+      "conversation_sim": "会話シミュレーション",
+      "spot_the_difference": "違いを見つける",
+      "prompt_lab": "プロンプトラボ",
+      "speed_prompt": "スピードプロンプト",
+      "scenario_walkthrough": "シナリオウォークスルー",
+      "exercise": "演習"
+    },
+    "signUpToSave": "サインアップして進捗を保存し、XPを獲得しましょう",
+    "signUpToSaveBody": "無料アカウントを作成して、進捗を記録し、すべてのコースをアンロックし、連続記録を始めましょう。",
+    "signUpFree": "無料で登録",
+    "continueExploring": "探索を続ける",
+    "advancedCta": {
+      "heading": "さらに深く学びたいですか？",
+      "masterclassTitle": "マスタークラス",
+      "masterclassBody": "完全ガイド。このコースのセットアップ、設定、ワークフローパターンを一つずつ解説します。プロンプト、テンプレート、システムのすべてが手に入ります。",
+      "masterclassButton": "マスタークラスを入手",
+      "setupTitle": "または代わりにセットアップ",
+      "setupBody": "1対1セッションを予約すれば、あなたのマシンにすべてセットアップします。プロジェクトに合わせて設定された完全なシステムを持ち帰れます。",
+      "setupButton": "Reidと通話を予約"
+    }
+  },
+  "pricing": {
+    "metaTitle": "価格 — Learn to GPT",
+    "metaDescription": "ChatGPTを無料で学び始めるか、Proで全アクセスをアンロックしましょう。175以上のレッスン、700以上の演習、Architect試験対策が含まれます。",
+    "navHome": "ホーム",
+    "navGetStarted": "始める",
+    "headline": "プランを選びましょう",
+    "subhead": "無料で始めて、準備ができたらアップグレードしましょう。すべてのプランにはコア学習体験へのアクセスが含まれています。",
+    "mostPopular": "最も人気",
+    "freeName": "無料",
+    "freeTagline": "試してから決めましょう",
+    "freePrice": "$0",
+    "perMonth": "/月",
+    "freeBody": "Learn to GPTがあなたに合っているか確認するために、各トラックのプレビューレッスンにアクセスできます。クレジットカードは不要です。",
+    "freeBullet1": "各トラック2〜3レッスン",
+    "freeBullet2": "基本的な進捗トラッキング",
+    "freeBullet3": "コミュニティアクセス",
+    "freeCtaLoggedIn": "ダッシュボードへ",
+    "freeCtaGuest": "無料で始める",
+    "proName": "プロ",
+    "proTagline": "ChatGPTをマスターするために必要なすべて",
+    "proPrice": "Free",
+    "proBody": "すべてのレッスン、演習、トラックへの無制限アクセス。完全なゲーミフィケーション、Architect試験対策、毎週新しいコンテンツが追加されます。",
+    "proBullet1": "5つのトラックにわたる175以上の全レッスン",
+    "proBullet2": "700以上の実践的な演習",
+    "proBullet3": "連続記録、リーダーボード、アチーブメント",
+    "proBullet4": "Architect試験対策トラック",
+    "proBullet5": "毎週新しいコンテンツが追加",
+    "proBullet6": "優先サポート",
+    "proCtaLoggedIn": "Proにアップグレード",
+    "proCtaGuest": "Pro無料トライアルを開始",
+    "compareHeading": "プランを比較",
+    "headerFeature": "機能",
+    "headerFree": "無料",
+    "headerPro": "プロ",
+    "featureFundamentalsPreview": "基礎トラックプレビュー（2〜3レッスン）",
+    "featureClaudeForWorkPreview": "ChatGPT for Workプレビュー（2〜3レッスン）",
+    "featureBasicProgress": "基本的な進捗トラッキング",
+    "featureAllLessons": "5つのトラックにわたる175以上の全レッスン",
+    "featureAllExercises": "700以上の実践的な演習",
+    "featureCodeChallenges": "コードチャレンジと実世界のシナリオ",
+    "featureArchitectPrep": "Architect試験対策トラック",
+    "featureXpStreaks": "XP、連続記録、アチーブメント",
+    "featureLeaderboard": "リーダーボードアクセス",
+    "featureWeeklyContent": "毎週新しいコンテンツが追加",
+    "featurePrioritySupport": "優先サポート",
+    "featureLimited": "制限あり",
+    "fineprint": "いつでもキャンセル可能。長期契約なし。すべての価格は米ドルです。",
+    "bottomHeadline": "ChatGPTをマスターする準備はできましたか？",
+    "bottomSubhead": "無料プランから始めて、いつでもアップグレードできます。",
+    "bottomCta": "無料アカウントを作成",
+    "footerBrand": "Learn to GPT",
+    "footerHome": "ホーム",
+    "footerPrivacy": "プライバシー",
+    "footerTerms": "利用規約"
+  },
+  "auth": {
+    "signInTitle": "サインイン",
+    "signInDescription": "Learn to GPTアカウントにサインインしてください",
+    "emailLabel": "メールアドレス",
+    "emailPlaceholder": "you@example.com",
+    "passwordLabel": "パスワード",
+    "passwordPlaceholder": "あなたのパスワード",
+    "signInSubmit": "サインイン",
+    "signingIn": "サインイン中...",
+    "orContinueWith": "または、以下で続ける",
+    "signInWithGoogle": "Googleでサインイン",
+    "noAccountPrompt": "アカウントをお持ちではありませんか？",
+    "signUpLink": "サインアップ",
+    "signUpTitle": "アカウントを作成",
+    "signUpDescription": "ChatGPT学習の旅を始めましょう",
+    "passwordHintMinChars": "8文字以上",
+    "signUpSubmit": "アカウントを作成",
+    "creatingAccount": "アカウント作成中...",
+    "signUpWithGoogle": "Googleでサインアップ",
+    "hasAccountPrompt": "すでにアカウントをお持ちですか？",
+    "signInLink": "サインイン",
+    "checkEmailTitle": "メールを確認してください",
+    "checkEmailDescription": "<strong>{email}</strong>に確認リンクを送信しました。リンクをクリックしてアカウントを有効にしてください。",
+    "alreadyConfirmed": "すでに確認済みですか？",
+    "passwordTooShort": "パスワードは8文字以上である必要があります",
+    "pleaseCompleteVerification": "認証を完了してください",
+    "verificationFailed": "認証に失敗しました。もう一度お試しください。",
+    "authCallbackError": "サインインに失敗しました。もう一度お試しください。"
+  },
+  "profile": {
+    "defaultLearnerName": "学習者",
+    "joinedLabel": "{date}に参加",
+    "statTotalXp": "合計XP",
+    "statLevel": "レベル",
+    "statLessons": "レッスン",
+    "statCourses": "コース",
+    "xpProgressHeading": "XP進捗",
+    "streakHeading": "連続記録",
+    "trackProgressHeading": "トラック進捗",
+    "trackProgressCaption": "{done}/{total} レッスン（{pct}%）",
+    "achievementsHeading": "アチーブメント（{unlocked}/{total}）"
+  },
+  "settings": {
+    "heading": "設定",
+    "subheading": "アカウントとサブスクリプションを管理します。",
+    "profileHeading": "プロフィール",
+    "profileSubheading": "表示名と設定を更新します。",
+    "displayNameLabel": "表示名",
+    "emailLabel": "メールアドレス",
+    "emailManagedNote": "メールアドレスは認証プロバイダーによって管理されており、ここでは変更できません。",
+    "savedBang": "保存しました！",
+    "savingEllipsis": "保存中...",
+    "saveChanges": "変更を保存",
+    "subscriptionHeading": "サブスクリプション",
+    "subscriptionSubheading": "Learn to GPTのプランを管理します。",
+    "freePlan": "無料プラン",
+    "proPlan": "プロプラン",
+    "freeBadge": "無料",
+    "proBadge": "プロ",
+    "freeDescription": "無料コースのみにアクセスできます。すべてのコース、演習、ミッションへのフルアクセスにはアップグレードしてください。",
+    "proDescription": "すべてのコース、演習、ミッションへのフルアクセス。",
+    "memberSince": "{date}からメンバー",
+    "upgradeToPro": "Proにアップグレード",
+    "manageSubscription": "サブスクリプションを管理",
+    "loadingEllipsis": "読み込み中...",
+    "signOutHeading": "サインアウト",
+    "signOutSubheading": "このデバイスからLearn to GPTアカウントをサインアウトします。",
+    "signOutButton": "サインアウト",
+    "deleteAccountHeading": "アカウントを削除",
+    "deleteAccountSubheading": "アカウントと関連するすべてのデータを完全に削除します。この操作は元に戻せません。",
+    "deleteButton": "削除",
+    "deleteConfirmTitle": "アカウントを削除",
+    "deleteConfirmBody": "これにより、アカウント、すべてのコース進捗、アチーブメント、サブスクリプションデータが完全に削除されます。アクティブなサブスクリプションがある場合、キャンセルされます。この操作は元に戻せません。",
+    "deleteConfirmPrompt": "確認のため「DELETE」と入力してください",
+    "deleteConfirmPlaceholder": "DELETE",
+    "cancelButton": "キャンセル",
+    "deleteConfirmButton": "はい、アカウントを削除します",
+    "deletingEllipsis": "削除中...",
+    "displayNameValidation": "表示名は2〜50文字である必要があります",
+    "somethingWentWrong": "何か問題が発生しました",
+    "failedToOpenPortal": "サブスクリプションポータルを開けませんでした",
+    "failedToDeleteAccount": "アカウントの削除に失敗しました",
+    "allFreeHeading": "すべてのコースが無料です。",
+    "allFreeBody": "Learn to GPTに有料プランはありません。1対1でセットアップをご希望の場合は、reid@getateam.ai までご連絡ください。"
+  },
+  "leaderboard": {
+    "heading": "リーダーボード",
+    "subheading": "獲得した合計XPでランク付けされたトップ学習者。",
+    "colRank": "#",
+    "colPlayer": "プレイヤー",
+    "colXp": "XP",
+    "colLevel": "Lvl",
+    "colStreak": "連続記録",
+    "emptyState": "まだリーダーボードに学習者はいません。一番乗りになりましょう！",
+    "youLabel": "（あなた）",
+    "anonymous": "匿名",
+    "tabLocal": "あなたの言語",
+    "tabGlobal": "グローバル"
+  },
+  "errors": {
+    "somethingWentWrong": "何か問題が発生しました",
+    "failedToSaveProgress": "進捗の保存に失敗しました",
+    "failedToGenerateShareLink": "シェアリンクの生成に失敗しました",
+    "generatingShareLink": "シェアリンクを生成中..."
+  },
+  "landing": {
+    "meta": {
+      "title": "Learn to GPT — ChatGPTを基礎からマスター",
+      "description": "ChatGPTのためのゲーミフィケーション学習プラットフォーム。インタラクティブなレッスン、実践的な演習、初心者からArchitect認定までの実世界プロジェクト。"
+    },
+    "nav": {
+      "worlds": "ワールド",
+      "curriculum": "カリキュラム",
+      "logIn": "ログイン",
+      "signIn": "サインイン",
+      "getStarted": "始める",
+      "masterclass": "Masterclass"
+    },
+    "hero": {
+      "eyebrow": "ChatGPTを現在教えています",
+      "headline": "",
+      "headlineAccent": "ChatGPTを武器にする",
+      "subtitle": "チームがAIのことを聞くなら、あなたに聞く——その存在であれ。",
+      "body": "どのレベルも、本当にやり遂げたくなる挑戦です。本物のプロンプトを書き、本物のものを作り、明日の仕事でそのまま使えるものを持ち帰る。",
+      "ctaNew": "ChatGPTが初めての方はこちら",
+      "ctaExisting": "上級者向けにスキップ →",
+      "fine": "クレジットカード不要。動画なし。OpenAIとは無関係です。",
+      "ctaPrimary": "無料で始める",
+      "ctaSecondary": "価格を見る",
+      "subhead": "好奇心旺盛な初心者からChatGPTネイティブのビルダーへと30日間で導くゲーミフィケーション学習プラットフォーム — インタラクティブなレッスン、実践的な演習、そして実際に使えるプロジェクト。",
+      "reassurance": "無料で始められます。クレジットカード不要。トラック1は無料です。"
+    },
+    "benefits": {
+      "handsOn": {
+        "title": "レッスン1から実践的",
+        "body": "受動的なビデオ講義はありません。すべてのレッスンは、実際のChatGPTプロンプトで完了するインタラクティブな演習であり、即座に採点され解説されます。"
+      },
+      "builtByBuilders": {
+        "title": "日々ChatGPTで開発しているビルダーによって構築",
+        "body": "私たちはChatGPTを使用して本番コード、パイプライン、製品を出荷しています。私たちのカリキュラムは、私たちが始めたときに存在してほしかったものです。"
+      },
+      "certification": {
+        "title": "Architect認定を取得",
+        "body": "5つのレベルを通して進捗を追跡します。雇用主やチームが実際に重視する、検証可能な資格を取得して卒業しましょう。"
+      }
+    },
+    "pricing": {
+      "headline": "すべてのコースが無料です。",
+      "body": "料金体系が変わりました。すべてのコースが無料です — カリキュラムをご覧ください。",
+      "cta": "カリキュラムを見る"
+    },
+    "faq": {
+      "label": "よくある質問",
+      "heading": "よくある質問",
+      "q1": "Learn to GPTとは何ですか？",
+      "a1": "Learn to GPTは、ChatGPTのためのゲーミフィケーション学習プラットフォームです。インタラクティブなレッスン、実践的な演習、実世界のプロジェクトを通じて、最初のプロンプトからArchitect認定まで、ChatGPTの使い方をマスターできます。5つの学習トラック、175以上のレッスン、700以上の演習を備えた、最も包括的なChatGPT専門のトレーニングです。",
+      "q2": "Learn to GPTは無料ですか？",
+      "a2": "はい。トラック1（基礎編）は完全に無料で、クレジットカードも不要です。ChatGPTの思考方法を学び、最初のプロンプトを書き、会話パターンをマスターできます。Proアクセス（有料アクセス）で、5つの全トラック、175以上のレッスン、700以上の演習、実績、リーダーボードが利用可能になります。",
+      "q3": "何が学べますか？",
+      "a3": "5つの学習トラックで初心者からエキスパートへ：(1) 基礎 — ChatGPTの思考方法と最初のプロンプト、(2) プロフェッショナルプロンプティング — 思考連鎖、構造化出力、Few-shot、(3) ChatGPT Code Interpreter — ソフトウェア構築のためのCLI、(4) API＆エージェント — ツール使用とエージェントワークフロー、(5) Architect — 評価、モニタリング、エンタープライズパターン。",
+      "q4": "OpenAIと提携していますか？",
+      "a4": "いいえ。Learn to GPTは独立した学習プラットフォームです。OpenAIとの提携、推薦、公式な関係はありません。公開ドキュメントと実際の開発経験に基づいて、ChatGPTスキルを教えています。",
+      "q5": "Learn to GPTは何語に対応していますか？",
+      "a5": "Learn to GPTは7言語に対応しています：英語、日本語、韓国語、簡体字中国語、ドイツ語、フランス語、スペイン語。UI全体、すべてのレッスン、演習が翻訳されているので、お好みの言語でChatGPTを学べます。"
+    },
+    "anti": {
+      "labelOld": "従来の方法",
+      "labelNew": "Learn to GPT",
+      "old1": "フラッシュカード",
+      "old2": "講義動画",
+      "old3": "選択式クイズ",
+      "old4": "抽象的な理論",
+      "new1": "ライブサンドボックス",
+      "new2": "実際のプロンプト",
+      "new3": "実際にものを作る",
+      "new4": "本番環境にデプロイ",
+      "tagline": "フラッシュカードではなく、本当の実力を。",
+      "stakes": "ハンズオンで学ぶ人は、動画を見るだけの人より3倍記憶に残ります。最初の1分からハンズオンです。"
+    },
+    "paths": {
+      "label": "クエストを選択",
+      "heading": "どこから始めますか？",
+      "a": {
+        "badge": "無料",
+        "title": "ゼロから始める",
+        "desc": "ChatGPTを使ったことがない？完璧。「これは何？」から1時間でカスタムペルソナの構築まで導きます。",
+        "step1": "基礎",
+        "step2": "プロフェッショナル",
+        "step3": "ChatGPT Code Interpreter",
+        "cta": "レベル1を始める — 8分"
+      },
+      "b": {
+        "badge": "スキップ",
+        "title": "レベルアップ",
+        "desc": "すでにプロンプトを書いている？基礎をスキップ。システムプロンプト、ChatGPT Code Interpreter、またはAPIに直行。",
+        "step1": "システムプロンプト",
+        "step2": "ChatGPT Code Interpreter",
+        "step3": "API",
+        "cta": "あなたのレベルへジャンプ →"
+      }
+    },
+    "tracks": {
+      "label": "キャンペーン",
+      "heading": "5つの世界。最初のプロンプトから完全なマスターまで。",
+      "world1": {
+        "num": "ワールド 01",
+        "badge": "無料",
+        "title": "基礎",
+        "desc": "ChatGPTの思考方法。最初のプロンプト。会話パターン。システムプロンプト。",
+        "tagline": "「ChatGPTのように考える」"
+      },
+      "world2": {
+        "num": "ワールド 02",
+        "title": "プロフェッショナル",
+        "desc": "実務のための高度なプロンプティング。思考連鎖、構造化出力、Few-shot、評価。",
+        "tagline": "「仕事に活かす」"
+      },
+      "world3": {
+        "num": "ワールド 03",
+        "title": "ChatGPT Code Interpreter",
+        "desc": "ソフトウェアを構築するCLI。プロジェクトの足場作り、デバッグ、マルチファイル編集、デプロイ。",
+        "tagline": "「ChatGPTでコーディング」"
+      },
+      "world4": {
+        "num": "ワールド 04",
+        "title": "API & エージェント",
+        "desc": "ツール使用、マルチステップワークフロー、エージェントループ、エラー処理、本番パターン。",
+        "tagline": "「ChatGPTで構築する」"
+      },
+      "world5": {
+        "num": "ワールド 05",
+        "badge": "ファイナルボス",
+        "title": "アーキテクト",
+        "desc": "評価、モニタリング、コスト最適化、安全性、エンタープライズパターン。全体像。",
+        "tagline": "「ChatGPTをマスター」"
+      }
+    },
+    "game": {
+      "label": "ゲームメカニクス",
+      "heading": "真剣なコンテンツ。中毒性のあるフォーマット。",
+      "xp": {
+        "title": "XPを獲得",
+        "desc": "チャレンジを完了するたびにスコアが加算"
+      },
+      "badges": {
+        "title": "バッジを集める",
+        "desc": "スキルをマスターするとアチーブメントを解除"
+      },
+      "levels": {
+        "title": "レベルアップ",
+        "desc": "各ワールドが次のティアを解放"
+      },
+      "streaks": {
+        "title": "ストリークを維持",
+        "desc": "毎日の練習が永続的な実力を築く"
+      },
+      "caption": "すべてのレベルでXPを獲得。すべてのワールドが次を解放。ストリークを追跡。リーダーボードを登る。"
+    },
+    "sandbox": {
+      "label": "インタラクティブサンドボックス",
+      "heading": "すべてのレベルがハンズオン。見るだけではない。読むだけではない。あなたが書く。ChatGPTが応答する。",
+      "filename": "level-03-system-prompts.py",
+      "comment1": "# レベル3：ChatGPTにペルソナを与える",
+      "comment2": "# あなたが書く。ChatGPTがそれになる。",
+      "stamp": "+25 XP",
+      "footerText": "本物のコード。本物のAPI呼び出し。本物の結果。すべてのレベルで。",
+      "cta": "無料で試す"
+    },
+    "build": {
+      "label": "何を作るか",
+      "heading": "毎レベル終了時に、本物の成果物が手に入る。",
+      "item1": {
+        "title": "カスタムAIアシスタント",
+        "desc": "あなたの役割に合わせたChatGPTペルソナ — チャットボットではなく、チームメンバーのように答える。"
+      },
+      "item2": {
+        "title": "自動化ワークフロー",
+        "desc": "繰り返し作業をこなすマルチステップパイプライン。あなたは意思決定に集中できる。"
+      },
+      "item3": {
+        "title": "本番ChatGPT Code Interpreterプロジェクト",
+        "desc": "ターミナルから完全にスキャフォールド、デバッグ、デプロイされた本格的なアプリ。"
+      },
+      "item4": {
+        "title": "エージェントシステム",
+        "desc": "ツールを使い、意思決定を行い、あなたの代わりに自律的に動くAIエージェント。"
+      },
+      "caption": "これは仮定の話ではありません。学習者はワールド4までにこの4つをすべて作ります。"
+    },
+    "cred": {
+      "badge": "実践者によって構築",
+      "headline": "97ヶ国の1,200人以上の学習者と一緒に学ぼう。",
+      "levels": {
+        "num": "1,200+",
+        "label": "学習者"
+      },
+      "challenges": {
+        "num": "97",
+        "label": "ヶ国"
+      },
+      "worlds": {
+        "num": "7",
+        "label": "トラック"
+      },
+      "achievement": {
+        "num": "7",
+        "label": "言語"
+      }
+    },
+    "finalCta": {
+      "headline": "あなたのチームはすでにAIについて聞いてきている。",
+      "headlineAccent": "答えを持っている人になろう。",
+      "subtitle": "1レベル。8分。自分に合うかどうかわかります。",
+      "cta": "レベル1を始める →"
+    },
+    "footer": {
+      "tagline": "Learn to GPT",
+      "worlds": "ワールド",
+      "curriculum": "カリキュラム",
+      "privacy": "プライバシー",
+      "terms": "利用規約",
+      "community": "コミュニティ",
+      "blog": "ブログ",
+      "support": "サポート",
+      "copyright": "ChatGPTで学び、ChatGPTを使う人々のために。Learn to GPTは独立したプロジェクトです。ChatGPTおよびOpenAIはOpenAIの商標です。",
+      "masterclass": "Masterclass"
+    }
+  },
+  "localeSwitcher": {
+    "label": "言語"
+  },
+  "curriculum": {
+    "meta": {
+      "title": "ChatGPTコース — 無料インタラクティブトレーニング | Learn to GPT",
+      "description": "ChatGPTの全コースを見る。無料のインタラクティブレッスン、ハンズオン演習、実践プロジェクト。プロンプトエンジニアリング、ChatGPT Code Interpreter、AI開発を7言語で学べます。初心者から上級者まで。"
+    },
+    "heading": "ChatGPTカリキュラム",
+    "subheading": "5つの学習トラックで、初めてのChatGPTプロンプトからArchitect認定まで到達できます。すべてのレッスンはハンズオン — あなたが書き、ChatGPTが応答します。",
+    "nav": {
+      "getStarted": "始める",
+      "curriculum": "カリキュラム",
+      "privacy": "プライバシー",
+      "terms": "利用規約",
+      "masterclass": "Masterclass"
+    },
+    "tracks": {
+      "why_claude": "トラック1：基礎",
+      "three_levels": "トラック2：プロフェッショナルプロンプティング",
+      "essentials": "トラック3：ChatGPT Code Interpreter",
+      "level_up": "トラック4：API＆エージェント",
+      "build_something": "トラック5：Architect",
+      "practitioner_setup": "トラック6：実践者セットアップ",
+      "advanced_workflows": "トラック7：高度なワークフロー"
+    },
+    "free": "無料",
+    "pro": "Pro",
+    "lessons": "レッスン",
+    "cta": {
+      "heading": "ChatGPTをマスターする準備はできましたか？",
+      "body": "トラック1は無料で始められます。クレジットカードは不要です。",
+      "button": "無料で学習を始める"
+    },
+    "pathways": {
+      "starter": {
+        "label": "入門パス · 無料",
+        "heading": "ここから始めよう。",
+        "body": "ChatGPTの基礎。なぜ重要か、3つのレベルが実際にどう見えるか、初日に必要なこと。無料。"
+      },
+      "advanced": {
+        "label": "上級プラクティショナー · 無料",
+        "heading": "私が実際に使っている方法。",
+        "body": "これは私が自分のビジネスを運営しているシステムです。メモリファイル、エージェントスキル、MCP、自動化。無料。"
+      }
+    }
+  },
+  "learn": {
+    "meta": {
+      "title": "ChatGPTを学ぶ — 無料インタラクティブコース | Learn to GPT",
+      "description": "無料のインタラクティブレッスン、実践的な演習、実際のプロジェクトでChatGPTをマスターしましょう。初心者から上級者まで、7言語対応。"
+    },
+    "heading": "ChatGPTを学ぶ",
+    "subheading": "あらゆるレベルに対応した無料インタラクティブコース。",
+    "intro": "Learn to GPTでは、動画やフラッシュカードではなく、実践的な演習と実際のプロジェクトを通じてChatGPTを学べます。基礎から始めることも、上級ワークフローに直接進むこともできます。すべて無料で始められます。",
+    "cta": "無料で始める",
+    "ctaFine": "無料で開始。クレジットカード不要。OpenAIとは無関係です。",
+    "freeCourses": {
+      "label": "無料コース",
+      "heading": "ここから始めましょう — 完全無料。",
+      "freeBadge": "無料",
+      "startLearning": "学習を始める"
+    },
+    "course1": {
+      "title": "ChatGPTに出会う — 基礎編",
+      "description": "ChatGPTの最初の一歩。ChatGPTの思考方法を理解し、最初のプロンプトを書き、実際に成果を生む会話パターンを発見しましょう。"
+    },
+    "course2": {
+      "title": "プラクティショナーセットアップ",
+      "description": "日常的な業務でのChatGPT活用を設定します。メモリファイル、コンテキスト管理、プロが実際に使っているワークフローを学びます。"
+    },
+    "why": {
+      "heading": "なぜLearn to GPTでChatGPTを学ぶのか？",
+      "point1": {
+        "title": "最初のレッスンから実践的",
+        "body": "受動的な動画はありません。すべてのレッスンは、実際のChatGPTプロンプトを使って完了するインタラクティブな演習で、即座に採点・解説されます。"
+      },
+      "point2": {
+        "title": "毎日ChatGPTで開発している人が作成",
+        "body": "私たちは毎日ChatGPTを使ってプロダクションコード、パイプライン、製品を出荷しています。カリキュラムは、始めた頃にあって欲しかったものです。"
+      },
+      "point3": {
+        "title": "7言語で利用可能",
+        "body": "レッスン、演習、UIを含むプラットフォーム全体が、英語、日本語、韓国語、中国語、ドイツ語、フランス語、スペイン語で利用できます。"
+      }
+    },
+    "finalCta": {
+      "headline": "ChatGPTを学ぶ準備はできましたか？",
+      "subtitle": "Track 1は無料です。クレジットカード不要。この学び方が自分に合うか試してみてください。"
+    },
+    "nav": {
+      "home": "ホーム",
+      "curriculum": "カリキュラム",
+      "logIn": "ログイン",
+      "getStarted": "無料で始める",
+      "terms": "利用規約",
+      "privacy": "プライバシー",
+      "copyright": "© 2026 Learn to GPT. OpenAIとは無関係です。"
+    }
+  },
+  "claude-code": {
+    "meta": {
+      "title": "ChatGPT Code Interpreterチュートリアル — AI搭載開発をマスター | Learn to GPT",
+      "description": "実践的な演習でChatGPT Code Interpreterを学びましょう。スラッシュコマンド、メモリシステム、エージェントワークフロー、フックをマスター。初心者からエキスパートまでのインタラクティブチュートリアル。"
+    },
+    "heading": "チュートリアル",
+    "subheading": "ターミナルからAI搭載開発をマスター",
+    "intro": "ChatGPT Code InterpreterはOpenAIのAI搭載開発向けCLIです。設定方法を学び、エージェントワークフローを構築し、実践的な演習でより速く開発しましょう。",
+    "trackInfo": "Track 7 — 上級",
+    "cta": "無料で始める",
+    "viewCurriculum": "カリキュラムを見る",
+    "whatIs": {
+      "heading": "ChatGPT Code Interpreterとは？",
+      "body": "ChatGPT Code Interpreterは、ChatGPTをターミナルに直接持ち込むOpenAIのコマンドラインツールです。コードベースを読み、コマンドを実行し、ファイルを編集し、マルチステップのワークフローを管理します — すべて自然言語で。プロジェクト全体を理解するシニアエンジニアがターミナルに常駐していると考えてください。"
+    },
+    "whatYouLearn": {
+      "label": "カリキュラム",
+      "heading": "学べること"
+    },
+    "features": {
+      "0": {
+        "title": "スラッシュコマンド",
+        "desc": "ChatGPT Code Interpreterを強力にする組み込みコマンドをマスター — /initや/compactから、自分で構築するカスタムスラッシュコマンドまで。"
+      },
+      "1": {
+        "title": "メモリシステム",
+        "desc": "プロジェクト、コーディング標準、設定に関する永続的なコンテキストをセッション間でChatGPTに提供するGPT.mdファイルを設定します。"
+      },
+      "2": {
+        "title": "エージェントワークフロー",
+        "desc": "人間の監視のもと、複雑なタスクを自律的に計画、実行、検証するマルチステップエージェントワークフローを構築します。"
+      },
+      "3": {
+        "title": "フック",
+        "desc": "ChatGPT Code Interpreter操作の前後にカスタムアクションをトリガーするイベント駆動フックを設定します。"
+      },
+      "4": {
+        "title": "GPT.md設定",
+        "desc": "特定のコードベースに合わせてChatGPTの動作を形成する効果的なプロジェクトルールと設定ファイルを作成します。"
+      },
+      "5": {
+        "title": "高度なパターン",
+        "desc": "スラッシュコマンド、メモリ、エージェント、フックを組み合わせて、開発速度を倍増させるプロダクショングレードのワークフローを構築します。"
+      }
+    },
+    "preview": {
+      "caption": "あらゆるプロジェクト向けにChatGPT Code Interpreterを設定する方法を学ぶ"
+    },
+    "finalCta": {
+      "headline": "マスターする準備は",
+      "subtitle": "実践的な演習。実際のワークフロー。無駄なし。"
+    },
+    "nav": {
+      "curriculum": "カリキュラム",
+      "logIn": "ログイン",
+      "getStarted": "無料で始める",
+      "home": "ホーム",
+      "terms": "利用規約",
+      "privacy": "プライバシー",
+      "copyright": "© 2026 Learn to GPT. OpenAIとは無関係です。"
+    }
+  },
+  "ai-training": {
+    "meta": {
+      "title": "AIトレーニングプログラム — 初心者からエキスパートまでChatGPTを学ぶ | Learn to GPT",
+      "description": "ChatGPTのための包括的なAIトレーニングプログラム。インタラクティブなレッスン、実践的な演習、認定資格で初心者からエキスパートへ。7言語で利用可能。"
+    },
+    "heading": "ChatGPTでAIトレーニング",
+    "subheading": "初心者からエキスパートまで — 自分のペースで",
+    "badge": "包括的トレーニング",
+    "intro": "Learn to GPTは、ChatGPTとの最初の会話から高度なエージェントワークフローの構築まで導く、体系的なAIトレーニングプログラムを提供します。インタラクティブなレッスン、実践的な演習、実世界のプロジェクト — すべて無料で始められます。",
+    "tracks": {
+      "heading": "トレーニングトラック",
+      "label": "レベルを選択",
+      "beginner": {
+        "level": "初級",
+        "title": "ChatGPTを知る",
+        "desc": "ChatGPTの基礎を学びます。経験は不要です。"
+      },
+      "intermediate": {
+        "level": "中級",
+        "title": "コンテキストとプロンプティング",
+        "desc": "コンテキスト管理、プロンプトエンジニアリング、高度な会話テクニックを習得します。"
+      },
+      "advanced": {
+        "level": "上級",
+        "title": "ChatGPT Code Interpreterとエージェント",
+        "desc": "エージェントワークフローを構築し、開発を自動化し、ChatGPT Code Interpreterを習得します。"
+      },
+      "explore": "トラックを探索"
+    },
+    "benefits": {
+      "heading": "Learn to GPTでトレーニングする理由",
+      "gamified": {
+        "title": "ゲーミフィケーション学習",
+        "body": "XPを獲得し、実績を解除し、リーダーボードで競い合います。"
+      },
+      "languages": {
+        "title": "7言語対応",
+        "body": "日本語、英語、スペイン語、フランス語、ドイツ語、韓国語、中国語で学べます。"
+      },
+      "teams": {
+        "title": "チームトレーニング",
+        "body": "マスタークラスプログラムでチームのスキルアップを。"
+      }
+    },
+    "masterclass": {
+      "heading": "マスタークラス",
+      "body": "ガイド付き指導、実践ワークショップ、認定資格でチームのAIトレーニングを加速します。",
+      "cta": "詳細を見る"
+    },
+    "cta": "無料でトレーニング開始",
+    "ctaFine": "クレジットカード不要",
+    "finalCta": {
+      "headline": "AIトレーニングを始める準備はできましたか？",
+      "subtitle": "ChatGPTを習得する数千人の学習者に参加しましょう。"
+    },
+    "viewCurriculum": "完全なカリキュラムを見る",
+    "nav": {
+      "home": "ホーム",
+      "curriculum": "カリキュラム",
+      "getStarted": "始める",
+      "logIn": "ログイン",
+      "privacy": "プライバシー",
+      "terms": "利用規約",
+      "copyright": "Learn to GPT"
+    }
+  },
+  "prompt-engineering": {
+    "meta": {
+      "title": "ChatGPTのプロンプトエンジニアリング — インタラクティブコース | Learn to GPT",
+      "description": "ChatGPTのプロンプトエンジニアリングを習得。コンテキスト管理、システムプロンプト、Few-shotの例、高度なテクニックを実践的な演習で学びます。"
+    },
+    "heading": "ChatGPTのプロンプトエンジニアリング",
+    "subheading": "AIとのコミュニケーション術を習得する",
+    "intro": "ChatGPTから最高の結果を引き出す効果的なプロンプトの書き方を学びましょう。",
+    "whatIs": {
+      "heading": "プロンプトエンジニアリングとは？",
+      "body": "プロンプトエンジニアリングは、AIモデルが正確で有用な結果を生成するための指示を作成するスキルです。"
+    },
+    "skillsSection": {
+      "heading": "学習内容",
+      "label": "コアスキル"
+    },
+    "skills": {
+      "0": {
+        "title": "コンテキストウィンドウ管理",
+        "desc": "会話を構造化し、ChatGPTのコンテキストウィンドウを最適に管理します。"
+      },
+      "1": {
+        "title": "システムプロンプト",
+        "desc": "適切なトーンと制約を設定する効果的なシステムプロンプトを設計します。"
+      },
+      "2": {
+        "title": "Few-Shotの例",
+        "desc": "例を使ってChatGPTの出力フォーマットとスタイルを導きます。"
+      },
+      "3": {
+        "title": "思考の連鎖",
+        "desc": "複雑な問題に対してステップバイステップの推論を有効にします。"
+      },
+      "4": {
+        "title": "ツール使用",
+        "desc": "ChatGPTを外部ツールやAPIと統合します。"
+      },
+      "5": {
+        "title": "高度なパターン",
+        "desc": "憲法AI、自己反省、マルチターン戦略を習得します。"
+      }
+    },
+    "trackInfo": "このコンテンツは初級・中級トラックで扱います。",
+    "cta": "無料で始める",
+    "viewCurriculum": "カリキュラムを見る",
+    "finalCta": {
+      "headline": "プロンプトエンジニアリングを習得する準備はできましたか？",
+      "subtitle": "今日から無料のインタラクティブレッスンを始めましょう。"
+    },
+    "preview": {
+      "caption": "例：よく構造化されたシステムプロンプト"
+    },
+    "nav": {
+      "home": "ホーム",
+      "curriculum": "カリキュラム",
+      "getStarted": "始める",
+      "logIn": "ログイン",
+      "privacy": "プライバシー",
+      "terms": "利用規約",
+      "copyright": "Learn to GPT"
+    }
+  },
+  "getting-started": {
+    "meta": {
+      "title": "ChatGPTを始めよう — 無料の初心者ガイド | Learn to GPT",
+      "description": "今日からChatGPTを学びましょう。インタラクティブなレッスンと実践的な演習を備えた無料のステップバイステップガイド。経験不要。"
+    },
+    "heading": "ChatGPTを始めよう",
+    "subheading": "AI流暢さへの最初のステップ",
+    "intro": "経験は不要です。Learn to GPTが最初のAI会話から実際のワークフロー構築まで導きます。無料で始めて、自分のペースで学びましょう。",
+    "cta": "無料アカウントを作成",
+    "ctaFine": "クレジットカード不要",
+    "steps": {
+      "heading": "使い方",
+      "step1": {
+        "title": "無料アカウントを作成",
+        "desc": "数秒で登録。クレジットカード不要、コミットメントなし。"
+      },
+      "step2": {
+        "title": "無料レッスンから始める",
+        "desc": "初心者向けコース「ChatGPTを知る」から始めましょう。"
+      },
+      "step3": {
+        "title": "実践的な演習で練習",
+        "desc": "各レッスンにはインタラクティブな演習と即座のフィードバックが含まれます。"
+      },
+      "step4": {
+        "title": "上級トラックへレベルアップ",
+        "desc": "プロンプトエンジニアリング、ChatGPT Code Interpreter、エージェントワークフローを習得しましょう。"
+      }
+    },
+    "included": {
+      "heading": "無料で得られるもの",
+      "item1": "ChatGPTの基礎をカバーするインタラクティブレッスン",
+      "item2": "即座のフィードバックとXP報酬付きの実践演習",
+      "item3": "7言語対応 — 日本語、英語、スペイン語、フランス語、ドイツ語、韓国語、中国語",
+      "item4": "実績とリーダーボード付きの進捗追跡"
+    },
+    "finalCta": {
+      "headline": "始める準備はできましたか？",
+      "subtitle": "ChatGPTを習得する数百人の学習者に参加しましょう。"
+    },
+    "nav": {
+      "home": "ホーム",
+      "curriculum": "カリキュラム",
+      "getStarted": "始める",
+      "logIn": "ログイン",
+      "privacy": "プライバシー",
+      "terms": "利用規約",
+      "copyright": "Learn to GPT"
+    }
+  },
+  "certification": {
+    "meta": {
+      "title": "ChatGPT認定 — AIスキルを証明 | Learn to GPT",
+      "description": "ChatGPT認定を取得。実践的な評価と検証済み資格でマスタリーを証明します。"
+    },
+    "heading": "ChatGPT認定",
+    "subheading": "検証済み資格でスキルを証明",
+    "intro": "構造化された学習トラックを完了し、実践的な評価に合格して認定を取得しましょう。",
+    "title": "ChatGPT認定",
+    "description": "AI認定プログラム",
+    "levels": {
+      "heading": "認定レベル",
+      "label": "パスを選択",
+      "popularBadge": "最も人気",
+      "beginner": {
+        "title": "ChatGPT初級",
+        "description": "基礎的な理解を証明。",
+        "skill1": "基本プロンプティング",
+        "skill2": "会話管理",
+        "skill3": "AI能力の理解"
+      },
+      "practitioner": {
+        "title": "ChatGPT中級",
+        "description": "中級の習熟度を証明。",
+        "skill1": "高度なプロンプト",
+        "skill2": "コンテキスト最適化",
+        "skill3": "マルチターン戦略"
+      },
+      "architect": {
+        "title": "ChatGPTアーキテクト",
+        "description": "エキスパートレベルのスキル。",
+        "skill1": "ChatGPT Code Interpreter習得",
+        "skill2": "ワークフロー設計",
+        "skill3": "企業AIアーキテクチャ"
+      }
+    },
+    "proves": {
+      "heading": "認定が証明するもの",
+      "point1": {
+        "title": "検証済みスキル",
+        "body": "各レベルで実践的な評価が必要。"
+      },
+      "point2": {
+        "title": "体系的な習得",
+        "body": "基礎からエキスパートへの明確な進行。"
+      },
+      "point3": {
+        "title": "キャリア優位性",
+        "body": "検証済み資格で差別化。"
+      }
+    },
+    "howItWorks": {
+      "heading": "使い方",
+      "label": "3つの簡単なステップ",
+      "step1": {
+        "title": "トラック完了",
+        "body": "すべてのレッスンと演習を完了。"
+      },
+      "step2": {
+        "title": "評価に合格",
+        "body": "実践的な能力を証明。"
+      },
+      "step3": {
+        "title": "資格を取得",
+        "body": "検証済みデジタル資格を受け取り。"
+      }
+    },
+    "cta": "認定を開始",
+    "ctaFine": "無料レッスンから始めましょう",
+    "finalCta": {
+      "headline": "AIスキルを証明する準備はできましたか？",
+      "subtitle": "今日から認定の旅を始めましょう。"
+    },
+    "nav": {
+      "home": "ホーム",
+      "curriculum": "カリキュラム",
+      "getStarted": "始める",
+      "logIn": "ログイン",
+      "privacy": "プライバシー",
+      "terms": "利用規約",
+      "copyright": "Learn to GPT"
+    }
+  },
+  "for-teams": {
+    "meta": {
+      "title": "チーム向けChatGPT — 企業向けAIトレーニング | Learn to GPT",
+      "description": "チーム全体でChatGPTを学びましょう。標準化されたスキル、一貫したワークフロー、測定可能な進捗。"
+    },
+    "heading": "チーム向けChatGPT",
+    "subheading": "組織全体でAIスキルを標準化",
+    "hero": {
+      "label": "チームトレーニング"
+    },
+    "intro": "チームにChatGPTの共通基盤を提供します。",
+    "title": "チーム向けChatGPT",
+    "description": "企業向けAIトレーニング",
+    "benefits": {
+      "label": "チームに選ばれる理由",
+      "heading": "スケーラブルなAI習熟度の構築",
+      "point1": {
+        "title": "標準化されたスキル",
+        "body": "全メンバーが同じ基礎とベストプラクティスを学びます。"
+      },
+      "point2": {
+        "title": "一貫したワークフロー",
+        "body": "チーム全体で共有するGPT.md設定とエージェントパターン。"
+      },
+      "point3": {
+        "title": "測定可能な進捗",
+        "body": "チーム全体の完了率とスコアを追跡。"
+      }
+    },
+    "howItWorks": {
+      "heading": "使い方",
+      "step1": {
+        "title": "パッケージを選択",
+        "body": "マスタークラスから始めるか、お問い合わせください。"
+      },
+      "step2": {
+        "title": "チームをオンボード",
+        "body": "アカウント設定とワークフローのカスタマイズを行います。"
+      },
+      "step3": {
+        "title": "一緒に学ぶ",
+        "body": "構造化されたトラックで実践的に学習。"
+      },
+      "step4": {
+        "title": "成果を測定",
+        "body": "進捗を追跡しスキルギャップを特定。"
+      }
+    },
+    "pricing": {
+      "heading": "料金",
+      "subheading": "あらゆる規模のチームに柔軟なオプション",
+      "masterclass": {
+        "title": "マスタークラス",
+        "label": "個人向け",
+        "per": "一括払い",
+        "feature1": "最大10名のガイド付き指導",
+        "feature2": "実践ワークショップ形式",
+        "feature3": "全7トラック含む",
+        "feature4": "90日間アクセス"
+      },
+      "enterprise": {
+        "badge": "カスタム",
+        "title": "エンタープライズ",
+        "label": "エンタープライズセットアップ",
+        "per": "契約ごと",
+        "feature1": "チームとの1:1セットアップ",
+        "feature2": "カスタムGPT.md設定",
+        "feature3": "エージェントワークフロー設計",
+        "feature4": "継続的アドバイザリー"
+      }
+    },
+    "cta": "始める",
+    "ctaFine": "企業価格はお問い合わせください",
+    "finalCta": {
+      "headline": "チームトレーニングの準備はできましたか？",
+      "subtitle": "マスタークラスから始めるか、カスタム契約についてお問い合わせください。"
+    },
+    "nav": {
+      "home": "ホーム",
+      "curriculum": "カリキュラム",
+      "getStarted": "始める",
+      "logIn": "ログイン",
+      "privacy": "プライバシー",
+      "terms": "利用規約",
+      "copyright": "Learn to GPT"
+    }
+  },
+  "masterclass-page": {
+    "meta": {
+      "title": "ChatGPTマスタークラス — ガイド付きトレーニング | Learn to GPT",
+      "description": "ChatGPTの高度なワークフロー、ChatGPT Code Interpreter、プロンプトエンジニアリング、チームトレーニングをカバーするマスタークラス。ガイド付き指導によるハンズオンワークショップ。"
+    },
+    "heading": "ChatGPTマスタークラス",
+    "subheading": "ガイド付きトレーニングで、使えるレベルからプロレベルへ。",
+    "intro": "Learn to GPTマスタークラスは、基礎を超えたハンズオンのガイド付きトレーニングセッションです。高度なプロンプトエンジニアリング、ChatGPT Code Interpreterワークフロー、エージェントパターン、実践プロジェクト — すべてを一つの集中プログラムで。",
+    "hero": {
+      "badge": "ガイド付きトレーニング"
+    },
+    "price": "一回払い",
+    "cta": "今すぐ申し込む",
+    "ctaFine": "一回払い。永久アクセス。OpenAIとは提携していません。",
+    "included": {
+      "heading": "含まれるもの",
+      "item1": {
+        "title": "ガイド付き指導",
+        "desc": "ChatGPTの高度な概念をステップバイステップでガイド。推測なし — プロが実際に使うパターンを学びます。"
+      },
+      "item2": {
+        "title": "ハンズオンワークショップ",
+        "desc": "トレーニング中に実際のプロジェクトを構築。すべての概念は、自分で完了するエクササイズで強化されます。"
+      },
+      "item3": {
+        "title": "高度なChatGPT Code Interpreterコンテンツ",
+        "desc": "ChatGPT Code Interpreterワークフローをマスター — スラッシュコマンド、メモリファイル、フック、エージェント、マルチファイルアーキテクチャパターン。"
+      },
+      "item4": {
+        "title": "チームトレーニング対応",
+        "desc": "チーム全体のスキルアップ。マスタークラスのコンテンツは、個人の貢献者からマネージャーまで、組織全体にスケールするよう設計されています。"
+      }
+    },
+    "topics": {
+      "heading": "学べること",
+      "item1": "一貫したプロダクション品質の結果を得るための高度なプロンプトエンジニアリングテクニック",
+      "item2": "ChatGPT Code Interpreterのセットアップ、カスタマイズ、日常ワークフローへの統合",
+      "item3": "メモリファイル、GPT.md、長期プロジェクトのためのコンテキスト管理",
+      "item4": "エージェントパターン — 自律的に実行されるAIワークフローの構築",
+      "item5": "マルチファイルアーキテクチャとコードベース規模のChatGPT Code Interpreter操作",
+      "item6": "初心者からデプロイメントまでの実践プロジェクトウォークスルー"
+    },
+    "audience": {
+      "heading": "対象者",
+      "point1": {
+        "title": "個人のプラクティショナー",
+        "body": "ChatGPTを使ったことがあるが、もっと深く学びたい方。チャットするだけでなく、実際のワークフローを構築する準備ができている方。"
+      },
+      "point2": {
+        "title": "チームリーダーとマネージャー",
+        "body": "チームをChatGPTで生産的にする必要がある方。マスタークラスは、組織全体に展開できる構造化されたカリキュラムを提供します。"
+      },
+      "point3": {
+        "title": "開発者と技術専門家",
+        "body": "ChatGPT Code Interpreter — ターミナルネイティブのAIコーディングツールをマスターしたい方。開発ワークフローを10倍にするパターンを学びます。"
+      }
+    },
+    "finalCta": {
+      "headline": "ChatGPTをマスターする準備はできましたか？",
+      "subtitle": "一回の支払い。永久アクセス。今日から構築を始めましょう。"
+    },
+    "nav": {
+      "home": "ホーム",
+      "curriculum": "カリキュラム",
+      "getStarted": "始める",
+      "logIn": "ログイン",
+      "privacy": "プライバシー",
+      "terms": "利用規約",
+      "copyright": "Learn to GPT"
+    }
+  },
+  "paywall": {
+    "heading": "{count}つの無料コースを修了しました",
+    "subheading": "すべてのコース、演習、学習トラックに無制限でアクセスできます。",
+    "feature1": "7つの学習トラックすべて",
+    "feature2": "375以上の実践演習",
+    "feature3": "永久アクセス — 一回払い",
+    "cta": "すべてのコースを解放する",
+    "dismiss": "後で検討する"
+  }
+}

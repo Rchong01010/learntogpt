@@ -1,0 +1,1149 @@
+{
+  "common": {
+    "save": "Sauvegarder",
+    "cancel": "Annuler",
+    "delete": "Supprimer",
+    "loading": "Chargement...",
+    "saving": "Sauvegarde...",
+    "savedBang": "Enregistré !",
+    "signIn": "Se connecter",
+    "signUp": "S'inscrire",
+    "getStarted": "Commencer",
+    "home": "Accueil",
+    "close": "Fermer",
+    "back": "Retour",
+    "next": "Suivant",
+    "continue": "Continuer",
+    "finish": "Terminer",
+    "tryAgain": "Réessayer",
+    "dismiss": "Ignorer",
+    "upgrade": "Mettre à niveau",
+    "learnMore": "En savoir plus",
+    "levelLabel": "Niveau {level}",
+    "xpOutOf": "{current} / {total} XP",
+    "dayStreak": "jours de suite",
+    "atRisk": "En danger !",
+    "bestStreak": "Meilleur : {count}",
+    "lessonsProgress": "{done}/{total} leçons",
+    "xpBonusPlus": "+{xp} XP",
+    "shareCongratulations": "Félicitations !",
+    "shareAchievementPrompt": "Partage ta réussite",
+    "shareOnLinkedIn": "Partager sur LinkedIn",
+    "shareOnX": "Partager sur X",
+    "shareCopyLink": "Copier le lien de partage",
+    "shareButtonShare": "Partager",
+    "shareButtonPost": "Publier",
+    "shareButtonCopy": "Copier",
+    "shareButtonCopied": "Copié !",
+    "closeLabel": "Fermer",
+    "shareDialogLabel": "Partage ta réussite"
+  },
+  "nav": {
+    "dashboard": "Tableau de bord",
+    "courses": "Cours",
+    "missions": "Missions",
+    "leaderboard": "Classement",
+    "profile": "Profil",
+    "settings": "Paramètres",
+    "signOut": "Se déconnecter",
+    "brandName": "Learn to GPT",
+    "levelLabel": "Niv {level}"
+  },
+  "dashboard": {
+    "welcomeNewTitle": "Bienvenue sur Learn to GPT, {name} !",
+    "welcomeNewSubtitleMissions": "Que veux-tu construire ? Choisis une mission pour commencer.",
+    "welcomeNewSubtitleDefault": "Lance-toi dans la maîtrise de ChatGPT. Choisis un parcours ci-dessous ou plonge dans ta première leçon.",
+    "startLearning": "Commencer à apprendre",
+    "welcomeBack": "Rebonjour, {name}",
+    "streakMessage": "Garde le rythme. Tu as une série de {streak} jours !",
+    "noStreakMessage": "Commence une leçon aujourd'hui pour lancer ta série !",
+    "dailyChallengeTitle": "Défi quotidien",
+    "dailyChallengeBody": "Termine 1 leçon pour maintenir ta série",
+    "dailyChallengeButton": "Marquer terminé",
+    "dailyChallengeComplete": "Terminé !",
+    "dailyChallengeXp": "+{xp} XP",
+    "continueHeader": "Reprends là où tu t'es arrêté",
+    "startJourneyLabel": "Commence ton parcours",
+    "startJourneySubtitle": "Lance ta première leçon et gagne des XP",
+    "courseProgress": "{progress}% terminé",
+    "resumeButton": "Reprendre",
+    "startButton": "Commencer",
+    "skillTreeHeading": "Explorer les cours",
+    "achievementsHeading": "Réalisations",
+    "whatBuildHeading": "Que veux-tu construire ?",
+    "missionHoursShort": "~{hours}h",
+    "missionXp": "{xp} XP",
+    "missionSteps": "{count} étapes",
+    "justExploreCourses": "Ou explore simplement les cours"
+  },
+  "courses": {
+    "eyebrow": "Choisis ton univers",
+    "heading": "Univers de cours",
+    "subheading": "Maîtrise ChatGPT, des bases à l'expertise de niveau Architect. Chaque univers est une nouvelle aventure.",
+    "filterAll": "Tous les parcours",
+    "filterWhyClaude": "Pourquoi ChatGPT ?",
+    "filterThreeLevels": "Trois niveaux",
+    "filterEssentials": "Essentiels",
+    "filterLevelUp": "Monter en niveau",
+    "filterBuildSomething": "Construire quelque chose",
+    "filterPractitionerSetup": "Configuration",
+    "filterAdvancedWorkflows": "Flux avancés",
+    "badgeFree": "GRATUIT",
+    "badgePro": "PRO",
+    "lessonsCount": "{count} leçons",
+    "minutesShort": "~{minutes} min",
+    "xpShort": "{xp} XP",
+    "backAll": "Tous les cours",
+    "levelProgressionHeading": "Progression de niveau",
+    "progressLabel": "Progression",
+    "progressLessons": "{done}/{total} leçons",
+    "ctaStart": "Commencer le cours",
+    "ctaContinue": "Continuer",
+    "badgeProShort": "Pro",
+    "badgeFreeShort": "Gratuit",
+    "minutesAbbrev": "{minutes}m"
+  },
+  "lessons": {
+    "backToCourse": "Retour au cours",
+    "progressCouldNotBeSaved": "La progression n'a pas pu être sauvegardée : {error}",
+    "lessonCompleteBang": "Leçon terminée !",
+    "savingEllipsis": "Sauvegarde...",
+    "xpPlus": "+{xp} XP",
+    "achievementUnlocked": "Réalisation débloquée : {name}",
+    "shareProgress": "Partage ta progression",
+    "backToCourseButton": "Retour au cours",
+    "nextLesson": "Leçon suivante",
+    "completeCourse": "Terminer le cours",
+    "courseCompleteShareTitle": "Terminé : {title}",
+    "achievementShareTitle": "Réalisation : {name}",
+    "finishedCourseDesc": "Je viens de terminer un cours sur Learn to GPT !",
+    "stepOfTotal": "Étape {current} sur {total}",
+    "completeExerciseToContinue": "Termine l'exercice pour continuer",
+    "skipExercise": "Passer l'exercice",
+    "exerciseOfTotal": "Exercice {current} sur {total}",
+    "xpEarnedBadge": "{xp} XP",
+    "xpSuffix": "XP",
+    "challenge": "Défi",
+    "exerciseLabel": "Exercice",
+    "unknownExerciseType": "Type d'exercice inconnu.",
+    "correctBang": "Correct !",
+    "notQuite": "Pas tout à fait. Revois l'explication ci-dessus.",
+    "submitAnswer": "Soumettre la réponse",
+    "checkingEllipsis": "Vérification...",
+    "showHint": "Afficher l'indice",
+    "nextHint": "Indice suivant",
+    "explanation": "Explication",
+    "matchingTerms": "Termes",
+    "matchingDefinitions": "Définitions",
+    "allPairsMatched": "Toutes les paires associées !",
+    "failedToCheckAnswer": "Échec de la vérification de la réponse. Veuillez réessayer.",
+    "typeLabels": {
+      "multiple_choice": "Choisis la bonne réponse",
+      "fill_blank": "Remplis le blanc",
+      "drag_drop": "Mets dans l'ordre",
+      "code_exercise": "Défi de code",
+      "scenario": "Défi de scénario",
+      "matching_pairs": "Associe les paires",
+      "speed_round": "Round rapide",
+      "bug_hunt": "Chasse aux bugs",
+      "flash_cards": "Cartes flash",
+      "word_scramble": "Mots mêlés",
+      "typing_challenge": "Défi de dactylographie",
+      "whack_a_mole": "Tape-taupe",
+      "prompt_builder": "Construis un prompt",
+      "conversation_sim": "Simulation de conversation",
+      "spot_the_difference": "Trouve les différences",
+      "prompt_lab": "Labo de prompts",
+      "speed_prompt": "Prompt rapide",
+      "scenario_walkthrough": "Parcours de scénario",
+      "exercise": "Exercice"
+    },
+    "signUpToSave": "Inscrivez-vous pour sauvegarder votre progression et gagner des XP",
+    "signUpToSaveBody": "Créez un compte gratuit pour suivre votre progression, débloquer tous les cours et commencer votre série.",
+    "signUpFree": "Inscription gratuite",
+    "continueExploring": "Continuer à explorer",
+    "advancedCta": {
+      "heading": "Prêt à aller plus loin ?",
+      "masterclassTitle": "La Masterclass",
+      "masterclassBody": "Le guide complet. Je vous accompagne pas à pas dans la configuration, les réglages et les méthodes de travail de ce cours. Vous obtenez les prompts, les modèles et le système.",
+      "masterclassButton": "Obtenir la Masterclass",
+      "setupTitle": "Ou faites-le faire pour vous",
+      "setupBody": "Réservez une session 1:1 et je configure tout sur votre machine. Vous repartez avec le système complet, configuré pour vos projets.",
+      "setupButton": "Planifier un appel avec Reid"
+    }
+  },
+  "pricing": {
+    "metaTitle": "Tarifs — Learn to GPT",
+    "metaDescription": "Commence à apprendre ChatGPT gratuitement ou débloque l'accès complet avec Pro. Plus de 175 leçons, plus de 700 exercices et une préparation à l'examen Architect.",
+    "navHome": "Accueil",
+    "navGetStarted": "Commencer",
+    "headline": "Choisis ton plan",
+    "subhead": "Commence gratuitement et passe à la version supérieure quand tu es prêt. Chaque plan inclut l'accès à l'expérience d'apprentissage de base.",
+    "mostPopular": "Le plus populaire",
+    "freeName": "Gratuit",
+    "freeTagline": "Essaie avant de t'engager",
+    "freePrice": "$0",
+    "perMonth": " /mois",
+    "freeBody": "Accède à des leçons d'aperçu de chaque parcours pour voir si Learn to GPT est fait pour toi. Aucune carte de crédit requise.",
+    "freeBullet1": "2-3 leçons par parcours",
+    "freeBullet2": "Suivi de progression de base",
+    "freeBullet3": "Accès à la communauté",
+    "freeCtaLoggedIn": "Aller au tableau de bord",
+    "freeCtaGuest": "Commencer gratuitement",
+    "proName": "Pro",
+    "proTagline": "Tout ce dont tu as besoin pour maîtriser ChatGPT",
+    "proPrice": "Free",
+    "proBody": "Accès illimité à toutes les leçons, exercices et parcours. Gamification complète, préparation à l'examen Architect et nouveau contenu chaque semaine.",
+    "proBullet1": "Toutes les 175+ leçons sur 5 parcours",
+    "proBullet2": "Plus de 700 exercices pratiques",
+    "proBullet3": "Séries, classement et réalisations",
+    "proBullet4": "Parcours de préparation à l'examen Architect",
+    "proBullet5": "Nouveau contenu ajouté chaque semaine",
+    "proBullet6": "Support prioritaire",
+    "proCtaLoggedIn": "Passer à Pro",
+    "proCtaGuest": "Commencer l'essai gratuit Pro",
+    "compareHeading": "Compare les plans",
+    "headerFeature": "Fonctionnalité",
+    "headerFree": "Gratuit",
+    "headerPro": "Pro",
+    "featureFundamentalsPreview": "Aperçu du parcours Fondamentaux (2-3 leçons)",
+    "featureClaudeForWorkPreview": "Aperçu de ChatGPT pour le travail (2-3 leçons)",
+    "featureBasicProgress": "Suivi de progression de base",
+    "featureAllLessons": "Toutes les 175+ leçons sur 5 parcours",
+    "featureAllExercises": "Plus de 700 exercices pratiques",
+    "featureCodeChallenges": "Défis de code et scénarios réels",
+    "featureArchitectPrep": "Parcours de préparation à l'examen Architect",
+    "featureXpStreaks": "XP, séries et réalisations",
+    "featureLeaderboard": "Accès au classement",
+    "featureWeeklyContent": "Nouveau contenu ajouté chaque semaine",
+    "featurePrioritySupport": "Support prioritaire",
+    "featureLimited": "Limité",
+    "fineprint": "Annule à tout moment. Pas de contrats à long terme. Tous les prix sont en USD.",
+    "bottomHeadline": "Prêt à maîtriser ChatGPT ?",
+    "bottomSubhead": "Commence avec le plan gratuit et passe à la version supérieure à tout moment.",
+    "bottomCta": "Créer un compte gratuit",
+    "footerBrand": "Learn to GPT",
+    "footerHome": "Accueil",
+    "footerPrivacy": "Confidentialité",
+    "footerTerms": "Conditions",
+    "copyright": "Construit avec ChatGPT, pour les personnes qui apprennent avec ChatGPT. Learn to GPT est un projet indépendant. ChatGPT et OpenAI sont des marques déposées d'OpenAI."
+  },
+  "auth": {
+    "signInTitle": "Se connecter",
+    "signInDescription": "Connecte-toi à ton compte Learn to GPT",
+    "emailLabel": "E-mail",
+    "emailPlaceholder": "toi@exemple.com",
+    "passwordLabel": "Mot de passe",
+    "passwordPlaceholder": "Ton mot de passe",
+    "signInSubmit": "Se connecter",
+    "signingIn": "Connexion...",
+    "orContinueWith": "Ou continue avec",
+    "signInWithGoogle": "Se connecter avec Google",
+    "noAccountPrompt": "Pas encore de compte ?",
+    "signUpLink": "S'inscrire",
+    "signUpTitle": "Créer un compte",
+    "signUpDescription": "Commence ton parcours d'apprentissage de ChatGPT",
+    "passwordHintMinChars": "Au moins 8 caractères",
+    "signUpSubmit": "Créer un compte",
+    "creatingAccount": "Création du compte...",
+    "signUpWithGoogle": "S'inscrire avec Google",
+    "hasAccountPrompt": "Tu as déjà un compte ?",
+    "signInLink": "Se connecter",
+    "checkEmailTitle": "Vérifie ton e-mail",
+    "checkEmailDescription": "Nous avons envoyé un lien de confirmation à <strong>{email}</strong>. Clique sur le lien pour activer ton compte.",
+    "alreadyConfirmed": "Déjà confirmé ?",
+    "passwordTooShort": "Le mot de passe doit contenir au moins 8 caractères",
+    "pleaseCompleteVerification": "Veuillez compléter la vérification",
+    "verificationFailed": "La vérification a échoué. Veuillez réessayer.",
+    "authCallbackError": "Échec de la connexion. Veuillez réessayer."
+  },
+  "profile": {
+    "defaultLearnerName": "Apprenant",
+    "joinedLabel": "Membre depuis le {date}",
+    "statTotalXp": "XP total",
+    "statLevel": "Niveau",
+    "statLessons": "Leçons",
+    "statCourses": "Cours",
+    "xpProgressHeading": "Progression XP",
+    "streakHeading": "Série",
+    "trackProgressHeading": "Progression du parcours",
+    "trackProgressCaption": "{done}/{total} leçons ({pct}%)",
+    "achievementsHeading": "Réalisations ({unlocked}/{total})"
+  },
+  "settings": {
+    "heading": "Paramètres",
+    "subheading": "Gère ton compte et ton abonnement.",
+    "profileHeading": "Profil",
+    "profileSubheading": "Mets à jour ton nom d'affichage et tes préférences.",
+    "displayNameLabel": "Nom d'affichage",
+    "emailLabel": "E-mail",
+    "emailManagedNote": "L'e-mail est géré par ton fournisseur d'authentification et ne peut pas être modifié ici.",
+    "savedBang": "Enregistré !",
+    "savingEllipsis": "Sauvegarde...",
+    "saveChanges": "Enregistrer les modifications",
+    "subscriptionHeading": "Abonnement",
+    "subscriptionSubheading": "Gère ton plan Learn to GPT.",
+    "freePlan": "Plan gratuit",
+    "proPlan": "Plan Pro",
+    "freeBadge": "Gratuit",
+    "proBadge": "Pro",
+    "freeDescription": "Accès aux cours gratuits uniquement. Passe à la version supérieure pour un accès complet à tous les cours, exercices et missions.",
+    "proDescription": "Accès complet à tous les cours, exercices et missions.",
+    "memberSince": "Membre depuis le {date}",
+    "upgradeToPro": "Passer à Pro",
+    "manageSubscription": "Gérer l'abonnement",
+    "loadingEllipsis": "Chargement...",
+    "signOutHeading": "Se déconnecter",
+    "signOutSubheading": "Déconnecte-toi de ton compte Learn to GPT sur cet appareil.",
+    "signOutButton": "Se déconnecter",
+    "deleteAccountHeading": "Supprimer le compte",
+    "deleteAccountSubheading": "Supprime définitivement ton compte et toutes les données associées. Cette action est irréversible.",
+    "deleteButton": "Supprimer",
+    "deleteConfirmTitle": "Supprimer le compte",
+    "deleteConfirmBody": "Cela supprimera définitivement ton compte, toute la progression des cours, les réalisations et les données d'abonnement. Si tu as un abonnement actif, il sera annulé. Cette action est irréversible.",
+    "deleteConfirmPrompt": "Tape DELETE pour confirmer",
+    "deleteConfirmPlaceholder": "DELETE",
+    "cancelButton": "Annuler",
+    "deleteConfirmButton": "Oui, supprimer mon compte",
+    "deletingEllipsis": "Suppression...",
+    "displayNameValidation": "Le nom d'affichage doit contenir entre 2 et 50 caractères",
+    "somethingWentWrong": "Quelque chose s'est mal passé",
+    "failedToOpenPortal": "Échec de l'ouverture du portail d'abonnement",
+    "failedToDeleteAccount": "Échec de la suppression du compte",
+    "allFreeHeading": "Tous les cours sont gratuits.",
+    "allFreeBody": "Il n'y a pas de formule payante sur Learn to GPT. Si vous voulez que je configure tout avec vous en 1:1, écrivez-moi à reid@getateam.ai."
+  },
+  "leaderboard": {
+    "heading": "Classement",
+    "subheading": "Les meilleurs apprenants classés par XP total gagné.",
+    "colRank": "#",
+    "colPlayer": "Joueur",
+    "colXp": "XP",
+    "colLevel": "Niv",
+    "colStreak": "Série",
+    "emptyState": "Aucun apprenant dans le classement pour l'instant. Sois le premier !",
+    "youLabel": "(toi)",
+    "anonymous": "Anonyme",
+    "tabLocal": "Ta langue",
+    "tabGlobal": "Global"
+  },
+  "errors": {
+    "somethingWentWrong": "Quelque chose s'est mal passé",
+    "failedToSaveProgress": "Échec de la sauvegarde de la progression",
+    "failedToGenerateShareLink": "Échec de la génération du lien de partage",
+    "generatingShareLink": "Génération du lien de partage..."
+  },
+  "landing": {
+    "meta": {
+      "title": "Learn to GPT — Maîtrise ChatGPT depuis les principes fondamentaux",
+      "description": "La plateforme d'apprentissage gamifiée pour ChatGPT. Leçons interactives, exercices pratiques et projets réels, du débutant à la certification Architect."
+    },
+    "nav": {
+      "worlds": "Mondes",
+      "curriculum": "Programme",
+      "logIn": "Se connecter",
+      "signIn": "Se connecter",
+      "getStarted": "Commencer",
+      "masterclass": "Masterclass"
+    },
+    "hero": {
+      "eyebrow": "Enseigne maintenant ChatGPT",
+      "headline": "",
+      "headlineAccent": "Deviens redoutable avec ChatGPT",
+      "subtitle": "Sois la personne que ton équipe consulte pour tout ce qui touche à l'IA.",
+      "body": "Chaque niveau est un défi que tu as vraiment envie de finir. Écris de vrais prompts, construis de vraies choses, et repars avec quelque chose que tu utilises au travail dès demain.",
+      "subhead": "La plateforme d'apprentissage gamifiée qui te transforme d'un débutant curieux en un constructeur natif de ChatGPT en 30 jours — leçons interactives, exercices pratiques et projets que tu utiliseras réellement.",
+      "ctaNew": "Nouveau sur ChatGPT ? Commencer ici",
+      "ctaExisting": "Passer au niveau avancé →",
+      "fine": "Sans carte bancaire. Sans vidéos. Non affilié à OpenAI.",
+      "ctaPrimary": "Commencer gratuitement",
+      "ctaSecondary": "Voir les tarifs",
+      "reassurance": "Gratuit pour commencer. Pas de carte de crédit. Le parcours 1 est offert."
+    },
+    "benefits": {
+      "handsOn": {
+        "title": "Pratique dès la première leçon",
+        "body": "Pas de cours vidéo passifs. Chaque leçon est un exercice interactif que tu complètes avec de vrais prompts ChatGPT, notés et expliqués instantanément."
+      },
+      "builtByBuilders": {
+        "title": "Construit par des personnes qui utilisent ChatGPT au quotidien",
+        "body": "Nous utilisons ChatGPT pour livrer du code de production, des pipelines et des produits. Notre programme est ce que nous aurions aimé avoir quand nous avons commencé."
+      },
+      "certification": {
+        "title": "Obtiens la certification Architect",
+        "body": "Suis ta progression à travers 5 niveaux. Obtiens un diplôme vérifiable qui intéresse réellement les employeurs et les équipes."
+      }
+    },
+    "pricing": {
+      "headline": "Tous les cours sont gratuits.",
+      "body": "Les tarifs ont changé. Tous les cours sont gratuits — rendez-vous sur le programme.",
+      "cta": "Voir le programme"
+    },
+    "faq": {
+      "label": "Questions fréquentes",
+      "heading": "Questions fréquentes",
+      "q1": "Qu'est-ce que Learn to GPT ?",
+      "a1": "Learn to GPT est la plateforme d'apprentissage gamifiée pour ChatGPT. Elle t'apprend à maîtriser ChatGPT grâce à des leçons interactives, des exercices pratiques et des projets concrets — de ton premier prompt à la certification Architect. Avec 5 parcours, plus de 175 leçons et plus de 700 exercices, c'est la formation la plus complète dédiée à ChatGPT.",
+      "q2": "Learn to GPT est-il gratuit ?",
+      "a2": "Oui. Le parcours 1 (Fondamentaux) est entièrement gratuit — aucune carte de crédit requise. Tu apprendras comment ChatGPT raisonne, tu écriras tes premiers prompts et tu maîtriseras les schémas de conversation. L'accès Pro (paid access) débloque les 5 parcours, plus de 175 leçons, plus de 700 exercices, les succès et le classement.",
+      "q3": "Qu'est-ce que je vais apprendre ?",
+      "a3": "Cinq parcours te mènent du débutant à l'expert : (1) Fondamentaux — comment ChatGPT raisonne et premiers prompts, (2) Prompting professionnel — chaîne de pensée, sortie structurée, few-shot, (3) ChatGPT Code Interpreter — le CLI pour construire des logiciels, (4) API et Agents — utilisation d'outils et workflows agentiques, (5) Architect — évaluations, monitoring et patterns d'entreprise.",
+      "q4": "Est-ce affilié à OpenAI ?",
+      "a4": "Non. Learn to GPT est une plateforme d'apprentissage indépendante. Elle n'est ni affiliée, ni approuvée, ni officiellement liée à OpenAI. Nous enseignons les compétences ChatGPT sur la base de la documentation publique et d'une expérience concrète de développement.",
+      "q5": "Dans quelles langues Learn to GPT est-il disponible ?",
+      "a5": "Learn to GPT est disponible en 7 langues : anglais, japonais, coréen, chinois simplifié, allemand, français et espagnol. L'interface complète, toutes les leçons et les exercices sont traduits pour que tu puisses apprendre ChatGPT dans ta langue préférée."
+    },
+    "anti": {
+      "labelOld": "L'ancienne méthode",
+      "labelNew": "Learn to GPT",
+      "old1": "Cartes mémoire",
+      "old2": "Vidéos de cours",
+      "old3": "QCM",
+      "old4": "Théorie abstraite",
+      "new1": "Sandbox en direct",
+      "new2": "Vrais prompts",
+      "new3": "Construire de vraies choses",
+      "new4": "Déployer en production",
+      "tagline": "Pas de cartes mémoire. Une vraie maîtrise.",
+      "stakes": "Ceux qui apprennent en pratiquant retiennent 3 fois plus que les spectateurs de vidéos. Ici, c'est pratique dès la première minute."
+    },
+    "paths": {
+      "label": "Choisis ta quête",
+      "heading": "Par où veux-tu commencer ?",
+      "a": {
+        "badge": "Gratuit",
+        "title": "Partir de zéro",
+        "desc": "Jamais utilisé ChatGPT ? Parfait. On te fait passer de \"c'est quoi ?\" à la création de personas personnalisés en une heure.",
+        "step1": "Fondations",
+        "step2": "Professionnel",
+        "step3": "ChatGPT Code Interpreter",
+        "cta": "Commencer le Niveau 1 — 8 minutes"
+      },
+      "b": {
+        "badge": "Passer devant",
+        "title": "Monter en niveau",
+        "desc": "Tu écris déjà des prompts ? Saute les bases. Passe directement aux System Prompts, ChatGPT Code Interpreter ou l'API.",
+        "step1": "System Prompts",
+        "step2": "ChatGPT Code Interpreter",
+        "step3": "API",
+        "cta": "Saute à ton niveau →"
+      }
+    },
+    "tracks": {
+      "label": "La campagne",
+      "heading": "Cinq mondes. Du premier prompt à la maîtrise totale.",
+      "world1": {
+        "num": "Monde 01",
+        "badge": "GRATUIT",
+        "title": "Fondations",
+        "desc": "Comment ChatGPT pense. Tes premiers prompts. Les patterns de conversation. Les system prompts.",
+        "tagline": "\"Penser comme ChatGPT\""
+      },
+      "world2": {
+        "num": "Monde 02",
+        "title": "Professionnel",
+        "desc": "Prompting avancé pour le travail réel. Chaîne de pensée, sortie structurée, few-shot, évaluation.",
+        "tagline": "\"L'appliquer au travail\""
+      },
+      "world3": {
+        "num": "Monde 03",
+        "title": "ChatGPT Code Interpreter",
+        "desc": "Le CLI pour construire du logiciel. Scaffolding, débogage, édition multi-fichiers, déploiement.",
+        "tagline": "\"Coder avec ChatGPT\""
+      },
+      "world4": {
+        "num": "Monde 04",
+        "title": "API & Agents",
+        "desc": "Utilisation d'outils, workflows multi-étapes, boucles d'agents, gestion d'erreurs, patterns de production.",
+        "tagline": "\"Construire avec ChatGPT\""
+      },
+      "world5": {
+        "num": "Monde 05",
+        "badge": "BOSS FINAL",
+        "title": "Architecte",
+        "desc": "Évaluations, monitoring, optimisation des coûts, sécurité, patterns entreprise. La vision complète.",
+        "tagline": "\"Maîtriser ChatGPT\""
+      }
+    },
+    "game": {
+      "label": "Mécaniques de jeu",
+      "heading": "Contenu sérieux. Format addictif.",
+      "xp": {
+        "title": "Gagner des XP",
+        "desc": "Chaque défi complété ajoute à ton score"
+      },
+      "badges": {
+        "title": "Collecter des badges",
+        "desc": "Débloque des succès en maîtrisant chaque compétence"
+      },
+      "levels": {
+        "title": "Monter en niveau",
+        "desc": "Chaque monde débloque le palier suivant"
+      },
+      "streaks": {
+        "title": "Garder ta série",
+        "desc": "La pratique quotidienne construit une maîtrise durable"
+      },
+      "caption": "Chaque niveau rapporte des XP. Chaque monde débloque le suivant. Suis ta série. Grimpe le classement."
+    },
+    "sandbox": {
+      "label": "Sandbox interactive",
+      "heading": "Chaque niveau est pratique. Pas de visionnage. Pas de lecture. Tu écris. ChatGPT répond.",
+      "filename": "level-03-system-prompts.py",
+      "comment1": "# Niveau 3 : Donner une persona à ChatGPT",
+      "comment2": "# Tu écris. ChatGPT le devient.",
+      "stamp": "+25 XP",
+      "footerText": "Du vrai code. De vrais appels API. De vrais résultats. À chaque niveau.",
+      "cta": "Essayer gratuitement"
+    },
+    "build": {
+      "label": "Ce que tu vas construire",
+      "heading": "Tu repars de chaque niveau avec quelque chose de concret.",
+      "item1": {
+        "title": "Assistant IA personnalisé",
+        "desc": "Une persona ChatGPT taillée pour ton rôle — répond comme un coéquipier, pas comme un chatbot."
+      },
+      "item2": {
+        "title": "Workflow automatisé",
+        "desc": "Un pipeline multi-étapes qui gère le travail répétitif pendant que tu te concentres sur les décisions."
+      },
+      "item3": {
+        "title": "Projet ChatGPT Code Interpreter en production",
+        "desc": "Une app complète scaffoldée, déboguée et déployée — entièrement depuis ton terminal."
+      },
+      "item4": {
+        "title": "Système agentique",
+        "desc": "Un agent IA qui utilise des outils, prend des décisions et agit de façon autonome en ton nom."
+      },
+      "caption": "Ce ne sont pas des hypothèses. Les apprenants construisent les quatre avant le Monde 4."
+    },
+    "cred": {
+      "badge": "Construit par des praticiens",
+      "headline": "Rejoins plus de 1 200 apprenants dans 97 pays.",
+      "levels": {
+        "num": "1 200+",
+        "label": "Apprenants"
+      },
+      "challenges": {
+        "num": "97",
+        "label": "Pays"
+      },
+      "worlds": {
+        "num": "7",
+        "label": "Parcours"
+      },
+      "achievement": {
+        "num": "7",
+        "label": "Langues"
+      }
+    },
+    "finalCta": {
+      "headline": "Ton équipe se pose déjà des questions sur l'IA.",
+      "headlineAccent": "Sois celui qui a les réponses.",
+      "subtitle": "Un niveau. Huit minutes. Tu sauras si c'est fait pour toi.",
+      "cta": "Commencer le Niveau 1 →"
+    },
+    "footer": {
+      "tagline": "Learn to GPT",
+      "worlds": "Mondes",
+      "curriculum": "Programme",
+      "privacy": "Confidentialité",
+      "terms": "Conditions",
+      "community": "Communauté",
+      "blog": "Blog",
+      "support": "Support",
+      "copyright": "Construit avec ChatGPT, pour les personnes qui apprennent avec ChatGPT. Learn to GPT est un projet indépendant. ChatGPT et OpenAI sont des marques déposées d'OpenAI.",
+      "masterclass": "Masterclass"
+    }
+  },
+  "localeSwitcher": {
+    "label": "Langue"
+  },
+  "curriculum": {
+    "meta": {
+      "title": "Cours ChatGPT — Formation interactive gratuite | Learn to GPT",
+      "description": "Parcourez tous les cours ChatGPT. Leçons interactives gratuites, exercices pratiques et projets concrets. Apprenez le prompt engineering, ChatGPT Code Interpreter et le développement IA en 7 langues. Débutant à avancé."
+    },
+    "heading": "Programme ChatGPT",
+    "subheading": "5 parcours d'apprentissage vous emmènent de votre premier prompt ChatGPT à la certification Architect. Chaque leçon est pratique — vous écrivez, ChatGPT répond.",
+    "nav": {
+      "getStarted": "Commencer",
+      "curriculum": "Programme",
+      "privacy": "Confidentialité",
+      "terms": "Conditions",
+      "masterclass": "Masterclass"
+    },
+    "tracks": {
+      "why_claude": "Parcours 1 : Fondations",
+      "three_levels": "Parcours 2 : Prompting professionnel",
+      "essentials": "Parcours 3 : ChatGPT Code Interpreter",
+      "level_up": "Parcours 4 : API et agents",
+      "build_something": "Parcours 5 : Architect",
+      "practitioner_setup": "Parcours 6 : Configuration du Praticien",
+      "advanced_workflows": "Parcours 7 : Flux Avancés"
+    },
+    "free": "Gratuit",
+    "pro": "Pro",
+    "lessons": "leçons",
+    "cta": {
+      "heading": "Prêt à maîtriser ChatGPT ?",
+      "body": "Commencez avec le parcours 1 gratuitement. Aucune carte de crédit requise.",
+      "button": "Commencer gratuitement"
+    },
+    "pathways": {
+      "starter": {
+        "label": "Parcours débutant · Gratuit",
+        "heading": "Commence ici.",
+        "body": "Les bases de ChatGPT. Pourquoi c'est important, à quoi ressemblent les trois niveaux en pratique, et l'essentiel du premier jour. Gratuit."
+      },
+      "advanced": {
+        "label": "Praticien avancé · Gratuit",
+        "heading": "Ma façon de l'utiliser au quotidien.",
+        "body": "C'est le système avec lequel je gère mes propres entreprises. Fichiers mémoire, compétences d'agents, MCPs, automatisation. Gratuit."
+      }
+    }
+  },
+  "learn": {
+    "meta": {
+      "title": "Apprendre ChatGPT — Cours interactifs gratuits | Learn to GPT",
+      "description": "Maîtrisez ChatGPT avec des leçons interactives gratuites, des exercices pratiques et des projets concrets. Du débutant au confirmé, en 7 langues."
+    },
+    "heading": "Apprendre ChatGPT",
+    "subheading": "Des cours interactifs gratuits pour tous les niveaux.",
+    "intro": "Learn to GPT vous apprend ChatGPT par la pratique — pas de vidéos ni de flashcards. Commencez par les bases ou passez directement aux flux avancés. Tout commence gratuitement.",
+    "cta": "Commencer gratuitement",
+    "ctaFine": "Gratuit pour démarrer. Sans carte bancaire. Non affilié à OpenAI.",
+    "freeCourses": {
+      "label": "Cours gratuits",
+      "heading": "Commencez ici — entièrement gratuit.",
+      "freeBadge": "Gratuit",
+      "startLearning": "Commencer à apprendre"
+    },
+    "course1": {
+      "title": "Découvrir ChatGPT — Les fondamentaux",
+      "description": "Vos premiers pas avec ChatGPT. Comprenez comment ChatGPT raisonne, rédigez vos premiers prompts et découvrez les schémas de conversation qui donnent de vrais résultats."
+    },
+    "course2": {
+      "title": "Configuration du praticien",
+      "description": "Configurez ChatGPT pour un usage professionnel quotidien. Fichiers mémoire, gestion du contexte et workflows utilisés par les professionnels au quotidien."
+    },
+    "why": {
+      "heading": "Pourquoi apprendre ChatGPT sur Learn to GPT ?",
+      "point1": {
+        "title": "Pratique dès la première leçon",
+        "body": "Pas de vidéos passives. Chaque leçon est un exercice interactif que vous réalisez avec de vrais prompts ChatGPT, noté et expliqué instantanément."
+      },
+      "point2": {
+        "title": "Conçu par des gens qui utilisent ChatGPT chaque jour",
+        "body": "Nous utilisons ChatGPT pour livrer du code en production, des pipelines et des produits chaque jour. Le programme est ce que nous aurions aimé avoir en commençant."
+      },
+      "point3": {
+        "title": "Disponible en 7 langues",
+        "body": "La plateforme complète — leçons, exercices et interface — est disponible en anglais, japonais, coréen, chinois, allemand, français et espagnol."
+      }
+    },
+    "finalCta": {
+      "headline": "Prêt à apprendre ChatGPT ?",
+      "subtitle": "Le Track 1 est gratuit. Sans carte bancaire. Découvrez si cette méthode vous convient."
+    },
+    "nav": {
+      "home": "Accueil",
+      "curriculum": "Programme",
+      "logIn": "Se connecter",
+      "getStarted": "Commencer",
+      "terms": "Conditions",
+      "privacy": "Confidentialité",
+      "copyright": "© 2026 Learn to GPT. Non affilié à OpenAI."
+    }
+  },
+  "claude-code": {
+    "meta": {
+      "title": "Tutoriel ChatGPT Code Interpreter — Maîtrisez le développement assisté par IA | Learn to GPT",
+      "description": "Apprenez ChatGPT Code Interpreter avec des exercices pratiques. Maîtrisez les commandes slash, les systèmes de mémoire, les workflows d'agents et les hooks. Tutoriel interactif du débutant à l'expert."
+    },
+    "heading": "Tutoriel",
+    "subheading": "Maîtrisez le développement assisté par IA depuis le terminal",
+    "intro": "ChatGPT Code Interpreter est l'interface en ligne de commande d'OpenAI pour le développement assisté par IA. Apprenez à le configurer, créer des workflows d'agents et coder plus vite avec des exercices pratiques.",
+    "trackInfo": "Track 7 — Avancé",
+    "cta": "Commencer gratuitement",
+    "viewCurriculum": "Voir le programme",
+    "whatIs": {
+      "heading": "Qu'est-ce que ChatGPT Code Interpreter ?",
+      "body": "ChatGPT Code Interpreter est l'outil en ligne de commande d'OpenAI qui amène ChatGPT directement dans votre terminal. Il lit votre code, exécute des commandes, modifie des fichiers et gère des workflows multi-étapes — le tout en langage naturel. Pensez-y comme un ingénieur senior qui vit dans votre terminal et comprend l'ensemble de votre projet."
+    },
+    "whatYouLearn": {
+      "label": "Programme",
+      "heading": "Ce que vous apprendrez"
+    },
+    "features": {
+      "0": {
+        "title": "Commandes Slash",
+        "desc": "Maîtrisez les commandes intégrées qui rendent ChatGPT Code Interpreter puissant — de /init et /compact aux commandes slash personnalisées que vous créez vous-même."
+      },
+      "1": {
+        "title": "Systèmes de mémoire",
+        "desc": "Configurez des fichiers GPT.md qui donnent à ChatGPT un contexte persistant sur votre projet, vos standards de code et vos préférences entre les sessions."
+      },
+      "2": {
+        "title": "Workflows d'agents",
+        "desc": "Construisez des workflows d'agents multi-étapes qui planifient, exécutent et vérifient des tâches complexes de manière autonome avec supervision humaine."
+      },
+      "3": {
+        "title": "Hooks",
+        "desc": "Mettez en place des hooks événementiels qui déclenchent des actions personnalisées avant, pendant et après les opérations de ChatGPT Code Interpreter."
+      },
+      "4": {
+        "title": "Configuration GPT.md",
+        "desc": "Rédigez des règles de projet et des fichiers de configuration efficaces qui façonnent le comportement de ChatGPT pour votre codebase."
+      },
+      "5": {
+        "title": "Patterns avancés",
+        "desc": "Combinez commandes slash, mémoire, agents et hooks en workflows de production qui décuplent votre vitesse de développement."
+      }
+    },
+    "preview": {
+      "caption": "Apprenez à configurer ChatGPT Code Interpreter pour n'importe quel projet"
+    },
+    "finalCta": {
+      "headline": "Prêt à maîtriser",
+      "subtitle": "Exercices pratiques. Vrais workflows. Pas de superflu."
+    },
+    "nav": {
+      "curriculum": "Programme",
+      "logIn": "Connexion",
+      "getStarted": "Commencer",
+      "home": "Accueil",
+      "terms": "Conditions",
+      "privacy": "Confidentialité",
+      "copyright": "© 2026 Learn to GPT. Non affilié à OpenAI."
+    }
+  },
+  "ai-training": {
+    "meta": {
+      "title": "Programme de Formation IA — Apprenez ChatGPT du Débutant à l'Expert | Learn to GPT",
+      "description": "Programme complet de formation IA pour ChatGPT. Du débutant à l'expert avec des leçons interactives, des exercices pratiques et une certification. Disponible en 7 langues."
+    },
+    "heading": "Formation IA avec ChatGPT",
+    "subheading": "Du débutant à l'expert — à votre rythme",
+    "badge": "Formation Complète",
+    "intro": "Learn to GPT propose un programme structuré de formation IA qui vous accompagne de votre première conversation avec ChatGPT à la construction de workflows d'agents avancés. Leçons interactives, exercices pratiques et projets réels — tout est gratuit pour commencer.",
+    "tracks": {
+      "heading": "Parcours de Formation",
+      "label": "Choisissez votre niveau",
+      "beginner": {
+        "level": "Débutant",
+        "title": "Découvrez ChatGPT",
+        "desc": "Apprenez les fondamentaux du travail avec ChatGPT. Aucune expérience requise."
+      },
+      "intermediate": {
+        "level": "Intermédiaire",
+        "title": "Contexte et Prompting",
+        "desc": "Maîtrisez la gestion du contexte, l'ingénierie de prompts et les techniques de conversation avancées."
+      },
+      "advanced": {
+        "level": "Avancé",
+        "title": "ChatGPT Code Interpreter et Agents",
+        "desc": "Construisez des workflows d'agents, automatisez le développement et maîtrisez ChatGPT Code Interpreter."
+      },
+      "explore": "Explorer le Parcours"
+    },
+    "benefits": {
+      "heading": "Pourquoi se former avec Learn to GPT",
+      "gamified": {
+        "title": "Apprentissage Gamifié",
+        "body": "Gagnez des XP, débloquez des succès et participez aux classements."
+      },
+      "languages": {
+        "title": "7 Langues",
+        "body": "Apprenez en français, anglais, espagnol, allemand, japonais, coréen ou chinois."
+      },
+      "teams": {
+        "title": "Formation d'Équipe",
+        "body": "Mettez votre équipe à niveau avec notre programme masterclass à 250 $."
+      }
+    },
+    "masterclass": {
+      "heading": "Masterclass 250 $",
+      "body": "Accélérez la formation IA de votre équipe avec un enseignement guidé, des ateliers pratiques et une certification.",
+      "cta": "En Savoir Plus"
+    },
+    "cta": "Commencer la Formation Gratuite",
+    "ctaFine": "Aucune carte de crédit requise",
+    "finalCta": {
+      "headline": "Prêt à commencer votre formation IA ?",
+      "subtitle": "Rejoignez des milliers d'apprenants maîtrisant ChatGPT."
+    },
+    "viewCurriculum": "Voir le Programme Complet",
+    "nav": {
+      "home": "Accueil",
+      "curriculum": "Programme",
+      "getStarted": "Commencer",
+      "logIn": "Connexion",
+      "privacy": "Confidentialité",
+      "terms": "Conditions",
+      "copyright": "Learn to GPT"
+    }
+  },
+  "prompt-engineering": {
+    "meta": {
+      "title": "Ingénierie de Prompts pour ChatGPT — Cours Interactif | Learn to GPT",
+      "description": "Maîtrisez l'ingénierie de prompts pour ChatGPT. Apprenez la gestion du contexte, les prompts système, les exemples few-shot et les techniques avancées."
+    },
+    "heading": "Ingénierie de Prompts pour ChatGPT",
+    "subheading": "Maîtrisez l'art de communiquer avec l'IA",
+    "intro": "Apprenez à rédiger des prompts efficaces pour obtenir les meilleurs résultats de ChatGPT. Des techniques de conversation de base aux stratégies avancées.",
+    "whatIs": {
+      "heading": "Qu'est-ce que l'Ingénierie de Prompts ?",
+      "body": "L'ingénierie de prompts est l'art de créer des instructions qui aident les modèles d'IA à produire des résultats précis, utiles et pertinents."
+    },
+    "skillsSection": {
+      "heading": "Ce Que Vous Apprendrez",
+      "label": "Compétences Clés"
+    },
+    "skills": {
+      "0": {
+        "title": "Gestion de la Fenêtre de Contexte",
+        "desc": "Structurez vos conversations et gérez la fenêtre de contexte de ChatGPT."
+      },
+      "1": {
+        "title": "Prompts Système",
+        "desc": "Concevez des prompts système efficaces définissant le ton et les contraintes."
+      },
+      "2": {
+        "title": "Exemples Few-Shot",
+        "desc": "Guidez le format et le style de sortie de ChatGPT avec des exemples."
+      },
+      "3": {
+        "title": "Chaîne de Pensée",
+        "desc": "Activez le raisonnement étape par étape pour les problèmes complexes."
+      },
+      "4": {
+        "title": "Utilisation d'Outils",
+        "desc": "Intégrez ChatGPT avec des outils externes et des APIs."
+      },
+      "5": {
+        "title": "Patterns Avancés",
+        "desc": "Maîtrisez l'IA constitutionnelle, l'auto-réflexion et les stratégies multi-tours."
+      }
+    },
+    "trackInfo": "Ce contenu est couvert dans nos parcours débutant et intermédiaire.",
+    "cta": "Commencer Gratuitement",
+    "viewCurriculum": "Voir le Programme",
+    "finalCta": {
+      "headline": "Prêt à maîtriser l'ingénierie de prompts ?",
+      "subtitle": "Commencez avec des leçons interactives gratuites."
+    },
+    "preview": {
+      "caption": "Exemple : Un prompt système bien structuré"
+    },
+    "nav": {
+      "home": "Accueil",
+      "curriculum": "Programme",
+      "getStarted": "Commencer",
+      "logIn": "Connexion",
+      "privacy": "Confidentialité",
+      "terms": "Conditions",
+      "copyright": "Learn to GPT"
+    }
+  },
+  "getting-started": {
+    "meta": {
+      "title": "Débuter avec ChatGPT — Guide Gratuit pour Débutants | Learn to GPT",
+      "description": "Commencez à apprendre ChatGPT aujourd'hui. Guide pas à pas gratuit avec des leçons interactives et des exercices pratiques. Aucune expérience requise."
+    },
+    "heading": "Débuter avec ChatGPT",
+    "subheading": "Vos premiers pas vers la maîtrise de l'IA",
+    "intro": "Aucune expérience requise. Learn to GPT vous guide de votre première conversation IA à la création de vrais workflows. Commencez gratuitement, apprenez à votre rythme, dans votre langue.",
+    "cta": "Créer un Compte Gratuit",
+    "ctaFine": "Aucune carte de crédit requise",
+    "steps": {
+      "heading": "Comment Ça Marche",
+      "step1": {
+        "title": "Créez Votre Compte Gratuit",
+        "desc": "Inscrivez-vous en quelques secondes. Sans carte de crédit, sans engagement."
+      },
+      "step2": {
+        "title": "Commencez par les Leçons Gratuites",
+        "desc": "Débutez avec Découvrez ChatGPT, notre cours pour débutants."
+      },
+      "step3": {
+        "title": "Pratiquez avec des Exercices",
+        "desc": "Chaque leçon inclut des exercices interactifs avec retour instantané."
+      },
+      "step4": {
+        "title": "Passez aux Niveaux Avancés",
+        "desc": "Maîtrisez le prompt engineering, ChatGPT Code Interpreter et les workflows d'agents."
+      }
+    },
+    "included": {
+      "heading": "Ce Que Vous Obtenez Gratuitement",
+      "item1": "Leçons interactives couvrant les fondamentaux de ChatGPT",
+      "item2": "Exercices pratiques avec retour instantané et récompenses XP",
+      "item3": "Disponible en 7 langues — français, anglais, espagnol, allemand, japonais, coréen et chinois",
+      "item4": "Suivi de progression avec succès et classements"
+    },
+    "finalCta": {
+      "headline": "Prêt à commencer ?",
+      "subtitle": "Rejoignez des centaines d'apprenants maîtrisant ChatGPT."
+    },
+    "nav": {
+      "home": "Accueil",
+      "curriculum": "Programme",
+      "getStarted": "Commencer",
+      "logIn": "Connexion",
+      "privacy": "Confidentialité",
+      "terms": "Conditions",
+      "copyright": "Learn to GPT"
+    }
+  },
+  "masterclass-page": {
+    "meta": {
+      "title": "Masterclass ChatGPT — Formation guidee a 250 $ | Learn to GPT",
+      "description": "Masterclass a 250 $ (paiement unique) couvrant les workflows avances de ChatGPT, ChatGPT Code Interpreter, l'ingenierie de prompts et la formation d'equipe. Ateliers pratiques avec instruction guidee."
+    },
+    "heading": "Masterclass ChatGPT",
+    "subheading": "Passez de competent a redoutable en une formation guidee.",
+    "intro": "La Masterclass Learn to GPT est une session de formation pratique et guidee qui vous emmene au-dela des bases. Ingenierie de prompts avancee, workflows ChatGPT Code Interpreter, patterns d'agents et projets concrets — le tout dans un programme intensif.",
+    "hero": {
+      "badge": "Formation Guidee"
+    },
+    "price": "250 $ — Paiement Unique",
+    "cta": "S'inscrire Maintenant",
+    "ctaFine": "Paiement unique. Acces a vie. Non affilie a OpenAI.",
+    "included": {
+      "heading": "Ce Qui Est Inclus",
+      "item1": {
+        "title": "Instruction Guidee",
+        "desc": "Accompagnement etape par etape a travers les concepts avances de ChatGPT. Pas de devinettes — apprenez les patterns que les praticiens utilisent vraiment."
+      },
+      "item2": {
+        "title": "Ateliers Pratiques",
+        "desc": "Construisez de vrais projets pendant la formation. Chaque concept est renforce par des exercices que vous completez vous-meme."
+      },
+      "item3": {
+        "title": "Contenu Avance ChatGPT Code Interpreter",
+        "desc": "Maitrisez les workflows ChatGPT Code Interpreter — commandes slash, fichiers memoire, hooks, agents et patterns d'architecture multi-fichiers."
+      },
+      "item4": {
+        "title": "Pret pour les Equipes",
+        "desc": "Mettez votre equipe a niveau. Le contenu de la masterclass est concu pour etre deploye dans les organisations, des contributeurs individuels aux managers."
+      }
+    },
+    "topics": {
+      "heading": "Ce Que Vous Apprendrez",
+      "item1": "Techniques avancees d'ingenierie de prompts pour des resultats constants et de qualite professionnelle",
+      "item2": "Configuration, personnalisation et integration quotidienne de ChatGPT Code Interpreter",
+      "item3": "Fichiers memoire, GPT.md et gestion de contexte pour les projets de longue duree",
+      "item4": "Patterns d'agents — construisez des workflows IA qui s'executent de maniere autonome",
+      "item5": "Architecture multi-fichiers et operations ChatGPT Code Interpreter a l'echelle du codebase",
+      "item6": "Guides de projets concrets du debutant au deploiement"
+    },
+    "audience": {
+      "heading": "A Qui S'adresse Cette Formation",
+      "point1": {
+        "title": "Praticiens individuels",
+        "body": "Vous avez utilise ChatGPT mais vous voulez aller plus loin. Vous etes pret a construire de vrais workflows, pas seulement discuter."
+      },
+      "point2": {
+        "title": "Responsables d'equipe et managers",
+        "body": "Vous devez rendre votre equipe productive avec ChatGPT. La masterclass vous donne un programme structure a deployer dans votre organisation."
+      },
+      "point3": {
+        "title": "Developpeurs et professionnels techniques",
+        "body": "Vous voulez maitriser ChatGPT Code Interpreter — l'outil de codage IA natif du terminal. Apprenez les patterns qui multiplient par 10 votre workflow de developpement."
+      }
+    },
+    "finalCta": {
+      "headline": "Pret a maitriser ChatGPT ?",
+      "subtitle": "Un seul paiement. Acces a vie. Commencez a construire aujourd'hui."
+    },
+    "nav": {
+      "home": "Accueil",
+      "curriculum": "Programme",
+      "getStarted": "Commencer",
+      "logIn": "Connexion",
+      "privacy": "Confidentialite",
+      "terms": "Conditions",
+      "copyright": "Learn to GPT"
+    }
+  },
+  "certification": {
+    "meta": {
+      "title": "Certification ChatGPT — Prouvez Vos Compétences IA | Learn to GPT",
+      "description": "Obtenez votre certification ChatGPT. Démontrez votre maîtrise avec des évaluations pratiques et des accréditations vérifiées."
+    },
+    "heading": "Certification ChatGPT",
+    "subheading": "Prouvez vos compétences avec des accréditations vérifiées",
+    "intro": "Complétez des parcours structurés, réussissez des évaluations pratiques et obtenez une certification.",
+    "title": "Certification ChatGPT",
+    "description": "Programme de certification IA",
+    "levels": {
+      "heading": "Niveaux de Certification",
+      "label": "Choisissez Votre Parcours",
+      "popularBadge": "Le Plus Populaire",
+      "beginner": {
+        "title": "ChatGPT Débutant",
+        "description": "Compréhension fondamentale de ChatGPT.",
+        "skill1": "Techniques de prompting de base",
+        "skill2": "Gestion des conversations",
+        "skill3": "Compréhension des capacités IA"
+      },
+      "practitioner": {
+        "title": "ChatGPT Praticien",
+        "description": "Maîtrise intermédiaire.",
+        "skill1": "Prompt engineering avancé",
+        "skill2": "Optimisation du contexte",
+        "skill3": "Stratégies multi-tours"
+      },
+      "architect": {
+        "title": "ChatGPT Architecte",
+        "description": "Compétences niveau expert.",
+        "skill1": "Maîtrise de ChatGPT Code Interpreter",
+        "skill2": "Conception de workflows",
+        "skill3": "Architecture IA entreprise"
+      }
+    },
+    "proves": {
+      "heading": "Ce Que Prouve la Certification",
+      "point1": {
+        "title": "Compétences Vérifiées",
+        "body": "Évaluations pratiques à chaque niveau."
+      },
+      "point2": {
+        "title": "Maîtrise Structurée",
+        "body": "Progression claire des fondamentaux à l'expertise."
+      },
+      "point3": {
+        "title": "Avantage Carrière",
+        "body": "Démarquez-vous avec des accréditations vérifiées."
+      }
+    },
+    "howItWorks": {
+      "heading": "Comment Ça Marche",
+      "label": "3 Étapes Simples",
+      "step1": {
+        "title": "Complétez le Parcours",
+        "body": "Suivez toutes les leçons et exercices."
+      },
+      "step2": {
+        "title": "Réussissez l'Évaluation",
+        "body": "Démontrez vos compétences pratiques."
+      },
+      "step3": {
+        "title": "Obtenez Votre Accréditation",
+        "body": "Recevez une accréditation numérique vérifiée."
+      }
+    },
+    "cta": "Commencer la Certification",
+    "ctaFine": "Commencez avec des leçons gratuites",
+    "finalCta": {
+      "headline": "Prêt à prouver vos compétences ?",
+      "subtitle": "Commencez votre parcours de certification."
+    },
+    "nav": {
+      "home": "Accueil",
+      "curriculum": "Programme",
+      "getStarted": "Commencer",
+      "logIn": "Connexion",
+      "privacy": "Confidentialité",
+      "terms": "Conditions",
+      "copyright": "Learn to GPT"
+    }
+  },
+  "for-teams": {
+    "meta": {
+      "title": "ChatGPT pour les Équipes — Formation IA Entreprise | Learn to GPT",
+      "description": "Formez toute votre équipe sur ChatGPT. Compétences standardisées, workflows cohérents et progression mesurable."
+    },
+    "heading": "ChatGPT pour les Équipes",
+    "subheading": "Standardisez les compétences IA dans votre organisation",
+    "hero": {
+      "label": "Formation d'Équipe"
+    },
+    "intro": "Donnez à votre équipe une base commune en ChatGPT.",
+    "title": "ChatGPT pour les Équipes",
+    "description": "Formation IA entreprise",
+    "benefits": {
+      "label": "Pourquoi les Équipes Nous Choisissent",
+      "heading": "Développez la Maîtrise IA à Grande Échelle",
+      "point1": {
+        "title": "Compétences Standardisées",
+        "body": "Chaque membre apprend les mêmes fondamentaux et meilleures pratiques."
+      },
+      "point2": {
+        "title": "Workflows Cohérents",
+        "body": "Établissez des configurations GPT.md partagées pour toute l'équipe."
+      },
+      "point3": {
+        "title": "Progrès Mesurables",
+        "body": "Suivez les taux de complétion et les scores de toute l'équipe."
+      }
+    },
+    "howItWorks": {
+      "heading": "Comment Ça Marche",
+      "step1": {
+        "title": "Choisissez Votre Formule",
+        "body": "Commencez avec la masterclass à 250 $ ou contactez-nous."
+      },
+      "step2": {
+        "title": "Intégrez Votre Équipe",
+        "body": "Nous configurons les comptes et personnalisons vos workflows."
+      },
+      "step3": {
+        "title": "Apprenez Ensemble",
+        "body": "Votre équipe progresse à travers des parcours structurés."
+      },
+      "step4": {
+        "title": "Mesurez les Résultats",
+        "body": "Suivez la progression et identifiez les lacunes."
+      }
+    },
+    "pricing": {
+      "heading": "Tarifs",
+      "subheading": "Options flexibles pour toutes les tailles d'équipe",
+      "masterclass": {
+        "title": "250 $",
+        "label": "Masterclass",
+        "per": "paiement unique",
+        "feature1": "Instruction guidée pour 10 personnes max",
+        "feature2": "Format atelier pratique",
+        "feature3": "Les 7 parcours inclus",
+        "feature4": "90 jours d'accès"
+      },
+      "enterprise": {
+        "badge": "Sur Mesure",
+        "title": "5 000 $+",
+        "label": "Configuration Entreprise",
+        "per": "par engagement",
+        "feature1": "Configuration 1:1 avec votre équipe",
+        "feature2": "Configuration GPT.md personnalisée",
+        "feature3": "Conception de workflows d'agents",
+        "feature4": "Support conseil continu"
+      }
+    },
+    "cta": "Commencer",
+    "ctaFine": "Contactez-nous pour les tarifs entreprise",
+    "finalCta": {
+      "headline": "Prêt à former votre équipe ?",
+      "subtitle": "Commencez par la masterclass ou contactez-nous."
+    },
+    "nav": {
+      "home": "Accueil",
+      "curriculum": "Programme",
+      "getStarted": "Commencer",
+      "logIn": "Connexion",
+      "privacy": "Confidentialité",
+      "terms": "Conditions",
+      "copyright": "Learn to GPT"
+    }
+  },
+  "paywall": {
+    "heading": "Vous avez terminé {count} cours gratuits",
+    "subheading": "Accédez sans limite à tous les cours, exercices et parcours.",
+    "feature1": "Les 7 parcours d'apprentissage",
+    "feature2": "Plus de 375 exercices pratiques",
+    "feature3": "Accès à vie — paiement unique",
+    "cta": "Débloquer tous les cours",
+    "dismiss": "Peut-être plus tard"
+  }
+}

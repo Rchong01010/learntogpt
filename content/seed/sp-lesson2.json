@@ -1,0 +1,94 @@
+{
+  "title": "The Iteration Loop",
+  "slug": "the-iteration-loop",
+  "description": "Your first response from Claude is never your best. Learn how to iterate — read, identify, refine — like a power user.",
+  "order_index": 2,
+  "xp_reward": 50,
+  "estimated_minutes": 8,
+  "content": {
+    "sections": [
+      {
+        "type": "text",
+        "content": "<p>You gave Claude great context. You got a solid first draft back. Now what? Most people stop right here — they copy the response, paste it somewhere, and move on. That's like leaving money on the table. The first response is rarely the best one Claude can give you. The real skill isn't writing the perfect prompt on your first try. It's knowing what to do <strong>after</strong> you get a response.</p>"
+      },
+      {
+        "type": "text",
+        "content": "<p>Here's the mindset shift: treat Claude's first response as a <strong>starting point</strong>, not a finished product. Read it carefully. Find what's off — maybe the tone is wrong, maybe it's missing a key detail, maybe the structure doesn't work. Then tell Claude specifically what to change. This is the iteration loop: prompt, read, refine, repeat. Power users do this naturally. Everyone else accepts the first draft or starts over from scratch.</p>"
+      },
+      {
+        "type": "exercise",
+        "exercise_id": "ex_sp_02a"
+      },
+      {
+        "type": "text",
+        "content": "<p>Not all feedback is created equal. There are three types of iteration you'll use most. <strong>Tone adjustments</strong> — \"too formal, make it conversational\" or \"this sounds like a press release, make it sound like a real person.\" <strong>Content adjustments</strong> — \"add a section about pricing\" or \"you missed the part about onboarding timeline.\" <strong>Structural adjustments</strong> — \"turn this into a bullet list instead of paragraphs\" or \"put the conclusion first, then the reasoning.\" Knowing which lever to pull makes your feedback land faster.</p>"
+      },
+      {
+        "type": "text",
+        "content": "<p>Let's watch a real example play out. You ask Claude: <em>\"Write me a LinkedIn post about why our startup switched from Slack to Discord.\"</em> Claude gives you something decent but generic. Here's what happens at three levels of feedback:</p><p><strong>Round 1 — Vague feedback:</strong> \"Make it better.\" Claude tweaks a few words, adds an emoji, and moves a sentence. Barely different. Vague input gets vague output.</p><p><strong>Round 2 — Specific feedback:</strong> \"The opening is too corporate. Start with a question that hooks people — something like 'What if the tool your team lives in is actually slowing you down?' And cut the first two sentences entirely.\" Now Claude rewrites the opening with an actual hook. Real improvement.</p><p><strong>Round 3 — Precision feedback:</strong> \"Love the hook and the middle section. Keep those exactly as they are. But the last paragraph is weak — replace it with a direct CTA: 'Try it for a week. That's all it took us.'\" Claude makes exactly that swap. The post is now great — and it took three rounds, not three restarts.</p>"
+      },
+      {
+        "type": "exercise",
+        "exercise_id": "ex_sp_02b"
+      },
+      {
+        "type": "text",
+        "content": "<p>The rule is simple: <strong>specific feedback beats vague feedback every time.</strong> \"Make it better\" gives Claude nothing to work with. \"The second paragraph sounds like a robot wrote it — make it casual, like you're explaining this to a friend at a coffee shop\" gives Claude everything it needs. The more precisely you can name what's wrong and what you want instead, the faster you get to a great result.</p>"
+      },
+      {
+        "type": "exercise",
+        "exercise_id": "ex_sp_02c"
+      },
+      {
+        "type": "summary",
+        "content": "<p>Your first response from Claude is a starting point, not a destination. The iteration loop — read, identify what's off, give specific feedback — is what separates power users from everyone else. Use tone, content, and structural adjustments to steer Claude exactly where you need it. And always remember: specific feedback is gold, vague feedback is noise. Next up: we'll dig into how to set the right constraints so Claude doesn't just give you something good — it gives you exactly what you need.</p>"
+      }
+    ]
+  },
+  "exercises": [
+    {
+      "id": "ex_sp_02a",
+      "order_index": 1,
+      "type": "multiple_choice",
+      "prompt": "You asked Claude to write a cold email for your business and the response is decent but not great. What's the biggest mistake you can make next?",
+      "options": [
+        "Read the response carefully and identify specific things to change",
+        "Accept the first response as-is and send it",
+        "Tell Claude exactly which parts need work and how to fix them",
+        "Ask Claude to try a different angle on the opening"
+      ],
+      "correct_answer": "1",
+      "explanation": "Accepting the first response without iterating is leaving value on the table. Claude's first draft is a starting point. The real skill is reading it, spotting what's off, and giving Claude specific feedback to refine it. The other three options are all forms of iteration — which is exactly the right move.",
+      "hints": [
+        "Think about what most people do versus what power users do."
+      ],
+      "xp_reward": 5
+    },
+    {
+      "id": "ex_sp_02b",
+      "order_index": 2,
+      "type": "scenario_walkthrough",
+      "prompt": "Walk through three rounds of iteration on a real task. At each round, pick the feedback that will get the best result from Claude.",
+      "options": null,
+      "correct_answer": "{\"title\": \"Iterate Like a Power User\", \"steps\": [{\"type\": \"context\", \"text\": \"You asked Claude: 'Write a 1-paragraph bio for my consulting website. I help small businesses automate their operations with AI.' Claude's first draft is professional but reads like a corporate About page — stiff, generic, forgettable. Time to iterate.\"}, {\"type\": \"choice\", \"claude_response\": \"Draft: 'With over a decade of experience in business process optimization, our consultancy specializes in leveraging cutting-edge artificial intelligence solutions to streamline operations for small and medium-sized enterprises. We are committed to delivering measurable results and empowering organizations to achieve operational excellence through innovative technology implementation.'\", \"question\": \"Round 1: This draft is stiff and generic. Which feedback will improve it most?\", \"options\": [\"Make it better.\", \"This sounds like a corporate brochure from 2005. Rewrite it in first person — I want it to sound like a real human explaining what they do to someone at a dinner party.\", \"Add more details.\", \"Can you try again?\"], \"correct\": 1, \"feedback\": \"'Make it better' and 'try again' give Claude nothing specific to work with. 'Add more details' doesn't address the real problem — the tone is wrong. Telling Claude exactly what's off (corporate brochure tone) and what you want instead (first person, dinner party energy) gives it a clear target. That's specific feedback.\"}, {\"type\": \"choice\", \"claude_response\": \"Revised draft: 'I help small business owners stop drowning in manual work. If your team is still copy-pasting data between spreadsheets, sending invoices by hand, or spending hours on tasks that should take minutes — I build AI systems that handle all of it. You get your time back. I've helped dozens of businesses cut their busywork in half.'\", \"question\": \"Round 2: Much better tone. But the last line is vague. Which feedback nails the next improvement?\", \"options\": [\"Make the ending stronger.\", \"I like it overall, just make a few tweaks.\", \"The last sentence is weak — replace 'dozens of businesses' with a specific result, like 'I helped a 4-person agency save 15 hours a week in their first month.'\", \"Add a call to action at the end.\"], \"correct\": 2, \"feedback\": \"'Make the ending stronger' is the right instinct but too vague — Claude has to guess what 'stronger' means to you. The winning feedback points to the exact sentence, names the problem (generic claim), and provides a concrete alternative (specific result with numbers). That's precision.\"}, {\"type\": \"choice\", \"claude_response\": \"Final draft: 'I help small business owners stop drowning in manual work. If your team is still copy-pasting data between spreadsheets, sending invoices by hand, or spending hours on tasks that should take minutes — I build AI systems that handle all of it. You get your time back. I helped a 4-person agency save 15 hours a week in their first month.'\", \"question\": \"Round 3: This is close to done. One last tweak — you want to end with a way for visitors to take action. Which feedback closes it out?\", \"options\": [\"Add a CTA.\", \"Perfect, don't change anything.\", \"Keep everything exactly as-is, but add one final sentence: 'Book a free 15-minute call and I'll show you what's automatable.' Link it to my calendar page.\", \"Make it longer and add more about my background.\"], \"correct\": 2, \"feedback\": \"You've got a bio you like — don't blow it up by adding length or making vague changes. The winning move is precision: keep what works, add exactly one sentence, and specify the wording and where it links. Three rounds of specific feedback turned a corporate snooze into a bio that sounds like you and converts visitors.\"}]}",
+      "explanation": "Each round demonstrated a key principle: Round 1 fixed the tone with a specific direction. Round 2 targeted one weak sentence with a concrete replacement. Round 3 preserved what worked and added one precise element. Three rounds of specific feedback beat twenty rounds of 'make it better.'",
+      "hints": [
+        "The best feedback names exactly what's wrong and tells Claude exactly what you want instead."
+      ],
+      "xp_reward": 15
+    },
+    {
+      "id": "ex_sp_02c",
+      "order_index": 3,
+      "type": "matching_pairs",
+      "prompt": "Match each vague piece of feedback to the specific version that would actually get results from Claude.",
+      "options": null,
+      "correct_answer": "{\"pairs\": [{\"left\": \"Make it better.\", \"right\": \"The tone is too formal — rewrite the opening as if you're texting a friend.\"}, {\"left\": \"Make it shorter.\", \"right\": \"Cut this to 3 sentences max. Keep the stat about 40% growth — cut everything else.\"}, {\"left\": \"This isn't right.\", \"right\": \"The second paragraph assumes the reader already knows what an API is. Rewrite it for someone non-technical.\"}, {\"left\": \"Add more detail.\", \"right\": \"The pricing section is too vague. Add the three tier names, their prices, and one bullet point for what each includes.\"}, {\"left\": \"Try a different approach.\", \"right\": \"Scrap the list format. Instead, tell this as a short story — start with the problem the customer had, then show how we solved it.\"}], \"instructions\": \"Drag each vague feedback on the left to match its specific equivalent on the right.\"}",
+      "explanation": "Vague feedback makes Claude guess. Specific feedback tells Claude exactly what's wrong, what to keep, and what the replacement should look like. Notice the pattern: every specific version names the problem AND gives a clear direction for the fix. That's the formula.",
+      "hints": [
+        "Look for the specific version that solves the same underlying problem as the vague one."
+      ],
+      "xp_reward": 15
+    }
+  ]
+}

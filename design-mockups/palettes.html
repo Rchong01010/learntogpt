@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claude Academy — Color Palettes</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body { font-family: 'Inter', sans-serif; background: #111; }
+
+  .switcher {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    display: flex; justify-content: center; gap: 4px; padding: 14px 20px;
+    background: rgba(17,17,17,0.95); backdrop-filter: blur(20px);
+    border-bottom: 1px solid #222;
+  }
+  .switcher button {
+    padding: 10px 28px; border: none; cursor: pointer;
+    font-family: 'Inter', sans-serif; font-weight: 600; font-size: 13px;
+    border-radius: 8px; transition: all 0.2s;
+  }
+  .switcher button.active { transform: scale(1.04); }
+  .switcher .btn-g { background: #f7f5f0; color: #2c2a25; }
+  .switcher .btn-g.active { box-shadow: 0 0 16px rgba(247,245,240,0.3); }
+  .switcher .btn-h { background: #fafafa; color: #171717; }
+  .switcher .btn-h.active { box-shadow: 0 0 16px rgba(250,250,250,0.3); }
+  .switcher .btn-i { background: #f0ebe3; color: #1c1917; }
+  .switcher .btn-i.active { box-shadow: 0 0 16px rgba(240,235,227,0.3); }
+
+  .palette { display: none; min-height: 100vh; padding-top: 64px; }
+  .palette.active { display: block; }
+
+  /* Shared layout */
+  .pal-hero {
+    min-height: 85vh; display: flex; flex-direction: column;
+    justify-content: center; align-items: center; text-align: center;
+    padding: 80px 32px;
+  }
+  .pal-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 8px 20px; border-radius: 100px;
+    font-size: 12px; font-weight: 600; margin-bottom: 32px;
+    letter-spacing: 0.05em; text-transform: uppercase;
+  }
+  .pal-hero h1 { max-width: 720px; }
+  .pal-hero p { max-width: 480px; margin-top: 24px; line-height: 1.7; }
+  .pal-cta { display: flex; gap: 14px; margin-top: 40px; }
+  .pal-cta button {
+    padding: 15px 32px; border-radius: 10px;
+    font-size: 15px; font-weight: 600; cursor: pointer; transition: all 0.2s;
+    font-family: inherit;
+  }
+
+  .pal-swatches {
+    display: flex; justify-content: center; gap: 0; padding: 0 32px;
+    max-width: 700px; margin: 0 auto;
+  }
+  .swatch {
+    flex: 1; height: 80px; display: flex; align-items: center; justify-content: center;
+    font-size: 10px; font-weight: 600; letter-spacing: 0.06em;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .swatch:first-child { border-radius: 12px 0 0 12px; }
+  .swatch:last-child { border-radius: 0 12px 12px 0; }
+
+  .pal-cards {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 16px; max-width: 900px; margin: 48px auto; padding: 0 32px;
+  }
+  .pal-card { border-radius: 14px; padding: 28px; }
+  .pal-card h3 { font-size: 1.05rem; margin-bottom: 6px; }
+  .pal-card p { font-size: 0.85rem; line-height: 1.5; }
+  .pal-card .meta {
+    margin-top: 16px; display: flex; gap: 8px; font-size: 0.75rem;
+  }
+  .pal-card .meta span { padding: 4px 10px; border-radius: 6px; }
+
+  .pal-label {
+    text-align: center; padding: 48px 32px 16px;
+    font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; font-weight: 600;
+  }
+
+  @media (max-width: 640px) { .pal-cards { grid-template-columns: 1fr; } }
+
+  /* ============================================ */
+  /* G — Warm Stone (cream + terracotta accent)  */
+  /* ============================================ */
+  .pal-g { background: #f7f5f0; color: #2c2a25; font-family: 'Manrope', sans-serif; }
+  .pal-g .pal-badge { background: #c7522a12; border: 1px solid #c7522a20; color: #c7522a; }
+  .pal-g .pal-hero h1 {
+    font-family: 'Source Serif 4', serif;
+    font-size: clamp(2.8rem, 7vw, 4.8rem); font-weight: 600;
+    line-height: 1.1; letter-spacing: -0.03em; color: #1a1816;
+  }
+  .pal-g .pal-hero h1 em { font-style: italic; color: #c7522a; }
+  .pal-g .pal-hero p { font-size: 1.05rem; color: #78736b; }
+  .pal-g .btn-1 { background: #c7522a; color: #fff; border: none; }
+  .pal-g .btn-1:hover { background: #b0461f; }
+  .pal-g .btn-2 { background: transparent; color: #2c2a25; border: 1.5px solid #2c2a2520; }
+  .pal-g .btn-2:hover { border-color: #c7522a; color: #c7522a; }
+
+  .pal-g .pal-label { color: #b0aa9f; }
+  .pal-g .swatch:nth-child(1) { background: #f7f5f0; color: #78736b; }
+  .pal-g .swatch:nth-child(2) { background: #ece8e0; color: #78736b; }
+  .pal-g .swatch:nth-child(3) { background: #c7522a; color: #fff; }
+  .pal-g .swatch:nth-child(4) { background: #2c2a25; color: #f7f5f0; }
+  .pal-g .swatch:nth-child(5) { background: #1a1816; color: #f7f5f0; }
+  .pal-g .swatch:nth-child(6) { background: #e8c16a; color: #2c2a25; }
+
+  .pal-g .pal-card { background: #fff; border: 1px solid #e8e4dc; }
+  .pal-g .pal-card:hover { border-color: #c7522a40; }
+  .pal-g .pal-card h3 { color: #1a1816; font-weight: 700; }
+  .pal-g .pal-card p { color: #8a847b; }
+  .pal-g .pal-card .meta span { background: #f7f5f0; color: #78736b; }
+  .pal-g .pal-card .meta .accent { background: #c7522a10; color: #c7522a; }
+
+  /* ============================================ */
+  /* H — Cool Slate (white + black + blue accent) */
+  /* ============================================ */
+  .pal-h { background: #fafafa; color: #171717; font-family: 'Inter', sans-serif; }
+  .pal-h .pal-badge { background: #0066ff08; border: 1px solid #0066ff18; color: #0066ff; }
+  .pal-h .pal-hero h1 {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(2.8rem, 7vw, 4.5rem); font-weight: 700;
+    line-height: 1.1; letter-spacing: -0.04em; color: #0a0a0a;
+  }
+  .pal-h .pal-hero h1 span { color: #0066ff; }
+  .pal-h .pal-hero p { font-size: 1.05rem; color: #737373; }
+  .pal-h .btn-1 { background: #0a0a0a; color: #fff; border: none; border-radius: 8px; }
+  .pal-h .btn-1:hover { background: #262626; }
+  .pal-h .btn-2 { background: #fff; color: #171717; border: 1px solid #e5e5e5; border-radius: 8px; }
+  .pal-h .btn-2:hover { border-color: #0066ff; color: #0066ff; }
+
+  .pal-h .pal-label { color: #a3a3a3; }
+  .pal-h .swatch:nth-child(1) { background: #fafafa; color: #737373; }
+  .pal-h .swatch:nth-child(2) { background: #f5f5f5; color: #737373; }
+  .pal-h .swatch:nth-child(3) { background: #0066ff; color: #fff; }
+  .pal-h .swatch:nth-child(4) { background: #0a0a0a; color: #fafafa; }
+  .pal-h .swatch:nth-child(5) { background: #171717; color: #fafafa; }
+  .pal-h .swatch:nth-child(6) { background: #10b981; color: #fff; }
+
+  .pal-h .pal-card { background: #fff; border: 1px solid #e5e5e5; }
+  .pal-h .pal-card:hover { border-color: #0066ff30; box-shadow: 0 2px 12px rgba(0,0,0,0.04); }
+  .pal-h .pal-card h3 { color: #0a0a0a; font-weight: 600; }
+  .pal-h .pal-card p { color: #737373; }
+  .pal-h .pal-card .meta span { background: #f5f5f5; color: #737373; }
+  .pal-h .pal-card .meta .accent { background: #0066ff0a; color: #0066ff; }
+
+  /* ============================================ */
+  /* I — Linen + Walnut (warm neutral luxury)    */
+  /* ============================================ */
+  .pal-i { background: #f0ebe3; color: #1c1917; font-family: 'Manrope', sans-serif; }
+  .pal-i .pal-badge { background: #8b572a10; border: 1px solid #8b572a1a; color: #8b572a; }
+  .pal-i .pal-hero h1 {
+    font-family: 'Instrument Serif', serif;
+    font-size: clamp(3rem, 8vw, 5.5rem); font-weight: 400;
+    line-height: 1.08; letter-spacing: -0.02em; color: #1c1917;
+  }
+  .pal-i .pal-hero h1 em { font-style: italic; color: #8b572a; }
+  .pal-i .pal-hero p { font-size: 1.05rem; color: #78716c; }
+  .pal-i .btn-1 { background: #1c1917; color: #f0ebe3; border: none; }
+  .pal-i .btn-1:hover { background: #2e2a26; }
+  .pal-i .btn-2 { background: transparent; color: #1c1917; border: 1.5px solid #1c191720; }
+  .pal-i .btn-2:hover { border-color: #8b572a; color: #8b572a; }
+
+  .pal-i .pal-label { color: #a8a29e; }
+  .pal-i .swatch:nth-child(1) { background: #f0ebe3; color: #78716c; }
+  .pal-i .swatch:nth-child(2) { background: #e7e0d5; color: #78716c; }
+  .pal-i .swatch:nth-child(3) { background: #8b572a; color: #f0ebe3; }
+  .pal-i .swatch:nth-child(4) { background: #1c1917; color: #f0ebe3; }
+  .pal-i .swatch:nth-child(5) { background: #44403c; color: #f0ebe3; }
+  .pal-i .swatch:nth-child(6) { background: #d4a373; color: #1c1917; }
+
+  .pal-i .pal-card { background: #faf7f2; border: 1px solid #e2ddd4; }
+  .pal-i .pal-card:hover { border-color: #8b572a30; }
+  .pal-i .pal-card h3 { color: #1c1917; font-weight: 700; }
+  .pal-i .pal-card p { color: #78716c; }
+  .pal-i .pal-card .meta span { background: #f0ebe3; color: #78716c; }
+  .pal-i .pal-card .meta .accent { background: #8b572a0c; color: #8b572a; }
+</style>
+</head>
+<body>
+
+<div class="switcher">
+  <button class="btn-g active" onclick="show('g')">G: Warm Stone</button>
+  <button class="btn-h" onclick="show('h')">H: Cool Slate</button>
+  <button class="btn-i" onclick="show('i')">I: Linen Walnut</button>
+</div>
+
+<!-- G: Warm Stone -->
+<div class="palette pal-g active" id="pal-g">
+  <div class="pal-hero">
+    <div class="pal-badge">Anthropic Partner</div>
+    <h1>Master the art of <em>Claude</em></h1>
+    <p>35 interactive courses. 529 exercises. From your first prompt to Certified Architect.</p>
+    <div class="pal-cta">
+      <button class="btn-1">Start Learning Free</button>
+      <button class="btn-2">View Courses</button>
+    </div>
+  </div>
+  <div class="pal-label">Color Palette</div>
+  <div class="pal-swatches">
+    <div class="swatch">#f7f5f0</div>
+    <div class="swatch">#ece8e0</div>
+    <div class="swatch">#c7522a</div>
+    <div class="swatch">#2c2a25</div>
+    <div class="swatch">#1a1816</div>
+    <div class="swatch">#e8c16a</div>
+  </div>
+  <div class="pal-cards">
+    <div class="pal-card"><h3>Claude Fundamentals</h3><p>Prompting, conversations, artifacts, projects.</p><div class="meta"><span>8 courses</span><span class="accent">Free</span></div></div>
+    <div class="pal-card"><h3>Claude Code Mastery</h3><p>CLI, CLAUDE.md, MCP, hooks, agents.</p><div class="meta"><span>8 courses</span><span>Intermediate</span></div></div>
+    <div class="pal-card"><h3>Architect Exam Prep</h3><p>All 5 domains. Mock exams. Certification.</p><div class="meta"><span>5 courses</span><span>Expert</span></div></div>
+  </div>
+</div>
+
+<!-- H: Cool Slate -->
+<div class="palette pal-h" id="pal-h">
+  <div class="pal-hero">
+    <div class="pal-badge">Anthropic Partner</div>
+    <h1>Learn <span>Claude</span> the right way</h1>
+    <p>35 interactive courses. 529 exercises. Beginner to Certified Architect.</p>
+    <div class="pal-cta">
+      <button class="btn-1">Start Learning Free</button>
+      <button class="btn-2">View Courses</button>
+    </div>
+  </div>
+  <div class="pal-label">Color Palette</div>
+  <div class="pal-swatches">
+    <div class="swatch">#fafafa</div>
+    <div class="swatch">#f5f5f5</div>
+    <div class="swatch">#0066ff</div>
+    <div class="swatch">#0a0a0a</div>
+    <div class="swatch">#171717</div>
+    <div class="swatch">#10b981</div>
+  </div>
+  <div class="pal-cards">
+    <div class="pal-card"><h3>Claude Fundamentals</h3><p>Prompting, conversations, artifacts, projects.</p><div class="meta"><span>8 courses</span><span class="accent">Free</span></div></div>
+    <div class="pal-card"><h3>Claude Code Mastery</h3><p>CLI, CLAUDE.md, MCP, hooks, agents.</p><div class="meta"><span>8 courses</span><span>Intermediate</span></div></div>
+    <div class="pal-card"><h3>Architect Exam Prep</h3><p>All 5 domains. Mock exams. Certification.</p><div class="meta"><span>5 courses</span><span>Expert</span></div></div>
+  </div>
+</div>
+
+<!-- I: Linen Walnut -->
+<div class="palette pal-i" id="pal-i">
+  <div class="pal-hero">
+    <div class="pal-badge">Anthropic Partner</div>
+    <h1>The <em>Claude</em> curriculum</h1>
+    <p>35 interactive courses. 529 exercises. A structured path from novice to architect.</p>
+    <div class="pal-cta">
+      <button class="btn-1">Start Learning Free</button>
+      <button class="btn-2">View Courses</button>
+    </div>
+  </div>
+  <div class="pal-label">Color Palette</div>
+  <div class="pal-swatches">
+    <div class="swatch">#f0ebe3</div>
+    <div class="swatch">#e7e0d5</div>
+    <div class="swatch">#8b572a</div>
+    <div class="swatch">#1c1917</div>
+    <div class="swatch">#44403c</div>
+    <div class="swatch">#d4a373</div>
+  </div>
+  <div class="pal-cards">
+    <div class="pal-card"><h3>Claude Fundamentals</h3><p>Prompting, conversations, artifacts, projects.</p><div class="meta"><span>8 courses</span><span class="accent">Free</span></div></div>
+    <div class="pal-card"><h3>Claude Code Mastery</h3><p>CLI, CLAUDE.md, MCP, hooks, agents.</p><div class="meta"><span>8 courses</span><span>Intermediate</span></div></div>
+    <div class="pal-card"><h3>Architect Exam Prep</h3><p>All 5 domains. Mock exams. Certification.</p><div class="meta"><span>5 courses</span><span>Expert</span></div></div>
+  </div>
+</div>
+
+<script>
+function show(id) {
+  document.querySelectorAll('.palette').forEach(d => d.classList.remove('active'));
+  document.querySelectorAll('.switcher button').forEach(b => b.classList.remove('active'));
+  document.getElementById('pal-' + id).classList.add('active');
+  document.querySelector('.btn-' + id).classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+</body>
+</html>

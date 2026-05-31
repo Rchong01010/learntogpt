@@ -1,0 +1,86 @@
+{
+  "title": "Claude AI — Your Thinking Partner",
+  "slug": "claude-ai-thinking-partner",
+  "description": "Claude AI isn't a search engine — it's a reasoning partner. Learn when to use it, what it's great at, and where it hits its limits.",
+  "order_index": 2,
+  "xp_reward": 75,
+  "estimated_minutes": 8,
+  "content": {
+    "sections": [
+      {
+        "type": "text",
+        "content": "<p>Most people use Claude AI the way they use Google: type a question, get an answer, move on. That's like buying a sports car and only using it to idle in your driveway.</p><p>Claude AI isn't a search engine. It's a <strong>thinking partner.</strong> The difference? A search engine retrieves information. Claude reasons through problems <em>with</em> you. You're not looking up an answer — you're working through a decision, an analysis, or a creative challenge together. The more context you give it and the more you go back and forth, the better it gets.</p>"
+      },
+      {
+        "type": "exercise",
+        "exercise_id": "ex_wc_02a"
+      },
+      {
+        "type": "text",
+        "content": "<p>So when does Claude AI actually shine? Three big categories. <strong>Planning:</strong> date nights, team offsites, vacation itineraries, project timelines — anything where you need to juggle constraints and preferences. <strong>Analysis:</strong> comparing job offers, reviewing a report, weighing pros and cons of a big decision. <strong>Creative work:</strong> brainstorming product names, writing a toast for your best friend's wedding, drafting a difficult email. The key to all of these is the same: <strong>give Claude context, then have a conversation.</strong> Don't fire off a one-liner and expect magic. Tell it your situation, your constraints, what you've already tried — then let it think with you.</p>"
+      },
+      {
+        "type": "exercise",
+        "exercise_id": "ex_wc_02b"
+      },
+      {
+        "type": "text",
+        "content": "<p>Knowing what Claude AI <em>can't</em> do is just as important as knowing what it can. It can't access files on your computer — you'd need to copy-paste or upload them. It can't browse the web or pull real-time data like today's stock prices. And it can't build things — no websites, no automations, no apps. When you hit these walls, that's your signal to graduate to a different tier: <strong>Co-Work</strong> for working with your files directly, or <strong>Claude Code</strong> for building things from scratch. Mastering Claude AI means knowing exactly when it's the right tool — and when it's time to reach for something deeper.</p>"
+      },
+      {
+        "type": "exercise",
+        "exercise_id": "ex_wc_02c"
+      },
+      {
+        "type": "summary",
+        "content": "<p>Claude AI is your thinking partner — not a search engine, not a magic eight ball. It shines when you bring it real context and have a real conversation: planning, analysis, creative work. It can't touch your files or build things, and that's by design — those are what Co-Work and Claude Code are for. Next up: we'll dive into Co-Work and see what happens when Claude can actually see and work with your files.</p>"
+      }
+    ]
+  },
+  "exercises": [
+    {
+      "id": "ex_wc_02a",
+      "order_index": 1,
+      "type": "multiple_choice",
+      "prompt": "You need to decide whether to accept a job offer or negotiate for more. You have the offer letter, your current salary, and some market data. What's the best way to use Claude AI here?",
+      "options": [
+        "Ask Claude: 'What's the average salary for a product manager?'",
+        "Paste in the offer details, your current comp, your priorities, and ask Claude to help you think through the decision",
+        "Ask Claude to search Glassdoor for salary benchmarks",
+        "Type 'Should I take this job?' and see what it says"
+      ],
+      "correct_answer": "1",
+      "explanation": "Claude AI is a thinking partner, not a search engine. The more context you give it — the actual offer, your current situation, what matters to you — the better it can reason through the decision with you. A vague question gets a vague answer. A rich conversation gets real insight.",
+      "hints": [
+        "Think about the difference between retrieving information and reasoning through a problem."
+      ],
+      "xp_reward": 5
+    },
+    {
+      "id": "ex_wc_02b",
+      "order_index": 2,
+      "type": "scenario_walkthrough",
+      "prompt": "You're planning your partner's 30th birthday. Walk through how you'd use Claude AI as a thinking partner — not a search engine.",
+      "options": null,
+      "correct_answer": "{\"title\": \"Planning a Birthday with Claude AI\", \"steps\": [{\"type\": \"context\", \"text\": \"Your partner turns 30 next month. You want to plan something memorable — dinner, activity, maybe a surprise element. You know they love Italian food, hate crowds, and your budget is around $300. Let's see how you'd use Claude AI to plan this.\"}, {\"type\": \"choice\", \"claude_response\": \"You open Claude AI to start planning. What's your first message?\", \"question\": \"Which opening message would get the best response from Claude?\", \"options\": [\"Best restaurants for a birthday\", \"Plan a birthday dinner\", \"My partner turns 30 next month. They love Italian food, can't stand crowded places, and I have about $300 to work with. I want dinner plus some kind of surprise activity. Help me think through options.\", \"What are fun things to do for a 30th birthday in my city?\"], \"correct\": 2, \"feedback\": \"Context is everything. Telling Claude their preferences (Italian, no crowds), your budget ($300), and what you're going for (dinner + surprise) gives it real constraints to reason within. The other options would get generic listicle-style answers — not a thought-through plan.\"}, {\"type\": \"choice\", \"claude_response\": \"Claude suggests a small Italian BYOB spot, a private cooking class, or a surprise picnic at a scenic overlook. The cooking class idea catches your eye but you're not sure about logistics.\", \"question\": \"What's the best follow-up?\", \"options\": [\"Tell me more about cooking classes\", \"The cooking class idea is interesting — but they get off work at 6 and we'd need to be home by 10 for the sitter. Are there places that do evening private sessions for two? And would that eat the whole $300 or leave room for a gift?\", \"Book me a cooking class\", \"Give me 10 more ideas\"], \"correct\": 1, \"feedback\": \"This is what makes Claude a thinking partner. You're adding new constraints (time window, childcare, budget allocation) and asking it to reason through feasibility. You're having a conversation, not issuing commands. Claude gets sharper with every detail you add.\"}, {\"type\": \"choice\", \"claude_response\": \"Claude maps out a timeline: 6:30 pickup, 7-9 PM private cooking class ($150 for two at a local spot that does evening sessions), surprise cake from their favorite bakery ($40), and $110 left for a meaningful gift. It even suggests calling ahead to ask about a BYOB policy to make it more special.\", \"question\": \"What just happened here that a Google search couldn't do?\", \"options\": [\"Claude found better restaurant listings than Google\", \"Claude accessed real-time pricing data\", \"Claude reasoned through your specific constraints — budget, time, preferences — and built a personalized plan across multiple follow-ups\", \"Nothing different — Google could do the same thing\"], \"correct\": 2, \"feedback\": \"This is the core difference. Google retrieves information. Claude reasoned through YOUR specific situation across a multi-turn conversation — juggling budget, timing, preferences, and logistics to build a plan that actually fits your life. No search engine does that.\"}]}",
+      "explanation": "The birthday scenario shows the Claude AI pattern: lead with context, have a real conversation, add constraints as you go. Each follow-up sharpens the output because Claude is reasoning with you, not just retrieving results.",
+      "hints": [
+        "Think about what makes a conversation with a smart friend different from a Google search."
+      ],
+      "xp_reward": 15
+    },
+    {
+      "id": "ex_wc_02c",
+      "order_index": 3,
+      "type": "speed_prompt",
+      "prompt": "For each task below, decide: is this a Claude AI task, or does it need to graduate to Co-Work or Claude Code? Sort them fast.",
+      "options": null,
+      "correct_answer": "{\"time_limit_seconds\": 45, \"scenario\": \"Sort these 5 tasks into the right bucket. Write 'AI' if it's a Claude AI task, 'Co-Work' if it needs file access, or 'Code' if it needs to be built.\\n\\n1. Brainstorm 10 taglines for a new product launch\\n2. Organize 200 photos on your desktop into folders by date\\n3. Build an automated weekly report that pulls from three data sources\\n4. Help you write a tough email to a client about a missed deadline\\n5. Rename and sort 50 contract PDFs sitting in your Downloads folder\", \"scoring_criteria\": [{\"keyword_group\": [\"1 AI\", \"1: AI\", \"1. AI\", \"tagline\", \"brainstorm\"], \"label\": \"Correctly identifies brainstorming as Claude AI\", \"points\": 1}, {\"keyword_group\": [\"2 Co-Work\", \"2: Co-Work\", \"2. Co-Work\", \"photos\", \"Co-Work\"], \"label\": \"Correctly identifies photo organizing as Co-Work\", \"points\": 2}, {\"keyword_group\": [\"3 Code\", \"3: Code\", \"3. Code\", \"automated\", \"build\"], \"label\": \"Correctly identifies automated report as Claude Code\", \"points\": 2}, {\"keyword_group\": [\"4 AI\", \"4: AI\", \"4. AI\", \"email\", \"writing\"], \"label\": \"Correctly identifies email drafting as Claude AI\", \"points\": 1}, {\"keyword_group\": [\"5 Co-Work\", \"5: Co-Work\", \"5. Co-Work\", \"PDFs\", \"rename\"], \"label\": \"Correctly identifies PDF sorting as Co-Work\", \"points\": 1}], \"max_points\": 7, \"pass_threshold\": 4, \"ideal_prompt\": \"1. AI — brainstorming is pure thinking, no files or building needed.\\n2. Co-Work — needs to access and move actual files on your computer.\\n3. Code — needs to be built as an automated system.\\n4. AI — writing and thinking through tone is a conversation task.\\n5. Co-Work — needs to touch and rename actual files on your desktop.\"}",
+      "explanation": "The pattern: if it's thinking, reasoning, or writing — Claude AI. If it touches files on your computer — Co-Work. If it needs to be built or automated — Claude Code. Knowing these boundaries is what separates someone who uses Claude from someone who masters it.",
+      "hints": [
+        "Ask yourself for each task: does this live in my head, in my files, or does it need to be built?"
+      ],
+      "xp_reward": 15
+    }
+  ]
+}

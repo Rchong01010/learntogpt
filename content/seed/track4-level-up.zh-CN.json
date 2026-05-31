@@ -1,0 +1,423 @@
+{
+  "track": "level_up",
+  "courses": [
+    {
+      "title": "进阶提升",
+      "slug": "level-up",
+      "description": "将 ChatGPT 变成你的操作系统的技能、集成和自动化工作流。",
+      "difficulty": "advanced",
+      "order_index": 1,
+      "is_free": false,
+      "icon": "Rocket",
+      "lessons": [
+        {
+          "title": "复利增长的技能",
+          "slug": "skills-that-compound",
+          "description": "安装可以叠加并成倍提升产出的附加技能。",
+          "order_index": 1,
+          "xp_reward": 100,
+          "estimated_minutes": 6,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<p><strong>技能</strong>是你可以安装、配置或构建的附加能力，赋予 ChatGPT 新的力量。它们分为三个层级：自定义指令（行为调整）、市场技能（预构建工作流）和自定义命令（你自己的创作）。一项技能很好。五项技能协同工作会彻底改变你的操作方式。</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_lu_01"
+              },
+              {
+                "type": "text",
+                "content": "<p>并非所有技能都是等价的。一项只是包装了你本可以自己输入的提示词的技能不过是噱头。一项能读取你的上下文、获取真实数据并产生一致输出的技能才是工作流工具。评估时要问：它理解我的上下文，还是只是一个花哨的提示词？</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_lu_02"
+              },
+              {
+                "type": "text",
+                "content": "<p>技能会随着时间复利增长。一项起草技能加一项日历技能加一项 CRM 技能，意味着 ChatGPT 可以在你不输入任何细节的情况下，为你下午两点的会议撰写个性化的跟进邮件。现在投资技能设置的人拥有复利优势。</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_lu_03"
+              },
+              {
+                "type": "summary",
+                "content": "<p>技能是叠加后会复利增长的附加能力。根据上下文理解能力而非功能列表来评估它们。现在就投资设置——它会在未来每次交互中产生回报。</p>"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_lu_01",
+              "order_index": 1,
+              "type": "scenario_walkthrough",
+              "prompt": "你希望 ChatGPT 始终假设你是高级开发者，默认用要点回应，并使用你团队的编码标准。找到正确的技能方法。",
+              "options": null,
+              "correct_answer": "{\"title\": \"选择正确的技能层级\", \"steps\": [{\"type\": \"context\", \"text\": \"你有三种可用的技能类型：自定义指令（简单的行为调整）、市场技能（预构建解决方案）和自定义斜杠命令。每种适合不同的需求。\"}, {\"type\": \"choice\", \"claude_response\": \"你希望 ChatGPT 始终了解你的角色、偏好的回应格式和编码标准。这些是持久的行为偏好。\", \"question\": \"哪个技能层级适合这个需求？\", \"options\": [\"市场技能——搜索'高级开发者模式'\", \"自定义指令——跨会话持久存在的简单行为调整\", \"ChatGPT 中的自定义斜杠命令\", \"不需要技能——每次解释就好\"], \"correct\": 1, \"feedback\": \"自定义指令非常适合持久偏好：角色、格式、标准。轻量级，无需安装，塑造每一个回应。市场技能在这里过于复杂了。\"}, {\"type\": \"choice\", \"claude_response\": \"现在你的团队想要一个标准化的 PR 审查流程，检查 5 个特定项目，读取实际代码文件，并生成格式化报告。\", \"question\": \"哪个技能层级适合这个需求？\", \"options\": [\"自定义指令——只需在指令中添加更多文本\", \"配置了你团队标准的市场代码审查技能\", \"写在便签上手动检查\"], \"correct\": 1, \"feedback\": \"这是一个结构化的、重复的工作流——正是市场技能擅长处理的。自定义指令对于读取文件并生成报告的多步骤流程来说太轻量了。\"}, {\"type\": \"prompt\", \"context\": \"市场审查技能很好地覆盖了你 5 项检查中的 4 项，但安全检查对你的代码库来说不够具体。写一个在现有技能之上叠加自定义安全检查的提示词。\", \"placeholder\": \"写下你的自定义安全补充...\", \"scoring_criteria\": [{\"keyword_group\": [\"SQL\", \"injection\", \"concatenation\", \"parameterized\", \"query\"], \"label\": \"提到了 SQL 注入预防\", \"points\": 2}, {\"keyword_group\": [\"input\", \"validate\", \"sanitize\", \"user input\", \"unvalidated\"], \"label\": \"提到了输入验证\", \"points\": 2}, {\"keyword_group\": [\"secret\", \"hardcoded\", \"API key\", \"password\", \"credential\"], \"label\": \"包含了硬编码密钥检查\", \"points\": 1}, {\"keyword_group\": [\"auth\", \"middleware\", \"authorization\", \"authentication\"], \"label\": \"提到了认证检查\", \"points\": 1}], \"ideal\": \"在运行标准审查后，还要检查：原始 SQL 拼接（必须使用参数化查询）、API 路由中未验证的用户输入、受保护端点上缺失的认证中间件以及硬编码的密钥或 API 密钥。\", \"max_points\": 6, \"pass_threshold\": 3}]}",
+              "explanation": "在市场技能之上叠加自定义补充。不要重建已经有效的东西——用你的具体需求来扩展它。",
+              "hints": [
+                "想想哪些检查是通用的（市场）vs. 哪些是你代码库特有的（自定义）。"
+              ],
+              "xp_reward": 15
+            },
+            {
+              "id": "ex_lu_02",
+              "order_index": 2,
+              "type": "multiple_choice",
+              "prompt": "市场上有两个邮件技能。技能 A：'根据主题生成专业邮件。' 技能 B：'读取邮件线程上下文，匹配你以往邮件的语调，引用 CRM 数据，并遵循团队准则。' 哪个是更好的投资？",
+              "options": [
+                "技能 A——越简单越好，出错的地方越少",
+                "技能 B——它理解你的完整上下文，而不仅仅是任务",
+                "两者相当——它们都写邮件",
+                "都不要——自己写邮件"
+              ],
+              "correct_answer": "1",
+              "explanation": "技能 B 理解你的上下文：你的语调、你的关系、你的标准和你的数据。技能 A 是一个提示词包装器——它做的事情和直接在 ChatGPT 中输入'写一封关于 X 的邮件'一样。感知上下文的技能节省的是工作流，而不仅仅是步骤。",
+              "hints": [
+                "哪个技能给你的东西是你直接问 ChatGPT 得不到的？"
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_lu_03",
+              "order_index": 3,
+              "type": "scenario_walkthrough",
+              "prompt": "逐步评估和选择适合营销团队每周内容工作流的正确技能。",
+              "options": null,
+              "correct_answer": "{\"title\": \"构建技能栈\", \"steps\": [{\"type\": \"context\", \"text\": \"一个营销团队每周创建 3 篇 LinkedIn 帖子和 1 份新闻通讯。他们目前手动使用 ChatGPT——粘贴简报，每次从头开始写。你想构建一个从构思到最终稿件全程处理的技能栈。\"}, {\"type\": \"choice\", \"claude_response\": \"你浏览市场，找到了：'Content Writer Pro'（根据主题生成内容）、'Brand Voice Engine'（读取你过去的内容并维持语调一致性）和 'Content Calendar AI'（根据受众分析规划主题）。\", \"question\": \"你首先安装哪个技能？\", \"options\": [\"Content Writer Pro——它处理核心写作任务\", \"Brand Voice Engine——一致的语调是其他一切构建的基础\", \"Content Calendar AI——先规划再写作\", \"同时安装三个\"], \"correct\": 1, \"feedback\": \"语调一致性是基础。没有它，每篇内容听起来都不一样。先安装 Brand Voice Engine，用你最好的内容训练它，然后在上面叠加写作和规划技能。\"}, {\"type\": \"choice\", \"claude_response\": \"Brand Voice Engine 已配置并产生一致的语调。Content Writer Pro 生成帖子但内容泛泛——语调对了但实质不够。\", \"question\": \"栈中缺少什么？\", \"options\": [\"什么都不缺——只需写更好的提示词\", \"Content Calendar AI 技能——它提供写手需要的主题方向和受众相关性作为输入\", \"用另一个写作技能替换 Content Writer Pro\"], \"correct\": 1, \"feedback\": \"写手有语调但没有方向。Content Calendar AI 根据受众参与度提供主题创意。栈：Calendar（写什么）→ Writer（生成）→ Voice Engine（一致性）。每个技能为下一个提供输入。\"}, {\"type\": \"prompt\", \"context\": \"你的技能栈对 LinkedIn 帖子效果很好，但新闻通讯总是需要大量编辑。语调对了但结构不对。写一个添加新闻通讯专用指令的提示词。\", \"placeholder\": \"写下你的新闻通讯结构指令...\", \"scoring_criteria\": [{\"keyword_group\": [\"newsletter\", \"email\", \"subject line\", \"header\"], \"label\": \"提到了新闻通讯格式\", \"points\": 1}, {\"keyword_group\": [\"section\", \"structure\", \"intro\", \"body\", \"closing\", \"CTA\", \"template\"], \"label\": \"定义了结构/章节\", \"points\": 2}, {\"keyword_group\": [\"length\", \"word\", \"short\", \"concise\", \"under\"], \"label\": \"指定了长度限制\", \"points\": 1}, {\"keyword_group\": [\"link\", \"resource\", \"read more\", \"reference\"], \"label\": \"提到了支持链接\", \"points\": 1}], \"ideal\": \"新闻通讯：主题行不超过 50 个字符，激发好奇心。引言段落：2 句话，个人观察。3 个带标题的章节。每个章节：洞察 + 实用要点 + 深入资源链接。结尾：1 个引发回复的问题。总计不超过 500 字。\", \"max_points\": 5, \"pass_threshold\": 3}]}",
+              "explanation": "分层构建技能栈：先打基础（语调），然后是生成，最后是规划。当某种输出类型需要修正时，添加格式专用指令，而不是替换整个栈。",
+              "hints": [
+                "在其他一切都重要之前，什么需要先保持一致？从那里开始。"
+              ],
+              "xp_reward": 15
+            }
+          ]
+        },
+        {
+          "title": "构建和分享技能",
+          "slug": "build-and-share-skills",
+          "description": "创建自定义技能并为你的团队打包。",
+          "order_index": 2,
+          "xp_reward": 100,
+          "estimated_minutes": 6,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<p><strong>在 ChatGPT 中，</strong>技能是自定义指令和保存的提示词模板。<strong>在 Co-work 中，</strong>你可以访问技能市场——秒级安装的预构建能力。<strong>在 Code 中，</strong>你构建执行多步骤工作流的自定义斜杠命令。这个进阶是自然的：从简单开始，逐步升级到强大。</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_lu_04"
+              },
+              {
+                "type": "text",
+                "content": "<p>你构建的技能可以分享。如果你的 /deploy 命令为团队节省了几小时，就发布它。最好的市场技能最初都是某人的个人快捷方式。将配置与逻辑分离是将个人工具变为团队工具的关键。</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_lu_05"
+              },
+              {
+                "type": "summary",
+                "content": "<p>技能跨越三个层级。从简单开始，升级到强大，分享你构建的东西。一个配置文件意味着同事调整设置，而不是重写代码。</p>"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_lu_04",
+              "order_index": 1,
+              "type": "multiple_choice",
+              "prompt": "你需要 ChatGPT 遵循团队的 PR 审查流程。哪种方法在设置工作量和长期价值之间取得最佳平衡？",
+              "options": [
+                "ChatGPT 自定义指令——快速设置，立即生效，但每次需要手动粘贴代码",
+                "ChatGPT 斜杠命令——直接读取 PR diff，针对你的配置文件运行检查，每次输出格式化结果",
+                "不需要技能——每次会话中描述审查流程即可",
+                "A 和 B 都一样——选方便的"
+              ],
+              "correct_answer": "1",
+              "explanation": "对于像 PR 审查这样每日重复的工作流，Code 斜杠命令是值得的投资。它直接读取文件而无需手动粘贴，针对实际配置运行检查，并产生一致的输出。自定义指令适合偶尔使用，但无法应对每天 10 次审查的规模。",
+              "hints": [
+                "考虑权衡：设置时间 vs. 每天 10 次审查中每次使用节省的时间。"
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_lu_05",
+              "order_index": 2,
+              "type": "prompt_lab",
+              "prompt": "你构建了一个有用的 /deploy 斜杠命令。一位同事也想使用它。写一个让 ChatGPT 创建文档和配置选项的提示词，使技能可以共享。",
+              "options": null,
+              "correct_answer": "{\"scenario\":\"你构建了一个 /deploy 斜杠命令，它运行测试、检查安全问题、构建项目并推送到生产环境。每次部署为你节省 15 分钟。你的同事想要它，但他们的项目结构不同。写一个让 ChatGPT 创建可共享文档的提示词。\",\"scoring_criteria\":[{\"keyword_group\":[\"README\",\"documentation\",\"doc\",\"instructions\",\"setup\",\"guide\"],\"label\":\"要求了文档\",\"points\":1},{\"keyword_group\":[\"config\",\"configuration\",\"configurable\",\"variable\",\"setting\",\"customize\"],\"label\":\"提到了配置选项\",\"points\":2},{\"keyword_group\":[\"test\",\"build\",\"deploy\",\"command\",\"step\"],\"label\":\"提到了工作流步骤\",\"points\":1},{\"keyword_group\":[\"example\",\"usage\",\"demo\",\"sample\"],\"label\":\"要求了使用示例\",\"points\":1},{\"keyword_group\":[\"project\",\"structure\",\"folder\",\"path\",\"directory\",\"repo\"],\"label\":\"处理了项目结构差异\",\"points\":2}],\"max_points\":7,\"pass_threshold\":4,\"ideal_prompt\":\"为我的 /deploy 技能创建一个 README，包括：1）它做什么（测试、安全检查、构建、部署），2）配置选项让用户设置自己的测试命令、构建命令和部署目标，3）设置说明，4）针对不同项目结构（React、Python、Node）的使用示例。将配置设为简单的 JSON 文件，这样同事只需更改设置，而不是修改技能逻辑。\",\"tips\":[\"将配置与逻辑分离是将个人工具变为团队工具的关键。\",\"真实的使用示例帮助同事理解预期效果。\",\"配置文件意味着他们调整设置，而不是重写代码。\"]}",
+              "explanation": "良好打包的技能将配置与逻辑分离。技能处理工作流；配置处理项目特定的细节。带示例的文档将个人快捷方式变为团队工具。",
+              "hints": [
+                "想想什么能让一个工具对没有构建它的人也可用。"
+              ],
+              "xp_reward": 10
+            }
+          ]
+        },
+        {
+          "title": "给 ChatGPT 你的上下文",
+          "slug": "give-claude-your-context",
+          "description": "持久记忆和工具集成，消除反复解释的需要。",
+          "order_index": 3,
+          "xp_reward": 100,
+          "estimated_minutes": 7,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<p>大多数人使用 ChatGPT 就像它患了失忆症。每次对话都从零开始。<strong>上下文是智能助手和了解你的智能助手之间的区别。</strong>丰富上下文配合平庸的提示词，比完美的提示词但没有上下文产生更好的结果。</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_lu_06"
+              },
+              {
+                "type": "text",
+                "content": "<p>需要手动粘贴的上下文是瓶颈。真正的突破是将 ChatGPT 连接到你的上下文已经存在的工具。带有上传文件的项目、对文件系统的直接访问，或与你的日历、邮件、CRM 和 API 的连接。<strong>缩短 ChatGPT 与你真实数据之间的距离。</strong></p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_lu_07"
+              },
+              {
+                "type": "text",
+                "content": "<p>上下文会复利增长，但也会过时。今天 ChatGPT 了解你的项目。下个月它了解你的项目、客户反馈、团队偏好和 Q2 目标——但前提是你保持更新。定期审查防止过时的上下文破坏良好的工作流。</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_lu_08"
+              },
+              {
+                "type": "summary",
+                "content": "<p>持久上下文消除重复设置并随时间复利增长。将 ChatGPT 连接到你的数据所在之处。安排定期审查以保持新鲜。</p>"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_lu_06",
+              "order_index": 1,
+              "type": "prompt_lab",
+              "prompt": "你刚开始为有 5 个客户的咨询业务使用 ChatGPT。写一个设置 ChatGPT 项目的提示词，配置持久上下文，让每次对话都从知情状态开始。",
+              "options": null,
+              "correct_answer": "{\"scenario\":\"你是一名管理咨询师，有 5 个活跃客户。你每周撰写提案，有特定的沟通风格。目前每次 ChatGPT 对话都从零开始。写一个用正确的持久上下文设置项目的提示词。\",\"scoring_criteria\":[{\"keyword_group\":[\"role\",\"consultant\",\"management\",\"consulting\",\"who I am\"],\"label\":\"定义了专业角色\",\"points\":1},{\"keyword_group\":[\"client\",\"account\",\"5\",\"five\",\"list\"],\"label\":\"提到了客户组合\",\"points\":1},{\"keyword_group\":[\"style\",\"tone\",\"voice\",\"communication\",\"direct\",\"data-driven\"],\"label\":\"指定了沟通风格\",\"points\":2},{\"keyword_group\":[\"template\",\"proposal\",\"format\",\"structure\",\"document\"],\"label\":\"提到了模板或文档格式\",\"points\":1},{\"keyword_group\":[\"upload\",\"attach\",\"reference\",\"file\",\"guide\",\"example\"],\"label\":\"提到了上传支持文档\",\"points\":1},{\"keyword_group\":[\"custom instruction\",\"project\",\"persist\",\"always\",\"every conversation\"],\"label\":\"设置为持久上下文\",\"points\":1}],\"max_points\":7,\"pass_threshold\":4,\"ideal_prompt\":\"设置一个名为'咨询'的 ChatGPT 项目。自定义指令：我是管理咨询师，风格是直接且数据驱动的。我有 5 个活跃客户：[带简要上下文的名字]。提案遵循特定模板（已上传）。我的沟通温暖但精确——使用具体数字，避免行话。上传：提案模板、品牌指南、带最新笔记的客户列表和 Q2 目标。\",\"tips\":[\"将沟通风格作为具体的该做和不该做来表述，而不仅仅是形容词。\",\"客户上下文应包括关系状态和当前优先事项。\",\"上传 ChatGPT 应该参考的文档，而不仅仅在指令中描述它们。\"]}",
+              "explanation": "带有持久上下文的项目消除了重复设置。一次性配置（角色、客户、风格、模板、文档）让每次未来的对话立即高效。",
+              "hints": [
+                "你最常重复解释的是什么？那就是首先放入项目的内容。"
+              ],
+              "xp_reward": 10
+            },
+            {
+              "id": "ex_lu_07",
+              "order_index": 2,
+              "type": "matching_pairs",
+              "prompt": "将每个工具集成与它实际为 ChatGPT 解锁的能力匹配。了解解锁的内容告诉你哪个集成值得设置成本。",
+              "options": null,
+              "correct_answer": "{\"Google Calendar\":\"读取你即将到来的会议，无需粘贴日程即可进行准备简报、建议时间和冲突检查\",\"Gmail\":\"扫描最近的邮件线程，以完整的对话上下文起草回复——不仅仅是最新消息\",\"HubSpot / CRM\":\"获取账户历史、交易阶段和过往互动，让每封客户邮件或通话准备都使用真实数据\",\"GitHub\":\"读取拉取请求、问题和代码，让审查和技术文档参考你的实际仓库\",\"Slack\":\"汇总频道活动，起草公告，回答引用真实团队对话的问题\",\"Google Drive / Notion\":\"直接访问你的文档，让 ChatGPT 无需重新上传即可从你的策略备忘录、规格说明和会议记录中回答问题\"}",
+              "explanation": "每个集成都缩短了 ChatGPT 与你真实上下文之间的距离。正确的集成是消除你最大的复制粘贴习惯的那个。",
+              "hints": [
+                "每个工具的解锁由它拥有的独特数据定义。你的 CRM 知道什么是你的收件箱不知道的？"
+              ],
+              "xp_reward": 10
+            },
+            {
+              "id": "ex_lu_08",
+              "order_index": 3,
+              "type": "scenario_walkthrough",
+              "prompt": "你的项目已经设置好了，但上下文不断过时。逐步了解如何保持更新。",
+              "options": null,
+              "correct_answer": "{\"title\": \"保持上下文新鲜\", \"steps\": [{\"type\": \"context\", \"text\": \"你两周前设置了咨询项目。它运行良好，但你刚发现 ChatGPT 仍在引用上周二已经更改的旧定价。你的上下文过时了。\"}, {\"type\": \"choice\", \"claude_response\": \"两周后，你的定价变了，一个客户流失了，你接入了一个新客户。ChatGPT 对此一无所知。\", \"question\": \"你如何修复过时的上下文？\", \"options\": [\"在下次对话中提到更新并希望 ChatGPT 记住\", \"用新定价更新项目的参考文档，并在自定义指令中添加关于变更的注释\", \"用当前信息从头创建一个新项目\"], \"correct\": 1, \"feedback\": \"更新项目知识，不要创建新的。对话中的提及不会持久。新项目会丢失仍然有效的累积上下文。有针对性的更新保留好的，修复过时的。\"}, {\"type\": \"choice\", \"claude_response\": \"你的定价文档和客户列表已更新。但一个月后，你注意到 ChatGPT 有时使用你原始 Q1 目标文档中的过时策略信息。\", \"question\": \"你如何从系统层面防止上下文过时？\", \"options\": [\"每季度审查和更新项目文档——设置日历提醒\", \"每个季度结束后删除所有旧文档\", \"不用担心——ChatGPT 能很好地处理过时信息\"], \"correct\": 0, \"feedback\": \"定期审查防止过时。季度提醒：更新文档，删除过时文件，刷新自定义指令。删除旧文档会丢失历史记录。忽视过时意味着 ChatGPT 给出的答案会越来越不准确。\"}, {\"type\": \"prompt\", \"context\": \"到了季度上下文审查的时间了。写一个让 ChatGPT 审计你当前项目上下文并识别需要更新内容的提示词。\", \"placeholder\": \"写下你的上下文审计提示词...\", \"scoring_criteria\": [{\"keyword_group\": [\"review\", \"audit\", \"check\", \"evaluate\", \"assess\"], \"label\": \"请求了审查\", \"points\": 1}, {\"keyword_group\": [\"outdated\", \"stale\", \"old\", \"current\", \"accurate\", \"up to date\"], \"label\": \"提到了新鲜度\", \"points\": 2}, {\"keyword_group\": [\"client\", \"pricing\", \"goal\", \"strategy\", \"doc\", \"document\"], \"label\": \"指定了需要检查的具体上下文领域\", \"points\": 2}, {\"keyword_group\": [\"update\", \"change\", \"remove\", \"add\", \"replace\"], \"label\": \"要求了具体的更新建议\", \"points\": 1}], \"ideal\": \"审查我项目的所有上下文：自定义指令、上传的文档和客户笔记。标记任何看起来过时或与最近对话矛盾的内容。具体检查：客户列表（有变化吗？）、定价（最新的吗？）、Q2 目标（仍然准确吗？）、模板（仍然是我使用的格式吗？）。对于每个问题，告诉我应该更新什么和删除什么。\", \"max_points\": 6, \"pass_threshold\": 3}]}",
+              "explanation": "上下文会复利增长但也会过时。定期审查（每季度）、有针对性的更新（而非重建）和审计提示词能长期保持项目的准确性。",
+              "hints": [
+                "你工作中哪些信息变化最频繁？那些需要最频繁的更新。"
+              ],
+              "xp_reward": 15
+            }
+          ]
+        },
+        {
+          "title": "将任务链接成工作流",
+          "slug": "chain-tasks-into-workflows",
+          "description": "构建一个输出馈入下一个的序列——从会议记录到客户准备包。",
+          "order_index": 4,
+          "xp_reward": 100,
+          "estimated_minutes": 7,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<p>单个提示词很强大。链接的提示词是变革性的。与其让 ChatGPT 做一件事然后手动将结果输入到下一个请求中，不如设计序列，让第一步的输出自动成为第二步的输入。一个简单的链：\"总结这个文档\" → \"提取决策\" → \"起草带有行动项的跟进邮件。\"</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_lu_09"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>好链条的关键：</strong>每一步都有一个清晰、具体的任务。不要让一步做太多。像流水线那样思考，而不是一个巨大的提示词。当链条断裂时，问题通常在于步骤之间的交接，而不是步骤本身。</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_lu_10"
+              },
+              {
+                "type": "text",
+                "content": "<p>以下是高级用户实际构建的东西。<strong>晨间简报：</strong>获取日历、检查邮件、审查任务、生成简报。<strong>会议跟进：</strong>处理笔记、提取行动项、起草邮件、更新任务。<strong>客户准备包：</strong>在任何通话前获取账户历史、最近的沟通、未解决问题。共同点是：ChatGPT 负责收集和组织。你负责思考和决策。</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_lu_11"
+              },
+              {
+                "type": "summary",
+                "content": "<p>链接意味着每一步的输出馈入下一步。保持每一步专注。修复断裂的交接，而不是断裂的步骤。为真实的日常工作流构建——简报、跟进和准备包。</p>"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_lu_09",
+              "order_index": 1,
+              "type": "multiple_choice",
+              "prompt": "你构建了一个 5 步链条，但第 3 步总是产生糟糕的输出。最可能的问题是什么？",
+              "options": [
+                "AI 模型对第 3 步来说不够聪明",
+                "第 2 步的输出不包含第 3 步需要的信息——交接断了",
+                "你需要将第 2 步和第 3 步合并成一个大步骤",
+                "用不同的数据重新开始整个链条"
+              ],
+              "correct_answer": "1",
+              "explanation": "当链条的一步失败时，最常见的原因是交接断裂：前一步的输出不包含当前步骤需要的内容。检查第 2 步的输出——它给第 3 步提供了正确的输入吗？修复交接，而不是步骤。",
+              "hints": [
+                "想想流水线。如果 3 号工位产出质量差，你首先看哪里？"
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_lu_10",
+              "order_index": 2,
+              "type": "prompt_lab",
+              "prompt": "一位产品经理需要从原始客户反馈到优先排序的功能列表。写一个设计多步链条的提示词。",
+              "options": null,
+              "correct_answer": "{\"scenario\":\"你有来自客服工单、调查和销售电话的 50 条原始客户反馈。你需要一个优先排序的功能推荐。写一个将步骤从原始数据链接到精炼输出的提示词。\",\"scoring_criteria\":[{\"keyword_group\":[\"categorize\",\"classify\",\"theme\",\"group\",\"sort\"],\"label\":\"包含分类步骤\",\"points\":1},{\"keyword_group\":[\"count\",\"frequency\",\"rank\",\"volume\",\"how many\",\"most\"],\"label\":\"提到了频率分析\",\"points\":1},{\"keyword_group\":[\"roadmap\",\"current\",\"existing\",\"planned\",\"compare\",\"cross-reference\"],\"label\":\"提到了路线图对比\",\"points\":2},{\"keyword_group\":[\"gap\",\"missing\",\"not on\",\"unaddressed\",\"new\"],\"label\":\"识别了差距\",\"points\":1},{\"keyword_group\":[\"prioritize\",\"recommend\",\"rank\",\"top\",\"evidence\",\"data\"],\"label\":\"生成了优先排序的推荐\",\"points\":2}],\"max_points\":7,\"pass_threshold\":4,\"ideal_prompt\":\"链条：步骤 1）阅读全部 50 条反馈并按主题分类。步骤 2）计算每个主题的频率并按数量排序。步骤 3）将排名靠前的主题与我们当前的产品路线图交叉比对。步骤 4）识别差距——不在路线图上的高需求主题。步骤 5）起草优先排序的功能推荐，附上来自反馈的支持证据。\",\"tips\":[\"每一步有一个明确的任务。不要将分类和排名混合。\",\"交叉比对步骤是将频率数据转化为可操作洞察的关键。\",\"来自原始反馈的证据使推荐更可信。\"]}",
+              "explanation": "良好设计的链条：分类、计数、比较、识别差距、推荐。每一步有一个任务，其输出馈入下一步。",
+              "hints": [
+                "从原始数据开始，朝着精炼的推荐前进。每个阶段发生什么？"
+              ],
+              "xp_reward": 10
+            },
+            {
+              "id": "ex_lu_11",
+              "order_index": 3,
+              "type": "prompt_lab",
+              "prompt": "你的会议跟进系统总是把行动项分配给错误的人，因为你的笔记没有注明谁自愿承担了任务。写一个修复输入问题的提示词。",
+              "options": null,
+              "correct_answer": "{\"scenario\":\"你的自动化会议跟进系统已运行一周。它起草了出色的邮件并提取了行动项，但总是把任务分配给错误的人，因为你的笔记没有清楚标明谁自愿承担了什么。修复这个系统。\",\"scoring_criteria\":[{\"keyword_group\":[\"action\",\"task\",\"item\",\"assignment\",\"owner\"],\"label\":\"提到了行动项\",\"points\":1},{\"keyword_group\":[\"person\",\"name\",\"who\",\"owner\",\"volunteer\",\"responsible\"],\"label\":\"处理了责任归属\",\"points\":2},{\"keyword_group\":[\"format\",\"structure\",\"template\",\"pattern\",\"convention\"],\"label\":\"定义了结构化格式\",\"points\":2},{\"keyword_group\":[\"date\",\"deadline\",\"by\",\"due\",\"when\"],\"label\":\"包含了截止日期\",\"points\":1},{\"keyword_group\":[\"note\",\"input\",\"capture\",\"write\",\"record\"],\"label\":\"改进了记录方式\",\"points\":1}],\"max_points\":7,\"pass_threshold\":4,\"ideal_prompt\":\"我正在更新我的记录格式以修复行动项归属问题。从现在起，我会将行动项写成：'行动：[人名] 将在 [日期] 前完成 [任务]'。处理会议记录时，首先查找这个模式。如果行动项没有明确的负责人，标记为'未分配'而不是猜测。对于跟进邮件，将未分配的项目单独列出，这样我可以在发送前分配它们。\",\"tips\":[\"当自动化产生持续性错误时，修复输入——而不仅仅是处理过程。\",\"结构化格式（行动：人名将在日期前完成任务）是机器可读的。\",\"将未知标记为'未分配'比猜测更安全。\"]}",
+              "explanation": "当自动化有反复出现的错误时，修复输入。你的记录方式是系统的一部分——行动项的结构化格式使整个流水线可靠。",
+              "hints": [
+                "系统的好坏取决于它的输入。数据质量问题在哪里？"
+              ],
+              "xp_reward": 10
+            }
+          ]
+        },
+        {
+          "title": "带护栏的自动化",
+          "slug": "automate-with-guardrails",
+          "description": "触发器、时间表和自动化边界——什么时候让 ChatGPT 运行，什么时候保持手动控制。",
+          "order_index": 5,
+          "xp_reward": 100,
+          "estimated_minutes": 7,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<p>让链条在没有你的情况下运行是下一个层级。自动化意味着 ChatGPT 在触发器或时间表上执行：早上 7 点的晨间简报、每小时的收件箱分类、周五下午 4 点的周报。规则：<strong>自动化收集和起草。让人类负责审批和发送。</strong></p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_lu_12"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>信任阶梯。</strong>从节省准备工作时间的自动化开始。随着你对输出质量建立信心，逐步扩展。自动化的条件：重复性的、可预测的输入、低风险、可审查的输出。需要人类参与的条件：面向客户的、需要细致判断的、高后果的。永远不要在高风险工作上直接跳到完全自动。</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_lu_13"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>顶尖 1% 的区别：</strong>架构性思维。他们审视整个工作流并问'ChatGPT 在哪里适合？'他们为集成而设计，而不是孤立运行。你的下一步：选择你最耗时的重复工作流。映射它。链接它。自动化有意义的部分。那一个完全优化的工作流，比一百个巧妙的提示词节省更多时间。</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_lu_14"
+              },
+              {
+                "type": "summary",
+                "content": "<p>自动化收集和起草。让人类负责审批和发送。逐步攀登信任阶梯。一个完全优化的工作流胜过一百个巧妙的提示词。</p>"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_lu_12",
+              "order_index": 1,
+              "type": "multiple_choice",
+              "prompt": "你的自动化周报已经完美运行了 3 个月。你的老板问是否可以直接发给董事会。你怎么说？",
+              "options": [
+                "当然——它已经可靠运行了 3 个月，也能应对董事会分发",
+                "将董事会添加到分发列表但保持发送前的人工审查——董事会沟通的风险比内部团队报告更高",
+                "董事会报告需要一个完全不同的系统",
+                "当然，但添加一个说明这是 AI 生成的免责声明"
+              ],
+              "correct_answer": "1",
+              "explanation": "相同的报告，更高的受众 = 更高的风险。对你的团队来说没问题的报告可能需要润色才能发给董事会。添加董事会分发但保持人工审查。信任阶梯：内部使用可靠并不自动意味着准备好了高管层分发。",
+              "hints": [
+                "报告没变，但受众变了。风险特征有什么变化？"
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_lu_13",
+              "order_index": 2,
+              "type": "prompt_lab",
+              "prompt": "你管理 5 个工作流。写一个让 ChatGPT 按自动化级别分类每个工作流的提示词：完全自动化、人工审查草稿或保持手动。",
+              "options": null,
+              "correct_answer": "{\"scenario\":\"你有 5 个重复工作流：Slack 日常站会总结、客户提案邮件、每周分析仪表板、薪资谈判回复和客服工单分类。写一个帮助 ChatGPT 按正确的自动化级别分类每个工作流的提示词。\",\"scoring_criteria\":[{\"keyword_group\":[\"internal\",\"low stakes\",\"low risk\",\"safe\",\"team\"],\"label\":\"识别了内部/低风险标准\",\"points\":2},{\"keyword_group\":[\"client\",\"external\",\"facing\",\"customer\",\"send\"],\"label\":\"识别了面向客户的标准\",\"points\":1},{\"keyword_group\":[\"review\",\"human\",\"approve\",\"check\",\"before sending\"],\"label\":\"提到了中等风险的人工审查\",\"points\":2},{\"keyword_group\":[\"judgment\",\"decision\",\"sensitive\",\"consequence\",\"high stakes\"],\"label\":\"识别了高风险标准\",\"points\":1},{\"keyword_group\":[\"categorize\",\"classify\",\"tier\",\"level\",\"bucket\"],\"label\":\"使用了分类框架\",\"points\":1}],\"max_points\":7,\"pass_threshold\":4,\"ideal_prompt\":\"按自动化级别分类这 5 个工作流。标准：完全自动化——如果是内部的、低风险的且错误容易被发现。草稿 + 人工审查——如果是面向客户或代表公司的。保持手动——如果需要细致判断或后果严重。工作流：1）Slack 日常站会总结，2）客户提案邮件，3）每周分析仪表板，4）薪资谈判回复，5）客服工单分类。为每个解释你的理由。\",\"tips\":[\"谁看到输出决定了风险级别。\",\"内部 + 重复 = 安全地完全自动化。\",\"面向客户 = 发送前始终保持人工审查。\"]}",
+              "explanation": "分类框架：内部 + 低风险 = 完全自动化，面向客户 = 人工审查草稿，高风险判断 = 保持手动。受众和后果决定自动化级别。",
+              "hints": [
+                "对每个工作流问：谁看到它，如果出错会怎样？"
+              ],
+              "xp_reward": 10
+            },
+            {
+              "id": "ex_lu_14",
+              "order_index": 3,
+              "type": "scenario_walkthrough",
+              "prompt": "为一个完整的客户报告系统设计自动化边界，然后在运行一个月后进行优化。",
+              "options": null,
+              "correct_answer": "{\"title\": \"自动化边界\", \"steps\": [{\"type\": \"context\", \"text\": \"你管理 5 个客户账户。每周五，每个客户都会收到个性化的状态报告。目前需要 3 小时。你想自动化这个流程，但需要划定正确的边界。\"}, {\"type\": \"choice\", \"claude_response\": \"系统有四个阶段：数据收集、摘要撰写、格式化和发送。你需要决定自动化在哪里结束、人工审查在哪里开始。\", \"question\": \"哪些阶段应该完全自动化 vs. 人工审查？\", \"options\": [\"完全自动化一切包括发送——只是状态报告而已\", \"自动化数据收集和起草。每次发送前要求人工审查。\", \"保持一切手动——客户沟通太重要了\"], \"correct\": 1, \"feedback\": \"数据收集和起草可以安全地自动化。面向客户的发送始终需要人类审查。60 秒的审查能捕获需要数小时修复的错误。\"}, {\"type\": \"choice\", \"claude_response\": \"一个月后，5 个账户中有 4 个的报告无需编辑即可发送。账户 E 仍需调整，因为客户的优先事项经常变化。\", \"question\": \"你如何处理不可预测的账户？\", \"options\": [\"接受账户 E 总是需要手动调整\", \"添加一个报告前步骤：在生成 E 的报告之前，检查账户 E 最新的邮件线程是否有优先事项变化\", \"将账户 E 完全从自动化系统中移除\"], \"correct\": 1, \"feedback\": \"为 E 添加上下文检查步骤。在生成 E 的报告之前，扫描最新的沟通以了解优先事项变化。系统通过添加感知步骤来适应动态客户，而不是放弃自动化。\"}, {\"type\": \"prompt\", \"context\": \"3 个月后，你的系统用 20 分钟而非 3 小时处理 5 个账户。你的同事想要同样的系统来处理他们的 8 个账户。写一个帮助他们设置自己版本的提示词。\", \"placeholder\": \"写下你的系统交接提示词...\", \"scoring_criteria\": [{\"keyword_group\": [\"framework\", \"process\", \"same structure\", \"adapt\", \"customize\"], \"label\": \"提到了可复用框架\", \"points\": 2}, {\"keyword_group\": [\"account\", \"client\", \"specific\", \"their\", \"configure\"], \"label\": \"提到了按账户自定义\", \"points\": 2}, {\"keyword_group\": [\"template\", \"data source\", \"pipeline\", \"step\"], \"label\": \"定义了需要设置的组件\", \"points\": 1}, {\"keyword_group\": [\"test\", \"iterate\", \"refine\", \"feedback\"], \"label\": \"包含了测试和优化\", \"points\": 1}], \"ideal\": \"对你的 8 个账户使用相同的框架：1）为你的 PM 工具和收入追踪器设置数据源连接。2）配置每个账户的规则：语调、要包含的指标、优先联系人。3）先用一个测试账户运行流水线。4）根据需要编辑的内容进行优化。5）当第一个账户无需编辑即可发送时，扩展到全部 8 个。计划月度审查以编入反复出现的修正。\", \"max_points\": 6, \"pass_threshold\": 3}]}",
+              "explanation": "完整的系统：自动化收集和起草，发送前要求人工审查，为不可预测的账户添加动态上下文，并将框架打包以便复用。这就是顶尖 1% 的思维。",
+              "hints": [
+                "考虑完整的生命周期：自动化常规工作、标记异常、发送前审查、随时间改进。"
+              ],
+              "xp_reward": 15
+            }
+          ]
+        }
+      ],
+      "campaign_order": 8,
+      "level_required": 6,
+      "prerequisite_slug": "research-decisions"
+    }
+  ]
+}

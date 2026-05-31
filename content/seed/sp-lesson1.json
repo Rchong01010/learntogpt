@@ -1,0 +1,110 @@
+{
+  "title": "Context Is Everything",
+  "slug": "context-is-everything",
+  "description": "The #1 skill that separates generic AI output from output you actually use — and it's not about fancy tricks.",
+  "order_index": 1,
+  "xp_reward": 75,
+  "estimated_minutes": 8,
+  "content": {
+    "sections": [
+      {
+        "type": "text",
+        "content": "<p>You're past the basics. You know what Claude is. Now let's talk about what separates people who get generic output from people who get output they actually use.</p>"
+      },
+      {
+        "type": "text",
+        "content": "<p>It's not prompt templates. It's not magic words. It's not saying \"please\" or \"act as an expert.\" The single biggest lever you have is <strong>context.</strong></p>"
+      },
+      {
+        "type": "text",
+        "content": "<p>Here's what most people type: <em>\"Write me a marketing email.\"</em></p><p>Here's what a power user types: <em>\"Write a marketing email for our B2B SaaS product that helps accountants automate tax prep. The audience is solo practitioners who are overwhelmed during tax season. Tone should be empathetic, not salesy. Keep it under 150 words. We're sending this on April 1st, right before the filing deadline.\"</em></p><p>Same task. Wildly different output. The first one gives you something you'd never send. The second gives you something you might actually use.</p>"
+      },
+      {
+        "type": "text",
+        "content": "<p>There are <strong>five types of context</strong> that matter every time you talk to Claude:</p><p><strong>1. Who you are</strong> — your role, your expertise level, your company.</p><p><strong>2. What you're working on</strong> — the specific project, task, or problem.</p><p><strong>3. Who the output is for</strong> — your audience, their expectations, their knowledge level.</p><p><strong>4. What format you need</strong> — email, bullet points, code, a one-pager, a script.</p><p><strong>5. What constraints exist</strong> — word count, tone, deadline, brand guidelines, things to avoid.</p>"
+      },
+      {
+        "type": "text",
+        "content": "<p>You don't need all five every time. But the more of these you include, the less you'll need to edit the output — and the less back-and-forth it takes to get something usable.</p>"
+      },
+      {
+        "type": "exercise",
+        "exercise_id": "ex_sp_01a"
+      },
+      {
+        "type": "text",
+        "content": "<p>Let's see this in action. Imagine you're a freelance designer, and a client just asked you to write a project proposal. Watch what happens as we add context one layer at a time.</p>"
+      },
+      {
+        "type": "text",
+        "content": "<p><strong>Round 1 — No context:</strong> <em>\"Write a project proposal.\"</em> Claude gives you a generic template. Filler language. Placeholder sections. You'd have to rewrite 90% of it.</p><p><strong>Round 2 — Some context:</strong> <em>\"Write a project proposal for a website redesign for a local bakery.\"</em> Better — now Claude knows the project. But the tone is corporate, the scope is wrong, and it doesn't sound like you.</p><p><strong>Round 3 — Full context:</strong> <em>\"Write a project proposal for a website redesign. I'm a freelance designer. The client is Sweet Rise Bakery — a neighborhood spot that wants online ordering. They have a $3K budget and need it done in 4 weeks. Keep the tone warm and approachable. Structure it as: overview, scope, timeline, pricing.\"</em> Now Claude produces something you'd actually send to the client.</p>"
+      },
+      {
+        "type": "exercise",
+        "exercise_id": "ex_sp_01b"
+      },
+      {
+        "type": "text",
+        "content": "<p>Here's the mindset shift: <strong>every prompt is a brief.</strong> The same way a designer needs a creative brief before they start working, Claude needs context before it starts writing. The more you put in up front, the less editing you do on the other end.</p>"
+      },
+      {
+        "type": "text",
+        "content": "<p>This doesn't mean writing an essay every time you talk to Claude. It means spending 30 extra seconds to include the details that matter. That tiny investment saves you minutes — sometimes hours — of revisions.</p>"
+      },
+      {
+        "type": "exercise",
+        "exercise_id": "ex_sp_01c"
+      },
+      {
+        "type": "summary",
+        "content": "<p>Context is the difference between output you delete and output you use. The five types — who you are, what you're working on, who it's for, what format, what constraints — are your cheat code. You don't need all five every time, but the more you include, the better the result. Next up: what to do when the first output isn't quite right. We'll cover <strong>iteration</strong> — the art of steering Claude toward exactly what you need.</p>"
+      }
+    ]
+  },
+  "exercises": [
+    {
+      "id": "ex_sp_01a",
+      "order_index": 1,
+      "type": "multiple_choice",
+      "prompt": "A marketer types: \"Write me a blog post about AI.\" The output is generic and unusable. Which missing context type would make the BIGGEST immediate difference?",
+      "options": [
+        "Format — specifying they want a listicle instead of an essay",
+        "Audience — specifying they're writing for small business owners who've never used AI",
+        "Constraints — specifying a 500-word limit",
+        "Identity — specifying they work at a Fortune 500 company"
+      ],
+      "correct_answer": "1",
+      "explanation": "All four context types would help, but audience makes the biggest difference here. \"A blog post about AI\" could be written for developers, executives, teenagers, or retirees — and each version would be completely different. When Claude knows WHO the output is for, it adjusts the vocabulary, the examples, the depth, and the angle. The other four types fine-tune it further, but audience is the lever that turns generic into targeted.",
+      "hints": [
+        "Think about what makes a blog post feel \"generic\" — it's usually that it's not written for anyone specific."
+      ],
+      "xp_reward": 10
+    },
+    {
+      "id": "ex_sp_01b",
+      "order_index": 2,
+      "type": "scenario_walkthrough",
+      "prompt": "You're a project manager writing a status update. Walk through three rounds of adding context and see how the output improves at each step.",
+      "options": null,
+      "correct_answer": "{\"title\":\"From Vague to Valuable\",\"steps\":[{\"type\":\"context\",\"text\":\"You're a project manager and you need to write a weekly status update. You type: 'Write a status update.' Claude produces a generic template with placeholder text like [Project Name] and [Key Accomplishments]. It's useless without heavy editing. Let's fix it.\"},{\"type\":\"choice\",\"claude_response\":\"Round 1 gave you a generic template. You want to add context to make it better. Which type of context should you add FIRST?\",\"question\":\"What's the most impactful context to add first?\",\"options\":[\"Your role and the project details\",\"The word count you need\",\"What font to use in the email\",\"A list of your favorite status update templates\"],\"correct\":0,\"feedback\":\"Right. Claude needs to know WHAT you're working on before anything else. 'Write a status update for the Atlas mobile app redesign — we're in week 3 of a 6-week sprint' immediately gives Claude something concrete to work with instead of placeholders.\"},{\"type\":\"choice\",\"claude_response\":\"Now Claude writes a decent status update about the Atlas app redesign. But the tone feels stiff and corporate, and it includes technical details your audience won't understand. What context is missing?\",\"question\":\"What should you add next?\",\"options\":[\"Tell Claude to make it longer\",\"Specify the audience — your non-technical VP who wants the bottom line\",\"Ask Claude to add more buzzwords\",\"Tell Claude your favorite color\"],\"correct\":1,\"feedback\":\"Exactly. Adding 'This is for my VP who's non-technical and just wants to know: are we on track, what are the risks, and do you need anything from me' transforms the output. Claude drops the jargon and leads with what your VP actually cares about.\"},{\"type\":\"choice\",\"claude_response\":\"The content is now solid and targeted. But it's 400 words long and your VP reads these on her phone between meetings. One more layer of context would make this perfect. What do you add?\",\"question\":\"What's the final context layer?\",\"options\":[\"Ask Claude to translate it into French\",\"Add constraints: under 100 words, bullet points, lead with the one-line verdict\",\"Tell Claude to add emojis to make it fun\",\"Ask Claude to rewrite it as a poem\"],\"correct\":1,\"feedback\":\"Constraints are the finishing touch. 'Keep it under 100 words. Use bullet points. Start with a one-line verdict: on track or off track.' Now you have a status update your VP will actually read — and you wrote the prompt in less time than it would've taken to write the update yourself.\"}]}",
+      "explanation": "Each round added a different type of context: first the project details (what you're working on), then the audience (who it's for), then constraints (format and length). Three layers turned a useless template into a send-ready status update.",
+      "hints": [
+        "Think about what makes the output feel \"off\" at each stage — that points to the missing context type."
+      ],
+      "xp_reward": 25
+    },
+    {
+      "id": "ex_sp_01c",
+      "order_index": 3,
+      "type": "prompt_lab",
+      "prompt": "Your task: You're a real estate agent and you need Claude to write a follow-up email to a couple who just toured a 3-bedroom house in Austin, TX. They loved the backyard but were worried about the price ($485K, slightly over their budget). Write a context-rich prompt that would get Claude to produce a send-ready email.",
+      "options": null,
+      "correct_answer": "{\"scenario\":\"You're a real estate agent writing a follow-up email after a house tour. The couple loved the backyard but is worried about the price ($485K, over budget). Write the prompt you'd give Claude.\",\"scoring_criteria\":[{\"keyword_group\":[\"real estate\",\"agent\",\"realtor\",\"I'm a\",\"I am a\"],\"label\":\"States who they are (role)\",\"points\":3},{\"keyword_group\":[\"follow-up\",\"follow up\",\"toured\",\"showing\",\"house tour\",\"visited\",\"3-bedroom\",\"three bedroom\",\"Austin\"],\"label\":\"Describes the task/project\",\"points\":3},{\"keyword_group\":[\"couple\",\"buyers\",\"clients\",\"they\",\"husband\",\"wife\"],\"label\":\"Identifies the audience\",\"points\":3},{\"keyword_group\":[\"email\",\"short\",\"brief\",\"concise\",\"warm\",\"friendly\",\"casual\",\"professional\"],\"label\":\"Specifies format or tone\",\"points\":3},{\"keyword_group\":[\"budget\",\"price\",\"485\",\"over budget\",\"backyard\",\"concern\",\"worried\",\"objection\",\"address\"],\"label\":\"Includes constraints or key details to address\",\"points\":3}],\"max_points\":15,\"pass_threshold\":9,\"ideal_prompt\":\"I'm a real estate agent. Write a follow-up email to a couple (Jake and Maria) who toured a 3-bedroom house in Austin yesterday. They loved the backyard and the neighborhood but are hesitant because the price ($485K) is slightly over their budget. Tone should be warm and encouraging, not pushy. Gently address the price concern — mention that the seller may be flexible and that the backyard space they loved is rare in this price range. Keep it under 150 words. Sign off as Sarah.\",\"tips\":[\"Don't just describe the task — include the details that make the email feel personal and specific.\",\"Mentioning the backyard (what they loved) and the price concern (what's holding them back) gives Claude the emotional context to write something persuasive.\"]}",
+      "explanation": "A strong prompt here includes all five context types: who you are (real estate agent), what you're working on (follow-up email after a tour), who it's for (the couple), format (email, specific tone), and constraints (address the price concern, mention the backyard). The more specific you get, the closer Claude's first draft is to something you'd actually send.",
+      "hints": [
+        "Think about what would make this email feel personal instead of templated. What specific details would you include?"
+      ],
+      "xp_reward": 25
+    }
+  ]
+}

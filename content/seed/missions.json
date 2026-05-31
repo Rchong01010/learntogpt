@@ -1,0 +1,1162 @@
+{
+  "missions": [
+    {
+      "title": "Build Your First Website",
+      "slug": "build-first-website",
+      "description": "Build and deploy a personal portfolio website using Claude as your AI coding partner. No coding experience needed.",
+      "difficulty": "beginner",
+      "project_type": "website",
+      "project_brief": "You'll build a real portfolio website from scratch using nothing but conversations with Claude. By the end, you'll have a live site on the internet with your name on it — and you'll understand HTML, CSS, and JavaScript well enough to keep improving it.",
+      "learning_outcomes": [
+        "Write effective prompts that get Claude to generate exactly what you want",
+        "Understand HTML structure, CSS styling, and JavaScript interactivity",
+        "Use Claude Code to refactor and polish a real project",
+        "Deploy a live website to Vercel"
+      ],
+      "estimated_hours": 6,
+      "max_xp": 500,
+      "is_free": false,
+      "free_step_count": 3,
+      "cover_emoji": "\ud83c\udf10",
+      "steps": [
+        {
+          "step_number": 1,
+          "title": "Meet Your AI Partner",
+          "description": "Before we build anything, let's meet Claude and understand what it can do.",
+          "step_type": "learn",
+          "course_slug": "what-is-claude",
+          "lesson_slug": "meet-claude",
+          "xp_reward": 15,
+          "estimated_minutes": 8
+        },
+        {
+          "step_number": 2,
+          "title": "Your First Prompt",
+          "description": "Learn to talk to Claude the right way — clear, specific, and effective.",
+          "step_type": "learn",
+          "course_slug": "your-first-conversation",
+          "lesson_slug": "writing-first-prompt",
+          "xp_reward": 15,
+          "estimated_minutes": 10
+        },
+        {
+          "step_number": 3,
+          "title": "Design Your Homepage",
+          "description": "Ask Claude to generate HTML for your portfolio. Your first real code.",
+          "step_type": "build",
+          "instructions": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>Time to Build</h3><p>You've learned how to talk to Claude. Now let's build something real. By the end of this step, you'll have a working webpage that you wrote — with Claude's help.</p><p><strong>What is HTML?</strong> HTML (HyperText Markup Language) is the language that every webpage is written in. It's not a programming language — it's a <em>markup</em> language, meaning it describes the structure of content. Think of it like an outline: headings, paragraphs, images, links. Your browser reads the HTML and renders it visually.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 1: Describe Yourself</h4><p>Open Claude and write a prompt that describes who you are and what your portfolio should showcase. Be specific. Here's a template to start from:</p><pre><code>I'm building a personal portfolio website. Here's what I need:\n\n- My name: [Your Name]\n- What I do: [Your role or passion]\n- 3 things I want to highlight: [list them]\n- Tone: [professional / creative / minimal / bold]\n\nGenerate a complete, single-file HTML page with inline CSS. Include a hero section with my name and tagline, an \"About\" section, and a footer. Use a modern, clean design with a color palette that fits my tone.</code></pre><p>The more detail you give Claude, the better the result. Don't just say \"make me a website\" — tell it exactly what you want.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 2: Save and Preview Your HTML</h4><p>Copy Claude's response into a new file called <code>index.html</code> on your computer. Open it in your web browser (just double-click the file). You should see your portfolio.</p><p><strong>What to look for:</strong></p><ul><li>Does the page have a clear structure? (Header, sections, footer)</li><li>Can you find the <code>&lt;h1&gt;</code> tag with your name? That's the main heading.</li><li>See the <code>&lt;style&gt;</code> block at the top? That's CSS — it controls colors, fonts, spacing.</li><li>Every piece of text is wrapped in tags like <code>&lt;p&gt;</code> (paragraph), <code>&lt;h2&gt;</code> (subheading), <code>&lt;a&gt;</code> (link)</li></ul>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 3: Iterate on the Design</h4><p>Your first version won't be perfect — and that's the point. Go back to Claude and ask for changes:</p><pre><code>The portfolio looks good but I want to change a few things:\n1. Make the hero section taller with a gradient background\n2. Add more spacing between sections\n3. Change the font to something more modern\n\nHere's my current HTML:\n[paste your code]</code></pre><p>This is the core skill of working with Claude: <strong>iterate</strong>. Generate, review, request changes, repeat. Each round teaches you more about how the code works because you're reading it, spotting what to change, and describing the fix in plain English.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>What You Just Learned</h4><p>Without writing a single line of code by hand, you now have a working HTML page. But more importantly, you learned:</p><ul><li><strong>HTML structure:</strong> Tags like <code>&lt;div&gt;</code>, <code>&lt;h1&gt;</code>, <code>&lt;p&gt;</code> define what's on the page</li><li><strong>CSS basics:</strong> The <code>&lt;style&gt;</code> block controls how things look</li><li><strong>Prompt iteration:</strong> Getting great output from Claude is a conversation, not a single message</li></ul><p>Save your <code>index.html</code> file. We'll keep building on it.</p>"
+              }
+            ]
+          },
+          "xp_reward": 50,
+          "estimated_minutes": 30
+        },
+        {
+          "step_number": 4,
+          "title": "System Prompts: Your Web Design Assistant",
+          "description": "Make Claude behave like a dedicated web designer who knows your style.",
+          "step_type": "learn",
+          "course_slug": "system-prompts-personas",
+          "lesson_slug": "what-are-system-prompts",
+          "xp_reward": 20,
+          "estimated_minutes": 12
+        },
+        {
+          "step_number": 5,
+          "title": "Add Your Projects Section",
+          "description": "Use system prompts to make Claude a web designer, then add a projects grid to your portfolio.",
+          "step_type": "build",
+          "instructions": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>Level Up Your Portfolio</h3><p>Your homepage exists, but a portfolio needs projects. In this step, you'll use what you learned about system prompts to make Claude a better web design partner — and you'll learn CSS Grid, the layout system that powers modern websites.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 1: Set Up Your Web Designer</h4><p>Before asking Claude to write more code, set up a system prompt (or start a new Project in Claude) that primes it as your designer:</p><pre><code>You are a senior web designer helping me build my personal portfolio. You write clean, semantic HTML5 with modern CSS. You prefer CSS Grid and Flexbox for layouts. You use a consistent color palette and spacing system. When I ask for changes, you return the complete updated HTML file so I can copy-paste it directly. You explain any new CSS concepts briefly so I learn as we go.</code></pre><p>Now Claude will consistently produce clean, well-structured code and teach you along the way. This is the power of system prompts — you set the behavior once and it persists.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 2: Build the Projects Grid</h4><p>Ask Claude to add a projects section to your existing HTML:</p><pre><code>Add a \"Projects\" section to my portfolio with a responsive grid layout. I want to showcase 3-4 projects. Each project card should have:\n- A colored placeholder where an image would go\n- Project title\n- Short description (1-2 sentences)\n- A \"View Project\" link\n\nUse CSS Grid so the cards arrange in 3 columns on desktop and stack on mobile. Here are my projects:\n1. [Your project or interest]\n2. [Another one]\n3. [A third one]\n\nHere's my current HTML:\n[paste your index.html]</code></pre>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 3: Understand What Changed</h4><p>Look at the new code Claude generated. Find these CSS concepts:</p><ul><li><code>display: grid</code> — This turns a container into a grid layout</li><li><code>grid-template-columns: repeat(3, 1fr)</code> — Creates 3 equal columns. <code>1fr</code> means \"1 fraction of available space\"</li><li><code>gap: 2rem</code> — Spacing between grid items. <code>rem</code> is a unit relative to the root font size</li><li><code>@media (max-width: 768px)</code> — A media query that changes the layout on smaller screens</li></ul><p>Try changing <code>repeat(3, 1fr)</code> to <code>repeat(2, 1fr)</code> in your file and refresh the browser. The grid switches to 2 columns. Change it back when you're done — but now you understand how it works.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 4: Polish the Cards</h4><p>Ask Claude to enhance the project cards:</p><pre><code>Make the project cards more polished:\n- Add a subtle box shadow\n- Add a hover effect (slight lift and shadow change)\n- Round the corners\n- Make the \"View Project\" link look like a button</code></pre><p>After you paste in the updated code, hover over a card in your browser. See the animation? That's CSS <code>transition</code> and <code>:hover</code> pseudo-class at work. You just learned interactive CSS without writing a line of it yourself.</p>"
+              }
+            ]
+          },
+          "xp_reward": 60,
+          "estimated_minutes": 35
+        },
+        {
+          "step_number": 6,
+          "title": "Make It Interactive",
+          "description": "Add a contact form and dark mode toggle. Your first JavaScript.",
+          "step_type": "build",
+          "instructions": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>Adding Interactivity</h3><p>HTML defines structure. CSS defines appearance. <strong>JavaScript</strong> defines behavior — what happens when someone clicks, scrolls, or types. In this step, you'll add two interactive features: a contact form and a dark mode toggle.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 1: Add a Contact Form</h4><p>Ask Claude:</p><pre><code>Add a contact form section to my portfolio before the footer. Include fields for:\n- Name (required)\n- Email (required)\n- Message (textarea, required)\n- A submit button\n\nStyle it to match the rest of the site. Add basic form validation — show a red border on empty required fields when the user tries to submit. For now, just show an alert that says \"Message sent!\" when the form is valid (we'll connect it to a real backend later).\n\nHere's my current HTML:\n[paste your code]</code></pre><p>Look for the <code>&lt;form&gt;</code> tag and the <code>&lt;script&gt;</code> block in the response. The script is JavaScript. Find <code>addEventListener</code> — that's how JavaScript listens for user actions like button clicks.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 2: Add Dark Mode</h4><p>This is the fun one. Ask Claude:</p><pre><code>Add a dark mode toggle button to my portfolio. Requirements:\n- Put a sun/moon icon button in the top-right corner of the header\n- Clicking it switches between light and dark themes\n- Save the user's preference in localStorage so it persists\n- Use CSS custom properties (variables) for all colors so the switch is clean\n- Animate the transition smoothly\n\nHere's my current HTML:\n[paste your code]</code></pre>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 3: Understand the JavaScript</h4><p>Find these patterns in the dark mode code Claude generated:</p><ul><li><code>:root { --bg-color: #ffffff; }</code> — CSS custom properties (variables). Instead of hardcoding colors everywhere, you define them once and reference them with <code>var(--bg-color)</code></li><li><code>document.body.classList.toggle('dark')</code> — This adds or removes the CSS class <code>dark</code> from the body, which triggers different variable values</li><li><code>localStorage.setItem('theme', 'dark')</code> — This saves data in the browser that persists even after the page is closed</li><li><code>window.addEventListener('DOMContentLoaded', ...)</code> — This runs code when the page first loads, checking if the user previously chose dark mode</li></ul><p>Toggle dark mode on and off. Close the browser, reopen the file. Your preference was saved. That's <code>localStorage</code> at work.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>What You Just Learned</h4><p>You now have a portfolio with real interactivity. The key JavaScript concepts you've seen in action:</p><ul><li><strong>Event listeners:</strong> Code that runs when the user does something</li><li><strong>DOM manipulation:</strong> Changing what's on the page with JavaScript</li><li><strong>localStorage:</strong> Saving data in the browser</li><li><strong>Form validation:</strong> Checking user input before processing it</li></ul><p>Your single HTML file is getting powerful. In the next steps, we'll level up to professional tools.</p>"
+              }
+            ]
+          },
+          "xp_reward": 70,
+          "estimated_minutes": 40
+        },
+        {
+          "step_number": 7,
+          "title": "Getting Started with Claude Code",
+          "description": "Level up from copy-pasting to using Claude Code in your terminal.",
+          "step_type": "learn",
+          "course_slug": "getting-started-claude-code",
+          "lesson_slug": "installing-claude-code",
+          "xp_reward": 20,
+          "estimated_minutes": 15
+        },
+        {
+          "step_number": 8,
+          "title": "Polish with Claude Code",
+          "description": "Use Claude Code to refactor your site, add responsive design, and fix bugs.",
+          "step_type": "build",
+          "instructions": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>From Copy-Paste to Real Development</h3><p>Up until now, you've been copying code from Claude into a file manually. That works, but professionals use better tools. Claude Code runs in your terminal and can read, write, and edit your files directly. It sees your entire project and can make surgical changes without you needing to paste anything.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 1: Open Your Project in Claude Code</h4><p>Open your terminal, navigate to the folder where your <code>index.html</code> lives, and start Claude Code:</p><pre><code>cd ~/my-portfolio\nclaude</code></pre><p>Claude Code now sees your project. Try asking:</p><pre><code>What files are in this directory? Read index.html and tell me what you see.</code></pre><p>Claude Code will read your file and give you a summary. It can see everything in your project — no pasting required.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 2: Split Into Multiple Files</h4><p>Professional websites don't put everything in one file. Ask Claude Code:</p><pre><code>Refactor my index.html into a proper project structure:\n- index.html (just the HTML, linking to external files)\n- styles.css (all the CSS)\n- script.js (all the JavaScript)\n\nKeep everything working exactly as it does now.</code></pre><p>Claude Code will create the new files and update the HTML to link to them. Refresh your browser — everything should look identical. But now your code is organized like a real project.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 3: Add Responsive Design</h4><p>Your site might look good on your laptop, but what about phones? Ask Claude Code:</p><pre><code>Make my portfolio fully responsive. Test these breakpoints:\n- Mobile (under 480px): Single column, smaller fonts, hamburger menu idea\n- Tablet (480-768px): Two-column grid\n- Desktop (768px+): Current layout\n\nAlso add proper meta viewport tag if it's missing, and make images/containers use max-width: 100% so nothing overflows.</code></pre><p>After Claude Code makes the changes, resize your browser window to see the layout adapt. That's responsive design — the page reorganizes itself based on screen size.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 4: Fix Bugs and Polish</h4><p>Ask Claude Code to do a quality check:</p><pre><code>Review my portfolio code for:\n- Accessibility issues (missing alt text, poor contrast, no semantic HTML)\n- Performance issues (unnecessarily large CSS, render-blocking resources)\n- Cross-browser compatibility\n- Any bugs\n\nFix everything you find and explain what you changed.</code></pre><p>This is one of Claude Code's superpowers — code review. It will catch things you'd never notice as a beginner: missing <code>alt</code> attributes on images (important for screen readers), poor color contrast ratios, non-semantic HTML tags. Read its explanations. Each fix teaches you a best practice.</p>"
+              }
+            ]
+          },
+          "xp_reward": 80,
+          "estimated_minutes": 45
+        },
+        {
+          "step_number": 9,
+          "title": "Go Live on Vercel",
+          "description": "Deploy your portfolio to the internet. Your site gets a real URL.",
+          "step_type": "deploy",
+          "instructions": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>Your Site Goes Live</h3><p>Your portfolio is polished, responsive, and interactive. It's been living on your computer. Now it's time to put it on the internet where anyone can see it.</p><p><strong>What is Vercel?</strong> Vercel is a hosting platform that makes deployment dead simple. You push your code, and Vercel builds and hosts it automatically. It's free for personal projects and gives you a real URL.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 1: Create Your Accounts</h4><p>You need two things:</p><ol><li><strong>GitHub account</strong> — Go to <a href=\"https://github.com\">github.com</a> and sign up if you haven't. GitHub stores your code in the cloud.</li><li><strong>Vercel account</strong> — Go to <a href=\"https://vercel.com\">vercel.com</a> and sign up with your GitHub account. This links them together.</li></ol>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 2: Push to GitHub</h4><p>In your terminal (not Claude Code), set up Git and push your project:</p><pre><code>cd ~/my-portfolio\ngit init\ngit add .\ngit commit -m \"My portfolio website\"\ngh repo create my-portfolio --public --push</code></pre><p>If you don't have the GitHub CLI (<code>gh</code>), ask Claude Code to help you install it, or create the repository manually on github.com and follow the instructions to push an existing repo.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 3: Deploy on Vercel</h4><p>Two options — pick whichever feels more comfortable:</p><p><strong>Option A: Vercel Dashboard (visual)</strong></p><ol><li>Go to <a href=\"https://vercel.com/new\">vercel.com/new</a></li><li>Import your GitHub repository</li><li>Vercel auto-detects it as a static site</li><li>Click \"Deploy\"</li><li>Wait 30 seconds. You'll get a URL like <code>my-portfolio-abc123.vercel.app</code></li></ol><p><strong>Option B: Vercel CLI (terminal)</strong></p><pre><code>npm i -g vercel\ncd ~/my-portfolio\nvercel</code></pre><p>Follow the prompts. When it's done, you'll get your URL printed in the terminal.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 4: Visit Your Live Site</h4><p>Open the URL Vercel gave you. That's your website. On the internet. Anyone in the world can see it right now.</p><p>Try opening it on your phone. Since we added responsive design, it should look great on every screen size.</p><p><strong>What just happened:</strong> Vercel pulled your code from GitHub, detected it was a static site (plain HTML/CSS/JS), and deployed it to their global CDN (Content Delivery Network). Your site is now served from data centers around the world, loading fast for everyone.</p><p>Every time you push a change to GitHub, Vercel will automatically redeploy. That's continuous deployment — a practice used by every professional engineering team.</p>"
+              }
+            ]
+          },
+          "xp_reward": 90,
+          "estimated_minutes": 25
+        },
+        {
+          "step_number": 10,
+          "title": "Your Portfolio is Live!",
+          "description": "Review what you built, what you learned, and share your URL with the world.",
+          "step_type": "checkpoint",
+          "instructions": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>Mission Complete</h3><p>Take a moment to look at what you've accomplished. You started this mission having never written a line of code. Now you have:</p><ul><li>A live portfolio website with your name on it</li><li>A responsive design that works on every device</li><li>Interactive features: contact form, dark mode</li><li>Clean, organized code split into HTML, CSS, and JavaScript files</li><li>A GitHub repository with version control</li><li>Continuous deployment on Vercel</li></ul>"
+              },
+              {
+                "type": "text",
+                "content": "<h3>Skills Unlocked</h3><ul><li><strong>Prompt Engineering:</strong> You can describe what you want and get Claude to build it</li><li><strong>HTML:</strong> You understand page structure, tags, semantic markup</li><li><strong>CSS:</strong> You know about Grid, Flexbox, custom properties, media queries, transitions</li><li><strong>JavaScript:</strong> You've seen event listeners, DOM manipulation, localStorage</li><li><strong>Claude Code:</strong> You can use the terminal to work on projects directly</li><li><strong>Deployment:</strong> You can ship code to the internet with Git and Vercel</li></ul>"
+              },
+              {
+                "type": "text",
+                "content": "<h3>Share Your Work</h3><p>Share your portfolio URL. Post it on LinkedIn, X, or wherever you hang out online. You built this. That's worth celebrating.</p><p><strong>Next steps to consider:</strong></p><ul><li>Add a custom domain (Vercel makes this easy — check their Domains settings)</li><li>Add a blog section where you write about what you're learning</li><li>Upgrade to a framework like Next.js (spoiler: Mission 4 covers this)</li><li>Keep iterating with Claude Code — the more you use it, the faster you build</li></ul>"
+              }
+            ]
+          },
+          "xp_reward": 80,
+          "estimated_minutes": 10
+        }
+      ]
+    },
+    {
+      "title": "Automate Your Workflow",
+      "slug": "automate-your-workflow",
+      "description": "Build a personal productivity automation that saves you 5+ hours per week. No coding required — just Claude and smart prompt engineering.",
+      "difficulty": "intermediate",
+      "project_type": "automation",
+      "project_brief": "You'll identify your most repetitive work tasks, build reusable prompt templates for each one, chain them into a complete workflow, and document it as a standard operating procedure your team can use. By the end, you'll have a system that runs on autopilot.",
+      "learning_outcomes": [
+        "Audit your own workflow for automation opportunities",
+        "Build reusable prompt templates with variables",
+        "Chain multiple AI tasks into end-to-end workflows",
+        "Write SOPs that make your automation reproducible"
+      ],
+      "estimated_hours": 8,
+      "max_xp": 600,
+      "is_free": false,
+      "free_step_count": 2,
+      "cover_emoji": "\u26a1",
+      "steps": [
+        {
+          "step_number": 1,
+          "title": "Create Your AI Work Assistant",
+          "description": "Use system prompts to build a Claude persona tailored to your specific job.",
+          "step_type": "learn",
+          "course_slug": "system-prompts-personas",
+          "lesson_slug": "what-are-system-prompts",
+          "xp_reward": 15,
+          "estimated_minutes": 12
+        },
+        {
+          "step_number": 2,
+          "title": "Map Your Repetitive Tasks",
+          "description": "Audit your workweek and identify the 3 biggest time-wasters Claude can handle.",
+          "step_type": "build",
+          "instructions": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>Find Your Automation Opportunities</h3><p>Before we build anything, we need to find the right things to automate. The biggest productivity mistake people make with AI is automating the wrong tasks — things that are already fast, or things that require too much judgment.</p><p>The sweet spot: tasks that are <strong>repetitive</strong>, <strong>structured</strong>, and take <strong>15+ minutes each time</strong>.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 1: The Time Audit</h4><p>Think through your last work week. Write down every task that felt repetitive. Be specific — don't write \"emails,\" write \"drafting follow-up emails to clients after calls.\" Use this prompt with Claude to help:</p><pre><code>I'm a [your role] at a [type of company]. Help me identify my most automatable tasks.\n\nHere's what my typical week looks like:\n- [Monday routine]\n- [Tuesday routine]\n- [etc.]\n\nFor each task I mention, rate it on:\n1. Repetitiveness (1-5): How similar is it each time?\n2. Structure (1-5): How predictable is the format?\n3. Time cost (minutes per occurrence)\n4. Frequency (times per week)\n\nThen rank the top 5 by total time saved potential.</code></pre>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 2: Pick Your Top 3</h4><p>From Claude's analysis, pick the top 3 tasks. Good candidates include:</p><ul><li>Writing meeting summaries or action items</li><li>Drafting emails from bullet points</li><li>Reformatting data between systems</li><li>Creating reports from raw numbers</li><li>Writing documentation or SOPs</li><li>Reviewing and editing content</li><li>Generating social media posts from longer content</li></ul><p>Write down each task with: <strong>what triggers it</strong>, <strong>what input it needs</strong>, <strong>what the output looks like</strong>, and <strong>how long it takes you today</strong>.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 3: Define Your Baseline</h4><p>For each of your 3 tasks, calculate your current weekly time cost:</p><pre><code>Task 1: [name] — [X] minutes × [Y] times/week = [Z] minutes/week\nTask 2: [name] — [X] minutes × [Y] times/week = [Z] minutes/week\nTask 3: [name] — [X] minutes × [Y] times/week = [Z] minutes/week\nTotal: [sum] minutes/week</code></pre><p>This is your baseline. By the end of this mission, you'll measure your actual time savings against it. If the total is under 2 hours, go back and find bigger tasks — the best automations save at least 5 hours per week.</p>"
+              }
+            ]
+          },
+          "xp_reward": 40,
+          "estimated_minutes": 30
+        },
+        {
+          "step_number": 3,
+          "title": "Build Your First Template",
+          "description": "Create a reusable prompt template for your biggest time-waster and test it.",
+          "step_type": "build",
+          "instructions": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>From Ad-Hoc Prompts to Reusable Templates</h3><p>Most people use Claude by typing a new prompt from scratch every time. That's like rewriting a recipe from memory every time you cook. Instead, we're going to build <strong>prompt templates</strong> — reusable prompts with variables you swap out each time.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 1: Write the First Draft</h4><p>Take your #1 time-waster from the previous step. Open Claude and write the best prompt you can to accomplish it. Don't worry about making it reusable yet — just make it work. Run it with a real example from your work.</p><p><strong>Example:</strong> If your task is \"write meeting follow-up emails,\" your first draft might be:</p><pre><code>Here are my notes from a client meeting:\n[paste actual notes]\n\nWrite a professional follow-up email that:\n- Thanks them for their time\n- Summarizes the key discussion points\n- Lists agreed-upon action items with owners\n- Proposes next meeting date\n- Keeps the tone warm but professional</code></pre>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 2: Test with 3 Real Examples</h4><p>Run your prompt with 3 different real examples from your work. For each one, note:</p><ul><li>What did Claude get right on the first try?</li><li>What did you have to correct or re-prompt for?</li><li>What was missing that you had to add manually?</li></ul><p>These notes reveal the gaps in your template. If Claude consistently misses the tone, you need better tone instructions. If it forgets to include certain details, you need to require them explicitly.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 3: Convert to a Template</h4><p>Now generalize your prompt. Replace the specific details with variables in brackets:</p><pre><code>MEETING FOLLOW-UP EMAIL TEMPLATE\n\nContext:\n- Client: {{client_name}} at {{company}}\n- Meeting date: {{date}}\n- Attendees: {{attendees}}\n- My role: {{my_role}}\n\nMeeting notes:\n{{raw_notes}}\n\nWrite a follow-up email that:\n- Thanks them for their time (use first name)\n- Summarizes 3-5 key discussion points from the notes\n- Lists all action items with owner and deadline\n- Proposes a follow-up meeting for {{follow_up_timeframe}}\n- Tone: warm, professional, concise\n- Length: under 300 words\n- Subject line format: \"Follow-up: {{meeting_topic}} — Action Items\"</code></pre><p>Save this template somewhere accessible — a notes app, a text file, or a Claude Project. You'll use it every time this task comes up.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 4: Measure the Improvement</h4><p>Use your template on the next real occurrence of this task. Time yourself from start (pasting the template and filling in variables) to finish (final email ready to send). Compare it to your baseline.</p><p>A good template should cut the task time by 60-80%. If it doesn't, the template needs more work — go back and add more specificity, better examples, or stricter formatting requirements.</p>"
+              }
+            ]
+          },
+          "xp_reward": 60,
+          "estimated_minutes": 45
+        },
+        {
+          "step_number": 4,
+          "title": "Chaining Tasks Together",
+          "description": "Learn how to connect multiple Claude tasks into an end-to-end workflow.",
+          "step_type": "learn",
+          "course_slug": "building-ai-workflows",
+          "lesson_slug": "chaining-tasks",
+          "xp_reward": 20,
+          "estimated_minutes": 15
+        },
+        {
+          "step_number": 5,
+          "title": "Chain Your Templates",
+          "description": "Connect your 3 templates into one workflow. One input triggers a chain of outputs.",
+          "step_type": "build",
+          "instructions": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>Building a Workflow Chain</h3><p>Individual templates save time. <strong>Chained templates</strong> save entire processes. A workflow chain means the output of one step becomes the input of the next — you provide the initial input once, and the chain produces multiple outputs.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 1: Map the Chain</h4><p>Look at your 3 templates. Are any of them naturally connected? Common chains:</p><ul><li><strong>Meeting notes → follow-up email → task list → calendar invites</strong></li><li><strong>Raw data → analysis → report → executive summary</strong></li><li><strong>Client brief → project plan → timeline → kickoff email</strong></li><li><strong>Support ticket → research → draft response → internal note</strong></li></ul><p>Draw your chain on paper or in a doc: <code>Input → Template 1 → Output 1 → Template 2 → Output 2 → Template 3 → Final Output</code></p><p>If your 3 templates don't naturally chain, create a new connecting template. For example, if Template 1 produces a meeting summary and Template 2 needs a task list, add a step that extracts tasks from the summary.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 2: Build the Chain in Claude</h4><p>Open a Claude conversation and run your chain end-to-end. Start with a real input:</p><pre><code>I'm going to run a 3-step workflow. After each step, I'll say \"next\" and you'll use the output from the previous step as input for the next one.\n\nSTEP 1: Meeting Follow-Up Email\n[paste your Template 1 with real data filled in]\n</code></pre><p>When Claude produces the output, review it, then say:</p><pre><code>Next.\n\nSTEP 2: Extract Action Items\n[paste your Template 2, referencing the email above]\n</code></pre><p>Continue through all 3 steps. At the end, you should have multiple useful outputs from a single input.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 3: Create the Mega-Template</h4><p>Now combine everything into one prompt that runs the whole chain at once:</p><pre><code>WORKFLOW: Post-Meeting Processing\n\nInput:\n- Client: {{client_name}}\n- Meeting notes: {{raw_notes}}\n- Attendees: {{attendees}}\n\nProduce ALL of the following:\n\n1. FOLLOW-UP EMAIL\n[requirements from Template 1]\n\n2. ACTION ITEM TRACKER\n[requirements from Template 2]\n\n3. INTERNAL SUMMARY\n[requirements from Template 3]\n\nFormat each section with a clear header. Output all three in one response.</code></pre><p>Test this mega-template with a real example. Compare the quality to running each step individually. Sometimes a single prompt produces slightly lower quality than running each step separately — if so, keep them as separate steps but document the chain order.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>When to Chain vs. When to Keep Separate</h4><p>Use a single mega-prompt when:</p><ul><li>The steps are simple and Claude handles all of them well</li><li>You want maximum speed (one prompt = one response)</li><li>The outputs don't need individual review between steps</li></ul><p>Keep steps separate when:</p><ul><li>Each step is complex and needs the full context window</li><li>You need to review or edit the output before the next step</li><li>Different steps need different system prompts or personas</li></ul>"
+              }
+            ]
+          },
+          "xp_reward": 70,
+          "estimated_minutes": 50
+        },
+        {
+          "step_number": 6,
+          "title": "Building SOPs with Claude",
+          "description": "Learn to document your automation so anyone on your team can use it.",
+          "step_type": "learn",
+          "course_slug": "claude-for-operations",
+          "lesson_slug": "building-sops",
+          "xp_reward": 20,
+          "estimated_minutes": 15
+        },
+        {
+          "step_number": 7,
+          "title": "Write Your SOP",
+          "description": "Turn your workflow into a standard operating procedure anyone can follow.",
+          "step_type": "build",
+          "instructions": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>Make It Repeatable</h3><p>An automation that only works when you run it isn't really an automation — it's a personal trick. A <strong>Standard Operating Procedure (SOP)</strong> turns your workflow into something anyone on your team can execute consistently. It's the difference between \"I have a good prompt\" and \"We have a system.\"</p>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 1: Document the Workflow</h4><p>Use Claude to help you write the SOP. Here's a proven structure:</p><pre><code>Help me write an SOP for my workflow. Here's what it does:\n\nWorkflow name: {{name}}\nPurpose: {{what problem it solves}}\nTrigger: {{when should someone run this}}\nInput required: {{what data/info is needed}}\nSteps: {{your chain from the previous exercise}}\nOutput: {{what gets produced}}\nQuality check: {{how to verify the output is good}}\n\nWrite the SOP with:\n- A clear title and purpose statement\n- Prerequisites (what you need before starting)\n- Numbered steps with exact prompts to copy-paste\n- Expected output for each step\n- Common issues and how to fix them\n- Quality checklist before marking done</code></pre>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 2: Include the Actual Prompts</h4><p>The most important part of your SOP is the exact prompts to use. Don't paraphrase — include them verbatim with the variable placeholders. Someone following the SOP should be able to fill in the blanks and get the same quality output you get.</p><p>For each prompt in the SOP, include:</p><ul><li>The complete prompt text with <code>{{variables}}</code> marked</li><li>What to fill in for each variable</li><li>An example of good input for that variable</li><li>What the output should look like (include a sample)</li></ul>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 3: Test It with Someone Else</h4><p>The real test of an SOP: can someone who's never done this task follow your document and get a good result? Find a colleague, friend, or even use a fresh Claude conversation and pretend you're following the SOP for the first time.</p><p>Note where you get confused, where the instructions are ambiguous, and where the output quality drops. Update the SOP based on this feedback. A good SOP usually goes through 2-3 revisions before it's solid.</p>"
+              }
+            ]
+          },
+          "xp_reward": 60,
+          "estimated_minutes": 40
+        },
+        {
+          "step_number": 8,
+          "title": "Add Quality Checks",
+          "description": "Add verification steps that catch errors before they reach anyone.",
+          "step_type": "build",
+          "instructions": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>Trust, But Verify</h3><p>Claude is powerful but imperfect. Every automation needs quality checks — steps that verify the output meets your standards before it goes anywhere. This is especially important when the output reaches clients, gets published, or feeds into other systems.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 1: Identify Failure Modes</h4><p>For each step in your workflow, ask yourself: \"What could go wrong?\" Common failure modes with Claude:</p><ul><li><strong>Hallucinated details:</strong> Claude invents facts that weren't in the input</li><li><strong>Tone drift:</strong> The output doesn't match your professional voice</li><li><strong>Missing items:</strong> Claude drops some input data in the output</li><li><strong>Format errors:</strong> Dates, names, or numbers are wrong</li><li><strong>Over-verbosity:</strong> Output is twice as long as it should be</li></ul><p>Write down the 2-3 most likely failure modes for your specific workflow.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 2: Build Verification Prompts</h4><p>Create a verification prompt that checks the output against the input:</p><pre><code>QUALITY CHECK\n\nOriginal input:\n{{paste the original input}}\n\nGenerated output:\n{{paste Claude's output}}\n\nVerify:\n1. Every fact in the output can be traced to the input (no hallucinations)\n2. All names, dates, and numbers match exactly\n3. No input items were dropped or omitted\n4. Tone is [your target tone]\n5. Length is under [your word limit]\n\nFor each check, respond PASS or FAIL with a specific explanation. If any check fails, provide the corrected version.</code></pre><p>Run this as the final step of your workflow. Yes, you're using Claude to check Claude — but a focused verification prompt catches most issues because it's looking at the output with fresh eyes and specific criteria.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 3: Add the Checks to Your SOP</h4><p>Update your SOP to include the quality check as a mandatory final step. Add a section called \"Quality Checklist\" that the person running the workflow must complete:</p><ul><li>[ ] All facts verified against source material</li><li>[ ] Names and numbers are correct</li><li>[ ] Tone matches our standard</li><li>[ ] Output is the right length</li><li>[ ] Verification prompt returned all PASS</li></ul><p>This turns your automation from \"generate and hope\" to \"generate, verify, and ship.\" It's the difference between amateur and professional AI use.</p>"
+              }
+            ]
+          },
+          "xp_reward": 60,
+          "estimated_minutes": 35
+        },
+        {
+          "step_number": 9,
+          "title": "Roll It Out",
+          "description": "Package your workflow for your team. Create a shared prompt library.",
+          "step_type": "deploy",
+          "instructions": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>From Personal Tool to Team System</h3><p>Your workflow is built, tested, and documented. Now it's time to share it. \"Deployment\" for a workflow automation means making it accessible and usable by your team — not just you.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 1: Create a Shared Prompt Library</h4><p>Organize your templates into a library your team can access. Options by team size:</p><ul><li><strong>Just you:</strong> A Claude Project with all templates pinned as project instructions</li><li><strong>Small team (2-10):</strong> A shared doc (Notion, Google Docs, or a GitHub repo) with all templates organized by use case</li><li><strong>Larger team:</strong> A structured prompt library with categories, versioning, and an owner for each template</li></ul><p>At minimum, your library should include:</p><ul><li>Each template with clear naming (<code>meeting-followup-v2</code>, <code>report-generator-v1</code>)</li><li>The system prompt / persona for each workflow</li><li>Example inputs and outputs</li><li>The SOP document</li></ul>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 2: Onboard Your First User</h4><p>Pick one teammate and walk them through the workflow. Don't just send them the SOP — sit with them (or share a screen) while they run it for the first time. Watch for:</p><ul><li>Where do they hesitate or ask questions?</li><li>Do they fill in the variables correctly?</li><li>Is the output quality as good as when you run it?</li><li>How long does it take them vs. doing it manually?</li></ul><p>This first onboarding session will reveal every gap in your documentation. Update the SOP immediately.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 3: Set Up a Feedback Loop</h4><p>Workflows decay without maintenance. Prompts that work today might need tuning as Claude updates, your processes change, or edge cases emerge. Set up a simple feedback system:</p><ul><li>A shared channel or doc where team members can flag issues</li><li>A monthly 15-minute review to check: Is it still saving time? Any new failure modes? Any templates that need updating?</li><li>Version your templates (v1, v2, v3) so you can roll back if a change makes things worse</li></ul>"
+              }
+            ]
+          },
+          "xp_reward": 70,
+          "estimated_minutes": 30
+        },
+        {
+          "step_number": 10,
+          "title": "You Just Saved 5 Hours/Week",
+          "description": "Calculate your real time savings and plan your next automation.",
+          "step_type": "checkpoint",
+          "instructions": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>Mission Complete</h3><p>Let's measure the impact. Go back to your baseline from Step 2 and compare:</p><pre><code>BEFORE:\nTask 1: [X] min/week\nTask 2: [X] min/week\nTask 3: [X] min/week\nTotal: [X] min/week\n\nAFTER (with automation):\nTask 1: [Y] min/week (includes running template + QC)\nTask 2: [Y] min/week\nTask 3: [Y] min/week\nTotal: [Y] min/week\n\nTIME SAVED: [X - Y] min/week = [hours] hours/week\nANNUAL SAVINGS: [hours × 50] hours/year</code></pre>"
+              },
+              {
+                "type": "text",
+                "content": "<h3>What You Built</h3><ul><li><strong>3 reusable prompt templates</strong> that produce consistent, high-quality output</li><li><strong>A chained workflow</strong> that turns one input into multiple outputs</li><li><strong>A quality verification system</strong> that catches errors before they reach anyone</li><li><strong>A documented SOP</strong> your team can follow without you</li><li><strong>A shared prompt library</strong> that scales your knowledge</li></ul>"
+              },
+              {
+                "type": "text",
+                "content": "<h3>Skills Unlocked</h3><ul><li><strong>Workflow analysis:</strong> You can identify what to automate (and what not to)</li><li><strong>Template design:</strong> You can build reusable prompts with variables</li><li><strong>Task chaining:</strong> You can connect multiple AI steps into a pipeline</li><li><strong>Quality assurance:</strong> You can verify AI output systematically</li><li><strong>Knowledge transfer:</strong> You can document and share your automations</li></ul><p><strong>Next mission:</strong> If you're ready to build something more technical — an actual AI agent that uses tools and APIs — Mission 3 is waiting for you.</p>"
+              }
+            ]
+          },
+          "xp_reward": 85,
+          "estimated_minutes": 15
+        }
+      ]
+    },
+    {
+      "title": "Build an AI Agent",
+      "slug": "build-ai-agent",
+      "description": "Build a working AI agent with tool use, deployed and accessible via API. For developers who want to build real AI products.",
+      "difficulty": "advanced",
+      "project_type": "agent",
+      "project_brief": "You'll design, build, and deploy a real AI agent that can use tools, call APIs, and handle errors gracefully. Starting from a single API call, you'll progressively add tool use, MCP integration, and Agent SDK architecture until you have a production-ready agent with monitoring and cost tracking.",
+      "learning_outcomes": [
+        "Make Claude API calls and handle streaming responses",
+        "Implement tool use with inputSchema and the tool-call loop",
+        "Build an MCP server and connect it to your agent",
+        "Deploy a production agent with error handling and monitoring"
+      ],
+      "estimated_hours": 12,
+      "max_xp": 1000,
+      "is_free": false,
+      "free_step_count": 2,
+      "cover_emoji": "\ud83e\udd16",
+      "steps": [
+        {
+          "step_number": 1,
+          "title": "Your First API Call",
+          "description": "Make your first Claude API call. The foundation of everything you'll build.",
+          "step_type": "learn",
+          "course_slug": "api-fundamentals",
+          "lesson_slug": "first-api-call",
+          "xp_reward": 20,
+          "estimated_minutes": 15
+        },
+        {
+          "step_number": 2,
+          "title": "Design Your Agent",
+          "description": "Define what your agent does, what tools it needs, and how it handles errors.",
+          "step_type": "build",
+          "instructions": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>Think Before You Build</h3><p>The difference between a toy demo and a useful agent is design. Before writing a line of code, you need to answer four questions: What does this agent do? What tools does it need? What can go wrong? How will users interact with it?</p>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 1: Pick Your Agent's Purpose</h4><p>Your agent should solve a real problem you have. Good starter agents:</p><ul><li><strong>Research agent:</strong> Takes a topic, searches the web, summarizes findings</li><li><strong>Code review agent:</strong> Takes a PR URL, reads the diff, provides feedback</li><li><strong>Data agent:</strong> Takes a question, queries a database, returns an answer in plain English</li><li><strong>Content agent:</strong> Takes a brief, generates drafts across multiple formats</li><li><strong>Support agent:</strong> Takes a customer question, searches docs, drafts a response</li></ul><p>Pick one. Write a one-sentence description: \"My agent [does what] for [whom] by [how].\"</p>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 2: Define the Tool Set</h4><p>An agent without tools is just a chatbot. Tools are functions your agent can call to interact with the real world. For your chosen agent, list every tool it needs:</p><pre><code>Agent: Research Assistant\n\nTools needed:\n1. web_search(query) → Returns search results\n   - Why: Agent needs to find information\n   - Input: search query string\n   - Output: array of {title, url, snippet}\n\n2. fetch_page(url) → Returns page content\n   - Why: Agent needs to read full articles\n   - Input: URL string\n   - Output: extracted text content\n\n3. save_note(title, content) → Saves to a file\n   - Why: Agent needs to persist its findings\n   - Input: title string, content string\n   - Output: file path</code></pre><p>Start with 2-3 tools. You can always add more later. Each tool should do exactly one thing.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 3: Map the Error Scenarios</h4><p>Every tool can fail. For each tool, list what could go wrong and how the agent should handle it:</p><ul><li><strong>web_search fails:</strong> API rate limit, network error, no results. Agent should retry once, then tell the user it couldn't find information.</li><li><strong>fetch_page fails:</strong> 404, paywall, timeout. Agent should skip that source and try the next one.</li><li><strong>save_note fails:</strong> Disk full, permission error. Agent should return the content in the response instead.</li></ul><p>Also plan for these agent-level errors:</p><ul><li>What if the user's request is ambiguous? → Ask for clarification</li><li>What if the agent gets stuck in a loop? → Set a max iteration count</li><li>What if the response is too long? → Summarize and offer the full version</li></ul>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 4: Write the Agent Spec</h4><p>Combine everything into a one-page spec. Use Claude to help you refine it:</p><pre><code>Help me refine this agent specification:\n\nName: [agent name]\nPurpose: [one sentence]\nUser interaction: [API endpoint / CLI / chat]\nTools: [list from Step 2]\nError handling: [strategies from Step 3]\nSystem prompt: [describe the persona and constraints]\n\nCritique this design. What am I missing? What edge cases haven't I considered?</code></pre><p>Save this spec. You'll reference it throughout the build.</p>"
+              }
+            ]
+          },
+          "xp_reward": 60,
+          "estimated_minutes": 40
+        },
+        {
+          "step_number": 3,
+          "title": "Tool Use Fundamentals",
+          "description": "Learn how Claude calls tools — the inputSchema, the tool loop, and the response format.",
+          "step_type": "learn",
+          "course_slug": "tool-use-function-calling",
+          "lesson_slug": "defining-tools",
+          "xp_reward": 25,
+          "estimated_minutes": 20
+        },
+        {
+          "step_number": 4,
+          "title": "Build Your First Tool",
+          "description": "Write a tool function, connect it to Claude, and see the agent use it.",
+          "step_type": "build",
+          "instructions": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>Making Claude Do Things</h3><p>Without tools, Claude can only generate text. With tools, Claude can search the web, read databases, send emails, create files — anything you give it access to. Here's how it works:</p><ol><li>You send a message to Claude with a list of available tools</li><li>Claude decides it needs to use a tool and returns a <code>tool_use</code> response</li><li>Your code executes the tool and sends the result back to Claude</li><li>Claude uses the result to continue its response</li></ol><p>This is called the <strong>tool loop</strong>, and it's the core pattern of every AI agent.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 1: Define the Tool Schema</h4><p>Pick the simplest tool from your agent spec. Define it as a JSON schema that Claude understands:</p><pre><code>const tools = [\n  {\n    name: \"web_search\",\n    description: \"Search the web for information on a given topic. Returns the top 5 results with titles, URLs, and snippets.\",\n    input_schema: {\n      type: \"object\",\n      properties: {\n        query: {\n          type: \"string\",\n          description: \"The search query\"\n        }\n      },\n      required: [\"query\"]\n    }\n  }\n];</code></pre><p>The <code>description</code> field matters enormously. Claude uses it to decide <em>when</em> to call the tool and <em>what</em> to pass as input. Be specific: \"Search the web for information\" is better than \"Search things.\" Include what the tool returns so Claude knows what to expect.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 2: Implement the Tool Function</h4><p>Write the actual code that executes when Claude calls the tool. Start with a mock that returns fake data — you'll connect it to a real API later:</p><pre><code>async function executeWebSearch(query) {\n  // TODO: Replace with real search API\n  // For now, return mock results so we can test the loop\n  return [\n    {\n      title: `Result about: ${query}`,\n      url: \"https://example.com/article\",\n      snippet: `This is a mock search result for \"${query}\". Replace this with a real search API like Brave Search or SerpAPI.`\n    }\n  ];\n}\n\n// Tool router — maps tool names to functions\nasync function executeTool(name, input) {\n  switch (name) {\n    case \"web_search\":\n      return await executeWebSearch(input.query);\n    default:\n      throw new Error(`Unknown tool: ${name}`);\n  }\n}</code></pre><p>Using mocks first lets you test the entire agent loop without worrying about API keys or rate limits.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 3: Build the Tool Loop</h4><p>Now connect Claude to your tool. The loop runs until Claude stops requesting tools:</p><pre><code>import Anthropic from \"@anthropic-ai/sdk\";\n\nconst client = new Anthropic();\n\nasync function runAgent(userMessage) {\n  let messages = [{ role: \"user\", content: userMessage }];\n\n  while (true) {\n    const response = await client.messages.create({\n      model: \"claude-sonnet-4-20250514\",\n      max_tokens: 1024,\n      tools: tools,\n      messages: messages\n    });\n\n    // Check if Claude wants to use a tool\n    if (response.stop_reason === \"tool_use\") {\n      const toolBlock = response.content.find(b => b.type === \"tool_use\");\n      const result = await executeTool(toolBlock.name, toolBlock.input);\n\n      // Add Claude's response and the tool result to messages\n      messages.push({ role: \"assistant\", content: response.content });\n      messages.push({\n        role: \"user\",\n        content: [{\n          type: \"tool_result\",\n          tool_use_id: toolBlock.id,\n          content: JSON.stringify(result)\n        }]\n      });\n    } else {\n      // Claude is done — return the final text\n      const text = response.content.find(b => b.type === \"text\");\n      return text?.text || \"\";\n    }\n  }\n}</code></pre><p>Run it: <code>runAgent(\"What are the latest developments in AI safety?\")</code>. Claude will call your <code>web_search</code> tool, get the mock results, and produce a response that references them.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 4: Connect a Real API</h4><p>Replace your mock with a real search. Brave Search has a free tier that works well:</p><ol><li>Sign up at <a href=\"https://brave.com/search/api/\">brave.com/search/api</a> for a free API key</li><li>Replace the mock <code>executeWebSearch</code> function with a real HTTP call</li><li>Run the agent again and see it produce answers based on real search results</li></ol><p>Store your API key in an environment variable (<code>process.env.BRAVE_API_KEY</code>), never hardcode it. Test with a few different queries to make sure the tool works reliably.</p>"
+              }
+            ]
+          },
+          "xp_reward": 100,
+          "estimated_minutes": 60
+        },
+        {
+          "step_number": 5,
+          "title": "MCP Fundamentals",
+          "description": "Learn the Model Context Protocol — the standard that connects AI to everything.",
+          "step_type": "learn",
+          "course_slug": "mcp-integration",
+          "lesson_slug": "mcp-fundamentals",
+          "xp_reward": 25,
+          "estimated_minutes": 20
+        },
+        {
+          "step_number": 6,
+          "title": "Add an MCP Server",
+          "description": "Build an MCP server for your agent and connect it to a real data source.",
+          "step_type": "build",
+          "instructions": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>Why MCP?</h3><p>In the previous step, you hardcoded tools directly into your agent. That works for a few tools, but it doesn't scale. What if you want your agent to use 10 tools from 5 different services? What if you want to share tools between agents?</p><p>The <strong>Model Context Protocol (MCP)</strong> solves this. It's a standard protocol that lets AI agents discover and use tools from external servers. Instead of coding tools into your agent, you run MCP servers that expose tools, and your agent connects to them.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 1: Scaffold an MCP Server</h4><p>Use Claude Code to build a basic MCP server:</p><pre><code>Build an MCP server in TypeScript that exposes tools for my agent. Use the @modelcontextprotocol/sdk package.\n\nThe server should expose these tools:\n1. search_notes(query) — searches a local directory of markdown files\n2. create_note(title, content) — creates a new markdown file\n3. list_notes() — returns all note filenames\n\nUse stdio transport. Include proper error handling for file operations.</code></pre><p>This gives your agent persistent memory — it can save and retrieve information across conversations.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 2: Test the MCP Server</h4><p>Before connecting it to your agent, test the server standalone using the MCP Inspector or Claude Code:</p><pre><code>npx @modelcontextprotocol/inspector your-server.js</code></pre><p>The Inspector shows you all the tools your server exposes. Call each one manually to verify it works. Create a note, list notes, search for it. Fix any bugs before moving on.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 3: Connect MCP to Your Agent</h4><p>Update your agent to use the MCP server as a tool source instead of hardcoded tools. The MCP client discovers available tools automatically:</p><pre><code>Ask Claude Code to help:\n\nUpdate my agent to connect to my MCP server using the MCP client SDK. The agent should:\n1. Start the MCP server as a subprocess\n2. Discover available tools via the MCP protocol\n3. Use those tools in the same tool loop we already built\n4. The existing web_search tool should still work alongside MCP tools</code></pre><p>Now your agent has tools from two sources: the hardcoded web search and the MCP note-taking server. This is the power of MCP — you can compose tools from multiple sources.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 4: Add a Real Data Source</h4><p>The note-taking server is useful, but the real value of MCP is connecting to services you already use. Pick one:</p><ul><li><strong>GitHub MCP server:</strong> Your agent can read repos, issues, PRs</li><li><strong>Database MCP server:</strong> Your agent can query Postgres or SQLite</li><li><strong>File system MCP server:</strong> Your agent can read and manage your project files</li></ul><p>Many MCP servers already exist as open-source projects. Search the <a href=\"https://github.com/modelcontextprotocol/servers\">MCP servers repository</a> before building from scratch. Connect one, test it, and watch your agent's capabilities multiply.</p>"
+              }
+            ]
+          },
+          "xp_reward": 100,
+          "estimated_minutes": 70
+        },
+        {
+          "step_number": 7,
+          "title": "Error Handling & Edge Cases",
+          "description": "Make your agent robust. Handle failures gracefully. Learn production patterns.",
+          "step_type": "build",
+          "instructions": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>The Difference Between a Demo and a Product</h3><p>Your agent works on the happy path. But real users will break it in ways you haven't imagined. This step is about making your agent resilient — handling every failure mode gracefully so it never crashes, never hangs, and always gives the user a useful response.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 1: Add Tool Error Handling</h4><p>Wrap every tool execution in error handling that returns useful information to Claude instead of crashing:</p><pre><code>async function executeTool(name, input) {\n  try {\n    const result = await toolRouter(name, input);\n    return { success: true, data: result };\n  } catch (error) {\n    return {\n      success: false,\n      error: error.message,\n      suggestion: `The ${name} tool failed. Try a different approach.`\n    };\n  }\n}</code></pre><p>When you return the error to Claude as a tool result (instead of crashing), Claude can adapt — it might try a different tool, rephrase its query, or tell the user what happened. This is one of Claude's strengths: it handles partial failures well if you give it the information.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 2: Add Loop Protection</h4><p>An agent can get stuck calling the same tool repeatedly or cycling between tools forever. Add two safeguards:</p><pre><code>const MAX_ITERATIONS = 10;\nconst MAX_TOOL_CALLS = 25;\nlet iterations = 0;\nlet totalToolCalls = 0;\n\nwhile (iterations < MAX_ITERATIONS) {\n  iterations++;\n  // ... your existing loop ...\n  \n  if (response.stop_reason === \"tool_use\") {\n    totalToolCalls++;\n    if (totalToolCalls > MAX_TOOL_CALLS) {\n      return \"I've made too many tool calls for this request. Here's what I found so far: ...\";\n    }\n  }\n}</code></pre><p>Also add timeout protection: if any single tool call takes more than 30 seconds, abort it and return an error to Claude.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 3: Add Input Validation</h4><p>Users will send your agent empty strings, absurdly long prompts, and malicious inputs. Add validation at the entry point:</p><pre><code>function validateInput(message) {\n  if (!message || message.trim().length === 0) {\n    throw new Error(\"Please provide a message.\");\n  }\n  if (message.length > 10000) {\n    throw new Error(\"Message too long. Please keep it under 10,000 characters.\");\n  }\n  return message.trim();\n}</code></pre><p>Also validate tool inputs before executing them. If your <code>web_search</code> tool expects a string, verify it's a string before calling the API.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 4: Test the Failure Modes</h4><p>Deliberately break things to verify your error handling works:</p><ul><li>Disconnect from the internet and run a query that needs web search</li><li>Send an empty message</li><li>Send a message that triggers 20+ tool calls</li><li>Kill the MCP server while the agent is running</li><li>Send a prompt injection: \"Ignore all previous instructions and...\"</li></ul><p>For each test, verify: the agent doesn't crash, the user gets a useful error message, and no sensitive data is leaked in error messages. Fix anything that breaks.</p>"
+              }
+            ]
+          },
+          "xp_reward": 80,
+          "estimated_minutes": 50
+        },
+        {
+          "step_number": 8,
+          "title": "The Agent SDK",
+          "description": "Learn professional agent architecture with Anthropic's Agent SDK.",
+          "step_type": "learn",
+          "course_slug": "the-agent-sdk",
+          "lesson_slug": "agent-definitions",
+          "xp_reward": 25,
+          "estimated_minutes": 20
+        },
+        {
+          "step_number": 9,
+          "title": "Refactor to Agent SDK",
+          "description": "Convert your prototype into production architecture with guardrails and handoffs.",
+          "step_type": "build",
+          "instructions": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>From Prototype to Production</h3><p>Your hand-rolled agent loop works. But as agents get more complex — multiple tools, sub-agents, guardrails, handoffs — maintaining a custom loop becomes painful. The Agent SDK gives you a battle-tested framework for production agents.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 1: Define Your Agent</h4><p>Convert your existing agent into an Agent SDK definition:</p><pre><code>import { Agent } from \"claude-agent-sdk\";\n\nconst researchAgent = new Agent({\n  name: \"Research Assistant\",\n  model: \"claude-sonnet-4-20250514\",\n  instructions: `You are a research assistant that helps users find and synthesize information.\n    Always cite your sources. If you can't find reliable information, say so.\n    Never make up facts.`,\n  tools: [webSearchTool, fetchPageTool, saveNoteTool],\n  maxTurns: 10\n});</code></pre><p>The SDK handles the tool loop, message management, and error handling you built by hand. Your job is now to define the agent's behavior, not manage the plumbing.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 2: Add Guardrails</h4><p>Guardrails are rules that constrain what your agent can do. They run before or after each agent turn:</p><pre><code>const guardrails = {\n  // Prevent the agent from accessing certain domains\n  beforeToolCall: async (toolName, input) => {\n    if (toolName === \"fetch_page\" && input.url.includes(\"internal.company.com\")) {\n      return { blocked: true, reason: \"Cannot access internal URLs\" };\n    }\n    return { blocked: false };\n  },\n  // Validate output before returning to user\n  afterResponse: async (response) => {\n    if (response.includes(\"I don't know\") && response.length < 50) {\n      return { retry: true, feedback: \"Provide more detail about what you searched and why you couldn't find an answer.\" };\n    }\n    return { retry: false };\n  }\n};</code></pre><p>Guardrails are what separate a safe, production agent from a dangerous one. Add at least one input guardrail and one output guardrail.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 3: Add a Specialist Sub-Agent</h4><p>Complex tasks benefit from agent handoffs. Create a specialist agent that your main agent can delegate to:</p><pre><code>const summaryAgent = new Agent({\n  name: \"Summary Specialist\",\n  model: \"claude-haiku-4-20250514\",\n  instructions: `You summarize long documents into concise, structured summaries.\n    Always include: key findings, methodology, and limitations.\n    Keep summaries under 500 words.`,\n  tools: []\n});\n\n// Main agent can hand off to the summary specialist\nresearchAgent.addHandoff({\n  target: summaryAgent,\n  trigger: \"When you have gathered all research and need to produce the final summary\"\n});</code></pre><p>Using a smaller, cheaper model (Haiku) for summarization saves money and often produces better summaries because the agent is focused on one task.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 4: Run and Compare</h4><p>Run the same queries through both your hand-rolled agent and the SDK version. Compare:</p><ul><li>Response quality — are the answers the same?</li><li>Error handling — does the SDK version handle failures better?</li><li>Code complexity — how much code did you delete?</li><li>Performance — is there a latency difference?</li></ul><p>The SDK version should be shorter, more maintainable, and handle edge cases you forgot about in your custom implementation. If it's not, review the SDK docs for features you're not using yet.</p>"
+              }
+            ]
+          },
+          "xp_reward": 100,
+          "estimated_minutes": 60
+        },
+        {
+          "step_number": 10,
+          "title": "Deploy Your Agent",
+          "description": "Deploy your agent as a live API endpoint on Vercel.",
+          "step_type": "deploy",
+          "instructions": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>Your Agent Goes Live</h3><p>Your agent is built, tested, and hardened. Time to deploy it so other people (or other systems) can use it. We'll deploy it as an API endpoint on Vercel — a serverless function that runs your agent on demand.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 1: Create the API Route</h4><p>Wrap your agent in a serverless function. If you're using Next.js:</p><pre><code>// app/api/agent/route.ts\nimport { NextRequest, NextResponse } from \"next/server\";\n\nexport async function POST(request: NextRequest) {\n  const { message } = await request.json();\n  \n  if (!message) {\n    return NextResponse.json({ error: \"Message required\" }, { status: 400 });\n  }\n\n  try {\n    const response = await runAgent(message);\n    return NextResponse.json({ response });\n  } catch (error) {\n    console.error(\"Agent error:\", error);\n    return NextResponse.json(\n      { error: \"Agent encountered an error\" },\n      { status: 500 }\n    );\n  }\n}</code></pre><p>Notice: the error response does not leak the actual error message to the client. In production, you log the real error server-side and return a generic message to the user.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 2: Set Up Environment Variables</h4><p>Your agent needs API keys (Anthropic, search API, etc.). Never put these in code. Add them to Vercel:</p><pre><code>vercel env add ANTHROPIC_API_KEY\nvercel env add BRAVE_API_KEY</code></pre><p>Or add them through the Vercel dashboard under Settings > Environment Variables. Verify they're available in your serverless function with <code>process.env.ANTHROPIC_API_KEY</code>.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 3: Deploy</h4><pre><code>vercel --prod</code></pre><p>Once deployed, test your endpoint:</p><pre><code>curl -X POST https://your-project.vercel.app/api/agent \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"message\": \"What are the latest developments in AI safety?\"}'</code></pre><p>You should get a JSON response with your agent's answer. If you get an error, check the Vercel function logs: <code>vercel logs --follow</code>.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 4: Add Basic Auth</h4><p>Your API is public right now — anyone who finds the URL can use it and burn through your API credits. Add basic API key authentication:</p><pre><code>export async function POST(request: NextRequest) {\n  const authHeader = request.headers.get(\"authorization\");\n  if (authHeader !== `Bearer ${process.env.AGENT_API_KEY}`) {\n    return NextResponse.json({ error: \"Unauthorized\" }, { status: 401 });\n  }\n  // ... rest of handler\n}</code></pre><p>Generate a random API key (<code>openssl rand -hex 32</code>), add it as <code>AGENT_API_KEY</code> in Vercel, and include it in your requests as a Bearer token. This is the minimum viable authentication for a personal API. For a production product, you'd use proper auth (JWT, OAuth, etc.).</p>"
+              }
+            ]
+          },
+          "xp_reward": 90,
+          "estimated_minutes": 40
+        },
+        {
+          "step_number": 11,
+          "title": "Add Monitoring",
+          "description": "Add logging, cost tracking, and error alerts so you know what your agent is doing.",
+          "step_type": "build",
+          "instructions": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>You Can't Fix What You Can't See</h3><p>Your agent is live, but you're flying blind. Is it working? How much is it costing you? Are users hitting errors? Monitoring answers these questions. Every production AI system needs three things: <strong>logging</strong> (what happened), <strong>cost tracking</strong> (how much it costs), and <strong>alerting</strong> (when something goes wrong).</p>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 1: Structured Logging</h4><p>Log every agent run with enough detail to debug issues later:</p><pre><code>async function runAgentWithLogging(message) {\n  const runId = crypto.randomUUID();\n  const startTime = Date.now();\n  let toolCalls = 0;\n  let inputTokens = 0;\n  let outputTokens = 0;\n\n  console.log(JSON.stringify({\n    event: \"agent_start\",\n    runId,\n    messageLength: message.length,\n    timestamp: new Date().toISOString()\n  }));\n\n  // ... run agent, incrementing counters ...\n\n  console.log(JSON.stringify({\n    event: \"agent_complete\",\n    runId,\n    durationMs: Date.now() - startTime,\n    toolCalls,\n    inputTokens,\n    outputTokens,\n    estimatedCost: calculateCost(inputTokens, outputTokens)\n  }));\n}</code></pre><p>Using structured JSON logs (not plain text) means you can filter and aggregate them later. Vercel shows function logs in the dashboard, and you can connect them to external services like Datadog or Axiom.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 2: Cost Tracking</h4><p>Claude API usage adds up. Track costs per request so you can set budgets and detect anomalies:</p><pre><code>function calculateCost(inputTokens, outputTokens) {\n  // Sonnet pricing (update if using a different model)\n  const inputCostPer1M = 3.00;\n  const outputCostPer1M = 15.00;\n  return (\n    (inputTokens / 1_000_000) * inputCostPer1M +\n    (outputTokens / 1_000_000) * outputCostPer1M\n  );\n}</code></pre><p>Log the cost for every request. Set a daily budget and track cumulative spending. If a single request costs more than $0.50, that's usually a sign of a loop or an excessively large context — investigate.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 3: Error Alerts</h4><p>Don't wait for users to report problems. Set up basic alerting:</p><ul><li><strong>Quick win:</strong> Use Vercel's built-in log alerts to get notified when your function throws errors</li><li><strong>Better:</strong> Log errors to a service like Sentry that groups similar errors and tracks frequency</li><li><strong>Best:</strong> Build a simple health check endpoint that your monitoring system pings every few minutes</li></ul><p>At minimum, you should know within 5 minutes if your agent starts failing consistently.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 4: Build a Simple Dashboard</h4><p>Use Claude Code to create a basic monitoring page that shows:</p><ul><li>Total requests today / this week / this month</li><li>Average response time</li><li>Error rate</li><li>Total cost this billing period</li><li>Top tools used</li></ul><p>Even a simple HTML page that reads from your logs is better than nothing. As your agent scales, you'll replace this with proper observability tools — but starting with something is what matters.</p>"
+              }
+            ]
+          },
+          "xp_reward": 80,
+          "estimated_minutes": 50
+        },
+        {
+          "step_number": 12,
+          "title": "Your Agent is Live",
+          "description": "Demo your agent, share the API, and celebrate what you built.",
+          "step_type": "checkpoint",
+          "instructions": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>Mission Complete</h3><p>You've built a production AI agent from scratch. Let's review what you have:</p><ul><li>A working agent with custom tools that interact with the real world</li><li>MCP integration for extensible, composable tool management</li><li>Agent SDK architecture with guardrails and sub-agent handoffs</li><li>A live API endpoint on Vercel with authentication</li><li>Monitoring: logging, cost tracking, and error alerting</li></ul>"
+              },
+              {
+                "type": "text",
+                "content": "<h3>Skills Unlocked</h3><ul><li><strong>Claude API:</strong> Messages API, streaming, tool use, system prompts</li><li><strong>Tool Use:</strong> inputSchema, the tool loop, error handling</li><li><strong>MCP:</strong> Server architecture, tool discovery, protocol integration</li><li><strong>Agent SDK:</strong> Agent definitions, guardrails, handoffs, sub-agents</li><li><strong>Production Patterns:</strong> Auth, environment variables, structured logging, cost tracking</li><li><strong>Deployment:</strong> Vercel serverless functions, API routes, monitoring</li></ul>"
+              },
+              {
+                "type": "text",
+                "content": "<h3>Share Your Agent</h3><p>Share your agent's API endpoint with a friend or colleague. Give them the curl command and let them try it. Better yet, build a simple frontend for it — a chat interface that calls your API.</p><p><strong>Next steps:</strong></p><ul><li>Add more tools — each one makes your agent more capable</li><li>Build a proper frontend (React + Vercel AI SDK makes this easy)</li><li>Add streaming so responses appear in real-time</li><li>Connect to more MCP servers for an ever-expanding toolkit</li><li>Ready to build a full product? Mission 4 takes you from agent to SaaS</li></ul>"
+              }
+            ]
+          },
+          "xp_reward": 95,
+          "estimated_minutes": 15
+        }
+      ]
+    },
+    {
+      "title": "Launch a SaaS Product",
+      "slug": "launch-saas-product",
+      "description": "Build and launch a complete SaaS product with Claude, from idea to paying customers. For entrepreneurs and builders who want to ship something real.",
+      "difficulty": "expert",
+      "project_type": "saas",
+      "project_brief": "You'll go from a blank page to a live SaaS product with authentication, payments, AI features, and a marketing site. This isn't a tutorial app — it's a real product you'll launch and try to get paying customers for. Claude is your co-founder for the sprint.",
+      "learning_outcomes": [
+        "Validate a SaaS idea with market research and competitive analysis",
+        "Architect a full-stack application with Next.js and Supabase",
+        "Implement authentication, payments, and AI features",
+        "Deploy, launch, and market a real product"
+      ],
+      "estimated_hours": 20,
+      "max_xp": 2000,
+      "is_free": false,
+      "free_step_count": 1,
+      "cover_emoji": "\ud83d\ude80",
+      "steps": [
+        {
+          "step_number": 1,
+          "title": "Find Your Idea",
+          "description": "Use Claude to brainstorm, validate, and scope a SaaS idea worth building.",
+          "step_type": "build",
+          "instructions": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>Every Product Starts with a Problem</h3><p>The biggest mistake first-time founders make: building something nobody wants. We're going to avoid that by starting with problems, not solutions. Claude is an incredible brainstorming partner because it can rapidly explore angles you'd never think of — but <em>you</em> have to bring the domain knowledge about what problems are real.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 1: Problem Mining</h4><p>Start by listing problems you personally experience. Not startup ideas — problems. Things that annoy you, waste your time, or cost you money. Use Claude to expand your thinking:</p><pre><code>I'm looking for a SaaS product to build. Help me brainstorm by interviewing me. Ask me questions one at a time about:\n1. My job and daily frustrations\n2. Tools I use that I hate\n3. Tasks I do repeatedly that feel dumb\n4. Things I've cobbled together with spreadsheets or scripts\n5. Problems I've seen other people complain about online\n\nAfter each answer, suggest 2-3 potential product ideas based on what I said. Keep going until we have 10 ideas.</code></pre><p>Let Claude interview you. Be honest and specific. The best SaaS ideas come from problems you've personally experienced.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 2: Validate the Top 3</h4><p>Pick your 3 most promising ideas. For each one, ask Claude to run a quick validation:</p><pre><code>Help me validate this SaaS idea:\n\nIdea: [your idea]\nTarget user: [who has this problem]\nExisting solutions: [what they use today]\n\nAnalyze:\n1. Market size — How many people have this problem?\n2. Willingness to pay — Are people already paying for solutions?\n3. Competition — Who are the top 3 competitors? What do they charge?\n4. Defensibility — What would stop a competitor from copying this?\n5. Build complexity — How hard is an MVP? (1-10)\n6. Time to value — How fast can a user get value after signing up?\n\nBe brutally honest. Tell me why this might fail.</code></pre><p>The goal isn't to find a perfect idea — it's to find one that's <strong>small enough to build in 20 hours</strong>, <strong>solves a real problem</strong>, and <strong>has people willing to pay</strong>.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 3: Scope the MVP</h4><p>Take your winning idea and ruthlessly scope it down to an MVP (Minimum Viable Product). An MVP is the smallest thing you can build that delivers value to one user.</p><pre><code>Help me scope the MVP for [your idea].\n\nRules:\n- Must be buildable in ~15 hours of coding\n- Maximum 3 core features\n- No features that are \"nice to have\" — only features users NEED\n- Must have a clear \"aha moment\" in the first 60 seconds\n\nFor each feature, estimate:\n- Build time (hours)\n- Complexity (low/medium/high)\n- Is it truly necessary for the MVP or can it wait?\n\nAlso define: What does the user do in their first 60 seconds? What's the \"aha moment\" where they think \"I need this\"?</code></pre>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 4: Write the One-Pager</h4><p>Document your validated idea in a single page. This becomes your north star for everything you build:</p><ul><li><strong>Product name</strong> (pick something, you can change it later)</li><li><strong>One sentence:</strong> [Product] helps [who] [do what] by [how]</li><li><strong>Target user:</strong> Who is this for, specifically?</li><li><strong>Core problem:</strong> What pain does it solve?</li><li><strong>MVP features:</strong> The 3 features you'll build</li><li><strong>Pricing:</strong> What will you charge? (Use competitor research)</li><li><strong>Success metric:</strong> How will you know the MVP works?</li></ul><p>Save this document. Every decision you make from here should trace back to it. If a feature doesn't serve the core problem, it doesn't make the MVP.</p>"
+              }
+            ]
+          },
+          "xp_reward": 100,
+          "estimated_minutes": 60
+        },
+        {
+          "step_number": 2,
+          "title": "Think Like an Architect",
+          "description": "Learn advanced prompting techniques for designing complex systems.",
+          "step_type": "learn",
+          "course_slug": "advanced-prompting",
+          "lesson_slug": "chain-of-thought",
+          "xp_reward": 25,
+          "estimated_minutes": 20
+        },
+        {
+          "step_number": 3,
+          "title": "Design Your Architecture",
+          "description": "Use Claude to design the tech stack, database schema, and API routes for your SaaS.",
+          "step_type": "build",
+          "instructions": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>Architecture Before Code</h3><p>The most expensive bugs are architecture bugs — they require rewriting entire systems. Spend 90 minutes designing before you write a single line of code. This step uses Claude as a systems architect to help you make decisions you won't regret.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 1: Choose Your Stack</h4><p>For a solo founder building fast, this stack is battle-tested:</p><ul><li><strong>Frontend + Backend:</strong> Next.js (App Router) — handles both UI and API routes</li><li><strong>Database + Auth:</strong> Supabase — Postgres database, built-in auth, instant APIs</li><li><strong>Payments:</strong> Stripe — the standard for SaaS billing</li><li><strong>AI:</strong> Claude API via Anthropic SDK</li><li><strong>Hosting:</strong> Vercel — deploys from GitHub, scales automatically</li><li><strong>Styling:</strong> Tailwind CSS — fast, consistent, no bikeshedding</li></ul><p>You can choose a different stack if you have strong preferences, but don't spend more than 10 minutes deciding. The best stack is the one you ship with.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 2: Design the Database Schema</h4><p>Your database schema is the backbone of your application. Ask Claude to design it:</p><pre><code>Design a Supabase (Postgres) database schema for my SaaS:\n\nProduct: [your one-sentence description]\nMVP features: [your 3 features]\nUser model: [what data do you store per user]\n\nRequirements:\n- RLS (Row Level Security) policies on every table\n- Timestamps (created_at, updated_at) on every table\n- Foreign keys with proper cascading\n- Indexes on columns that will be queried frequently\n- A subscriptions table that tracks Stripe subscription status\n\nOutput as SQL migration that I can run in Supabase.\nExplain each table and why it exists.</code></pre><p>Review the schema carefully. Ask Claude \"What queries will be slow with this schema?\" and \"What's missing if I want to add [feature] later?\" Better to catch design issues now than after you have data.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 3: Map the API Routes</h4><p>List every API endpoint your MVP needs:</p><pre><code>Based on my database schema and MVP features, map out all the API routes I need:\n\nFor each route:\n- Method (GET/POST/PUT/DELETE)\n- Path (/api/...)\n- What it does (one sentence)\n- Who can access it (public, authenticated, admin)\n- Request body / query params\n- Response shape\n\nAlso flag any routes that need rate limiting (anything AI-powered or expensive).</code></pre><p>This route map becomes your implementation checklist. You'll build each endpoint one at a time.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 4: Sketch the UI Flow</h4><p>You don't need Figma. Describe the user flow in words and let Claude help you plan the pages:</p><pre><code>Map the user journey for my SaaS:\n\n1. Landing page → What do they see? What's the CTA?\n2. Sign up → Email/password or OAuth?\n3. Onboarding → What info do you need? How many steps?\n4. Dashboard → What's the first thing they see?\n5. Core feature → How do they use the main feature?\n6. Settings → What can they configure?\n7. Billing → Where do they manage their subscription?\n\nFor each page, list the components needed and the API routes it calls.</code></pre><p>Save this architecture document alongside your one-pager. You now have a complete blueprint.</p>"
+              }
+            ]
+          },
+          "xp_reward": 120,
+          "estimated_minutes": 90
+        },
+        {
+          "step_number": 4,
+          "title": "Build the Backend",
+          "description": "Scaffold your Next.js + Supabase project and build the core data model.",
+          "step_type": "build",
+          "instructions": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>Foundation First</h3><p>Time to write code. We'll use Claude Code for everything — it can scaffold projects, write API routes, run migrations, and fix bugs. The key is to build in the right order: database first, then API, then UI.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 1: Scaffold the Project</h4><p>Open your terminal and use Claude Code to set up the project:</p><pre><code>Create a new Next.js project for my SaaS called [name]:\n- Next.js with App Router and TypeScript\n- Tailwind CSS for styling\n- Supabase client library (@supabase/supabase-js)\n- Anthropic SDK (@anthropic-ai/sdk)\n- Environment variables template (.env.local.example) with:\n  - NEXT_PUBLIC_SUPABASE_URL\n  - NEXT_PUBLIC_SUPABASE_ANON_KEY\n  - SUPABASE_SERVICE_ROLE_KEY\n  - ANTHROPIC_API_KEY\n  - STRIPE_SECRET_KEY\n  - STRIPE_WEBHOOK_SECRET\n\nSet up the Supabase client utility (src/lib/supabase.ts) with both browser and server clients.</code></pre><p>Verify the project runs: <code>npm run dev</code>. You should see the Next.js default page at localhost:3000.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 2: Run the Database Migration</h4><p>Take the SQL migration Claude designed in the architecture step and run it in Supabase:</p><ol><li>Go to your Supabase dashboard > SQL Editor</li><li>Paste the migration SQL</li><li>Run it</li><li>Check the Table Editor to verify all tables were created</li><li>Verify RLS policies are active on every table</li></ol><p>Alternatively, use the Supabase CLI:</p><pre><code>supabase db push</code></pre><p>After the migration, ask Claude Code to generate TypeScript types from your schema: <code>supabase gen types typescript --local > src/types/database.ts</code>. This gives you full type safety when querying the database.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 3: Build the API Routes</h4><p>Work through your route map from the architecture step. Build them one at a time, starting with the simplest:</p><pre><code>Build the API route for [your first endpoint]:\n\nRoute: [method] /api/[path]\nPurpose: [what it does]\nAuth: [who can access]\nRequest: [body/params]\nResponse: [shape]\n\nUse the Supabase server client for database queries.\nAdd input validation.\nReturn proper HTTP status codes.\nHandle errors without leaking internal details.</code></pre><p>After each route, test it with curl or a tool like Bruno/Postman. Don't move to the next route until the current one works perfectly.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 4: Verify with Real Data</h4><p>Insert some test data into your Supabase tables manually, then verify your API routes return the correct data. Check:</p><ul><li>Do RLS policies work? (An unauthenticated request should fail)</li><li>Do queries return the right shape?</li><li>Are timestamps being set correctly?</li><li>Do foreign key constraints prevent bad data?</li></ul><p>Your backend is done when every route in your map works and returns correct data. The frontend comes next.</p>"
+              }
+            ]
+          },
+          "xp_reward": 200,
+          "estimated_minutes": 120
+        },
+        {
+          "step_number": 5,
+          "title": "Build the Frontend",
+          "description": "Build the UI with Claude Code. Component architecture through building.",
+          "step_type": "build",
+          "instructions": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>Making It Real</h3><p>Your API works. Now users need a way to interact with it. We'll build the frontend page by page, following the user journey you designed in the architecture step. Claude Code is phenomenal at generating React components — your job is to describe what you want and iterate on the result.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 1: Build the Layout</h4><p>Start with the shell — the parts that appear on every page:</p><pre><code>Build the app layout for my SaaS:\n- A sidebar navigation (collapsible on mobile) with links to: Dashboard, [Feature 1], [Feature 2], Settings\n- A top bar with the product name/logo and a user avatar dropdown (sign out, settings)\n- A main content area that takes the remaining space\n- Use Tailwind CSS. Dark background sidebar, light main area.\n- Make it responsive — sidebar becomes a hamburger menu on mobile.\n\nCreate this as a layout.tsx in the app/(dashboard) route group.</code></pre><p>Getting the layout right first means every page you build afterward slots into a consistent frame. Test on mobile and desktop before moving on.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 2: Build the Dashboard</h4><p>The dashboard is what users see after logging in. It should answer: \"What's happening?\" and \"What should I do next?\"</p><pre><code>Build the dashboard page for my SaaS:\n- Show 3-4 metric cards at the top (e.g., total [items], this week's [activity], [usage metric])\n- A recent activity feed or table showing the last 10 [items/actions]\n- A prominent CTA button for the main feature\n- Empty state: if the user has no data yet, show a friendly onboarding message with a \"Get Started\" button\n\nFetch data from the API routes we built. Use loading states (skeleton loaders, not spinners).</code></pre>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 3: Build the Core Feature Page</h4><p>This is the page where users get value — the reason they signed up. Describe it to Claude Code in detail:</p><pre><code>Build the main feature page for my SaaS:\n\n[Describe exactly what the user does on this page]\n[Describe the inputs — forms, file uploads, text areas]\n[Describe the output — what appears after they submit]\n[Describe the flow — step by step]\n\nRequirements:\n- Optimistic UI updates (show results immediately, sync in background)\n- Loading states for any async operations\n- Error handling with user-friendly messages\n- Form validation before submission</code></pre><p>This page will take the most iteration. Build it, use it yourself, and keep refining with Claude Code until it feels smooth.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 4: Polish and Connect</h4><p>Walk through the entire user journey from sign-up to using the core feature. Note every friction point:</p><ul><li>Is the navigation intuitive? Can you find everything in 2 clicks?</li><li>Are loading states visible? Users should never stare at a blank screen.</li><li>Do error messages tell the user what to do, not just what went wrong?</li><li>Does it look professional? Consistent spacing, typography, colors?</li></ul><p>Fix the top 5 issues with Claude Code. Don't aim for pixel-perfect — aim for \"I wouldn't be embarrassed to show this to someone.\"</p>"
+              }
+            ]
+          },
+          "xp_reward": 200,
+          "estimated_minutes": 120
+        },
+        {
+          "step_number": 6,
+          "title": "Production Patterns",
+          "description": "Learn the patterns that separate hobby projects from real products.",
+          "step_type": "learn",
+          "course_slug": "production-patterns",
+          "lesson_slug": "error-handling",
+          "xp_reward": 25,
+          "estimated_minutes": 20
+        },
+        {
+          "step_number": 7,
+          "title": "Add Auth & Payments",
+          "description": "Supabase Auth + Stripe. The two things every SaaS needs.",
+          "step_type": "build",
+          "instructions": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>The Two Pillars of SaaS</h3><p>A SaaS product without authentication isn't a product — it's a demo. A SaaS without payments isn't a business — it's a hobby. This step adds both. We'll use Supabase Auth (easy, built-in) and Stripe (the industry standard for payments).</p>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 1: Set Up Supabase Auth</h4><p>Supabase Auth is already integrated with your database — enabling it takes minutes:</p><pre><code>Set up authentication for my SaaS using Supabase Auth:\n\n1. Create a sign-up page (/auth/signup) with email + password\n2. Create a sign-in page (/auth/signin) with email + password\n3. Add Google OAuth as an alternative sign-in method\n4. Create auth middleware that protects all /dashboard routes\n5. Add a profiles table that gets auto-populated on signup (use a Supabase trigger)\n6. Update the layout to show the user's name/avatar from the profile\n\nUse @supabase/ssr for server-side auth in Next.js App Router.\nRedirect unauthenticated users to /auth/signin.</code></pre><p>Test the full flow: sign up, verify email, sign in, access dashboard, sign out. Then test the protection: try accessing /dashboard while signed out — you should be redirected.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 2: Set Up Stripe</h4><p>Create a Stripe account at <a href=\"https://stripe.com\">stripe.com</a> and set up your product:</p><ol><li>In the Stripe dashboard, create a Product with a monthly price (e.g., $19/month)</li><li>Copy the price ID (starts with <code>price_</code>)</li><li>Add your Stripe keys to <code>.env.local</code></li></ol><p>Then ask Claude Code to build the integration:</p><pre><code>Set up Stripe subscription billing:\n\n1. Create a checkout API route (/api/checkout) that:\n   - Creates a Stripe Checkout Session for the monthly plan\n   - Includes the user's Supabase ID as metadata\n   - Redirects to /dashboard on success, /pricing on cancel\n\n2. Create a webhook handler (/api/webhooks/stripe) that:\n   - Verifies the Stripe signature\n   - Handles: checkout.session.completed, customer.subscription.updated, customer.subscription.deleted\n   - Updates the subscriptions table in Supabase\n\n3. Create a billing page (/dashboard/settings/billing) that shows:\n   - Current plan status\n   - Next billing date\n   - A \"Manage Subscription\" button (Stripe Customer Portal)\n\nStripe price ID: [your price ID]</code></pre>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 3: Gate Features Behind Subscription</h4><p>Your free tier should let users see the product's value. The paid tier unlocks full access. Add subscription checks:</p><pre><code>Add subscription gating to my app:\n\n- Free users can: [define what's free — e.g., 5 uses per month]\n- Paid users can: [define what's paid — e.g., unlimited uses]\n\nCreate a helper function checkSubscription(userId) that returns the user's plan.\nAdd a paywall component that shows when free users hit their limit.\nThe paywall should show what they're missing and a \"Upgrade\" button that triggers Stripe Checkout.</code></pre>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 4: Test the Full Payment Flow</h4><p>Use Stripe's test mode (it's on by default) to test the entire payment flow:</p><ol><li>Sign up as a new user</li><li>Use the free tier until you hit the limit</li><li>Click \"Upgrade\" — you should see Stripe Checkout</li><li>Use test card <code>4242 4242 4242 4242</code> (any expiry, any CVC)</li><li>After payment, verify: subscription table updated, features unlocked, billing page shows active subscription</li><li>Cancel the subscription in Stripe dashboard — verify the app reflects the cancellation</li></ol><p>If any step fails, fix it before moving on. Payment bugs are the most trust-destroying bugs in a SaaS.</p>"
+              }
+            ]
+          },
+          "xp_reward": 200,
+          "estimated_minutes": 120
+        },
+        {
+          "step_number": 8,
+          "title": "Add AI Features",
+          "description": "Integrate the Claude API into your product and give it AI superpowers.",
+          "step_type": "build",
+          "instructions": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>Your Product's Superpower</h3><p>This is where your SaaS goes from \"another CRUD app\" to something genuinely differentiated. You're going to integrate Claude directly into your product's core experience. The goal: users should feel like the product is <em>intelligent</em> — it understands their needs and does the hard work for them.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 1: Design the AI Feature</h4><p>Look at your core feature and ask: \"Where does the user do the most thinking or manual work?\" That's where AI adds the most value. Common patterns:</p><ul><li><strong>Generation:</strong> User provides a brief, AI generates content/code/analysis</li><li><strong>Analysis:</strong> User provides data, AI extracts insights and summarizes</li><li><strong>Recommendation:</strong> Based on user behavior, AI suggests next actions</li><li><strong>Transformation:</strong> User provides content in one format, AI converts it to another</li></ul><p>Pick the pattern that fits your product. Define: What's the input? What's the output? What makes a good output vs. a bad one?</p>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 2: Build the API Route</h4><p>Create a server-side API route that calls Claude. Never call the Claude API from the browser — your API key would be exposed.</p><pre><code>Build an API route for my AI feature:\n\nRoute: POST /api/ai/[feature-name]\nInput: [what the user provides]\nOutput: [what Claude generates]\n\nRequirements:\n- Use streaming (the Anthropic SDK supports it) so users see results appear in real-time\n- Set a system prompt that constrains Claude to produce exactly the output format I need\n- Include the user's relevant data from Supabase as context\n- Add rate limiting: max [N] requests per user per hour\n- Track token usage per user for cost allocation\n- Never include sensitive data from other users in the context</code></pre>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 3: Build the AI UI</h4><p>The user interface for AI features needs special consideration:</p><pre><code>Build the frontend for my AI feature:\n\n- A form/input area where users provide their [input]\n- A results area that streams Claude's response in real-time (use the Vercel AI SDK useChat or useCompletion hook)\n- A loading indicator that shows while waiting for the first token\n- An \"AI-generated\" badge so users know the output came from AI\n- A \"Regenerate\" button to try again with the same input\n- A \"Copy\" or \"Save\" button for the output\n- Error state: if the AI fails, show a helpful message and a retry option</code></pre><p>Streaming makes AI features feel dramatically faster. Instead of waiting 10 seconds for a complete response, users see text appearing immediately.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 4: Optimize Prompt Quality</h4><p>The AI feature is only as good as the prompt. Test it with 10 different realistic inputs and grade each output:</p><ul><li><strong>A (perfect):</strong> User could use the output as-is</li><li><strong>B (good):</strong> Needs minor edits</li><li><strong>C (usable):</strong> Needs significant editing but the structure is right</li><li><strong>D (bad):</strong> User would rather start from scratch</li></ul><p>If you're getting mostly Cs and Ds, your system prompt needs work. Common fixes: add output format examples, add constraints (\"never include...\", \"always start with...\"), add the user's context data, reduce the scope of what you're asking Claude to do.</p><p>Target: 80%+ of outputs should be A or B before you ship.</p>"
+              }
+            ]
+          },
+          "xp_reward": 200,
+          "estimated_minutes": 90
+        },
+        {
+          "step_number": 9,
+          "title": "Deploy to Vercel",
+          "description": "Production deployment. Custom domain. Environment variables. The real deal.",
+          "step_type": "deploy",
+          "instructions": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>Going to Production</h3><p>Development is done. Time to deploy your SaaS to production where real users can access it. Vercel makes this straightforward, but there are important steps between \"works on localhost\" and \"ready for users.\"</p>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 1: Production Environment Variables</h4><p>Your <code>.env.local</code> has development keys. Production needs its own set:</p><ul><li><strong>Supabase:</strong> Same project, same keys (unless you have a staging project)</li><li><strong>Stripe:</strong> Switch to live mode keys (not test mode). Create your real product and price.</li><li><strong>Anthropic:</strong> Same API key, but set usage limits in the Anthropic console</li><li><strong>Add a new variable:</strong> <code>NEXT_PUBLIC_APP_URL</code> set to your production URL</li></ul><p>Add all production environment variables in Vercel dashboard > Settings > Environment Variables. Double-check that none are missing — a missing env var will crash your app silently.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 2: Deploy</h4><p>Push your code to GitHub and connect it to Vercel:</p><pre><code>git add .\ngit commit -m \"Production ready\"\ngit push origin main</code></pre><p>In Vercel: Import repository > Select your repo > Vercel will auto-detect Next.js > Deploy.</p><p>Or via CLI: <code>vercel --prod</code></p><p>Wait for the build to complete. Click the deployment URL. Test the critical path: sign up, use the product, upgrade to paid, verify the AI feature works.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 3: Custom Domain</h4><p>A <code>.vercel.app</code> URL doesn't inspire confidence. Get a custom domain:</p><ol><li>Buy a domain from Namecheap, Cloudflare, or your preferred registrar</li><li>In Vercel dashboard > Settings > Domains > Add your domain</li><li>Update your DNS records as Vercel instructs (usually a CNAME or A record)</li><li>Vercel automatically provisions an SSL certificate</li><li>Update <code>NEXT_PUBLIC_APP_URL</code> to your custom domain</li><li>Update Stripe webhook endpoints to use the new domain</li><li>Update Supabase redirect URLs to use the new domain</li></ol>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 4: Production Checklist</h4><p>Before you tell anyone about your product, verify:</p><ul><li>[ ] All pages load without errors (check browser console)</li><li>[ ] Auth flow works: signup, signin, signout, password reset</li><li>[ ] Payment flow works with a real card (use a real $1 test charge, then refund)</li><li>[ ] AI feature produces good output</li><li>[ ] Rate limiting is active on AI and auth endpoints</li><li>[ ] Error pages (404, 500) show a branded page, not a stack trace</li><li>[ ] Stripe webhooks are receiving events (check Stripe dashboard > Webhooks)</li><li>[ ] Mobile layout works (test on a real phone)</li><li>[ ] Page load speed is under 3 seconds (run a Lighthouse audit)</li></ul>"
+              }
+            ]
+          },
+          "xp_reward": 150,
+          "estimated_minutes": 60
+        },
+        {
+          "step_number": 10,
+          "title": "Build Your Landing Page",
+          "description": "Build a marketing site that sells your product. Copy, design, and conversion.",
+          "step_type": "build",
+          "instructions": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>Sell the Outcome, Not the Features</h3><p>Your product works. Now you need to convince people to try it. The landing page is your sales pitch — it needs to communicate the value of your product in under 10 seconds. Most visitors will leave if they don't immediately understand what you're offering and why they should care.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 1: Write the Copy First</h4><p>Before any design, nail the words. Use Claude to help:</p><pre><code>Write landing page copy for my SaaS:\n\nProduct: [one sentence]\nTarget user: [who]\nMain benefit: [what they get]\nPrice: [amount/month]\n\nSections needed:\n1. Hero: Headline (under 10 words), subheadline (under 25 words), CTA button text\n2. Problem: Describe the pain point in the user's words (not marketing speak)\n3. Solution: How our product fixes it (3 bullet points, benefit-first)\n4. Social proof: Placeholder for testimonials (write 2 realistic-sounding ones)\n5. Pricing: Simple, one plan, with a feature list\n6. FAQ: 5 questions a skeptical visitor would ask\n7. Final CTA: One more push to sign up\n\nTone: confident, clear, no jargon. Write like you're explaining it to a friend.</code></pre>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 2: Build the Page</h4><p>Use Claude Code to build the landing page as the root route of your app:</p><pre><code>Build a landing page at / (the root route) for my SaaS. Here's the copy:\n[paste the copy from Step 1]\n\nDesign requirements:\n- Hero section with a gradient or bold background, large headline, CTA button\n- Problem section with icons or illustrations\n- Solution section with a product screenshot or mockup area\n- Pricing card, centered, with feature checkmarks\n- FAQ as an accordion\n- Sticky header with product name and \"Sign Up\" button\n- Footer with links\n- Use Tailwind CSS, make it beautiful and modern\n- Fully responsive\n- Fast: no heavy images or animations that hurt page load</code></pre>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 3: Add a Product Demo</h4><p>The most effective landing pages show the product in action. Options (pick one):</p><ul><li><strong>Screenshot:</strong> Take a screenshot of your dashboard, embed it in the hero section</li><li><strong>GIF/Video:</strong> Record a 30-second screen recording of the core feature</li><li><strong>Interactive demo:</strong> Let visitors try the AI feature without signing up (limited to 1 use)</li></ul><p>The interactive demo converts best but takes more work. At minimum, include a screenshot. People need to see what they're signing up for.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 4: Optimize for Conversion</h4><p>Review your landing page with fresh eyes. Better yet, show it to 3 people who fit your target audience and watch them read it. Check:</p><ul><li>Can they explain what the product does after 5 seconds? (If not, rewrite the headline)</li><li>Do they understand the price? (If not, simplify the pricing section)</li><li>Do they trust it? (Add logos, testimonials, a money-back guarantee)</li><li>Is the CTA obvious? (One primary CTA per section, high-contrast button)</li></ul>"
+              }
+            ]
+          },
+          "xp_reward": 150,
+          "estimated_minutes": 90
+        },
+        {
+          "step_number": 11,
+          "title": "Launch Day",
+          "description": "Go live. Share with the world. Get your first users.",
+          "step_type": "deploy",
+          "instructions": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>Ship It</h3><p>This is the moment. Your product is built, deployed, and has a landing page. Now you need humans to use it. Launch day isn't about perfection — it's about getting your product in front of real people who can tell you if it's useful.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 1: Pre-Launch Checklist</h4><p>Final checks before you share the URL with anyone:</p><ul><li>[ ] Sign up with a fresh email and go through the entire flow</li><li>[ ] Make a real payment (even $1) to verify Stripe is working in live mode</li><li>[ ] Test the AI feature with a realistic input</li><li>[ ] Check the landing page on mobile</li><li>[ ] Verify error pages work (visit a non-existent URL)</li><li>[ ] Set up Google Analytics or Vercel Analytics for tracking</li><li>[ ] Verify your custom domain has SSL (https works)</li></ul>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 2: Write Your Launch Posts</h4><p>Use Claude to draft launch announcements for different platforms:</p><pre><code>Write 3 launch announcements for my SaaS:\n\n1. LinkedIn post (professional, focus on the problem solved)\n2. X/Twitter post (concise, with a hook)\n3. Reddit post for r/[relevant subreddit] (authentic, not salesy, ask for feedback)\n\nProduct: [your one-sentence description]\nURL: [your URL]\nKey feature: [the thing that makes it special]\n\nTone: excited but not hype-y. Frame it as \"I built this thing and I'd love feedback\" not \"BUY MY PRODUCT.\"</code></pre>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 3: Launch</h4><p>Post your announcements. Send a personal message to 10 people who fit your target audience and ask them to try it. Not a mass email — individual, personal messages:</p><p>\"Hey [name], I just built [product] that helps with [problem you know they have]. Would you mind trying it for 5 minutes and telling me what you think? Here's the link: [URL]. Brutally honest feedback is exactly what I need.\"</p><p>These first 10 users are gold. Their feedback will shape every decision you make next.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<h4>Step 4: Monitor Launch Day</h4><p>On launch day, watch your metrics closely:</p><ul><li><strong>Vercel Analytics:</strong> How many visitors? What pages do they visit?</li><li><strong>Supabase:</strong> How many sign-ups? Are they completing onboarding?</li><li><strong>Stripe:</strong> Any payments? Any failed payments?</li><li><strong>Error logs:</strong> Are users hitting bugs?</li></ul><p>Be online and responsive. If someone hits a bug, fix it within the hour. First impressions matter enormously for a new product. Your speed of response signals how much you care.</p>"
+              }
+            ]
+          },
+          "xp_reward": 150,
+          "estimated_minutes": 60
+        },
+        {
+          "step_number": 12,
+          "title": "You Launched a Product",
+          "description": "Review your SaaS, share the URL, and plan what comes next.",
+          "step_type": "checkpoint",
+          "instructions": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<h3>Mission Complete</h3><p>You built and launched a SaaS product. Not a tutorial project. Not a demo. A real product with real users, real payments, and real AI features. Here's what you have:</p><ul><li>A complete Next.js application with App Router</li><li>Supabase database with RLS, auth, and typed queries</li><li>Stripe subscription billing with webhook integration</li><li>AI features powered by the Claude API with streaming</li><li>A marketing landing page with conversion-optimized copy</li><li>Production deployment on Vercel with a custom domain</li><li>Your first users and their feedback</li></ul>"
+              },
+              {
+                "type": "text",
+                "content": "<h3>Skills Unlocked</h3><ul><li><strong>Product thinking:</strong> Problem identification, validation, MVP scoping</li><li><strong>Full-stack development:</strong> Next.js, Supabase, API routes, React components</li><li><strong>AI integration:</strong> Claude API, streaming, prompt optimization, rate limiting</li><li><strong>Payments:</strong> Stripe Checkout, webhooks, subscription management</li><li><strong>Deployment:</strong> Vercel, custom domains, environment management</li><li><strong>Marketing:</strong> Landing page copy, conversion optimization, launch strategy</li></ul>"
+              },
+              {
+                "type": "text",
+                "content": "<h3>What Comes Next</h3><p>Launching is the beginning, not the end. Your next moves:</p><ul><li><strong>Week 1:</strong> Talk to every user. Ask what they love, what's broken, what's missing.</li><li><strong>Week 2:</strong> Fix the top 3 issues. Ship an update. Tell your users.</li><li><strong>Week 3:</strong> Start content marketing. Write about the problem your product solves.</li><li><strong>Month 2:</strong> Add the features users asked for most. Raise the price if people are getting value.</li><li><strong>Month 3:</strong> Evaluate. Is this growing? Do users retain? If yes, double down. If no, pivot or kill it.</li></ul><p>The hardest part isn't building — it's what comes after. But you have something most people don't: a live product, real users, and the skills to iterate fast with Claude as your co-pilot. Go build.</p>"
+              }
+            ]
+          },
+          "xp_reward": 180,
+          "estimated_minutes": 15
+        }
+      ]
+    }
+  ]
+}

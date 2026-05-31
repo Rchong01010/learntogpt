@@ -1,0 +1,535 @@
+{
+  "track": "build_something",
+  "courses": [
+    {
+      "title": "Build Something Real",
+      "slug": "build-something",
+      "description": "Hands-on ChatGPT tutorial: build real tools, automate workflows, and create your first AI-powered system step by step.",
+      "difficulty": "intermediate",
+      "order_index": 1,
+      "is_free": false,
+      "icon": "Hammer",
+      "lessons": [
+        {
+          "title": "Pick Your Project",
+          "slug": "pick-your-project",
+          "description": "Choose what you're building: a Custom GPT, a workflow automation, a content system, or a research assistant.",
+          "order_index": 1,
+          "xp_reward": 100,
+          "estimated_minutes": 7,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<p>This track is hands-on from the first lesson. You'll build something real — something that exists after you close ChatGPT, something you can show people or use every week. That's the goal.</p><p>Four project types, each with a different outcome:</p><ul><li><strong>Custom GPT</strong> — a specialized ChatGPT persona with your instructions, uploaded knowledge, and custom capabilities. You build it once in GPT Builder, share the link, and it works for anyone. No code required.</li><li><strong>Workflow Automation</strong> — a master prompt sequence that automates a repetitive task you do every week. Reports, data processing, content repurposing. The same job, running faster.</li><li><strong>Content System</strong> — a Custom GPT or saved prompt template that produces on-brand content consistently. Every time you open it, it knows your voice, your audience, and your format.</li><li><strong>Research Assistant</strong> — a Custom GPT loaded with your domain knowledge, sources, and research methodology. Every query starts with your context already loaded.</li></ul><p>All four use the same underlying workflow: describe the outcome you want, build iteratively, test with real inputs, and deploy. The skills you learn building one transfer directly to the others.</p><p><strong>How the project types differ in practice:</strong> A Custom GPT is primarily a persona — you iterate on the instructions, knowledge, and capabilities. A workflow automation is primarily a sequence — you iterate on the steps and output format. A content system is primarily a voice — you iterate on the instructions that maintain consistency. A research assistant is primarily a knowledge base — you iterate on the files and context you load. The build-and-iterate rhythm is the same across all four. What you're iterating on changes.</p><p><strong>The two questions that determine your project type:</strong> First, does the output need a consistent persona or specialized identity — something people will return to repeatedly for a specific type of work? If yes, build a Custom GPT. Second, is it primarily about automating a sequence of steps you currently do manually, or about producing consistent outputs with your voice and context? If automation, build a workflow. If consistency, build a content system or research assistant.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_bs5_01"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>Write a one-sentence brief before you touch anything else.</strong></p><p>The brief is: what it is, who it's for, and what it does. Two minutes of clarity now saves hours of rework later. This isn't a formality — it's the foundation for everything you build. Every time you get confused about what you want (and you will), the brief is what you return to.</p><p>Good brief structure: <em>\"A [type of project] for [specific audience] that [specific function or value delivered].\"</em></p><p>Examples:</p><ul><li>\"A Custom GPT for my photography clients that answers questions about my services, shows my portfolio highlights, and helps them book a consultation.\"</li><li>\"A workflow automation that takes my raw meeting notes and produces action items, summaries, and follow-up emails in one pass.\"</li><li>\"A content system that produces 3 LinkedIn posts per week in my voice, covering topics from a running list I maintain.\"</li><li>\"A research assistant Custom GPT loaded with my industry's key reports that helps me quickly synthesize findings for client presentations.\"</li></ul><p>Notice what all of these have: a type, an audience, and a function. Notice what none of them have: technical specifications, implementation details, ChatGPT feature choices. Those come from building. Your job is to describe the outcome.</p><p><strong>What happens when you skip the brief:</strong> You start building immediately, make assumptions, and get something that's technically functional but fundamentally wrong for your needs. You then spend two hours iterating on the wrong foundation. A one-sentence brief at the start prevents this entirely. The brief is not a constraint — it's a steering wheel.</p><p><strong>The brief refinement process:</strong> Write your first brief, then read it aloud. Does it sound like something specific enough to build? If a stranger read it, would they know what you're trying to create? If you opened GPT Builder and read it, would you know where to start? If any of these questions produce doubt, refine the brief. Common refinements: add the audience (\"for busy professionals\" instead of \"for people\"), add the core function (\"that helps clients book consultations\" instead of \"that shows my work\"), add the tone if relevant (\"friendly and professional\" instead of leaving it open).</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_bs5_02"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>The best first project is one you actually need.</strong></p><p>This sounds obvious, but most people's first instinct is to build something impressive or interesting rather than something useful. The problem with impressive-first: you don't have enough skin in the game to push through the inevitable friction. When iteration 7 of your Custom GPT still doesn't feel right, you'll push through it if it's actually something you'll use daily — and give up if it's just a demo.</p><p>Real stakes produce real learning. The rough edges you encounter on a project you care about are the exact situations that teach you how to use ChatGPT effectively. Every time you hit an unexpected result and have to figure out how to describe what you actually wanted, you're building the skill that transfers to every future project.</p><p><strong>Choosing between project types when you're unsure:</strong></p><p>If you want to create something other people can use consistently → Custom GPT.<br>If you have a repeated manual task that follows consistent rules → Workflow Automation.<br>If you produce content regularly and want it to sound more consistent → Content System.<br>If you do research and want your domain knowledge always available → Research Assistant.</p><p>When in doubt, pick the one that solves your most frequent pain point. Frequency of use is the best predictor of whether you'll maintain and improve the project after you build it.</p><p><strong>The scope trap:</strong> First projects almost always start too big. You want to build a complete business assistant when you should build a single-purpose meeting notes processor. Scope down aggressively on your first project. The goal is to complete a full cycle — brief, build, test, deploy — not to build something comprehensive. You can add capabilities after you've shipped something real. You can't ship something you never finish.</p><p><strong>The definition of done:</strong> Before you start building, define what done looks like. For a Custom GPT: it correctly handles 5 real queries you'd actually send, with responses you'd be comfortable sharing. For a workflow automation: it processes a real input and produces a real output you'd actually use. For a content system: it produces three pieces of content in your voice that you'd be comfortable publishing. Ambiguous done is the enemy of shipping.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_bs5_03"
+              },
+              {
+                "type": "summary",
+                "content": "<p>Four project types: Custom GPT, workflow automation, content system, research assistant. Write your one-sentence brief first — it's the foundation everything else builds on. Use the structure: a [type] for [audience] that [function]. When you skip the brief, you make assumptions that require hours of rework. Choose a project you actually need — real stakes produce real learning. Scope down aggressively for your first project; define done before you start building. Frequency of use predicts whether you'll maintain and improve the project after shipping.</p>"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_bs5_01",
+              "order_index": 1,
+              "type": "multiple_choice",
+              "prompt": "Which project brief gives ChatGPT the best starting point in GPT Builder?",
+              "options": [
+                "Make me something useful.",
+                "A Custom GPT for my freelance photography clients that shows my portfolio highlights, answers pricing questions, and helps them book a consultation — friendly and professional tone.",
+                "Build me a GPT with all the advanced features, integrations, and best-in-class UX.",
+                "I want the best GPT ever. Make it go viral."
+              ],
+              "correct_answer": "1",
+              "explanation": "Option B gives GPT Builder what it needs: what the project is (Custom GPT), who it's for (photography clients), what it does (shows portfolio, answers pricing, books consultations), and the tone (friendly and professional). Option A is too vague. C over-specifies features without describing purpose. D gives no actionable direction.",
+              "hints": [
+                "The best brief describes what, who, what it does, and the feeling -- not the technical features."
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_bs5_02",
+              "order_index": 2,
+              "type": "prompt_lab",
+              "prompt": "You gave ChatGPT a vague brief ('I want a GPT for my business') and got generic questions back. Write a specific brief that gives ChatGPT everything it needs to start building.",
+              "options": null,
+              "correct_answer": "{\"scenario\":\"You told ChatGPT 'I want a GPT for my business' and ChatGPT asked for more detail. Write the follow-up that gives ChatGPT everything: what you do, who your audience is, what the GPT needs to handle, the tone, and the core function.\",\"scoring_criteria\":[{\"keyword_group\":[\"service\",\"business\",\"do\",\"offer\",\"sell\",\"provide\"],\"label\":\"Described the business\",\"points\":1},{\"keyword_group\":[\"client\",\"customer\",\"audience\",\"visitor\",\"user\",\"for\"],\"label\":\"Defined the audience\",\"points\":1},{\"keyword_group\":[\"question\",\"handle\",\"answer\",\"help\",\"task\",\"topic\"],\"label\":\"Listed what GPT should handle\",\"points\":2},{\"keyword_group\":[\"tone\",\"feel\",\"style\",\"friendly\",\"professional\",\"warm\"],\"label\":\"Described the tone\",\"points\":1},{\"keyword_group\":[\"book\",\"schedule\",\"buy\",\"sign up\",\"contact\",\"action\",\"goal\"],\"label\":\"Specified the core goal\",\"points\":2}],\"max_points\":7,\"pass_threshold\":4,\"ideal_prompt\":\"I run a dog walking service in Austin. My clients are busy professionals. The GPT should answer questions about my services, pricing, and availability, and help clients book their first walk. Tone: friendly, trustworthy, professional. Its main goal is getting people to book. Upload: my service menu and FAQ.\",\"tips\":[\"What you do + who it's for + what it handles + the tone + the goal = a buildable brief.\",\"Mentioning what to upload gives the GPT actual knowledge to work from.\",\"Specifying the primary goal (book a walk) gives the GPT a clear success metric.\"]}",
+              "explanation": "A specific brief answers: what is it, who is it for, what does it handle, how should it feel, and what's the goal. Specificity turns generic output into something tailored to your actual business.",
+              "hints": [
+                "Give ChatGPT the business context and purpose, not just tone preferences."
+              ],
+              "xp_reward": 10
+            },
+            {
+              "id": "ex_bs5_03",
+              "order_index": 3,
+              "type": "scenario_walkthrough",
+              "prompt": "Walk through refining a vague project idea into something you can actually build.",
+              "options": null,
+              "correct_answer": "{\"title\": \"From Vague to Buildable\", \"steps\": [{\"type\": \"context\", \"text\": \"You want to build something but your initial idea is vague: 'I want a GPT for my freelance work.' Let's refine it step by step.\"}, {\"type\": \"choice\", \"claude_response\": \"Starting point: 'I want a GPT for my freelance work.' This could mean anything. What's the first thing to clarify?\", \"question\": \"What's the most important detail to add first?\", \"options\": [\"The color scheme of the interface\", \"What kind of freelance work and who hires you\", \"Which ChatGPT plan to use\", \"How many capabilities to include\"], \"correct\": 1, \"feedback\": \"What you do and who your audience is drives every other decision. A freelance photographer for wedding couples needs a completely different GPT than a freelance developer for startups.\"}, {\"type\": \"choice\", \"claude_response\": \"Updated brief: 'I'm a freelance UX designer. My clients are startup founders looking for product design help.' Better. What's next?\", \"question\": \"The brief has what and who. What's missing?\", \"options\": [\"Nothing -- this is enough to start building\", \"What the GPT should do and what knowledge it needs to do it well\", \"A list of competitor GPTs to copy\"], \"correct\": 1, \"feedback\": \"Startup founders evaluating a UX designer want to understand your process, see case studies, and figure out how to work with you. Defining what the GPT handles (and what files to upload) tells you exactly what to build.\"}, {\"type\": \"prompt\", \"context\": \"Now write the complete brief. You're a freelance UX designer targeting startup founders. Include what, who, what the GPT handles, tone, and the primary goal.\", \"placeholder\": \"Write your complete brief...\", \"scoring_criteria\": [{\"keyword_group\": [\"UX\", \"design\", \"freelance\", \"product\"], \"label\": \"Stated the business\", \"points\": 1}, {\"keyword_group\": [\"startup\", \"founder\", \"client\", \"hire\"], \"label\": \"Named the audience\", \"points\": 1}, {\"keyword_group\": [\"portfolio\", \"case study\", \"work\", \"process\"], \"label\": \"Included portfolio/process topics\", \"points\": 2}, {\"keyword_group\": [\"contact\", \"hire\", \"book\", \"call\", \"reach out\"], \"label\": \"Defined a goal action\", \"points\": 1}, {\"keyword_group\": [\"tone\", \"professional\", \"approachable\", \"style\", \"voice\"], \"label\": \"Described the tone\", \"points\": 1}], \"ideal\": \"I'm a freelance UX designer targeting startup founders who need product design help. The GPT should explain my design process, share case study highlights, answer questions about working with me, and guide founders toward booking a discovery call. Tone: professional and approachable. Upload: portfolio PDF and process doc.\", \"max_points\": 6, \"pass_threshold\": 3}]}",
+              "explanation": "A buildable brief refines through layers: what you do, who it's for, what it handles, tone, goal, and knowledge to upload.",
+              "hints": [
+                "Build the brief in layers: business, audience, what it handles, tone, goal, files to upload."
+              ],
+              "xp_reward": 15
+            }
+          ]
+        },
+        {
+          "title": "Build a Custom GPT",
+          "slug": "set-up-claude-code",
+          "description": "Open GPT Builder, configure instructions and knowledge, test with real prompts, and publish.",
+          "order_index": 2,
+          "xp_reward": 100,
+          "estimated_minutes": 8,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<p>GPT Builder is ChatGPT's built-in tool for creating Custom GPTs. You reach it by clicking 'Explore GPTs' → 'Create' in ChatGPT. No code required — you describe what you want and configure it through a guided interface.</p><p><strong>The five things you configure in GPT Builder:</strong></p><ol><li><strong>Name and description</strong> — what it's called and a one-sentence description that appears in the GPT Store and conversation starters</li><li><strong>Instructions</strong> — the system prompt that defines the GPT's behavior, tone, knowledge, and constraints</li><li><strong>Knowledge</strong> — files you upload that the GPT can reference (PDFs, Word docs, spreadsheets)</li><li><strong>Capabilities</strong> — toggle on/off: web search, DALL-E image generation, Code Interpreter</li><li><strong>Actions</strong> — optional API connections for live data (advanced)</li></ol><p>Your first session will cover the first four. Actions are for after you've shipped a working version.</p><p><strong>The instructions are the most important thing you write.</strong> Think of them as a detailed briefing for an employee who knows nothing about your context but is highly capable. Bad instructions: \"Help my clients.\" Good instructions: \"You are a friendly assistant for [Business Name], a dog walking service in Austin. When users ask about services, reference the uploaded service menu. When users ask about booking, guide them to schedule through [URL]. Always respond in a warm, professional tone. Never discuss competitor services. If you don't know something, say so and offer to have the owner follow up.\"</p><p><strong>What to put in your instructions:</strong></p><ul><li>Who the GPT is (persona and role)</li><li>Who it's talking to (your audience)</li><li>What it should always do (key behaviors)</li><li>What it should never do (constraints)</li><li>How it should sound (tone and voice)</li><li>What the uploaded files contain and when to use them</li><li>What to do when it doesn't know something</li></ul><p>Instructions that answer all seven of these questions will produce consistent, on-brand responses from day one.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_bs5_04"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>Testing your Custom GPT before publishing:</strong></p><p>GPT Builder has a live preview panel on the right side. Use it aggressively before publishing. For every test:</p><ol><li>Type a real query your users would actually send</li><li>Read the response critically — is it accurate? Is it on-brand? Does it reference the right uploaded knowledge?</li><li>If anything is off, edit the instructions and test again</li></ol><p><strong>Five test queries to run on every Custom GPT:</strong></p><ul><li>The most common question your users ask</li><li>A question that requires knowledge from your uploaded files</li><li>An edge case the GPT shouldn't handle (to verify it declines gracefully)</li><li>A leading question that might cause off-brand behavior</li><li>A simple \"what can you help me with?\" to see how it introduces itself</li></ul><p>The GPT is ready to publish when all five produce responses you'd be comfortable showing your audience. If any response is wrong, confusing, or off-brand — fix the instructions first, then retest. Don't publish and plan to fix later; the first impression matters.</p><p><strong>Uploading knowledge files:</strong> In the Knowledge section, upload the files the GPT needs to reference. PDFs, Word documents, and text files all work. The GPT can reference the uploaded content when answering questions — it doesn't just have the content; it can search and cite it.</p><p>What to upload: anything you'd paste into a ChatGPT conversation regularly. Your FAQ. Your service menu. Your pricing. Your process document. Your portfolio case studies. Each upload should be a document your users would benefit from having available, not just background context for you.</p><p>File quality matters: a well-organized PDF with clear headings is far more useful than a poorly formatted scan. Take 10 minutes to clean up a document before uploading it — your GPT's response quality will be noticeably better.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_bs5_05"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>Publishing and sharing your Custom GPT:</strong></p><p>When you're ready, click Publish in GPT Builder. You have three options:</p><ul><li><strong>Only me</strong> — private, only you can access it</li><li><strong>Anyone with the link</strong> — unlisted, shareable via direct URL</li><li><strong>Everyone</strong> — publicly listed in the GPT Store</li></ul><p>For most first projects: start with \"Anyone with the link.\" You get a shareable URL you can send to specific people, without public exposure before you've validated the GPT in real use.</p><p><strong>After publishing:</strong> Use the GPT yourself for a week before sharing widely. Real use reveals issues that testing missed — questions you didn't anticipate, edge cases in the knowledge files, tone inconsistencies. Update the instructions as you find issues. Published Custom GPTs are fully editable — every improvement you make applies immediately to all future conversations.</p><p><strong>Common first-version problems and fixes:</strong></p><p><em>The GPT doesn't use the uploaded files:</em> Add explicit instructions like \"When answering questions about services, always reference the uploaded service menu.\" GPT needs to be told when to use its knowledge.</p><p><em>The tone is inconsistent:</em> Add specific examples to the instructions. \"Use a warm, professional tone. For example: 'Great question! Based on your needs...' rather than 'The answer is...'\"</p><p><em>The GPT goes off-topic:</em> Add explicit constraints. \"You only discuss [Business Name]'s services. For questions outside this scope, politely explain what you can help with instead.\"</p><p><em>The GPT is too verbose:</em> Add length guidance. \"Keep responses under 200 words unless the user asks for more detail. Lead with the direct answer, then offer to elaborate.\"</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_bs5_06"
+              },
+              {
+                "type": "summary",
+                "content": "<p>GPT Builder has five configuration areas: name/description, instructions, knowledge, capabilities, and actions. Instructions are the most important element — they define behavior, tone, and constraints. Write instructions that answer: who the GPT is, who it talks to, what it always does, what it never does, how it sounds, when to use uploaded files, and what to do when it doesn't know. Test with five categories of queries before publishing. Upload well-organized documents your users would benefit from. Start with 'Anyone with the link' publishing. Use it yourself for a week before sharing widely. Iterate — every update applies immediately to all future conversations.</p>"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_bs5_04",
+              "order_index": 1,
+              "type": "multiple_choice",
+              "prompt": "You just opened GPT Builder for the first time. It asks you to describe your GPT. What do you say?",
+              "options": [
+                "Tell it to be helpful and professional.",
+                "Use your one-sentence brief: 'A friendly assistant for my dog walking service that answers questions about services and helps clients book walks.'",
+                "Skip the guided setup and go straight to the instructions editor.",
+                "Ask GPT Builder what you should build."
+              ],
+              "correct_answer": "1",
+              "explanation": "Your one-sentence brief is exactly what GPT Builder needs to kickstart the configuration. It gives GPT Builder the context to suggest a starting set of instructions that you then refine — much faster than starting from a blank instructions editor.",
+              "hints": [
+                "You wrote a one-sentence brief for exactly this moment."
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_bs5_05",
+              "order_index": 2,
+              "type": "prompt_lab",
+              "prompt": "Write the instructions for a Custom GPT that helps freelance UX designers respond to client inquiries. It should know your process, your rates, and how to guide prospects to a discovery call.",
+              "options": null,
+              "correct_answer": "{\"scenario\":\"You're building a Custom GPT for your UX design freelance practice. Prospective clients will use it to learn about your services. Write instructions that define behavior, tone, and what to do at every stage of a client inquiry.\",\"scoring_criteria\":[{\"keyword_group\":[\"role\",\"you are\",\"assistant\",\"I am\",\"persona\"],\"label\":\"Defined the GPT's persona\",\"points\":1},{\"keyword_group\":[\"client\",\"prospective\",\"audience\",\"founder\",\"startup\"],\"label\":\"Named the audience\",\"points\":1},{\"keyword_group\":[\"process\",\"how I work\",\"approach\",\"design\",\"phases\"],\"label\":\"Referenced process/how you work\",\"points\":2},{\"keyword_group\":[\"discovery call\",\"book\",\"next step\",\"schedule\",\"conversation\"],\"label\":\"Guided to discovery call\",\"points\":2},{\"keyword_group\":[\"never\",\"don't\",\"avoid\",\"always\",\"constraint\"],\"label\":\"Included constraints\",\"points\":1}],\"max_points\":7,\"pass_threshold\":4,\"ideal_prompt\":\"You are a friendly assistant for [Name]'s UX design practice. You help prospective clients understand how I work, what I charge, and whether we're a good fit. When asked about process, reference the uploaded process guide. When asked about rates, describe the project-based pricing model from the rate card. Always guide interested prospects toward booking a free discovery call at [URL]. Never quote exact timelines without knowing project scope. If you don't know something, say so and offer to have me follow up directly. Tone: professional, approachable, direct.\",\"tips\":[\"Explicit instructions about when to use uploaded files improve response accuracy.\",\"A specific conversion goal (discovery call) gives the GPT direction.\",\"'Never' and 'always' constraints prevent the most common off-brand responses.\"]}",
+              "explanation": "Good instructions define persona, audience, when to use uploaded knowledge, the conversion goal, constraints, and tone. Each element shapes a different aspect of the GPT's behavior.",
+              "hints": [
+                "Answer all seven: who it is, who it talks to, what it always does, what it never does, how it sounds, when to use files, what to do when it doesn't know."
+              ],
+              "xp_reward": 10
+            },
+            {
+              "id": "ex_bs5_06",
+              "order_index": 3,
+              "type": "scenario_walkthrough",
+              "prompt": "Your Custom GPT is producing inconsistent responses. Walk through diagnosing and fixing the three most common problems.",
+              "options": null,
+              "correct_answer": "{\"title\": \"Diagnosing and Fixing Your Custom GPT\", \"steps\": [{\"type\": \"context\", \"text\": \"Your dog walking Custom GPT is live but producing inconsistent results: sometimes it quotes wrong prices, sometimes it gives very long answers, and occasionally it recommends competitor services.\"}, {\"type\": \"choice\", \"claude_response\": \"The GPT is quoting wrong prices. It doesn't seem to be using the uploaded price list consistently.\", \"question\": \"What's the most likely fix?\", \"options\": [\"Re-upload the price list\", \"Add explicit instructions: 'When asked about pricing, always reference the uploaded service menu. Never quote rates from memory.'\", \"Remove the price list and just include pricing in the instructions\"], \"correct\": 1, \"feedback\": \"GPT needs to be explicitly told when to use uploaded files. 'When asked about pricing, always reference the uploaded service menu' solves this. Re-uploading doesn't help if the GPT isn't instructed to use the file.\"}, {\"type\": \"choice\", \"claude_response\": \"Responses are too long -- clients are getting walls of text when they just want a quick answer.\", \"question\": \"How do you fix verbose responses?\", \"options\": [\"Ask users to say 'be brief' in their first message\", \"Add length guidance to instructions: 'Keep responses under 150 words unless asked for more. Lead with the direct answer, then offer to elaborate.'\", \"Switch to a shorter knowledge file\"], \"correct\": 1, \"feedback\": \"Length guidance in instructions is the right fix. It applies consistently to all responses. Asking users to manage length is friction; fixing it in the instructions removes that burden.\"}, {\"type\": \"prompt\", \"context\": \"The GPT occasionally mentions competitor services. Write the instruction that prevents this.\", \"placeholder\": \"Write your constraint instruction...\", \"scoring_criteria\": [{\"keyword_group\": [\"never\", \"don't\", \"avoid\", \"not discuss\", \"only\"], \"label\": \"Used a clear constraint word\", \"points\": 2}, {\"keyword_group\": [\"competitor\", \"other service\", \"alternative\", \"other company\"], \"label\": \"Named what to avoid\", \"points\": 2}, {\"keyword_group\": [\"instead\", \"redirect\", \"focus on\", \"our service\", \"help with\"], \"label\": \"Provided the alternative behavior\", \"points\": 2}], \"ideal\": \"Never mention, recommend, or discuss competitor services. If a user asks about alternatives, politely explain what [Business Name] offers and how it meets their needs instead.\", \"max_points\": 6, \"pass_threshold\": 3}]}",
+              "explanation": "The three most common Custom GPT problems: not using uploaded files (fix with explicit file-use instructions), verbose responses (fix with length guidance), and off-brand topics (fix with explicit constraints).",
+              "hints": [
+                "Each problem has a specific fix: file-use instructions, length guidance, or explicit constraints."
+              ],
+              "xp_reward": 15
+            }
+          ]
+        },
+        {
+          "title": "Build a Workflow Automation",
+          "slug": "build-a-website",
+          "description": "Map a repetitive task as trigger-process-output, build a master prompt, test with real data, make it reusable.",
+          "order_index": 3,
+          "xp_reward": 100,
+          "estimated_minutes": 8,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<p>A workflow automation is a defined sequence of steps that processes an input into an output — and your job is to make that sequence run consistently and quickly using ChatGPT. The goal: what took you 45 minutes takes 5 minutes, every time.</p><p><strong>Map it as trigger → process → output before building anything:</strong></p><ul><li><strong>Trigger:</strong> What kicks it off? You paste something? A file arrives? A specific time each week?</li><li><strong>Process:</strong> What steps transform the input? Categorize, summarize, format, compare, extract?</li><li><strong>Output:</strong> What's the finished product? An email draft, a formatted report, a prioritized list, a social post?</li></ul><p>Example: Every Monday morning (trigger), I paste the week's raw client notes and ChatGPT extracts action items, writes status summaries per client, and formats everything into my report template (process), producing a client-ready weekly report I review and send (output).</p><p>Once you have that map, you have the brief for your automation. Give ChatGPT the trigger, process, and output — and let it help you design the master prompt.</p><p><strong>Identifying good workflow automation candidates:</strong> The best candidates satisfy three criteria: you can explain the steps in under 2 minutes, you do it at least weekly, and the output format is consistent every time. If any of these fail — the steps are too complex to explain simply, you only do it occasionally, or the output varies a lot — it's probably not ready for automation.</p><p><strong>The workflow audit:</strong> Before choosing what to automate, spend 15 minutes listing every task you did more than once last week. For each repeated task, estimate how long it takes. Multiply by the times per month you do it. The task with the highest monthly time cost is your first automation target. This isn't a feeling exercise — it's arithmetic. The highest time cost is the highest-leverage opportunity.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_bs5_07"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>Build it into a single master prompt:</strong></p><p><em>\"When I paste [input description] below, run through these steps: [step 1], [step 2], [step 3]. Produce [output description] ready to [what you do with it].\"</em></p><p>Test with real data from last week. Compare the automated output to what you produced manually. Find anything that's different from what you expected. Fix that specific thing in the master prompt — not in the output you got. The prompt is the system. The output is a symptom of the system.</p><p><strong>The master prompt structure — a template you can use now:</strong></p><blockquote><p>When I paste [type of data] below, run through these steps:<br>Step 1: [specific processing task]. Format: [how the output should look]<br>Step 2: [specific processing task]. Format: [how the output should look]<br>Step 3: [specific processing task]. Format: [how the output should look]<br>Final output: [describe the finished product] ready to [what you do with it].<br>Flag anything that [unusual condition worth calling out].</p></blockquote><p>Copy this template. Fill it in for your highest-value workflow. Run it three times with real data. After three runs you'll know exactly what to refine.</p><p><strong>Save the master prompt somewhere permanent.</strong> It's not just a prompt — it's your automation. Options: a note in your notes app, a Custom GPT configured with these instructions, or a pinned conversation starter. Over time, you'll refine it, but the core prompt is what powers the recurring workflow.</p><p><strong>How to refine a master prompt that's 80% right:</strong> Most master prompts need 2-3 refinement rounds. The pattern for each round: run with real data, compare to ideal output, identify the biggest gap, add one clarifying instruction to close that gap. Never add more than one major instruction per round — it makes it impossible to know which change produced which improvement. One change, one test, observe the effect. Iterate.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_bs5_08"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>Upgrading from a master prompt to a Custom GPT:</strong></p><p>When a master prompt is working reliably for 3-4 weeks, consider converting it into a Custom GPT. The advantages:</p><ul><li>The instructions are always loaded — you just open the GPT and start</li><li>You can upload reference files (templates, style guides) that the GPT accesses without you uploading them each time</li><li>You can share it with teammates who run the same workflow</li><li>You can configure conversation starters that launch the workflow with one click</li></ul><p>The conversion is simple: copy your master prompt into the Custom GPT's instructions field in GPT Builder. Upload any reference documents. Add a conversation starter that says \"Paste your [input type] to get started.\" Publish as private or share with your team.</p><p><strong>Handling change without rebuilding:</strong> Requirements change. Your manager adds a new section. A client asks for a different format. New data becomes available. Treat your master prompt as a living document. Add a step to handle the new requirement. Update the output format specification. Each addition is an incremental improvement to the same system.</p><p>The only time to rebuild is when the fundamental trigger or process changes — when the thing you're automating is genuinely different, not when it gains a new requirement. Even then, start from the working prompt and modify rather than starting from scratch. The trigger-process-output framework stays constant as requirements evolve.</p><p><strong>Input quality problems:</strong> Workflow automations break most often not because of bad prompts but because of inconsistent input data. Your weekly status update automation worked fine for three months, then started producing garbage because your team changed how they format their updates. The fix isn't to rewrite the automation — it's to fix the input. Either standardize the input format (a shared template your team fills in) or add a normalization step at the beginning that converts inconsistent input into a consistent format before processing. Input normalization is one of the highest-value additions to any automation.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_bs5_09"
+              },
+              {
+                "type": "summary",
+                "content": "<p>Map every workflow as trigger-process-output before building anything. Audit your week arithmetically — highest time cost is highest automation priority. Use the master prompt template: when I paste X, run steps 1, 2, 3, output Y. Test with real data from last week, compare to manual output, fix the prompt not the output. Save the master prompt permanently — it's your automation. Refine one instruction per round so you can trace which change produced which improvement. Upgrade to a Custom GPT when the prompt is stable and you want it always available. Handle change by adding steps, not rebuilding. Fix input quality problems at the source. The trigger-process-output framework scales to any workflow you'll ever automate.</p>"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_bs5_07",
+              "order_index": 1,
+              "type": "multiple_choice",
+              "prompt": "Which is the better way to describe your automation target?",
+              "options": [
+                "'I want to automate some of my work tasks.'",
+                "'Every Monday, I compile a client status report by pulling updates from our project tracker, CRM notes, and email threads. It takes 45 minutes and the format is the same every week.'",
+                "'I need AI to handle my busywork.'",
+                "'I want to automate everything I do at work.'"
+              ],
+              "correct_answer": "1",
+              "explanation": "Option B is specific: when (Monday), what (status report), where data comes from (3 sources), how long (45 min), and the key insight (same format weekly). This gives enough detail to actually design the automation.",
+              "hints": [
+                "Which description gives enough detail to actually start building?"
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_bs5_08",
+              "order_index": 2,
+              "type": "prompt_lab",
+              "prompt": "Write a master prompt that chains three workflow steps into a single ChatGPT command: parse raw client data, write per-client summaries, and format into a weekly report template.",
+              "options": null,
+              "correct_answer": "{\"scenario\":\"You have three tested steps: parse raw client data, write summaries per client, and format into your report template. Write a single master prompt that chains all three and specifies the trigger, steps, and output requirements.\",\"scoring_criteria\":[{\"keyword_group\":[\"paste\",\"data\",\"below\",\"input\",\"raw\",\"when\"],\"label\":\"Defined the trigger\",\"points\":1},{\"keyword_group\":[\"parse\",\"extract\",\"status\",\"revenue\",\"blocker\"],\"label\":\"Step 1: Data parsing\",\"points\":2},{\"keyword_group\":[\"write\",\"summary\",\"sentence\",\"highlight\",\"win\"],\"label\":\"Step 2: Summary writing\",\"points\":1},{\"keyword_group\":[\"format\",\"template\",\"report\",\"date\",\"section\"],\"label\":\"Step 3: Formatting\",\"points\":1},{\"keyword_group\":[\"flag\",\"down\",\"risk\",\"attention\",\"10%\"],\"label\":\"Added flagging logic\",\"points\":2}],\"max_points\":7,\"pass_threshold\":4,\"ideal_prompt\":\"When I paste this week's raw client data below, run the following workflow end to end: Step 1: Parse the raw data and extract status, revenue, and blockers for each client. Step 2: Write a 2-3 sentence summary for each client highlighting wins and flagging risks. Step 3: Format everything into the weekly report structure: date header, executive summary (3 sentences: biggest win, biggest risk, outlook), then per-client sections. Output the final report ready to copy into an email. Flag any client with revenue down more than 10% from last week.\",\"tips\":[\"Clear trigger, sequenced steps, specific output requirements.\",\"The executive summary constraint (3 sentences) prevents the 'too long' problem.\",\"Flagging anomalies (revenue down 10%+) adds intelligence beyond formatting.\"]}",
+              "explanation": "A master prompt: clear trigger (paste data), sequenced steps (parse, write, format), specific output (ready to email), and intelligence (flag anomalies). This single prompt replaces the multi-step manual process.",
+              "hints": [
+                "Trigger first, steps in order, output requirements last."
+              ],
+              "xp_reward": 10
+            },
+            {
+              "id": "ex_bs5_09",
+              "order_index": 3,
+              "type": "scenario_walkthrough",
+              "prompt": "Your master prompt works but requirements just changed. Walk through adapting the system without rebuilding.",
+              "options": null,
+              "correct_answer": "{\"title\": \"Adapting a Living System\", \"steps\": [{\"type\": \"context\", \"text\": \"Your weekly report automation has been running perfectly for 4 weeks. Your boss just said: 'Starting next week, I also need a competitive comparison section. Pull from the market research doc I can share.'\"}, {\"type\": \"choice\", \"claude_response\": \"New requirement: add a competitive comparison section using market research data.\", \"question\": \"How do you handle this change?\", \"options\": [\"Rebuild the entire automation from scratch with the new section\", \"Add the new section as Step 4 in the existing master prompt and upload the market research doc to the Custom GPT\", \"Tell your boss the automation can't handle new requirements\"], \"correct\": 1, \"feedback\": \"Add a step to the existing prompt, don't rebuild. The other sections still work. Upload the market research doc to the Custom GPT so it's always available. 10-minute update to a system that took 2 hours to build.\"}, {\"type\": \"choice\", \"claude_response\": \"You added Step 4 and the competitive section looks good. But the executive summary didn't automatically incorporate competitive insights.\", \"question\": \"The executive summary doesn't reflect the new section. How do you fix it?\", \"options\": [\"Manually add competitive insights to the summary each week\", \"Update the executive summary instruction: 'Executive summary: 3 sentences -- biggest client win, biggest competitive shift, outlook for next week'\", \"Remove the executive summary\"], \"correct\": 1, \"feedback\": \"Update the instruction to include competitive insights. One-line change to the prompt, permanently fixed.\"}, {\"type\": \"prompt\", \"context\": \"The system now has 4 steps and the exec summary includes competitive insights. Write the updated master prompt with all sections.\", \"placeholder\": \"Write the updated master prompt...\", \"scoring_criteria\": [{\"keyword_group\": [\"step 1\", \"parse\", \"extract\", \"data\"], \"label\": \"Kept original parsing step\", \"points\": 1}, {\"keyword_group\": [\"step 2\", \"summary\", \"write\", \"client\"], \"label\": \"Kept original summary step\", \"points\": 1}, {\"keyword_group\": [\"competitive\", \"comparison\", \"market\", \"research\"], \"label\": \"Added competitive section\", \"points\": 2}, {\"keyword_group\": [\"executive\", \"3 sentence\", \"win\", \"competitive shift\"], \"label\": \"Updated exec summary to include competitive\", \"points\": 2}], \"ideal\": \"Updated master prompt: Step 1) Parse raw data -- extract status, revenue, blockers per client. Step 2) Write 2-3 sentence summaries per client. Step 3) Compare each client's metrics against competitive landscape from the market research doc. Step 4) Format into report structure. Executive summary: 3 sentences -- biggest client win, biggest competitive shift, outlook. Flag revenue down 10%+. Output ready to email.\", \"max_points\": 6, \"pass_threshold\": 3}]}",
+              "explanation": "Living systems adapt through incremental updates, not rebuilds. When requirements change, add a step to the existing prompt, update affected sections, and test.",
+              "hints": [
+                "What's the minimum change to add the new requirement? Don't rebuild what works."
+              ],
+              "xp_reward": 15
+            }
+          ]
+        },
+        {
+          "title": "Build a Content System",
+          "slug": "build-an-agent",
+          "description": "Design a voice-consistent content system using a Custom GPT: configure your voice, build topic queues, and produce on-brand content at scale.",
+          "order_index": 4,
+          "xp_reward": 100,
+          "estimated_minutes": 8,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<p>A content system is a Custom GPT that knows your voice, your audience, your topics, and your format — so every piece of content it produces sounds like you wrote it at your best, not a generic AI approximation.</p><p>The difference between a content system and just asking ChatGPT to \"write a LinkedIn post\": a content system has your voice locked in, your audience context always loaded, your past examples to match, and your content constraints built in. It's not a one-off prompt — it's infrastructure that makes consistent content creation repeatable.</p><p><strong>The four pillars of a content system:</strong></p><ol><li><strong>Voice document</strong> — the rules of how you write. Phrases you use, phrases you avoid, your structural patterns, your level of formality. Written for ChatGPT to follow, not for a human to read.</li><li><strong>Audience context</strong> — who reads your content, what they care about, what level of expertise they have, what problems they're trying to solve.</li><li><strong>Topic queue</strong> — a running list of themes, ideas, and angles you want to cover. Updated as you encounter interesting ideas.</li><li><strong>Format templates</strong> — the structural patterns for each content type: LinkedIn post format, newsletter section format, Twitter thread format, etc.</li></ol><p>Each pillar gets uploaded to your content system Custom GPT or defined in its instructions. Together they give ChatGPT everything it needs to produce on-brand content without you explaining your voice and audience in every conversation.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_bs5_10"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>Writing your voice document — the most important pillar:</strong></p><p>Your voice document is a set of rules that ChatGPT follows when producing content in your voice. The goal: a colleague who read only your voice document could produce content that sounds like you. That's the bar.</p><p>Start by analyzing three to five pieces of your best-performing content. Look for patterns:</p><ul><li>Sentence length — do you write short punchy sentences or longer flowing ones?</li><li>Opening style — do you start with a story, a statistic, a direct claim, or a question?</li><li>Structural patterns — do you use numbered lists? Bullet points? Long paragraphs? Subheadings?</li><li>Phrases you use — what words and phrases appear in your best content?</li><li>What you avoid — what does your content never include? Jargon? Passive voice? Certain phrases?</li></ul><p>Turn your observations into explicit rules. Not \"I write in a professional tone\" but \"I write in a direct, conversational tone. I use first-person. I write short sentences (under 20 words) most of the time. I never use passive voice. I avoid corporate jargon. I don't use em dashes.\"</p><p>Upload this document to your content system Custom GPT. In the instructions, write: \"When producing any content, follow the voice rules in the uploaded voice guide strictly. The voice is non-negotiable — even if a different style might be more engaging, use mine.\"</p><p><strong>The iteration loop for voice calibration:</strong> Generate three test pieces and compare them to your actual writing. What's different? Update the voice document with the specific rules that would fix the gap. Repeat until the output is indistinguishable from your voice. Most voice documents need 3-5 refinement rounds before they produce reliably on-brand content.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_bs5_11"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>Building the topic queue and content calendar integration:</strong></p><p>A content system without topics is a car without fuel. Your topic queue is a running list of ideas, angles, and themes you want to cover. The discipline is capturing ideas when they occur to you — in the middle of a client call, after reading an article, when you solve an interesting problem — and adding them to the queue.</p><p>Simple topic queue format that works:</p><pre><code>Topic: [one line describing the idea]\nAngle: [the specific point of view or argument]\nAudience: [who this is specifically for]\nPlatform: [LinkedIn, newsletter, Twitter, etc.]\nStatus: [idea, drafted, published]\n</code></pre><p>Upload your topic queue document to the content system Custom GPT. In the instructions: \"When asked for a topic, pull from the uploaded topic queue. Select the most relevant unpublished topic for the requested platform. Ask if the selection looks right before drafting.\"</p><p><strong>Connecting topic to output:</strong> A well-functioning content system produces draft content from a single sentence: \"Draft a LinkedIn post from the next unwritten topic.\" The GPT reads the topic queue, selects the next unpublished item, applies your voice document, applies the LinkedIn format template, and produces a draft. You review, edit lightly, and publish. What used to take 40 minutes takes 10.</p><p><strong>Format templates:</strong> Define the structure for each content type your system produces. LinkedIn post format might be: \"Opening hook (1-2 sentences). Core insight (3-5 sentences). Practical application or example (2-3 sentences). Closing thought or question (1 sentence). No hashtags.\" Upload each template separately so the GPT applies the right format for each platform.</p><p><strong>Scaling the content system:</strong> Once your basic content system is working — voice locked in, format templates loaded, topic queue active — you can scale it. Add more platforms (newsletter, X, YouTube script outlines). Add repurposing rules (\"take this LinkedIn post and reformat it as a Twitter thread\"). Add analytics integration (paste engagement data to see which topics resonate). Each addition uses the same Custom GPT infrastructure. You're not building new tools — you're expanding one tool.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_bs5_12"
+              },
+              {
+                "type": "summary",
+                "content": "<p>A content system is a Custom GPT with four pillars: voice document, audience context, topic queue, and format templates. Write the voice document by analyzing your best content and turning observations into explicit rules. Calibrate through iteration — generate, compare, update, repeat. Build your topic queue with a simple structure that captures idea, angle, audience, platform, and status. Connect topic to output so one prompt produces a ready-to-review draft. Add format templates per platform. Scale by adding platforms, repurposing rules, and analytics integration — all in the same Custom GPT. Consistent content at scale starts with consistent voice documentation.</p>"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_bs5_10",
+              "order_index": 1,
+              "type": "multiple_choice",
+              "prompt": "Which is the best first project for a content system?",
+              "options": [
+                "An all-platform content machine that handles LinkedIn, Twitter, YouTube, newsletters, and podcasts at launch",
+                "A focused LinkedIn content system that produces 2-3 posts per week in your voice, starting with voice calibration",
+                "A fully automated system that publishes content without any human review",
+                "A viral content generator that optimizes for maximum engagement"
+              ],
+              "correct_answer": "1",
+              "explanation": "Start focused: one platform, a realistic publishing cadence, and voice calibration as the first priority. All-platform from day one means no platform is done well. Automated publishing without review is a path to off-brand content going public. Optimizing for virality before establishing your voice produces content that doesn't sound like you.",
+              "hints": [
+                "What's the minimum viable content system you'd actually use consistently?"
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_bs5_11",
+              "order_index": 2,
+              "type": "prompt_lab",
+              "prompt": "You want to train your content system Custom GPT on your LinkedIn writing style. Write a prompt that gives ChatGPT everything it needs to analyze your voice from three sample posts.",
+              "options": null,
+              "correct_answer": "{\"scenario\":\"You're pasting three of your best LinkedIn posts to build your voice document. Write the analysis prompt that will produce a voice guide ChatGPT can follow.\",\"scoring_criteria\":[{\"keyword_group\":[\"analyze\",\"observe\",\"study\",\"identify\",\"look at\"],\"label\":\"Asked for analysis\",\"points\":1},{\"keyword_group\":[\"sentence\",\"length\",\"structure\",\"pattern\",\"opening\"],\"label\":\"Referenced structural patterns\",\"points\":2},{\"keyword_group\":[\"avoid\",\"don't\",\"never\",\"what I don't\",\"phrases I don't\"],\"label\":\"Asked for what to avoid\",\"points\":2},{\"keyword_group\":[\"document\",\"guide\",\"rules\",\"write up\",\"produce\"],\"label\":\"Asked for a usable output document\",\"points\":1},{\"keyword_group\":[\"tone\",\"voice\",\"style\",\"sound like\",\"my writing\"],\"label\":\"Focused on voice\",\"points\":1}],\"max_points\":7,\"pass_threshold\":4,\"ideal_prompt\":\"Analyze these three LinkedIn posts and produce a voice guide I can load into my content system. Identify: my typical sentence length, opening patterns, structural patterns (bullets, numbered lists, paragraphs), words and phrases I use frequently, and words/phrases I clearly avoid. Output a voice document written as explicit rules (e.g., 'Always use first-person. Keep sentences under 20 words. Never use em dashes'). Make it specific enough that someone could produce content indistinguishable from mine by following these rules.\",\"tips\":[\"Asking for explicit rules (not descriptions) produces a document ChatGPT can follow.\",\"'Indistinguishable from mine' sets the right quality bar.\",\"Including what to avoid is as important as what to include.\"]}",
+              "explanation": "A voice analysis prompt that produces a usable voice document: asks for pattern analysis, structural observations, words to use and avoid, and outputs explicit rules — not a description.",
+              "hints": [
+                "The output should be a set of rules, not a description of your style."
+              ],
+              "xp_reward": 10
+            },
+            {
+              "id": "ex_bs5_12",
+              "order_index": 3,
+              "type": "scenario_walkthrough",
+              "prompt": "Your content system Custom GPT is built. Walk through the workflow from topic idea to published post.",
+              "options": null,
+              "correct_answer": "{\"title\": \"Topic to Published Post\", \"steps\": [{\"type\": \"context\", \"text\": \"Your content system Custom GPT has your voice guide, audience context, topic queue, and LinkedIn format template uploaded. You just had a conversation with a client that sparked a great post idea.\"}, {\"type\": \"choice\", \"claude_response\": \"You just had a great conversation with a client about why most AI implementations fail. You want to turn this into a LinkedIn post.\", \"question\": \"What's your first step?\", \"options\": [\"Open ChatGPT and start writing immediately while it's fresh\", \"Add the idea to your topic queue document first, then ask the content system to draft from it\", \"Post your raw notes to LinkedIn\"], \"correct\": 1, \"feedback\": \"Add to the topic queue first -- even when inspiration is fresh. This keeps your queue current and lets the content system draft from the structured entry rather than raw notes. Then draft.\"}, {\"type\": \"choice\", \"claude_response\": \"You've added the topic to the queue: 'Why most AI implementations fail -- most companies buy tools before building the habit of actually using AI. Audience: senior leaders evaluating AI investments.'\", \"question\": \"How do you trigger the draft?\", \"options\": [\"Open a regular ChatGPT conversation and explain the topic from scratch\", \"Open your content system Custom GPT and say 'Draft the next LinkedIn post from my topic queue'\", \"Ask ChatGPT to write a generic AI leadership post\"], \"correct\": 1, \"feedback\": \"The content system has everything it needs: your voice, your audience, your format, and the topic queue. One sentence kicks off the draft. That's the whole value of having the system built.\"}, {\"type\": \"prompt\", \"context\": \"The draft came back. It's 80% right -- the voice sounds like you and the structure is good, but the opening hook is too generic. Write your feedback prompt.\", \"placeholder\": \"Write your revision prompt...\", \"scoring_criteria\": [{\"keyword_group\": [\"opening\", \"hook\", \"first\", \"lead\", \"beginning\"], \"label\": \"Named the specific element\", \"points\": 2}, {\"keyword_group\": [\"generic\", \"too broad\", \"not specific\", \"cliché\", \"bland\"], \"label\": \"Described the problem\", \"points\": 2}, {\"keyword_group\": [\"specific\", \"story\", \"example\", \"concrete\", \"real\"], \"label\": \"Suggested the direction\", \"points\": 2}], \"ideal\": \"The opening hook is too generic -- it could be from any AI thought leader. Replace it with something specific: a concrete moment from the client conversation that illustrates the problem directly. Lead with the specific, not the general.\", \"max_points\": 6, \"pass_threshold\": 3}]}",
+              "explanation": "Topic to post: add to queue, trigger from the content system, give specific feedback on what's off and in what direction. The system handles the heavy lifting; you handle the direction and final judgment.",
+              "hints": [
+                "The content system does the work; you give direction and approve."
+              ],
+              "xp_reward": 15
+            }
+          ]
+        },
+        {
+          "title": "Ship and Iterate",
+          "slug": "automate-a-workflow",
+          "description": "Deploy your Custom GPT, lock in your reusable workflow, share with your team, and set up for continuous improvement.",
+          "order_index": 5,
+          "xp_reward": 100,
+          "estimated_minutes": 8,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<p>You built something. Now it needs to leave the testing phase and enter real use.</p><p><strong>For Custom GPTs:</strong> Click Publish in GPT Builder and choose your sharing level. Start with \"Anyone with the link\" — you get a shareable URL without public GPT Store exposure before you've validated it in real use. Share the link with 2-3 people who represent your target audience. Watch how they use it. The questions they ask that the GPT handles badly are your next round of instruction updates.</p><p><strong>For workflow automations:</strong> Save the master prompt permanently. Run the complete pipeline once with real data, from start to finish, and verify the output is production-quality. If you converted it to a Custom GPT, publish it as private for your own use. Run it on your actual next real-world task — not test data. That first real run is your go-live.</p><p><strong>For content systems:</strong> Publish the content system Custom GPT as private. Use it for the next three real posts you'd publish. Don't share it until you've confirmed it produces content you're actually comfortable publishing. The bar is: would I be comfortable if someone saw these posts and didn't know AI was involved in the draft?</p><p>The moment of shipping is worth noticing. You went from a vague idea to something that works. The next project will be faster. The one after that faster still. This is a skill that compounds.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_bs5_13"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>Your project isn't frozen — it's a living thing.</strong></p><p>The best projects get better after they ship. Come back to your Custom GPT in a month and add a capability that users requested. Expand your workflow automation to handle a new input format. Add a new platform to your content system. Each of these follows the same pattern: open the Custom GPT, edit the instructions or upload new knowledge, save and republish.</p><p>Published Custom GPTs are fully editable — every update applies immediately to all future conversations. The continuity is one of the most underrated features of working with Custom GPTs over time. You're not rebuilding; you're extending.</p><p><strong>The real skill you built in this track isn't the specific project.</strong> It's the ChatGPT build workflow: brief, configure, iterate with specific feedback, test with real inputs, ship. That workflow applies to every project you'll ever build. The domains change (GPT, workflow, content system, research assistant). The workflow doesn't.</p><p>Most people who finish a track like this try one project and then stop. The people who get the most value do it again, immediately, on a different project. The second one is twice as fast. The third is faster still. The learning compounds on each iteration.</p><p><strong>How to get faster on your second project:</strong> Before starting your second project, take 15 minutes to write down what you learned from the first one. What instructions worked well? What took too many iterations? What would you include in the brief that you left out? This reflection is the meta-learning that transfers across all future projects. People who do this reflection get dramatically better faster than people who just jump to the next project without pausing to extract the lessons.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_bs5_14"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>Sharing with your team — the handoff pattern:</strong></p><p>If you built something your team will use — a workflow automation Custom GPT, a content system, a research assistant — they need to be able to use it without understanding how it works. The best handoff: a one-paragraph guide covering what the GPT does, how to trigger it, what to paste in, what the output looks like, and who to contact when something looks wrong.</p><p>Keep the guide at the user level, not the builder level. The tool is only as useful as the number of people who can confidently use it. A five-minute write-up that enables three teammates to adopt a workflow multiplies its value by three with almost no additional effort.</p><p>For Custom GPTs, the sharing link does the heavy lifting — teammates click the link and the GPT opens, already configured. Your guide helps them understand what to expect and how to get the most out of it, not how to set it up.</p><p><strong>The improvement loop:</strong> The best source of Custom GPT improvements is watching real users use it. After sharing, ask for feedback after the first use: what worked, what was confusing, what questions the GPT answered poorly. This feedback goes directly into the instructions. One round of real-user feedback typically improves instruction quality more than five rounds of your own testing — because users find the gaps you didn't anticipate.</p><p><strong>How to show your work:</strong> Shipped projects are evidence of a capability. A Custom GPT someone can interact with proves you can build AI tools. A workflow automation that saved your team 4 hours last week proves you can build AI-powered processes. When you're describing your ChatGPT skills to a colleague or a manager, the most compelling thing is \"let me show you\" followed by opening the GPT. Demonstrated capability beats described capability every time. Every project you ship is a piece of concrete evidence that transfers across contexts.</p><p><strong>Building a portfolio of ChatGPT projects:</strong> Each project you ship demonstrates a different capability. A Custom GPT proves you can build specialized AI personas. A workflow automation proves you can turn manual processes into repeatable systems. A content system proves you can systematize creative work. Three finished projects in different categories is more compelling than one perfect project. Aim for range — one Custom GPT, one workflow, one content system — before going deep on any single category.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_bs5_15"
+              },
+              {
+                "type": "summary",
+                "content": "<p>Ship it: Custom GPTs publish via the Publish button in GPT Builder — start with 'Anyone with the link.' Workflow automations go live when the master prompt produces production-quality output on real data. Content systems go live when three test pieces are publishable without feeling AI-generated. Your project lives after shipping — extend it with the same configure-test-ship workflow. The real output of this track is the build workflow pattern, not the specific project. Take 15 minutes to reflect after each project to extract transferable lessons. Build range across categories: Custom GPT, workflow automation, content system. Share with teammates using a one-paragraph guide. Ask for real-user feedback after first use — it improves the tool faster than self-testing. Demonstrated capability beats described capability — every shipped project is concrete evidence.</p>"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_bs5_13",
+              "order_index": 1,
+              "type": "multiple_choice",
+              "prompt": "You want to add a new capability to your published Custom GPT next week. What's the right approach?",
+              "options": [
+                "Create a brand new Custom GPT from scratch with the added capability.",
+                "Open GPT Builder, edit the instructions to add the new capability, upload any new knowledge files, and save -- the update applies immediately.",
+                "Tell users to describe what they want in each conversation since the GPT can't be changed.",
+                "Wait until you have enough changes to justify a complete rebuild."
+              ],
+              "correct_answer": "1",
+              "explanation": "Edit in GPT Builder and save. The update applies immediately to all future conversations. Custom GPTs are living tools -- every edit is an improvement, not a rebuild.",
+              "hints": [
+                "The workflow pattern doesn't change for small updates."
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_bs5_14",
+              "order_index": 2,
+              "type": "prompt_lab",
+              "prompt": "A user tested your Custom GPT and found it gives overly long answers and sometimes goes off-topic into areas the GPT wasn't designed for. Write the instruction updates that fix both problems.",
+              "options": null,
+              "correct_answer": "{\"scenario\":\"Real-user feedback revealed two problems: responses are too long, and the GPT occasionally answers questions outside its scope. Write the instruction additions that fix both issues.\",\"scoring_criteria\":[{\"keyword_group\":[\"length\",\"word\",\"short\",\"concise\",\"brief\",\"under\"],\"label\":\"Added length constraint\",\"points\":2},{\"keyword_group\":[\"unless\",\"unless asked\",\"if asked for more\",\"detail on request\"],\"label\":\"Allowed elaboration on request\",\"points\":1},{\"keyword_group\":[\"only\",\"scope\",\"don't\",\"never\",\"outside\",\"topic\"],\"label\":\"Added scope constraint\",\"points\":2},{\"keyword_group\":[\"redirect\",\"instead\",\"what you can help with\",\"politely\"],\"label\":\"Defined redirect behavior\",\"points\":2}],\"max_points\":7,\"pass_threshold\":4,\"ideal_prompt\":\"Keep all responses under 150 words unless the user explicitly asks for more detail. Lead with the direct answer. For questions outside your scope (anything beyond [Business Name]'s services, pricing, and booking), politely redirect: 'I'm focused on helping with [specific topics]. For other questions, you might try [general suggestion or direct them to contact].' Never attempt to answer off-topic questions comprehensively.\",\"tips\":[\"Specific word count (150) is more reliable than 'be concise.'\",\"'Unless asked for more' keeps you helpful for users who want depth.\",\"A specific redirect response prevents the GPT from going silent on off-topic questions.\"]}",
+              "explanation": "Two common problems, two targeted fixes: length guidance with an 'unless asked' escape valve, and a scope constraint with a specific redirect behavior. Both are instruction-level fixes.",
+              "hints": [
+                "Fix each problem with a specific instruction. Vague guidance produces vague improvement."
+              ],
+              "xp_reward": 10
+            },
+            {
+              "id": "ex_bs5_15",
+              "order_index": 3,
+              "type": "scenario_walkthrough",
+              "prompt": "Your colleague wants to use the workflow automation Custom GPT you built. Walk through the handoff.",
+              "options": null,
+              "correct_answer": "{\"title\": \"The Team Handoff\", \"steps\": [{\"type\": \"context\", \"text\": \"You built a meeting notes → action items + summary Custom GPT that saves you 30 minutes per meeting. Your colleague wants to use it too. They're not technical and have never used a Custom GPT before.\"}, {\"type\": \"choice\", \"claude_response\": \"Your colleague asks: 'How do I use this?' What's the right handoff?\", \"question\": \"What do you share?\", \"options\": [\"Explain how you built the GPT and configured the instructions\", \"Share the link and a one-paragraph guide: what to paste in, what it produces, and what to do if something looks wrong\", \"Tell them to read the GPT's system prompt for context\"], \"correct\": 1, \"feedback\": \"User-level handoff: the link + a simple guide. They don't need to know how it works. They need to know how to use it.\"}, {\"type\": \"choice\", \"claude_response\": \"After one week, your colleague reports: 'It mostly works but sometimes the action items are wrong when the notes mention different projects in the same meeting.'\", \"question\": \"How do you handle this feedback?\", \"options\": [\"Tell them to split multi-project meetings into separate notes before pasting\", \"Update the GPT instructions: 'When notes reference multiple projects, clearly label each action item with its project name. Group action items by project.'\", \"Create a separate Custom GPT for multi-project meetings\"], \"correct\": 1, \"feedback\": \"Update the instructions -- that fixes it for all future users, not just this one. Asking users to pre-process input is friction. Separate GPTs for edge cases adds complexity without adding value.\"}, {\"type\": \"prompt\", \"context\": \"You've collected feedback from three teammates. Write the one-paragraph handoff guide for the updated GPT.\", \"placeholder\": \"Write your handoff guide...\", \"scoring_criteria\": [{\"keyword_group\": [\"paste\", \"copy\", \"input\", \"how to use\", \"to start\"], \"label\": \"Explained how to trigger\", \"points\": 2}, {\"keyword_group\": [\"produces\", \"output\", \"generates\", \"you get\"], \"label\": \"Described the output\", \"points\": 2}, {\"keyword_group\": [\"contact\", \"tell me\", \"let me know\", \"something wrong\", \"issue\"], \"label\": \"Provided escalation path\", \"points\": 1}, {\"keyword_group\": [\"project\", \"label\", \"multiple\", \"group\"], \"label\": \"Mentioned multi-project behavior\", \"points\": 1}], \"ideal\": \"Open the Meeting Notes GPT and paste your raw meeting notes. It will produce: labeled action items grouped by project, a 3-sentence summary, and a follow-up draft. For meetings covering multiple projects, it automatically groups items. If anything looks wrong or the output seems off, let me know and I'll update the instructions.\", \"max_points\": 6, \"pass_threshold\": 3}]}",
+              "explanation": "Team handoff: share the link, write a user-level guide (what to paste, what you get, who to contact). Turn feedback into instruction updates, not user instructions. The tool should handle edge cases, not the users.",
+              "hints": [
+                "The guide is for the user, not the builder. Keep it at their level."
+              ],
+              "xp_reward": 15
+            }
+          ]
+        },
+        {
+          "title": "What You Built and What's Next",
+          "slug": "ship-it-live",
+          "description": "Reflect on what you built, extract the transferable lessons, and plan your next project.",
+          "order_index": 6,
+          "xp_reward": 100,
+          "estimated_minutes": 7,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<p>You built something. That's the outcome of this track. Not a skill you read about — an actual tool that exists and works. Take a moment to notice that.</p><p>The project you built is the first data point. The second project will be built in half the time. The third in half of that. This is a compounding skill — each project teaches you something that transfers to every future project.</p><p><strong>The retrospective habit:</strong> Before starting your next project, spend 15 minutes writing down what you learned from this one. Three questions:</p><ol><li>What worked better than expected? What approaches produced results with less effort than you anticipated?</li><li>What took longer than expected? Where did you get stuck and what finally unblocked you?</li><li>What would you do differently in the brief? What context would you add now that you know how the project went?</li></ol><p>These answers are your lessons for the next project. The people who improve fastest are the ones who extract the meta-lesson from each project, not just the specific skill of building that specific type of thing.</p><p><strong>What you actually learned:</strong> The project was the vehicle. The real learning was:</p><ul><li>How to turn a vague idea into a specific brief</li><li>How to configure instructions that produce consistent behavior</li><li>How to give specific feedback that resolves issues in one round</li><li>How to ship when the project is good enough, not perfect</li></ul><p>These four skills transfer to every Custom GPT, workflow automation, content system, and research assistant you will ever build. The domains change. The skills don't.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_bs5_16"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>What to build next — and in what order:</strong></p><p>The most effective second project is in a different category than your first. If your first was a Custom GPT, your second should be a workflow automation or content system. If your first was a workflow automation, build a Custom GPT next. Range across categories teaches you more than depth in one.</p><p><strong>A portfolio of three projects:</strong></p><ul><li>One Custom GPT — specialized persona, shareable link, real knowledge uploaded</li><li>One workflow automation — master prompt or Custom GPT that handles a repeating task</li><li>One content system — voice-configured GPT that produces consistent output across a platform</li></ul><p>Three finished projects in different categories is more valuable than one perfect project for developing broad ChatGPT fluency. And it's more compelling to show someone: \"here's a GPT for client inquiries, here's a workflow that handles my weekly report, and here's my content system\" than to show one elaborate tool.</p><p><strong>The GPT Store as an accelerator:</strong> Before building your second or third project from scratch, spend 15 minutes searching the GPT Store for what already exists. The Store has thousands of Custom GPTs covering common use cases. If a Store GPT handles 80% of your use case, install it and supplement with Custom Instructions for the remaining 20%. Save your build energy for the cases where nothing in the Store is close enough.</p><p><strong>The long game:</strong> The people who get the most leverage from ChatGPT are not the ones who learned one trick well. They're the ones who built a compounding stack: a content system that produces their voice consistently, a workflow automation that handles their most repetitive task, a research assistant loaded with their domain knowledge, and Custom Instructions that set up every conversation correctly. Each layer makes the others more valuable. Building that stack takes six months of the habit you started in this track.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_bs5_17"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>Advanced capabilities to explore once you've shipped three projects:</strong></p><p><strong>Custom Actions:</strong> Connect your Custom GPT to external APIs. A customer service GPT that can check order status from your e-commerce platform. A scheduling GPT that can write to your calendar. Actions require API documentation and some JSON configuration — but once connected, your GPT can do things in the world, not just respond with text.</p><p><strong>Code Interpreter:</strong> Enable it for GPTs that work with data. Clients can upload spreadsheets and get analysis, charts, and visualizations. A research assistant can crunch numbers, not just summarize text. A content system can analyze engagement data from a CSV paste, not just generate content.</p><p><strong>DALL-E integration:</strong> Enable image generation for GPTs that need visual output. A product concept GPT that generates mockup images. A social media content system that produces post images alongside text. A presentation assistant that generates slide visuals.</p><p><strong>Multi-GPT workflows:</strong> Chain multiple Custom GPTs together. Your research assistant GPT outputs a structured summary. You paste that into your content system GPT to draft the post. You paste the draft into your proofreading GPT for a final pass. Each GPT is specialized and excellent at its specific job. Chaining them produces output better than any single all-purpose GPT would.</p><p><strong>The habit that compounds everything:</strong> Regular maintenance. Once a month, review each Custom GPT and workflow automation: Is it still accurate? Have your requirements changed? Is there feedback you haven't acted on? Are there new capabilities in ChatGPT that would improve it? Twenty minutes per project per month keeps your stack current and prevents the slow decay that happens when tools are used but never updated.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_bs5_18"
+              },
+              {
+                "type": "summary",
+                "content": "<p>You built something real — that's the output. The retrospective habit: 15 minutes to extract what worked, what took longer than expected, and what you'd do differently in the brief. The four transferable skills: brief, configure, iterate specifically, ship when good enough. Build range across categories: Custom GPT, workflow automation, content system. Search the GPT Store before building from scratch for your second and third projects. The long game is a compounding stack, not a single perfect tool. Advanced capabilities to explore: Custom Actions (live API connections), Code Interpreter (data analysis), DALL-E (image generation), multi-GPT workflows (specialized chaining). Maintenance habit: 20 minutes per project per month to keep the stack current. The habit started here compounds for years.</p>"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_bs5_16",
+              "order_index": 1,
+              "type": "multiple_choice",
+              "prompt": "You want to add a new capability to your live Custom GPT that users have been requesting. What's the right approach?",
+              "options": [
+                "Create a brand new Custom GPT with the new capability and deprecate the old one.",
+                "Open GPT Builder, add the new capability to the instructions and knowledge, save -- the update applies immediately to all future conversations.",
+                "Tell users to describe the new capability themselves in each conversation.",
+                "Wait until you have 10 feature requests before making any changes."
+              ],
+              "correct_answer": "1",
+              "explanation": "Edit in GPT Builder and save. The update applies immediately. Custom GPTs are living tools designed to evolve. Rebuilding creates discontinuity. Asking users to work around missing capabilities is unnecessary friction.",
+              "hints": [
+                "Custom GPTs are editable at any time. Updates apply immediately."
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_bs5_17",
+              "order_index": 2,
+              "type": "prompt_lab",
+              "prompt": "You're planning your second ChatGPT project. Write a one-sentence brief for a project in a different category than your first, and explain why you chose it.",
+              "options": null,
+              "correct_answer": "{\"scenario\":\"Your first project was a Custom GPT for client inquiries. You're now planning a second project in a different category. Write a one-sentence brief for a workflow automation or content system, and explain your reasoning.\",\"scoring_criteria\":[{\"keyword_group\":[\"workflow\",\"automation\",\"content system\",\"research assistant\"],\"label\":\"Chose a different category\",\"points\":2},{\"keyword_group\":[\"for\",\"audience\",\"client\",\"customer\",\"team\",\"my\"],\"label\":\"Named the audience\",\"points\":1},{\"keyword_group\":[\"that\",\"which\",\"to\",\"by\",\"produces\",\"handles\"],\"label\":\"Described the function\",\"points\":2},{\"keyword_group\":[\"because\",\"reason\",\"why\",\"saves\",\"need\",\"problem\"],\"label\":\"Explained the reasoning\",\"points\":2}],\"max_points\":7,\"pass_threshold\":4,\"ideal_prompt\":\"A weekly workflow automation for my freelance practice that takes raw project notes and produces a client-ready status update in my voice, ready to email -- because writing these updates currently takes 30 minutes each and I do five of them per week.\",\"tips\":[\"The brief should pass the 'would I recognize this when built' test.\",\"The reasoning reveals whether this solves a real problem.\",\"Frequency and time cost justify why this is worth building next.\"]}",
+              "explanation": "A good project brief for the second project: different category, specific audience, clear function, and reasoning grounded in a real time-cost problem.",
+              "hints": [
+                "The best second project solves your most frequent pain point after the first one."
+              ],
+              "xp_reward": 10
+            },
+            {
+              "id": "ex_bs5_18",
+              "order_index": 3,
+              "type": "scenario_walkthrough",
+              "prompt": "Six months from now: you have a Custom GPT, a workflow automation, and a content system all running. Walk through the monthly maintenance check that keeps them current.",
+              "options": null,
+              "correct_answer": "{\"title\": \"Monthly Maintenance Check\", \"steps\": [{\"type\": \"context\", \"text\": \"It's been a month since you last reviewed your three projects. You have: a client inquiry Custom GPT, a weekly report workflow automation, and a LinkedIn content system. 20 minutes total for all three.\"}, {\"type\": \"choice\", \"claude_response\": \"You open the client inquiry Custom GPT first. You notice it references a pricing tier you discontinued last month.\", \"question\": \"What do you do?\", \"options\": [\"Leave it for now -- not many people ask about that tier\", \"Update the uploaded service menu with current pricing, save the updated file to the GPT's knowledge section\", \"Create a new GPT with current pricing\"], \"correct\": 1, \"feedback\": \"Update the file in the knowledge section. It takes 5 minutes and fixes the accuracy for all future conversations. Leaving stale pricing is a credibility risk. Rebuilding is unnecessary.\"}, {\"type\": \"choice\", \"claude_response\": \"The weekly report workflow has been producing good output, but your team now uses a different project tracker that has different status categories.\", \"question\": \"How do you handle the changed input format?\", \"options\": [\"Tell the team to manually reformat data before pasting\", \"Update the master prompt Step 1: add the new status categories to the parsing instructions\", \"Build a separate workflow for the new tracker\"], \"correct\": 1, \"feedback\": \"Update Step 1 of the master prompt to include the new categories. The team doesn't manage input format -- you manage the system. A one-line update to the parsing step handles this.\"}, {\"type\": \"prompt\", \"context\": \"For the content system, write a quick self-audit prompt that checks if the voice guide still reflects how you write today.\", \"placeholder\": \"Write your voice audit prompt...\", \"scoring_criteria\": [{\"keyword_group\": [\"compare\", \"check\", \"review\", \"match\", \"still\"], \"label\": \"Asked for comparison\", \"points\": 2}, {\"keyword_group\": [\"recent\", \"new\", \"latest\", \"last month\", \"current\"], \"label\": \"Referenced current writing\", \"points\": 2}, {\"keyword_group\": [\"voice\", \"style\", \"tone\", \"sound like\", \"writing\"], \"label\": \"Focused on voice\", \"points\": 1}, {\"keyword_group\": [\"update\", \"change\", \"gap\", \"different\", \"revise\"], \"label\": \"Asked for gaps/changes\", \"points\": 1}], \"ideal\": \"Here are three pieces I wrote last month [paste]. Compare them to the voice guide in my content system. What has changed or drifted? Are there new patterns in my recent writing that the voice guide doesn't capture? Suggest specific updates to keep the guide current.\", \"max_points\": 6, \"pass_threshold\": 3}]}",
+              "explanation": "Monthly maintenance: update knowledge files when facts change, update workflow prompts when input formats change, audit voice guides against recent writing. 20 minutes per month keeps all three projects accurate and useful.",
+              "hints": [
+                "Each project type has a different maintenance focus: facts (Custom GPT), input format (workflow), voice drift (content system)."
+              ],
+              "xp_reward": 15
+            }
+          ]
+        }
+      ],
+      "campaign_order": 11,
+      "level_required": 5,
+      "prerequisite_slug": "setup-environment"
+    }
+  ]
+}

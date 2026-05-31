@@ -1,0 +1,459 @@
+{
+  "track": "advanced_workflows",
+  "courses": [
+    {
+      "title": "Hooks, Memory & Infrastructure",
+      "slug": "hooks-memory-infra",
+      "description": "Hooks that enforce what you forget. Bridges that connect autonomous agents to your terminal. A tiered memory architecture that scales past 50 files without blowing your context window. The full operating system, assembled.",
+      "difficulty": "expert",
+      "order_index": 8,
+      "is_free": false,
+      "icon": "Wrench",
+      "lessons": [
+        {
+          "title": "Hooks: Automate Your Environment",
+          "slug": "hooks-automate-environment",
+          "description": "SessionStart, Stop, PreToolUse, PostToolUse. Event-driven automation that enforces discipline you would otherwise forget.",
+          "order_index": 1,
+          "xp_reward": 100,
+          "estimated_minutes": 6,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<p>Hooks are the difference between a ChatGPT setup that requires discipline and one that enforces it. You intend to load STATE.md every session — hooks make it automatic. You intend to check for staged secrets before committing — hooks make it impossible to forget.</p><p><strong>The four hook events and their purpose:</strong></p><p><strong>SessionStart</strong> fires when a session opens. Whatever the hook prints to stdout becomes context before your first message. Use it to load STATE.md, check for stale data, and surface agent activity. This is the most important hook — it determines how informed every session is from the first word.</p><p><strong>Stop</strong> fires when a session ends. Use it for reminders: update STATE.md, commit any uncommitted work, note what's in-flight. The habit forms faster when the system prompts it.</p><p><strong>PreToolUse</strong> fires before ChatGPT calls a tool. This is your security enforcement layer. Block dangerous commands before execution. Inject security reminders before commits. Exit code 2 kills the tool call. Exit code 0 allows it.</p><p><strong>PostToolUse</strong> fires after a tool returns. Run linters after file writes. Check for RLS policies after SQL migrations. Flag issues immediately, before the next tool call creates more surface area to fix.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>SessionStart: warm every session automatically.</strong> A production setup loads three things at session open:</p><pre><code>// Hook 1: Load current state\ncat ~/notes/STATE.md 2>/dev/null || echo 'STATE.md not found'\n\n// Hook 2: Check for stale data\nSTATE_AGE=$(( ($(date +%s) - $(stat -c %Y ~/notes/STATE.md)) / 86400 ))\nif [ \"$STATE_AGE\" -ge 3 ]; then\n  echo \"STATE.md is ${STATE_AGE} days old — update it this session.\"\nfi\n\n// Hook 3: Surface unreconciled agent activity\nCOUNT=$(hermes-reconcile --count 2>/dev/null || echo 0)\nif [ \"$COUNT\" -gt 0 ]; then\n  echo \"${COUNT} agent activity items unreconciled since last session.\"\nfi</code></pre><p>Three hooks. Under five seconds total. Every session starts warm. The <code>2>/dev/null || echo</code> pattern matters — the hook must not crash if the file doesn't exist yet. A broken SessionStart hook breaks every session until you fix it.</p><p><strong>The hook configuration lives in <code>~/.claude/settings.json</code>:</strong></p><pre><code>{\n  \"hooks\": {\n    \"SessionStart\": [\n      {\"command\": \"cat ~/notes/STATE.md ~/notes/MEMORY.md 2>/dev/null || true\"},\n      {\"command\": \"echo 'Session open at ' $(date '+%Y-%m-%d %H:%M %Z')\"}\n    ]\n  }\n}</code></pre>"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>PreToolUse gates: prevent mistakes before they happen.</strong> Every PreToolUse hook needs a <code>matcher</code> field — which tool to watch. Without a matcher, the hook fires on every tool call, adding latency to everything. Match by tool name: <code>\"Bash\"</code> catches shell commands, <code>\"Write\"</code> catches file writes, <code>\"Edit\"</code> catches edits.</p><p><strong>Soft check (inject a reminder before commit):</strong> Use stdout output, exit 0. ChatGPT reads the reminder and proceeds.</p><pre><code>{\n  \"matcher\": \"Bash\",\n  \"command\": \"jq -r '.tool_input.command' | grep -q 'git commit' && printf '{\\\"hookSpecificOutput\\\":{\\\"hookEventName\\\":\\\"PreToolUse\\\",\\\"additionalContext\\\":\\\"PRE-COMMIT CHECKLIST: (1) No hardcoded secrets (2) New tables have RLS policies (3) No .env files staged\\\"}}' || true\",\n  \"timeout\": 5\n}</code></pre><p><strong>Hard block (exit code 2 kills the tool call):</strong></p><pre><code>jq -r '.tool_input.command' | grep -qE 'git push.*--force.*(main|master)' && echo 'BLOCKED: force push to main/master is not allowed' >&2 && exit 2 || true</code></pre><p>The <code>|| true</code> at the end is critical. If the pattern does not match (i.e., this is a normal command, not the dangerous one), the hook exits 0 and ChatGPT proceeds normally. Without <code>|| true</code>, a non-matching grep exits 1, and ChatGPT may treat that as a hook failure.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>The timeout discipline.</strong> SessionStart hooks get 3-5 seconds. PreToolUse hooks get 3-5 seconds. PostToolUse hooks get 10 seconds (the file already exists, post-processing can be slightly heavier).</p><p>If a check needs network access (fetching a remote config, querying an API), run it as a cron that writes results to a local file. The hook reads the file in milliseconds. Network calls in hooks feel fast at first, then get slow, then get disabled. Pre-compute, read locally.</p><p><strong>The hook that gets disabled is the hook that failed to enforce discipline.</strong> A 50ms hook runs forever. A 3-second hook gets removed after the second time someone is annoyed by the lag. Design for longevity: fast, offline, resilient to missing files.</p><p><strong>Common hook patterns worth implementing:</strong></p><ul><li>SessionStart: load STATE.md + check staleness</li><li>SessionStart: count unreconciled agent items</li><li>Stop: remind to update STATE.md</li><li>PreToolUse/Bash: block rm -rf, force-push to main, DROP TABLE</li><li>PreToolUse/Bash: check for .env in staging area before git commit</li><li>PostToolUse/Write: warn about RLS when a SQL migration file is written</li></ul>"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>Building your hook system incrementally.</strong> Adding all hooks at once creates a system you do not understand when something breaks. The recommended order:</p><ol><li><strong>Start with SessionStart (STATE.md load).</strong> One hook. Simple cat command. Test it works. Form the habit of trusting it. Run this alone for a week.</li><li><strong>Add staleness check.</strong> One more line in SessionStart. Test it fires correctly on a 3-day-old file. Now both hooks together.</li><li><strong>Add Stop reminder.</strong> One hook. Fires on close. Reminds to update STATE.md. The habit starts forming because the system prompts it.</li><li><strong>Add your first PreToolUse hard block.</strong> Start with force-push to main — low false-positive risk, high value. Test it manually. Add more hard blocks as you discover new failure modes.</li><li><strong>Add PostToolUse checks.</strong> After the others are running smoothly. RLS warning on SQL migration files is a good first PostToolUse hook.</li></ol><p><strong>Prompt template for creating a new hook:</strong></p><em>\"I want to create a [SessionStart/Stop/PreToolUse/PostToolUse] hook that [describe what it should do]. It should [block completely / inject a reminder / log an event]. Write the full JSON configuration for settings.json, including the matcher if needed. Keep the command under 5 seconds. Include || true where needed to prevent hook crashes from breaking sessions.\"</em>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_hm_01"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_hm_02"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_hm_03"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>The difference between soft and hard enforcement.</strong> A reminder says \"you should do this.\" A block says \"you cannot do this.\" Choosing between them is a judgment call based on two factors: how reversible is the action if the constraint is violated, and how often is the constraint legitimately bypassed?</p><p>Force-push to main: irreversible, almost never legitimate — hard block. Staged .env file before commit: irreversible (secrets in git history), rare false positives — hard block. Update STATE.md at session end: reversible, you can do it next time, false positive if you are mid-session — soft reminder. RLS policy missing on a new table: reversible if caught early, legitimate to skip in early prototyping — soft reminder.</p><p>The rule of thumb: if a false positive (hook fires when you did not mean to violate the rule) would be only mildly annoying, use a hard block. If a false positive would meaningfully disrupt legitimate work, use a soft reminder. You can always escalate from reminder to block later as you learn your actual false-positive rate. The goal is a hook system you trust enough to keep enabled permanently — and that requires hooks that do not fire when they should not.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>Advanced PreToolUse: reading tool input via jq in production hooks.</strong> The <code>CLAUDE_TOOL_INPUT</code> environment variable contains the full JSON payload of the tool call. For Bash hooks, this includes the full command string. For Write/Edit hooks, it includes the file path and content. Reading this payload correctly is what separates hooks that work reliably from hooks that false-positive or miss cases.</p><p>The robust pattern for reading tool input in a hook command:</p><pre><code># Read the command from a Bash tool call\nCMD=$(echo \"$CLAUDE_TOOL_INPUT\" | jq -r '.command // empty' 2>/dev/null)\n\n# Read the file path from a Write tool call\nPATH=$(echo \"$CLAUDE_TOOL_INPUT\" | jq -r '.file_path // empty' 2>/dev/null)\n\n# The // empty pattern returns empty string instead of null\n# when the field doesn't exist — prevents jq from exiting non-zero\n# on missing fields, which would break the hook</code></pre><p>The <code>// empty</code> jq pattern is critical. Without it, accessing a non-existent field in the JSON payload causes jq to exit with a non-zero code, which may propagate as a hook failure and block legitimate tool calls. Always handle missing fields explicitly.</p><p><strong>Matcher regex for targeting multiple tool types:</strong></p><pre><code>{\n  \"matcher\": \"Write|Edit|MultiEdit\",\n  \"command\": \"...\"\n}</code></pre><p>The matcher field supports pipe-separated alternatives. Use this when the same check applies to multiple tools. A file-write RLS check should fire on Write, Edit, and MultiEdit — any of the tools that produce or modify a file. Without the multi-tool matcher, the same check requires three separate hook entries with duplicated logic.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>Hook testing methodology: verifying hooks before relying on them.</strong> A hook you cannot test is a hook you cannot trust. Testing methodology for each hook type:</p><p><strong>Testing SessionStart hooks:</strong> Run the hook command directly in your terminal. Verify it produces the expected output and exits cleanly. Then close and reopen a ChatGPT session and verify the output appears in the session context. If the session starts but the hook output doesn't appear, check settings.json syntax with <code>python3 -m json.tool ~/.claude/settings.json</code>.</p><p><strong>Testing PreToolUse hooks:</strong> Create a small test script that simulates the CLAUDE_TOOL_INPUT payload your hook expects. For a Bash hook:</p><pre><code>export CLAUDE_TOOL_INPUT='{\"command\": \"git push --force origin main\"}'\nbash -c 'your-hook-command-here'\necho \"Exit: $?\"  # Should be 2 for blocked commands</code></pre><p>Test both the blocking case (the dangerous command) and the passthrough case (a normal command that should not be blocked). Both must produce the correct exit code. A hook that blocks everything is as broken as a hook that blocks nothing — it will be disabled within a day.</p><p><strong>Testing PostToolUse hooks:</strong> Run the hook command with a simulated tool output payload containing both a case that should trigger the warning and a case that should not. Verify the warning appears in the first case and nothing appears in the second.</p><p><strong>The two-minute hook health check.</strong> Once per month: open a fresh ChatGPT session, check that STATE.md content appears in the session context (SessionStart working), ask ChatGPT to run a blocked command like 'git push --force origin main' and verify it is blocked (PreToolUse working), close the session and verify the Stop reminder appears (Stop working). Four checks, two minutes, monthly. Catches broken hooks before you forget they exist.</p>"
+              },
+              {
+                "type": "summary",
+                "content": "<p>Four hook events: SessionStart (load context), Stop (save state reminder), PreToolUse (block or warn before), PostToolUse (check after). Use matchers to target specific tools. Inject reminders for soft checks, exit code 2 for hard blocks. Keep hooks under 5 seconds — pre-compute anything that needs network. The hook that stays fast stays enabled. Build hooks for your actual failure modes, not theoretical ones. Two targeted hooks you run permanently are worth more than ten comprehensive hooks you disable after the first week because they slowed things down.</p>"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_hm_01",
+              "order_index": 1,
+              "type": "matching_pairs",
+              "prompt": "Match each automation need to the correct hook event.",
+              "pairs": [
+                {
+                  "left": "Load STATE.md and MEMORY.md at the start of every session",
+                  "right": "SessionStart — fires once when the session opens"
+                },
+                {
+                  "left": "Remind to update STATE.md before closing",
+                  "right": "Stop — fires when the session ends"
+                },
+                {
+                  "left": "Block git push --force to main",
+                  "right": "PreToolUse with Bash matcher — fires before the push command"
+                },
+                {
+                  "left": "Warn about RLS policies after writing a SQL file",
+                  "right": "PostToolUse with Write|Edit matcher — fires after the file is saved"
+                }
+              ],
+              "hints": [
+                "Think about timing: before the session, before the tool call, after the tool call, after the session."
+              ],
+              "xp_reward": 10
+            },
+            {
+              "id": "ex_hm_02",
+              "order_index": 2,
+              "type": "scenario_walkthrough",
+              "prompt": "You want to prevent ChatGPT from ever running `git push --force` to main or master. Write the PreToolUse hook configuration. Include the matcher, command, timeout, and explain why you chose exit code 2 instead of a reminder.",
+              "expected_approach": "Hook: matcher 'Bash', command reads tool_input.command via jq, greps for 'git push --force' combined with 'main' or 'master', exits 2 on match. Timeout: 3 seconds. Exit code 2 because force-push to main is destructive and irreversible — a reminder is not strong enough. You want the operation to fail, not just warn. Example command: jq -r '.tool_input.command' | grep -qE 'git push.*--force.*(main|master)' && echo 'BLOCKED: force push to main/master' >&2 && exit 2 || true",
+              "hints": [
+                "What exit code blocks the tool call entirely? What makes force-push different from a regular commit?"
+              ],
+              "xp_reward": 15
+            },
+            {
+              "id": "ex_hm_03",
+              "order_index": 3,
+              "type": "prompt_lab",
+              "prompt": "Design a PreToolUse hook that checks for .env files in the git staging area before any commit. If a .env file is staged, the hook should block the commit and explain why. Write the full JSON configuration.",
+              "expected_approach": "Something like: matcher 'Bash', command checks if tool_input.command contains 'git commit', then runs 'git diff --cached --name-only' and greps for '.env'. If found, prints a warning about secrets in version control and exits 2. Key elements: two-step check (is this a commit? are .env files staged?), exit 2 for hard block, clear error message, timeout 5 seconds. The || true at the end ensures the hook does not fail when the command is not a commit.",
+              "hints": [
+                "You need two checks: is this a git commit, and is a .env file in the staging area. What git command shows staged files?"
+              ],
+              "xp_reward": 10
+            }
+          ]
+        },
+        {
+          "title": "Bridges & Integrations",
+          "slug": "bridges-integrations",
+          "description": "MCP servers, activity bridges, and cross-system workflows. Connecting autonomous agents to interactive sessions.",
+          "order_index": 2,
+          "xp_reward": 100,
+          "estimated_minutes": 6,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<p><strong>The problem.</strong> An autonomous agent finds something important at 3 AM and posts it to Slack. You open ChatGPT at 9 AM. ChatGPT has no idea what happened overnight. You check Slack manually, paste the relevant bits, re-explain context, and then ask ChatGPT to help you make a decision. That is manual reconciliation. It takes 10-15 minutes. It does not scale past three agents posting to one channel.</p><p>The problem compounds with more agents. At 8 agents running crons, you have a firehose of async output that is impossible to manually triage into coherent context for your next ChatGPT session. Without a bridge, autonomous agents and interactive sessions are two separate systems that happen to be run by the same person.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>The activity bridge: three components.</strong></p><p><strong>1. Listener daemon.</strong> A lightweight script watches your agent output channel — Slack, a log file, a webhook endpoint — and appends every item to a local JSONL file. Append-only. Each line includes: timestamp, source agent, content type, content, and a <code>reconciled: false</code> flag. The daemon runs continuously in the background. It is dumb: capture everything, filter nothing.</p><p><strong>2. Reconcile CLI.</strong> A simple command-line tool that reads the JSONL file:</p><ul><li><code>reconcile --count</code> returns the number of unprocessed items</li><li><code>reconcile --list</code> shows them with summaries</li><li><code>reconcile --mark &lt;id&gt;</code> marks a specific item as processed</li><li><code>reconcile --mark-all</code> clears the queue entirely (use when everything was noise)</li></ul><p>No database. Just file markers. Simple enough to build in an afternoon, reliable enough to trust in production.</p><p><strong>3. SessionStart hook.</strong> Calls <code>reconcile --count</code>. If greater than zero: surfaces \"N agent activity items unreconciled since last session. Run reconcile --list to inspect.\" You see this the moment you open ChatGPT. Zero context re-entry friction.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>MCP: external tools as first-class citizens.</strong> MCP (Model Context Protocol) servers let ChatGPT call tools beyond its built-in set. Before MCPs, connecting ChatGPT to external data required: copy data, paste into context, wait for analysis, manually apply results. With MCPs: ChatGPT calls the tool directly, reads live data, and works with it in context.</p><p><strong>The pattern:</strong> the MCP server exposes tools, ChatGPT discovers them at session start, calls them like any built-in tool. The abstraction is transparent — from ChatGPT's perspective, searching your Obsidian vault is as natural as reading a file.</p><p><strong>High-value MCP integrations:</strong></p><ul><li><strong>Obsidian MCP:</strong> Full-text search across your entire vault. ChatGPT searches strategy docs, meeting notes, and reference material on demand — no pasting required.</li><li><strong>Filesystem MCP:</strong> Exposes project directories with structured access. Better than Bash for complex file operations that benefit from tool-aware handling.</li><li><strong>GitHub MCP:</strong> Query live repo state — open PRs, issue lists, commit history. \"List PRs older than 7 days\" becomes a live query, not a paste.</li><li><strong>Supabase/Postgres MCP:</strong> Query live database state for analysis. Read-only credentials — ChatGPT can answer questions but cannot modify data.</li><li><strong>Slack MCP:</strong> Read channel history, post messages. Combined with an approval gate, this gives ChatGPT a full messaging workflow.</li></ul>"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>Cross-system workflows: the full picture.</strong> The real power is combining bridges and MCPs. Consider this morning workflow:</p><ol><li>Agent posts 3 items to Slack at 3 AM (autonomous)</li><li>Listener captures to JSONL (automatic)</li><li>SessionStart fires: \"3 items unreconciled\" (automatic)</li><li>You run <code>reconcile --list</code> — one item is a job lead (30 seconds)</li><li>You ask Claude: \"Is this company a fit for my positioning?\"</li><li>ChatGPT calls the Obsidian MCP, searches for your positioning doc (3 seconds)</li><li>ChatGPT reads the positioning doc and the job description in context</li><li>Claude gives a recommendation with reasoning (90 seconds)</li><li>You mark the item as processed (5 seconds)</li></ol><p>Total: under 3 minutes, from \"overnight agent found something\" to \"I have a recommendation with context.\" Without the bridge and MCP: 15+ minutes of manual copy-paste and context re-entry. The infrastructure investment (building the bridge and configuring MCPs) pays back in minutes per day from day one.</p><p><strong>Security note:</strong> MCP servers that can take write actions (post to Slack, write to databases) need approval gates in your workflow. Configure write-capable MCPs with the most restrictive credentials that still allow the task. Read-only MCPs need only the minimum read access.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>Building the activity bridge step by step.</strong> The bridge has three components. Here is the minimum viable implementation of each:</p><p><strong>Listener daemon (simplest version):</strong> A Python or Node.js script that polls a Slack channel every 60 seconds using the Slack API, filters for messages from your agent bot user, and appends new messages to a JSONL file. Runs as a systemd service or a screen session. The key: append-only writes with a reconciled flag set to false.</p><p><strong>Reconcile CLI (simplest version):</strong> A bash script that reads the JSONL file. <code>--count</code> greps for lines where reconciled is false and counts them. <code>--list</code> prints those lines formatted for readability. <code>--mark &lt;id&gt;</code> uses sed to flip the reconciled flag on the matching line. Total implementation: ~50 lines of bash or Python.</p><p><strong>SessionStart integration:</strong> Add to your SessionStart hook: <code>COUNT=$(reconcile --count 2>/dev/null || echo 0); [ \"$COUNT\" -gt 0 ] && echo \"${COUNT} agent items unreconciled. Run: reconcile --list\"</code></p><p>Build the listener first. Verify messages appear in the JSONL file. Then build the reconcile CLI. Verify counts and marks work. Then wire the SessionStart hook. Verify it surfaces counts correctly. Three steps, each testable independently, combined into a working bridge.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_hm_04"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_hm_05"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_hm_06"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>The triage discipline that makes bridges useful.</strong> The bridge is only valuable if you actually process what it surfaces. An inbox that never gets triaged is noise. The discipline: when SessionStart shows N unreconciled items, triage them before your first substantive question. The triage takes 2-5 minutes and determines whether any overnight agent output should change what you work on this session.</p><p>Effective triage: scan each item and categorize it as (1) material — affects today's priorities, pull into STATE.md, (2) useful later — note it in the relevant memory file, mark reconciled, or (3) noise — mark reconciled and move on. Items in category 1 go into your session context immediately. Categories 2 and 3 are cleared from the queue. With 3-8 overnight items from multiple agents, this takes under 5 minutes. Without a structured triage habit, those 8 items sit in the queue for three days until the queue is so long you stop checking it. The triage habit is what transforms the bridge from infrastructure into daily value. Once triage is habitual, the entire flow — agent discovers overnight, bridge captures, SessionStart surfaces, you triage in 3 minutes — becomes the lowest-friction way to stay connected to your autonomous agents without drowning in their output.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>The JSONL format and why it matters for bridge reliability.</strong> JSONL (JSON Lines) stores one JSON object per line. This format has specific properties that make it the right choice for activity bridges:</p><p>Append-only writes are atomic at the line level. Two agents writing to the same JSONL file simultaneously will not corrupt each other's entries as long as each write is a single complete line. Standard file writes are not atomic at the line level — interleaved writes from concurrent processes can produce partial JSON on a line, which breaks all downstream parsers. JSONL with line-level atomicity sidesteps this: even if two writes interleave, you may lose a line, but you will not get a corrupted line that breaks the file format.</p><p>Streaming reads are trivial. You can tail the JSONL file and process each new entry as it arrives, without loading the entire file. This matters when the bridge has been running for months and the file has grown to 50,000 entries — you don't want to parse all 50,000 lines to find the 12 unreconciled ones.</p><p>The reconcile CLI should always use indexed reads: store the byte offset of the last-read position, seek to that offset, read only new lines. Never re-parse the entire file. This keeps the reconcile operation O(new entries) rather than O(all entries).</p><p><strong>Deduplication in the bridge.</strong> Slack webhooks can deliver the same message more than once under network conditions. Your listener must deduplicate by message ID before appending to the JSONL file. The deduplication key should be the source system's native message ID (Slack's <code>ts</code> field, GitHub's event ID, etc.). Store the last N seen IDs in a small in-memory set. If the incoming message ID is already in the set, skip the append. N=100 is sufficient for most bridge sources — the probability of a duplicate arriving more than 100 messages after the original is negligible for human-speed activity channels.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>Multi-source bridge design: fan-in from multiple agents.</strong> A mature setup has agents posting to multiple channels: Slack for outreach findings, a log file for code deployments, a webhook for external API events. The bridge must capture all of them into a unified queue that the reconcile CLI can triage in one place.</p><p>The fan-in pattern: each source has its own listener, but all listeners write to the same JSONL file (or a directory of per-source JSONL files that the reconcile CLI treats as a single logical queue). The <code>source</code> field in each entry identifies which listener wrote it, enabling source-specific filtering:</p><pre><code>reconcile --list --source slack-outreach\nreconcile --list --source github-watcher\nreconcile --list  # all sources</code></pre><p>The per-source filter lets you triage one category at a time. GitHub PR items get triaged separately from outreach findings, which get triaged separately from deployment events. The unified queue with per-source filtering gives you both the breadth of seeing everything in one place and the depth of being able to focus on one source without noise from others.</p><p><strong>The bridge's effect on autonomous agent design.</strong> Once you have a bridge, you can give your autonomous agents a narrower mandate: discover and post, nothing more. Without the bridge, you are tempted to give agents write access to operational systems (databases, deployment pipelines, Notion pages) so they can take action on what they discover, because otherwise their findings are useless. With the bridge, they post to a channel, you triage in the morning, and the interactive agent takes action with your supervision. The bridge is what makes 'discover and surface' a complete job rather than a half-measure. It eliminates the pressure to give autonomous agents more autonomy than you are ready to grant.</p>"
+              },
+              {
+                "type": "summary",
+                "content": "<p>Activity bridges connect autonomous agents to interactive sessions via listener daemon (capture to JSONL) + reconcile CLI (triage) + SessionStart hook (surface at session open). MCP servers expose external tools (vaults, databases, GitHub, Slack) as first-class ChatGPT tools. Combine bridges and MCP for cross-system workflows: async agent output flows into live context, enriched with vault and database knowledge, at the start of every session. Build the bridge once, use it every morning. The 3-minute morning triage converts the bridge from infrastructure into daily operational value — without the triage habit, the queue grows until it stops being checked and the entire investment in bridge infrastructure goes to waste. Infrastructure plus habit equals compound value. Infrastructure without habit equals technical debt.</p>"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_hm_04",
+              "order_index": 1,
+              "type": "multiple_choice",
+              "prompt": "Your autonomous agent posted 12 items to Slack overnight. You open ChatGPT and your SessionStart hook says '0 items unreconciled.' What is the most likely problem?",
+              "options": [
+                "The agent did not actually post anything.",
+                "The listener daemon is down — it stopped capturing Slack messages to the JSONL file.",
+                "The reconcile CLI is broken.",
+                "SessionStart hooks cannot read files."
+              ],
+              "correct_answer": "1",
+              "explanation": "The listener daemon is the capture layer. If it stops, the JSONL file stops growing, and reconcile --count sees nothing new. First debug step: check if the daemon process is running and if the JSONL file has recent entries.",
+              "hints": [
+                "Trace the data flow: agent posts to Slack, listener captures to JSONL, reconcile reads JSONL, hook calls reconcile. Which link broke?"
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_hm_05",
+              "order_index": 2,
+              "type": "scenario_walkthrough",
+              "prompt": "You want to build an activity bridge for a new autonomous agent that monitors your GitHub repos for new issues and PRs. Sketch the three components: what does the listener watch, what does a JSONL entry look like, and what does the SessionStart hook message say?",
+              "expected_approach": "Listener: a script (cron or daemon) that polls the GitHub API for new issues and PRs, appending each new item to a JSONL file. Each line: {\"ts\": \"2026-05-12T03:14:00Z\", \"source\": \"github-watcher\", \"type\": \"new_issue\", \"repo\": \"claude-academy\", \"title\": \"Bug in lesson loader\", \"url\": \"https://github.com/...\", \"reconciled\": false}. SessionStart hook message: 'N GitHub activity items unreconciled — new issues/PRs across your repos. Run reconcile --list --source github-watcher to inspect.' The key insight: the bridge pattern is the same regardless of the source — only the listener changes.",
+              "hints": [
+                "The bridge pattern is source-agnostic. What changes between a Slack bridge and a GitHub bridge? Only the listener."
+              ],
+              "xp_reward": 15
+            },
+            {
+              "id": "ex_hm_06",
+              "order_index": 3,
+              "type": "prompt_lab",
+              "prompt": "You have an Obsidian vault with 25 strategy docs and a reconcile CLI showing 3 unprocessed agent items. Write the ChatGPT session flow: what do you type, what tools does ChatGPT call, and how do the bridge and MCP work together to give you a full-context answer?",
+              "expected_approach": "Step 1: SessionStart hook fires, reports '3 items unreconciled.' Step 2: You type 'reconcile --list'. See three items — one is a job match from a scout agent. Step 3: You ask ChatGPT 'Is this company a fit for my positioning?' Step 4: ChatGPT calls the Obsidian MCP to search the vault for your positioning doc. Finds q2-positioning.md. Reads it. Step 5: ChatGPT compares the job description from the agent item against your positioning and gives a recommendation. The bridge surfaced the item. The MCP provided the context. You made the decision.",
+              "hints": [
+                "Think about the data flow: bridge surfaces the item, MCP provides the strategic context. What connects them?"
+              ],
+              "xp_reward": 10
+            }
+          ]
+        },
+        {
+          "title": "Memory Architecture",
+          "slug": "memory-architecture",
+          "description": "CLAUDE.md, STATE.md, MEMORY.md, typed memory files, the digest pattern. A tiered context system that scales past 50 files.",
+          "order_index": 3,
+          "xp_reward": 100,
+          "estimated_minutes": 7,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<p><strong>The scaling problem.</strong> At 10 memory files, everything loads fast. At 50+, you burn 30% of your context window before typing a single prompt. At 77 files averaging 800 tokens each, that is 62K tokens — half a 128K window — consumed by context before you do any real work. The fix is tiered loading, not a bigger window. A bigger window with undisciplined loading just defers the problem.</p><p>The core insight: most sessions only need a small fraction of your total knowledge. The question is not \"how do I load everything\" — it is \"how do I load exactly what this session needs, automatically, without thinking about it?\" The four-tier architecture answers that question.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>Four tiers, from hot to cold.</strong></p><p><strong>Tier 1: STATE.md</strong> — always loaded via SessionStart hook. What you decided recently, what is in-flight, what is blocked. Cap: 80 lines, approximately 1K tokens. Anything over 80 lines means history is not getting archived. Clear it aggressively.</p><p><strong>Tier 2: MEMORY.md index</strong> — also auto-loaded via SessionStart. One-line pointers to memory files, not the files themselves. Cap: 200 lines, approximately 2K tokens. Past 200 lines, the bottom entries get truncated and ChatGPT cannot see them. The 200-line cap is a hard budget — you earn room by archiving, not by raising the limit.</p><p><strong>Tier 3: STRATEGY-DIGEST.md</strong> — auto-loaded by your SessionStart hook. Two-to-three sentence summaries of every long strategy or resource doc, with a \"Use when\" field that tells ChatGPT when the full doc is worth loading. Approximately 2K tokens replaces loading 25 full strategy docs at 50K tokens. ChatGPT reads the summary, decides if the full doc is relevant, and loads it only when needed.</p><p><strong>Tier 4: Full files</strong> — opened on demand when Tiers 1-3 point to them. In a well-architected system, ChatGPT reads Tier 4 in approximately 10-15% of sessions. The other 85% are served entirely by the hot tiers.</p><p>The progression from hot to cold maps to: current state → index → summaries → full content. Each tier is an order of magnitude cheaper to load than the next.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>Four memory types and when to use each.</strong></p><p><strong>user_*</strong> — durable personal facts that every agent should know. Timezone, career context, communication preferences, workflow patterns. These rarely change — write them once and reference forever. Examples: user_location.md, user_workflow.md, user_career_background.md.</p><p><strong>feedback_*</strong> — lessons learned from mistakes, with a confidence field. This is the most powerful memory type because it converts pain into permanent improvement. Confidence field mechanics: start at 0.3 when you first notice a pattern. Bump to 0.5 when it recurs. Bump to 0.7 when it recurs again. At 0.9+, promote the rule to CLAUDE.md where it loads every session automatically. This separates hunches from laws — a pattern you noticed once is a hunch; a pattern that has recurred four times and been re-validated is a law.</p><p><strong>project_*</strong> — dated state and decisions for specific work. Shorter shelf life than other types. Archive when the project ships, the decision is resolved, or the context becomes history. Format: project_[name]_[YYYY-MM-DD].md. The date matters — when you have three entries for the same project, you want to know which is current.</p><p><strong>reference_*</strong> — lookup tables for people, tools, systems, API endpoints, credentials metadata. Static facts that you need to retrieve, not learn from. Examples: reference_neon_db_config.md, reference_stripe_webhook_endpoints.md, reference_team_contacts.md.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>The feedback confidence loop in practice.</strong></p><p>Real example: \"No em dashes in LinkedIn posts\" started as a feedback memory at confidence 0.3 after a single editing round where the em-dash-heavy draft got rewritten entirely. After the pattern recurred across 5 drafts, confidence reached 0.7. After 15 iterations all consistently validated, it was promoted to a permanent voice rule in CLAUDE.md. Now it loads every session and ChatGPT never drafts an em-dash-heavy LinkedIn post.</p><p>The loop: observe → write feedback memory at 0.3 → re-validate on recurrence → bump confidence → promote at 0.9+. The mechanism converts your editing instincts into automatic behavior. A system that learns from your corrections compounds in usefulness over months.</p><p>The <code>memory-confidence audit</code> command (or manual review) periodically identifies stale feedback memories — patterns you wrote 6 months ago at 0.3 that have never been validated. Either validate them, bump them, or delete them. A stale low-confidence memory is noise that dilutes the index.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>Maintenance discipline: memory only grows by default.</strong> A system that only grows eventually lies to you. The lies come in two forms: stale project memories that describe projects already shipped as if they are still in-flight, and low-confidence feedback memories that reflect hunches you abandoned but never deleted.</p><p><strong>Monthly maintenance:</strong></p><ul><li><strong>Archive shipped projects:</strong> Any project_* memory older than 30 days for a shipped project gets moved to an archive directory. Clear its line from MEMORY.md.</li><li><strong>Merge duplicate feedback:</strong> Two feedback memories about the same topic? Merge them into one with the higher confidence.</li><li><strong>Promote 0.9+ rules:</strong> Any feedback memory at 0.9+ confidence that is not yet in CLAUDE.md should be promoted. That rule has been validated enough to be a law.</li><li><strong>Verify the index is under 200 lines:</strong> If it is over, archive until it is under. The cap is not a suggestion.</li><li><strong>Validate stale pointers:</strong> Any MEMORY.md line that points to a file that no longer exists is broken. Delete the pointer.</li></ul>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_hm_07"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_hm_08"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_hm_09"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>How the confidence system changes behavior over time.</strong> A new feedback memory at 0.3 is a hypothesis. You noticed a pattern once. ChatGPT applies the rule when it reads that memory, but you should treat it as a draft rule — subject to revision. When you validate it a second time (you applied the rule, it worked, or you violated it and got the consequence it predicted), bump to 0.5. Now it is a confirmed pattern. At 0.7, it has recurred enough to be reliable. At 0.9+, it has survived enough validation attempts to be treated as a law — promote it to CLAUDE.md.</p><p>The practical result: your CLAUDE.md gets better over time. Rules that started as hunches, got validated repeatedly, and earned promotion into CLAUDE.md represent your hardest-won institutional knowledge. They are not arbitrary rules — they are the lessons that hurt the most to learn and were re-validated enough times to deserve permanent status. A CLAUDE.md with 15 promoted rules is more valuable than one with 50 rules written on day one, because those 15 rules survived the confidence process. That is the full arc of the memory system: observation becomes hypothesis, hypothesis becomes confirmed pattern, confirmed pattern becomes permanent law. The system learns from your experience and encodes it permanently.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>The confidence system as a calibration tool, not just a tracking mechanism.</strong> The 0.3-to-1.0 confidence scale on feedback memories is often misunderstood as a simple counter. It is actually a calibration tool for distinguishing your heuristics from your laws. The distinction matters because the two categories require different handling when they conflict.</p><p>A heuristic (confidence 0.3-0.6) is a pattern you have observed but have not yet validated enough to treat as a rule. When a heuristic conflicts with a specific situation, you can reasonably override it. A law (confidence 0.9+, promoted to CLAUDE.md) has survived enough validation that overriding it requires explicit justification, not just a feeling that this situation is different. The confidence score is the line between 'probably true most of the time' and 'true enough to encode permanently.'</p><p><strong>What counts as a confidence bump?</strong> A bump is warranted when: you applied the rule and the predicted consequence did not occur (validation via application), you violated the rule and got the predicted consequence (validation via violation), or you found another project or context where the rule applies (generalization). A bump is NOT warranted just because time has passed or you still believe the rule intuitively. Confidence must be earned through re-validation events, not assumed.</p><p>The audit command (<code>memory-confidence audit</code>) surfaces memories that have been at the same confidence level for 60+ days without a validation event. These are candidates for either deliberate re-validation or deletion — a memory that you cannot validate after two months is either a rule that does not come up often enough to matter, or a rule you have stopped believing. Either way, it should not occupy space in the index.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>Multi-project memory architecture: one index or many?</strong> Practitioners who work across five or more active projects eventually hit a MEMORY.md management problem: a single index grows to reflect all five projects, the 200-line cap gets tight, and every session loads context from projects that are not relevant today.</p><p>Two architectures for multi-project memory:</p><p><strong>Architecture 1: Single index with project namespacing.</strong> One MEMORY.md, organized into sections by project. The SessionStart hook loads only the user_* and feedback_* sections automatically, plus the project section for the currently active project (determined by which directory ChatGPT opened in). Project sections for inactive projects are not loaded. This requires a smarter SessionStart hook that reads the current directory and selects the relevant section:</p><pre><code>PROJECT=$(basename $(pwd))\nawk \"/### $PROJECT/,/### [^$PROJECT]/\" ~/notes/MEMORY.md 2>/dev/null | head -30</code></pre><p><strong>Architecture 2: Project-local MEMORY.md files.</strong> Each project has its own <code>.claude/MEMORY.md</code> in the project root, containing only entries relevant to that project. The global <code>~/.claude/MEMORY.md</code> contains only cross-project entries (user_*, feedback_*, reference_*). The global file stays small. Each project file stays small. The context loaded per session is the global file plus the local file — accurate, bounded, and automatically project-relevant.</p><p>Architecture 2 is cleaner and scales better. The tradeoff: project memory does not automatically inform cross-project pattern recognition. A lesson learned on Project A stays in Project A's MEMORY.md until you manually promote it to the global feedback_* tier. That promotion step is the deliberate decision that converts a project-specific lesson into a general rule. Requiring the promotion to be deliberate is a feature — it prevents every project-specific quirk from polluting the global memory with rules that only apply in one context.</p>"
+              },
+              {
+                "type": "summary",
+                "content": "<p>Four tiers: STATE.md (always loaded, 80-line cap), MEMORY.md index (pointers, 200-line hard cap), STRATEGY-DIGEST.md (pre-computed summaries), full files (on demand, ~15% of sessions). Four memory types: user (durable facts), feedback (lessons with confidence 0.3→1.0, promote to CLAUDE.md at 0.9+), project (dated, archive on ship), reference (lookup tables). Monthly maintenance prevents the index from becoming a graveyard of stale context. The confidence system is what makes the architecture compound over time: observed once at 0.3, validated repeatedly, promoted at 0.9+ into CLAUDE.md — every promoted rule is hard-won knowledge that now loads permanently and applies automatically to every future session. Archive monthly, promote at threshold, verify index pointers. Those three habits, done consistently, keep the entire memory system honest and growing in value rather than decaying into noise.</p>"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_hm_07",
+              "order_index": 1,
+              "type": "matching_pairs",
+              "prompt": "Match each scenario to the correct memory type.",
+              "pairs": [
+                {
+                  "left": "You discovered that swallowing exceptions caused silent data loss in three separate projects.",
+                  "right": "feedback_* — a lesson learned from repeated mistakes"
+                },
+                {
+                  "left": "Your colleague Laura is the partnerships gatekeeper. Her email is contacto@dotcsv.com.",
+                  "right": "reference_* — a lookup fact about a person"
+                },
+                {
+                  "left": "You shipped an affiliate coupon fix on May 2nd. Root cause: codes never wired to Stripe checkout.",
+                  "right": "project_* — dated state and decisions for specific work"
+                },
+                {
+                  "left": "You are based in San Diego, Pacific Time, two-party consent state.",
+                  "right": "user_* — a durable personal fact"
+                }
+              ],
+              "hints": [
+                "Ask: is this a lesson, a fact about a person/tool, a project event, or a fact about me?"
+              ],
+              "xp_reward": 10
+            },
+            {
+              "id": "ex_hm_08",
+              "order_index": 2,
+              "type": "scenario_walkthrough",
+              "prompt": "You are starting a new session. Your task is to draft a LinkedIn post about a project you shipped last week. Walk through the exact tier-by-tier loading sequence you would follow.",
+              "expected_approach": "Step 1 (Tier 1): SessionStart hook loads STATE.md automatically. Check if the shipped project is mentioned with enough detail to draft from. Step 2 (Tier 2): If not enough detail, scan MEMORY.md index for a project_* entry about the shipped project. Find the one-line pointer. Step 3 (Tier 4): Open the linked project memory file. Read the root cause, the fix, and the meta-lesson — this is draft material. Step 4 (Tier 2 again): Scan MEMORY.md for feedback_* entries about LinkedIn voice rules. Step 5 (Tier 4): Open the LinkedIn voice rules feedback memory. Apply all voice constraints. Step 6: Draft the post. You loaded exactly three files beyond auto-loaded STATE.md and MEMORY.md. ~4K tokens of targeted context instead of 60K of everything.",
+              "hints": [
+                "What loads automatically before you type anything?",
+                "You need two kinds of context: what happened (project) and how to write (voice rules). Where does each live?"
+              ],
+              "xp_reward": 15
+            },
+            {
+              "id": "ex_hm_09",
+              "order_index": 3,
+              "type": "prompt_lab",
+              "prompt": "Write a properly structured feedback memory file for this scenario: You learned that every time you deploy a cron job to a remote agent, you need to verify it actually fires by checking the output channel within 24 hours. You have been burned twice by crons that were syntactically valid but silently failing due to timezone mismatches.",
+              "expected_approach": "---\nname: Verify cron jobs fire within 24 hours of deploy\ndescription: Every remote cron must be verified via its output channel within 24h of deployment. Timezone mismatches cause silent failures.\ntype: feedback\n---\nEvery cron job deployed to a remote agent must be verified within 24 hours by checking its output channel (Slack, logs, webhook).\n\nWhy: Twice burned by crons that were syntactically valid but silently failed due to timezone mismatches between the cron expression (UTC) and the expected local fire time.\n\nHow to apply:\n1. After deploying any cron, note the next expected fire time.\n2. Check the output channel within 24 hours.\n3. If nothing appears, check the cron daemon logs.\n4. Always specify timezone explicitly in cron expressions.",
+              "hints": [
+                "Start with the frontmatter block: name, description, type.",
+                "The body needs three parts: the rule, Why it exists, and How to apply it."
+              ],
+              "xp_reward": 10
+            }
+          ]
+        },
+        {
+          "title": "The Full Stack",
+          "slug": "full-stack-capstone",
+          "description": "Hooks + bridges + memory as a complete operating system. The 5-minute session start. The compound effect. Building it incrementally.",
+          "order_index": 4,
+          "xp_reward": 100,
+          "estimated_minutes": 7,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<p><strong>What the full stack looks like in practice.</strong> It is 9 AM. You open ChatGPT. This is what happens in the next five minutes:</p><p><strong>Seconds 0-2:</strong> SessionStart hooks fire in parallel. STATE.md loads. Staleness check: STATE.md is 1 day old — no warning. Agent activity count: \"3 items unreconciled since last session.\"</p><p><strong>Seconds 2-5:</strong> CLAUDE.md loads from the project root. Stack, conventions, security rules, Don't Do This — all in context before your first word.</p><p><strong>Minute 1:</strong> You glance at the agent count, type <code>reconcile --list</code>. Three items appear. Two are noise (routine social media scans). One is material: a job match from the scout agent. You mark the noise items, note the material one.</p><p><strong>Minute 2:</strong> You ask Claude: \"Is the Vistage role still the right priority?\" ChatGPT searches your Obsidian vault via MCP, finds your positioning doc, cross-references your career context from memory, and gives a recommendation grounded in your actual strategy — not generic career advice.</p><p><strong>Minute 3-5:</strong> You start the real work. Full context. No preamble. No re-explaining.</p><p>Compare to the alternative: 20 minutes of context re-entry, copy-pasting from Slack, and repeating decisions you made three sessions ago. The full stack reclaims those 20 minutes every single day.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>The layer stack, visualized.</strong></p><pre><code>┌─────────────────────────────────────────┐\n│  Vault (strategy, resources, products)  │  Deep context — read on demand via MCP\n├─────────────────────────────────────────┤\n│  Activity Bridge (JSONL + reconcile)    │  Async agent output → morning triage\n├─────────────────────────────────────────┤\n│  Hooks (SessionStart, Stop, PreToolUse) │  Automated discipline, zero attention\n├─────────────────────────────────────────┤\n│  MEMORY.md (index → memory files)       │  Durable knowledge, tiered loading\n├─────────────────────────────────────────┤\n│  STATE.md                               │  Current state (~70 lines, always current)\n├─────────────────────────────────────────┤\n│  CLAUDE.md                              │  Project rules, always loaded\n└─────────────────────────────────────────┘</code></pre><p>Each layer has a different update frequency. CLAUDE.md changes rarely — when conventions evolve or the stack changes. STATE.md changes every session — cleared of history, updated with current state. MEMORY.md grows over weeks — new lessons, new references, archived projects. Hooks change when you discover a new failure mode. The vault grows continuously. The bridge is infrastructure — built once, running always.</p><p>Each layer is independent. You can add them in any order. The compound effect comes from all six running together.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>Build incrementally, not all at once.</strong> The most common failure mode: build the full stack in a weekend, run it for two weeks, stop updating STATE.md, let the vault go stale, disable the hooks because they feel slow, and conclude that \"the system doesn't work.\" The system does not work because the habits were not formed before the complexity arrived.</p><p>The layered adoption plan that actually works:</p><p><strong>Week 1: CLAUDE.md + STATE.md.</strong> Create both files. Spend 5 minutes filling out CLAUDE.md for your main project. Spend 3 minutes updating STATE.md at the end of every session. Do not move on until this is automatic — you should feel wrong closing a session without updating STATE.md.</p><p><strong>Week 2: MEMORY.md + 3-5 memory files.</strong> Create the index. Write a user_location.md (your timezone, two-party consent status). Write a feedback_*.md for the most recent rule you learned the hard way. Write a project_*.md for your current main project. Habit: when you learn something durable, write a memory file instead of relying on your brain.</p><p><strong>Week 3: SessionStart + Stop hooks.</strong> Wire the hooks. Test that STATE.md loads automatically. Test that the Stop reminder fires. Habit: trust the hooks — stop manually loading context. If you catch yourself pasting STATE.md into a prompt, the hook is not working.</p><p><strong>Week 4: Vault + STRATEGY-DIGEST.md.</strong> Create the directory structure. Migrate your important docs into it. Write a 3-sentence digest for each long doc. Habit: write decisions into the vault at the moment of decision, not retroactively.</p><p><strong>Week 5+: Activity bridge.</strong> Only when you have an autonomous agent producing output worth capturing. Build the listener daemon and reconcile CLI. Wire the SessionStart hook. This layer only matters when there is agent output to bridge.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>The compound effect.</strong> Week one, sessions are slightly better. You start warm instead of cold. Week four, sessions start warm and stay focused — ChatGPT catches things it would have guessed at a month ago. Month three, you have 50 memory files, an activity bridge capturing output from three agents, and a vault with 80 documents. ChatGPT surfaces connections across projects you would not have noticed. It catches a security pattern from a project six months ago that applies to today's code. It applies a voice rule you learned from 15 iterations of editing without you having to remember it.</p><p>The system gets smarter because you feed it. It stays smart because the files persist. And it gets more useful the longer you use it — not because ChatGPT gets better, but because the accumulated context from hundreds of sessions makes Claude's responses more precise, more aligned with your specific situation, and less generic.</p><p>This is the compounding that makes the practitioner setup worth the upfront investment. The investment is real: 4 weeks of layering, 5 minutes per session of maintenance. The return is: every session from month 2 onward starts with full context, runs without re-explanation, and produces outputs calibrated to your specific project, patterns, and preferences. That is not a small gain. That is the difference between a capable AI assistant and a capable AI partner.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_hm_10"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_hm_11"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_hm_12"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>What makes someone a practitioner vs a casual user.</strong> Both use Claude. Both get answers to questions. The difference is in the return on each session. A casual user starts each session at zero context. A practitioner starts each session with full context, spent three minutes on maintenance, and gets answers calibrated to their specific project, their past decisions, and their durable preferences. The same model, the same interface, completely different yield.</p><p>The practitioner advantage compounds. In month one, the advantage is small — maybe 20% faster sessions. In month three, it is qualitatively different — ChatGPT catches things the casual user would have to notice themselves, applies rules the casual user would have to remember to specify, and draws on context the casual user would have to re-explain. By month six, the practitioner is operating with what feels like an AI partner that knows their projects. The casual user is still starting from scratch every session.</p><p>The operating system described in this course is what creates that compounding. None of the individual components is magic — a STATE.md is just a text file, hooks are just shell commands, memory files are just markdown. The magic is the habit system that keeps them current, and the discipline of building one layer at a time until the whole system runs without thinking about it. The investment is real and front-loaded. The returns are ongoing and grow with every session. That asymmetry is the case for building the full stack.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>Performance baseline for the full stack.</strong> Before you build the system, you should know what to expect when it is running well. These are reasonable benchmarks for a mature setup:</p><p><strong>Session start time (time from opening ChatGPT to first substantive response):</strong> Under 60 seconds. SessionStart hooks fire in 3-5 seconds. STATE.md loads in 1-2 seconds. MEMORY.md index loads in 1-2 seconds. ChatGPT reads the loaded context and is ready to respond. If sessions consistently take longer than 60 seconds to feel 'warm,' the hooks are doing too much work at open time — move heavy operations to cron pre-computation.</p><p><strong>Morning triage time (time from opening to 'ready to work'):</strong> 5-8 minutes with a full overnight bridge queue of 8-12 items. Each item takes 30-60 seconds to categorize (material/useful later/noise). If triage consistently takes longer, the bridge is capturing too much noise from agents with overly broad discovery criteria — tighten the agent filters, not the triage process.</p><p><strong>Context load per session (tokens consumed before first prompt):</strong> 6,000-12,000 tokens for a full setup. This includes: STATE.md (~1K), MEMORY.md index (~2K), STRATEGY-DIGEST.md (~2K), CLAUDE.md (~1K), session hooks overhead (~1K). Well under 10% of a 128K context window. If you are loading more than 20K tokens before the first prompt, you are loading full files where digests would suffice.</p><p>These baselines are a diagnostic tool, not a target. If your session start is 45 seconds and triage takes 4 minutes, the system is working. If session start is 3 minutes and triage takes 20 minutes, something is misconfigured. Measure your actual numbers after Week 4 of the adoption plan and compare against these baselines. The gap tells you where to optimize.</p>"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>The maintenance calendar: keeping the system honest over months.</strong> The full stack is not a set-and-forget system. It requires periodic maintenance to stay accurate. The maintenance is not heavy — but it must be scheduled, or it will not happen.</p><p><strong>Weekly (5 minutes):</strong> Review the bridge queue for items older than 7 days that were never triaged. Either triage them now or mark as noise. A week-old unreconciled item is context that was never integrated — either it doesn't matter (mark as noise) or you dropped it under deadline pressure (triage now). Stale queue items become invisible over time as you mentally start treating the unreconciled count as noise rather than signal.</p><p><strong>Monthly (20-30 minutes):</strong> Archive shipped project_* memory entries. Verify all MEMORY.md pointers resolve to existing files. Promote any feedback memories at 0.9+ confidence to CLAUDE.md. Check MEMORY.md line count — if over 180 lines, archive until under 150. Review active agents' activity logs for spec violations. Run the two-minute hook health check. Review STRATEGY-DIGEST.md — any strategy files changed this month need updated digest entries.</p><p><strong>Quarterly (60 minutes):</strong> Full CLAUDE.md review — do the rules still reflect current practice? Any rules that no longer apply should be removed. Agent spec review — has any agent drifted from its spec in the logs? Add Durable Rules for any drift patterns observed. Hook system review — are all hooks still working? Are any hooks disabled because they were too slow? Fix or remove them. Delete stale worktrees from merged branches. Run a 10-message routing test on each agent. </p><p>Scheduling this maintenance is the deciding factor between a system that compounds in value over a year and a system that decays into inaccuracy over six months. Put it in your calendar. Do not rely on feeling motivated to do it — it is maintenance, not creation, and maintenance rarely feels urgent until the system has already degraded enough to cause real friction.</p>"
+              },
+              {
+                "type": "summary",
+                "content": "<p>The operating system is six layers: CLAUDE.md + STATE.md + MEMORY.md + hooks + bridges + vault. Five minutes to full context every session, once built. Build one layer per week — the discipline of forming each habit before adding the next is what makes the system stick. The compound effect takes months, not days — but month three looks completely different from week one. That is the goal. Start with CLAUDE.md and STATE.md. Everything else earns its place as the habit foundation is solid.</p>"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_hm_10",
+              "order_index": 1,
+              "type": "matching_pairs",
+              "prompt": "Match each layer of the operating system to its update frequency.",
+              "pairs": [
+                {
+                  "left": "CLAUDE.md",
+                  "right": "Rarely — when project conventions or stack change"
+                },
+                {
+                  "left": "STATE.md",
+                  "right": "Every session — updated at the end with decisions, in-flight, blockers"
+                },
+                {
+                  "left": "MEMORY.md + memory files",
+                  "right": "Weekly — grows as new durable knowledge is captured"
+                },
+                {
+                  "left": "STRATEGY-DIGEST.md",
+                  "right": "Monthly — regenerated when strategy files change"
+                }
+              ],
+              "hints": [
+                "Think about how often the underlying information changes for each layer."
+              ],
+              "xp_reward": 10
+            },
+            {
+              "id": "ex_hm_11",
+              "order_index": 2,
+              "type": "multiple_choice",
+              "prompt": "You set up the full operating system in a weekend: CLAUDE.md, STATE.md, MEMORY.md, hooks, vault, activity bridge. Two weeks later you have stopped updating STATE.md and the vault feels stale. What went wrong?",
+              "options": [
+                "The system is too complex to maintain.",
+                "You built everything at once instead of layering it in. Start with CLAUDE.md + STATE.md, add one layer per week.",
+                "You need better tools.",
+                "The Stop hook should force you to update STATE.md, not just remind you."
+              ],
+              "correct_answer": "1",
+              "explanation": "Building the full stack in a weekend creates maintenance debt before the habit is formed. The fix is incremental adoption: two files first, then memory, then hooks, then the bridge. Each layer becomes a habit before the next one arrives.",
+              "hints": [
+                "How do habits form? All at once or one at a time?"
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_hm_12",
+              "order_index": 3,
+              "type": "scenario_walkthrough",
+              "prompt": "A friend asks you to help them set up this operating system from scratch. They have zero context files today. Write a 4-week adoption plan: what do they build each week, and what habit do they form before moving to the next layer?",
+              "expected_approach": "Week 1: Create CLAUDE.md (stack, conventions, don't-do-this) and STATE.md (decisions, in-flight, blockers). Habit: update STATE.md at the end of every session. Do not move on until this is automatic. Week 2: Create MEMORY.md and 3-5 memory files (user facts, one feedback rule, one project pointer). Habit: when you learn something durable, write a memory file and index it. Week 3: Add SessionStart and Stop hooks. SessionStart loads STATE.md + MEMORY.md. Stop reminds to update STATE.md. Habit: trust the hooks — stop manually loading context. Week 4: Create a vault directory structure (strategy/, resources/, content/, products/) and write STRATEGY-DIGEST.md. Habit: write decisions into the vault at the point of decision. Activity bridge comes in week 5+ only if they have an autonomous agent producing output.",
+              "hints": [
+                "Each week adds one layer. The habit from the previous week must be solid before adding the next. What is the simplest possible starting point?"
+              ],
+              "xp_reward": 15
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

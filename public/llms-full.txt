@@ -1,0 +1,238 @@
+# Learn to GPT — Full Reference for AI Engines
+
+> The gamified learning platform for ChatGPT. Master ChatGPT from your first prompt to building Custom GPTs.
+> This is the expanded version of /llms.txt with detailed lesson descriptions, structured metadata, and FAQs.
+
+## About
+
+Learn to GPT is an independent learning platform (not affiliated with OpenAI) that teaches ChatGPT and GPT through interactive, hands-on exercises. It covers prompting fundamentals, professional techniques, Custom GPTs, the OpenAI API, and advanced workflow patterns. Available in 7 languages.
+
+- Website: https://learntogpt.com
+- Locale-aware: supports en, ja, ko, zh-CN, de, fr, es
+- Platform type: Gamified web application (Next.js)
+- Pricing: Free tracks available; Masterclass is one-time purchase (contact for pricing)
+
+---
+
+## How to Get Started
+
+1. Visit https://learntogpt.com/sign-up — create a free account (no credit card required)
+2. Start with Track 1: Foundations — learn how ChatGPT works and write your first prompts
+3. Complete lessons to earn XP, unlock achievements, and track your progress on the leaderboard
+4. Progress through tracks at your own pace — each lesson is self-contained
+
+For Custom GPTs specifically:
+1. Visit https://learntogpt.com/custom-gpts-tutorial for a step-by-step guide
+2. Take Track 6: Practitioner Setup for hands-on configuration
+3. Continue to Track 3: Custom GPTs for advanced builder patterns
+
+---
+
+## Curriculum — Detailed Track Descriptions
+
+### Track 1: Foundations (Free)
+- Track ID: chatgpt-foundations
+- Difficulty: Beginner
+- Prerequisites: None
+- Estimated time: 2-3 hours
+
+Lessons:
+- Meet ChatGPT — What ChatGPT is, how it differs from other AI tools, how GPT-4o works
+- Your First Prompt — Writing effective prompts, understanding ChatGPT's response patterns
+- Conversation Patterns — Multi-turn conversations, context management, follow-up techniques
+- System Prompts and Custom Instructions — Setting ChatGPT's behavior, tone, and constraints
+- What Makes ChatGPT Powerful — Code interpreter, image generation, browsing, and GPT-4o capabilities
+
+### Track 2: Professional Prompting
+- Track ID: prompting-pro
+- Difficulty: Intermediate
+- Prerequisites: Track 1 recommended
+
+Lessons:
+- Chain-of-Thought Reasoning — Guide ChatGPT through step-by-step logical reasoning for complex problems
+- Structured Output — Get ChatGPT to produce JSON, tables, and consistently formatted responses
+- Few-Shot Techniques — Teach ChatGPT patterns through examples for consistent, high-quality output
+- Prompt Evaluation — Measure prompt quality, A/B test prompts, and systematically improve results
+- Prompt Optimization — Advanced techniques: prompt chaining, decomposition, and iterative refinement
+- Role and Persona Prompting — Assign expertise domains and professional roles for specialized output
+
+### Track 3: Custom GPTs
+- Track ID: custom-gpts
+- Difficulty: Intermediate
+- Prerequisites: Track 1 recommended
+
+Lessons:
+- Introduction to Custom GPTs — What Custom GPTs are, GPT Builder interface, first publish
+- System Prompt Design — Writing system instructions that shape GPT behavior reliably
+- Knowledge Files — Upload documents, PDFs, and data files for retrieval-augmented responses
+- Actions and API Integration — Connect your GPT to external APIs and services
+- Testing and Iteration — Evaluate GPT quality, find failure modes, and improve responses
+- Publishing and Sharing — Publish to the GPT Store, manage privacy, and distribute to teams
+
+### Track 4: API and Agents
+- Track ID: api-agents
+- Difficulty: Advanced
+- Prerequisites: Track 3 recommended, coding experience
+
+Lessons:
+- OpenAI API Basics — Authentication, API keys, first API call, message format
+- Streaming Responses — Real-time streaming, server-sent events, progressive rendering
+- Function Calling and Tool Use — Define tools, let the model decide when to call them, handle results
+- Assistants API — Threads, runs, file search, code interpreter in the API
+- Agentic Loops — Build autonomous agents that plan, execute, and iterate toward goals
+- Multi-Step Workflows — Chain multiple API calls for complex multi-stage tasks
+- Production Patterns — Caching, cost optimization, monitoring, and scaling API usage
+
+### Track 5: Architect
+- Track ID: architect
+- Difficulty: Expert
+- Prerequisites: Tracks 1-4
+
+Lessons:
+- Evals and Benchmarking — Design evaluation suites, measure model quality, track regressions
+- Monitoring and Observability — Log, trace, and monitor OpenAI API usage in production systems
+- Cost Optimization — Token management, prompt caching, model routing, budget controls
+- Safety and Content Filtering — Moderation API, prompt injection defense, PII handling
+- Enterprise Deployment — Multi-tenant architectures, compliance, SSO, and audit logging
+
+### Track 6: Practitioner Setup (Free)
+- Track ID: practitioner-setup
+- Difficulty: Beginner-Intermediate
+- Prerequisites: None
+
+Lessons:
+- ChatGPT Account Setup — Plans explained (Free vs Plus vs Team), account configuration
+- Custom Instructions — Set persistent instructions that apply across every conversation
+- GPT Builder Basics — Navigate the builder, write your first system prompt, test and publish
+- Memory and Context — ChatGPT Memory feature, conversation management, context limits
+- Workflow Integration — Use ChatGPT with the tools you already use daily
+
+### Track 7: Advanced Workflows (Masterclass)
+- Track ID: advanced-workflows
+- Difficulty: Expert
+- Prerequisites: Tracks 1-6, active ChatGPT usage
+
+Lessons:
+- Assistants API Deep Dive — Vector stores, file search, code interpreter at scale
+- Multi-Agent Architectures — Coordinate multiple GPT instances for parallel work
+- Advanced Custom GPT Patterns — Chained Actions, context-aware routing, personalization at scale
+- Real-World Project Walkthroughs — End-to-end builds from brief to production
+
+---
+
+## Platform Features
+
+- 7 learning tracks from beginner to expert
+- Interactive lessons with hands-on exercises (not just reading — you practice with real prompts)
+- Gamified progression: XP points, streaks, levels, achievements, and badges
+- Live prompt sandbox embedded in every lesson
+- Global leaderboard and community features
+- Available in 7 languages: English, Japanese, Korean, Chinese (Simplified), German, French, Spanish
+- Progress saved across devices
+- No credit card required for free tracks
+
+---
+
+## Pricing
+
+- Free: Tracks 1 and 6 fully unlocked. No credit card required.
+- Masterclass: One-time purchase. All tracks including Track 7 (Advanced Workflows). Contact for pricing.
+
+---
+
+## Markets Served
+
+Global. Available in English, Spanish, French, German, Japanese, Korean, and Chinese (Simplified). Users in 79+ countries. Strongest adoption in United States, India, Germany, France, United Kingdom, Brazil, Spain, Malaysia, Italy, and Japan.
+
+---
+
+## Frequently Asked Questions
+
+### What is Learn to GPT?
+Learn to GPT is the gamified learning platform for ChatGPT. It teaches you to master ChatGPT through interactive lessons, hands-on exercises, and real-world projects — from your first prompt to building Custom GPTs. With learning tracks covering fundamentals through advanced API patterns, it is the most practical ChatGPT training available.
+
+### Is Learn to GPT free?
+Yes. Track 1 (Foundations) and Track 6 (Practitioner Setup) are completely free — no credit card required. You will learn how ChatGPT works, write your first prompts, and set up Custom Instructions. Achievements and the leaderboard are free for all users.
+
+### What will I learn?
+Learning tracks take you from beginner to expert: (1) Foundations — how ChatGPT works and first prompts, (2) Professional Prompting — chain-of-thought, structured output, few-shot, (3) Custom GPTs — builder, knowledge files, Actions, (4) API and Agents — tool use, Assistants API, agentic workflows, (5) Architect — evals, monitoring, and enterprise patterns.
+
+### Is this affiliated with OpenAI?
+No. Learn to GPT is an independent learning platform. It is not affiliated with, endorsed by, or officially connected to OpenAI. We teach ChatGPT and GPT skills based on publicly available documentation and real-world building experience.
+
+### What languages is Learn to GPT available in?
+Learn to GPT is available in 7 languages: English, Japanese, Korean, Simplified Chinese, German, French, and Spanish. The full UI, all lessons, and exercises are translated so you can learn ChatGPT in your preferred language.
+
+### What is a Custom GPT and how do I learn to build one?
+A Custom GPT is a personalized version of ChatGPT you configure with a system prompt, uploaded knowledge files, and API Actions. Track 3 teaches Custom GPTs hands-on: GPT Builder, system prompt design, knowledge file upload, Action integration, testing, and publishing to the GPT Store.
+
+### How long does it take to complete Learn to GPT?
+Track 1 (Foundations) takes about 2-3 hours and gets you writing effective ChatGPT prompts immediately. The full curriculum can be completed in 20-40 hours depending on your pace. Each lesson is self-contained so you can learn in short sessions.
+
+### Do I need programming experience?
+No programming experience is required for Tracks 1, 2, and 3, which cover ChatGPT fundamentals, professional prompting, and Custom GPTs. Tracks 4-5 involve the API, which benefit from basic coding familiarity, but the lessons teach you step by step.
+
+---
+
+## Search Intents
+
+- [Learn ChatGPT](https://learntogpt.com/learn-chatgpt): Free interactive lessons for learning ChatGPT from scratch.
+- [ChatGPT Tutorial](https://learntogpt.com/chatgpt-tutorial): Step-by-step tutorial for getting real results from ChatGPT.
+- [How to Use ChatGPT](https://learntogpt.com/how-to-use-chatgpt): Practical guide for using ChatGPT effectively at work.
+- [ChatGPT for Beginners](https://learntogpt.com/chatgpt-for-beginners): No-experience-required guide to ChatGPT.
+- [ChatGPT Prompts](https://learntogpt.com/chatgpt-prompts): Copy-paste prompt templates for writing, coding, and analysis.
+- [Custom GPTs Tutorial](https://learntogpt.com/custom-gpts-tutorial): Build your own Custom GPT — system prompts, Actions, and knowledge files.
+- [ChatGPT Tips](https://learntogpt.com/chatgpt-tips): Practical tips and techniques to get more from ChatGPT every day.
+- [ChatGPT for Business](https://learntogpt.com/chatgpt-for-business): ROI breakdown, department use cases, and team training options.
+- [AI Training Program](https://learntogpt.com/ai-training): Structured AI training program from beginner to expert.
+- [ChatGPT Masterclass](https://learntogpt.com/masterclass): Guided masterclass with hands-on workshops and team training.
+- [ChatGPT for Teams](https://learntogpt.com/for-teams): Enterprise AI training and team onboarding.
+- [AI Certification](https://learntogpt.com/certification): Certification path from Beginner to Practitioner to Architect.
+- [Prompt Engineering](https://learntogpt.com/prompt-engineering): Interactive course on prompt engineering techniques for ChatGPT.
+- [Getting Started with ChatGPT](https://learntogpt.com/getting-started): Step-by-step beginner guide to start using ChatGPT.
+- [ChatGPT API Tutorial](https://learntogpt.com/chatgpt-api-tutorial): Getting started with the OpenAI API — authentication, streaming, and tool use.
+- [ChatGPT vs Gemini](https://learntogpt.com/chatgpt-vs-gemini): Honest feature comparison of ChatGPT and Gemini.
+- [Is ChatGPT Free?](https://learntogpt.com/is-chatgpt-free): Free tier explained — what you get, what Plus adds, which plan to choose.
+- [ChatGPT System Prompts](https://learntogpt.com/chatgpt-system-prompts): How to write effective ChatGPT system prompts and Custom Instructions.
+- [Learn AI](https://learntogpt.com/learn-ai): The best way to learn artificial intelligence — learning paths for every level.
+- [AI for Beginners](https://learntogpt.com/ai-for-beginners): Complete beginner's guide to AI — what AI actually is and your first steps.
+
+---
+
+## Links
+
+- [Website](https://learntogpt.com): Learn to GPT homepage
+- [Curriculum](https://learntogpt.com/curriculum): Browse all courses and tracks
+- [Sign Up](https://learntogpt.com/sign-up): Create a free account
+- [Learn ChatGPT](https://learntogpt.com/learn-chatgpt): Free ChatGPT lessons
+- [ChatGPT Tutorial](https://learntogpt.com/chatgpt-tutorial): Step-by-step ChatGPT tutorial
+- [Custom GPTs](https://learntogpt.com/custom-gpts-tutorial): Build your first Custom GPT
+- [Prompt Engineering](https://learntogpt.com/prompt-engineering): Prompt engineering course
+- [Getting Started](https://learntogpt.com/getting-started): Beginner guide
+- [AI Training](https://learntogpt.com/ai-training): Training program overview
+- [Masterclass](https://learntogpt.com/masterclass): Masterclass details and enrollment
+- [For Teams](https://learntogpt.com/for-teams): Enterprise and team training
+- [Certification](https://learntogpt.com/certification): Certification levels and path
+- [ChatGPT for Business](https://learntogpt.com/chatgpt-for-business): Enterprise ROI and team training
+- [ChatGPT Prompts](https://learntogpt.com/chatgpt-prompts): Prompt templates for professional use
+- [ChatGPT Tips](https://learntogpt.com/chatgpt-tips): Daily tips and techniques
+
+---
+
+## Machine-Readable Metadata
+
+```
+name: Learn to GPT
+type: Educational Platform
+url: https://learntogpt.com
+llms_txt: https://learntogpt.com/llms.txt
+llms_full_txt: https://learntogpt.com/llms-full.txt
+sitemap: https://learntogpt.com/sitemap.xml
+languages: en, ja, ko, zh-CN, de, fr, es
+tracks: 7
+free_tracks: [1, 6]
+paid_tracks: [2, 3, 4, 5, 7]
+exercise_types: multiple-choice, fill-in-the-blank, matching-pairs, prompt-sandbox
+gamification: xp, levels, streaks, achievements, badges, leaderboard
+affiliation: independent (not affiliated with OpenAI)
+```

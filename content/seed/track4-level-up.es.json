@@ -1,0 +1,423 @@
+{
+  "track": "level_up",
+  "courses": [
+    {
+      "title": "Level Up",
+      "slug": "level-up",
+      "description": "Habilidades, integraciones y flujos de trabajo automatizados que convierten a ChatGPT en tu sistema operativo.",
+      "difficulty": "advanced",
+      "order_index": 1,
+      "is_free": false,
+      "icon": "Rocket",
+      "lessons": [
+        {
+          "title": "Habilidades que se potencian",
+          "slug": "skills-that-compound",
+          "description": "Instala habilidades adicionales que se apilan y multiplican tu producción.",
+          "order_index": 1,
+          "xp_reward": 100,
+          "estimated_minutes": 6,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<p>Las <strong>habilidades</strong> son capacidades adicionales que instalas, configuras o construyes para darle nuevos poderes a ChatGPT. Vienen en tres niveles: instrucciones personalizadas (ajustes de comportamiento), habilidades del marketplace (flujos de trabajo preconstruidos) y comandos personalizados (tus propias creaciones). Una habilidad es útil. Cinco habilidades trabajando juntas transforman tu forma de operar.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_lu_01"
+              },
+              {
+                "type": "text",
+                "content": "<p>No todas las habilidades son iguales. Una habilidad que solo envuelve un prompt que podrías escribir tú mismo es un truco. Una habilidad que lee tu contexto, extrae datos reales y produce resultados consistentes es una herramienta de flujo de trabajo. Al evaluar: ¿entiende mi contexto, o es solo un prompt elegante?</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_lu_02"
+              },
+              {
+                "type": "text",
+                "content": "<p>Las habilidades se potencian con el tiempo. Una habilidad de redacción más una habilidad de calendario más una habilidad de CRM significa que ChatGPT puede escribir un seguimiento personalizado para tu reunión de las 2 p.m. sin que tú escribas un solo detalle. Quienes invierten en su configuración de habilidades ahora tienen una ventaja que crece con el tiempo.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_lu_03"
+              },
+              {
+                "type": "summary",
+                "content": "<p>Las habilidades son capacidades adicionales que se potencian al apilarse. Evalúalas por su comprensión del contexto, no por listas de funciones. Invierte en la configuración ahora: genera dividendos en cada interacción futura.</p>"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_lu_01",
+              "order_index": 1,
+              "type": "scenario_walkthrough",
+              "prompt": "Quieres que ChatGPT siempre asuma que eres un desarrollador senior, que responda con viñetas por defecto y que use los estándares de codificación de tu equipo. Encuentra el enfoque de habilidades correcto.",
+              "options": null,
+              "correct_answer": "{\"title\": \"Elegir el nivel de habilidad correcto\", \"steps\": [{\"type\": \"context\", \"text\": \"Tienes tres tipos de habilidades disponibles: instrucciones personalizadas (ajustes de comportamiento simples), habilidades del marketplace (soluciones preconstruidas) y comandos slash personalizados. Cada uno se adapta a necesidades diferentes.\"}, {\"type\": \"choice\", \"claude_response\": \"Quieres que ChatGPT siempre conozca tu rol, tu formato de respuesta preferido y tus estándares de codificación. Son preferencias de comportamiento persistentes.\", \"question\": \"¿Qué nivel de habilidad se ajusta a esta necesidad?\", \"options\": [\"Una habilidad del marketplace — buscar 'modo desarrollador senior'\", \"Instrucciones personalizadas — ajustes de comportamiento simples que persisten entre conversaciones\", \"Un comando slash personalizado en ChatGPT\", \"No se necesita habilidad — simplemente explícalo cada vez\"], \"correct\": 1, \"feedback\": \"Las instrucciones personalizadas son perfectas para preferencias persistentes: rol, formato, estándares. Ligeras, sin instalación, moldean cada respuesta. Las habilidades del marketplace serían excesivas aquí.\"}, {\"type\": \"choice\", \"claude_response\": \"Ahora tu equipo quiere un proceso de revisión de PR estandarizado que verifique 5 cosas específicas, lea archivos de código reales y produzca un informe formateado.\", \"question\": \"¿Qué nivel de habilidad se ajusta a ESTA necesidad?\", \"options\": [\"Instrucciones personalizadas — simplemente añadir más texto a las instrucciones\", \"Una habilidad de revisión de código del marketplace configurada con los criterios de tu equipo\", \"Escribirlo en una nota adhesiva y verificar manualmente\"], \"correct\": 1, \"feedback\": \"Es un flujo de trabajo estructurado y repetido — exactamente para lo que están diseñadas las habilidades del marketplace. Las instrucciones personalizadas serían demasiado básicas para un proceso de múltiples pasos que lee archivos y produce informes.\"}, {\"type\": \"prompt\", \"context\": \"La habilidad de revisión del marketplace cubre bien 4 de tus 5 verificaciones, pero la verificación de seguridad no es lo suficientemente específica para tu codebase. Escribe un prompt que añada una verificación de seguridad personalizada sobre la habilidad existente.\", \"placeholder\": \"Escribe tu adición de seguridad personalizada...\", \"scoring_criteria\": [{\"keyword_group\": [\"SQL\", \"injection\", \"concatenation\", \"parameterized\", \"query\"], \"label\": \"Mencionó prevención de inyección SQL\", \"points\": 2}, {\"keyword_group\": [\"input\", \"validate\", \"sanitize\", \"user input\", \"unvalidated\"], \"label\": \"Referenció validación de entrada\", \"points\": 2}, {\"keyword_group\": [\"secret\", \"hardcoded\", \"API key\", \"password\", \"credential\"], \"label\": \"Incluyó verificación de secretos hardcodeados\", \"points\": 1}, {\"keyword_group\": [\"auth\", \"middleware\", \"authorization\", \"authentication\"], \"label\": \"Referenció verificaciones de autenticación\", \"points\": 1}], \"ideal\": \"Después de ejecutar la revisión estándar, también verificar: concatenación SQL cruda (debe usar consultas parametrizadas), entrada de usuario no validada en rutas API, middleware de autenticación faltante en endpoints protegidos y secretos o claves API hardcodeados.\", \"max_points\": 6, \"pass_threshold\": 3}]}",
+              "explanation": "Añade adiciones personalizadas sobre las habilidades del marketplace. No reconstruyas lo que funciona — extiéndelo con tus necesidades específicas.",
+              "hints": [
+                "Piensa en qué verificaciones son universales (marketplace) vs. específicas de tu codebase (personalizado)."
+              ],
+              "xp_reward": 15
+            },
+            {
+              "id": "ex_lu_02",
+              "order_index": 2,
+              "type": "multiple_choice",
+              "prompt": "Dos habilidades de correo electrónico en el marketplace. Habilidad A: 'Genera correos profesionales a partir de un tema.' Habilidad B: 'Lee el contexto del hilo de correo, replica tu tono de correos anteriores, referencia datos del CRM y sigue las pautas del equipo.' ¿Cuál es la mejor inversión?",
+              "options": [
+                "Habilidad A — más simple es mejor, menos cosas pueden fallar",
+                "Habilidad B — entiende tu contexto completo, no solo la tarea",
+                "Ambas son iguales — las dos escriben correos",
+                "Ninguna — simplemente escribe los correos tú mismo"
+              ],
+              "correct_answer": "1",
+              "explanation": "La Habilidad B entiende tu contexto: tu voz, tus relaciones, tus estándares y tus datos. La Habilidad A es un envoltorio de prompt — hace lo mismo que escribir 'redacta un correo sobre X' directamente en ChatGPT. Las habilidades conscientes del contexto ahorran flujos de trabajo, no solo pasos.",
+              "hints": [
+                "¿Qué habilidad te da algo que no podrías obtener simplemente preguntándole a ChatGPT directamente?"
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_lu_03",
+              "order_index": 3,
+              "type": "scenario_walkthrough",
+              "prompt": "Recorre la evaluación y selección de las habilidades correctas para el flujo de trabajo semanal de contenido de un equipo de marketing.",
+              "options": null,
+              "correct_answer": "{\"title\": \"Construir un stack de habilidades\", \"steps\": [{\"type\": \"context\", \"text\": \"Un equipo de marketing crea 3 publicaciones de LinkedIn y 1 newsletter por semana. Hoy usan ChatGPT manualmente — pegan briefs, escriben desde cero cada vez. Quieres construir un stack de habilidades que maneje desde la ideación hasta el borrador final.\"}, {\"type\": \"choice\", \"claude_response\": \"Exploras el marketplace y encuentras: 'Content Writer Pro' (genera contenido a partir de temas), 'Brand Voice Engine' (lee tu contenido anterior y mantiene la consistencia de tono) y 'Content Calendar AI' (planifica temas basándose en analítica de audiencia).\", \"question\": \"¿Qué habilidad instalas primero?\", \"options\": [\"Content Writer Pro — maneja la tarea principal de escritura\", \"Brand Voice Engine — la voz consistente es la base sobre la que se construye todo lo demás\", \"Content Calendar AI — planificar antes de escribir\", \"Instalar las tres a la vez\"], \"correct\": 1, \"feedback\": \"La consistencia de voz es la base. Sin ella, cada pieza suena diferente. Instala Brand Voice Engine primero, entrénala con tu mejor contenido, luego añade las habilidades de escritura y planificación encima.\"}, {\"type\": \"choice\", \"claude_response\": \"Brand Voice Engine está configurado y produciendo tono consistente. Content Writer Pro genera publicaciones pero son genéricas — aciertan con la voz pero no con la sustancia.\", \"question\": \"¿Qué falta en el stack?\", \"options\": [\"Nada — simplemente escribe mejores prompts\", \"La habilidad Content Calendar AI — proporciona dirección temática y relevancia de audiencia que el escritor necesita como input\", \"Reemplazar Content Writer Pro con una habilidad de escritura diferente\"], \"correct\": 1, \"feedback\": \"El escritor tiene voz pero no dirección. Content Calendar AI alimenta ideas temáticas basadas en el engagement de la audiencia. Stack: Calendar (qué) → Writer (generar) → Voice Engine (consistencia). Cada habilidad alimenta a la siguiente.\"}, {\"type\": \"prompt\", \"context\": \"Tu stack de habilidades funciona para publicaciones de LinkedIn pero el newsletter siempre necesita mucha edición. El tono es correcto pero la estructura no. Escribe un prompt para añadir instrucciones específicas para newsletters.\", \"placeholder\": \"Escribe tus instrucciones de estructura de newsletter...\", \"scoring_criteria\": [{\"keyword_group\": [\"newsletter\", \"email\", \"subject line\", \"header\"], \"label\": \"Referenció formato de newsletter\", \"points\": 1}, {\"keyword_group\": [\"section\", \"structure\", \"intro\", \"body\", \"closing\", \"CTA\", \"template\"], \"label\": \"Definió estructura/secciones\", \"points\": 2}, {\"keyword_group\": [\"length\", \"word\", \"short\", \"concise\", \"under\"], \"label\": \"Especificó restricciones de longitud\", \"points\": 1}, {\"keyword_group\": [\"link\", \"resource\", \"read more\", \"reference\"], \"label\": \"Mencionó enlaces de apoyo\", \"points\": 1}], \"ideal\": \"Para newsletters: Línea de asunto de menos de 50 caracteres que genere curiosidad. Párrafo de introducción: 2 oraciones, observación personal. 3 secciones con encabezados. Cada sección: insight + conclusión práctica + enlace a recurso más profundo. Cierre: 1 pregunta que invite a responder. Total bajo 500 palabras.\", \"max_points\": 5, \"pass_threshold\": 3}]}",
+              "explanation": "Construye stacks de habilidades en capas: primero la base (voz), luego generación, luego planificación. Cuando un tipo de output necesita corrección, añade instrucciones específicas de formato en lugar de reemplazar todo el stack.",
+              "hints": [
+                "¿Qué necesita ser consistente antes de que cualquier otra cosa importe? Empieza por ahí."
+              ],
+              "xp_reward": 15
+            }
+          ]
+        },
+        {
+          "title": "Crear y compartir habilidades",
+          "slug": "build-and-share-skills",
+          "description": "Crea habilidades personalizadas y empaquétalas para tu equipo.",
+          "order_index": 2,
+          "xp_reward": 100,
+          "estimated_minutes": 6,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<p><strong>En ChatGPT,</strong> las habilidades son instrucciones personalizadas y plantillas de prompts guardadas. <strong>En Co-work,</strong> tienes el marketplace de habilidades — capacidades preconstruidas que instalas en segundos. <strong>En Code,</strong> construyes comandos slash personalizados que ejecutan flujos de trabajo de múltiples pasos. La progresión es natural: empieza simple, gradúate a poderoso.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_lu_04"
+              },
+              {
+                "type": "text",
+                "content": "<p>Las habilidades que construyes pueden compartirse. Si tu comando /deploy le ahorra horas a tu equipo, publícalo. Las mejores habilidades del marketplace empezaron como el atajo personal de alguien. Separar la configuración de la lógica es lo que convierte una herramienta personal en una herramienta de equipo.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_lu_05"
+              },
+              {
+                "type": "summary",
+                "content": "<p>Las habilidades funcionan en los tres niveles. Empieza simple, gradúate a poderoso y comparte lo que construyas. Un archivo de configuración significa que los colegas adaptan ajustes, no reescriben código.</p>"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_lu_04",
+              "order_index": 1,
+              "type": "multiple_choice",
+              "prompt": "Necesitas que ChatGPT siga el proceso de revisión de PR de tu equipo. ¿Qué enfoque te da el mejor equilibrio entre esfuerzo de configuración y valor a largo plazo?",
+              "options": [
+                "Instrucciones personalizadas de ChatGPT — configuración rápida, funciona de inmediato, pero pegas código manualmente cada vez",
+                "Comando slash de ChatGPT — lee diffs de PR directamente, ejecuta verificaciones contra tus archivos de configuración, output formateado cada vez",
+                "No se necesita habilidad — simplemente describe el proceso de revisión en cada conversación",
+                "Tanto A como B son iguales — elige lo que sea más conveniente"
+              ],
+              "correct_answer": "1",
+              "explanation": "Para un flujo de trabajo diario y repetido como revisiones de PR, un comando slash de Code es la inversión que vale la pena. Lee archivos directamente en lugar de requerir pegado manual, ejecuta contra tus configuraciones reales y produce output consistente. Las instrucciones personalizadas funcionan para uso ocasional pero no escalan para 10 revisiones al día.",
+              "hints": [
+                "Piensa en el intercambio: tiempo de configuración vs. ahorro de tiempo por uso en 10 revisiones al día."
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_lu_05",
+              "order_index": 2,
+              "type": "prompt_lab",
+              "prompt": "Has construido un comando slash /deploy útil. Un colega quiere usarlo también. Escribe un prompt a ChatGPT que cree documentación y opciones de configuración para que la habilidad sea compartible.",
+              "options": null,
+              "correct_answer": "{\"scenario\":\"Construiste un comando slash /deploy que ejecuta pruebas, verifica problemas de seguridad, compila el proyecto y lo sube a producción. Te ahorra 15 minutos por despliegue. Tu colega lo quiere pero su estructura de proyecto es diferente. Escribe un prompt a ChatGPT que cree documentación compartible.\",\"scoring_criteria\":[{\"keyword_group\":[\"README\",\"documentation\",\"doc\",\"instructions\",\"setup\",\"guide\"],\"label\":\"Pidió documentación\",\"points\":1},{\"keyword_group\":[\"config\",\"configuration\",\"configurable\",\"variable\",\"setting\",\"customize\"],\"label\":\"Mencionó opciones de configuración\",\"points\":2},{\"keyword_group\":[\"test\",\"build\",\"deploy\",\"command\",\"step\"],\"label\":\"Referenció los pasos del flujo de trabajo\",\"points\":1},{\"keyword_group\":[\"example\",\"usage\",\"demo\",\"sample\"],\"label\":\"Pidió ejemplos de uso\",\"points\":1},{\"keyword_group\":[\"project\",\"structure\",\"folder\",\"path\",\"directory\",\"repo\"],\"label\":\"Abordó diferencias de estructura de proyecto\",\"points\":2}],\"max_points\":7,\"pass_threshold\":4,\"ideal_prompt\":\"Crea un README para mi habilidad /deploy que incluya: 1) Qué hace (prueba, verificación de seguridad, compilación, despliegue), 2) Opciones de configuración para que los usuarios establezcan su propio comando de prueba, comando de compilación y destino de despliegue, 3) Instrucciones de configuración, 4) Ejemplos de uso para diferentes estructuras de proyecto (React, Python, Node). Haz la configuración un archivo JSON simple para que los colegas solo cambien sus ajustes, no la lógica de la habilidad.\",\"tips\":[\"Separar la configuración de la lógica es lo que convierte una herramienta personal en una herramienta de equipo.\",\"Ejemplos de uso reales ayudan a los colegas a entender qué esperar.\",\"Un archivo de configuración significa que adaptan ajustes, no reescriben código.\"]}",
+              "explanation": "Una habilidad bien empaquetada separa la configuración de la lógica. La habilidad maneja el flujo de trabajo; la configuración maneja los detalles específicos del proyecto. Documentación con ejemplos convierte atajos personales en herramientas de equipo.",
+              "hints": [
+                "Piensa en qué hace que una herramienta sea usable por alguien que no la construyó."
+              ],
+              "xp_reward": 10
+            }
+          ]
+        },
+        {
+          "title": "Dale tu contexto a ChatGPT",
+          "slug": "give-claude-your-context",
+          "description": "Memoria persistente e integraciones de herramientas que eliminan la necesidad de volver a explicar.",
+          "order_index": 3,
+          "xp_reward": 100,
+          "estimated_minutes": 7,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<p>La mayoría de la gente usa ChatGPT como si tuviera amnesia. Cada conversación empieza desde cero. <strong>El contexto es la diferencia entre un asistente inteligente y un asistente inteligente que te conoce.</strong> Un prompt mediocre con contexto rico produce mejores resultados que un prompt perfecto sin contexto.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_lu_06"
+              },
+              {
+                "type": "text",
+                "content": "<p>El contexto que tienes que pegar manualmente es un cuello de botella. El verdadero avance es conectar ChatGPT con las herramientas donde tu contexto ya vive. Proyectos con archivos subidos, acceso directo a tu sistema de archivos o conexiones cableadas a tu calendario, correo, CRM y APIs. <strong>Reduce la distancia entre ChatGPT y tus datos reales.</strong></p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_lu_07"
+              },
+              {
+                "type": "text",
+                "content": "<p>El contexto se potencia pero también se vuelve obsoleto. Hoy ChatGPT conoce tu proyecto. El próximo mes conoce tu proyecto, el feedback de tus clientes, las preferencias de tu equipo y tus objetivos Q2 — pero solo si lo mantienes actualizado. Las revisiones programadas previenen que el contexto obsoleto envenene buenos flujos de trabajo.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_lu_08"
+              },
+              {
+                "type": "summary",
+                "content": "<p>El contexto persistente elimina la configuración repetitiva y se potencia con el tiempo. Conecta ChatGPT con donde viven tus datos. Programa revisiones para mantenerlo actualizado.</p>"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_lu_06",
+              "order_index": 1,
+              "type": "prompt_lab",
+              "prompt": "Acabas de empezar a usar ChatGPT para tu negocio de consultoría con 5 clientes. Escribe un prompt que configure un Proyecto de ChatGPT con contexto persistente para que cada conversación empiece informada.",
+              "options": null,
+              "correct_answer": "{\"scenario\":\"Eres consultor de gestión con 5 clientes activos. Escribes propuestas semanalmente y tienes un estilo de comunicación específico. Actualmente cada conversación con ChatGPT empieza desde cero. Escribe un prompt que configure tu Proyecto con el contexto persistente adecuado.\",\"scoring_criteria\":[{\"keyword_group\":[\"role\",\"consultant\",\"management\",\"consulting\",\"who I am\"],\"label\":\"Definió rol profesional\",\"points\":1},{\"keyword_group\":[\"client\",\"account\",\"5\",\"five\",\"list\"],\"label\":\"Referenció cartera de clientes\",\"points\":1},{\"keyword_group\":[\"style\",\"tone\",\"voice\",\"communication\",\"direct\",\"data-driven\"],\"label\":\"Especificó estilo de comunicación\",\"points\":2},{\"keyword_group\":[\"template\",\"proposal\",\"format\",\"structure\",\"document\"],\"label\":\"Mencionó plantillas o formatos de documento\",\"points\":1},{\"keyword_group\":[\"upload\",\"attach\",\"reference\",\"file\",\"guide\",\"example\"],\"label\":\"Referenció subir documentos de apoyo\",\"points\":1},{\"keyword_group\":[\"custom instruction\",\"project\",\"persist\",\"always\",\"every conversation\"],\"label\":\"Configuró como contexto persistente\",\"points\":1}],\"max_points\":7,\"pass_threshold\":4,\"ideal_prompt\":\"Configura un Proyecto de ChatGPT llamado 'Consultoría'. Instrucciones personalizadas: Soy consultor de gestión, mi estilo es directo y basado en datos. Tengo 5 clientes activos: [nombres con contexto breve]. Las propuestas siguen una plantilla específica (subida). Mi comunicación es cálida pero precisa — uso números concretos y evito jerga. Subir: plantilla de propuesta, guía de marca, lista de clientes con notas recientes y objetivos Q2.\",\"tips\":[\"Incluye tu estilo de comunicación como cosas que hacer y no hacer, no solo adjetivos.\",\"El contexto de clientes debería incluir estado de la relación y prioridades actuales.\",\"Sube documentos que ChatGPT debería referenciar, no solo los describas en las instrucciones.\"]}",
+              "explanation": "Un Proyecto con contexto persistente elimina la configuración repetitiva. Una configuración única (rol, clientes, estilo, plantillas, documentos) hace que cada conversación futura sea inmediatamente productiva.",
+              "hints": [
+                "¿Qué es lo que más re-explicas? Eso va primero en el Proyecto."
+              ],
+              "xp_reward": 10
+            },
+            {
+              "id": "ex_lu_07",
+              "order_index": 2,
+              "type": "matching_pairs",
+              "prompt": "Empareja cada integración de herramienta con lo que realmente desbloquea para ChatGPT. Conocer lo que desbloquea te dice qué integración vale el costo de configuración.",
+              "options": null,
+              "correct_answer": "{\"Google Calendar\":\"Lee tus reuniones próximas para que briefings de preparación, horarios sugeridos y verificaciones de conflictos sucedan sin que pegues agendas\",\"Gmail\":\"Escanea hilos recientes para redactar respuestas con contexto completo de la conversación — no solo el último mensaje\",\"HubSpot / CRM\":\"Extrae historial de cuenta, etapa del deal e interacciones pasadas para que cada correo o preparación de llamada use datos reales\",\"GitHub\":\"Lee pull requests, issues y código para que revisiones y documentación técnica referencien tu repositorio real\",\"Slack\":\"Resume actividad de canales, redacta anuncios y responde preguntas que referencian conversaciones reales del equipo\",\"Google Drive / Notion\":\"Accede a tus documentos directamente para que ChatGPT pueda responder desde tus memos de estrategia, especificaciones y notas de reuniones sin volver a subir\"}",
+              "explanation": "Cada integración reduce la distancia entre ChatGPT y tu contexto real. La integración correcta es la que elimina tu mayor hábito de copiar y pegar.",
+              "hints": [
+                "Lo que desbloquea cada herramienta se define por los datos únicos que posee. ¿Qué sabe tu CRM que tu bandeja de entrada no sabe?"
+              ],
+              "xp_reward": 10
+            },
+            {
+              "id": "ex_lu_08",
+              "order_index": 3,
+              "type": "scenario_walkthrough",
+              "prompt": "Tu Proyecto está configurado pero el contexto se vuelve obsoleto constantemente. Recorre cómo mantenerlo actualizado.",
+              "options": null,
+              "correct_answer": "{\"title\": \"Mantener el contexto actualizado\", \"steps\": [{\"type\": \"context\", \"text\": \"Configuraste tu Proyecto de Consultoría hace dos semanas. Funciona bien pero acabas de darte cuenta de que ChatGPT aún referencia precios antiguos que cambiaron el martes pasado. Tu contexto está obsoleto.\"}, {\"type\": \"choice\", \"claude_response\": \"Después de dos semanas, tus precios cambiaron, un cliente se fue y incorporaste un nuevo cliente. ChatGPT no sabe nada de esto.\", \"question\": \"¿Cómo corriges el contexto obsoleto?\", \"options\": [\"Mencionar las actualizaciones en la próxima conversación y esperar que ChatGPT recuerde\", \"Actualizar los documentos de referencia del Proyecto con nuevos precios y añadir una nota sobre el cambio en las instrucciones personalizadas\", \"Crear un nuevo Proyecto desde cero con información actual\"], \"correct\": 1, \"feedback\": \"Actualiza el conocimiento del Proyecto, no crees uno nuevo. Las menciones en conversación no persisten. Un nuevo Proyecto pierde el contexto acumulado que aún funciona. Las actualizaciones dirigidas conservan lo bueno y corrigen lo obsoleto.\"}, {\"type\": \"choice\", \"claude_response\": \"Tu documento de precios y la lista de clientes están actualizados. Pero después de un mes, notas que ChatGPT a veces usa información estratégica desactualizada de tu documento original de objetivos Q1.\", \"question\": \"¿Cómo previenes la obsolescencia del contexto como sistema?\", \"options\": [\"Revisar y actualizar los documentos del Proyecto trimestralmente — poner un recordatorio en el calendario\", \"Eliminar todos los documentos viejos después de cada trimestre\", \"No preocuparse — ChatGPT maneja bien la información desactualizada\"], \"correct\": 0, \"feedback\": \"Las revisiones programadas previenen la obsolescencia. Recordatorio trimestral: actualizar documentos, eliminar archivos desactualizados, refrescar instrucciones personalizadas. Eliminar documentos viejos pierde el historial. Ignorar la obsolescencia significa que ChatGPT da respuestas cada vez más incorrectas.\"}, {\"type\": \"prompt\", \"context\": \"Es hora de tu revisión trimestral de contexto. Escribe un prompt a ChatGPT que audite tu contexto actual del Proyecto e identifique qué necesita actualizarse.\", \"placeholder\": \"Escribe tu prompt de auditoría de contexto...\", \"scoring_criteria\": [{\"keyword_group\": [\"review\", \"audit\", \"check\", \"evaluate\", \"assess\"], \"label\": \"Solicitó una revisión\", \"points\": 1}, {\"keyword_group\": [\"outdated\", \"stale\", \"old\", \"current\", \"accurate\", \"up to date\"], \"label\": \"Referenció frescura\", \"points\": 2}, {\"keyword_group\": [\"client\", \"pricing\", \"goal\", \"strategy\", \"doc\", \"document\"], \"label\": \"Nombró áreas específicas de contexto a verificar\", \"points\": 2}, {\"keyword_group\": [\"update\", \"change\", \"remove\", \"add\", \"replace\"], \"label\": \"Pidió recomendaciones específicas de actualización\", \"points\": 1}], \"ideal\": \"Revisa todo mi contexto del Proyecto: instrucciones personalizadas, documentos subidos y notas de clientes. Señala cualquier cosa que parezca desactualizada o contradiga conversaciones recientes. Verifica específicamente: lista de clientes (¿algún cambio?), precios (¿actuales?), objetivos Q2 (¿aún precisos?), plantillas (¿aún el formato que uso?). Para cada problema, dime qué actualizar y qué eliminar.\", \"max_points\": 6, \"pass_threshold\": 3}]}",
+              "explanation": "El contexto se potencia pero también se vuelve obsoleto. Revisiones programadas (trimestrales), actualizaciones dirigidas (no reconstrucciones) y prompts de auditoría mantienen tu Proyecto preciso con el tiempo.",
+              "hints": [
+                "¿Qué información cambia más frecuentemente en tu trabajo? Eso necesita las actualizaciones más frecuentes."
+              ],
+              "xp_reward": 15
+            }
+          ]
+        },
+        {
+          "title": "Encadenar tareas en flujos de trabajo",
+          "slug": "chain-tasks-into-workflows",
+          "description": "Construye secuencias donde un output alimenta el siguiente — desde notas de reunión hasta kits de preparación para clientes.",
+          "order_index": 4,
+          "xp_reward": 100,
+          "estimated_minutes": 7,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<p>Los prompts individuales son poderosos. Los prompts encadenados son transformadores. En lugar de pedirle a ChatGPT que haga una cosa y alimentar manualmente el resultado a la siguiente solicitud, diseñas secuencias donde el output del paso uno se convierte automáticamente en el input del paso dos. Una cadena simple: \"Resume este documento\" → \"Extrae decisiones\" → \"Redacta correo de seguimiento con puntos de acción.\"</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_lu_09"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>La clave de las buenas cadenas:</strong> cada paso tiene un trabajo claro y específico. No le pidas a un paso que haga demasiado. Piensa en línea de ensamblaje, no en un prompt gigante. Cuando las cadenas se rompen, el problema suele estar en la transferencia entre pasos, no en los pasos mismos.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_lu_10"
+              },
+              {
+                "type": "text",
+                "content": "<p>Esto es lo que los usuarios avanzados realmente construyen. <strong>Briefing matutino:</strong> consulta el calendario, revisa correo, repasa tareas, genera un resumen. <strong>Seguimiento de reunión:</strong> procesa notas, extrae puntos de acción, redacta correos, actualiza tareas. <strong>Kit de preparación para cliente:</strong> extrae historial de cuenta, comunicaciones recientes, temas abiertos antes de cualquier llamada. El hilo conductor: ChatGPT se encarga de recopilar y organizar. Tú te encargas de pensar y decidir.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_lu_11"
+              },
+              {
+                "type": "summary",
+                "content": "<p>Encadenar significa que el output de cada paso alimenta el siguiente. Mantén cada paso enfocado. Corrige transferencias rotas, no pasos rotos. Construye para flujos de trabajo diarios reales — briefings, seguimientos y kits de preparación.</p>"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_lu_09",
+              "order_index": 1,
+              "type": "multiple_choice",
+              "prompt": "Construiste una cadena de 5 pasos pero el paso 3 sigue produciendo mal output. ¿Cuál es el problema más probable?",
+              "options": [
+                "El modelo de IA no es lo suficientemente inteligente para el paso 3",
+                "El output del paso 2 no contiene la información que el paso 3 necesita — la transferencia está rota",
+                "Necesitas combinar los pasos 2 y 3 en un mega-paso",
+                "Empezar toda la cadena de nuevo con datos diferentes"
+              ],
+              "correct_answer": "1",
+              "explanation": "Cuando un paso de la cadena falla, la causa más común es una transferencia rota: el output del paso anterior no contiene lo que el paso actual necesita. Revisa el output del paso 2 — ¿le está dando al paso 3 los inputs correctos? Corrige la transferencia, no el paso.",
+              "hints": [
+                "Piensa en una línea de ensamblaje. Si la estación 3 está produciendo mal trabajo, ¿dónde miras primero?"
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_lu_10",
+              "order_index": 2,
+              "type": "prompt_lab",
+              "prompt": "Un product manager necesita pasar de feedback crudo de clientes a una lista priorizada de funcionalidades. Escribe un prompt que diseñe una cadena de múltiples pasos para esto.",
+              "options": null,
+              "correct_answer": "{\"scenario\":\"Tienes 50 entradas de feedback crudo de clientes provenientes de tickets de soporte, encuestas y llamadas de ventas. Necesitas una recomendación priorizada de funcionalidades. Escribe un prompt que encadene los pasos desde datos crudos hasta output pulido.\",\"scoring_criteria\":[{\"keyword_group\":[\"categorize\",\"classify\",\"theme\",\"group\",\"sort\"],\"label\":\"Incluyó paso de categorización\",\"points\":1},{\"keyword_group\":[\"count\",\"frequency\",\"rank\",\"volume\",\"how many\",\"most\"],\"label\":\"Mencionó análisis de frecuencia\",\"points\":1},{\"keyword_group\":[\"roadmap\",\"current\",\"existing\",\"planned\",\"compare\",\"cross-reference\"],\"label\":\"Referenció comparación con roadmap\",\"points\":2},{\"keyword_group\":[\"gap\",\"missing\",\"not on\",\"unaddressed\",\"new\"],\"label\":\"Identificó brechas\",\"points\":1},{\"keyword_group\":[\"prioritize\",\"recommend\",\"rank\",\"top\",\"evidence\",\"data\"],\"label\":\"Produjo recomendaciones priorizadas\",\"points\":2}],\"max_points\":7,\"pass_threshold\":4,\"ideal_prompt\":\"Cadena: Paso 1) Lee las 50 entradas de feedback y categoriza por tema. Paso 2) Cuenta la frecuencia de cada tema y ordena por volumen. Paso 3) Cruza los temas principales contra nuestro roadmap de producto actual. Paso 4) Identifica brechas — temas de alta demanda que no están en el roadmap. Paso 5) Redacta una recomendación priorizada de funcionalidades con evidencia de apoyo del feedback.\",\"tips\":[\"Cada paso tiene un trabajo claro. No combines categorización y ranking.\",\"El paso de cruce de referencias es lo que convierte datos de frecuencia en insights accionables.\",\"La evidencia del feedback original hace las recomendaciones creíbles.\"]}",
+              "explanation": "Una cadena bien diseñada: categorizar, contar, comparar, identificar brechas, recomendar. Cada paso tiene un trabajo y su output alimenta el siguiente.",
+              "hints": [
+                "Empieza con datos crudos, avanza hacia una recomendación pulida. ¿Qué pasa en cada etapa?"
+              ],
+              "xp_reward": 10
+            },
+            {
+              "id": "ex_lu_11",
+              "order_index": 3,
+              "type": "prompt_lab",
+              "prompt": "Tu máquina de seguimiento de reuniones asigna consistentemente los puntos de acción a las personas equivocadas porque tus notas no especifican quién se ofreció como voluntario. Escribe un prompt que corrija el problema de input.",
+              "options": null,
+              "correct_answer": "{\"scenario\":\"Tu sistema automatizado de seguimiento de reuniones lleva funcionando una semana. Redacta excelentes correos y extrae puntos de acción, pero sigue asignando tareas a las personas equivocadas porque tus notas no indican claramente quién se ofreció para qué. Corrige el sistema.\",\"scoring_criteria\":[{\"keyword_group\":[\"action\",\"task\",\"item\",\"assignment\",\"owner\"],\"label\":\"Referenció puntos de acción\",\"points\":1},{\"keyword_group\":[\"person\",\"name\",\"who\",\"owner\",\"volunteer\",\"responsible\"],\"label\":\"Abordó atribución de responsabilidad\",\"points\":2},{\"keyword_group\":[\"format\",\"structure\",\"template\",\"pattern\",\"convention\"],\"label\":\"Definió un formato estructurado\",\"points\":2},{\"keyword_group\":[\"date\",\"deadline\",\"by\",\"due\",\"when\"],\"label\":\"Incluyó fechas límite\",\"points\":1},{\"keyword_group\":[\"note\",\"input\",\"capture\",\"write\",\"record\"],\"label\":\"Corrigió el enfoque de toma de notas\",\"points\":1}],\"max_points\":7,\"pass_threshold\":4,\"ideal_prompt\":\"Estoy actualizando mi formato de toma de notas para corregir la atribución de puntos de acción. A partir de ahora, escribiré los puntos de acción como: 'ACCIÓN: [Persona] hará [tarea] para [fecha]'. Al procesar notas de reunión, busca este patrón primero. Si un punto de acción no tiene un responsable claro, márcalo como 'SIN ASIGNAR' en lugar de adivinar. Para el correo de seguimiento, lista los puntos sin asignar por separado para que pueda asignarlos antes de enviar.\",\"tips\":[\"Cuando la automatización produce errores consistentes, corrige el input — no solo el procesamiento.\",\"Un formato estructurado (ACCIÓN: persona hará tarea para fecha) es legible por máquina.\",\"Marcar los desconocidos como 'SIN ASIGNAR' es más seguro que adivinar.\"]}",
+              "explanation": "Cuando la automatización tiene errores recurrentes, corrige el input. Tu formato de notas es parte del sistema — un formato estructurado para puntos de acción hace confiable toda la pipeline.",
+              "hints": [
+                "El sistema es tan bueno como sus inputs. ¿Dónde está el problema de calidad de datos?"
+              ],
+              "xp_reward": 10
+            }
+          ]
+        },
+        {
+          "title": "Automatizar con guardarraíles",
+          "slug": "automate-with-guardrails",
+          "description": "Disparadores, horarios y límites de automatización — cuándo dejar que ChatGPT funcione y cuándo mantener las manos en el volante.",
+          "order_index": 5,
+          "xp_reward": 100,
+          "estimated_minutes": 7,
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "<p>Hacer que las cadenas funcionen sin ti es el siguiente nivel. Automatización significa que ChatGPT se ejecuta con un disparador o un horario: briefing matutino a las 7am, bandeja de entrada clasificada cada hora, informe semanal el viernes a las 4pm. La regla: <strong>automatiza la recopilación y la redacción. Mantén a los humanos en la aprobación y el envío.</strong></p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_lu_12"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>La escalera de confianza.</strong> Empieza con automatización que te ahorre tiempo en trabajo de preparación. A medida que construyes confianza en la calidad del output, expande gradualmente. Automatiza cuando: repetitivo, inputs predecibles, bajo riesgo, output revisable. Mantén al humano en el ciclo cuando: orientado al cliente, requiere juicio matizado, altas consecuencias. Nunca saltes directamente a totalmente autónomo en trabajo de alto riesgo.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_lu_13"
+              },
+              {
+                "type": "text",
+                "content": "<p><strong>Lo que separa al top 1%:</strong> pensar arquitectónicamente. Miran todo su flujo de trabajo y preguntan \"¿Dónde encaja ChatGPT?\" Diseñan para integración, no para aislamiento. Tu siguiente paso: elige tu flujo de trabajo recurrente que más tiempo consume. Mapéalo. Encadénalo. Automatiza lo que tenga sentido. Ese único flujo de trabajo, completamente optimizado, ahorra más tiempo que cien prompts ingeniosos.</p>"
+              },
+              {
+                "type": "exercise",
+                "exercise_id": "ex_lu_14"
+              },
+              {
+                "type": "summary",
+                "content": "<p>Automatiza la recopilación y la redacción. Mantén a los humanos en la aprobación y el envío. Sube la escalera de confianza gradualmente. Un flujo de trabajo completamente optimizado supera a cien prompts ingeniosos.</p>"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": "ex_lu_12",
+              "order_index": 1,
+              "type": "multiple_choice",
+              "prompt": "Tu informe semanal automatizado ha funcionado perfectamente durante 3 meses. Tu jefe pregunta si también puede enviarse directamente a la junta directiva. ¿Qué dices?",
+              "options": [
+                "Claro — ha sido confiable durante 3 meses, puede manejar la distribución a la junta también",
+                "Añadir la junta a la distribución pero mantener revisión humana antes de enviar — las comunicaciones con la junta son de mayor riesgo que los informes internos del equipo",
+                "Los informes de junta necesitan un sistema completamente diferente",
+                "Claro, pero añadir un aviso de que fue generado por IA"
+              ],
+              "correct_answer": "1",
+              "explanation": "Mismo informe, audiencia más alta = mayor riesgo. Un informe que está bien para tu equipo puede necesitar pulido antes de ir a la junta. Añade la distribución a la junta pero mantén la revisión humana. La escalera de confianza: confiable para uso interno no significa automáticamente listo para distribución ejecutiva.",
+              "hints": [
+                "El informe no ha cambiado, pero la audiencia sí. ¿Qué cambia del perfil de riesgo?"
+              ],
+              "xp_reward": 5
+            },
+            {
+              "id": "ex_lu_13",
+              "order_index": 2,
+              "type": "prompt_lab",
+              "prompt": "Gestionas 5 flujos de trabajo. Escribe un prompt a ChatGPT que clasifique cada flujo de trabajo por nivel de automatización: automatizar completamente, borrador con revisión humana o mantener manual.",
+              "options": null,
+              "correct_answer": "{\"scenario\":\"Tienes 5 flujos de trabajo recurrentes: resumen diario del standup de Slack, correos de propuestas a clientes, dashboard semanal de analítica, respuestas de negociación salarial y categorización de tickets de soporte. Escribe un prompt que ayude a ChatGPT a clasificar cada uno por el nivel de automatización adecuado.\",\"scoring_criteria\":[{\"keyword_group\":[\"internal\",\"low stakes\",\"low risk\",\"safe\",\"team\"],\"label\":\"Identificó criterios internos/bajo riesgo\",\"points\":2},{\"keyword_group\":[\"client\",\"external\",\"facing\",\"customer\",\"send\"],\"label\":\"Identificó criterios orientados al cliente\",\"points\":1},{\"keyword_group\":[\"review\",\"human\",\"approve\",\"check\",\"before sending\"],\"label\":\"Mencionó revisión humana para riesgo medio\",\"points\":2},{\"keyword_group\":[\"judgment\",\"decision\",\"sensitive\",\"consequence\",\"high stakes\"],\"label\":\"Identificó criterios de alto riesgo\",\"points\":1},{\"keyword_group\":[\"categorize\",\"classify\",\"tier\",\"level\",\"bucket\"],\"label\":\"Usó marco de clasificación\",\"points\":1}],\"max_points\":7,\"pass_threshold\":4,\"ideal_prompt\":\"Clasifica estos 5 flujos de trabajo por nivel de automatización. Criterios: AUTOMATIZAR COMPLETAMENTE si es interno, bajo riesgo y los errores se detectan fácilmente. BORRADOR + REVISIÓN HUMANA si es orientado al cliente o representa a la empresa. MANTENER MANUAL si requiere juicio matizado o tiene altas consecuencias. Flujos de trabajo: 1) Resumen diario del standup de Slack, 2) Correos de propuestas a clientes, 3) Dashboard semanal de analítica, 4) Respuestas de negociación salarial, 5) Categorización de tickets de soporte. Para cada uno, explica tu razonamiento.\",\"tips\":[\"Quién ve el output determina el nivel de riesgo.\",\"Interno + repetitivo = seguro para automatizar completamente.\",\"Orientado al cliente = siempre mantener revisión humana antes de enviar.\"]}",
+              "explanation": "Marco de clasificación: interno + bajo riesgo = automatizar completamente, orientado al cliente = borrador con revisión, juicio de alto riesgo = mantener manual. La audiencia y las consecuencias determinan el nivel de automatización.",
+              "hints": [
+                "Para cada flujo de trabajo, pregunta: ¿quién lo ve y qué pasa si está mal?"
+              ],
+              "xp_reward": 10
+            },
+            {
+              "id": "ex_lu_14",
+              "order_index": 3,
+              "type": "scenario_walkthrough",
+              "prompt": "Diseña límites de automatización para un sistema completo de informes de clientes, luego optimízalo después de un mes de funcionamiento.",
+              "options": null,
+              "correct_answer": "{\"title\": \"Límites de automatización\", \"steps\": [{\"type\": \"context\", \"text\": \"Gestionas 5 cuentas de clientes. Cada viernes, cada cliente recibe un informe de estado personalizado. Actualmente toma 3 horas. Quieres automatizar esto pero necesitas trazar los límites correctos.\"}, {\"type\": \"choice\", \"claude_response\": \"El sistema tiene cuatro fases: recopilación de datos, escritura del resumen, formateo y envío. Necesitas decidir dónde termina la automatización y dónde empieza la revisión humana.\", \"question\": \"¿Qué fases deberían ser completamente automatizadas vs. revisadas por humanos?\", \"options\": [\"Automatizar completamente todo incluyendo el envío — son solo informes de estado\", \"Automatizar la recopilación de datos y la redacción. Requerir revisión humana antes de cada envío.\", \"Mantener todo manual — las comunicaciones con clientes son demasiado importantes\"], \"correct\": 1, \"feedback\": \"La recopilación de datos y la redacción son seguras de automatizar. Los envíos orientados al cliente siempre necesitan una revisión humana. Una revisión de 60 segundos atrapa errores que tomarían horas corregir.\"}, {\"type\": \"choice\", \"claude_response\": \"Después de un mes, los informes se envían sin ediciones para 4 de 5 cuentas. La cuenta E aún necesita ajustes porque las prioridades del cliente cambian frecuentemente.\", \"question\": \"¿Cómo manejas la cuenta impredecible?\", \"options\": [\"Aceptar que la cuenta E siempre necesitará ajuste manual\", \"Añadir un paso previo al informe: revisar el último hilo de correo de la cuenta E para cambios de prioridad antes de generar su informe\", \"Eliminar la cuenta E del sistema automatizado por completo\"], \"correct\": 1, \"feedback\": \"Añade un paso de verificación de contexto para E. Antes de generar el informe de E, escanea las comunicaciones más recientes para detectar cambios de prioridad. El sistema se adapta a clientes dinámicos añadiendo un paso de percepción, no abandonando la automatización.\"}, {\"type\": \"prompt\", \"context\": \"Después de 3 meses, tu sistema maneja 5 cuentas en 20 minutos en lugar de 3 horas. Tu colega quiere el mismo sistema para sus 8 cuentas. Escribe un prompt que le ayude a configurar su versión.\", \"placeholder\": \"Escribe tu prompt de traspaso del sistema...\", \"scoring_criteria\": [{\"keyword_group\": [\"framework\", \"process\", \"same structure\", \"adapt\", \"customize\"], \"label\": \"Referenció el marco reutilizable\", \"points\": 2}, {\"keyword_group\": [\"account\", \"client\", \"specific\", \"their\", \"configure\"], \"label\": \"Mencionó personalización por cuenta\", \"points\": 2}, {\"keyword_group\": [\"template\", \"data source\", \"pipeline\", \"step\"], \"label\": \"Definió los componentes a configurar\", \"points\": 1}, {\"keyword_group\": [\"test\", \"iterate\", \"refine\", \"feedback\"], \"label\": \"Incluyó pruebas y refinamiento\", \"points\": 1}], \"ideal\": \"Usa el mismo marco para tus 8 cuentas: 1) Configura conexiones de fuentes de datos para tu herramienta PM y rastreador de ingresos. 2) Configura reglas por cuenta: tono, métricas a incluir, contactos prioritarios. 3) Ejecuta la pipeline primero con una cuenta de prueba. 4) Refina según lo que necesite edición. 5) Despliega a las 8 cuentas una vez que la primera se envíe sin ediciones. Planifica una revisión mensual para codificar correcciones recurrentes.\", \"max_points\": 6, \"pass_threshold\": 3}]}",
+              "explanation": "Sistema completo: automatizar recopilación y redacción, requerir revisión humana antes de enviar, añadir contexto dinámico para cuentas impredecibles y empaquetar el marco para reutilización. Eso es pensamiento del top 1%.",
+              "hints": [
+                "Piensa en el ciclo de vida completo: automatizar lo rutinario, señalar excepciones, revisar antes de enviar, mejorar con el tiempo."
+              ],
+              "xp_reward": 15
+            }
+          ]
+        }
+      ],
+      "campaign_order": 8,
+      "level_required": 6,
+      "prerequisite_slug": "research-decisions"
+    }
+  ]
+}

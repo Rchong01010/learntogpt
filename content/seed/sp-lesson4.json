@@ -1,0 +1,96 @@
+{
+  "title": "Advanced Techniques",
+  "slug": "advanced-techniques",
+  "description": "Role assignment, format control, chain-of-thought, and constraint stacking — the power techniques that most people never learn.",
+  "order_index": 4,
+  "xp_reward": 75,
+  "estimated_minutes": 8,
+  "content": {
+    "sections": [
+      {
+        "type": "text",
+        "content": "<p>Everything so far has been about what to put IN your prompt. Now let's talk about advanced controls that change <strong>HOW Claude thinks and responds.</strong> These four techniques — role assignment, format control, chain-of-thought, and constraint stacking — are what separate casual users from people who get genuinely impressive results.</p>"
+      },
+      {
+        "type": "text",
+        "content": "<p><strong>Role assignment</strong> changes Claude's perspective and depth. When you tell Claude to be a specific expert, it shifts how it approaches your problem. \"Review my resume\" gets polite, generic feedback. \"You're a hiring manager at Google who's seen 500 resumes this week. Review mine and tell me what makes you yawn\" gets honest, specific, expert-level feedback. The role gives Claude permission to think — and respond — like someone who actually knows what they're talking about.</p>"
+      },
+      {
+        "type": "exercise",
+        "exercise_id": "ex_sp_04a"
+      },
+      {
+        "type": "text",
+        "content": "<p><strong>Format control</strong> lets you dictate the exact shape of Claude's output. Tables, bullet lists, numbered steps, specific word counts — Claude follows formatting instructions with surprising precision. \"Summarize this article\" gets a wall of text. \"Summarize this article in a markdown table with columns: Key Point, Why It Matters, What To Do About It\" gets something you can actually use. Don't just ask for information — design the container it comes in.</p>"
+      },
+      {
+        "type": "text",
+        "content": "<p><strong>Chain-of-thought</strong> is deceptively powerful. Asking Claude to \"think step by step\" or \"show your reasoning before answering\" produces dramatically better answers for complex problems. It's like showing your work in math class — the process prevents mistakes. For simple questions, it's overkill. But for anything involving logic, math, strategy, or multi-step reasoning, chain-of-thought is the single biggest quality upgrade you can make.</p>"
+      },
+      {
+        "type": "exercise",
+        "exercise_id": "ex_sp_04b"
+      },
+      {
+        "type": "text",
+        "content": "<p><strong>Constraint stacking</strong> is where it all comes together. Combine multiple constraints to narrow Claude's output to exactly what you need. \"Write me a LinkedIn post\" is wide open. \"Write a LinkedIn post under 150 words, no hashtags, conversational tone, include one surprising statistic about remote work, and end with a question\" is five constraints stacked together — and the output will be dramatically more useful. The more specific your constraints, the less editing you do afterward.</p>"
+      },
+      {
+        "type": "exercise",
+        "exercise_id": "ex_sp_04c"
+      },
+      {
+        "type": "summary",
+        "content": "<p>Four advanced techniques that transform your prompting: role assignment changes Claude's perspective and depth, format control shapes the output, chain-of-thought improves reasoning quality, and constraint stacking narrows results to exactly what you need. The real power comes from combining them — which is exactly what you'll practice in the next lesson as we diagnose and fix common mistakes.</p>"
+      }
+    ]
+  },
+  "exercises": [
+    {
+      "id": "ex_sp_04a",
+      "order_index": 1,
+      "type": "multiple_choice",
+      "prompt": "You wrote a business plan for a coffee shop and want Claude to poke holes in it. Which role assignment would get the most useful feedback?",
+      "options": [
+        "You are a helpful assistant. Please review my business plan.",
+        "You are a venture capitalist who has reviewed 1,000 pitch decks and funded 12 restaurants. You're skeptical but fair. Review my coffee shop business plan — tell me the 3 weakest assumptions and what would make you pass.",
+        "You are a coffee expert. Review my plan.",
+        "You are an AI language model. Analyze this business plan objectively."
+      ],
+      "correct_answer": "1",
+      "explanation": "The best role assignment is specific, experienced, and has a clear perspective. A VC who has reviewed 1,000 decks and funded restaurants brings domain expertise, healthy skepticism, and a results-oriented mindset. Generic roles ('helpful assistant,' 'coffee expert,' 'AI language model') don't give Claude a strong enough lens to produce genuinely critical feedback.",
+      "hints": [
+        "Think about who in real life would give you the most brutally honest feedback on a business plan."
+      ],
+      "xp_reward": 5
+    },
+    {
+      "id": "ex_sp_04b",
+      "order_index": 2,
+      "type": "scenario_walkthrough",
+      "prompt": "Watch how layering role assignment, format control, and chain-of-thought transforms a basic prompt into something powerful.",
+      "options": null,
+      "correct_answer": "{\"title\":\"Building a Better Prompt, Layer by Layer\",\"steps\":[{\"type\":\"context\",\"text\":\"You need Claude to help you decide whether to raise your freelance rates by 20%. You've been at the same rate for two years and you're nervous about losing clients. Let's build the prompt one technique at a time and see how each layer improves it.\"},{\"type\":\"choice\",\"claude_response\":\"Starting prompt: 'Should I raise my freelance rates?' — Claude responds with generic advice about knowing your worth, researching market rates, and communicating value. It's not wrong, but it's not useful either.\",\"question\":\"Which technique should we add first to make this more useful?\",\"options\":[\"Format control — ask for a markdown table\",\"Role assignment — tell Claude to be a specific expert\",\"Chain-of-thought — ask Claude to reason step by step\",\"Just ask again and hope for a better answer\"],\"correct\":1,\"feedback\":\"Role assignment first. Telling Claude WHO to think as changes the entire quality of the response. A pricing consultant who works with freelancers thinks about this problem differently than a generic AI assistant. The perspective shift unlocks better reasoning.\"},{\"type\":\"choice\",\"claude_response\":\"Updated prompt: 'You're a freelance pricing consultant who has helped 200 independent professionals raise their rates. Should I raise my rates by 20% after 2 years at the same price? I have 8 steady clients and I'm worried about losing them.' — Claude now gives more specific advice about client retention during price increases, but it's still a wall of text.\",\"question\":\"What's the next technique to layer on?\",\"options\":[\"Add format control — structure the output so it's actionable\",\"Add a second role — also be a client psychologist\",\"Remove the role and just add more context instead\",\"Ask Claude to write it shorter\"],\"correct\":0,\"feedback\":\"Format control turns good thinking into usable output. Adding something like 'Present your analysis as: (1) the case FOR raising rates, (2) the case AGAINST, (3) a recommended approach with exact language I can use with clients' gives the response structure you can act on.\"},{\"type\":\"choice\",\"claude_response\":\"Now the prompt has a role and a format. The output is structured and specific, but you notice Claude jumped straight to a recommendation without deeply considering the risks.\",\"question\":\"Which technique addresses this gap?\",\"options\":[\"Constraint stacking — add a word limit\",\"Chain-of-thought — ask Claude to reason through each factor before concluding\",\"Another role assignment — add a second persona\",\"Format control — ask for bullet points instead\"],\"correct\":1,\"feedback\":\"Chain-of-thought is the fix. Adding 'Think through the financial impact, client psychology, and market positioning step by step before making your recommendation' forces Claude to actually reason through each factor instead of jumping to a conclusion. For complex decisions, this is the technique that prevents shallow answers.\"}]}",
+      "explanation": "Each technique adds a different dimension. Role assignment changes the perspective. Format control shapes the output. Chain-of-thought deepens the reasoning. Layered together, they transform a generic question into a prompt that produces genuinely useful, structured, well-reasoned advice.",
+      "hints": [
+        "Think about what each technique specifically fixes: shallow perspective, messy output, or surface-level reasoning."
+      ],
+      "xp_reward": 15
+    },
+    {
+      "id": "ex_sp_04c",
+      "order_index": 3,
+      "type": "prompt_lab",
+      "prompt": "Your task: You're preparing for a salary negotiation next week. Write a prompt to Claude that uses at least 3 advanced techniques (role assignment, format control, chain-of-thought, constraint stacking) to get negotiation advice that's actually useful.",
+      "options": null,
+      "correct_answer": "{\"scenario\":\"You're preparing for a salary negotiation next week. You want Claude to help you prepare — not generic advice, but a specific strategy you can actually use in the meeting. Write a prompt that combines at least 3 of the 4 advanced techniques: role assignment, format control, chain-of-thought, and constraint stacking.\",\"scoring_criteria\":[{\"keyword_group\":[\"you are\",\"you're a\",\"act as\",\"as a\",\"role\",\"negotiation coach\",\"HR director\",\"hiring manager\",\"recruiter\",\"consultant\"],\"label\":\"Uses role assignment\",\"points\":3},{\"keyword_group\":[\"table\",\"bullet\",\"format\",\"numbered\",\"steps\",\"list\",\"section\",\"columns\",\"structure\",\"present as\",\"organize as\"],\"label\":\"Specifies output format\",\"points\":3},{\"keyword_group\":[\"step by step\",\"think through\",\"reason through\",\"show your reasoning\",\"walk through\",\"consider each\",\"before recommending\",\"before answering\",\"analyze first\"],\"label\":\"Requests chain-of-thought reasoning\",\"points\":3},{\"keyword_group\":[\"under\",\"no more than\",\"words\",\"exactly\",\"include\",\"must have\",\"without\",\"no jargon\",\"avoid\",\"limit\",\"at least\",\"specific\",\"actionable\"],\"label\":\"Stacks constraints on the output\",\"points\":2}],\"max_points\":11,\"pass_threshold\":6,\"ideal_prompt\":\"You're a salary negotiation coach who has prepared 500 professionals for compensation conversations. I'm meeting with my manager next week to discuss a raise. I've been in this role for 2 years, consistently exceeded targets, and I know the market rate is 15% above my current salary. Think through the strongest arguments I can make, likely objections my manager will raise, and how to handle each one. Present your advice as: (1) my 3 strongest talking points with specific language to use, (2) the 3 most likely pushback lines and a response for each, (3) my walk-away number and how to state it confidently. Keep each section under 100 words and avoid corporate jargon.\",\"tips\":[\"Start with a specific role — who would you actually hire to coach you through this?\",\"Tell Claude how to organize the output so you can reference it before the meeting.\",\"Ask Claude to think through objections before giving you talking points.\",\"Stack constraints like word limits, tone, and what to include or exclude.\"]}",
+      "explanation": "A great prompt for this task combines a specific expert role (negotiation coach, HR director), a clear output structure (talking points, objections, responses), chain-of-thought reasoning (think through arguments and counterarguments), and stacked constraints (word limits, tone, specifics). The more techniques you layer, the more useful the output.",
+      "hints": [
+        "Think about who you'd actually pay to help you prepare for this conversation.",
+        "What format would be most useful to glance at right before you walk into the meeting?",
+        "What would you want Claude to think through before giving you advice?"
+      ],
+      "xp_reward": 15
+    }
+  ]
+}

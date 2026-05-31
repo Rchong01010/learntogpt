@@ -1,0 +1,27 @@
+openapi: 3.0.0
+info:
+  title: Claude Academy
+  version: 1.0.0
+  description: Educational platform for learning Claude AI
+servers:
+  - url: https://claude-academy.com
+paths:
+  /curriculum:
+    get:
+      summary: View all learning tracks and courses
+      description: Browse 7 learning tracks from beginner to advanced
+  /courses/{slug}:
+    get:
+      summary: View a course
+      parameters:
+        - name: slug
+          in: path
+          required: true
+          schema:
+            type: string
+  /llms.txt:
+    get:
+      summary: Machine-readable site overview for AI engines
+  /llms-full.txt:
+    get:
+      summary: Detailed machine-readable curriculum and FAQ for AI engines
