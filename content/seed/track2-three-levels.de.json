@@ -21,11 +21,7 @@
             "sections": [
               {
                 "type": "text",
-                "content": "<p>ChatGPT ist nicht ein einziges Tool. Es sind mehrere, und jedes funktioniert anders. Den Unterschied zu kennen ist das Wichtigste, was du tun kannst, um mehr Wert aus ChatGPT zu holen.</p><p><strong>ChatGPT Chat</strong> ist eine Konversation. Du tippst, ChatGPT antwortet. Kein Datei-Upload, kein Code-Ausführen — nur Denken, Schreiben, Brainstormen, Analysen und Antworten. Für die meisten Menschen ist das der Startpunkt, und sie holen hier schon 80 % ihres Nutzens heraus.</p><p><strong>Canvas</strong> ist ein kollaborativer Dokument-Arbeitsbereich. Wenn du an etwas Langem arbeitest — einem Bericht, einem Vorschlag, einem Stück Code — öffnet Canvas einen beständigen Editor neben dem Chat. Du kannst ChatGPT bitten, nur einen bestimmten Absatz zu bearbeiten oder eine bestimmte Funktion umzustrukturieren, ohne alles neu zu generieren.</p><p><strong>Code Interpreter (Erweiterte Datenanalyse)</strong> ist eine Daten- und Codeumgebung. Er führt echten Python-Code auf Dateien aus, die du hochlädst. Lade deine Tabelle hoch und Code Interpreter führt die Berechnung durch — echte Charts, echte Statistiken, herunterladbare Ergebnisdateien.</p>"
-              },
-              {
-                "type": "text",
-                "content": "<p>So merkst du es dir am einfachsten:</p><p><strong>Chat</strong> = denken und schreiben mit ChatGPT. Du hast eine Idee, eine Frage oder eine Schreibaufgabe. Keine Dateien nötig.<br><strong>Canvas</strong> = lange Dokumente oder Code kollaborativ bearbeiten. Du hast einen Entwurf, der gezielte Änderungen braucht, ohne von vorne anzufangen.<br><strong>Code Interpreter</strong> = echte Analyse auf deinen Daten ausführen. Du hast eine Datei (CSV, Excel, PDF) und willst tatsächlich berechnete Ergebnisse.</p><p>Du brauchst nicht alle drei am ersten Tag. Fang mit dem an, der dein größtes Problem löst. Die meisten Menschen beginnen mit Chat und erweitern von dort — wenn der Reibungspunkt erscheint, der das nächste Tool erfordert.</p>"
+                "content": "<p><strong>Chat</strong> = denken und schreiben mit ChatGPT. Keine Dateien nötig. <strong>Canvas</strong> = lange Dokumente oder Code kollaborativ bearbeiten — gezielte Änderungen ohne Neustart. <strong>Code Interpreter</strong> = echten Python-Code auf deinen Datendateien ausführen und berechnete Ergebnisse erhalten.</p>"
               },
               {
                 "type": "exercise",
@@ -33,7 +29,7 @@
               },
               {
                 "type": "text",
-                "content": "<p>Echte Menschen kombinieren alle drei Modi ganz natürlich. Ein Kleinunternehmer nutzt Chat morgens, um Prioritäten zu setzen und Kundennachrichten zu schreiben. Er öffnet Canvas, um gemeinsam mit ChatGPT einen Quartalsbericht zu verfassen. Und er lädt seine monatlichen Verkaufsdaten in Code Interpreter hoch, um einen Chart der Umsatzentwicklung nach Produktlinie zu erhalten.</p><p>Das Muster ist immer dasselbe: Chat zum Denken und Schreiben, Canvas für kollaboratives Editieren, Code Interpreter für Daten und Berechnungen. Welcher Modus du brauchst, hängt von der Aufgabe ab.</p>"
+                "content": "<p>Fang nicht mit allen drei an. Starte mit Chat für Denken und Schreiben. Wechsle zu Canvas, wenn du lange Dokumente gezielt bearbeiten musst. Nutze Code Interpreter, wenn du eine echte Datei und berechnete Ergebnisse brauchst.</p>"
               },
               {
                 "type": "exercise",
@@ -86,11 +82,11 @@
             "sections": [
               {
                 "type": "text",
-                "content": "<p>ChatGPT ist eine Konversation. Du tippst, es antwortet. Einfach – aber der Unterschied zwischen generischem Output und versandfertigem Output kommt auf eine Fähigkeit an: <strong>Kontext.</strong></p><p>Die meisten Leute tippen: <em>„Schreibe mir eine Marketing-E-Mail.“</em> Power-User tippen: <em>„Schreibe eine Marketing-E-Mail für unser B2B-Steuererklärungstool. Zielgruppe: Einzelunternehmer-Buchhalter, überlastet im April. Empathisch, nicht verkäuferisch. Unter 150 Wörtern.“</em> Dieselbe Aufgabe. Das eine würdest du löschen. Das andere würdest du senden.</p>"
+                "content": "<p>ChatGPT öffne und tippe: <strong>„Schreibe mir eine Marketing-E-Mail.\"</strong> Du bekommst etwas Generisches. Dann tippe: <strong>„... für B2B-Buchhalter, überlastet im April. Empathisch, unter 150 Wörtern.\"</strong> Himmel und Erde. Der Unterschied heißt <strong>Kontext</strong>.</p>"
               },
               {
                 "type": "text",
-                "content": "<p>Fünf Arten von Kontext machen jedes Mal den Unterschied:</p><p><strong>1. Wer du bist</strong> — deine Rolle.<br><strong>2. Woran du arbeitest</strong> — die Aufgabe.<br><strong>3. Für wen es ist</strong> — die Zielgruppe.<br><strong>4. Welches Format</strong> — E-Mail, Tabelle, Aufzählung.<br><strong>5. Welche Einschränkungen</strong> — Länge, Ton, was vermieden werden soll.</p><p>Du brauchst nicht jedes Mal alle fünf. Je mehr du einbeziehst, desto weniger musst du am Ende bearbeiten.</p>"
+                "content": "<p>Fünf Kontexttypen die jedes Mal zählen: <strong>Wer du bist</strong> (Rolle), <strong>Woran du arbeitest</strong> (Aufgabe), <strong>Für wen</strong> (Zielgruppe), <strong>Welches Format</strong> (E-Mail, Liste), <strong>Welche Einschränkungen</strong> (Ton, Länge). Mehr davon im Voraus = weniger Editieren danach.</p>"
               },
               {
                 "type": "exercise",
@@ -98,7 +94,7 @@
               },
               {
                 "type": "text",
-                "content": "<p>Deine erste Antwort von ChatGPT ist ein Ausgangspunkt, kein fertiges Produkt. Die wahre Fähigkeit ist zu wissen, was du <strong>nach</strong> der Antwort tust. Lies sie. Finde, was nicht stimmt. Sag ChatGPT genau, was geändert werden soll.</p><p><strong>Vages Feedback</strong> wie „mach es besser“ bringt vage Ergebnisse. <strong>Spezifisches Feedback</strong> wie „die Einleitung ist zu förmlich – beginne mit einer Frage, die fesselt“ bringt echte Verbesserung. Benenne, was falsch ist UND was du stattdessen möchtest.</p>"
+                "content": "<p>Die erste Antwort ist ein Ausgangspunkt. Lies sie. Finde, was nicht stimmt. Sag ChatGPT genau, was sich ändern soll. <em>„Mach es besser\"</em> bringt nichts. <em>„Die Einleitung ist zu förmlich — beginne mit einer Frage\"</em> bringt echte Verbesserung.</p>"
               },
               {
                 "type": "exercise",
@@ -177,19 +173,19 @@
             "sections": [
               {
                 "type": "text",
-                "content": "<p>Hast du jemals ChatGPT gebeten, „Absatz 3 zu korrigieren", und ein komplett neu geschriebenes Dokument bekommen – dabei die Teile verloren, die dir gut gefallen haben? Canvas löst das. Canvas öffnet einen beständigen Dokumenteditor neben dem Chatfenster. Du siehst das Dokument rechts, das Gespräch links.</p><p>Der Wechsel von Chat zu Canvas ist einfach: <strong>Chat generiert. Canvas verfeinert.</strong></p>"
+                "content": "<p>Hast du ChatGPT gebeten, „Absatz 3 zu korrigieren\", und ein komplett neu geschriebenes Dokument bekommen? Canvas löst das. Canvas öffnet einen beständigen Editor neben dem Chat. <strong>Chat generiert. Canvas verfeinert.</strong></p>"
               },
               {
                 "type": "text",
-                "content": "<p><strong>Lange Dokumente:</strong> Schreibe einen 3.000-Wörter-Bericht in Canvas. Bitte ChatGPT, nur die Executive Summary zu straffen – es bearbeitet genau diesen Abschnitt. Bitte es, mehr Daten in Abschnitt 2 hinzuzufügen – es fügt sie ein, ohne Abschnitt 3 zu berühren. Jede Bearbeitung ist gezielt und sichtbar.</p><p><strong>Iterative Code-Projekte:</strong> Füge eine Code-Datei in Canvas ein. Bitte ChatGPT, der API-Funktion Error-Handling hinzuzufügen – es modifiziert nur diese Funktion. Bitte es, einen Test hinzuzufügen – es fügt ihn unten ein. Du behältst die Kontrolle darüber, was sich ändert.</p><p><strong>Änderungen über mehrere Durchläufe verfolgen:</strong> Canvas zeigt dir, was sich in jedem Bearbeitungsdurchlauf geändert hat. Du kannst ChatGPTs Bearbeitungen hervorgehoben sehen, sie akzeptieren oder ablehnen.</p>"
+                "content": "<p><strong>Lange Dokumente:</strong> Bitte ChatGPT, nur die Executive Summary zu straffen — es berührt Abschnitt 2 nicht. <strong>Code:</strong> Füge eine Datei ein, bitte nur die API-Funktion umzubauen. <strong>Änderungen verfolgen:</strong> Canvas zeigt, was sich geändert hat — akzeptieren oder ablehnen.</p>"
               },
               {
                 "type": "exercise",
                 "exercise_id": "ex_tl_03a"
               },
               {
-                “type”: “text”,
-                “content”: “<p><strong>Die Erst-Prüfen-Regel:</strong> Für jede bedeutende Bearbeitung in Canvas bitte ChatGPT, dir zuerst zu zeigen, was es ändern möchte, bevor es die Änderung vornimmt. Wenn du sagst „korrigiere die Executive Summary”, trifft ChatGPT Entscheidungen, die du nicht autorisiert hast. Wenn du sagst „was würdest du in der Executive Summary ändern und warum?”, überprüfst du die geplanten Änderungen, entscheidest, welche richtig sind, und genehmigst genau die Bearbeitungen, die du möchtest.</p>”
+                "type": "text",
+                "content": "<p><strong>Erst-Prüfen-Regel:</strong> Sag nicht „korrigiere die Executive Summary\" — sag „was würdest du ändern und warum?\" Sieh die Änderungen zuerst, genehmige nur, was du willst.</p>"
               },
               {
                 "type": "exercise",
@@ -268,11 +264,11 @@
             "sections": [
               {
                 "type": "text",
-                "content": "<p>Code Interpreter ist der Punkt, an dem ChatGPT aufhört, Analysen zu beschreiben, und anfängt, sie durchzuführen. Du lädst eine Datei hoch – eine CSV, eine Excel-Tabelle, einen JSON-Export – und bittest ChatGPT, sie zu analysieren. Es führt echten Python-Code auf deinen echten Daten aus. Der Chart, den es dir zeigt, ist ein echter Chart, der aus deinen echten Zahlen berechnet wurde, keine Illustration davon, wie ein Chart aussehen könnte.</p><p>Du musst nicht programmieren können. Du musst wissen, welche Frage du zu deinen Daten beantwortet haben möchtest.</p>"
+                "content": "<p>Lade eine CSV oder Excel-Datei hoch. ChatGPT führt echten Python-Code auf deinen echten Zahlen aus. Der Chart, den du siehst, ist kein Beispiel — er ist aus deinen Daten berechnet. Du musst nicht programmieren. Du musst nur wissen, welche Frage du beantwortet haben willst.</p>"
               },
               {
                 "type": "text",
-                "content": "<p><strong>Was Code Interpreter mit deinen Daten tun kann:</strong></p><p><strong>Statistische Analyse:</strong> Mittelwert, Median, Varianz, Korrelation, Regression – in einfacher Sprache beschrieben und auf deiner tatsächlichen Datei ausgeführt.</p><p><strong>Chart-Generierung:</strong> Balkendiagramme, Liniendiagramme, Streudiagramme, Heatmaps – jeder Chart, den du beschreibst, wird aus deinen echten Daten generiert. „Zeige mir den monatlichen Umsatz nach Produktlinie für die letzten 12 Monate als gestapeltes Balkendiagramm" → herunterladbares PNG genau dieses Charts.</p><p><strong>Datenbereinigung:</strong> „Finde alle Zeilen, in denen die Datumsspalte inkonsistent formatiert ist, und standardisiere sie" → Code Interpreter findet die Inkonsistenzen, zeigt sie dir, behebt sie und gibt dir eine saubere Datei zum Herunterladen.</p><p><strong>Automatisierung wiederkehrender Berechnungen:</strong> Wenn du jeden Monat dieselben Metriken aus einem neuen Datenexport berechnest, kann Code Interpreter das Skript einmal erstellen und jeden Monat mit neuen Daten wiederverwenden.</p>"
+                "content": "<p><strong>Was Code Interpreter kann:</strong> Statistische Analyse (Mittelwert, Median, Korrelation), Chart-Generierung (Balken-, Liniendiagramme, Heatmaps), Datenbereinigung (inkonsistente Formate finden und reparieren), und wiederkehrende Berechnungen einmalig skripten und jeden Monat neu ausführen.</p>"
               },
               {
                 "type": "exercise",
@@ -280,19 +276,19 @@
               },
               {
                 "type": "text",
-                "content": "<p><strong>Die natürliche Entwicklung vom Chat zu Code Interpreter:</strong></p><p>Die meisten Menschen entdecken Code Interpreter, nachdem sie versucht haben, ihre Daten im Chat zu beschreiben, und merken, dass Beschreibungen nicht dasselbe sind wie Analysen. Du fügst fünf Zeilen Beispieldaten in den Chat ein und bittest um eine Trendanalyse. ChatGPT beschreibt, was eine Trendanalyse zeigen würde, führt keine tatsächliche Trendanalyse durch. Genau dann merkst du: Du musst die echte Datei hochladen und echte Ergebnisse erhalten.</p><p>Chat ist für das Nachdenken über Daten. Code Interpreter ist für das tatsächliche Analysieren von Daten. Der Übergang passiert, wenn du eine echte Datei hast und eine echte Antwort brauchst, keine Beschreibung einer Antwort.</p>"
+                "content": "<p>Das Signal: Du beschreibst Daten im Chat und merkst, dass Beschreibungen keine echten Analysen sind. Wenn du eine echte Datei hast und eine echte Antwort brauchst — nicht eine Beschreibung einer Antwort — lade sie in Code Interpreter hoch.</p>"
               },
               {
                 "type": "exercise",
                 "exercise_id": "ex_tl_04b"
               },
               {
-                “type”: “text”,
-                “content”: “<p>Code Interpreter ist auch die Brücke zur Erstellung wiederverwendbarer Analysetools. Sobald ChatGPT Python geschrieben hat, das deine monatlichen Daten korrekt analysiert, kannst du es bitten, diese Analyse als Skript zu speichern. Nächsten Monat führst du dasselbe Skript auf neuen Daten aus. Die Analyse läuft in Sekunden statt in den Stunden, die es aktuell dauert, die Charts manuell zu erstellen.</p>”
+                "type": "text",
+                "content": "<p>Code Interpreter ist auch die Brücke zur Erstellung wiederverwendbarer Analysetools. Sobald ChatGPT Python geschrieben hat, das deine monatlichen Daten korrekt analysiert, kannst du es bitten, diese Analyse als Skript zu speichern. Nächsten Monat führst du dasselbe Skript auf neuen Daten aus. Die Analyse läuft in Sekunden statt in den Stunden, die es aktuell dauert, die Charts manuell zu erstellen.</p>"
               },
               {
-                “type”: “summary”,
-                “content”: “<p>Code Interpreter führt echten Python-Code auf deinen hochgeladenen Datendateien aus. Du musst nicht programmieren – du musst nur klar beschreiben, welche Analyse du möchtest. Die drei Dinge, die du in jeder Anfrage angeben solltest: was die Datei enthält, die spezifische Frage und das Ausgabeformat. Der Weg: über Daten in Chat nachdenken, dann zu Code Interpreter wechseln, um die Analyse tatsächlich auszuführen. Als Nächstes: Wie du anhand eines einfachen Drei-Fragen-Rahmens den richtigen Modus für jede Aufgabe wählst.</p>”
+                "type": "summary",
+                "content": "<p>Code Interpreter führt echten Python-Code auf deinen hochgeladenen Datendateien aus. Du musst nicht programmieren – du musst nur klar beschreiben, welche Analyse du möchtest. Die drei Dinge, die du in jeder Anfrage angeben solltest: was die Datei enthält, die spezifische Frage und das Ausgabeformat. Der Weg: über Daten in Chat nachdenken, dann zu Code Interpreter wechseln, um die Analyse tatsächlich auszuführen. Als Nächstes: Wie du anhand eines einfachen Drei-Fragen-Rahmens den richtigen Modus für jede Aufgabe wählst.</p>"
               }
             ]
           },
@@ -342,7 +338,7 @@
             "sections": [
               {
                 "type": "text",
-                "content": "<p>Drei Fragen sagen dir, welche Ebene du nutzen sollst:</p><p><strong>1. Arbeite ich mit Dateien?</strong> Nein → Chat. Ja → Co-work (oder Code, wenn es sich wiederholt).</p><p><strong>2. Werde ich das auf dieselbe Weise wieder tun?</strong> Nein → Chat oder Co-work. Ja → Code.</p><p><strong>3. Muss ich denken oder an Dateien arbeiten?</strong> Denken → Chat. An Dateien arbeiten → Co-work. Wiederholt arbeiten → Code.</p><p>Das ist das gesamte Framework. Drei Fragen, klare Antworten jedes Mal.</p>"
+                "content": "<p>Drei Fragen sortieren jeden Task: <strong>Arbeite ich mit Dateien?</strong> Nein → Chat. Ja → Canvas. <strong>Wiederhole ich das?</strong> Nein → Chat/Canvas. Ja → Code Interpreter. <strong>Denken oder auf Dateien handeln?</strong> Denken → Chat. Handeln → Canvas. Wiederholt → Code.</p>"
               },
               {
                 "type": "exercise",
@@ -350,7 +346,7 @@
               },
               {
                 "type": "text",
-                "content": "<p><strong>Häufige Fallen, die du vermeiden solltest:</strong></p><p>Chat nutzen, wenn du Co-work nutzen solltest: Wenn du Dateien ins Browserfenster kopierst und einfügst, wechsle zu Co-work.</p><p>Zu früh zu Code springen: Beweise den Workflow erst manuell. Einen schlechten Prozess zu automatisieren, macht schlechte Ergebnisse nur schneller.</p><p>Für alles auf einer Ebene bleiben: Jede Ebene hat ihre Stärke. Ein Hammer ist großartig, bis du einen Schraubenzieher brauchst.</p>"
+                "content": "<p><strong>Häufige Fallen:</strong> Chat nutzen, wenn du Dateien ins Fenster kopierst → wechsle zu Canvas. Zu früh zu Code springen → beweise den Workflow erst manuell. Auf einer Ebene bleiben → jede hat ihre Stärke.</p>"
               },
               {
                 "type": "exercise",
@@ -358,7 +354,7 @@
               },
               {
                 "type": "text",
-                "content": "<p><strong>Fang einfach an, erweitere bei Reibung.</strong> Die meisten beginnen mit Chat und das ist in Ordnung. Wenn du Kopier-Reibung bemerkst, probiere Co-work. Wenn du Wiederholungen bemerkst, probiere Code. Du musst nicht alle drei meistern – erkenne einfach, wann es Zeit ist, nach dem nächsten zu greifen.</p>"
+                "content": "<p>Fang mit Chat an — das ist richtig. Wenn du Kopier-Reibung bemerkst, wechsle zu Canvas. Wenn du Wiederholungen bemerkst, probiere Code Interpreter. Du musst nicht alle drei meistern, nur erkennen, wann du weiterschalten solltest.</p>"
               },
               {
                 "type": "exercise",
