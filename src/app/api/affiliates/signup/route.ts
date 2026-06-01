@@ -23,7 +23,8 @@ import { pingSignupSlack } from "@/lib/slack-signups";
 import { Resend } from "resend";
 
 const RESEND_API_KEY = process.env.RESEND_API_KEY;
-const SLACK_WEBHOOK_URL = (process.env.SLACK_WEBHOOK_URL || "").trim();
+const SLACK_WEBHOOK_URL = (process.env.SLACK_WEBHOOK_URL ?? "").trim();
+if (!SLACK_WEBHOOK_URL) console.error("[affiliate-signup] SLACK_WEBHOOK_URL not configured — Slack notifications disabled");
 const SLACK_WEBHOOK_PREFIX = "https://hooks.slack.com/";
 const MIN_REACH = 5000;
 const REV_SHARE_PCT = 30;
