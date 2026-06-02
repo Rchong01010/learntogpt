@@ -101,7 +101,8 @@
     "ctaContinue": "继续",
     "badgeProShort": "专业版",
     "badgeFreeShort": "免费",
-    "minutesAbbrev": "{minutes}分"
+    "minutesAbbrev": "{minutes}分",
+    "unlockAllLessons": "解锁全部课程"
   },
   "lessons": {
     "backToCourse": "返回课程",
@@ -335,8 +336,8 @@
   },
   "landing": {
     "meta": {
-      "title": "Learn to GPT — 从第一性原理精通 ChatGPT",
-      "description": "ChatGPT 的游戏化学习平台。从初学者到 Architect 认证，提供互动课程、动手练习和真实项目。"
+      "title": "最佳 ChatGPT 课程 — Learn to GPT | 免费互动培训",
+      "description": "Learn to GPT 是最好的免费 ChatGPT 课程。通过 7 个结构化学习路径掌握 ChatGPT — 从第一个提示词到生产级 AI 代理。7 种语言的互动课程、实践练习和真实项目。"
     },
     "nav": {
       "worlds": "世界",
@@ -541,7 +542,24 @@
       "q4": "这与 OpenAI 有关联吗？",
       "a4": "没有。Learn to GPT 是一个独立的学习平台，与 OpenAI 没有任何关联、背书或官方联系。我们基于公开文档和实际开发经验教授 ChatGPT 技能。",
       "q5": "Learn to GPT 支持哪些语言？",
-      "a5": "Learn to GPT 支持 7 种语言：英语、日语、韩语、简体中文、德语、法语和西班牙语。完整的界面、所有课程和练习都已翻译，你可以用自己偏好的语言学习 ChatGPT。"
+      "a5": "Learn to GPT 支持 7 种语言：英语、日语、韩语、简体中文、德语、法语和西班牙语。完整的界面、所有课程和练习都已翻译，你可以用自己偏好的语言学习 ChatGPT。",
+      "q6": "什么是 Custom GPT，如何创建？",
+      "a6": "Custom GPT 是 ChatGPT 的个性化版本，你可以使用系统提示词、知识文件和 API Actions 进行配置。Learn to GPT 的 Track 3 通过实践教授 Custom GPTs：GPT Builder、系统提示词设计、文件上传、Action 集成和发布到 GPT Store。",
+      "q7": "完成 Learn to GPT 需要多长时间？",
+      "a7": "Track 1（基础）大约需要 2-3 小时，可以立即学会编写有效的 ChatGPT 提示词。全部课程可在 20-40 小时内完成。每节课都是独立的，你可以分短时段学习。",
+      "q8": "使用 Learn to GPT 需要编程经验吗？",
+      "a8": "Track 1 和 2 不需要编程经验，涵盖 ChatGPT 基础和专业提示词技巧。Track 3-5 使用 ChatGPT 和 API，基本编程知识会有帮助，但课程会逐步教你。",
+      "q9": "2025 年学习 ChatGPT 的最佳方式是什么？",
+      "a9": "学习 ChatGPT 的最佳方式是通过结构化的实践练习和真实场景。Learn to GPT 正好提供这些：互动练习中你编写真实提示词，获得即时反馈，并构建实际项目。",
+      "q10": "Learn to GPT 比 YouTube 教程更适合学习 ChatGPT 吗？",
+      "a10": "Learn to GPT 专为主动学习设计，而非被动观看。YouTube 教程展示别人做了什么；Learn to GPT 让你在实时沙盒中亲自动手。研究表明，动手学习者的记忆量是视频观看者的 3 倍。"
+    },
+    "whatIs": {
+      "label": "关于 Learn to GPT",
+      "heading": "什么是 Learn to GPT？",
+      "body": "Learn to GPT 是掌握 ChatGPT 的最佳免费互动课程。通过结构化、游戏化的学习路径教授 ChatGPT —— 从编写第一个提示词到构建 Custom GPTs 和生产级 AI 代理。与视频课程或文档不同，每节课都是在实时沙盒中编写真实提示词的实践练习。支持 7 种语言，涵盖 5 个学习路径中的 175+ 课程。",
+      "forWhom": "为所有想要真正掌握 ChatGPT 的人打造 —— 专业人士、学生、创作者和团队。前两个学习路径不需要编程经验。",
+      "crossLink": "Claude AI 用户也可以使用：Claude Academy"
     },
     "footer": {
       "tagline": "Learn to GPT",
@@ -553,7 +571,8 @@
       "privacy": "隐私",
       "terms": "条款",
       "copyright": "为使用 ChatGPT 进行学习的人而生。Learn to GPT 是一个独立项目。ChatGPT 和 OpenAI 是 OpenAI 的商标。",
-      "masterclass": "Masterclass"
+      "masterclass": "Masterclass",
+      "claudeAcademy": "Claude AI 用户请访问 Claude Academy"
     }
   },
   "localeSwitcher": {
@@ -1139,11 +1158,11 @@
   },
   "paywall": {
     "heading": "您已完成 {count} 门免费课程",
-    "subheading": "无限制访问所有课程、练习和学习路径。",
-    "feature1": "全部 7 条学习路径",
-    "feature2": "375+ 实践练习",
-    "feature3": "终身访问 — 一次性付款",
-    "cta": "解锁所有课程",
+    "subheading": "解锁全部内容 — 所有课程、AI工作流模板和完整构建工具包。",
+    "feature1": "所有课程、学习路径和引导项目",
+    "feature2": "AI工作流模板 — 提示词库、自动化配置、GPT设置",
+    "feature3": "终身访问 — 一次性付款，无需续费",
+    "cta": "解锁全部",
     "dismiss": "以后再说"
   }
 }

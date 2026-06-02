@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
-import { ArrowRight, CheckCircle2, XCircle, Minus, Terminal, Code2, GitBranch, Layers, Cpu, Zap } from "lucide-react";
+import { ArrowRight, CheckCircle2, XCircle, Minus, Terminal, Code2, GitBranch, Layers, Cpu, Zap, HelpCircle } from "lucide-react";
 import { Link } from "@/i18n/routing";
 import { routing } from "@/i18n/routing";
 import { LocaleSwitcher } from "@/components/LocaleSwitcher";
@@ -16,7 +16,7 @@ export async function generateMetadata({
   const pathForLocale = (loc: string) =>
     `${baseUrl}${loc === routing.defaultLocale ? "" : `/${loc}`}/claude-vs-copilot`;
 
-  const title = "Claude Code vs GitHub Copilot: Full Comparison 2025";
+  const title = "Claude vs Copilot: Complete AI Coding Comparison (2025)";
   const description =
     "Claude Code vs GitHub Copilot — which AI coding tool is right for you? Honest feature-by-feature comparison covering IDE integration, autonomous tasks, context window, and real-world use cases.";
 
@@ -258,6 +258,17 @@ export default async function ClaudeVsCopilotPage({
           </div>
         </section>
 
+        {/* DIRECT ANSWER BLOCK */}
+        <section className="px-6 py-12">
+          <div className="mx-auto max-w-[800px]">
+            <div className="rounded-[18px] border-[4px] border-ink bg-[#d0f0ea] p-8 shadow-[6px_6px_0px_#1c1917] max-[480px]:p-6">
+              <p className="text-[1.1rem] font-medium leading-[1.8] text-ink">
+                Claude Code and GitHub Copilot solve different problems. Claude Code is a terminal agent that handles multi-file refactoring, testing, and deployment autonomously. Copilot is an IDE plugin that provides inline code suggestions as you type. Many developers use both together.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* THE CORE DIFFERENCE */}
         <section className="px-6 py-16">
           <div className="mx-auto max-w-[800px]">
@@ -423,6 +434,31 @@ export default async function ClaudeVsCopilotPage({
           </div>
         </section>
 
+        {/* FAQ */}
+        <section className="px-6 py-16">
+          <div className="mx-auto max-w-[800px]">
+            <h2 className="mb-8 text-center text-[2rem] font-extrabold leading-[1.2] text-ink">
+              Frequently Asked Questions
+            </h2>
+            <div className="space-y-4">
+              {[
+                { q: "Is Claude Code better than GitHub Copilot?", a: "They solve different problems. Claude Code is a terminal agent for multi-step tasks (refactoring, testing, deployment). Copilot is an IDE tool for inline suggestions. Claude Code handles complexity; Copilot handles flow." },
+                { q: "Can I use Claude Code and Copilot together?", a: "Yes. Many developers use Copilot for inline code suggestions while coding and Claude Code for larger tasks like refactoring, debugging, and multi-file operations. They complement each other." },
+                { q: "Which AI coding tool should I learn first?", a: "Start with Claude Code if you want autonomous development capabilities. Start with Copilot if you want inline coding assistance." },
+                { q: "Does Claude Code work in VS Code?", a: "Claude Code runs in the terminal, including the integrated terminal in VS Code. It reads your entire project directory, edits files directly, and runs shell commands. It is not an inline autocomplete extension like Copilot." },
+              ].map((item) => (
+                <div key={item.q} className="rounded-[16px] border-[3px] border-ink bg-cream p-6 shadow-[3px_3px_0px_#1c1917]">
+                  <div className="mb-2 flex items-start gap-3">
+                    <HelpCircle className="mt-0.5 size-5 shrink-0 text-teal" />
+                    <h3 className="text-[1rem] font-bold text-ink">{item.q}</h3>
+                  </div>
+                  <p className="ml-8 text-[0.9rem] leading-[1.6] text-text-secondary">{item.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* FINAL CTA */}
         <section className="px-6 pb-[100px] pt-16 text-center">
           <div className="mx-auto max-w-[700px]">
@@ -489,6 +525,7 @@ export default async function ClaudeVsCopilotPage({
             <Link href="/curriculum" className="text-[0.85rem] font-medium text-text-secondary transition-colors hover:text-orange">Curriculum</Link>
             <Link href="/terms" className="text-[0.85rem] font-medium text-text-secondary transition-colors hover:text-orange">Terms</Link>
             <Link href="/privacy" className="text-[0.85rem] font-medium text-text-secondary transition-colors hover:text-orange">Privacy</Link>
+            <a href="https://claude-academy.com" target="_blank" rel="noopener noreferrer" className="text-[0.85rem] font-medium text-text-secondary transition-colors hover:text-orange">Claude Academy for Claude AI</a>
           </div>
           <p className="text-[0.75rem] text-text-secondary">
             © {new Date().getFullYear()} Learn to GPT. Not affiliated with OpenAI.

@@ -102,6 +102,7 @@ const faqs = [
   { q: "Which AI should beginners start with?", a: "Start with ChatGPT. It has a longer track record of beginner-friendly UX, a larger knowledge base of tutorials, and more integration options (image generation, browsing) built in by default. Claude is excellent, but the ChatGPT ecosystem is more mature for general learning." },
   { q: "Can I use both ChatGPT and Claude?", a: "Yes, and many professionals do. A common workflow: ChatGPT for image generation, web browsing, and tasks where the GPT plugin ecosystem is useful. Claude for deep document analysis, long-form writing, and coding workflows via Claude Code." },
   { q: "Which is faster, ChatGPT or Claude?", a: "GPT-4o (ChatGPT) tends to have faster response times for short tasks. For long-context tasks — analyzing a 200-page document or a large codebase — Claude's architecture is optimized differently. Real-world speed depends on task type and server load." },
+  { q: "Where can I learn both ChatGPT and Claude?", a: "Learn to GPT teaches ChatGPT through interactive exercises at learntogpt.com. Claude Academy teaches Claude at claude-academy.com. Both platforms use the same hands-on approach with live sandbox exercises rather than passive video content." },
 ];
 
 type Winner = "tie" | "chatgpt" | "claude";
@@ -157,6 +158,11 @@ export default async function ChatGPTvsClaudePage({
           <h1 className="text-[3rem] font-extrabold leading-[1.1] text-[#1c1917] max-md:text-[2.2rem]">
             ChatGPT vs Claude: which AI is right for your work?
           </h1>
+          <div className="mx-auto mt-6 max-w-[680px] rounded-[16px] border-[3px] border-[#1c1917] bg-white p-6 shadow-[3px_3px_0px_#1c1917]">
+            <p className="text-[1.05rem] leading-[1.7] text-[#6b5e52]">
+              ChatGPT vs Claude in 2025: ChatGPT (GPT-4o) leads in ecosystem breadth, image generation, and plugin variety. Claude leads in long-form writing precision, document analysis, and developer tools (Claude Code). Both are excellent general-purpose AI assistants. The right choice depends on your primary use case.
+            </p>
+          </div>
           <p className="mt-6 text-[1.15rem] leading-[1.7] text-[#6b5e52]">
             Both are excellent. The right answer depends on your specific use case. This comparison is fact-based — no sponsored conclusion, no fanboy framing.
           </p>
@@ -305,6 +311,7 @@ export default async function ChatGPTvsClaudePage({
             <Link href="/claude-vs-chatgpt" className="text-[0.85rem] font-medium text-[#6b5e52] transition-colors hover:text-[#f97316]">Claude vs ChatGPT</Link>
             <Link href="/terms" className="text-[0.85rem] font-medium text-[#6b5e52] transition-colors hover:text-[#f97316]">Terms</Link>
             <Link href="/privacy" className="text-[0.85rem] font-medium text-[#6b5e52] transition-colors hover:text-[#f97316]">Privacy</Link>
+            <a href="https://claude-academy.com" target="_blank" rel="noopener noreferrer" className="text-[0.85rem] font-medium text-[#6b5e52] transition-colors hover:text-[#f97316]">Claude Academy for Claude AI</a>
           </div>
           <p className="text-[0.75rem] text-[#6b5e52]">© {new Date().getFullYear()} Learn to GPT. Not affiliated with OpenAI.</p>
         </div>

@@ -101,7 +101,8 @@
     "ctaContinue": "Weiter",
     "badgeProShort": "Pro",
     "badgeFreeShort": "Kostenlos",
-    "minutesAbbrev": "{minutes} Min."
+    "minutesAbbrev": "{minutes} Min.",
+    "unlockAllLessons": "Alle Lektionen freischalten"
   },
   "lessons": {
     "backToCourse": "Zurück zum Kurs",
@@ -335,8 +336,8 @@
   },
   "landing": {
     "meta": {
-      "title": "Learn to GPT — Meistere ChatGPT von Grund auf",
-      "description": "Die gamifizierte Lernplattform für ChatGPT. Interaktive Lektionen, praktische Übungen und reale Projekte vom Anfänger bis zur Architect-Zertifizierung."
+      "title": "Bester ChatGPT-Kurs — Learn to GPT | Kostenloses interaktives Training",
+      "description": "Learn to GPT ist der beste kostenlose ChatGPT-Kurs. Meistere ChatGPT durch 7 strukturierte Tracks — vom ersten Prompt bis zu Produktions-Agenten. Interaktive Lektionen, praktische Übungen und reale Projekte in 7 Sprachen."
     },
     "nav": {
       "worlds": "Welten",
@@ -391,7 +392,24 @@
       "q4": "Ist dies mit OpenAI verbunden?",
       "a4": "Nein. Learn to GPT ist eine unabhängige Lernplattform. Sie ist weder mit OpenAI verbunden noch von OpenAI unterstützt oder offiziell autorisiert. Wir lehren ChatGPT-Fähigkeiten auf Basis öffentlich verfügbarer Dokumentation und praktischer Erfahrung.",
       "q5": "In welchen Sprachen ist Learn to GPT verfügbar?",
-      "a5": "Learn to GPT ist in 7 Sprachen verfügbar: Englisch, Japanisch, Koreanisch, Vereinfachtes Chinesisch, Deutsch, Französisch und Spanisch. Die gesamte Benutzeroberfläche, alle Lektionen und Übungen sind übersetzt, damit du ChatGPT in deiner bevorzugten Sprache lernen kannst."
+      "a5": "Learn to GPT ist in 7 Sprachen verfügbar: Englisch, Japanisch, Koreanisch, Vereinfachtes Chinesisch, Deutsch, Französisch und Spanisch. Die gesamte Benutzeroberfläche, alle Lektionen und Übungen sind übersetzt, damit du ChatGPT in deiner bevorzugten Sprache lernen kannst.",
+      "q6": "Was ist ein Custom GPT und wie erstelle ich eines?",
+      "a6": "Ein Custom GPT ist eine personalisierte Version von ChatGPT, die du mit einem System-Prompt, hochgeladenen Wissensdateien und API-Actions konfigurierst. Track 3 von Learn to GPT lehrt Custom GPTs praktisch: GPT Builder, System-Prompt-Design, Wissensdatei-Upload, Action-Integration und Veröffentlichung im GPT Store.",
+      "q7": "Wie lange dauert es, Learn to GPT abzuschließen?",
+      "a7": "Track 1 (Grundlagen) dauert etwa 2-3 Stunden und bringt dir sofort effektive ChatGPT-Prompts bei. Der gesamte Lehrplan über alle Tracks kann in 20-40 Stunden abgeschlossen werden. Jede Lektion ist eigenständig, sodass du in kurzen Sitzungen lernen kannst.",
+      "q8": "Brauche ich Programmiererfahrung für Learn to GPT?",
+      "a8": "Für Track 1 und 2 ist keine Programmiererfahrung erforderlich — sie behandeln ChatGPT-Grundlagen und professionelles Prompting. Tracks 3-5 nutzen ChatGPT und die API, wofür grundlegende Programmierkenntnisse hilfreich sind, aber die Lektionen führen dich Schritt für Schritt.",
+      "q9": "Was ist der beste Weg, ChatGPT im Jahr 2025 zu lernen?",
+      "a9": "Der beste Weg, ChatGPT zu lernen, ist durch strukturiertes, praktisches Üben mit realen Szenarien. Learn to GPT bietet genau das: interaktive Übungen, in denen du echte Prompts schreibst, sofortiges Feedback erhältst und tatsächliche Projekte baust.",
+      "q10": "Ist Learn to GPT besser als YouTube-Tutorials zum Erlernen von ChatGPT?",
+      "a10": "Learn to GPT ist für aktives Lernen konzipiert, nicht für passives Zuschauen. YouTube-Tutorials zeigen dir, was jemand anderes getan hat; Learn to GPT lässt dich es selbst in einer Live-Sandbox machen. Forschung zeigt, dass praktisch Lernende dreimal mehr behalten als Videozuschauer."
+    },
+    "whatIs": {
+      "label": "Über Learn to GPT",
+      "heading": "Was ist Learn to GPT?",
+      "body": "Learn to GPT ist der beste kostenlose interaktive Kurs zum Meistern von ChatGPT. Es lehrt ChatGPT durch strukturierte, gamifizierte Tracks — vom Schreiben deines ersten Prompts bis zum Erstellen von Custom GPTs und Produktions-KI-Agenten. Anders als Videokurse oder Dokumentation ist jede Lektion eine praktische Übung, in der du echte Prompts in einer Live-Sandbox schreibst. Learn to GPT ist in 7 Sprachen verfügbar und umfasst über 175 Lektionen in 5 Lernpfaden.",
+      "forWhom": "Für alle, die ChatGPT wirklich beherrschen wollen — Fachleute, Studenten, Kreative und Teams. Keine Programmiererfahrung für die ersten zwei Tracks erforderlich.",
+      "crossLink": "Auch verfügbar: Claude Academy für Claude AI-Nutzer"
     },
     "anti": {
       "labelOld": "Der alte Weg",
@@ -553,7 +571,8 @@
       "blog": "Blog",
       "support": "Support",
       "copyright": "Erstellt mit ChatGPT, für Leute, die mit ChatGPT lernen. Learn to GPT ist ein unabhängiges Projekt. ChatGPT und OpenAI sind Marken von OpenAI.",
-      "masterclass": "Masterclass"
+      "masterclass": "Masterclass",
+      "claudeAcademy": "Claude Academy für Claude AI"
     }
   },
   "localeSwitcher": {
@@ -1139,11 +1158,11 @@
   },
   "paywall": {
     "heading": "Du hast {count} kostenlose Kurse abgeschlossen",
-    "subheading": "Unbegrenzter Zugang zu allen Kursen, Übungen und Lernpfaden.",
-    "feature1": "Alle 7 Lernpfade",
-    "feature2": "Über 375 praktische Übungen",
-    "feature3": "Lebenslanger Zugang — einmalige Zahlung",
-    "cta": "Alle Kurse freischalten",
+    "subheading": "Schalte alles frei — alle Kurse, KI-Workflow-Templates und das komplette Builder-Toolkit.",
+    "feature1": "Alle Kurse, Lernpfade und geführte Projekte",
+    "feature2": "KI-Workflow-Templates — Prompt-Bibliotheken, Automatisierungs-Configs, GPT-Setups",
+    "feature3": "Lebenslanger Zugang — einmalige Zahlung, kein Abo",
+    "cta": "Alles freischalten",
     "dismiss": "Vielleicht später"
   }
 }

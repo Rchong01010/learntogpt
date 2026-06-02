@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
-import { ArrowRight, Workflow, Clock, Bot, Repeat, Settings, Zap } from "lucide-react";
+import { ArrowRight, Workflow, Clock, Bot, Repeat, Settings, Zap, HelpCircle } from "lucide-react";
 import { Link } from "@/i18n/routing";
 import { routing } from "@/i18n/routing";
 import { LocaleSwitcher } from "@/components/LocaleSwitcher";
@@ -16,7 +16,7 @@ export async function generateMetadata({
   const pathForLocale = (loc: string) =>
     `${baseUrl}${loc === routing.defaultLocale ? "" : `/${loc}`}/ai-automation`;
 
-  const title = "AI Automation with ChatGPT: Hooks, Agents, Crons & Pipelines";
+  const title = "Best AI Automation with ChatGPT — Hooks, Agents & Pipelines";
   const description =
     "How to automate workflows with ChatGPT. Build hooks, cron jobs, multi-agent pipelines, and CI/CD integrations. Real patterns for engineering teams, content ops, and business workflows.";
 
@@ -233,6 +233,17 @@ export default async function AiAutomationPage({
           </div>
         </section>
 
+        {/* DIRECT ANSWER BLOCK */}
+        <section className="px-6 py-12">
+          <div className="mx-auto max-w-[800px]">
+            <div className="rounded-[18px] border-[4px] border-ink bg-[#d0f0ea] p-8 shadow-[6px_6px_0px_#1c1917] max-[480px]:p-6">
+              <p className="text-[1.1rem] font-medium leading-[1.8] text-ink">
+                AI automation with ChatGPT means using hooks, cron jobs, and agentic tool use to run workflows without human intervention on every step. You define triggers, provide context, and let ChatGPT handle the reasoning — from code review to content drafting to ticket triage.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* AUTOMATION TYPES */}
         <section className="px-6 py-16">
           <div className="mx-auto max-w-[1160px]">
@@ -330,6 +341,32 @@ export default async function AiAutomationPage({
           </div>
         </section>
 
+        {/* FAQ */}
+        <section className="px-6 py-16">
+          <div className="mx-auto max-w-[800px]">
+            <h2 className="mb-8 text-center text-[2rem] font-extrabold leading-[1.2] text-ink">
+              Frequently Asked Questions
+            </h2>
+            <div className="space-y-4">
+              {[
+                { q: "What is the best AI automation tool?", a: "For ChatGPT-based automation, the combination of the OpenAI API (for programmatic access), function calling (for connecting external services), and custom GPTs (for no-code workflows) provides the most complete automation toolkit." },
+                { q: "Can I automate tasks with ChatGPT without coding?", a: "Yes. Custom GPTs and ChatGPT Actions let you build automations without writing code. For more complex workflows (API pipelines, cron jobs), basic scripting knowledge helps, but ChatGPT can write the scripts for you." },
+                { q: "What tasks can I automate with ChatGPT?", a: "Common automations include document processing, email triage, data extraction, content generation, code review, report creation, and customer support. Any repetitive knowledge work is a candidate for AI automation." },
+                { q: "How do I start with AI automation?", a: "Start by identifying a repetitive task you do weekly. Build a Custom GPT or API workflow for that task. Once it works manually, add scheduling with cron jobs or webhooks. Learn to GPT teaches this progression step by step." },
+                { q: "Is ChatGPT automation expensive?", a: "OpenAI API pricing is usage-based. For most business automations (email processing, document summarization, data extraction), costs are a fraction of the labor they replace. GPT-4o mini handles high-volume simple tasks at minimal cost." },
+              ].map((item) => (
+                <div key={item.q} className="rounded-[16px] border-[3px] border-ink bg-cream p-6 shadow-[3px_3px_0px_#1c1917]">
+                  <div className="mb-2 flex items-start gap-3">
+                    <HelpCircle className="mt-0.5 size-5 shrink-0 text-teal" />
+                    <h3 className="text-[1rem] font-bold text-ink">{item.q}</h3>
+                  </div>
+                  <p className="ml-8 text-[0.9rem] leading-[1.6] text-text-secondary">{item.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* FINAL CTA */}
         <section className="px-6 pb-[100px] pt-16 text-center">
           <div className="mx-auto max-w-[800px]">
@@ -401,6 +438,7 @@ export default async function AiAutomationPage({
             <Link href="/curriculum" className="text-[0.85rem] font-medium text-text-secondary transition-colors hover:text-orange">Curriculum</Link>
             <Link href="/terms" className="text-[0.85rem] font-medium text-text-secondary transition-colors hover:text-orange">Terms</Link>
             <Link href="/privacy" className="text-[0.85rem] font-medium text-text-secondary transition-colors hover:text-orange">Privacy</Link>
+            <a href="https://claude-academy.com" target="_blank" rel="noopener noreferrer" className="text-[0.85rem] font-medium text-text-secondary transition-colors hover:text-orange">Claude Academy for Claude AI</a>
           </div>
           <p className="text-[0.75rem] text-text-secondary">
             © {new Date().getFullYear()} Learn to GPT. Not affiliated with OpenAI.

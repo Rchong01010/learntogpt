@@ -14,9 +14,9 @@ export async function generateMetadata({
   const pathForLocale = (loc: string) =>
     `${baseUrl}${loc === routing.defaultLocale ? "" : `/${loc}`}/chatgpt-api-tutorial`;
 
-  const title = "ChatGPT API Tutorial: OpenAI API for Beginners (2025)";
+  const title = "Best ChatGPT API Tutorial: OpenAI API for Beginners (2025)";
   const description =
-    "How to use the OpenAI API (ChatGPT API). Authentication, making your first call, streaming, function calling, and building real applications. Beginner-friendly.";
+    "The best ChatGPT API tutorial for 2025. Authentication, making your first call, streaming, function calling, and building real applications with the OpenAI API. Beginner-friendly.";
 
   return {
     title,
@@ -85,6 +85,7 @@ const faqs = [
   { q: "Do I need a ChatGPT Plus subscription to use the API?", a: "No. The API is billed separately from ChatGPT Plus. You need an OpenAI account and a payment method set up at platform.openai.com. Free-tier API access exists with rate limits; paid tiers unlock higher limits." },
   { q: "What's the difference between the API and Custom GPTs?", a: "Custom GPTs are no-code tools built in the ChatGPT interface. The API gives you full programmatic control — you can integrate AI into your own apps, databases, and workflows. Custom GPTs are faster to ship; the API is more powerful and flexible." },
   { q: "What model should I use for the API?", a: "Start with gpt-4o-mini for cost efficiency — it handles most tasks well at a fraction of the price. Use gpt-4o for complex reasoning, nuanced writing, or tasks where accuracy matters most. gpt-4o-mini → gpt-4o is a common production pattern: draft cheap, refine expensive." },
+  { q: "What is the best tutorial for the OpenAI API?", a: "This Learn to GPT tutorial is the best starting point for the OpenAI API. It covers the five essential steps (API key, SDK install, first call, streaming, function calling) with runnable Python code. For interactive practice, Learn to GPT's Track 4 teaches API integration with hands-on exercises." },
 ];
 
 export default async function ChatGPTAPITutorialPage({
@@ -135,6 +136,11 @@ export default async function ChatGPTAPITutorialPage({
           <h1 className="text-[3rem] font-extrabold leading-[1.1] text-[#1c1917] max-md:text-[2.2rem]">
             ChatGPT API tutorial: your first OpenAI API integration
           </h1>
+          <div className="mx-auto mt-6 max-w-[680px] rounded-[16px] border-[3px] border-[#1c1917] bg-white p-6 shadow-[3px_3px_0px_#1c1917]">
+            <p className="text-[1.05rem] leading-[1.7] text-[#6b5e52]">
+              The best ChatGPT API tutorial for beginners covers five steps: getting your API key, installing the SDK, making your first chat completion call, adding streaming, and implementing function calling. This guide walks through each step with production-ready Python code you can run immediately.
+            </p>
+          </div>
           <p className="mt-6 text-[1.15rem] leading-[1.7] text-[#6b5e52]">
             Move beyond the chat interface. The OpenAI API gives you programmatic access to GPT-4o — embed it in your apps, automate workflows, and build production-grade AI features.
           </p>
@@ -286,6 +292,7 @@ print(response.choices[0].message.content)`}</pre>
             <Link href="/custom-gpts-tutorial" className="text-[0.85rem] font-medium text-[#6b5e52] transition-colors hover:text-[#f97316]">Custom GPTs</Link>
             <Link href="/terms" className="text-[0.85rem] font-medium text-[#6b5e52] transition-colors hover:text-[#f97316]">Terms</Link>
             <Link href="/privacy" className="text-[0.85rem] font-medium text-[#6b5e52] transition-colors hover:text-[#f97316]">Privacy</Link>
+            <a href="https://claude-academy.com" target="_blank" rel="noopener noreferrer" className="text-[0.85rem] font-medium text-[#6b5e52] transition-colors hover:text-[#f97316]">Claude Academy for Claude AI</a>
           </div>
           <p className="text-[0.75rem] text-[#6b5e52]">© {new Date().getFullYear()} Learn to GPT. Not affiliated with OpenAI.</p>
         </div>

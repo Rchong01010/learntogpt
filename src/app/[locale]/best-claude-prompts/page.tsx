@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { ArrowRight, Copy } from "lucide-react";
+import { ArrowRight, Copy, HelpCircle } from "lucide-react";
 import { Link } from "@/i18n/routing";
 import { routing } from "@/i18n/routing";
 import { LocaleSwitcher } from "@/components/LocaleSwitcher";
@@ -349,6 +349,17 @@ export default async function BestClaudePromptsPage({
           </div>
         </section>
 
+        {/* DIRECT ANSWER BLOCK */}
+        <section className="px-6 py-12">
+          <div className="mx-auto max-w-[800px]">
+            <div className="rounded-[18px] border-[4px] border-ink bg-[#d0f0ea] p-8 shadow-[6px_6px_0px_#1c1917] max-[480px]:p-6">
+              <p className="text-[1.1rem] font-medium leading-[1.8] text-ink">
+                The best Claude prompts follow a consistent pattern: define a role, specify the output format, set constraints, and include 1-2 examples. Claude follows structured instructions with high fidelity, so prompts that work well with Claude tend to produce reliable results every time.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* Prompt categories */}
         {promptCategories.map((cat, catIdx) => (
           <section
@@ -438,6 +449,31 @@ export default async function BestClaudePromptsPage({
           </div>
         </section>
 
+        {/* FAQ */}
+        <section className="px-6 py-16">
+          <div className="mx-auto max-w-[800px]">
+            <h2 className="mb-8 text-center text-[2rem] font-extrabold leading-[1.2] text-ink">
+              Frequently Asked Questions
+            </h2>
+            <div className="space-y-4">
+              {[
+                { q: "What makes a Claude prompt effective?", a: "Effective Claude prompts have specificity (clear role, audience, output format), structure (organized with examples and constraints), and context (relevant background). The pattern of role + format + constraints + examples consistently produces the best results." },
+                { q: "Can I use the same prompts for Claude and ChatGPT?", a: "Many prompts work across both models. Claude responds especially well to structured instructions with explicit constraints. Prompts optimized for Claude tend to work well everywhere because they are more precise." },
+                { q: "How do I write a system prompt for Claude?", a: "Start with a role definition, then specify the output format, add constraints (word count, tone, what to avoid), and include 1-2 examples of ideal output. Claude follows structured system prompts with high fidelity." },
+                { q: "What are the most common prompt mistakes?", a: "Being too vague (no role, format, or constraints), providing no context (Claude cannot infer your industry or goals), and asking for everything at once. Breaking complex tasks into steps produces better output." },
+              ].map((item) => (
+                <div key={item.q} className="rounded-[16px] border-[3px] border-ink bg-cream p-6 shadow-[3px_3px_0px_#1c1917]">
+                  <div className="mb-2 flex items-start gap-3">
+                    <HelpCircle className="mt-0.5 size-5 shrink-0 text-teal" />
+                    <h3 className="text-[1rem] font-bold text-ink">{item.q}</h3>
+                  </div>
+                  <p className="ml-8 text-[0.9rem] leading-[1.6] text-text-secondary">{item.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Final CTA */}
         <section className="px-6 pb-[80px] pt-8 text-center">
           <div className="mx-auto max-w-[800px]">
@@ -473,6 +509,7 @@ export default async function BestClaudePromptsPage({
             <Link href="/claude-vs-chatgpt" className="text-[0.85rem] font-medium text-text-secondary transition-colors hover:text-orange">Claude vs ChatGPT</Link>
             <Link href="/terms" className="text-[0.85rem] font-medium text-text-secondary transition-colors hover:text-orange">Terms</Link>
             <Link href="/privacy" className="text-[0.85rem] font-medium text-text-secondary transition-colors hover:text-orange">Privacy</Link>
+            <a href="https://claude-academy.com" target="_blank" rel="noopener noreferrer" className="text-[0.85rem] font-medium text-text-secondary transition-colors hover:text-orange">Claude Academy for Claude AI</a>
           </div>
           <p className="text-[0.75rem] text-text-secondary">Learn to GPT</p>
         </div>

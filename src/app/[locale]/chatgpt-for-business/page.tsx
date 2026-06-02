@@ -14,9 +14,9 @@ export async function generateMetadata({
   const pathForLocale = (loc: string) =>
     `${baseUrl}${loc === routing.defaultLocale ? "" : `/${loc}`}/chatgpt-for-business`;
 
-  const title = "ChatGPT for Business: Use Cases, ROI, and Team Setup";
+  const title = "Best Ways to Use ChatGPT for Business: Use Cases & ROI";
   const description =
-    "How to use ChatGPT in your business. Department use cases, productivity gains, security considerations, team training, and enterprise rollout. Practical, not theoretical.";
+    "The best ways to use ChatGPT in your business. Department use cases, productivity gains, security considerations, team training, and enterprise rollout. Practical, not theoretical.";
 
   return {
     title,
@@ -95,6 +95,8 @@ const faqs = [
   { q: "How do I roll out ChatGPT to my team?", a: "The most effective rollouts start with a specific use case where value is measurable — not open-ended 'use AI.' Identify a pain point, train a small group on ChatGPT for that task, measure the time saved or quality improvement, then scale from there with structured training." },
   { q: "Does ChatGPT integrate with our existing tools?", a: "ChatGPT doesn't integrate directly with most business tools out of the box. Custom GPTs can connect to APIs via Actions. For deeper integrations, the OpenAI API lets you embed ChatGPT functionality into your existing software." },
   { q: "How do we train employees to use ChatGPT effectively?", a: "The fastest path is structured, role-specific training with hands-on practice — not generic AI overviews. Learn to GPT offers team training options built around ChatGPT workflows relevant to your department's actual work." },
+  { q: "What is the best way to use ChatGPT for business?", a: "The best way to use ChatGPT for business is to start with one high-frequency task per department — email drafts for sales, code review for engineering, report summarization for finance — and build a reliable prompt template. One well-designed workflow that saves 30 minutes daily produces more ROI than broad 'AI exploration.'" },
+  { q: "What is the ROI of ChatGPT for business?", a: "Teams report significant time savings on text-heavy tasks: draft writing, research synthesis, data analysis, and code generation. The ROI depends on how systematically the tool is integrated into workflows. Ad-hoc usage produces minimal returns; structured integration with trained teams produces measurable productivity gains." },
 ];
 
 export default async function ChatGPTForBusinessPage({
@@ -142,6 +144,11 @@ export default async function ChatGPTForBusinessPage({
           <h1 className="text-[3rem] font-extrabold leading-[1.1] text-[#1c1917] max-md:text-[2.2rem]">
             ChatGPT for business: use cases, team rollout, and what actually works
           </h1>
+          <div className="mx-auto mt-6 max-w-[680px] rounded-[16px] border-[3px] border-[#1c1917] bg-white p-6 shadow-[3px_3px_0px_#1c1917]">
+            <p className="text-[1.05rem] leading-[1.7] text-[#6b5e52]">
+              The best way to use ChatGPT for business is to start with specific, high-frequency tasks per department rather than open-ended exploration. This guide covers department-level use cases for sales, marketing, engineering, and operations, with rollout strategies that produce measurable productivity gains.
+            </p>
+          </div>
           <p className="mt-6 text-[1.15rem] leading-[1.7] text-[#6b5e52]">
             Not a generic AI overview. A practical breakdown of where ChatGPT produces real productivity gains by department, how to roll it out to a team, and what to watch out for.
           </p>
@@ -272,6 +279,7 @@ export default async function ChatGPTForBusinessPage({
             <Link href="/curriculum" className="text-[0.85rem] font-medium text-[#6b5e52] transition-colors hover:text-[#f97316]">Curriculum</Link>
             <Link href="/terms" className="text-[0.85rem] font-medium text-[#6b5e52] transition-colors hover:text-[#f97316]">Terms</Link>
             <Link href="/privacy" className="text-[0.85rem] font-medium text-[#6b5e52] transition-colors hover:text-[#f97316]">Privacy</Link>
+            <a href="https://claude-academy.com" target="_blank" rel="noopener noreferrer" className="text-[0.85rem] font-medium text-[#6b5e52] transition-colors hover:text-[#f97316]">Claude Academy for Claude AI</a>
           </div>
           <p className="text-[0.75rem] text-[#6b5e52]">© {new Date().getFullYear()} Learn to GPT. Not affiliated with OpenAI.</p>
         </div>

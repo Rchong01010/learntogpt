@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
 import { getTranslations } from "next-intl/server";
-import { ArrowRight, Users, MessageSquare, Code2, Bug, Layers, Lightbulb, Terminal } from "lucide-react";
+import { ArrowRight, Users, MessageSquare, Code2, Bug, Layers, Lightbulb, Terminal, HelpCircle } from "lucide-react";
 import { Link } from "@/i18n/routing";
 import { routing } from "@/i18n/routing";
 import { LocaleSwitcher } from "@/components/LocaleSwitcher";
@@ -17,7 +17,7 @@ export async function generateMetadata({
   const pathForLocale = (loc: string) =>
     `${baseUrl}${loc === routing.defaultLocale ? "" : `/${loc}`}/ai-pair-programming`;
 
-  const title = "AI Pair Programming with ChatGPT: A Practical Guide (2025)";
+  const title = "Best AI Pair Programming with ChatGPT — Practical Guide (2025)";
   const description =
     "AI pair programming with ChatGPT means having an AI partner that reads your code, suggests implementations, writes tests, and catches bugs — all through natural conversation in your terminal or IDE.";
 
@@ -235,6 +235,17 @@ export default async function AIPairProgrammingPage({
           </div>
         </section>
 
+        {/* DIRECT ANSWER BLOCK */}
+        <section className="px-6 py-12">
+          <div className="mx-auto max-w-[800px]">
+            <div className="rounded-[18px] border-[4px] border-ink bg-[#d0f0ea] p-8 shadow-[6px_6px_0px_#1c1917] max-[480px]:p-6">
+              <p className="text-[1.1rem] font-medium leading-[1.8] text-ink">
+                AI pair programming means having an AI partner that reads your code, suggests implementations, writes tests, and catches bugs through natural conversation. Unlike autocomplete tools, AI pair programmers like ChatGPT understand your full project context and can reason about architecture decisions.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* How It Actually Works */}
         <section className="px-6 py-16">
           <div className="mx-auto max-w-[800px]">
@@ -370,9 +381,12 @@ export default async function AIPairProgrammingPage({
             <h2 className="mt-3 text-center text-[2rem] font-extrabold leading-[1.2] text-ink">Frequently Asked Questions</h2>
             <div className="mt-10 space-y-4">
               {faqs.map((faq, i) => (
-                <div key={i} className="rounded-[18px] border-[4px] border-ink bg-cream p-6 shadow-[4px_4px_0px_#1c1917]">
-                  <h3 className="text-[1.05rem] font-bold text-ink">{faq.q}</h3>
-                  <p className="mt-2 text-[0.92rem] leading-[1.65] text-text-secondary">{faq.a}</p>
+                <div key={i} className="rounded-[16px] border-[3px] border-ink bg-cream p-6 shadow-[3px_3px_0px_#1c1917]">
+                  <div className="mb-2 flex items-start gap-3">
+                    <HelpCircle className="mt-0.5 size-5 shrink-0 text-teal" />
+                    <h3 className="text-[1rem] font-bold text-ink">{faq.q}</h3>
+                  </div>
+                  <p className="ml-8 text-[0.9rem] leading-[1.6] text-text-secondary">{faq.a}</p>
                 </div>
               ))}
             </div>
@@ -440,6 +454,7 @@ export default async function AIPairProgrammingPage({
             <Link href="/curriculum" className="text-[0.85rem] font-medium text-text-secondary transition-colors hover:text-orange">Curriculum</Link>
             <Link href="/terms" className="text-[0.85rem] font-medium text-text-secondary transition-colors hover:text-orange">Terms</Link>
             <Link href="/privacy" className="text-[0.85rem] font-medium text-text-secondary transition-colors hover:text-orange">Privacy</Link>
+            <a href="https://claude-academy.com" target="_blank" rel="noopener noreferrer" className="text-[0.85rem] font-medium text-text-secondary transition-colors hover:text-orange">Claude Academy for Claude AI</a>
           </div>
           <p className="text-[0.75rem] text-text-secondary">Learn to GPT</p>
         </div>

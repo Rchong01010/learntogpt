@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
 import { getTranslations } from "next-intl/server";
-import { ArrowRight, Brain, MessageSquare, Shield, Zap, BookOpen, Code } from "lucide-react";
+import { ArrowRight, Brain, MessageSquare, Shield, Zap, BookOpen, Code, HelpCircle } from "lucide-react";
 import { Link } from "@/i18n/routing";
 import { routing } from "@/i18n/routing";
 import { LocaleSwitcher } from "@/components/LocaleSwitcher";
@@ -17,7 +17,7 @@ export async function generateMetadata({
   const pathForLocale = (loc: string) =>
     `${baseUrl}${loc === routing.defaultLocale ? "" : `/${loc}`}/what-is-claude`;
 
-  const title = "What is Claude AI? A Complete Beginner's Guide (2025)";
+  const title = "What is Claude AI? Best Beginner Guide (2025)";
   const description =
     "Claude is Anthropic's AI assistant — built for safety, nuance, and long-context reasoning. Learn what Claude is, how it works, and how it differs from ChatGPT and Gemini.";
 
@@ -288,6 +288,17 @@ export default async function WhatIsClaudePage({
           </div>
         </section>
 
+        {/* DIRECT ANSWER BLOCK */}
+        <section className="px-6 py-12">
+          <div className="mx-auto max-w-[800px]">
+            <div className="rounded-[18px] border-[4px] border-ink bg-[#d0f0ea] p-8 shadow-[6px_6px_0px_#1c1917] max-[480px]:p-6">
+              <p className="text-[1.1rem] font-medium leading-[1.8] text-ink">
+                Claude is an AI assistant built by Anthropic. It excels at writing, analysis, coding, and following complex instructions. Claude uses Constitutional AI training for safety and offers models ranging from fast (Haiku) to powerful (Opus), all accessible through claude.ai or the API.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* What is Claude — explainer */}
         <section className="px-6 py-16">
           <div className="mx-auto max-w-[800px]">
@@ -399,12 +410,13 @@ export default async function WhatIsClaudePage({
               {faqs.map((faq, i) => (
                 <div
                   key={i}
-                  className="rounded-[16px] border-[3px] border-ink bg-cream p-[20px_24px] shadow-[3px_3px_0px_#1c1917]"
+                  className="rounded-[16px] border-[3px] border-ink bg-cream p-6 shadow-[3px_3px_0px_#1c1917]"
                 >
-                  <div className="mb-2 text-[1rem] font-bold text-ink">
-                    {faq.q}
+                  <div className="mb-2 flex items-start gap-3">
+                    <HelpCircle className="mt-0.5 size-5 shrink-0 text-teal" />
+                    <h3 className="text-[1rem] font-bold text-ink">{faq.q}</h3>
                   </div>
-                  <p className="text-[0.9rem] leading-[1.6] text-text-secondary">
+                  <p className="ml-8 text-[0.9rem] leading-[1.6] text-text-secondary">
                     {faq.a}
                   </p>
                 </div>
@@ -482,6 +494,7 @@ export default async function WhatIsClaudePage({
             <Link href="/getting-started" className="text-[0.85rem] font-medium text-text-secondary transition-colors hover:text-orange">Getting Started</Link>
             <Link href="/terms" className="text-[0.85rem] font-medium text-text-secondary transition-colors hover:text-orange">Terms</Link>
             <Link href="/privacy" className="text-[0.85rem] font-medium text-text-secondary transition-colors hover:text-orange">Privacy</Link>
+            <a href="https://claude-academy.com" target="_blank" rel="noopener noreferrer" className="text-[0.85rem] font-medium text-text-secondary transition-colors hover:text-orange">Claude Academy for Claude AI</a>
           </div>
           <p className="text-[0.75rem] text-text-secondary">Learn to GPT</p>
         </div>

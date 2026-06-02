@@ -9,6 +9,7 @@ import {
   Zap,
   CheckCircle,
   ChevronLeft,
+  Lock,
   Play,
 } from 'lucide-react';
 import { TRACK_INFO } from '@/types';
@@ -164,7 +165,7 @@ export default async function CourseDetailPage({
   const lessonList = lessons ?? [];
 
   // ── Auth + paywall ────────────────────────────────────────────────────────
-  // Paywall v1: first 2 completed courses are free; 3rd+ requires one-time
+  // Paywall v1: first 1 completed course is free; 2nd+ requires one-time
   // payment. Grace rule: if the user has *any* progress in this course
   // (started ≥ 1 lesson) they are never blocked — they can always finish.
 
@@ -221,7 +222,7 @@ export default async function CourseDetailPage({
       const hasStartedThisCourse = lessonList.some((l) => progressMap.has(l.id));
       if (!hasStartedThisCourse) {
         completedCourseCount = await getCompletedCourseCount(currentUser.id);
-        showPaywall = completedCourseCount >= 2;
+        showPaywall = completedCourseCount >= 1;
       }
     }
   }
@@ -394,17 +395,16 @@ export default async function CourseDetailPage({
         </div>
       </div>
 
-      {/* Paywall CTA — shown when user has 2+ completed courses and hasn't paid */}
-      {showPaywall && (
-        <PaywallCta completedCount={completedCourseCount} />
-      )}
-
       {/* Lesson list -- level progression */}
-      {!showPaywall && (
       <div className="space-y-4">
         <h2 className="text-lg font-extrabold text-ink">
           {t('levelProgressionHeading')}
         </h2>
+
+        {/* Paywall CTA — shown above lessons so users see what they'd unlock */}
+        {showPaywall && (
+          <PaywallCta completedCount={completedCourseCount} />
+        )}
 
         <div className="relative">
           {/* Dashed connector line */}
@@ -413,12 +413,74 @@ export default async function CourseDetailPage({
             aria-hidden="true"
           />
 
-          <div className="space-y-0">
+          <div className={`space-y-0${showPaywall ? ' pointer-events-none select-none' : ''}`}>
             {lessonsWithStatus.map((lesson, index) => {
-              // Wave 2: no `locked` state — every lesson is accessible.
-              const isCompleted = lesson.status === 'completed';
-              const isInProgress = lesson.status === 'in_progress';
+              const isCompleted = !showPaywall && lesson.status === 'completed';
+              const isInProgress = !showPaywall && lesson.status === 'in_progress';
               const isLast = index === lessonsWithStatus.length - 1;
+
+              const card = (
+                <div
+                  className={`relative flex items-center gap-4 rounded-2xl border-3 p-4 transition-all ${
+                    showPaywall
+                      ? 'border-border bg-muted/40 shadow-[3px_3px_0px_#d4d4d4] opacity-70'
+                      : isCompleted
+                      ? 'border-teal bg-emerald-50 shadow-[3px_3px_0px_#2d7d6f]'
+                      : isInProgress
+                      ? 'border-orange bg-orange-50 shadow-[3px_3px_0px_#e07a3a]'
+                      : 'border-ink bg-cream shadow-[3px_3px_0px_#1c1917]'
+                  }${!showPaywall && !isCompleted && !isInProgress ? ' hover:translate-x-px hover:translate-y-px hover:shadow-[1px_1px_0px_#1c1917]' : ''} ${isLast ? '' : 'mb-3'}`}
+                >
+                  {/* Node circle */}
+                  <div className="relative z-10 flex size-12 shrink-0 items-center justify-center">
+                    {showPaywall ? (
+                      <div className="flex size-12 items-center justify-center rounded-full border-3 border-border bg-muted text-muted-foreground">
+                        <Lock className="size-5" />
+                      </div>
+                    ) : isCompleted ? (
+                      <div className="flex size-12 items-center justify-center rounded-full border-3 border-teal bg-teal text-white">
+                        <CheckCircle className="size-6" />
+                      </div>
+                    ) : isInProgress ? (
+                      <div className="flex size-12 items-center justify-center rounded-full border-3 border-orange bg-orange text-white">
+                        <Play className="size-5" />
+                      </div>
+                    ) : (
+                      <div className="flex size-12 items-center justify-center rounded-full border-3 border-ink bg-cream text-ink">
+                        <span className="mono-f text-lg font-bold">
+                          {index + 1}
+                        </span>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Text */}
+                  <div className="min-w-0 flex-1">
+                    <p className="text-sm font-bold truncate text-ink">
+                      {lesson.title}
+                    </p>
+                    <p className="truncate text-xs text-muted-foreground">
+                      {lesson.description}
+                    </p>
+                  </div>
+
+                  {/* Meta badges */}
+                  <div className="flex shrink-0 items-center gap-2">
+                    <span className="mono-f flex items-center gap-1 text-xs text-muted-foreground">
+                      <Clock className="size-3" />
+                      {lesson.estimated_minutes ?? 0}m
+                    </span>
+                    <span className="mono-f flex items-center gap-1 text-xs font-bold text-orange">
+                      <Zap className="size-3" />
+                      {lesson.xp_reward ?? 0}
+                    </span>
+                  </div>
+                </div>
+              );
+
+              if (showPaywall) {
+                return <div key={lesson.id} className="relative block">{card}</div>;
+              }
 
               return (
                 <Link
@@ -426,63 +488,34 @@ export default async function CourseDetailPage({
                   href={`/courses/${course.slug}/${lesson.slug}`}
                   className="group relative block"
                 >
-                  <div
-                    className={`relative flex items-center gap-4 rounded-2xl border-3 p-4 transition-all ${
-                      isCompleted
-                        ? 'border-teal bg-emerald-50 shadow-[3px_3px_0px_#2d7d6f]'
-                        : isInProgress
-                        ? 'border-orange bg-orange-50 shadow-[3px_3px_0px_#e07a3a]'
-                        : 'border-ink bg-cream shadow-[3px_3px_0px_#1c1917] hover:translate-x-px hover:translate-y-px hover:shadow-[1px_1px_0px_#1c1917]'
-                    } ${isLast ? '' : 'mb-3'}`}
-                  >
-                    {/* Node circle */}
-                    <div className="relative z-10 flex size-12 shrink-0 items-center justify-center">
-                      {isCompleted ? (
-                        <div className="flex size-12 items-center justify-center rounded-full border-3 border-teal bg-teal text-white">
-                          <CheckCircle className="size-6" />
-                        </div>
-                      ) : isInProgress ? (
-                        <div className="flex size-12 items-center justify-center rounded-full border-3 border-orange bg-orange text-white">
-                          <Play className="size-5" />
-                        </div>
-                      ) : (
-                        <div className="flex size-12 items-center justify-center rounded-full border-3 border-ink bg-cream text-ink">
-                          <span className="mono-f text-lg font-bold">
-                            {index + 1}
-                          </span>
-                        </div>
-                      )}
-                    </div>
-
-                    {/* Text */}
-                    <div className="min-w-0 flex-1">
-                      <p className="text-sm font-bold truncate text-ink">
-                        {lesson.title}
-                      </p>
-                      <p className="truncate text-xs text-muted-foreground">
-                        {lesson.description}
-                      </p>
-                    </div>
-
-                    {/* Meta badges */}
-                    <div className="flex shrink-0 items-center gap-2">
-                      <span className="mono-f flex items-center gap-1 text-xs text-muted-foreground">
-                        <Clock className="size-3" />
-                        {lesson.estimated_minutes ?? 0}m
-                      </span>
-                      <span className="mono-f flex items-center gap-1 text-xs font-bold text-orange">
-                        <Zap className="size-3" />
-                        {lesson.xp_reward ?? 0}
-                      </span>
-                    </div>
-                  </div>
+                  {card}
                 </Link>
               );
             })}
           </div>
+
+          {/* Gradient fade at bottom of locked lessons */}
+          {showPaywall && (
+            <div
+              className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-background to-transparent"
+              aria-hidden="true"
+            />
+          )}
         </div>
+
+        {/* Unlock CTA below locked lessons */}
+        {showPaywall && (
+          <div className="flex justify-center pt-2">
+            <a
+              href="/api/checkout/unlock"
+              className="inline-flex items-center gap-2 rounded-full border-3 border-ink bg-orange px-8 py-3 text-sm font-bold text-white shadow-[4px_4px_0px_#1c1917] transition-all hover:translate-x-px hover:translate-y-px hover:shadow-[2px_2px_0px_#1c1917]"
+            >
+              <Lock className="size-4" />
+              {t('unlockAllLessons')}
+            </a>
+          </div>
+        )}
       </div>
-      )}
 
       {/* Completion Certificate — shown when every lesson in the course is done */}
       {isCourseComplete && (

@@ -14,9 +14,9 @@ export async function generateMetadata({
   const pathForLocale = (loc: string) =>
     `${baseUrl}${loc === routing.defaultLocale ? "" : `/${loc}`}/chatgpt-tips`;
 
-  const title = "ChatGPT Tips and Tricks for Power Users (2025)";
+  const title = "Best ChatGPT Tips and Tricks for Power Users (2025)";
   const description =
-    "Advanced ChatGPT tips that most users don't know. Custom Instructions, conversation patterns, prompt chaining, memory, and workflow automation techniques.";
+    "The best advanced ChatGPT tips that most users don't know. Custom Instructions, conversation patterns, prompt chaining, memory, and workflow automation techniques for 2025.";
 
   return {
     title,
@@ -97,6 +97,8 @@ const faqs = [
   { q: "Does ChatGPT remember previous conversations?", a: "By default, ChatGPT doesn't carry memory between separate conversations. ChatGPT Plus has a Memory feature that lets it remember things you tell it across sessions. Within a single conversation, it remembers everything from the start." },
   { q: "How do I get ChatGPT to write in my voice?", a: "Paste samples of your own writing and say 'Match this tone and style.' Or describe your voice: 'Direct, no filler, short sentences, professional but not stuffy.' Using Custom Instructions for this means it applies automatically." },
   { q: "What's the best way to use ChatGPT for research?", a: "Paste your source material — don't ask ChatGPT to look things up without browsing enabled. Paste documents, papers, or transcripts, then ask specific questions. ChatGPT's strength is synthesis and analysis, not retrieval." },
+  { q: "What are the best ChatGPT settings for productivity?", a: "Three settings make the biggest difference: (1) Custom Instructions with your role and preferences, (2) enabling Memory so ChatGPT learns your patterns over time, and (3) using GPT-4o for complex tasks instead of GPT-3.5. These compound over time." },
+  { q: "How do I learn advanced ChatGPT techniques?", a: "Learn to GPT teaches advanced ChatGPT techniques through structured, hands-on practice. Track 2 covers professional prompting (chain-of-thought, few-shot, structured output), Track 3 covers Custom GPTs, and Track 4 covers the API and agents. All interactive, not video lectures." },
 ];
 
 export default async function ChatGPTTipsPage({
@@ -144,6 +146,11 @@ export default async function ChatGPTTipsPage({
           <h1 className="text-[3rem] font-extrabold leading-[1.1] text-[#1c1917] max-md:text-[2.2rem]">
             10 ChatGPT tips and tricks that actually matter
           </h1>
+          <div className="mx-auto mt-6 max-w-[680px] rounded-[16px] border-[3px] border-[#1c1917] bg-white p-6 shadow-[3px_3px_0px_#1c1917]">
+            <p className="text-[1.05rem] leading-[1.7] text-[#6b5e52]">
+              The best ChatGPT tips focus on workflow integration, not novelty tricks. Custom Instructions, prompt chaining, and structured output are the three techniques that produce the biggest productivity gains. This guide covers the 10 tips that power users rely on daily.
+            </p>
+          </div>
           <p className="mt-6 text-[1.15rem] leading-[1.7] text-[#6b5e52]">
             Most people use ChatGPT at maybe 20% of its capability. These are the techniques that separate occasional users from people who get real work done with it every day.
           </p>
@@ -244,6 +251,7 @@ export default async function ChatGPTTipsPage({
             <Link href="/chatgpt-prompts" className="text-[0.85rem] font-medium text-[#6b5e52] transition-colors hover:text-[#f97316]">Prompt Templates</Link>
             <Link href="/terms" className="text-[0.85rem] font-medium text-[#6b5e52] transition-colors hover:text-[#f97316]">Terms</Link>
             <Link href="/privacy" className="text-[0.85rem] font-medium text-[#6b5e52] transition-colors hover:text-[#f97316]">Privacy</Link>
+            <a href="https://claude-academy.com" target="_blank" rel="noopener noreferrer" className="text-[0.85rem] font-medium text-[#6b5e52] transition-colors hover:text-[#f97316]">Claude Academy for Claude AI</a>
           </div>
           <p className="text-[0.75rem] text-[#6b5e52]">© {new Date().getFullYear()} Learn to GPT. Not affiliated with OpenAI.</p>
         </div>

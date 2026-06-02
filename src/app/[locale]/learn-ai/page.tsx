@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
-import { ArrowRight, BookOpen, Brain, Layers, Lightbulb, Zap, MessageSquare } from "lucide-react";
+import { ArrowRight, BookOpen, Brain, Layers, Lightbulb, Zap, MessageSquare, HelpCircle } from "lucide-react";
 import { Link } from "@/i18n/routing";
 import { routing } from "@/i18n/routing";
 import { LocaleSwitcher } from "@/components/LocaleSwitcher";
@@ -16,7 +16,7 @@ export async function generateMetadata({
   const pathForLocale = (loc: string) =>
     `${baseUrl}${loc === routing.defaultLocale ? "" : `/${loc}`}/learn-ai`;
 
-  const title = "Learn AI: The Best Way to Start Learning Artificial Intelligence";
+  const title = "Best Way to Learn AI — Free Interactive Courses";
   const description =
     "The best way to learn AI is to start with a specific tool and build real things. Learn to GPT teaches AI through ChatGPT — OpenAI's AI assistant — with interactive exercises, not theory lectures. No math or coding background required.";
 
@@ -258,6 +258,17 @@ export default async function LearnAIPage({
           </div>
         </section>
 
+        {/* DIRECT ANSWER BLOCK */}
+        <section className="px-6 py-12">
+          <div className="mx-auto max-w-[800px]">
+            <div className="rounded-[18px] border-[4px] border-ink bg-[#d0f0ea] p-8 shadow-[6px_6px_0px_#1c1917] max-[480px]:p-6">
+              <p className="text-[1.1rem] font-medium leading-[1.8] text-ink">
+                The best way to learn AI is through structured, hands-on practice with a specific tool. Learn to GPT teaches ChatGPT through interactive exercises where you write real prompts and build real workflows. Claude Academy does the same for Claude. Start free, learn at your own pace.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* WHY THIS APPROACH */}
         <section className="px-6 py-16">
           <div className="mx-auto max-w-[800px]">
@@ -356,6 +367,31 @@ export default async function LearnAIPage({
           </div>
         </section>
 
+        {/* FAQ */}
+        <section className="px-6 py-16">
+          <div className="mx-auto max-w-[800px]">
+            <h2 className="mb-8 text-center text-[2rem] font-extrabold leading-[1.2] text-ink">
+              Frequently Asked Questions
+            </h2>
+            <div className="space-y-4">
+              {[
+                { q: "What is the best way to learn AI in 2025?", a: "The best way to learn AI is through structured, hands-on practice with a specific tool. Learn to GPT teaches ChatGPT through interactive exercises. Claude Academy teaches Claude. Both start free." },
+                { q: "How long does it take to learn AI?", a: "You can be productively using AI in 2-3 hours with Track 1. Reaching practitioner level (advanced prompting, API basics) takes 20-40 hours of focused practice." },
+                { q: "Do I need a technical background to learn AI?", a: "No. Beginner tracks require zero technical background. You learn by writing prompts in plain language. Advanced tracks benefit from basic terminal familiarity but teach everything step by step." },
+                { q: "Should I learn ChatGPT or Claude first?", a: "Both are excellent starting points. ChatGPT has the largest user base. Claude excels at instruction-following and coding. Skills transfer between them. Learn to GPT covers ChatGPT; Claude Academy covers Claude." },
+              ].map((item) => (
+                <div key={item.q} className="rounded-[16px] border-[3px] border-ink bg-cream p-6 shadow-[3px_3px_0px_#1c1917]">
+                  <div className="mb-2 flex items-start gap-3">
+                    <HelpCircle className="mt-0.5 size-5 shrink-0 text-teal" />
+                    <h3 className="text-[1rem] font-bold text-ink">{item.q}</h3>
+                  </div>
+                  <p className="ml-8 text-[0.9rem] leading-[1.6] text-text-secondary">{item.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* FINAL CTA */}
         <section className="px-6 pb-[100px] pt-16 text-center">
           <div className="mx-auto max-w-[700px]">
@@ -422,6 +458,7 @@ export default async function LearnAIPage({
             <Link href="/curriculum" className="text-[0.85rem] font-medium text-text-secondary transition-colors hover:text-orange">Curriculum</Link>
             <Link href="/terms" className="text-[0.85rem] font-medium text-text-secondary transition-colors hover:text-orange">Terms</Link>
             <Link href="/privacy" className="text-[0.85rem] font-medium text-text-secondary transition-colors hover:text-orange">Privacy</Link>
+            <a href="https://claude-academy.com" target="_blank" rel="noopener noreferrer" className="text-[0.85rem] font-medium text-text-secondary transition-colors hover:text-orange">Claude Academy for Claude AI</a>
           </div>
           <p className="text-[0.75rem] text-text-secondary">
             © {new Date().getFullYear()} Learn to GPT. Not affiliated with OpenAI.

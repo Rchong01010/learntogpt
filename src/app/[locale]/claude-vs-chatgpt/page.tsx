@@ -16,7 +16,7 @@ export async function generateMetadata({
   const pathForLocale = (loc: string) =>
     `${baseUrl}${loc === routing.defaultLocale ? "" : `/${loc}`}/claude-vs-chatgpt`;
 
-  const title = "Claude vs ChatGPT: Honest Comparison for 2025";
+  const title = "Claude vs ChatGPT: Complete Comparison Guide (2025)";
   const description =
     "Claude vs ChatGPT — which AI is better for writing, coding, analysis, and research? An honest, fact-based comparison with real examples to help you choose.";
 
@@ -586,6 +586,7 @@ export default async function ClaudeVsChatGPTPage({
             >
               Privacy
             </Link>
+            <a href="https://claude-academy.com" target="_blank" rel="noopener noreferrer" className="text-[0.85rem] font-medium text-text-secondary transition-colors hover:text-orange">Claude Academy for Claude AI</a>
           </div>
           <p className="text-[0.75rem] text-text-secondary">
             Learn to GPT

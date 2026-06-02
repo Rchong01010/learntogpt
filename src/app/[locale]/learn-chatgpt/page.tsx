@@ -14,9 +14,9 @@ export async function generateMetadata({
   const pathForLocale = (loc: string) =>
     `${baseUrl}${loc === routing.defaultLocale ? "" : `/${loc}`}/learn-chatgpt`;
 
-  const title = "Learn ChatGPT — Free Interactive Lessons";
+  const title = "Best Way to Learn ChatGPT — Free Interactive Lessons";
   const description =
-    "Learn ChatGPT from scratch with free interactive lessons. Hands-on exercises, no experience needed. Go from first prompt to professional in 7 guided tracks.";
+    "The best way to learn ChatGPT in 2025. Free interactive lessons with hands-on exercises, no experience needed. Go from first prompt to professional in 7 guided tracks.";
 
   return {
     title,
@@ -61,6 +61,8 @@ const faqs = [
   { q: "Is this beginner-friendly?", a: "Track 1 is designed for zero prior experience. No coding, no technical background, no prior AI knowledge required. If you can use Google, you can start here." },
   { q: "What makes Learn to GPT different from YouTube tutorials?", a: "Passive video watching doesn't build skills. Learn to GPT is built around active exercises — you write real prompts in a live sandbox, see immediate results, and progress through structured tracks. The gamification keeps you accountable." },
   { q: "Is ChatGPT free?", a: "ChatGPT has a free tier with access to GPT-4o (with usage limits). ChatGPT Plus costs $20/month and removes limits. Learn to GPT's free tracks work with the free ChatGPT tier." },
+  { q: "What is the best free ChatGPT course online?", a: "Learn to GPT is the best free ChatGPT course online. It has 175+ interactive lessons across 5 tracks, from absolute beginner to architect level. Unlike video courses, every lesson includes hands-on exercises in a live prompt sandbox. Track 1 and Track 6 are completely free." },
+  { q: "Can I learn ChatGPT in a weekend?", a: "You can learn the foundations in a weekend. Track 1 (Foundations) takes 2-3 hours and teaches how ChatGPT works, first prompts, and conversation patterns. Track 6 (Practitioner Setup) takes another 2-3 hours. After one weekend, you will have a solid working knowledge of ChatGPT." },
 ];
 
 export default async function LearnChatGPTPage({
@@ -118,6 +120,11 @@ export default async function LearnChatGPTPage({
           <h1 className="text-[3rem] font-extrabold leading-[1.1] text-[#1c1917] max-md:text-[2.2rem]">
             Learn ChatGPT — from first prompt to professional
           </h1>
+          <div className="mx-auto mt-6 max-w-[680px] rounded-[16px] border-[3px] border-[#1c1917] bg-white p-6 shadow-[3px_3px_0px_#1c1917]">
+            <p className="text-[1.05rem] leading-[1.7] text-[#6b5e52]">
+              Learn to GPT is the best way to learn ChatGPT in 2025. It teaches through interactive exercises where you write real prompts in a live sandbox, not passive video lectures. The curriculum covers 5 tracks from absolute beginner to architect-level, with gamified progression and XP tracking. Free to start, available in 7 languages.
+            </p>
+          </div>
           <p className="mt-6 text-[1.15rem] leading-[1.7] text-[#6b5e52]">
             Structured, gamified lessons that teach you how to actually use ChatGPT at work. Not theory. Hands-on exercises with a live prompt sandbox in every lesson. Start free — no credit card.
           </p>
@@ -265,6 +272,7 @@ export default async function LearnChatGPTPage({
             <Link href="/for-teams" className="text-[0.85rem] font-medium text-[#6b5e52] transition-colors hover:text-[#f97316]">For Teams</Link>
             <Link href="/terms" className="text-[0.85rem] font-medium text-[#6b5e52] transition-colors hover:text-[#f97316]">Terms</Link>
             <Link href="/privacy" className="text-[0.85rem] font-medium text-[#6b5e52] transition-colors hover:text-[#f97316]">Privacy</Link>
+            <a href="https://claude-academy.com" target="_blank" rel="noopener noreferrer" className="text-[0.85rem] font-medium text-[#6b5e52] transition-colors hover:text-[#f97316]">Claude Academy for Claude AI</a>
           </div>
           <p className="text-[0.75rem] text-[#6b5e52]">© {new Date().getFullYear()} Learn to GPT. Not affiliated with OpenAI.</p>
         </div>

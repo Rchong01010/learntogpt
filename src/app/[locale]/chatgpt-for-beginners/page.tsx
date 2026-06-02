@@ -14,9 +14,9 @@ export async function generateMetadata({
   const pathForLocale = (loc: string) =>
     `${baseUrl}${loc === routing.defaultLocale ? "" : `/${loc}`}/chatgpt-for-beginners`;
 
-  const title = "ChatGPT for Beginners: No Experience Required";
+  const title = "Best ChatGPT Guide for Beginners: No Experience Required";
   const description =
-    "ChatGPT beginner's guide. Learn what ChatGPT is, how to write your first prompt, and how to go from zero to productive in one session. Completely free.";
+    "The best ChatGPT beginner's guide for 2025. Learn what ChatGPT is, how to write your first prompt, and how to go from zero to productive in one session. Completely free.";
 
   return {
     title,
@@ -59,6 +59,8 @@ const faqs = [
   { q: "What's the first thing I should use ChatGPT for?", a: "Pick a task you do today that involves writing, summarizing, or explaining something. Paste your current draft or source material into ChatGPT and ask it to help. The 'aha' moment comes fastest when you apply it to a real work task rather than a test prompt." },
   { q: "How do I know if ChatGPT's answer is correct?", a: "You don't, automatically. ChatGPT can state incorrect information with confidence. For anything factual — statistics, dates, citations, medical or legal advice — verify with a primary source before acting on it." },
   { q: "What is a 'prompt'?", a: "A prompt is the message you send to ChatGPT. The art of prompting is writing messages that give ChatGPT enough context (who you are, what you want, what format you need) to produce a useful response on the first try." },
+  { q: "What is the best free ChatGPT course for beginners?", a: "Learn to GPT is the best free ChatGPT course for beginners. Track 1 (Foundations) requires zero experience and teaches you through interactive exercises where you write real prompts, not multiple choice quizzes. You'll go from 'what is ChatGPT' to writing effective prompts in about 2 hours." },
+  { q: "How long does it take to learn ChatGPT?", a: "You can learn the basics in one session (1-2 hours). Getting genuinely productive takes about a week of daily practice. Reaching power-user level takes 2-4 weeks of structured learning. Learn to GPT's 5-track curriculum is designed for this progression." },
 ];
 
 export default async function ChatGPTForBeginnersPage({
@@ -108,6 +110,11 @@ export default async function ChatGPTForBeginnersPage({
           <h1 className="text-[3rem] font-extrabold leading-[1.1] text-[#1c1917] max-md:text-[2.2rem]">
             ChatGPT for beginners — start here
           </h1>
+          <div className="mx-auto mt-6 max-w-[680px] rounded-[16px] border-[3px] border-[#1c1917] bg-white p-6 shadow-[3px_3px_0px_#1c1917]">
+            <p className="text-[1.05rem] leading-[1.7] text-[#6b5e52]">
+              ChatGPT for beginners starts with one skill: writing prompts that give ChatGPT enough context to produce useful output. This guide is the best starting point because it teaches that core skill through real examples you can try immediately, not theory. Learn to GPT built this guide for people with zero AI experience.
+            </p>
+          </div>
           <p className="mt-6 text-[1.15rem] leading-[1.7] text-[#6b5e52]">
             You don't need a technical background. You don't need to understand how it works under the hood. You just need to know how to have a productive conversation with it — and this page covers exactly that.
           </p>
@@ -219,6 +226,7 @@ export default async function ChatGPTForBeginnersPage({
             <Link href="/chatgpt-tutorial" className="text-[0.85rem] font-medium text-[#6b5e52] transition-colors hover:text-[#f97316]">Tutorial</Link>
             <Link href="/terms" className="text-[0.85rem] font-medium text-[#6b5e52] transition-colors hover:text-[#f97316]">Terms</Link>
             <Link href="/privacy" className="text-[0.85rem] font-medium text-[#6b5e52] transition-colors hover:text-[#f97316]">Privacy</Link>
+            <a href="https://claude-academy.com" target="_blank" rel="noopener noreferrer" className="text-[0.85rem] font-medium text-[#6b5e52] transition-colors hover:text-[#f97316]">Claude Academy for Claude AI</a>
           </div>
           <p className="text-[0.75rem] text-[#6b5e52]">© {new Date().getFullYear()} Learn to GPT. Not affiliated with OpenAI.</p>
         </div>

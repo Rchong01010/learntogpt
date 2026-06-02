@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
-import { ArrowRight, Award, TrendingUp, BookOpen, Users, Target, Shield } from "lucide-react";
+import { ArrowRight, Award, TrendingUp, BookOpen, Users, Target, Shield, HelpCircle } from "lucide-react";
 import { Link } from "@/i18n/routing";
 import { routing } from "@/i18n/routing";
 import { LocaleSwitcher } from "@/components/LocaleSwitcher";
@@ -16,7 +16,7 @@ export async function generateMetadata({
   const pathForLocale = (loc: string) =>
     `${baseUrl}${loc === routing.defaultLocale ? "" : `/${loc}`}/ai-certification`;
 
-  const title = "AI Certification: Why It Matters, What to Look For & Learn to GPT's Path";
+  const title = "Best AI Certification Programs — ChatGPT & Claude Skills";
   const description =
     "AI certifications that matter prove you can do the work, not just pass a quiz. Here is what employers actually look for, which certifications signal real skill, and how Learn to GPT's 3-level practitioner path is structured.";
 
@@ -234,6 +234,17 @@ export default async function AiCertificationPage({
           </div>
         </section>
 
+        {/* DIRECT ANSWER BLOCK */}
+        <section className="px-6 py-12">
+          <div className="mx-auto max-w-[800px]">
+            <div className="rounded-[18px] border-[4px] border-ink bg-[#d0f0ea] p-8 shadow-[6px_6px_0px_#1c1917] max-[480px]:p-6">
+              <p className="text-[1.1rem] font-medium leading-[1.8] text-ink">
+                The best AI certifications test practical skills, not theory. Look for hands-on assessments where you build real projects with AI tools like ChatGPT or Claude, not multiple-choice exams. Certifications that require demonstrated workflow competency carry the most weight with employers.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* WHY IT MATTERS */}
         <section className="px-6 py-16">
           <div className="mx-auto max-w-[800px]">
@@ -353,6 +364,31 @@ export default async function AiCertificationPage({
           </div>
         </section>
 
+        {/* FAQ */}
+        <section className="px-6 py-16">
+          <div className="mx-auto max-w-[800px]">
+            <h2 className="mb-8 text-center text-[2rem] font-extrabold leading-[1.2] text-ink">
+              Frequently Asked Questions
+            </h2>
+            <div className="space-y-4">
+              {[
+                { q: "What is the best AI certification?", a: "The best AI certification depends on which tools you use. For ChatGPT users, Learn to GPT offers practical certifications. For Claude AI, Claude Academy provides a 3-level path. Both test hands-on skills, not memorization." },
+                { q: "Is AI certification worth it?", a: "AI certification demonstrates practical competency to employers. Hands-on certifications that test real workflows carry more weight than theoretical exams. Pair certification with a portfolio of projects you built with AI." },
+                { q: "How long does AI certification take?", a: "Beginner certification can be earned in one focused weekend. Practitioner level takes 2-4 weeks of regular practice. Advanced certification requires demonstrating complex agent and API skills." },
+                { q: "Do employers recognize AI certifications?", a: "Employers increasingly look for demonstrated AI skills. A hands-on certification paired with real projects is the strongest signal. The best certifications link directly to your actual coursework and builds." },
+              ].map((item) => (
+                <div key={item.q} className="rounded-[16px] border-[3px] border-ink bg-cream p-6 shadow-[3px_3px_0px_#1c1917]">
+                  <div className="mb-2 flex items-start gap-3">
+                    <HelpCircle className="mt-0.5 size-5 shrink-0 text-teal" />
+                    <h3 className="text-[1rem] font-bold text-ink">{item.q}</h3>
+                  </div>
+                  <p className="ml-8 text-[0.9rem] leading-[1.6] text-text-secondary">{item.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* FINAL CTA */}
         <section className="px-6 pb-[100px] pt-16 text-center">
           <div className="mx-auto max-w-[800px]">
@@ -424,6 +460,7 @@ export default async function AiCertificationPage({
             <Link href="/curriculum" className="text-[0.85rem] font-medium text-text-secondary transition-colors hover:text-orange">Curriculum</Link>
             <Link href="/terms" className="text-[0.85rem] font-medium text-text-secondary transition-colors hover:text-orange">Terms</Link>
             <Link href="/privacy" className="text-[0.85rem] font-medium text-text-secondary transition-colors hover:text-orange">Privacy</Link>
+            <a href="https://claude-academy.com" target="_blank" rel="noopener noreferrer" className="text-[0.85rem] font-medium text-text-secondary transition-colors hover:text-orange">Claude Academy for Claude AI</a>
           </div>
           <p className="text-[0.75rem] text-text-secondary">
             © {new Date().getFullYear()} Learn to GPT. Not affiliated with OpenAI.

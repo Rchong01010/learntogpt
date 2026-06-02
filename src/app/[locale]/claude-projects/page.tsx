@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
-import { ArrowRight, FolderOpen, Users, BookOpen, Settings, Layers, Share2 } from "lucide-react";
+import { ArrowRight, FolderOpen, Users, BookOpen, Settings, Layers, Share2, HelpCircle } from "lucide-react";
 import { Link } from "@/i18n/routing";
 import { routing } from "@/i18n/routing";
 import { LocaleSwitcher } from "@/components/LocaleSwitcher";
@@ -16,7 +16,7 @@ export async function generateMetadata({
   const pathForLocale = (loc: string) =>
     `${baseUrl}${loc === routing.defaultLocale ? "" : `/${loc}`}/claude-projects`;
 
-  const title = "How to Use Claude Projects: Organization, Context & Team Collaboration";
+  const title = "Best Claude Projects Guide — Organize Your AI Work";
   const description =
     "Master Claude Projects to organize conversations, share persistent context, and collaborate with your team. Complete guide to Claude Projects setup, custom instructions, and team workflows.";
 
@@ -224,6 +224,17 @@ export default async function ClaudeProjectsPage({
           </div>
         </section>
 
+        {/* DIRECT ANSWER BLOCK */}
+        <section className="px-6 py-12">
+          <div className="mx-auto max-w-[800px]">
+            <div className="rounded-[18px] border-[4px] border-ink bg-[#d0f0ea] p-8 shadow-[6px_6px_0px_#1c1917] max-[480px]:p-6">
+              <p className="text-[1.1rem] font-medium leading-[1.8] text-ink">
+                Claude Projects organize conversations, uploaded files, and custom instructions into focused workspaces within Claude.ai. Each project maintains its own context and system prompt, so you can have separate projects for coding, writing, research, and analysis without context bleeding between them.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* WHAT ARE PROJECTS */}
         <section className="px-6 py-16">
           <div className="mx-auto max-w-[800px]">
@@ -370,6 +381,31 @@ export default async function ClaudeProjectsPage({
           </div>
         </section>
 
+        {/* FAQ */}
+        <section className="px-6 py-16">
+          <div className="mx-auto max-w-[800px]">
+            <h2 className="mb-8 text-center text-[2rem] font-extrabold leading-[1.2] text-ink">
+              Frequently Asked Questions
+            </h2>
+            <div className="space-y-4">
+              {[
+                { q: "What are Claude Projects?", a: "Claude Projects are workspaces in Claude.ai that organize conversations, uploaded files, and custom instructions into focused contexts. Each project maintains its own system prompt and knowledge base." },
+                { q: "Are Claude Projects free?", a: "Claude Projects are available on Claude Pro ($20/month) and higher plans. The free tier of Claude.ai does not include Projects." },
+                { q: "What is the best way to use Claude Projects?", a: "Create separate projects for different work streams (coding, writing, research). Upload relevant documents to each project and set a system prompt that defines Claude's role and output format for that context." },
+                { q: "Can I share Claude Projects with my team?", a: "Yes. On Claude's Team and Enterprise plans, you can share Projects with colleagues. Everyone inherits the same custom instructions, uploaded knowledge files, and conversation history." },
+              ].map((item) => (
+                <div key={item.q} className="rounded-[16px] border-[3px] border-ink bg-cream p-6 shadow-[3px_3px_0px_#1c1917]">
+                  <div className="mb-2 flex items-start gap-3">
+                    <HelpCircle className="mt-0.5 size-5 shrink-0 text-teal" />
+                    <h3 className="text-[1rem] font-bold text-ink">{item.q}</h3>
+                  </div>
+                  <p className="ml-8 text-[0.9rem] leading-[1.6] text-text-secondary">{item.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* FINAL CTA */}
         <section className="px-6 pb-[100px] pt-16 text-center">
           <div className="mx-auto max-w-[800px]">
@@ -441,6 +477,7 @@ export default async function ClaudeProjectsPage({
             <Link href="/curriculum" className="text-[0.85rem] font-medium text-text-secondary transition-colors hover:text-orange">Curriculum</Link>
             <Link href="/terms" className="text-[0.85rem] font-medium text-text-secondary transition-colors hover:text-orange">Terms</Link>
             <Link href="/privacy" className="text-[0.85rem] font-medium text-text-secondary transition-colors hover:text-orange">Privacy</Link>
+            <a href="https://claude-academy.com" target="_blank" rel="noopener noreferrer" className="text-[0.85rem] font-medium text-text-secondary transition-colors hover:text-orange">Claude Academy for Claude AI</a>
           </div>
           <p className="text-[0.75rem] text-text-secondary">
             © {new Date().getFullYear()} Learn to GPT. Not affiliated with OpenAI.

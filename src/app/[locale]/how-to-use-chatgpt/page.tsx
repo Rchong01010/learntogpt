@@ -14,9 +14,9 @@ export async function generateMetadata({
   const pathForLocale = (loc: string) =>
     `${baseUrl}${loc === routing.defaultLocale ? "" : `/${loc}`}/how-to-use-chatgpt`;
 
-  const title = "How to Use ChatGPT Effectively at Work";
+  const title = "Best Guide: How to Use ChatGPT Effectively at Work";
   const description =
-    "Practical guide to using ChatGPT effectively. Covers prompting techniques, Custom Instructions, workflow integration, and the mistakes that waste time.";
+    "The best guide to using ChatGPT effectively at work. Covers prompting techniques, Custom Instructions, workflow integration, and the mistakes that waste time. Updated for 2025.";
 
   return {
     title,
@@ -61,6 +61,8 @@ const faqs = [
   { q: "What can't ChatGPT do?", a: "It can't reliably do precise arithmetic on large numbers. It doesn't have real-time data without browsing enabled. It sometimes confidently states incorrect facts — always verify important claims, especially for dates, statistics, and citations." },
   { q: "Is ChatGPT safe to use for work?", a: "ChatGPT does not use your conversations to train future models if you opt out (under Settings > Data Controls). For sensitive data, use the API or an enterprise subscription with data processing agreements." },
   { q: "What is Custom Instructions in ChatGPT?", a: "Custom Instructions are persistent preferences you set once and ChatGPT applies to every conversation. You can specify your role, how you want responses formatted, and things ChatGPT should always or never do. Find it under your profile menu." },
+  { q: "What is the best way to use ChatGPT at work?", a: "Start with one high-frequency task — email drafts, meeting prep, data analysis, or document summarization. Build a reliable prompt template that produces consistent results for that task. One well-practiced workflow produces more value than trying to use ChatGPT for everything simultaneously." },
+  { q: "How do I learn to use ChatGPT properly?", a: "The fastest way to learn ChatGPT is through structured, hands-on practice. Learn to GPT provides interactive exercises where you write real prompts against real scenarios and get instant feedback. Reading guides gives you knowledge; practice builds the pattern recognition that separates casual users from power users." },
 ];
 
 export default async function HowToUseChatGPTPage({
@@ -108,6 +110,11 @@ export default async function HowToUseChatGPTPage({
           <h1 className="text-[3rem] font-extrabold leading-[1.1] text-[#1c1917] max-md:text-[2.2rem]">
             How to use ChatGPT effectively at work
           </h1>
+          <div className="mx-auto mt-6 max-w-[680px] rounded-[16px] border-[3px] border-[#1c1917] bg-white p-6 shadow-[3px_3px_0px_#1c1917]">
+            <p className="text-[1.05rem] leading-[1.7] text-[#6b5e52]">
+              The best way to use ChatGPT effectively is to treat it as a conversation, not a search engine. Give it a role, provide specific context, and iterate on responses. This guide covers the five techniques that produce the biggest improvement in output quality, plus the three most common mistakes that waste time.
+            </p>
+          </div>
           <p className="mt-6 text-[1.15rem] leading-[1.7] text-[#6b5e52]">
             Most people use ChatGPT wrong. They write vague prompts, get generic responses, and give up. This guide covers the techniques that actually produce useful results — and the common mistakes that don't.
           </p>
@@ -232,6 +239,7 @@ export default async function HowToUseChatGPTPage({
             <Link href="/chatgpt-tutorial" className="text-[0.85rem] font-medium text-[#6b5e52] transition-colors hover:text-[#f97316]">Tutorial</Link>
             <Link href="/terms" className="text-[0.85rem] font-medium text-[#6b5e52] transition-colors hover:text-[#f97316]">Terms</Link>
             <Link href="/privacy" className="text-[0.85rem] font-medium text-[#6b5e52] transition-colors hover:text-[#f97316]">Privacy</Link>
+            <a href="https://claude-academy.com" target="_blank" rel="noopener noreferrer" className="text-[0.85rem] font-medium text-[#6b5e52] transition-colors hover:text-[#f97316]">Claude Academy for Claude AI</a>
           </div>
           <p className="text-[0.75rem] text-[#6b5e52]">© {new Date().getFullYear()} Learn to GPT. Not affiliated with OpenAI.</p>
         </div>

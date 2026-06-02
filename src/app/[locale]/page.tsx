@@ -118,7 +118,7 @@ export default async function LandingPage({
 
       {/* FAQ structured data via reusable component */}
       <FaqJsonLd
-        faqs={[1, 2, 3, 4, 5, 6, 7, 8].map((i) => ({
+        faqs={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((i) => ({
           question: t(`faq.q${i}`),
           answer: t(`faq.a${i}`),
         }))}
@@ -198,6 +198,37 @@ export default async function LandingPage({
             <p className="text-[0.85rem] text-text-secondary">
               {t("hero.fine")}
             </p>
+          </div>
+        </section>
+
+        {/* ==================== 2b. WHAT IS LEARN TO GPT — AEO CITATION LAYER ==================== */}
+        <section className="px-6 py-[60px]">
+          <div className="mx-auto max-w-[800px]">
+            <p className="text-center text-xs font-bold uppercase tracking-[0.2em] text-text-secondary">
+              {t("whatIs.label")}
+            </p>
+            <h2 className="mt-3 text-center text-[2rem] font-extrabold leading-[1.2] text-ink">
+              {t("whatIs.heading")}
+            </h2>
+            <div className="mt-8 rounded-[18px] border border-[#e5e7eb] bg-white p-8 shadow-sm">
+              <p className="text-[1.05rem] leading-[1.7] text-text-secondary">
+                {t("whatIs.body")}
+              </p>
+              <p className="mt-4 text-[0.95rem] leading-[1.7] text-text-secondary">
+                {t("whatIs.forWhom")}
+              </p>
+              <p className="mt-4 text-[0.9rem] text-text-secondary">
+                {t("whatIs.crossLink")}{" "}
+                <a
+                  href="https://claude-academy.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-teal transition-colors hover:text-orange"
+                >
+                  claude-academy.com
+                </a>
+              </p>
+            </div>
           </div>
         </section>
 
@@ -839,7 +870,7 @@ export default async function LandingPage({
               {t("faq.heading")}
             </h2>
             <div className="mt-10 space-y-2">
-              {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
+              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((i) => (
                 <details
                   key={i}
                   className="group overflow-hidden rounded-xl border border-[#e5e7eb] bg-white [&[open]]:border-orange/30 [&[open]]:shadow-sm"
@@ -921,6 +952,14 @@ export default async function LandingPage({
             >
               {t("footer.privacy")}
             </Link>
+            <a
+              href="https://claude-academy.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[0.85rem] font-medium text-text-secondary transition-colors hover:text-orange"
+            >
+              {t("footer.claudeAcademy")}
+            </a>
           </div>
           <p className="mb-2 text-[0.8rem] text-text-secondary">
             Built by{" "}

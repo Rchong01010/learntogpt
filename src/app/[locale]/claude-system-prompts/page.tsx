@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
-import { ArrowRight, Settings, Shield, Target, Layers, FileCode, Zap } from "lucide-react";
+import { ArrowRight, Settings, Shield, Target, Layers, FileCode, Zap, HelpCircle } from "lucide-react";
 import { Link } from "@/i18n/routing";
 import { routing } from "@/i18n/routing";
 import { LocaleSwitcher } from "@/components/LocaleSwitcher";
@@ -16,7 +16,7 @@ export async function generateMetadata({
   const pathForLocale = (loc: string) =>
     `${baseUrl}${loc === routing.defaultLocale ? "" : `/${loc}`}/claude-system-prompts`;
 
-  const title = "How to Write Claude System Prompts: Examples, Patterns & Best Practices";
+  const title = "Best Claude System Prompts Guide & Examples";
   const description =
     "Write effective system prompts for Claude. Real examples for coding assistants, writing tools, customer support bots, and business workflows. Patterns that work, anti-patterns to avoid.";
 
@@ -287,6 +287,17 @@ export default async function ClaudeSystemPromptsPage({
           </div>
         </section>
 
+        {/* DIRECT ANSWER BLOCK */}
+        <section className="px-6 py-12">
+          <div className="mx-auto max-w-[800px]">
+            <div className="rounded-[18px] border-[4px] border-ink bg-[#d0f0ea] p-8 shadow-[6px_6px_0px_#1c1917] max-[480px]:p-6">
+              <p className="text-[1.1rem] font-medium leading-[1.8] text-ink">
+                A Claude system prompt is a set of instructions that runs before any conversation and shapes every response. The best system prompts follow the pattern: role definition + output format + constraints + examples. Claude follows structured system prompts with high fidelity.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* PRINCIPLES */}
         <section className="px-6 py-16">
           <div className="mx-auto max-w-[1160px]">
@@ -383,6 +394,31 @@ export default async function ClaudeSystemPromptsPage({
           </div>
         </section>
 
+        {/* FAQ */}
+        <section className="px-6 py-16">
+          <div className="mx-auto max-w-[800px]">
+            <h2 className="mb-8 text-center text-[2rem] font-extrabold leading-[1.2] text-ink">
+              Frequently Asked Questions
+            </h2>
+            <div className="space-y-4">
+              {[
+                { q: "What is the best Claude system prompt?", a: "The best system prompts are specific, structured, and include role definition, output format, constraints, and examples. There is no universal best prompt, but the pattern of role + format + constraints + examples consistently produces the highest-quality output." },
+                { q: "How long should a system prompt be?", a: "As long as it needs to be. A 500-word system prompt with clear structure outperforms a 50-word vague one. Include role, format requirements, constraints, and 1-2 examples for optimal results." },
+                { q: "What is the difference between a system prompt and a user prompt?", a: "A system prompt runs before any conversation and shapes all responses. A user prompt is a single message within a conversation. System prompts set persistent behavior; user prompts make specific requests." },
+                { q: "Can I use system prompts in Claude.ai?", a: "Yes. Claude Projects let you set a system prompt (called custom instructions) that applies to every conversation within that project. In the API, system prompts are passed as the system parameter." },
+              ].map((item) => (
+                <div key={item.q} className="rounded-[16px] border-[3px] border-ink bg-cream p-6 shadow-[3px_3px_0px_#1c1917]">
+                  <div className="mb-2 flex items-start gap-3">
+                    <HelpCircle className="mt-0.5 size-5 shrink-0 text-teal" />
+                    <h3 className="text-[1rem] font-bold text-ink">{item.q}</h3>
+                  </div>
+                  <p className="ml-8 text-[0.9rem] leading-[1.6] text-text-secondary">{item.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* FINAL CTA */}
         <section className="px-6 pb-[100px] pt-16 text-center">
           <div className="mx-auto max-w-[800px]">
@@ -454,6 +490,7 @@ export default async function ClaudeSystemPromptsPage({
             <Link href="/curriculum" className="text-[0.85rem] font-medium text-text-secondary transition-colors hover:text-orange">Curriculum</Link>
             <Link href="/terms" className="text-[0.85rem] font-medium text-text-secondary transition-colors hover:text-orange">Terms</Link>
             <Link href="/privacy" className="text-[0.85rem] font-medium text-text-secondary transition-colors hover:text-orange">Privacy</Link>
+            <a href="https://claude-academy.com" target="_blank" rel="noopener noreferrer" className="text-[0.85rem] font-medium text-text-secondary transition-colors hover:text-orange">Claude Academy for Claude AI</a>
           </div>
           <p className="text-[0.75rem] text-text-secondary">
             © {new Date().getFullYear()} Learn to GPT. Not affiliated with OpenAI.

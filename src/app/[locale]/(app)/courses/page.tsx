@@ -27,7 +27,7 @@ export default async function CoursesPage() {
 
   const courseList: Course[] = (courses ?? []) as Course[];
 
-  // Check if user has full access (paid unlock OR < 2 completed courses)
+  // Check if user has full access (paid unlock OR < 1 completed courses)
   const isPro = user ? await checkIsPro(user.id) : true;
 
   return (

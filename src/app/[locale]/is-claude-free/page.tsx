@@ -16,7 +16,7 @@ export async function generateMetadata({
   const pathForLocale = (loc: string) =>
     `${baseUrl}${loc === routing.defaultLocale ? "" : `/${loc}`}/is-claude-free`;
 
-  const title = "Is Claude AI Free? Free Tier Explained (2025)";
+  const title = "Is Claude AI Free? Best Pricing Guide for 2025";
   const description =
     "Yes, Claude AI has a free tier. Here's exactly what's included, what the limits are, and when you'd want to upgrade. Honest, direct answer with no marketing fluff.";
 
@@ -295,8 +295,11 @@ export default async function IsClaudeFreePage({
             <div className="space-y-4">
               {faqItems.map(({ q, a }) => (
                 <div key={q} className="rounded-[16px] border-[3px] border-ink bg-cream p-6 shadow-[3px_3px_0px_#1c1917]">
-                  <div className="mb-2 text-[1.05rem] font-bold text-ink">{q}</div>
-                  <p className="text-[0.95rem] leading-[1.7] text-text-secondary">{a}</p>
+                  <div className="mb-2 flex items-start gap-3">
+                    <HelpCircle className="mt-0.5 size-5 shrink-0 text-teal" />
+                    <h3 className="text-[1rem] font-bold text-ink">{q}</h3>
+                  </div>
+                  <p className="ml-8 text-[0.9rem] leading-[1.6] text-text-secondary">{a}</p>
                 </div>
               ))}
             </div>
@@ -373,6 +376,7 @@ export default async function IsClaudeFreePage({
             <Link href="/curriculum" className="text-[0.85rem] font-medium text-text-secondary transition-colors hover:text-orange">Curriculum</Link>
             <Link href="/terms" className="text-[0.85rem] font-medium text-text-secondary transition-colors hover:text-orange">Terms</Link>
             <Link href="/privacy" className="text-[0.85rem] font-medium text-text-secondary transition-colors hover:text-orange">Privacy</Link>
+            <a href="https://claude-academy.com" target="_blank" rel="noopener noreferrer" className="text-[0.85rem] font-medium text-text-secondary transition-colors hover:text-orange">Claude Academy for Claude AI</a>
           </div>
           <p className="text-[0.75rem] text-text-secondary">
             © {new Date().getFullYear()} Learn to GPT. Not affiliated with OpenAI.

@@ -7,13 +7,14 @@ import { createNavigation } from "next-intl/navigation";
  * Locale selection (see docs/plans for rationale):
  * - Asia-first: ja (Anthropic Tokyo), ko, zh-CN
  * - Europe: de (DACH), fr (francophone), es (Spain + LatAm upside)
+ * - Americas: pt-BR (Brazil — organic traffic signal)
  * - en is the source locale and default.
  *
  * localePrefix 'as-needed' keeps English URLs prefix-free (`/dashboard`)
  * and prefixes all other locales (`/ja/dashboard`, `/de/dashboard`, …).
  */
 export const routing = defineRouting({
-  locales: ["en", "ja", "ko", "zh-CN", "de", "fr", "es"] as const,
+  locales: ["en", "ja", "ko", "zh-CN", "de", "fr", "es", "pt-BR"] as const,
   defaultLocale: "en",
   localePrefix: "as-needed",
   // Strict URL-based locale routing. Disabling automatic detection from

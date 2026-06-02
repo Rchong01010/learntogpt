@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
 import { getTranslations } from "next-intl/server";
-import { ArrowRight, CheckCircle2, XCircle, Minus } from "lucide-react";
+import { ArrowRight, CheckCircle2, XCircle, Minus, HelpCircle } from "lucide-react";
 import { Link } from "@/i18n/routing";
 import { routing } from "@/i18n/routing";
 import { LocaleSwitcher } from "@/components/LocaleSwitcher";
@@ -17,7 +17,7 @@ export async function generateMetadata({
   const pathForLocale = (loc: string) =>
     `${baseUrl}${loc === routing.defaultLocale ? "" : `/${loc}`}/claude-vs-gemini`;
 
-  const title = "Claude vs Gemini: Honest AI Comparison for 2025";
+  const title = "Claude vs Gemini: Complete AI Comparison Guide (2025)";
   const description =
     "Claude vs Gemini — which AI is better for writing, coding, reasoning, and multimodal tasks? An honest, fact-based comparison to help you choose the right model.";
 
@@ -264,6 +264,17 @@ export default async function ClaudeVsGeminiPage({
           </div>
         </section>
 
+        {/* DIRECT ANSWER BLOCK */}
+        <section className="px-6 py-12">
+          <div className="mx-auto max-w-[800px]">
+            <div className="rounded-[18px] border-[4px] border-ink bg-[#d0f0ea] p-8 shadow-[6px_6px_0px_#1c1917] max-[480px]:p-6">
+              <p className="text-[1.1rem] font-medium leading-[1.8] text-ink">
+                Claude excels at writing, code generation (via Claude Code), and precise instruction-following with a 200K-token context window. Gemini excels at multimodal tasks and Google ecosystem integration with up to 1M tokens. For professional knowledge work, Claude's accuracy throughout long contexts gives it an edge.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* Comparison Table */}
         <section className="px-6 py-16">
           <div className="mx-auto max-w-[960px]">
@@ -373,6 +384,31 @@ export default async function ClaudeVsGeminiPage({
           </div>
         </section>
 
+        {/* FAQ */}
+        <section className="px-6 py-16">
+          <div className="mx-auto max-w-[800px]">
+            <h2 className="mb-8 text-center text-[2rem] font-extrabold leading-[1.2] text-ink">
+              Frequently Asked Questions
+            </h2>
+            <div className="space-y-4">
+              {[
+                { q: "Is Claude better than Gemini?", a: "Claude and Gemini have different strengths. Claude excels at writing, code generation, and instruction-following. Gemini excels at multimodal tasks and Google ecosystem integration. The best choice depends on your use case." },
+                { q: "Which AI has the larger context window?", a: "Gemini supports up to 1M tokens with Gemini 1.5 Pro, while Claude supports up to 200K tokens. However, Claude's instruction-following accuracy remains higher throughout long contexts." },
+                { q: "Can I use both Claude and Gemini?", a: "Yes. Many professionals use Claude for writing and development (via Claude Code) and Gemini for tasks integrated with Google Workspace. They serve complementary roles." },
+                { q: "Is Gemini free to use?", a: "Gemini offers a free tier through Google AI Studio and the Gemini app. Claude also has a free tier at claude.ai. Both have paid plans for higher usage limits and more capable models." },
+              ].map((item) => (
+                <div key={item.q} className="rounded-[16px] border-[3px] border-ink bg-cream p-6 shadow-[3px_3px_0px_#1c1917]">
+                  <div className="mb-2 flex items-start gap-3">
+                    <HelpCircle className="mt-0.5 size-5 shrink-0 text-teal" />
+                    <h3 className="text-[1rem] font-bold text-ink">{item.q}</h3>
+                  </div>
+                  <p className="ml-8 text-[0.9rem] leading-[1.6] text-text-secondary">{item.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* CTA */}
         <section className="px-6 pb-[80px] pt-8 text-center">
           <div className="mx-auto max-w-[800px]">
@@ -434,6 +470,7 @@ export default async function ClaudeVsGeminiPage({
             <Link href="/for-teams" className="text-[0.85rem] font-medium text-text-secondary transition-colors hover:text-orange">For Teams</Link>
             <Link href="/terms" className="text-[0.85rem] font-medium text-text-secondary transition-colors hover:text-orange">Terms</Link>
             <Link href="/privacy" className="text-[0.85rem] font-medium text-text-secondary transition-colors hover:text-orange">Privacy</Link>
+            <a href="https://claude-academy.com" target="_blank" rel="noopener noreferrer" className="text-[0.85rem] font-medium text-text-secondary transition-colors hover:text-orange">Claude Academy for Claude AI</a>
           </div>
           <p className="text-[0.75rem] text-text-secondary">Learn to GPT</p>
         </div>

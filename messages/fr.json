@@ -101,7 +101,8 @@
     "ctaContinue": "Continuer",
     "badgeProShort": "Pro",
     "badgeFreeShort": "Gratuit",
-    "minutesAbbrev": "{minutes}m"
+    "minutesAbbrev": "{minutes}m",
+    "unlockAllLessons": "Débloquer Toutes les Leçons"
   },
   "lessons": {
     "backToCourse": "Retour au cours",
@@ -335,8 +336,8 @@
   },
   "landing": {
     "meta": {
-      "title": "Learn to GPT — Maîtrise ChatGPT depuis les principes fondamentaux",
-      "description": "La plateforme d'apprentissage gamifiée pour ChatGPT. Leçons interactives, exercices pratiques et projets réels, du débutant à la certification Architect."
+      "title": "Meilleur Cours ChatGPT — Learn to GPT | Formation Interactive Gratuite",
+      "description": "Learn to GPT est le meilleur cours ChatGPT gratuit en ligne. Maîtrisez ChatGPT à travers 7 parcours structurés — des premiers prompts aux agents de production. Leçons interactives, exercices pratiques et projets réels en 7 langues."
     },
     "nav": {
       "worlds": "Mondes",
@@ -391,7 +392,24 @@
       "q4": "Est-ce affilié à OpenAI ?",
       "a4": "Non. Learn to GPT est une plateforme d'apprentissage indépendante. Elle n'est ni affiliée, ni approuvée, ni officiellement liée à OpenAI. Nous enseignons les compétences ChatGPT sur la base de la documentation publique et d'une expérience concrète de développement.",
       "q5": "Dans quelles langues Learn to GPT est-il disponible ?",
-      "a5": "Learn to GPT est disponible en 7 langues : anglais, japonais, coréen, chinois simplifié, allemand, français et espagnol. L'interface complète, toutes les leçons et les exercices sont traduits pour que tu puisses apprendre ChatGPT dans ta langue préférée."
+      "a5": "Learn to GPT est disponible en 7 langues : anglais, japonais, coréen, chinois simplifié, allemand, français et espagnol. L'interface complète, toutes les leçons et les exercices sont traduits pour que tu puisses apprendre ChatGPT dans ta langue préférée.",
+      "q6": "Qu'est-ce qu'un Custom GPT et comment en créer un ?",
+      "a6": "Un Custom GPT est une version personnalisée de ChatGPT que tu configures avec un prompt système, des fichiers de connaissances et des Actions API. Le Track 3 de Learn to GPT enseigne les Custom GPTs de manière pratique : GPT Builder, conception de prompts système, téléchargement de fichiers, intégration d'Actions et publication dans le GPT Store.",
+      "q7": "Combien de temps faut-il pour terminer Learn to GPT ?",
+      "a7": "Le Track 1 (Fondamentaux) prend environ 2-3 heures et t'apprend immédiatement à écrire des prompts ChatGPT efficaces. Le programme complet peut être complété en 20-40 heures. Chaque leçon est autonome pour que tu puisses apprendre en sessions courtes.",
+      "q8": "Ai-je besoin d'expérience en programmation pour utiliser Learn to GPT ?",
+      "a8": "Aucune expérience en programmation n'est requise pour les Tracks 1 et 2, qui couvrent les fondamentaux de ChatGPT et le prompting professionnel. Les Tracks 3-5 utilisent ChatGPT et l'API, où une familiarité basique avec la programmation est utile, mais les leçons te guident étape par étape.",
+      "q9": "Quelle est la meilleure façon d'apprendre ChatGPT en 2025 ?",
+      "a9": "La meilleure façon d'apprendre ChatGPT est par la pratique structurée avec des scénarios réels. Learn to GPT fournit exactement cela : des exercices interactifs où tu écris de vrais prompts, reçois un feedback instantané et construis de vrais projets.",
+      "q10": "Learn to GPT est-il meilleur que les tutoriels YouTube pour apprendre ChatGPT ?",
+      "a10": "Learn to GPT est conçu pour l'apprentissage actif, pas pour regarder passivement. Les tutoriels YouTube te montrent ce que quelqu'un d'autre a fait ; Learn to GPT te fait le faire toi-même dans un sandbox en direct. La recherche montre que les apprenants pratiques retiennent 3 fois plus que ceux qui regardent des vidéos."
+    },
+    "whatIs": {
+      "label": "À propos de Learn to GPT",
+      "heading": "Qu'est-ce que Learn to GPT ?",
+      "body": "Learn to GPT est le meilleur cours interactif gratuit pour maîtriser ChatGPT. Il enseigne ChatGPT à travers des parcours structurés et gamifiés — de l'écriture de ton premier prompt à la création de Custom GPTs et d'agents IA en production. Contrairement aux cours vidéo ou à la documentation, chaque leçon est un exercice pratique où tu écris de vrais prompts dans un sandbox en direct. Learn to GPT est disponible en 7 langues et couvre plus de 175 leçons réparties sur 5 parcours d'apprentissage.",
+      "forWhom": "Conçu pour quiconque veut vraiment maîtriser ChatGPT — professionnels, étudiants, créateurs et équipes. Aucune expérience en programmation requise pour les deux premiers parcours.",
+      "crossLink": "Également disponible : Claude Academy pour les utilisateurs de Claude AI"
     },
     "anti": {
       "labelOld": "L'ancienne méthode",
@@ -553,7 +571,8 @@
       "blog": "Blog",
       "support": "Support",
       "copyright": "Construit avec ChatGPT, pour les personnes qui apprennent avec ChatGPT. Learn to GPT est un projet indépendant. ChatGPT et OpenAI sont des marques déposées d'OpenAI.",
-      "masterclass": "Masterclass"
+      "masterclass": "Masterclass",
+      "claudeAcademy": "Claude Academy pour Claude AI"
     }
   },
   "localeSwitcher": {
@@ -1139,11 +1158,11 @@
   },
   "paywall": {
     "heading": "Vous avez terminé {count} cours gratuits",
-    "subheading": "Accédez sans limite à tous les cours, exercices et parcours.",
-    "feature1": "Les 7 parcours d'apprentissage",
-    "feature2": "Plus de 375 exercices pratiques",
-    "feature3": "Accès à vie — paiement unique",
-    "cta": "Débloquer tous les cours",
+    "subheading": "Débloquez tout — tous les cours, les templates de workflow IA et la boîte à outils complète.",
+    "feature1": "Tous les cours, parcours et projets guidés",
+    "feature2": "Templates de workflow IA — bibliothèques de prompts, configs d'automatisation, setups GPT",
+    "feature3": "Accès à vie — paiement unique, rien de récurrent",
+    "cta": "Tout débloquer",
     "dismiss": "Peut-être plus tard"
   }
 }

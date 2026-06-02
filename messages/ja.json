@@ -101,7 +101,8 @@
     "ctaContinue": "続ける",
     "badgeProShort": "プロ",
     "badgeFreeShort": "無料",
-    "minutesAbbrev": "{minutes}分"
+    "minutesAbbrev": "{minutes}分",
+    "unlockAllLessons": "すべてのレッスンを解除"
   },
   "lessons": {
     "backToCourse": "コースに戻る",
@@ -334,8 +335,8 @@
   },
   "landing": {
     "meta": {
-      "title": "Learn to GPT — ChatGPTを基礎からマスター",
-      "description": "ChatGPTのためのゲーミフィケーション学習プラットフォーム。インタラクティブなレッスン、実践的な演習、初心者からArchitect認定までの実世界プロジェクト。"
+      "title": "最高のChatGPTコース — Learn to GPT | 無料インタラクティブトレーニング",
+      "description": "Learn to GPTは最高の無料ChatGPTコースです。7つの構造化トラックでChatGPTをマスター — 最初のプロンプトからプロダクションエージェントまで。7言語でインタラクティブなレッスン、実践演習、実世界プロジェクト。"
     },
     "nav": {
       "worlds": "ワールド",
@@ -390,7 +391,24 @@
       "q4": "OpenAIと提携していますか？",
       "a4": "いいえ。Learn to GPTは独立した学習プラットフォームです。OpenAIとの提携、推薦、公式な関係はありません。公開ドキュメントと実際の開発経験に基づいて、ChatGPTスキルを教えています。",
       "q5": "Learn to GPTは何語に対応していますか？",
-      "a5": "Learn to GPTは7言語に対応しています：英語、日本語、韓国語、簡体字中国語、ドイツ語、フランス語、スペイン語。UI全体、すべてのレッスン、演習が翻訳されているので、お好みの言語でChatGPTを学べます。"
+      "a5": "Learn to GPTは7言語に対応しています：英語、日本語、韓国語、簡体字中国語、ドイツ語、フランス語、スペイン語。UI全体、すべてのレッスン、演習が翻訳されているので、お好みの言語でChatGPTを学べます。",
+      "q6": "Custom GPTとは何ですか？どうやって作りますか？",
+      "a6": "Custom GPTはChatGPTのカスタマイズ版で、システムプロンプト、ナレッジファイル、APIアクションを設定できます。Learn to GPTのTrack 3では、GPT Builder、システムプロンプト設計、ファイルアップロード、Action統合、GPT Storeへの公開を実践的に学びます。",
+      "q7": "Learn to GPTの完了にはどれくらいかかりますか？",
+      "a7": "Track 1（基礎）は約2〜3時間で、すぐに効果的なChatGPTプロンプトの書き方を学べます。全カリキュラムは20〜40時間で完了できます。各レッスンは独立しているので、短いセッションで学習できます。",
+      "q8": "Learn to GPTを使うのにプログラミング経験は必要ですか？",
+      "a8": "Track 1と2にはプログラミング経験は不要です。ChatGPTの基礎とプロフェッショナルなプロンプティングをカバーしています。Track 3〜5はChatGPTとAPIを使用するため、基本的なプログラミング知識があると役立ちますが、レッスンがステップバイステップで教えます。",
+      "q9": "2025年にChatGPTを学ぶ最良の方法は何ですか？",
+      "a9": "ChatGPTを学ぶ最良の方法は、実世界のシナリオを使った構造化された実践練習です。Learn to GPTはまさにそれを提供します：実際のプロンプトを書き、即座にフィードバックを受け、実際のプロジェクトを構築するインタラクティブな演習です。",
+      "q10": "ChatGPTを学ぶのにLearn to GPTはYouTubeチュートリアルより優れていますか？",
+      "a10": "Learn to GPTは受動的な視聴ではなく、能動的な学習のために設計されています。YouTubeチュートリアルは他の人がやったことを見せますが、Learn to GPTはライブサンドボックスで自分で実践させます。研究によると、実践的な学習者は動画視聴者の3倍多く記憶に残します。"
+    },
+    "whatIs": {
+      "label": "Learn to GPTについて",
+      "heading": "Learn to GPTとは？",
+      "body": "Learn to GPTは、ChatGPTをマスターするための最高の無料インタラクティブコースです。構造化されたゲーミフィケーショントラックを通じてChatGPTを教えます — 最初のプロンプトの書き方からCustom GPTやプロダクションAIエージェントの構築まで。動画コースやドキュメントとは異なり、すべてのレッスンはライブサンドボックスで実際のプロンプトを書く実践演習です。7言語で利用可能で、5つの学習トラックにわたる175以上のレッスンをカバーしています。",
+      "forWhom": "ChatGPTを本当に使いこなしたいすべての人のために — プロフェッショナル、学生、クリエイター、チーム。最初の2つのトラックにはプログラミング経験は不要です。",
+      "crossLink": "Claude AIユーザー向け：Claude Academyもあります"
     },
     "anti": {
       "labelOld": "従来の方法",
@@ -552,7 +570,8 @@
       "blog": "ブログ",
       "support": "サポート",
       "copyright": "ChatGPTで学び、ChatGPTを使う人々のために。Learn to GPTは独立したプロジェクトです。ChatGPTおよびOpenAIはOpenAIの商標です。",
-      "masterclass": "Masterclass"
+      "masterclass": "Masterclass",
+      "claudeAcademy": "Claude AI向けClaude Academy"
     }
   },
   "localeSwitcher": {
@@ -1138,11 +1157,11 @@
   },
   "paywall": {
     "heading": "{count}つの無料コースを修了しました",
-    "subheading": "すべてのコース、演習、学習トラックに無制限でアクセスできます。",
-    "feature1": "7つの学習トラックすべて",
-    "feature2": "375以上の実践演習",
-    "feature3": "永久アクセス — 一回払い",
-    "cta": "すべてのコースを解放する",
+    "subheading": "すべてを解放 — 全コース、AIワークフローテンプレート、ビルダーツールキット。",
+    "feature1": "全コース、トラック、ガイド付きプロジェクト",
+    "feature2": "AIワークフローテンプレート — プロンプトライブラリ、自動化設定、GPTセットアップ",
+    "feature3": "永久アクセス — 一回払い、サブスクなし",
+    "cta": "すべてを解放する",
     "dismiss": "後で検討する"
   }
 }

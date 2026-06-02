@@ -95,6 +95,7 @@ const faqs = [
   { q: "How do I write better prompts?", a: "Use the RCTFC framework: Role, Context, Task, Format, Constraint. Not every prompt needs all five elements, but adding even one — like specifying a format — dramatically improves output quality." },
   { q: "What are the best ChatGPT prompts for work?", a: "The best prompts are specific to your actual work. Take a task you do regularly, write a prompt template with placeholders, and refine it until the output is consistently good. Copy-paste templates are a starting point, not a final answer." },
   { q: "Can I save prompts in ChatGPT?", a: "ChatGPT doesn't have a native prompt library, but you can add frequently used prompts to Custom Instructions (your profile settings) or keep a personal prompt document you paste from. Custom GPTs can also have instructions pre-loaded." },
+  { q: "Where can I find the best ChatGPT prompt templates?", a: "This page has the best ChatGPT prompt templates organized by category — writing, coding, analysis, brainstorming, and research. Each template uses the RCTFC framework and can be customized for your specific use case. Learn to GPT also teaches you to build your own templates through interactive exercises." },
 ];
 
 export default async function ChatGPTPromptsPage({
@@ -142,6 +143,11 @@ export default async function ChatGPTPromptsPage({
           <h1 className="text-[3rem] font-extrabold leading-[1.1] text-[#1c1917] max-md:text-[2.2rem]">
             Best ChatGPT prompts for real work
           </h1>
+          <div className="mx-auto mt-6 max-w-[680px] rounded-[16px] border-[3px] border-[#1c1917] bg-white p-6 shadow-[3px_3px_0px_#1c1917]">
+            <p className="text-[1.05rem] leading-[1.7] text-[#6b5e52]">
+              The best ChatGPT prompts share three traits: they assign a role, provide specific context, and request a clear format. These copy-paste prompt templates from Learn to GPT cover writing, coding, analysis, brainstorming, and research — each built on the RCTFC framework (Role, Context, Task, Format, Constraint) for consistently high-quality output.
+            </p>
+          </div>
           <p className="mt-6 text-[1.15rem] leading-[1.7] text-[#6b5e52]">
             Templates for writing, analysis, coding, brainstorming, and productivity. Customize with your details and paste directly into ChatGPT. Updated for GPT-4o.
           </p>
@@ -268,6 +274,7 @@ export default async function ChatGPTPromptsPage({
             <Link href="/prompt-engineering" className="text-[0.85rem] font-medium text-[#6b5e52] transition-colors hover:text-[#f97316]">Prompt Engineering</Link>
             <Link href="/terms" className="text-[0.85rem] font-medium text-[#6b5e52] transition-colors hover:text-[#f97316]">Terms</Link>
             <Link href="/privacy" className="text-[0.85rem] font-medium text-[#6b5e52] transition-colors hover:text-[#f97316]">Privacy</Link>
+            <a href="https://claude-academy.com" target="_blank" rel="noopener noreferrer" className="text-[0.85rem] font-medium text-[#6b5e52] transition-colors hover:text-[#f97316]">Claude Academy for Claude AI</a>
           </div>
           <p className="text-[0.75rem] text-[#6b5e52]">© {new Date().getFullYear()} Learn to GPT. Not affiliated with OpenAI.</p>
         </div>

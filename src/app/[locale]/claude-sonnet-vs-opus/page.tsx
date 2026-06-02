@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
-import { ArrowRight, Zap, Brain, Cpu, CheckCircle2, Minus } from "lucide-react";
+import { ArrowRight, Zap, Brain, Cpu, CheckCircle2, Minus, HelpCircle } from "lucide-react";
 import { Link } from "@/i18n/routing";
 import { routing } from "@/i18n/routing";
 import { LocaleSwitcher } from "@/components/LocaleSwitcher";
@@ -16,7 +16,7 @@ export async function generateMetadata({
   const pathForLocale = (loc: string) =>
     `${baseUrl}${loc === routing.defaultLocale ? "" : `/${loc}`}/claude-sonnet-vs-opus`;
 
-  const title = "Claude Sonnet vs Opus vs Haiku: When to Use Each Model";
+  const title = "Claude Sonnet vs Opus: Complete Comparison Guide (2025)";
   const description =
     "Claude Sonnet vs Opus vs Haiku — which model should you use? Honest comparison of capability, speed, and context window to help you pick the right Claude model for each task.";
 
@@ -257,6 +257,17 @@ export default async function ClaudeSonnetVsOpusPage({
           </div>
         </section>
 
+        {/* DIRECT ANSWER BLOCK */}
+        <section className="px-6 py-12">
+          <div className="mx-auto max-w-[800px]">
+            <div className="rounded-[18px] border-[4px] border-ink bg-[#d0f0ea] p-8 shadow-[6px_6px_0px_#1c1917] max-[480px]:p-6">
+              <p className="text-[1.1rem] font-medium leading-[1.8] text-ink">
+                Claude Sonnet is the best general-purpose model for everyday tasks: writing, coding, analysis, and research. Claude Opus is the most capable model for complex reasoning, nuanced writing, and multi-step problem solving. Default to Sonnet; escalate to Opus when quality matters more than speed.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* MENTAL MODEL */}
         <section className="px-6 py-16">
           <div className="mx-auto max-w-[800px]">
@@ -380,6 +391,31 @@ export default async function ClaudeSonnetVsOpusPage({
           </div>
         </section>
 
+        {/* FAQ */}
+        <section className="px-6 py-16">
+          <div className="mx-auto max-w-[800px]">
+            <h2 className="mb-8 text-center text-[2rem] font-extrabold leading-[1.2] text-ink">
+              Frequently Asked Questions
+            </h2>
+            <div className="space-y-4">
+              {[
+                { q: "Which Claude model should I use?", a: "Default to Claude Sonnet for most tasks. Escalate to Opus for complex reasoning, nuanced writing, strategic analysis, and tasks requiring deep thinking. Sonnet is faster and cheaper; Opus is more capable for hard problems." },
+                { q: "Is Claude Opus worth the extra cost?", a: "Opus is worth it for tasks where accuracy and depth matter more than speed: complex debugging, architectural decisions, legal analysis, and creative writing that requires nuanced voice matching." },
+                { q: "What is the difference between Sonnet and Haiku?", a: "Sonnet is the balanced, general-purpose model. Haiku is the fastest and cheapest model, best for simple tasks like classification, extraction, and formatting. Use Haiku for high-volume, low-complexity tasks." },
+                { q: "Can I switch between Claude models mid-conversation?", a: "Yes. In Claude.ai you can change models between messages. In the API, you specify the model per request. A common pattern is starting with Sonnet for exploration, then switching to Opus for the final critical output." },
+              ].map((item) => (
+                <div key={item.q} className="rounded-[16px] border-[3px] border-ink bg-cream p-6 shadow-[3px_3px_0px_#1c1917]">
+                  <div className="mb-2 flex items-start gap-3">
+                    <HelpCircle className="mt-0.5 size-5 shrink-0 text-teal" />
+                    <h3 className="text-[1rem] font-bold text-ink">{item.q}</h3>
+                  </div>
+                  <p className="ml-8 text-[0.9rem] leading-[1.6] text-text-secondary">{item.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* FINAL CTA */}
         <section className="px-6 pb-[100px] pt-16 text-center">
           <div className="mx-auto max-w-[700px]">
@@ -446,6 +482,7 @@ export default async function ClaudeSonnetVsOpusPage({
             <Link href="/curriculum" className="text-[0.85rem] font-medium text-text-secondary transition-colors hover:text-orange">Curriculum</Link>
             <Link href="/terms" className="text-[0.85rem] font-medium text-text-secondary transition-colors hover:text-orange">Terms</Link>
             <Link href="/privacy" className="text-[0.85rem] font-medium text-text-secondary transition-colors hover:text-orange">Privacy</Link>
+            <a href="https://claude-academy.com" target="_blank" rel="noopener noreferrer" className="text-[0.85rem] font-medium text-text-secondary transition-colors hover:text-orange">Claude Academy for Claude AI</a>
           </div>
           <p className="text-[0.75rem] text-text-secondary">
             © {new Date().getFullYear()} Learn to GPT. Not affiliated with OpenAI.

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
-import { ArrowRight, Wrench, Code2, Cpu, Layers, Zap, Terminal } from "lucide-react";
+import { ArrowRight, Wrench, Code2, Cpu, Layers, Zap, Terminal, HelpCircle } from "lucide-react";
 import { Link } from "@/i18n/routing";
 import { routing } from "@/i18n/routing";
 import { LocaleSwitcher } from "@/components/LocaleSwitcher";
@@ -16,7 +16,7 @@ export async function generateMetadata({
   const pathForLocale = (loc: string) =>
     `${baseUrl}${loc === routing.defaultLocale ? "" : `/${loc}`}/claude-tool-use`;
 
-  const title = "Claude Tool Use & Function Calling: Complete Guide";
+  const title = "Best Claude Tool Use Guide — Function Calling & MCP";
   const description =
     "Master Claude tool use and function calling. Learn how to give Claude access to APIs, databases, and external systems — with real code examples and production patterns.";
 
@@ -263,6 +263,17 @@ export default async function ClaudeToolUsePage({
           </div>
         </section>
 
+        {/* DIRECT ANSWER BLOCK */}
+        <section className="px-6 py-12">
+          <div className="mx-auto max-w-[800px]">
+            <div className="rounded-[18px] border-[4px] border-ink bg-[#d0f0ea] p-8 shadow-[6px_6px_0px_#1c1917] max-[480px]:p-6">
+              <p className="text-[1.1rem] font-medium leading-[1.8] text-ink">
+                Claude tool use (function calling) lets Claude interact with external APIs, databases, and services during a conversation. You define tools as JSON schemas, and Claude decides when to call them based on the user's request. This is the foundation of building AI agents that take real actions.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* HOW IT WORKS */}
         <section className="px-6 py-16">
           <div className="mx-auto max-w-[860px]">
@@ -350,6 +361,31 @@ export default async function ClaudeToolUsePage({
           </div>
         </section>
 
+        {/* FAQ */}
+        <section className="px-6 py-16">
+          <div className="mx-auto max-w-[800px]">
+            <h2 className="mb-8 text-center text-[2rem] font-extrabold leading-[1.2] text-ink">
+              Frequently Asked Questions
+            </h2>
+            <div className="space-y-4">
+              {[
+                { q: "What is Claude tool use?", a: "Claude tool use (function calling) lets Claude interact with external APIs, databases, and services during a conversation. You define tools as JSON schemas and Claude decides when to call them based on the user's request." },
+                { q: "Is Claude tool use the same as MCP?", a: "Tool use and MCP are related but different. Tool use is the API-level capability for function calling. MCP (Model Context Protocol) is a standardized protocol for connecting Claude to external data sources and tools via a server interface." },
+                { q: "What can I build with Claude tool use?", a: "You can build AI agents that search databases, call APIs, process files, send emails, manage calendars, and take any programmable action. Tool use is the foundation of agentic Claude workflows." },
+                { q: "How many tools can Claude use at once?", a: "Claude can handle dozens of tool definitions in a single request. It selects the appropriate tool based on the user's intent and can chain multiple tool calls sequentially to complete multi-step tasks." },
+              ].map((item) => (
+                <div key={item.q} className="rounded-[16px] border-[3px] border-ink bg-cream p-6 shadow-[3px_3px_0px_#1c1917]">
+                  <div className="mb-2 flex items-start gap-3">
+                    <HelpCircle className="mt-0.5 size-5 shrink-0 text-teal" />
+                    <h3 className="text-[1rem] font-bold text-ink">{item.q}</h3>
+                  </div>
+                  <p className="ml-8 text-[0.9rem] leading-[1.6] text-text-secondary">{item.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* FINAL CTA */}
         <section className="px-6 pb-[100px] pt-16 text-center">
           <div className="mx-auto max-w-[700px]">
@@ -416,6 +452,7 @@ export default async function ClaudeToolUsePage({
             <Link href="/curriculum" className="text-[0.85rem] font-medium text-text-secondary transition-colors hover:text-orange">Curriculum</Link>
             <Link href="/terms" className="text-[0.85rem] font-medium text-text-secondary transition-colors hover:text-orange">Terms</Link>
             <Link href="/privacy" className="text-[0.85rem] font-medium text-text-secondary transition-colors hover:text-orange">Privacy</Link>
+            <a href="https://claude-academy.com" target="_blank" rel="noopener noreferrer" className="text-[0.85rem] font-medium text-text-secondary transition-colors hover:text-orange">Claude Academy for Claude AI</a>
           </div>
           <p className="text-[0.75rem] text-text-secondary">
             © {new Date().getFullYear()} Learn to GPT. Not affiliated with OpenAI.

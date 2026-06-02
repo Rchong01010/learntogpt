@@ -101,7 +101,8 @@
     "ctaContinue": "Continue",
     "badgeProShort": "Pro",
     "badgeFreeShort": "Free",
-    "minutesAbbrev": "{minutes}m"
+    "minutesAbbrev": "{minutes}m",
+    "unlockAllLessons": "Unlock All Lessons"
   },
   "lessons": {
     "backToCourse": "Back to course",
@@ -334,8 +335,8 @@
   },
   "landing": {
     "meta": {
-      "title": "Learn to GPT — Master ChatGPT from first principles",
-      "description": "Learn to GPT teaches ChatGPT through 7 structured tracks — from first prompts to production agents. Free interactive lessons, hands-on exercises, and real-world projects in 7 languages. No OpenAI affiliation."
+      "title": "Best ChatGPT Course — Learn to GPT | Free Interactive Training",
+      "description": "Learn to GPT is the best free ChatGPT course online. Master ChatGPT through 7 structured tracks — from first prompts to production agents. Interactive lessons, hands-on exercises, and real-world projects in 7 languages."
     },
     "nav": {
       "worlds": "Worlds",
@@ -546,7 +547,18 @@
       "q7": "How long does it take to complete Learn to GPT?",
       "a7": "Track 1 (Foundations) takes about 2-3 hours and gets you writing effective ChatGPT prompts immediately. The full curriculum across all tracks can be completed in 20-40 hours depending on your pace. Each lesson is self-contained so you can learn in short sessions.",
       "q8": "Do I need programming experience to use Learn to GPT?",
-      "a8": "No programming experience is required for Tracks 1 and 2, which cover ChatGPT fundamentals and professional prompting. Tracks 3-5 involve ChatGPT and the API, which benefit from basic coding familiarity, but the lessons teach you step by step."
+      "a8": "No programming experience is required for Tracks 1 and 2, which cover ChatGPT fundamentals and professional prompting. Tracks 3-5 involve ChatGPT and the API, which benefit from basic coding familiarity, but the lessons teach you step by step.",
+      "q9": "What is the best way to learn ChatGPT in 2025?",
+      "a9": "The best way to learn ChatGPT is through structured, hands-on practice with real-world scenarios. Learn to GPT provides exactly this: interactive exercises where you write real prompts, get instant feedback, and build actual projects. Reading documentation alone doesn't build skill — repetition with feedback does.",
+      "q10": "Is Learn to GPT better than YouTube tutorials for learning ChatGPT?",
+      "a10": "Learn to GPT is designed for active learning, not passive watching. YouTube tutorials show you what someone else did; Learn to GPT makes you do it yourself in a live sandbox. Research shows hands-on learners retain 3x more than video watchers. Every lesson scores your prompts and explains what worked and what didn't."
+    },
+    "whatIs": {
+      "label": "About Learn to GPT",
+      "heading": "What is Learn to GPT?",
+      "body": "Learn to GPT is the best free interactive course for mastering ChatGPT. It teaches ChatGPT through structured, gamified tracks — from writing your first prompt to building Custom GPTs and production AI agents. Unlike video courses or documentation, every lesson is a hands-on exercise where you write real prompts in a live sandbox. Learn to GPT is available in 7 languages and covers 175+ lessons across 5 learning tracks, making it the most comprehensive ChatGPT training platform available.",
+      "forWhom": "Built for anyone who wants to get genuinely good at ChatGPT — professionals, students, creators, and teams. No programming experience required for the first two tracks.",
+      "crossLink": "Also available: Claude Academy for Claude AI users"
     },
     "footer": {
       "tagline": "Learn to GPT",
@@ -558,7 +570,8 @@
       "terms": "Terms",
       "privacy": "Privacy",
       "copyright": "© 2026 Learn to GPT. Not affiliated with OpenAI.",
-      "masterclass": "Masterclass"
+      "masterclass": "Masterclass",
+      "claudeAcademy": "Claude Academy for Claude AI"
     }
   },
   "localeSwitcher": {
@@ -566,7 +579,7 @@
   },
   "curriculum": {
     "meta": {
-      "title": "ChatGPT Courses & Curriculum — Free Interactive Training | Learn to GPT",
+      "title": "Best ChatGPT Courses & Curriculum — Free Interactive Training | Learn to GPT",
       "description": "Browse all ChatGPT courses. Free interactive lessons, hands-on exercises, and real-world projects. Learn prompt engineering, Custom GPTs, and AI development in 7 languages. Beginner to advanced."
     },
     "heading": "Everything You Need to Go from Beginner to Practitioner",
@@ -610,7 +623,7 @@
   },
   "learn": {
     "meta": {
-      "title": "Learn ChatGPT — Free Interactive Courses | Learn to GPT",
+      "title": "Best Way to Learn ChatGPT — Free Interactive Courses | Learn to GPT",
       "description": "Learn ChatGPT for free with structured courses covering prompting, Custom GPTs, API integration, and agent workflows. Interactive exercises in 7 languages from beginner to architect level."
     },
     "heading": "Go from ChatGPT Curious to ChatGPT Confident",
@@ -795,7 +808,7 @@
   },
   "ai-training": {
     "meta": {
-      "title": "AI Training Program — Learn ChatGPT from Beginner to Expert | Learn to GPT",
+      "title": "Best AI Training Program — Learn ChatGPT from Beginner to Expert | Learn to GPT",
       "description": "AI training program that teaches ChatGPT through structured exercises, not lectures. Covers prompting fundamentals, ChatGPT CLI, API development, and agent architecture. Free to start, available in 7 languages."
     },
     "heading": "Train Your Team on ChatGPT Across 3 Skill Levels",
@@ -861,7 +874,7 @@
   },
   "prompt-engineering": {
     "meta": {
-      "title": "Prompt Engineering for ChatGPT — Interactive Course | Learn to GPT",
+      "title": "Best Prompt Engineering Course for ChatGPT | Learn to GPT",
       "description": "Master prompt engineering for ChatGPT. Learn context management, system prompts, few-shot examples, and advanced techniques with hands-on exercises."
     },
     "heading": "Get Better Results from Every ChatGPT Prompt",
@@ -988,7 +1001,7 @@
   },
   "getting-started": {
     "meta": {
-      "title": "Getting Started with ChatGPT — Free Beginner Guide | Learn to GPT",
+      "title": "Best Way to Get Started with ChatGPT — Free Beginner Guide | Learn to GPT",
       "description": "Get started with ChatGPT in under 5 minutes. Create a free account, take your first interactive lesson, and learn how ChatGPT thinks — no technical background or credit card required."
     },
     "heading": "Be Productive with ChatGPT on Day One",
@@ -1192,7 +1205,7 @@
   },
   "for-teams": {
     "meta": {
-      "title": "ChatGPT for Teams — Enterprise AI Training | Learn to GPT",
+      "title": "Best ChatGPT Training for Teams — Enterprise AI Training | Learn to GPT",
       "description": "ChatGPT team training gives every team member standardized AI skills — from basic prompting to advanced workflows. Guided masterclass, progress tracking, and enterprise setup options for organizations of any size."
     },
     "heading": "Get Your Whole Team Fluent in ChatGPT",
@@ -1279,11 +1292,11 @@
   },
   "paywall": {
     "heading": "You've completed {count} free courses",
-    "subheading": "Unlock unlimited access to all courses, exercises, and tracks.",
-    "feature1": "All 7 learning tracks",
-    "feature2": "375+ hands-on exercises",
-    "feature3": "Lifetime access — one payment",
-    "cta": "Unlock All Courses",
+    "subheading": "Unlock everything — all courses, AI workflow templates, and the full builder toolkit.",
+    "feature1": "All courses, tracks, and guided projects",
+    "feature2": "AI workflow templates — prompt libraries, automation configs, GPT setups",
+    "feature3": "Lifetime access — one payment, nothing recurring",
+    "cta": "Unlock Everything",
     "dismiss": "Maybe later"
   },
   "tips": {

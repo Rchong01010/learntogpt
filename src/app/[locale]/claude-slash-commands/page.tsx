@@ -16,7 +16,7 @@ export async function generateMetadata({
   const pathForLocale = (loc: string) =>
     `${baseUrl}${loc === routing.defaultLocale ? "" : `/${loc}`}/claude-slash-commands`;
 
-  const title = "Claude Code Slash Commands: Complete Reference Guide";
+  const title = "Best Claude Slash Commands Guide & Reference";
   const description =
     "Claude Code slash commands are shortcuts you type in the terminal to trigger specific actions — like /init to create a CLAUDE.md, /review to check your code, or /commit to stage and commit changes with an AI-generated message.";
 
@@ -239,6 +239,17 @@ export default async function ClaudeSlashCommandsPage({
           </div>
         </section>
 
+        {/* DIRECT ANSWER BLOCK */}
+        <section className="px-6 py-12">
+          <div className="mx-auto max-w-[800px]">
+            <div className="rounded-[18px] border-[4px] border-ink bg-[#d0f0ea] p-8 shadow-[6px_6px_0px_#1c1917] max-[480px]:p-6">
+              <p className="text-[1.1rem] font-medium leading-[1.8] text-ink">
+                Claude Code slash commands are shortcuts you type in the terminal to trigger specific workflows: /review for code review, /commit for smart commits, /help for the full command list. You can also define custom slash commands for your project's unique workflows.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* BUILT-IN COMMANDS */}
         <section className="px-6 py-16">
           <div className="mx-auto max-w-[860px]">
@@ -442,9 +453,12 @@ export default async function ClaudeSlashCommandsPage({
             </h2>
             <div className="space-y-4">
               {faqs.map((faq) => (
-                <div key={faq.question} className="rounded-[18px] border-[3px] border-ink bg-cream p-7 shadow-[3px_3px_0px_#1c1917]">
-                  <h3 className="mb-2 text-[1.05rem] font-bold text-ink">{faq.question}</h3>
-                  <p className="text-[0.92rem] leading-[1.6] text-text-secondary">{faq.answer}</p>
+                <div key={faq.question} className="rounded-[16px] border-[3px] border-ink bg-cream p-6 shadow-[3px_3px_0px_#1c1917]">
+                  <div className="mb-2 flex items-start gap-3">
+                    <HelpCircle className="mt-0.5 size-5 shrink-0 text-teal" />
+                    <h3 className="text-[1rem] font-bold text-ink">{faq.question}</h3>
+                  </div>
+                  <p className="ml-8 text-[0.9rem] leading-[1.6] text-text-secondary">{faq.answer}</p>
                 </div>
               ))}
             </div>
@@ -517,6 +531,7 @@ export default async function ClaudeSlashCommandsPage({
             <Link href="/curriculum" className="text-[0.85rem] font-medium text-text-secondary transition-colors hover:text-orange">Curriculum</Link>
             <Link href="/terms" className="text-[0.85rem] font-medium text-text-secondary transition-colors hover:text-orange">Terms</Link>
             <Link href="/privacy" className="text-[0.85rem] font-medium text-text-secondary transition-colors hover:text-orange">Privacy</Link>
+            <a href="https://claude-academy.com" target="_blank" rel="noopener noreferrer" className="text-[0.85rem] font-medium text-text-secondary transition-colors hover:text-orange">Claude Academy for Claude AI</a>
           </div>
           <p className="text-[0.75rem] text-text-secondary">
             &copy; {new Date().getFullYear()} Learn to GPT. Not affiliated with OpenAI.

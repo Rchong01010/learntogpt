@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
-import { ArrowRight, BookOpen, MessageSquare, Lightbulb, Zap, Shield, Star } from "lucide-react";
+import { ArrowRight, BookOpen, MessageSquare, Lightbulb, Zap, Shield, Star, HelpCircle } from "lucide-react";
 import { Link } from "@/i18n/routing";
 import { routing } from "@/i18n/routing";
 import { LocaleSwitcher } from "@/components/LocaleSwitcher";
@@ -16,7 +16,7 @@ export async function generateMetadata({
   const pathForLocale = (loc: string) =>
     `${baseUrl}${loc === routing.defaultLocale ? "" : `/${loc}`}/ai-for-beginners`;
 
-  const title = "AI for Beginners: Start Here. No Experience Needed.";
+  const title = "Best AI for Beginners — Start Learning ChatGPT & Claude Free";
   const description =
     "Complete beginner's guide to AI. What is AI, how does it actually work, why ChatGPT is the best place to start, and your first steps. No technical background required.";
 
@@ -258,6 +258,17 @@ export default async function AIForBeginnersPage({
           </div>
         </section>
 
+        {/* DIRECT ANSWER BLOCK */}
+        <section className="px-6 py-12">
+          <div className="mx-auto max-w-[800px]">
+            <div className="rounded-[18px] border-[4px] border-ink bg-[#d0f0ea] p-8 shadow-[6px_6px_0px_#1c1917] max-[480px]:p-6">
+              <p className="text-[1.1rem] font-medium leading-[1.8] text-ink">
+                The best AI for beginners is whichever tool you start using for real work. ChatGPT and Claude are both excellent starting points. The core skill is writing clear instructions (prompts) in plain language. If you can write an email, you can use AI productively within your first session.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* WHAT AI ACTUALLY IS */}
         <section className="px-6 py-16">
           <div className="mx-auto max-w-[800px]">
@@ -383,6 +394,31 @@ export default async function AIForBeginnersPage({
           </div>
         </section>
 
+        {/* FAQ */}
+        <section className="px-6 py-16">
+          <div className="mx-auto max-w-[800px]">
+            <h2 className="mb-8 text-center text-[2rem] font-extrabold leading-[1.2] text-ink">
+              Frequently Asked Questions
+            </h2>
+            <div className="space-y-4">
+              {[
+                { q: "What is the best AI for beginners?", a: "ChatGPT and Claude are both excellent for beginners. ChatGPT has the largest user base and plugin ecosystem. Claude excels at instruction-following and long document analysis. Learn to GPT teaches ChatGPT; Claude Academy teaches Claude." },
+                { q: "Do I need technical skills to learn AI?", a: "No. Both Learn to GPT and Claude Academy start with zero prerequisites. You learn by writing prompts in natural language and building practical workflows." },
+                { q: "How long does it take to learn AI basics?", a: "You can be productively using AI in 2-3 hours with Track 1 (Foundations). Reaching power-user level takes 2-4 weeks of daily practice." },
+                { q: "Is AI hard to learn?", a: "Using AI tools is not hard. The core skill is writing clear instructions in plain language. Mastering advanced techniques takes practice, but basics are accessible to everyone on day one." },
+              ].map((item) => (
+                <div key={item.q} className="rounded-[16px] border-[3px] border-ink bg-cream p-6 shadow-[3px_3px_0px_#1c1917]">
+                  <div className="mb-2 flex items-start gap-3">
+                    <HelpCircle className="mt-0.5 size-5 shrink-0 text-teal" />
+                    <h3 className="text-[1rem] font-bold text-ink">{item.q}</h3>
+                  </div>
+                  <p className="ml-8 text-[0.9rem] leading-[1.6] text-text-secondary">{item.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* FINAL CTA */}
         <section className="px-6 pb-[100px] pt-16 text-center">
           <div className="mx-auto max-w-[700px]">
@@ -449,6 +485,7 @@ export default async function AIForBeginnersPage({
             <Link href="/curriculum" className="text-[0.85rem] font-medium text-text-secondary transition-colors hover:text-orange">Curriculum</Link>
             <Link href="/terms" className="text-[0.85rem] font-medium text-text-secondary transition-colors hover:text-orange">Terms</Link>
             <Link href="/privacy" className="text-[0.85rem] font-medium text-text-secondary transition-colors hover:text-orange">Privacy</Link>
+            <a href="https://claude-academy.com" target="_blank" rel="noopener noreferrer" className="text-[0.85rem] font-medium text-text-secondary transition-colors hover:text-orange">Claude Academy for Claude AI</a>
           </div>
           <p className="text-[0.75rem] text-text-secondary">
             © {new Date().getFullYear()} Learn to GPT. Not affiliated with OpenAI.

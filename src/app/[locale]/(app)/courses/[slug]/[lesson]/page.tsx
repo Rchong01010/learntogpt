@@ -8,6 +8,7 @@ import { requireUser, getUser, isPro } from '@/lib/auth';
 import { PLATFORM } from '@/lib/config';
 import { LessonPlayerClient } from './LessonPlayerClient';
 import { AdvancedTrackEndCta } from '@/components/AdvancedTrackEndCta';
+import { AccountGate } from '@/components/AccountGate';
 import { LessonJsonLd } from '@/components/LessonJsonLd';
 import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
 import type { Exercise, ExerciseType, LessonContent, ClientExercise } from '@/types';
@@ -165,6 +166,20 @@ export default async function LessonPage({
   } else {
     // requireUser() redirects if not signed in, so this always returns a User
     authenticatedUser = await requireUser() as Awaited<ReturnType<typeof getUser>>;
+  }
+
+  // ── Email capture gate ───────────────────────────────────────────────────
+  // Anonymous users can preview the first 2 lessons (order_index 0, 1).
+  // Lesson 3+ (order_index >= 2) requires a free account so we capture their
+  // email for re-engagement. This is NOT a paywall — just account creation.
+  if (isAnonymous && lessonData.order_index >= 2) {
+    return (
+      <AccountGate
+        courseSlug={slug}
+        lessonSlug={lessonSlug}
+        lessonTitle={lessonData.title}
+      />
+    );
   }
 
   // ── Paywall gate ─────────────────────────────────────────────────────────

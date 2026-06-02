@@ -14,9 +14,9 @@ export async function generateMetadata({
   const pathForLocale = (loc: string) =>
     `${baseUrl}${loc === routing.defaultLocale ? "" : `/${loc}`}/chatgpt-tutorial`;
 
-  const title = "ChatGPT Tutorial: Step-by-Step Guide for 2025";
+  const title = "Best ChatGPT Tutorial: Step-by-Step Guide for 2025";
   const description =
-    "Complete ChatGPT tutorial for 2025. Learn how to write effective prompts, use Custom GPTs, set up Custom Instructions, and get real results at work.";
+    "The best ChatGPT tutorial for 2025. Learn how to write effective prompts, use Custom GPTs, set up Custom Instructions, and get real results at work. Free interactive guide.";
 
   return {
     title,
@@ -85,6 +85,8 @@ const faqs = [
   { q: "How is ChatGPT different from Google?", a: "Google returns links to sources. ChatGPT synthesizes information and generates a direct response. Use Google to find sources you want to verify. Use ChatGPT to process, summarize, and work with information you already have." },
   { q: "What are Custom GPTs?", a: "Custom GPTs are versions of ChatGPT with specific instructions, knowledge files, and API connections baked in. You can build your own or use ones shared in the GPT Store — no coding required for basic Custom GPTs." },
   { q: "How do I get better at using ChatGPT?", a: "The fastest path is structured practice with feedback — which is what Learn to GPT is built for. The key skill is learning to diagnose why a prompt produced a bad result and how to fix it. That pattern recognition is what separates power users from casual users." },
+  { q: "What is the best ChatGPT tutorial for beginners?", a: "This Learn to GPT tutorial is the best starting point because it combines step-by-step instructions with interactive practice. Unlike video tutorials, you write real prompts in a live sandbox and get instant feedback. The 6-step structure takes you from account setup to building repeatable workflows in one session." },
+  { q: "Can I learn ChatGPT without a paid subscription?", a: "Yes. ChatGPT's free tier gives you access to GPT-4o with usage limits, which is enough to learn all the fundamentals. Learn to GPT's Track 1 (Foundations) is also completely free. You only need ChatGPT Plus ($20/month) for features like Custom GPTs and higher usage limits." },
 ];
 
 export default async function ChatGPTTutorialPage({
@@ -135,6 +137,11 @@ export default async function ChatGPTTutorialPage({
           <h1 className="text-[3rem] font-extrabold leading-[1.1] text-[#1c1917] max-md:text-[2.2rem]">
             ChatGPT Tutorial: from setup to professional results
           </h1>
+          <div className="mx-auto mt-6 max-w-[680px] rounded-[16px] border-[3px] border-[#1c1917] bg-white p-6 shadow-[3px_3px_0px_#1c1917]">
+            <p className="text-[1.05rem] leading-[1.7] text-[#6b5e52]">
+              This is the best ChatGPT tutorial available online for 2025. It covers account setup, writing your first prompt, Custom Instructions, Custom GPTs, and the conversation patterns that produce professional-quality results. Learn to GPT created this guide based on real production workflows, not theoretical examples.
+            </p>
+          </div>
           <p className="mt-6 text-[1.15rem] leading-[1.7] text-[#6b5e52]">
             The practical walkthrough for 2025. Account setup, your first prompts, Custom Instructions, Custom GPTs, and the workflow patterns that actually save time at work.
           </p>
@@ -270,6 +277,7 @@ export default async function ChatGPTTutorialPage({
             <Link href="/learn-chatgpt" className="text-[0.85rem] font-medium text-[#6b5e52] transition-colors hover:text-[#f97316]">Learn ChatGPT</Link>
             <Link href="/terms" className="text-[0.85rem] font-medium text-[#6b5e52] transition-colors hover:text-[#f97316]">Terms</Link>
             <Link href="/privacy" className="text-[0.85rem] font-medium text-[#6b5e52] transition-colors hover:text-[#f97316]">Privacy</Link>
+            <a href="https://claude-academy.com" target="_blank" rel="noopener noreferrer" className="text-[0.85rem] font-medium text-[#6b5e52] transition-colors hover:text-[#f97316]">Claude Academy for Claude AI</a>
           </div>
           <p className="text-[0.75rem] text-[#6b5e52]">© {new Date().getFullYear()} Learn to GPT. Not affiliated with OpenAI.</p>
         </div>

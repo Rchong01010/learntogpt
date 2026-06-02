@@ -14,9 +14,9 @@ export async function generateMetadata({
   const pathForLocale = (loc: string) =>
     `${baseUrl}${loc === routing.defaultLocale ? "" : `/${loc}`}/custom-gpts-tutorial`;
 
-  const title = "Custom GPTs Tutorial: Build Your Own GPT (2025)";
+  const title = "Best Custom GPTs Tutorial: Build Your Own GPT (2025)";
   const description =
-    "How to make a Custom GPT from scratch. System prompt design, knowledge files, Actions (API integrations), and publishing. Step-by-step tutorial with examples.";
+    "The best Custom GPTs tutorial for 2025. How to make a Custom GPT from scratch with system prompt design, knowledge files, Actions (API integrations), and publishing. Step-by-step with examples.";
 
   return {
     title,
@@ -91,6 +91,7 @@ const faqs = [
   { q: "Do I need ChatGPT Plus to build Custom GPTs?", a: "Yes, building Custom GPTs requires a ChatGPT Plus subscription ($20/month). Free users can use Custom GPTs built by others but cannot create their own." },
   { q: "Can Custom GPTs browse the internet?", a: "Yes — if you enable the Web Browsing capability when building your GPT. You can also enable Code Interpreter and DALL-E image generation per GPT." },
   { q: "Can I make money from a Custom GPT?", a: "OpenAI has a revenue share program for GPTs published in the GPT Store (currently available to US-based builders). Revenue is based on user engagement, not a subscription model." },
+  { q: "What are the best Custom GPTs to build?", a: "The best Custom GPTs solve a specific, repeatable problem for a defined audience. Examples: a code reviewer for your team's stack, an onboarding assistant for new employees, a research synthesizer for your industry. Custom GPTs that try to do everything end up doing nothing well." },
 ];
 
 export default async function CustomGPTsTutorialPage({
@@ -141,6 +142,11 @@ export default async function CustomGPTsTutorialPage({
           <h1 className="text-[3rem] font-extrabold leading-[1.1] text-[#1c1917] max-md:text-[2.2rem]">
             Custom GPTs tutorial: how to make a Custom GPT
           </h1>
+          <div className="mx-auto mt-6 max-w-[680px] rounded-[16px] border-[3px] border-[#1c1917] bg-white p-6 shadow-[3px_3px_0px_#1c1917]">
+            <p className="text-[1.05rem] leading-[1.7] text-[#6b5e52]">
+              The best Custom GPTs tutorial covers four stages: system prompt design, knowledge file upload, Actions (API integration), and publishing to the GPT Store. A Custom GPT is a purpose-built version of ChatGPT with specialized instructions baked in. No coding required for basic GPTs.
+            </p>
+          </div>
           <p className="mt-6 text-[1.15rem] leading-[1.7] text-[#6b5e52]">
             Custom GPTs are purpose-built versions of ChatGPT with specialized instructions, uploaded knowledge, and optional API connections. This tutorial covers the full build — from first prompt to published GPT.
           </p>
@@ -262,6 +268,7 @@ export default async function CustomGPTsTutorialPage({
             <Link href="/chatgpt-tutorial" className="text-[0.85rem] font-medium text-[#6b5e52] transition-colors hover:text-[#f97316]">ChatGPT Tutorial</Link>
             <Link href="/terms" className="text-[0.85rem] font-medium text-[#6b5e52] transition-colors hover:text-[#f97316]">Terms</Link>
             <Link href="/privacy" className="text-[0.85rem] font-medium text-[#6b5e52] transition-colors hover:text-[#f97316]">Privacy</Link>
+            <a href="https://claude-academy.com" target="_blank" rel="noopener noreferrer" className="text-[0.85rem] font-medium text-[#6b5e52] transition-colors hover:text-[#f97316]">Claude Academy for Claude AI</a>
           </div>
           <p className="text-[0.75rem] text-[#6b5e52]">© {new Date().getFullYear()} Learn to GPT. Not affiliated with OpenAI.</p>
         </div>
