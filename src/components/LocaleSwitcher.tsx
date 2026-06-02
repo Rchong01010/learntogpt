@@ -14,6 +14,7 @@ const localeNames: Record<Locale, string> = {
   de: "Deutsch",
   fr: "Français",
   es: "Español",
+  "pt-BR": "Português",
 };
 
 const localeLabels: Record<Locale, string> = {
@@ -24,6 +25,7 @@ const localeLabels: Record<Locale, string> = {
   de: "DE",
   fr: "FR",
   es: "ES",
+  "pt-BR": "PT",
 };
 
 export function LocaleSwitcher() {
