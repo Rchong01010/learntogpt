@@ -1163,5 +1163,13 @@
     "feature3": "永久アクセス — 一回払い、サブスクなし",
     "cta": "すべてを解放する",
     "dismiss": "後で検討する"
+  },
+  "notFound": {
+    "errorCode": "404",
+    "title": "ページが見つかりません",
+    "description": "お探しのページは存在しないか、移動された可能性があります。",
+    "terminalMessage": "learn-to-gpt --start",
+    "homeLink": "ホームに戻る",
+    "coursesLink": "コースを見る"
   }
 }

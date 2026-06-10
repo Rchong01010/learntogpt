@@ -66,11 +66,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     .eq("is_free", true)
     .eq("platform", PLATFORM);
 
-  // Fetch free lessons joined with their course slug
+  // Fetch free lessons joined with their course slug. lessons has no platform
+  // column, so scope by platform through an inner join on courses — otherwise
+  // the other platform's lesson URLs leak into this sitemap.
   const { data: freeLessons } = await supabase
     .from("lessons")
-    .select("id, slug, locale, course_id, courses(slug)")
-    .eq("is_free", true);
+    .select("id, slug, locale, course_id, courses!inner(slug)")
+    .eq("is_free", true)
+    .eq("courses.platform", PLATFORM);
 
   const courseEntries: MetadataRoute.Sitemap = (freeCourses || []).map(
     (course: { id: string; slug: string; locale: string }) => {

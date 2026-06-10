@@ -1164,5 +1164,13 @@
     "feature3": "Accès à vie — paiement unique, rien de récurrent",
     "cta": "Tout débloquer",
     "dismiss": "Peut-être plus tard"
+  },
+  "notFound": {
+    "errorCode": "404",
+    "title": "Page introuvable",
+    "description": "La page que vous recherchez n’existe pas ou a été déplacée.",
+    "terminalMessage": "learn-to-gpt --start",
+    "homeLink": "Retour à l’accueil",
+    "coursesLink": "Parcourir les cours"
   }
 }

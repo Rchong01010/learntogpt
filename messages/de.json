@@ -1164,5 +1164,13 @@
     "feature3": "Lebenslanger Zugang — einmalige Zahlung, kein Abo",
     "cta": "Alles freischalten",
     "dismiss": "Vielleicht später"
+  },
+  "notFound": {
+    "errorCode": "404",
+    "title": "Seite nicht gefunden",
+    "description": "Die gesuchte Seite existiert nicht oder wurde verschoben.",
+    "terminalMessage": "learn-to-gpt --start",
+    "homeLink": "Zurück zur Startseite",
+    "coursesLink": "Kurse durchsuchen"
   }
 }

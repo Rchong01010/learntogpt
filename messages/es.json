@@ -1163,5 +1163,13 @@
     "feature3": "Acceso de por vida — un solo pago, sin recurrencia",
     "cta": "Desbloquear todo",
     "dismiss": "Quizás más tarde"
+  },
+  "notFound": {
+    "errorCode": "404",
+    "title": "Página no encontrada",
+    "description": "La página que buscas no existe o ha sido movida.",
+    "terminalMessage": "learn-to-gpt --start",
+    "homeLink": "Volver al inicio",
+    "coursesLink": "Explorar cursos"
   }
 }

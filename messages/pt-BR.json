@@ -1312,5 +1312,13 @@
     "tipsPageSubtitle": "Uma nova dica de ChatGPT todo dia. Use nos próximos 5 minutos.",
     "tipDayAgo": "dia atrás",
     "tipDaysAgo": "dias atrás"
+  },
+  "notFound": {
+    "errorCode": "404",
+    "title": "Página não encontrada",
+    "description": "A página que você procura não existe ou foi movida.",
+    "terminalMessage": "learn-to-gpt --start",
+    "homeLink": "Voltar ao início",
+    "coursesLink": "Ver cursos"
   }
 }

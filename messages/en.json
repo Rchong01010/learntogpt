@@ -1312,5 +1312,13 @@
     "tipsPageSubtitle": "A new ChatGPT tip every day. Use it in the next 5 minutes.",
     "tipDayAgo": "day ago",
     "tipDaysAgo": "days ago"
+  },
+  "notFound": {
+    "errorCode": "404",
+    "title": "Page not found",
+    "description": "The page you are looking for does not exist or has been moved.",
+    "terminalMessage": "learn-to-gpt --start",
+    "homeLink": "Back to Home",
+    "coursesLink": "Browse Courses"
   }
 }

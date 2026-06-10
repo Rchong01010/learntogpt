@@ -1163,5 +1163,13 @@
     "feature3": "평생 이용권 — 일회성 결제, 구독 없음",
     "cta": "모두 잠금 해제",
     "dismiss": "나중에 할게요"
+  },
+  "notFound": {
+    "errorCode": "404",
+    "title": "페이지를 찾을 수 없습니다",
+    "description": "찾으시는 페이지가 존재하지 않거나 이동되었습니다.",
+    "terminalMessage": "learn-to-gpt --start",
+    "homeLink": "홈으로 돌아가기",
+    "coursesLink": "코스 보기"
   }
 }
