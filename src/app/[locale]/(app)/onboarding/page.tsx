@@ -50,13 +50,13 @@ type Answer = {
 
 /**
  * Map quiz answers to the best first course path.
- * Falls back to the beginner meet-claude lesson.
+ * Falls back to the beginner meet-chatgpt lesson.
  */
 function resolveDestination(answers: Answer): string {
   const { experience, goal } = answers;
 
   if (experience === "never" || goal === "basics") {
-    return "/courses/why-claude/meet-claude";
+    return "/courses/why-chatgpt/meet-chatgpt";
   }
   if (experience === "sometimes" && goal === "prompting") {
     return "/courses/strategic-prompting/context-is-everything";
@@ -65,7 +65,7 @@ function resolveDestination(answers: Answer): string {
     return "/courses/practitioner-setup/claude-md-project-spine";
   }
   if (experience === "daily" && goal === "agents") {
-    return "/courses/why-claude/from-chatting-to-building";
+    return "/courses/why-chatgpt/from-chatting-to-building";
   }
   // prompting for any experience level
   if (goal === "prompting") {
@@ -76,10 +76,10 @@ function resolveDestination(answers: Answer): string {
     return "/courses/practitioner-setup/claude-md-project-spine";
   }
   if (goal === "agents") {
-    return "/courses/why-claude/from-chatting-to-building";
+    return "/courses/why-chatgpt/from-chatting-to-building";
   }
 
-  return "/courses/why-claude/meet-claude";
+  return "/courses/why-chatgpt/meet-chatgpt";
 }
 
 export default function OnboardingPage() {

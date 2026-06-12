@@ -225,7 +225,7 @@ export default async function ClaudeVsGeminiPage({
                 {t("nav.logIn")}
               </Link>
               <Link
-                href="/courses/why-claude/meet-claude"
+                href="/courses/why-chatgpt/meet-chatgpt"
                 className="inline-flex items-center rounded-full border-[3px] border-ink bg-orange px-[22px] py-[10px] text-[0.85rem] font-bold text-white shadow-[3px_3px_0px_#1c1917] transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[1px_1px_0px_#1c1917]"
               >
                 {t("nav.getStarted")}
@@ -252,7 +252,7 @@ export default async function ClaudeVsGeminiPage({
               Claude (Anthropic) and Gemini (Google DeepMind) are two of the most capable AI models available today. Both excel at reasoning and code. The real differences emerge in writing quality, developer tooling, Google Workspace integration, and multimodal tasks. Here&apos;s the honest breakdown.
             </p>
             <Link
-              href="/courses/why-claude/meet-claude"
+              href="/courses/why-chatgpt/meet-chatgpt"
               className="inline-flex items-center justify-center gap-2 rounded-full border-[3px] border-ink bg-orange px-10 py-4 text-[1.1rem] font-bold text-white shadow-[6px_6px_0px_#1c1917] transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[1px_1px_0px_#1c1917]"
             >
               Try Learn to GPT Free

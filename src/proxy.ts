@@ -41,7 +41,7 @@ const PROTECTED_ROUTES = [
 // page render; this just lets guests through the proxy gate.
 const PUBLIC_ROUTE_PREFIXES = [
   "/courses/whats-new-in-claude",
-  "/courses/why-claude",
+  "/courses/why-chatgpt",
   "/courses/three-levels",
   "/courses/strategic-prompting",
   "/courses/essentials",

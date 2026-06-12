@@ -241,7 +241,7 @@ export default async function ClaudeSystemPromptsPage({
                 Log In
               </Link>
               <Link
-                href="/courses/why-claude/context-is-everything"
+                href="/courses/why-chatgpt/context-is-everything"
                 className="inline-flex items-center rounded-full border-[3px] border-ink bg-orange px-[22px] py-[10px] text-[0.85rem] font-bold text-white shadow-[3px_3px_0px_#1c1917] transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[1px_1px_0px_#1c1917]"
               >
                 Get Started

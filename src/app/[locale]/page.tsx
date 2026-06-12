@@ -288,7 +288,7 @@ export default async function LandingPage({
             <div className="mx-auto mt-11 grid max-w-[880px] gap-8 max-md:max-w-[440px] max-md:grid-cols-1 md:grid-cols-2">
               {/* Path A — Beginner */}
               <Link
-                href="/courses/why-claude/meet-claude"
+                href="/courses/why-chatgpt/meet-chatgpt"
                 className="relative block cursor-pointer rounded-xl border border-[#e5e7eb] bg-white p-[36px_32px_32px] shadow-sm transition-all duration-300 hover:-translate-y-[4px] hover:border-orange hover:shadow-md max-[480px]:p-[28px_24px_24px]"
               >
                 <div className="absolute -top-[12px] right-6 rounded-full bg-teal px-[14px] py-[5px] font-mono text-[0.7rem] font-bold uppercase tracking-[0.15em] text-white shadow-sm">
@@ -724,7 +724,7 @@ export default async function LandingPage({
                   {t("sandbox.footerText")}
                 </span>
                 <Link
-                  href="/courses/why-claude/meet-claude"
+                  href="/courses/why-chatgpt/meet-chatgpt"
                   className="inline-flex items-center rounded-lg bg-orange px-[22px] py-[10px] text-[0.85rem] font-semibold text-white shadow-sm transition-all hover:bg-teal hover:shadow-md"
                 >
                   {t("sandbox.cta")}
@@ -907,7 +907,7 @@ export default async function LandingPage({
             </p>
             <div className="mt-9">
               <Link
-                href="/courses/why-claude/meet-claude"
+                href="/courses/why-chatgpt/meet-chatgpt"
                 className="inline-flex items-center justify-center gap-2 rounded-lg bg-orange px-10 py-4 text-[1.05rem] font-semibold text-white shadow-sm transition-all hover:bg-teal hover:shadow-md"
               >
                 {t("finalCta.cta")}

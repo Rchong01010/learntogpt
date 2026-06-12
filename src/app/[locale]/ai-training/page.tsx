@@ -200,7 +200,7 @@ export default async function AITrainingPage({
                 {t("nav.logIn")}
               </Link>
               <Link
-                href="/courses/why-claude/meet-claude"
+                href="/courses/why-chatgpt/meet-chatgpt"
                 className="inline-flex items-center rounded-full border-[3px] border-ink bg-orange px-[22px] py-[10px] text-[0.85rem] font-bold text-white shadow-[3px_3px_0px_#1c1917] transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[1px_1px_0px_#1c1917]"
               >
                 {t("nav.getStarted")}
@@ -229,7 +229,7 @@ export default async function AITrainingPage({
             </p>
             <div className="mb-4 flex flex-wrap items-center justify-center gap-4 max-[480px]:flex-col max-[480px]:items-center">
               <Link
-                href="/courses/why-claude/meet-claude"
+                href="/courses/why-chatgpt/meet-chatgpt"
                 className="inline-flex items-center justify-center gap-2 rounded-full border-[3px] border-ink bg-orange px-10 py-4 text-[1.1rem] font-bold text-white shadow-[6px_6px_0px_#1c1917] transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[1px_1px_0px_#1c1917] max-[480px]:w-full max-[480px]:max-w-[320px]"
               >
                 {t("cta")}
@@ -336,7 +336,7 @@ export default async function AITrainingPage({
               </p>
               <div className="mt-6">
                 <Link
-                  href="/courses/why-claude/meet-claude"
+                  href="/courses/why-chatgpt/meet-chatgpt"
                   className="inline-flex items-center gap-2 rounded-full border-[3px] border-ink bg-orange px-8 py-3 text-[1rem] font-bold text-white shadow-[4px_4px_0px_#1c1917] transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[1px_1px_0px_#1c1917]"
                 >
                   {t("masterclass.cta")}
@@ -358,7 +358,7 @@ export default async function AITrainingPage({
             </p>
             <div className="mt-8">
               <Link
-                href="/courses/why-claude/meet-claude"
+                href="/courses/why-chatgpt/meet-chatgpt"
                 className="inline-flex items-center justify-center gap-2 rounded-full border-[3px] border-ink bg-orange px-10 py-4 text-[1.1rem] font-bold text-white shadow-[6px_6px_0px_#1c1917] transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[1px_1px_0px_#1c1917]"
               >
                 {t("cta")}
