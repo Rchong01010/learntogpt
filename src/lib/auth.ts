@@ -167,13 +167,13 @@ export async function hasUnlocked(userId: string): Promise<boolean> {
  *
  * Rules (paywall v1):
  *   - Unauthenticated:            false (handled upstream)
- *   - < 2 completed courses:      true  (free tier, enjoy)
- *   - >= 2 completed courses AND has paid unlock: true
- *   - >= 2 completed courses AND NOT paid:               false (paywall)
+ *   - < 1 completed courses:      true  (free tier, enjoy)
+ *   - >= 1 completed courses AND has paid unlock: true
+ *   - >= 1 completed courses AND NOT paid:               false (paywall)
  *
  * "Completed" means every lesson in the course has status='completed'.
- * The first 2 courses (any 2, user's choice) are always free.
- * Starting from the 3rd course the user tries to open, they hit the wall.
+ * The first 1 course (user's choice) is always free.
+ * Starting from the 2nd course the user tries to open, they hit the wall.
  *
  * Grace rule: a course the user has *already started* (has any in_progress
  * or completed lessons) is never blocked — they can always finish it.
@@ -187,9 +187,9 @@ export async function isPro(userId: string): Promise<boolean> {
   // Count fully completed courses
   const completedCount = await getCompletedCourseCount(userId);
 
-  // Fewer than 2 completed → still in the free tier
-  if (completedCount < 2) return true;
+  // Fewer than 1 completed → still in the free tier
+  if (completedCount < 1) return true;
 
-  // 2+ completed and no payment → paywall active
+  // 1+ completed and no payment → paywall active
   return false;
 }

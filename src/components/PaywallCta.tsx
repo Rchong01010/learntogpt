@@ -6,7 +6,7 @@ import { useTranslations } from 'next-intl';
 // ---------------------------------------------------------------------------
 // PaywallCta
 //
-// Shown when a user has completed 2 free courses and tries to access a third.
+// Shown when a user has completed 1 free course and tries to access a second.
 // No pricing shown here — price appears only at Stripe checkout.
 // CTA links to /api/checkout/unlock which uses STRIPE_UNLOCK_PRICE_ID.
 // ---------------------------------------------------------------------------
