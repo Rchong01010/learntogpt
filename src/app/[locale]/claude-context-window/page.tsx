@@ -204,7 +204,7 @@ export default async function ClaudeContextWindowPage({
               <Link href="/sign-in" className="text-[0.85rem] font-semibold text-text-secondary transition-colors hover:text-orange">
                 {t("nav.logIn")}
               </Link>
-              <Link href="/courses/essentials/meet-claude" className="inline-flex items-center rounded-full border-[3px] border-ink bg-orange px-[22px] py-[10px] text-[0.85rem] font-bold text-white shadow-[3px_3px_0px_#1c1917] transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[1px_1px_0px_#1c1917]">
+              <Link href="/courses/why-chatgpt/context-is-everything" className="inline-flex items-center rounded-full border-[3px] border-ink bg-orange px-[22px] py-[10px] text-[0.85rem] font-bold text-white shadow-[3px_3px_0px_#1c1917] transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[1px_1px_0px_#1c1917]">
                 {t("nav.getStarted")}
               </Link>
             </div>
@@ -231,7 +231,7 @@ export default async function ClaudeContextWindowPage({
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
               <Link
-                href="/courses/essentials/meet-claude"
+                href="/courses/why-chatgpt/context-is-everything"
                 className="inline-flex items-center justify-center gap-2 rounded-full border-[3px] border-ink bg-orange px-10 py-4 text-[1.1rem] font-bold text-white shadow-[6px_6px_0px_#1c1917] transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[1px_1px_0px_#1c1917]"
               >
                 Start Foundations Track (Free)
@@ -370,7 +370,7 @@ export default async function ClaudeContextWindowPage({
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
               <Link
-                href="/courses/essentials/meet-claude"
+                href="/courses/why-chatgpt/context-is-everything"
                 className="inline-flex items-center justify-center gap-2 rounded-full border-[3px] border-ink bg-orange px-10 py-4 text-[1.1rem] font-bold text-white shadow-[6px_6px_0px_#1c1917] transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[1px_1px_0px_#1c1917]"
               >
                 Start Foundations Track
