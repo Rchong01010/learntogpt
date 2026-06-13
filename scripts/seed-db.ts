@@ -131,23 +131,19 @@ async function seedTrack(data: TrackData, locale: string) {
       const lessonId = insertedLesson.id;
       console.log(`    Lesson: ${lesson.title} (${lesson.exercises.length} exercises)`);
 
-      // Delete existing exercises for this lesson before reinserting (idempotent reseed)
-      const { error: deleteExError } = await supabase
-        .from("exercises")
-        .delete()
-        .eq("lesson_id", lessonId);
-
-      if (deleteExError) {
-        console.error(`      Error deleting old exercises:`, deleteExError.message);
-      }
-
-      // Insert exercises
+      // Upsert exercises keyed on (lesson_id, order_index) — migration 035.
+      // Ids stay stable across reseeds, so user_exercise_attempts / exercise_events
+      // are no longer wiped by CASCADE on every seed run.
+      let seedMaxOrder = 0;
       for (let exIdx = 0; exIdx < lesson.exercises.length; exIdx++) {
         const exercise = lesson.exercises[exIdx];
-        const { error: exerciseError } = await supabase.from("exercises").insert({
+        const orderIndex = exercise.order_index ?? exIdx + 1;
+        if (orderIndex > seedMaxOrder) seedMaxOrder = orderIndex;
+        const { error: exerciseError } = await supabase.from("exercises").upsert(
+          {
             lesson_id: lessonId,
             type: exercise.type,
-            order_index: exercise.order_index ?? exIdx + 1,
+            order_index: orderIndex,
             prompt: exercise.prompt ?? exercise.question ?? "",
             options_json: exercise.options,
             correct_answer: String(exercise.correct_answer ?? ""),
@@ -155,10 +151,40 @@ async function seedTrack(data: TrackData, locale: string) {
             hints_json: exercise.hints ?? [],
             xp_reward: exercise.xp_reward ?? 5,
             locale,
-        });
+          },
+          { onConflict: "lesson_id,order_index" }
+        );
 
         if (exerciseError) {
-          console.error(`      Error inserting exercise:`, exerciseError.message);
+          console.error(`      Error upserting exercise:`, exerciseError.message);
+        }
+      }
+
+      // If the seed now has FEWER exercises than the DB, delete only the excess
+      // rows above the seed's max order_index — and never silently.
+      const { data: staleRows, error: staleSelectError } = await supabase
+        .from("exercises")
+        .select("id, order_index")
+        .eq("lesson_id", lessonId)
+        .gt("order_index", seedMaxOrder);
+
+      if (staleSelectError) {
+        console.error(`      Error checking for stale exercises:`, staleSelectError.message);
+      } else if (staleRows && staleRows.length > 0) {
+        console.warn(
+          `      WARNING: seed has fewer exercises than DB for this lesson. ` +
+            `Deleting ${staleRows.length} stale exercise(s) with order_index > ${seedMaxOrder}: ` +
+            staleRows.map((r) => `${r.id} (#${r.order_index})`).join(", ")
+        );
+        const { error: deleteExError } = await supabase
+          .from("exercises")
+          .delete()
+          .eq("lesson_id", lessonId)
+          .gt("order_index", seedMaxOrder);
+        if (deleteExError) {
+          // With RESTRICT FKs (migration 036) this fails loudly if user history
+          // references these rows — intentional. Resolve manually, never auto-wipe.
+          console.error(`      Error deleting stale exercises:`, deleteExError.message);
         }
       }
     }
