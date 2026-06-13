@@ -1,4 +1,5 @@
 import { Resend } from "resend";
+import { personalizeUnsubscribe, buildUnsubscribeHeaders } from "@/lib/unsubscribe-token";
 import { createSupabaseAdmin } from "@/lib/supabase-server";
 import {
   buildWelcomeEmail,
@@ -107,7 +108,8 @@ export async function GET(request: Request) {
     .from("user_profiles")
     .select("user_id, display_name")
     .gte("created_at", e1Start)
-    .lte("created_at", e1End);
+    .lte("created_at", e1End)
+    .eq("email_unsubscribed", false);
 
   if (e1Err) {
     console.error("[welcome-emails] email1 query failed:", e1Err.message);
@@ -131,7 +133,8 @@ export async function GET(request: Request) {
     .select("user_id, display_name, xp")
     .gte("created_at", e2Start)
     .lte("created_at", e2End)
-    .eq("xp", 0);
+    .eq("xp", 0)
+    .eq("email_unsubscribed", false);
 
   if (e2Err) {
     console.error("[welcome-emails] email2 query failed:", e2Err.message);
@@ -155,7 +158,8 @@ export async function GET(request: Request) {
     .select("user_id, display_name, xp")
     .gte("created_at", e3Start)
     .lte("created_at", e3End)
-    .eq("xp", 0);
+    .eq("xp", 0)
+    .eq("email_unsubscribed", false);
 
   if (e3Err) {
     console.error("[welcome-emails] email3 query failed:", e3Err.message);
@@ -318,12 +322,14 @@ export async function GET(request: Request) {
     }
 
     try {
+      const personalized = personalizeUnsubscribe(content, email);
       await resend.emails.send({
         from: "Learn to GPT <notifications@learntogpt.com>",
         to: email,
-        subject: content.subject,
-        html: content.html,
-        text: content.text,
+        subject: personalized.subject,
+        html: personalized.html,
+        text: personalized.text,
+        headers: buildUnsubscribeHeaders(email),
       });
 
       await supabase.from("welcome_email_log").upsert(

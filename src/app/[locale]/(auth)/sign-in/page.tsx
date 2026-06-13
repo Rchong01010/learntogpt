@@ -119,7 +119,15 @@ export default function SignInPage() {
           </div>
 
           <div className="flex flex-col gap-2">
-            <Label htmlFor="password">{t("passwordLabel")}</Label>
+            <div className="flex items-center justify-between">
+              <Label htmlFor="password">{t("passwordLabel")}</Label>
+              <Link
+                href="/forgot-password"
+                className="text-xs text-primary hover:underline"
+              >
+                {t("forgotPassword")}
+              </Link>
+            </div>
             <Input
               id="password"
               type="password"

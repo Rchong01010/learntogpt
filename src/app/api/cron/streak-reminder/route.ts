@@ -1,4 +1,5 @@
 import { Resend } from "resend";
+import { personalizeUnsubscribe, buildUnsubscribeHeaders } from "@/lib/unsubscribe-token";
 import { createSupabaseAdmin } from "@/lib/supabase-server";
 import { escapeHtml } from "@/lib/escape-html";
 
@@ -187,7 +188,8 @@ export async function GET(request: Request) {
   const { data: profiles, error: profileErr } = await supabase
     .from("user_profiles")
     .select("user_id, current_streak, streak_reminder_sent_at")
-    .gt("current_streak", 0);
+    .gt("current_streak", 0)
+    .eq("email_unsubscribed", false);
 
   if (profileErr) {
     console.error("[streak-reminder] profile query failed:", profileErr.message);
@@ -270,12 +272,14 @@ export async function GET(request: Request) {
     }
 
     try {
+      const personalized = personalizeUnsubscribe({ html, text }, c.email);
       await resend.emails.send({
         from: "Learn to GPT <notifications@learntogpt.com>",
         to: c.email,
         subject,
-        html,
-        text,
+        html: personalized.html,
+        text: personalized.text,
+        headers: buildUnsubscribeHeaders(c.email),
       });
 
       await supabase

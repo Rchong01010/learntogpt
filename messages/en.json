@@ -255,7 +255,25 @@
     "passwordTooShort": "Password must be at least 8 characters",
     "pleaseCompleteVerification": "Please complete the verification",
     "verificationFailed": "Verification failed. Please try again.",
-    "authCallbackError": "Sign-in failed. Please try again."
+    "authCallbackError": "Sign-in failed. Please try again.",
+    "forgotPassword": "Forgot password?",
+    "forgotPasswordTitle": "Reset your password",
+    "forgotPasswordDescription": "Enter your email and we'll send you a link to reset your password.",
+    "sendResetLink": "Send reset link",
+    "sendingResetLink": "Sending…",
+    "resetEmailSentTitle": "Check your email",
+    "backToSignIn": "Back to sign in",
+    "verifyingResetLink": "Verifying your reset link…",
+    "resetLinkInvalidTitle": "This link isn't valid",
+    "resetLinkInvalidDescription": "This password reset link is invalid or has expired. Request a new one below.",
+    "requestNewResetLink": "Request a new link",
+    "resetPasswordTitle": "Set a new password",
+    "resetPasswordDescription": "Choose a new password for your account.",
+    "newPasswordLabel": "New password",
+    "confirmPasswordLabel": "Confirm new password",
+    "passwordsDoNotMatch": "Passwords don't match.",
+    "updatingPassword": "Updating…",
+    "resetPasswordSubmit": "Update password"
   },
   "profile": {
     "defaultLearnerName": "Learner",
@@ -1289,6 +1307,24 @@
       "terms": "Terms",
       "copyright": "Learn to GPT"
     }
+  },
+  "checkoutStatus": {
+    "successTitle": "You're in — everything is unlocked",
+    "successBody": "Payment confirmed. All courses and the full toolkit are now yours.",
+    "activatingTitle": "Payment received — activating your access",
+    "activatingBody": "Your payment went through and we're switching everything on. This usually takes a few seconds.",
+    "canceledTitle": "Checkout canceled",
+    "canceledBody": "No charge was made. Pick up right where you left off whenever you're ready.",
+    "failedTitle": "That payment didn't go through",
+    "failedBody": "Something went wrong during checkout and you weren't charged. Give it another try.",
+    "unavailableTitle": "Checkout is temporarily unavailable",
+    "unavailableBody": "Purchases are paused on our end right now. Nothing was charged — please try again shortly.",
+    "rateLimitedTitle": "Too many checkout attempts",
+    "rateLimitedBody": "Give it a minute, then try again — your progress is safe.",
+    "refreshCta": "Refresh",
+    "tryAgainCta": "Try again",
+    "supportCta": "Email support",
+    "dismissLabel": "Dismiss"
   },
   "paywall": {
     "heading": "You've completed {count} free courses",
