@@ -1173,6 +1173,24 @@
       "copyright": "Learn to GPT"
     }
   },
+  "checkoutStatus": {
+    "successTitle": "Listo — todo está desbloqueado",
+    "successBody": "Pago confirmado. Todos los cursos y el kit completo de herramientas ya son tuyos.",
+    "activatingTitle": "Pago recibido — activando tu acceso",
+    "activatingBody": "Tu pago se procesó correctamente y estamos activando todo. Suele tardar unos segundos.",
+    "canceledTitle": "Compra cancelada",
+    "canceledBody": "No se realizó ningún cargo. Retoma donde lo dejaste cuando quieras.",
+    "failedTitle": "El pago no se completó",
+    "failedBody": "Algo salió mal durante el proceso de pago y no se te cobró nada. Inténtalo de nuevo.",
+    "unavailableTitle": "El pago no está disponible temporalmente",
+    "unavailableBody": "Las compras están pausadas por nuestra parte. No se cobró nada — inténtalo de nuevo en unos minutos.",
+    "rateLimitedTitle": "Demasiados intentos de compra",
+    "rateLimitedBody": "Espera un minuto e inténtalo de nuevo — tu progreso está a salvo.",
+    "refreshCta": "Actualizar",
+    "tryAgainCta": "Intentar de nuevo",
+    "supportCta": "Escribir a soporte",
+    "dismissLabel": "Cerrar"
+  },
   "paywall": {
     "heading": "Completaste {count} cursos gratuitos",
     "subheading": "Desbloquea todo — todos los cursos, plantillas de flujo de trabajo IA y el kit completo de herramientas.",

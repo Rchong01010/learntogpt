@@ -5,6 +5,8 @@ import { PLATFORM } from "@/lib/config";
 import { Link } from "@/i18n/routing";
 import { routing } from "@/i18n/routing";
 import { LocaleSwitcher } from "@/components/LocaleSwitcher";
+import { CheckoutStatusBanner } from "@/components/CheckoutStatusBanner";
+import { Suspense } from "react";
 import { ArrowRight, BookOpen, Sparkles, Code, Wrench, Award, Cog, Terminal } from "lucide-react";
 
 // Force dynamic rendering — lesson counts change, and SSG at build time
@@ -219,6 +221,14 @@ export default async function CurriculumPage({
       </nav>
 
       <main className="flex-1">
+        {/* Post-checkout outcome (?checkout=… / ?unlock=… params from the
+            checkout API redirects). Renders nothing without params. */}
+        <Suspense fallback={null}>
+          <div className="mx-auto max-w-5xl px-6 pt-8 empty:hidden">
+            <CheckoutStatusBanner />
+          </div>
+        </Suspense>
+
         {/* Hero */}
         <section className="mx-auto max-w-5xl px-6 pb-12 pt-20 text-center">
           <h1 className="text-4xl font-extrabold tracking-tight text-ink sm:text-5xl">

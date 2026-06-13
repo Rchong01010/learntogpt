@@ -11,16 +11,33 @@ import { FunnelTracker } from "@/components/FunnelTracker";
 import { BookOpen, ArrowRight, Sparkles, Rocket, Clock, Zap, ListChecks } from "lucide-react";
 import { TipOfTheDay } from "@/components/TipOfTheDay";
 import { Link } from "@/i18n/routing";
-import { requireUser } from "@/lib/auth";
+import { Suspense } from "react";
+import { CheckoutStatusBanner } from "@/components/CheckoutStatusBanner";
+import { requireUser, hasUnlocked } from "@/lib/auth";
 import { createSupabaseServer } from "@/lib/supabase-server";
 import { SocialProofBanner } from "@/components/social/SocialProofBanner";
 import { ActivityFeed } from "@/components/social/ActivityFeed";
 
 // ── Page ───────────────────────────────────────────────────
 
-export default async function DashboardPage() {
+export default async function DashboardPage({
+  searchParams,
+}: {
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
+}) {
   const user = await requireUser();
   const supabase = await createSupabaseServer();
+
+  // Post-checkout outcome: Stripe success_url lands here with
+  // ?unlock=success / ?checkout=success. Only when a success param is present
+  // do we check entitlement, so the banner can distinguish "unlocked" from
+  // "webhook still writing the unlock row" (activating state).
+  const sp = await searchParams;
+  const checkoutSuccess =
+    sp.unlock === "success" ||
+    sp.checkout === "success" ||
+    sp.masterclass === "success";
+  const entitled = checkoutSuccess ? await hasUnlocked(user.id) : undefined;
   const t = await getTranslations("dashboard");
   const tProfile = await getTranslations("profile");
   const locale = await getLocale();
@@ -267,6 +284,9 @@ export default async function DashboardPage() {
   if (isNewUser) {
     return (
       <div className="mx-auto max-w-7xl space-y-8">
+        <Suspense fallback={null}>
+          <CheckoutStatusBanner entitled={entitled} />
+        </Suspense>
         <FunnelTracker
           isNewSignup={!hasAnyProgress}
           hasXp={false}
@@ -363,6 +383,9 @@ export default async function DashboardPage() {
 
   return (
     <div className="mx-auto max-w-7xl space-y-8">
+      <Suspense fallback={null}>
+        <CheckoutStatusBanner entitled={entitled} />
+      </Suspense>
       <FunnelTracker
         isNewSignup={false}
         hasXp={xp > 0}

@@ -26,9 +26,25 @@ export async function generateMetadata({
 
 export default async function PricingPage({
   params,
+  searchParams,
 }: {
   params: Promise<{ locale: string }>;
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
 }) {
   const { locale } = await params;
-  redirect({ href: "/curriculum", locale });
+  const sp = await searchParams;
+
+  // Checkout API routes still redirect here with outcome params
+  // (?checkout=failed|unavailable|rate-limited|canceled). Forward them to
+  // /curriculum so the CheckoutStatusBanner mounted there can render them.
+  const query: Record<string, string> = {};
+  for (const key of ["checkout", "unlock", "masterclass"]) {
+    const value = sp[key];
+    if (typeof value === "string") query[key] = value;
+  }
+
+  redirect({
+    href: { pathname: "/curriculum", query },
+    locale,
+  });
 }

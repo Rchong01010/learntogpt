@@ -1338,5 +1338,23 @@
     "terminalMessage": "learn-to-gpt --start",
     "homeLink": "Voltar ao início",
     "coursesLink": "Ver cursos"
+  },
+  "checkoutStatus": {
+    "successTitle": "Pronto — tudo desbloqueado",
+    "successBody": "Pagamento confirmado. Todos os cursos e o kit completo agora são seus.",
+    "activatingTitle": "Pagamento recebido — ativando seu acesso",
+    "activatingBody": "Seu pagamento foi aprovado e estamos liberando tudo. Costuma levar só alguns segundos.",
+    "canceledTitle": "Compra cancelada",
+    "canceledBody": "Nada foi cobrado. Continue de onde parou quando quiser.",
+    "failedTitle": "O pagamento não foi concluído",
+    "failedBody": "Algo deu errado no checkout e nada foi cobrado. Tente novamente.",
+    "unavailableTitle": "Checkout temporariamente indisponível",
+    "unavailableBody": "As compras estão pausadas do nosso lado. Nada foi cobrado — tente novamente em instantes.",
+    "rateLimitedTitle": "Muitas tentativas de compra",
+    "rateLimitedBody": "Espere um minuto e tente de novo — seu progresso está seguro.",
+    "refreshCta": "Atualizar",
+    "tryAgainCta": "Tentar novamente",
+    "supportCta": "Falar com o suporte",
+    "dismissLabel": "Fechar"
   }
 }

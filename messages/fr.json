@@ -1174,6 +1174,24 @@
       "copyright": "Learn to GPT"
     }
   },
+  "checkoutStatus": {
+    "successTitle": "C'est fait — tout est débloqué",
+    "successBody": "Paiement confirmé. Tous les cours et la boîte à outils complète sont à vous.",
+    "activatingTitle": "Paiement reçu — activation de votre accès",
+    "activatingBody": "Votre paiement a bien été effectué et nous activons tout. Cela ne prend généralement que quelques secondes.",
+    "canceledTitle": "Paiement annulé",
+    "canceledBody": "Aucun montant n'a été débité. Reprenez là où vous en étiez quand vous voulez.",
+    "failedTitle": "Le paiement n'a pas abouti",
+    "failedBody": "Une erreur s'est produite pendant le paiement et vous n'avez pas été débité. Réessayez.",
+    "unavailableTitle": "Paiement temporairement indisponible",
+    "unavailableBody": "Les achats sont suspendus de notre côté pour le moment. Rien n'a été débité — réessayez sous peu.",
+    "rateLimitedTitle": "Trop de tentatives de paiement",
+    "rateLimitedBody": "Patientez une minute puis réessayez — votre progression est en sécurité.",
+    "refreshCta": "Actualiser",
+    "tryAgainCta": "Réessayer",
+    "supportCta": "Contacter le support",
+    "dismissLabel": "Fermer"
+  },
   "paywall": {
     "heading": "Vous avez terminé {count} cours gratuits",
     "subheading": "Débloquez tout — tous les cours, les templates de workflow IA et la boîte à outils complète.",
