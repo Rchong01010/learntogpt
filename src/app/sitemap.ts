@@ -27,7 +27,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Wave 2 (GTM bible v2.0 §3): /pricing is dropped from the sitemap. The
   // route still exists (redirects to /curriculum) so existing inbound links
   // don't 404, but we don't actively advertise it for indexing.
-  const routes = ["", "/curriculum", "/learn", "/prompt-engineering", "/getting-started", "/ai-training", "/for-teams", "/certification", "/affiliates/apply", "/sign-up", "/sign-in", "/privacy", "/terms", "/learn-chatgpt", "/chatgpt-tutorial", "/how-to-use-chatgpt", "/chatgpt-for-beginners", "/chatgpt-prompts", "/custom-gpts-tutorial", "/chatgpt-tips", "/chatgpt-for-business", "/chatgpt-vs-claude", "/chatgpt-api-tutorial", "/chatgpt-for-writers", "/chatgpt-for-data-analysis", "/chatgpt-for-marketing", "/chatgpt-vs-gemini", "/is-chatgpt-free", "/chatgpt-system-prompts", "/ai-certification", "/learn-ai", "/ai-for-beginners", "/ai-automation", "/ai-pair-programming", "/claude-vs-chatgpt", "/claude-for-developers", "/claude-api-tutorial", "/claude-code-setup", "/best-claude-prompts", "/claude-for-business", "/claude-projects", "/claude-memory", "/claude-code-cheat-sheet", "/claude-for-marketing", "/is-claude-free", "/claude-system-prompts", "/claude-vs-copilot", "/claude-tool-use", "/claude-agents", "/claude-code-tutorial", "/claude-sonnet-vs-opus", "/what-is-claude", "/claude-vs-gemini", "/claude-code-vs-cursor", "/claude-mcp-servers", "/claude-artifacts", "/claude-extended-thinking", "/claude-for-writers", "/claude-for-data-analysis", "/claude-code-debugging", "/claude-code-tdd", "/claude-code-projects", "/claude-hooks", "/claude-for-non-programmers", "/claude-batch-api", "/claude-context-window", "/claude-code-multi-agent", "/claude-code-security"];
+  const routes = ["", "/curriculum", "/learn", "/prompt-engineering", "/getting-started", "/ai-training", "/for-teams", "/certification", "/affiliates/apply", "/sign-up", "/sign-in", "/privacy", "/terms", "/learn-chatgpt", "/chatgpt-tutorial", "/how-to-use-chatgpt", "/chatgpt-for-beginners", "/chatgpt-prompts", "/custom-gpts-tutorial", "/chatgpt-tips", "/chatgpt-for-business", "/chatgpt-vs-claude", "/chatgpt-api-tutorial", "/ai-certification", "/learn-ai", "/ai-for-beginners", "/ai-automation", "/ai-pair-programming", "/claude-vs-chatgpt", "/claude-for-developers", "/claude-api-tutorial", "/claude-code-setup", "/best-claude-prompts", "/claude-for-business", "/claude-projects", "/claude-memory", "/claude-code-cheat-sheet", "/claude-for-marketing", "/is-claude-free", "/claude-system-prompts", "/claude-vs-copilot", "/claude-tool-use", "/claude-agents", "/claude-code-tutorial", "/claude-sonnet-vs-opus", "/what-is-claude", "/claude-vs-gemini", "/claude-code-vs-cursor", "/claude-mcp-servers", "/claude-artifacts", "/claude-extended-thinking", "/claude-for-writers", "/claude-for-data-analysis", "/claude-code-debugging", "/claude-code-tdd", "/claude-code-projects", "/claude-hooks", "/claude-for-non-programmers", "/claude-batch-api", "/claude-context-window", "/claude-code-multi-agent", "/claude-code-security"];
 
   const pathFor = (locale: string, route: string) =>
     `${base}${locale === routing.defaultLocale ? "" : `/${locale}`}${route}`;
@@ -75,6 +75,31 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     .eq("is_free", true)
     .eq("courses.platform", PLATFORM);
 
+  // The courses!inner(...) relation is many-to-one, so supabase-js returns an
+  // OBJECT, not an array — indexing it like courses[0] silently yields ""
+  // and produced /courses//<lesson> locs (95 malformed entries). Normalize
+  // both shapes. (Ported from claude-academy's fix.)
+  const relCourseSlug = (rel: unknown): string => {
+    if (Array.isArray(rel)) return rel[0]?.slug || "";
+    return (rel as { slug?: string } | null)?.slug || "";
+  };
+
+  // hreflang alternates only for locales that actually have the row —
+  // unconditional alternates advertised 404s for untranslated content.
+  const courseLocales = new Map<string, Set<string>>();
+  for (const c of (freeCourses || []) as { slug: string; locale: string }[]) {
+    (courseLocales.get(c.slug) ?? courseLocales.set(c.slug, new Set()).get(c.slug)!).add(c.locale);
+  }
+  const lessonLocales = new Map<string, Set<string>>();
+  for (const l of (freeLessons || []) as { slug: string; locale: string; courses: unknown }[]) {
+    const key = `${relCourseSlug(l.courses)}/${l.slug}`;
+    (lessonLocales.get(key) ?? lessonLocales.set(key, new Set()).get(key)!).add(l.locale);
+  }
+  const altLanguages = (route: string, locales: Set<string>) =>
+    Object.fromEntries(
+      routing.locales.filter((loc) => locales.has(loc)).map((loc) => [loc, pathFor(loc, route)])
+    );
+
   const courseEntries: MetadataRoute.Sitemap = (freeCourses || []).map(
     (course: { id: string; slug: string; locale: string }) => {
       const courseRoute = `/courses/${course.slug}`;
@@ -83,36 +108,35 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         lastModified: new Date(),
         priority: 0.7 as const,
         alternates: {
-          languages: Object.fromEntries(
-            routing.locales.map((loc) => [loc, pathFor(loc, courseRoute)])
-          ),
+          languages: altLanguages(courseRoute, courseLocales.get(course.slug) ?? new Set([course.locale])),
         },
       };
     }
   );
 
-  const lessonEntries: MetadataRoute.Sitemap = (freeLessons || []).map(
-    (lesson: {
-      id: string;
-      slug: string;
-      locale: string;
-      course_id: string;
-      courses: { slug: string }[];
-    }) => {
-      const courseSlug = lesson.courses?.[0]?.slug || "";
-      const lessonRoute = `/courses/${courseSlug}/${lesson.slug}`;
-      return {
-        url: pathFor(lesson.locale, lessonRoute),
-        lastModified: new Date(),
-        priority: 0.6 as const,
-        alternates: {
-          languages: Object.fromEntries(
-            routing.locales.map((loc) => [loc, pathFor(loc, lessonRoute)])
-          ),
-        },
-      };
-    }
-  );
+  const lessonEntries: MetadataRoute.Sitemap = (freeLessons || [])
+    .filter((lesson: { courses: unknown }) => relCourseSlug(lesson.courses) !== "")
+    .map(
+      (lesson: {
+        id: string;
+        slug: string;
+        locale: string;
+        course_id: string;
+        courses: unknown;
+      }) => {
+        const courseSlug = relCourseSlug(lesson.courses);
+        const lessonRoute = `/courses/${courseSlug}/${lesson.slug}`;
+        const key = `${courseSlug}/${lesson.slug}`;
+        return {
+          url: pathFor(lesson.locale, lessonRoute),
+          lastModified: new Date(),
+          priority: 0.6 as const,
+          alternates: {
+            languages: altLanguages(lessonRoute, lessonLocales.get(key) ?? new Set([lesson.locale])),
+          },
+        };
+      }
+    );
 
   return [...staticEntries, ...courseEntries, ...lessonEntries];
 }
