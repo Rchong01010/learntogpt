@@ -1207,23 +1207,5 @@
     "terminalMessage": "learn-to-gpt --start",
     "homeLink": "ホームに戻る",
     "coursesLink": "コースを見る"
-  },
-  "checkoutStatus": {
-    "successTitle": "完了しました — すべてのロックが解除されました",
-    "successBody": "お支払いが確認できました。全コースとツールキット一式をご利用いただけます。",
-    "activatingTitle": "お支払いを受け付けました — アクセスを有効化しています",
-    "activatingBody": "お支払いは完了しており、現在アクセスを有効化しています。通常は数秒で完了します。",
-    "canceledTitle": "チェックアウトがキャンセルされました",
-    "canceledBody": "請求は発生していません。準備ができたらいつでも再開できます。",
-    "failedTitle": "お支払いが完了しませんでした",
-    "failedBody": "チェックアウト中に問題が発生し、請求は行われていません。もう一度お試しください。",
-    "unavailableTitle": "チェックアウトは一時的にご利用いただけません",
-    "unavailableBody": "現在、購入を一時停止しています。請求は発生していません — しばらくしてからもう一度お試しください。",
-    "rateLimitedTitle": "チェックアウトの試行回数が多すぎます",
-    "rateLimitedBody": "1分ほど待ってから再度お試しください — 学習の進捗は保持されています。",
-    "refreshCta": "更新",
-    "tryAgainCta": "もう一度試す",
-    "supportCta": "サポートに連絡",
-    "dismissLabel": "閉じる"
   }
 }
