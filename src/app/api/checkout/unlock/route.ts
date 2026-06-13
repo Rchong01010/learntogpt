@@ -64,7 +64,11 @@ export async function GET(request: NextRequest) {
   } = await supabase.auth.getUser();
 
   if (!user) {
-    return redirectWithCookies("/sign-in");
+    // Preserve purchase intent: after sign-in, route straight back into the
+    // checkout flow instead of stranding the buyer on the dashboard.
+    return redirectWithCookies(
+      `/sign-in?redirect=${encodeURIComponent("/api/checkout/unlock")}`
+    );
   }
 
   const rl = rateLimit(user.id, { limit: 5, windowSeconds: 60 });

@@ -150,7 +150,7 @@ export async function GET(request: NextRequest) {
   // on redirect). See memory: feedback_supabase_ssr_cookies.md.
   const planIntent = request.cookies.get("plan_intent")?.value;
   const defaultDestination =
-    planIntent === "pro" ? "/api/checkout" : "/dashboard";
+    planIntent === "pro" ? "/api/checkout/unlock" : "/dashboard";
   const finalDestination = safeRedirectPath(next, defaultDestination);
 
   // Build the /auth-success URL with the real destination as ?next= so the
