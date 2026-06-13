@@ -21,6 +21,28 @@ import { createClient } from "@supabase/supabase-js";
 import { readFileSync } from "fs";
 import { join } from "path";
 
+// ── QUARANTINED (2026-06-12) — mirrors the claude-academy quarantine ────────
+// This script is unsafe against the current shared schema:
+//  1. Its upsert uses the stale 2-col onConflict (slug, locale); the live
+//     unique index is (slug, locale, platform) since migration 030.
+//  2. Its lookups/deletes have NO platform filter — slugs are shared between
+//     claude-academy and learntogpt, so it can delete the OTHER product's rows.
+//  3. It deletes lessons, which CASCADE-deletes user progress/attempts.
+// Fix all three before removing this guard.
+if (process.env.RESEED_I_KNOW_WHAT_IM_DOING !== "1") {
+  console.error(
+    [
+      "REFUSING TO RUN: scripts/reseed-course.ts is quarantined.",
+      "- stale onConflict (slug, locale) vs live (slug, locale, platform) index",
+      "- no platform filter: shared slugs mean it can clobber claude-academy rows",
+      "- deletes lessons -> CASCADE-deletes user progress",
+      "Set RESEED_I_KNOW_WHAT_IM_DOING=1 only after fixing the above.",
+    ].join("\n")
+  );
+  process.exit(1);
+}
+// ────────────────────────────────────────────────────────────────────────────
+
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const SERVICE_ROLE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY;
 

@@ -50,3 +50,7 @@ supabase/.temp/
 
 # scratch
 distribution/
+
+# Local design experiments + prospect dumps + one-off CA-fork scripts (not product code)
+design-*.html
+affiliate-prospects-*/
