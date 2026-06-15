@@ -15,6 +15,7 @@ import {
 import type { Mission, MissionStep, UserMission, MissionStepType } from '@/types';
 import { createSupabaseServer } from '@/lib/supabase-server';
 import { getUser } from '@/lib/auth';
+import { MISSIONS_ENABLED } from '@/lib/config';
 import { MissionPlayerClient } from './MissionPlayerClient';
 import { StartMissionButton } from './StartMissionButton';
 
@@ -43,6 +44,9 @@ export default async function MissionDetailPage({
 }: {
   params: Promise<{ slug: string }>;
 }) {
+  // Missions are Claude-branded and not platform-scoped — hidden on LearnToGPT.
+  if (!MISSIONS_ENABLED) notFound();
+
   const { slug } = await params;
   const supabase = await createSupabaseServer();
 

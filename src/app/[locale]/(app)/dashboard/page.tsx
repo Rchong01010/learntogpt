@@ -1,5 +1,5 @@
 import type { Achievement, Track, Mission } from "@/types";
-import { PLATFORM } from "@/lib/config";
+import { PLATFORM, MISSIONS_ENABLED } from "@/lib/config";
 import { getLocale, getTranslations } from "next-intl/server";
 import { XPBar } from "@/components/gamification/XPBar";
 import { StreakCounter } from "@/components/gamification/StreakCounter";
@@ -92,22 +92,28 @@ export default async function DashboardPage({
   const longestStreak = profile?.longest_streak ?? 0;
   const isNewUser = !profile || xp === 0;
 
-  // Fetch missions + user's missions for onboarding display
-  const { data: allMissions } = await supabase
-    .from("missions")
-    .select("id, title, slug, description, difficulty, cover_emoji, estimated_hours, max_xp, step_count, is_free")
-    .order("created_at", { ascending: true })
-    .limit(4);
+  // Fetch missions + user's missions for onboarding display.
+  // Missions are disabled on LearnToGPT (Claude-branded, not platform-scoped —
+  // see MISSIONS_ENABLED in @/lib/config), so skip the fetch + picker entirely.
+  let missionsList: Mission[] = [];
+  let showMissionPicker = false;
+  if (MISSIONS_ENABLED) {
+    const { data: allMissions } = await supabase
+      .from("missions")
+      .select("id, title, slug, description, difficulty, cover_emoji, estimated_hours, max_xp, step_count, is_free")
+      .order("created_at", { ascending: true })
+      .limit(4);
 
-  const { data: userMissionsData } = await supabase
-    .from("user_missions")
-    .select("id")
-    .eq("user_id", user.id)
-    .limit(1);
+    const { data: userMissionsData } = await supabase
+      .from("user_missions")
+      .select("id")
+      .eq("user_id", user.id)
+      .limit(1);
 
-  const missionsList = (allMissions ?? []) as Mission[];
-  const hasNoMissions = !userMissionsData || userMissionsData.length === 0;
-  const showMissionPicker = isNewUser && hasNoMissions;
+    missionsList = (allMissions ?? []) as Mission[];
+    const hasNoMissions = !userMissionsData || userMissionsData.length === 0;
+    showMissionPicker = isNewUser && hasNoMissions;
+  }
 
   // Build progress lookup: lesson_id -> status
   const progressMap = new Map(

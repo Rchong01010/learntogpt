@@ -27,7 +27,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Wave 2 (GTM bible v2.0 §3): /pricing is dropped from the sitemap. The
   // route still exists (redirects to /curriculum) so existing inbound links
   // don't 404, but we don't actively advertise it for indexing.
-  const routes = ["", "/curriculum", "/learn", "/prompt-engineering", "/getting-started", "/ai-training", "/for-teams", "/certification", "/affiliates/apply", "/sign-up", "/sign-in", "/privacy", "/terms", "/learn-chatgpt", "/chatgpt-tutorial", "/how-to-use-chatgpt", "/chatgpt-for-beginners", "/chatgpt-prompts", "/custom-gpts-tutorial", "/chatgpt-tips", "/chatgpt-for-business", "/chatgpt-vs-claude", "/chatgpt-api-tutorial", "/ai-certification", "/learn-ai", "/ai-for-beginners", "/ai-automation", "/ai-pair-programming", "/claude-vs-chatgpt", "/claude-for-developers", "/claude-api-tutorial", "/claude-code-setup", "/best-claude-prompts", "/claude-for-business", "/claude-projects", "/claude-memory", "/claude-code-cheat-sheet", "/claude-for-marketing", "/is-claude-free", "/claude-system-prompts", "/claude-vs-copilot", "/claude-tool-use", "/claude-agents", "/claude-code-tutorial", "/claude-sonnet-vs-opus", "/what-is-claude", "/claude-vs-gemini", "/claude-code-vs-cursor", "/claude-mcp-servers", "/claude-artifacts", "/claude-extended-thinking", "/claude-for-writers", "/claude-for-data-analysis", "/claude-code-debugging", "/claude-code-tdd", "/claude-code-projects", "/claude-hooks", "/claude-for-non-programmers", "/claude-batch-api", "/claude-context-window", "/claude-code-multi-agent", "/claude-code-security"];
+  // NOTE: 26 Claude-developer-tooling slugs (claude-code*, claude-mcp*,
+  // claude-hooks, claude-api-tutorial, claude-system-prompts, claude-agents,
+  // claude-artifacts, claude-tool-use, claude-extended-thinking,
+  // claude-context-window, claude-memory, claude-projects, claude-for-developers,
+  // claude-sonnet-vs-opus, claude-slash-commands, claude-batch-api) are 301'd to
+  // claude-academy.com (see next.config.ts CLAUDE_DEV_REDIRECT_SLUGS) and are
+  // intentionally OMITTED here so they're not advertised for indexing on LG.
+  // Cross-brand comparisons and general Claude-product pages are kept below.
+  const routes = ["", "/curriculum", "/learn", "/prompt-engineering", "/getting-started", "/ai-training", "/for-teams", "/certification", "/affiliates/apply", "/sign-up", "/sign-in", "/privacy", "/terms", "/learn-chatgpt", "/chatgpt-tutorial", "/how-to-use-chatgpt", "/chatgpt-for-beginners", "/chatgpt-prompts", "/custom-gpts-tutorial", "/chatgpt-tips", "/chatgpt-for-business", "/chatgpt-vs-claude", "/chatgpt-api-tutorial", "/ai-certification", "/learn-ai", "/ai-for-beginners", "/ai-automation", "/ai-pair-programming", "/claude-vs-chatgpt", "/best-claude-prompts", "/claude-for-business", "/claude-for-marketing", "/is-claude-free", "/claude-vs-copilot", "/what-is-claude", "/claude-vs-gemini", "/claude-for-writers", "/claude-for-data-analysis", "/claude-for-non-programmers"];
 
   const pathFor = (locale: string, route: string) =>
     `${base}${locale === routing.defaultLocale ? "" : `/${locale}`}${route}`;

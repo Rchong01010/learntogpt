@@ -1,6 +1,7 @@
 import type { NextRequest } from "next/server";
 import { createSupabaseServer } from "@/lib/supabase-server";
 import { rateLimit, getClientIP } from "@/lib/rate-limit";
+import { MISSIONS_ENABLED } from "@/lib/config";
 
 const SLUG_REGEX = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 
@@ -8,6 +9,11 @@ export async function GET(
   request: NextRequest,
   { params }: { params: Promise<{ slug: string }> }
 ) {
+  // Missions are Claude-branded and not platform-scoped — disabled on LearnToGPT.
+  if (!MISSIONS_ENABLED) {
+    return Response.json({ error: "Not found" }, { status: 404 });
+  }
+
   const ip = getClientIP(request);
   const rl = rateLimit(`missions:detail:${ip}`, { limit: 30, windowSeconds: 60 });
   if (!rl.allowed) {

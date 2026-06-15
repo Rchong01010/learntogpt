@@ -3,6 +3,7 @@ import { createSupabaseServer, createSupabaseAdmin } from "@/lib/supabase-server
 import { rateLimit } from "@/lib/rate-limit";
 import { validateOrigin } from "@/lib/auth";
 import { getLevelFromXP } from "@/types";
+import { MISSIONS_ENABLED } from "@/lib/config";
 
 const SLUG_REGEX = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 
@@ -10,6 +11,11 @@ export async function POST(
   request: NextRequest,
   { params }: { params: Promise<{ slug: string }> }
 ) {
+  // Missions are Claude-branded and not platform-scoped — disabled on LearnToGPT.
+  if (!MISSIONS_ENABLED) {
+    return Response.json({ error: "Not found" }, { status: 404 });
+  }
+
   if (!validateOrigin(request)) {
     return Response.json({ error: "Invalid origin" }, { status: 403 });
   }

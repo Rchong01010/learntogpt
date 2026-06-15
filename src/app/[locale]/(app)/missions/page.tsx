@@ -1,13 +1,18 @@
+import { notFound } from 'next/navigation';
 import { Rocket } from 'lucide-react';
 import type { Mission, UserMission } from '@/types';
 import { createSupabaseServer } from '@/lib/supabase-server';
 import { getUser } from '@/lib/auth';
+import { MISSIONS_ENABLED } from '@/lib/config';
 import { MissionsFilter } from './MissionsFilter';
 
 // ---------------------------------------------------------------------------
 // Page
 // ---------------------------------------------------------------------------
 export default async function MissionsPage() {
+  // Missions are Claude-branded and not platform-scoped — hidden on LearnToGPT.
+  if (!MISSIONS_ENABLED) notFound();
+
   const supabase = await createSupabaseServer();
   const user = await getUser();
 

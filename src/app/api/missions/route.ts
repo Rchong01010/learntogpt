@@ -1,9 +1,15 @@
 import { createSupabaseServer } from "@/lib/supabase-server";
 import { rateLimit, getClientIP } from "@/lib/rate-limit";
+import { MISSIONS_ENABLED } from "@/lib/config";
 
 const DIFFICULTY_ORDER = ["beginner", "intermediate", "advanced", "expert"];
 
 export async function GET(request: Request) {
+  // Missions are Claude-branded and not platform-scoped — disabled on LearnToGPT.
+  if (!MISSIONS_ENABLED) {
+    return Response.json({ missions: [] });
+  }
+
   const ip = getClientIP(request);
   const rl = rateLimit(`missions:list:${ip}`, { limit: 30, windowSeconds: 60 });
   if (!rl.allowed) {
