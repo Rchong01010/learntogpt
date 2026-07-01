@@ -1,5 +1,6 @@
 import { createSupabaseServer } from "@/lib/supabase-server";
 import { rateLimit } from "@/lib/rate-limit";
+import { maskDisplayName } from "@/lib/leaderboard-privacy";
 
 export async function GET() {
   const supabase = await createSupabaseServer();
@@ -17,7 +18,7 @@ export async function GET() {
   }
 
   const { data, error } = await supabase
-    .from("user_profiles")
+    .from("v_leaderboard")
     .select("display_name, avatar_url, total_xp, level, current_streak")
     .order("total_xp", { ascending: false })
     .limit(50);
@@ -28,7 +29,7 @@ export async function GET() {
 
   const leaderboard = (data ?? []).map((row, index) => ({
     rank: index + 1,
-    display_name: row.display_name,
+    display_name: maskDisplayName(row.display_name || ""),
     avatar_url: row.avatar_url,
     total_xp: row.total_xp,
     level: row.level,

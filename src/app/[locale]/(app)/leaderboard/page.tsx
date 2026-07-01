@@ -6,6 +6,7 @@ import { getLocale, getTranslations } from "next-intl/server";
 import { cn } from "@/lib/utils";
 import { getUser } from "@/lib/auth";
 import { createSupabaseServer } from "@/lib/supabase-server";
+import { maskDisplayName } from "@/lib/leaderboard-privacy";
 import { Link } from "@/i18n/routing";
 
 const rankEmoji: Record<number, string> = {
@@ -13,14 +14,6 @@ const rankEmoji: Record<number, string> = {
   2: "\ud83e\udd48",
   3: "\ud83e\udd49",
 };
-
-/** Mask email addresses on the leaderboard for privacy. "javier@gmail.com" → "jav***" */
-function maskDisplayName(name: string): string {
-  if (!name.includes("@")) return name;
-  const local = name.split("@")[0];
-  if (local.length <= 2) return local[0] + "***";
-  return local.slice(0, 3) + "***";
-}
 
 // ── Seed entries for empty locales ────────────────────────────
 
@@ -76,15 +69,15 @@ export default async function LeaderboardPage({
   // Note: preferred_locale is never written by app code (always defaults to
   // 'en'), so filtering by it would show nothing for non-EN locales. Use the
   // same global query for both tabs until locale preference is implemented.
-  let localeQuery = supabase
-    .from("user_profiles")
+  const localeQuery = supabase
+    .from("v_leaderboard")
     .select("user_id, display_name, avatar_url, total_xp, level, current_streak")
     .order("total_xp", { ascending: false })
     .limit(50);
 
   // ── Fetch global entries ──
-  let globalQuery = supabase
-    .from("user_profiles")
+  const globalQuery = supabase
+    .from("v_leaderboard")
     .select("user_id, display_name, avatar_url, total_xp, level, current_streak")
     .order("total_xp", { ascending: false })
     .limit(50);
