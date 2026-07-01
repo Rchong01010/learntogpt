@@ -2,6 +2,37 @@ import { createSupabaseServer } from "@/lib/supabase-server";
 import { redirect } from "next/navigation";
 import type { Subscription, SubscriptionStatus } from "@/types";
 import { PLATFORM } from "@/lib/config";
+import { createHash, timingSafeEqual } from "node:crypto";
+
+/**
+ * Constant-time comparison of the incoming `Authorization` header against the
+ * expected `Bearer <CRON_SECRET>` value. Used by cron routes.
+ *
+ * A naive `auth !== \`Bearer ${secret}\`` compare short-circuits on the first
+ * differing byte, which leaks secret length/prefix via timing. This hashes both
+ * sides to fixed-width digests and compares with `timingSafeEqual`, so the
+ * comparison time is independent of the secret's contents and length.
+ *
+ * @param authHeader the raw `Authorization` request header (may be null)
+ * @param cronSecret the configured CRON_SECRET (must be non-empty)
+ * @returns true only if the header exactly equals `Bearer <cronSecret>`
+ */
+export function verifyCronAuth(
+  authHeader: string | null,
+  cronSecret: string,
+): boolean {
+  if (!authHeader || !cronSecret) return false;
+
+  const expected = `Bearer ${cronSecret}`;
+
+  // Hash both sides to equal-length buffers so timingSafeEqual never throws on
+  // a length mismatch and the comparison stays constant-time regardless of the
+  // attacker-supplied header length.
+  const a = createHash("sha256").update(authHeader).digest();
+  const b = createHash("sha256").update(expected).digest();
+
+  return timingSafeEqual(a, b);
+}
 
 /**
  * Validates that the request Origin header matches the app's allowed origin.

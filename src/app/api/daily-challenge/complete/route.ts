@@ -54,36 +54,35 @@ export async function POST(request: Request) {
 
   const adminSupabase = await createSupabaseAdmin();
 
-  // Server-side dedup: check user_streaks for today.
-  // If a streak entry already exists for today with completed_lessons > 0
-  // AND a daily_challenge flag, reject the duplicate.
-  // We use welcome_email_log pattern: upsert a marker row with a unique key.
-  // Lightweight approach: check user_streaks for today — if the daily challenge
-  // XP was already awarded, the streak entry's completed_lessons will be > 0.
-  // More robust: use a dedicated check against a challenge-specific field.
+  // Server-side dedup — atomic and cold-start-proof. Claim today's completion by
+  // inserting into daily_challenge_completions, which is UNIQUE on
+  // (user_id, challenge_date). If the row already exists the insert fails with
+  // Postgres 23505 (unique_violation) → the user already completed today.
   //
-  // Simplest robust approach: try to insert a row in welcome_email_log with
-  // email_number=99 (reserved for daily challenge) + today's date as a dedup key.
-  // But that's a hack. Instead, use user_streaks date check directly.
-  const { data: existingStreak } = await adminSupabase
-    .from("user_streaks")
-    .select("completed_lessons")
-    .eq("user_id", user.id)
-    .eq("date", today)
-    .maybeSingle();
+  // This replaces the previous in-memory rateLimit() guard, which lived in a
+  // single serverless instance's memory and reset on cold start — letting a user
+  // re-claim daily-challenge XP repeatedly by landing on a fresh instance.
+  // Table is created by claude-academy migration 038 (shared DB).
+  const { error: claimErr } = await adminSupabase
+    .from("daily_challenge_completions")
+    .insert({ user_id: user.id, challenge_date: today });
 
-  // If user already has a streak entry with completed_lessons > 0 for today,
-  // they already completed a challenge or lesson. We allow the first daily
-  // challenge completion only if we haven't awarded challenge XP yet.
-  // Use a simple flag: store challenge completion in localStorage on client,
-  // and here we check if this specific request is a duplicate by using
-  // a rate limit of 1 per day (stricter than the 5/min general limit).
-  const dailyKey = `daily_challenge:${user.id}:${today}`;
-  const dailyRl = rateLimit(dailyKey, { limit: 1, windowSeconds: 86400 });
-  if (!dailyRl.allowed) {
+  if (claimErr) {
+    // 23505 = unique_violation → already claimed today. Expected, not an error.
+    if (claimErr.code === "23505") {
+      return Response.json(
+        { error: "Already completed today", success: false },
+        { status: 409 },
+      );
+    }
+    // Any other DB failure: fail loud and do NOT award XP (never award unmetered).
+    console.error("[daily-challenge] dedup claim failed:", {
+      userId: user.id,
+      error: claimErr.message,
+    });
     return Response.json(
-      { error: "Already completed today", success: false },
-      { status: 409 },
+      { error: "Could not record completion" },
+      { status: 500 },
     );
   }
 

@@ -1,4 +1,5 @@
 import { Resend } from "resend";
+import { verifyCronAuth } from "@/lib/auth";
 import { personalizeUnsubscribe, buildUnsubscribeHeaders } from "@/lib/unsubscribe-token";
 import { createSupabaseAdmin } from "@/lib/supabase-server";
 import { escapeHtml } from "@/lib/escape-html";
@@ -110,7 +111,7 @@ export async function GET(request: Request) {
   }
 
   const auth = request.headers.get("authorization");
-  if (auth !== `Bearer ${cronSecret}`) {
+  if (!verifyCronAuth(auth, cronSecret)) {
     return Response.json({ error: "Unauthorized" }, { status: 401 });
   }
 
