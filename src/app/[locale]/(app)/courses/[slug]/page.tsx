@@ -15,8 +15,8 @@ import {
 import { TRACK_INFO } from '@/types';
 import type { Track, LessonStatus } from '@/types';
 import { createSupabaseServer } from '@/lib/supabase-server';
+import { getCourseContent } from '@/lib/content-cache';
 import { getUser, isPro, getCompletedCourseCount } from '@/lib/auth';
-import { PLATFORM } from '@/lib/config';
 import { PaywallCta } from '@/components/PaywallCta';
 import { CompletionCertificate } from '@/components/CompletionCertificate';
 import { CourseJsonLd } from '@/components/CourseJsonLd';
@@ -34,19 +34,13 @@ export async function generateMetadata({
   params: Promise<{ locale: string; slug: string }>;
 }): Promise<Metadata> {
   const { locale, slug } = await params;
-  const supabase = await createSupabaseServer();
 
-  const { data: course } = await supabase
-    .from('courses')
-    .select('title, description, track, difficulty')
-    .eq('slug', slug)
-    .eq('locale', locale)
-    .eq('platform', PLATFORM)
-    .single();
-
-  if (!course) {
+  // Reuse the cached content read — same (locale, slug) as the page body.
+  const content = await getCourseContent(locale, slug);
+  if (!content) {
     return { title: 'Course Not Found | Learn to GPT' };
   }
+  const { course } = content;
 
   const baseUrl =
     process.env.NEXT_PUBLIC_APP_URL || 'https://learntogpt.com';
@@ -139,30 +133,15 @@ export default async function CourseDetailPage({
   const t = await getTranslations('courses');
   const locale = await getLocale();
 
-  // Fetch course by slug, scoped to the user's locale.
-  // DB has (slug, locale) composite unique after migration 012, so the same
-  // slug can have multiple rows (one per translated locale). Filtering by
-  // locale here ensures .single() returns exactly one row.
-  const { data: course, error: courseError } = await supabase
-    .from('courses')
-    .select('id, title, slug, description, track, difficulty, order_index, is_free, icon, lesson_count, campaign_order, level_required, prerequisite_slug, created_at')
-    .eq('slug', slug)
-    .eq('locale', locale)
-    .eq('platform', PLATFORM)
-    .single();
-
-  if (courseError || !course) {
+  // Course + lessons are identical for every visitor → cached, cookieless read
+  // (see content-cache.ts). Per-user progress/profile below stays live. A real
+  // DB error throws (→ error boundary, canary catches); not-found → notFound().
+  const content = await getCourseContent(locale, slug);
+  if (!content) {
     notFound();
   }
-
-  // Fetch lessons for this course
-  const { data: lessons } = await supabase
-    .from('lessons')
-    .select('id, course_id, title, slug, description, order_index, xp_reward, estimated_minutes, is_free, created_at')
-    .eq('course_id', course.id)
-    .order('order_index');
-
-  const lessonList = lessons ?? [];
+  const { course, lessons } = content;
+  const lessonList = lessons;
 
   // ── Auth + paywall ────────────────────────────────────────────────────────
   // Paywall v1: first 1 completed course is free; 2nd+ requires one-time

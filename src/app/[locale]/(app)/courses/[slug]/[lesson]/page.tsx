@@ -4,8 +4,8 @@ import { getLocale } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
 import { redirect } from 'next/navigation';
 import { createSupabaseServer } from '@/lib/supabase-server';
+import { getLessonContent } from '@/lib/content-cache';
 import { requireUser, getUser, isPro } from '@/lib/auth';
-import { PLATFORM } from '@/lib/config';
 import { LessonPlayerClient } from './LessonPlayerClient';
 import { AdvancedTrackEndCta } from '@/components/AdvancedTrackEndCta';
 import { AccountGate } from '@/components/AccountGate';
@@ -25,32 +25,14 @@ export async function generateMetadata({
   params: Promise<{ locale: string; slug: string; lesson: string }>;
 }): Promise<Metadata> {
   const { locale, slug, lesson: lessonSlug } = await params;
-  const supabase = await createSupabaseServer();
 
-  // Fetch course
-  const { data: course } = await supabase
-    .from('courses')
-    .select('id, title')
-    .eq('slug', slug)
-    .eq('locale', locale)
-    .eq('platform', PLATFORM)
-    .single();
-
-  if (!course) {
+  // Reuse the cached content read — same (locale, slug, lessonSlug) as the page
+  // body, so metadata and render share one cache entry instead of re-querying.
+  const content = await getLessonContent(locale, slug, lessonSlug);
+  if (!content) {
     return { title: 'Lesson Not Found | Learn to GPT' };
   }
-
-  // Fetch lesson
-  const { data: lesson } = await supabase
-    .from('lessons')
-    .select('title, description')
-    .eq('course_id', course.id)
-    .eq('slug', lessonSlug)
-    .single();
-
-  if (!lesson) {
-    return { title: 'Lesson Not Found | Learn to GPT' };
-  }
+  const { course, lesson } = content;
 
   const baseUrl =
     process.env.NEXT_PUBLIC_APP_URL || 'https://learntogpt.com';
@@ -128,33 +110,15 @@ export default async function LessonPage({
   const supabase = await createSupabaseServer();
   const locale = await getLocale();
 
-  // Fetch course by slug, scoped to the user's locale.
-  // DB has (slug, locale) composite unique after migration 012 — filtering
-  // by locale ensures .single() returns exactly the course in the user's
-  // language, not a cross-locale duplicate.
-  const { data: course, error: courseError } = await supabase
-    .from('courses')
-    .select('id, slug, title, is_free, track')
-    .eq('slug', slug)
-    .eq('locale', locale)
-    .eq('platform', PLATFORM)
-    .single();
-
-  if (courseError || !course) {
+  // Content (course + lesson + exercises + nav list) is identical for every
+  // visitor → cached, cookieless read (see content-cache.ts). The per-user
+  // paywall/progress logic below stays live. Real DB error throws (→ error
+  // boundary, canary catches); genuine not-found → null → notFound().
+  const content = await getLessonContent(locale, slug, lessonSlug);
+  if (!content) {
     notFound();
   }
-
-  // Fetch lesson by slug within this course
-  const { data: lessonData, error: lessonError } = await supabase
-    .from('lessons')
-    .select('id, course_id, title, slug, description, order_index, xp_reward, estimated_minutes, is_free, content_json, created_at')
-    .eq('course_id', course.id)
-    .eq('slug', lessonSlug)
-    .single();
-
-  if (lessonError || !lessonData) {
-    notFound();
-  }
+  const { course, lesson: lessonData, exercisesRaw, explanationsRaw, allLessons } = content;
 
   // Public preview: free lessons are accessible without sign-in so anonymous
   // visitors can experience the product. Non-free lessons still require auth.
@@ -215,18 +179,6 @@ export default async function LessonPage({
     }
   }
 
-  // Fetch exercises from safe view (excludes correct_answer)
-  const { data: exercisesRaw } = await supabase
-    .from('v_exercises_safe')
-    .select('id, lesson_id, type, order_index, prompt, options_json, hints_json, xp_reward, game_data')
-    .eq('lesson_id', lessonData.id)
-    .order('order_index');
-
-  // Fetch explanations separately (not security-sensitive, safe for client)
-  const { data: explanationsRaw } = await supabase
-    .from('exercises')
-    .select('id, explanation')
-    .eq('lesson_id', lessonData.id);
   const explanationMap = new Map(
     (explanationsRaw ?? []).map((e) => [e.id, e.explanation ?? ''])
   );
@@ -256,13 +208,6 @@ export default async function LessonPage({
       xp_reward: ex.xp_reward ?? 0,
     } satisfies Exercise;
   });
-
-  // Fetch all lessons in the course for navigation
-  const { data: allLessons } = await supabase
-    .from('lessons')
-    .select('slug, title')
-    .eq('course_id', course.id)
-    .order('order_index');
 
   const courseLessons = (allLessons ?? []).map((l) => ({
     slug: l.slug,
