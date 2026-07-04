@@ -16,9 +16,9 @@ export async function generateMetadata({
   const pathForLocale = (loc: string) =>
     `${baseUrl}${loc === routing.defaultLocale ? "" : `/${loc}`}/best-claude-prompts`;
 
-  const title = "20 Best Claude Prompts: Templates for Writing, Code & Analysis";
+  const title = "20 Best Claude Prompts (That Also Work on ChatGPT & Gemini)";
   const description =
-    "The 20 best Claude prompt templates across writing, coding, analysis, and research. Copy-paste ready with examples. Learn prompt engineering at Learn to GPT.";
+    "20 copy-paste prompt templates for writing, code, analysis, and research. Built to run well on Claude, ChatGPT, and Gemini alike — because good prompt structure is model-agnostic. From Learn to GPT.";
 
   return {
     title,
@@ -64,26 +64,26 @@ const promptCategories = [
       {
         title: "Voice-matching editor",
         prompt:
-          "Here are three examples of my writing: [paste examples]. Now rewrite the following draft so it matches my voice exactly — same sentence rhythm, vocabulary level, and tone. Do not add em dashes, clichés, or a summary paragraph at the end.\n\nDraft: [paste draft]",
-        why: "Prevents Claude from defaulting to generic AI prose. The examples anchor the output to your actual style.",
+          "Below are three samples of how I write: [paste samples]. Study the rhythm, word choice, and tone, then redraft the text that follows so it reads like I wrote it. No em dashes, no clichés, and no wrap-up paragraph.\n\nText to redraft: [paste draft]",
+        why: "Stops any model from defaulting to generic AI prose. The examples anchor the output to your actual style — this works identically on Claude, ChatGPT, and Gemini.",
       },
       {
         title: "Long-form outline",
         prompt:
-          "I'm writing a [article/report/essay] on [topic] for [audience]. Create a detailed outline with: a working headline, 5-7 section headings, 3-4 bullet points per section with the key point each should make, and a note on what evidence or examples to include.",
-        why: "Structured output request forces Claude to organize the content before writing it — saves significant revision time.",
+          "I need an outline for a [article/report/essay] on [topic], aimed at [audience]. Give me a working headline, five to seven sections, the single point each section should land, and for each one a note on the evidence or example to back it up.",
+        why: "A structured output request makes the model organize before it writes — saves real revision time no matter which assistant you paste it into.",
       },
       {
         title: "Email with a clear ask",
         prompt:
-          "Write a [tone: professional/friendly/direct] email to [recipient] asking them to [action]. Context: [1-2 sentences of background]. The email should be under 150 words. End with a specific CTA, not an open-ended question.",
-        why: "The word limit and CTA constraint prevent the vague, padded emails Claude produces by default.",
+          "Draft a [professional/friendly/direct] email to [recipient] that asks them to [action]. Background: [one or two sentences]. Keep it under 150 words and close with one concrete next step, not a vague open question.",
+        why: "The word limit and CTA constraint cut the vague, padded emails every model tends to produce when left unconstrained.",
       },
       {
         title: "Content repurpose",
         prompt:
-          "I have this [blog post / transcript / report]: [paste content]. Repurpose it into: (1) a LinkedIn post under 200 words, (2) three tweet-length takeaways, (3) a TL;DR paragraph for email. Match the original's tone.",
-        why: "One source, three formats — saves an hour of reformatting per piece.",
+          "Here's a [blog post / transcript / report]: [paste content]. Turn it into three things while keeping the original tone: a LinkedIn post under 200 words, three one-line takeaways for social, and a short summary paragraph I can drop into an email.",
+        why: "One source, three formats. Saves about an hour of reformatting per piece, on whichever model you already have open.",
       },
     ],
   },
@@ -95,26 +95,26 @@ const promptCategories = [
       {
         title: "Code review with criteria",
         prompt:
-          "Review this [language] code for: security issues (injection, auth, data exposure), performance bottlenecks, missing error handling, TypeScript type errors, and anything that would fail a production code review. Be specific about line numbers and what to fix.\n\n[paste code]",
-        why: "Explicit criteria prevent vague 'looks good' reviews. Claude will surface real issues when you tell it what to look for.",
+          "Do a production-grade review of this [language] code. Check for: security holes (injection, auth, exposed data), slow paths, missing error handling, and type problems. For each issue, point to the line and say exactly how to fix it.\n\n[paste code]",
+        why: "Explicit criteria prevent vague 'looks good' reviews. Any capable model surfaces real issues once you tell it exactly what to look for.",
       },
       {
         title: "Bug hunt with reproduction",
         prompt:
-          "I have a bug in my [framework/language] code. Here's what's happening: [describe symptom]. Here's what I expect to happen: [expected behavior]. Here's the relevant code: [paste code]. Walk through what's causing this, then give me the fix.",
-        why: "Expected vs actual behavior framing forces systematic diagnosis instead of guessing.",
+          "There's a bug in my [framework/language] code. Actual behavior: [symptom]. Expected behavior: [what should happen]. Relevant code: [paste code]. Reason through the likely cause step by step before you propose the fix.",
+        why: "Expected-vs-actual framing forces systematic diagnosis instead of guessing — a technique that pays off on every model.",
       },
       {
         title: "Function with tests",
         prompt:
-          "Write a [language] function that [description of what it does]. Requirements: [list requirements]. Include: input validation, error handling, JSDoc comments, and a test suite using [Jest/Pytest/etc] that covers the happy path, edge cases, and error cases.",
-        why: "Asking for tests alongside the function ensures Claude writes testable code — not just code that runs.",
+          "Write a [language] function that [what it should do]. Requirements: [list them]. Ship it with input validation, error handling, doc comments, and a [Jest/Pytest/etc] test suite covering the normal path, the edge cases, and the failure cases.",
+        why: "Asking for tests alongside the function pushes the model toward testable code, not just code that runs. True across ChatGPT, Claude, and Gemini.",
       },
       {
         title: "Refactor for readability",
         prompt:
-          "Refactor this code to be more readable and maintainable without changing behavior. Apply: extract repeated logic into named functions, replace magic numbers with named constants, improve variable names, add comments only where the why isn't obvious.\n\n[paste code]",
-        why: "The 'without changing behavior' constraint is critical — it prevents Claude from helpfully 'improving' logic.",
+          "Refactor this code for readability without changing what it does. Pull repeated logic into named functions, swap magic numbers for named constants, rename unclear variables, and add a comment only where the reason isn't obvious from the code.\n\n[paste code]",
+        why: "The 'without changing behavior' constraint is critical — it stops the model from helpfully 'improving' your logic while it tidies the code.",
       },
     ],
   },
@@ -126,25 +126,25 @@ const promptCategories = [
       {
         title: "Document summary with key decisions",
         prompt:
-          "Summarize this [document type] in three layers: (1) one-sentence TL;DR, (2) 5 key points with supporting evidence, (3) decisions or actions required from the reader. Be direct — no filler phrases like 'The document explores...'\n\n[paste document]",
-        why: "Three-layer summary forces Claude to separate signal from noise and surface the actionable content.",
+          "Summarize this [document type] in three tiers: a one-line takeaway, five key points each with its supporting evidence, and the decisions or actions it demands from the reader. Skip filler openers like 'This document explores.'\n\n[paste document]",
+        why: "A three-layer summary forces the model to separate signal from noise and surface the actionable part instead of paraphrasing everything.",
       },
       {
         title: "Competitive analysis",
         prompt:
-          "Compare [Company A] and [Company B] across: pricing, target customer, key features, positioning, known weaknesses, and recent moves. Format as a table. End with: which one wins for [my use case] and why.",
-        why: "Table format with a winner forces Claude to make a judgment call rather than presenting 'both have pros and cons.'",
+          "Put [Company A] and [Company B] side by side in a table across pricing, target customer, standout features, positioning, known weak spots, and recent moves. Then call it: which one wins for [my use case], and why.",
+        why: "A table plus a required winner forces the model to make a judgment call rather than hedging with 'both have pros and cons.'",
       },
       {
         title: "Data interpretation",
         prompt:
-          "Here's a dataset: [paste data or describe it]. Tell me: (1) what's the most important trend or anomaly, (2) what's missing that would change the interpretation, (3) what decisions this data does and does not support. Be specific.",
+          "Here's a dataset: [paste or describe it]. Give me the single most important trend or anomaly, the missing data that would change how I read it, and which decisions this data can and cannot justify. Be concrete.",
         why: "Asking for what the data doesn't support is the critical question — prevents overconfident conclusions.",
       },
       {
         title: "Risk analysis",
         prompt:
-          "Analyze the risks of [decision / project / plan]: list each risk, rate it High/Medium/Low probability and High/Medium/Low impact, describe what would trigger it, and suggest one mitigation for each High-rated risk. Format as a table.",
+          "Map the risks of [decision / project / plan] in a table: each risk, its probability (High/Med/Low), its impact (High/Med/Low), and the trigger that would set it off. For every High-impact one, give me a single concrete mitigation.",
         why: "Probability × impact matrix forces prioritization instead of a flat list of every possible concern.",
       },
     ],
@@ -157,26 +157,26 @@ const promptCategories = [
       {
         title: "Explain a complex topic",
         prompt:
-          "Explain [topic] to me as if I'm [level: a smart 12-year-old / a business person with no technical background / an expert in a related field]. Use analogies. Avoid jargon unless you define it. End with the three things I'd most likely misunderstand about this topic.",
+          "Explain [topic] to me as [a smart 12-year-old / a non-technical business person / an expert in a nearby field]. Lean on analogies, define any jargon you use, and finish with the three things people at my level most often get wrong about it.",
         why: "The misunderstanding section is the most valuable part — it surfaces the non-obvious gaps in most explanations.",
       },
       {
         title: "Research synthesis",
         prompt:
-          "I'm researching [topic]. Here are my sources: [paste excerpts or notes]. Synthesize what they agree on, where they disagree and why, what questions they leave unanswered, and what the strongest current consensus seems to be.",
-        why: "Synthesis across sources is where Claude adds value — not just summarizing each one individually.",
+          "I'm researching [topic]. My sources: [paste excerpts or notes]. Pull together where they agree, where they clash and why, the questions none of them answer, and what the strongest current consensus appears to be.",
+        why: "Synthesis across sources is where these tools earn their keep — the value is in the connections, not in summarizing each source alone.",
       },
       {
         title: "Devil's advocate",
         prompt:
-          "I believe [position]. Give me the strongest possible case against my position — not strawmen, but the actual best arguments. Assume the person arguing against me is smart and well-informed. End with which counter-argument I should take most seriously.",
-        why: "Explicitly asking for the best counterargument prevents Claude from generating token-friendly agreement.",
+          "My position is [position]. Argue the other side as well as a smart, well-informed opponent would — real arguments, no strawmen. Then tell me which of those counterpoints I should lose the most sleep over.",
+        why: "Explicitly asking for the strongest counterargument stops the model from sliding into agreeable, flattering agreement — a failure mode all of them share.",
       },
       {
         title: "Literature overview",
         prompt:
-          "Give me an overview of what is known about [topic] as of your knowledge cutoff. Include: the main schools of thought, the strongest evidence, the most contested questions, and key researchers or sources I should know about.",
-        why: "Structured research prompt with explicit knowledge-cutoff awareness prevents Claude from presenting outdated info as current.",
+          "As of your knowledge cutoff, walk me through what's known about [topic]: the main schools of thought, the strongest evidence behind each, the questions still in dispute, and the researchers or sources worth knowing. Flag anything likely to be out of date.",
+        why: "Naming the knowledge cutoff keeps any model from presenting stale training data as current — especially useful when the model can't browse.",
       },
     ],
   },
@@ -188,19 +188,19 @@ const promptCategories = [
       {
         title: "Decision framework",
         prompt:
-          "I need to decide between [option A] and [option B]. Here's my context: [constraints, goals, resources]. Evaluate both options against: short-term impact, long-term impact, reversibility, resource cost, and alignment with [goal]. Recommend one and explain the key trade-off I'm accepting.",
+          "I'm choosing between [option A] and [option B]. My context: [constraints, goals, resources]. Score both on short-term impact, long-term impact, how reversible they are, resource cost, and fit with [goal]. Pick one and name the trade-off I'm accepting by choosing it.",
         why: "The reversibility and trade-off framing are what separate useful strategic advice from generic pros/cons lists.",
       },
       {
         title: "First-principles breakdown",
         prompt:
-          "Break [problem / challenge / question] down to first principles. What are we actually trying to achieve? What assumptions is the conventional approach making? What would a solution look like if we ignored how it's usually done?",
-        why: "Forces Claude to challenge the frame of the question, not just answer it as posed.",
+          "Take [problem / challenge / question] down to first principles. What's the real goal here? Which assumptions does the standard approach quietly rely on? And what would a fix look like if we ignored how it's normally done?",
+        why: "Forces the model to challenge the frame of the question instead of answering it exactly as posed.",
       },
       {
         title: "Pre-mortem",
         prompt:
-          "It's [one year from now] and [project / plan] has failed completely. What went wrong? List the five most likely causes of failure — be specific to this context, not generic. Then for each: what could we do now to prevent it?",
+          "Fast-forward to [one year from now]: [project / plan] has failed outright. Working backward, list the five most probable reasons it collapsed — specific to my situation, not boilerplate — and for each, the move I could make today to head it off.",
         why: "Pre-mortem framing surfaces implementation risks that forward-looking planning systematically misses.",
       },
     ],
@@ -238,9 +238,9 @@ export default async function BestClaudePromptsPage({
             "@graph": [
               {
                 "@type": "Article",
-                headline: "20 Best Claude Prompts: Templates for Writing, Code & Analysis",
+                headline: "20 Best Claude Prompts That Also Work on ChatGPT and Gemini",
                 description:
-                  "The 20 best Claude prompt templates across writing, coding, analysis, and research. Copy-paste ready with examples.",
+                  "20 model-agnostic prompt templates for writing, coding, analysis, and research. Copy-paste ready, and portable across Claude, ChatGPT, and Gemini.",
                 url: pagePath,
                 inLanguage: locale,
                 author: {
@@ -314,19 +314,16 @@ export default async function BestClaudePromptsPage({
         <section className="px-6 pb-16 pt-[80px] text-center">
           <div className="mx-auto max-w-[800px]">
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-orange">
-              Prompt Engineering · Track 2
+              Prompt Engineering
             </p>
             <h1 className="mt-3 text-[3.5rem] font-extrabold leading-[1.1] text-ink max-md:text-[2.4rem] max-[480px]:text-[1.8rem]">
-              20 Claude Prompts You Can Copy and Use Right Now
+              20 Prompts You Can Copy Into Claude, ChatGPT, or Gemini
             </h1>
             <p className="mt-3 font-serif text-[1.6rem] italic text-walnut max-md:text-[1.2rem]">
-              Stop reading about it. Build something.
+              Good structure beats the right brand.
             </p>
             <p className="mx-auto mb-10 mt-6 max-w-[620px] text-[1.05rem] leading-[1.7] text-text-secondary">
-              These are the prompt patterns that consistently produce high-quality
-              output from Claude — across writing, coding, analysis, research, and
-              strategy. Each includes the template and an explanation of why it
-              works.
+              These prompt patterns produce high-quality output on any frontier model — Claude, ChatGPT, or Gemini — across writing, coding, analysis, research, and strategy. People search for &quot;Claude prompts,&quot; but what actually makes them work is structure, and structure travels between models. Each includes the template and why it works.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
               <Link
@@ -354,7 +351,7 @@ export default async function BestClaudePromptsPage({
           <div className="mx-auto max-w-[800px]">
             <div className="rounded-[18px] border-[4px] border-ink bg-[#d0f0ea] p-8 shadow-[6px_6px_0px_#1c1917] max-[480px]:p-6">
               <p className="text-[1.1rem] font-medium leading-[1.8] text-ink">
-                The best Claude prompts follow a consistent pattern: define a role, specify the output format, set constraints, and include 1-2 examples. Claude follows structured instructions with high fidelity, so prompts that work well with Claude tend to produce reliable results every time.
+                The best prompts follow one pattern regardless of which model you use: define a role, specify the output format, set constraints, and include one or two examples. Claude, ChatGPT, and Gemini all reward this structure. Which is why a prompt tuned for one usually works on the others with little or no change — the skill is portable, not brand-locked.
               </p>
             </div>
           </div>
@@ -425,10 +422,11 @@ export default async function BestClaudePromptsPage({
                 Go deeper with the Prompt Engineering track
               </h2>
               <p className="mb-6 text-[1.05rem] leading-[1.7] text-text-secondary">
-                Track 2 at Learn to GPT covers chain-of-thought reasoning,
-                structured output, few-shot examples, prompt evaluation, and
-                optimization. Every lesson has a live ChatGPT sandbox so you
-                practice the patterns immediately — not just read about them.
+                Learn to GPT&apos;s prompt engineering track covers chain-of-thought
+                reasoning, structured output, few-shot examples, and how to
+                evaluate a prompt. Everything is taught model-agnostically, so the
+                patterns transfer whether you end up on ChatGPT, Claude, or Gemini.
+                Every lesson has a live sandbox so you practice, not just read.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link
@@ -457,10 +455,10 @@ export default async function BestClaudePromptsPage({
             </h2>
             <div className="space-y-4">
               {[
-                { q: "What makes a Claude prompt effective?", a: "Effective Claude prompts have specificity (clear role, audience, output format), structure (organized with examples and constraints), and context (relevant background). The pattern of role + format + constraints + examples consistently produces the best results." },
-                { q: "Can I use the same prompts for Claude and ChatGPT?", a: "Many prompts work across both models. Claude responds especially well to structured instructions with explicit constraints. Prompts optimized for Claude tend to work well everywhere because they are more precise." },
-                { q: "How do I write a system prompt for Claude?", a: "Start with a role definition, then specify the output format, add constraints (word count, tone, what to avoid), and include 1-2 examples of ideal output. Claude follows structured system prompts with high fidelity." },
-                { q: "What are the most common prompt mistakes?", a: "Being too vague (no role, format, or constraints), providing no context (Claude cannot infer your industry or goals), and asking for everything at once. Breaking complex tasks into steps produces better output." },
+                { q: "What makes a prompt effective on any model?", a: "Specificity (clear role, audience, output format), structure (examples and constraints), and context (relevant background). The pattern of role + format + constraints + examples produces the best results on Claude, ChatGPT, and Gemini alike." },
+                { q: "Can I use the same prompt on Claude, ChatGPT, and Gemini?", a: "Usually, yes. A well-structured prompt is portable because all three respond to the same signals. You'll occasionally tweak wording for a model's quirks, but the bones carry over — which is exactly why we teach prompting model-agnostically." },
+                { q: "How do I write a good system prompt?", a: "Start with a role, specify the output format, add constraints (word count, tone, what to avoid), and include one or two examples of ideal output. This structure works whether the field is called a system prompt, custom instructions, or a gem." },
+                { q: "What are the most common prompt mistakes?", a: "Being too vague (no role, format, or constraints), giving no context (no model can infer your industry or goals), and asking for everything at once. Breaking a complex task into steps beats one giant prompt every time." },
               ].map((item) => (
                 <div key={item.q} className="rounded-[16px] border-[3px] border-ink bg-cream p-6 shadow-[3px_3px_0px_#1c1917]">
                   <div className="mb-2 flex items-start gap-3">

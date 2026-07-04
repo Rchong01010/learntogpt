@@ -16,9 +16,9 @@ export async function generateMetadata({
   const pathForLocale = (loc: string) =>
     `${baseUrl}${loc === routing.defaultLocale ? "" : `/${loc}`}/claude-for-business`;
 
-  const title = "Claude for Business: ROI, Team Training & Workflow Automation";
+  const title = "Claude for Business: Where It Fits vs ChatGPT for Teams";
   const description =
-    "How businesses use Claude to save time, automate workflows, and train teams. ROI breakdown, use cases by department, and team training options with Learn to GPT.";
+    "Choosing an AI for your team? How Claude compares to ChatGPT and Gemini for business use, which workloads each fits, and why adoption (not the model) decides your ROI. Training options from Learn to GPT.";
 
   return {
     title,
@@ -57,24 +57,24 @@ export function generateStaticParams() {
 
 const roiStats = [
   {
-    stat: "2–4 hrs",
-    label: "Saved per knowledge worker per day",
-    desc: "Across writing, research, summarization, and first-draft tasks.",
+    stat: "Hours back",
+    label: "On repetitive knowledge work",
+    desc: "Writing, research, and summarizing are where teams feel the time savings first — the same on Claude, ChatGPT, or Gemini.",
   },
   {
-    stat: "60–80%",
-    label: "Faster first drafts",
-    desc: "Reports, emails, proposals, and documentation produced in a fraction of the time.",
+    stat: "Faster drafts",
+    label: "Reports, emails, proposals",
+    desc: "A usable first draft in minutes, then a human edit. The model matters less here than whether people actually adopt the habit.",
   },
   {
-    stat: "10–30×",
-    label: "More research synthesized",
-    desc: "Claude reads and synthesizes documents, reports, and data faster than any human team.",
+    stat: "One tool",
+    label: "Standardized across the team",
+    desc: "The gain comes from everyone using the same workflow well, not from picking a marginally 'smarter' model.",
   },
   {
-    stat: "< 30 days",
-    label: "Typical time to measurable ROI",
-    desc: "Most teams see productivity gains within the first month of structured Claude adoption.",
+    stat: "Adoption",
+    label: "Is the real bottleneck",
+    desc: "Access without training produces 'we tried AI.' Structured onboarding is what turns any of these models into measurable ROI.",
   },
 ];
 
@@ -164,17 +164,17 @@ const blockingPatterns = [
   {
     icon: Clock,
     title: "Unstructured rollout",
-    desc: "Companies that give employees access with no training see low adoption and inconsistent results. Structured onboarding is the difference between 'we tried AI' and actual ROI.",
+    desc: "Handing out logins with no training produces low adoption and inconsistent results, whatever the tool. Structured onboarding is the difference between 'we tried AI' and real ROI — and it's model-agnostic.",
   },
   {
     icon: Zap,
-    title: "Copy-paste workflows",
-    desc: "Most teams use Claude like a search engine — one-off questions. The real leverage is in building repeatable workflows where Claude handles the first 80% of every task.",
+    title: "Treating it like a search box",
+    desc: "Most teams use their AI for one-off questions. The leverage is in repeatable workflows where the model handles the first 80% of a recurring task. That habit transfers whether you're on Claude, ChatGPT, or Gemini.",
   },
   {
     icon: Shield,
     title: "No data governance",
-    desc: "Enterprise Claude via the API gives you data controls that consumer accounts don't. Training your team on what goes in and what stays out is a critical first step.",
+    desc: "Business and enterprise plans give you data controls that consumer accounts don't — true for Claude and ChatGPT alike. Training people on what goes in and what stays out is a first step, not an afterthought.",
   },
 ];
 
@@ -202,9 +202,9 @@ export default async function ClaudeForBusinessPage({
             "@graph": [
               {
                 "@type": "WebPage",
-                name: "Claude for Business: ROI, Team Training & Workflow Automation",
+                name: "Claude for Business: Where It Fits vs ChatGPT for Teams",
                 description:
-                  "How businesses use Claude to save time, automate workflows, and train teams.",
+                  "How Claude compares to ChatGPT and Gemini for business use, which workloads each fits, and why adoption decides your ROI.",
                 url: pagePath,
                 inLanguage: locale,
                 isPartOf: {
@@ -287,16 +287,17 @@ export default async function ClaudeForBusinessPage({
               Business &amp; Enterprise
             </p>
             <h1 className="mt-3 text-[3.5rem] font-extrabold leading-[1.1] text-ink max-md:text-[2.4rem] max-[480px]:text-[1.8rem]">
-              Save Your Team Hours Every Day with Claude
+              Claude for Business: The Right Fit, or Is ChatGPT Enough?
             </h1>
             <p className="mt-3 font-serif text-[1.6rem] italic text-walnut max-md:text-[1.2rem]">
-              Your first project. 20 minutes.
+              The model is the easy part. Adoption is the hard part.
             </p>
             <p className="mx-auto mb-10 mt-6 max-w-[620px] text-[1.05rem] leading-[1.7] text-text-secondary">
-              Claude is the AI most companies should be deploying for knowledge
-              work — long context, precise instruction-following, and a safety
-              profile built for enterprise use. The ROI is measurable. The
-              barrier is adoption, not capability.
+              Claude is a strong choice for knowledge work — long context, steady
+              instruction-following, and enterprise data controls. But for most
+              teams it sits alongside ChatGPT and Gemini, not obviously above them.
+              The return on AI comes from how your people use it, not from which
+              logo you standardize on. That&apos;s where training earns its keep.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
               <a
@@ -323,7 +324,7 @@ export default async function ClaudeForBusinessPage({
               The Business Case
             </p>
             <h2 className="mt-3 text-center text-[2rem] font-extrabold leading-[1.2] text-ink">
-              What organizations actually see
+              What actually drives the return
             </h2>
 
             <div className="mx-auto mt-10 grid max-w-[960px] gap-6 md:grid-cols-2 lg:grid-cols-4">
@@ -354,7 +355,7 @@ export default async function ClaudeForBusinessPage({
               Use Cases
             </p>
             <h2 className="mt-3 text-center text-[2rem] font-extrabold leading-[1.2] text-ink">
-              How each department uses Claude
+              How each department puts AI to work
             </h2>
 
             <div className="mx-auto mt-10 grid max-w-[960px] gap-6 md:grid-cols-2">
@@ -498,7 +499,7 @@ export default async function ClaudeForBusinessPage({
         <section className="px-6 pb-[80px] pt-8 text-center">
           <div className="mx-auto max-w-[800px]">
             <h2 className="text-[2.4rem] font-extrabold leading-[1.2] text-ink max-md:text-[1.8rem]">
-              Ready to build a Claude-native team?
+              Ready to build an AI-fluent team?
             </h2>
             <p className="mt-2 font-serif text-[1.3rem] italic text-walnut">
               Individuals start free. Teams get custom training.

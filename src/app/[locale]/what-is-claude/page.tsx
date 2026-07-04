@@ -17,9 +17,9 @@ export async function generateMetadata({
   const pathForLocale = (loc: string) =>
     `${baseUrl}${loc === routing.defaultLocale ? "" : `/${loc}`}/what-is-claude`;
 
-  const title = "What is Claude AI? Best Beginner Guide (2025)";
+  const title = "What is Claude AI? How It Compares to ChatGPT & Gemini";
   const description =
-    "Claude is Anthropic's AI assistant — built for safety, nuance, and long-context reasoning. Learn what Claude is, how it works, and how it differs from ChatGPT and Gemini.";
+    "A plain-English look at Claude, Anthropic's AI model, and where it sits in the wider AI landscape next to ChatGPT and Gemini. What it's good at, what it isn't, and when to reach for it instead of the others.";
 
   return {
     title,
@@ -58,94 +58,94 @@ export function generateStaticParams() {
 
 const faqs = [
   {
-    q: "Is Claude free to use?",
-    a: "Claude.ai has a free tier with limited usage. Learn to GPT offers free interactive courses to learn how to use Claude effectively — no credit card required.",
+    q: "Should I use Claude or ChatGPT?",
+    a: "Use whichever fits the job. Most people who work with AI daily keep both open: ChatGPT for image generation, voice, and its huge plugin and app ecosystem; Claude when they want careful long-document reasoning or writing that holds a consistent voice. Neither is 'better' across the board. Our take at Learn to GPT is model-agnostic: learn the workflow once and it transfers to any of them.",
   },
   {
-    q: "Who made Claude?",
-    a: "Claude is made by Anthropic, an AI safety company founded in 2021. Anthropic's research focuses on building AI systems that are safe, interpretable, and steerable.",
+    q: "Who makes Claude, and how is that different from ChatGPT and Gemini?",
+    a: "Claude comes from Anthropic, an AI company started in 2021 by former OpenAI researchers. ChatGPT is OpenAI's product; Gemini is Google's. All three are frontier large language models. The practical differences are in defaults and ecosystem, not some secret capability gap.",
   },
   {
-    q: "How is Claude different from ChatGPT?",
-    a: "Claude has a 200K-token context window (compared to 128K for GPT-4o), was trained with Constitutional AI for more precise instruction-following, and excels at long-form writing and document analysis. ChatGPT has built-in image generation and web browsing.",
+    q: "Is Claude free?",
+    a: "Claude.ai has a free tier with daily usage limits, the same shape as ChatGPT's and Gemini's free tiers. Paid plans lift the limits and add faster models. You can learn the fundamentals on the free tier of any of them.",
   },
   {
-    q: "What is Claude's context window?",
-    a: "Claude 3.5 Sonnet and Claude 3 Opus support a 200,000-token context window — roughly 150,000 words. This lets you paste entire codebases, books, or research papers for analysis.",
+    q: "What is Claude actually good at compared to the others?",
+    a: "Its long-context reasoning and its writing tend to be where people reach for it: pasting a long contract, a codebase, or a research report and asking questions across all of it. ChatGPT is often the default for multimodal work and quick everyday tasks; Gemini leans on Google Search and Workspace integration. Pick by task, not by loyalty.",
   },
   {
-    q: "Can Claude write code?",
-    a: "Yes. Claude excels at code generation, debugging, and explanation across Python, JavaScript, TypeScript, Go, Rust, and more. Claude Code is a dedicated agentic CLI for software development.",
+    q: "Do I have to learn Claude separately from ChatGPT?",
+    a: "No. The core skills — writing clear prompts, giving context, iterating on output — are the same across every chat model. Learn them once on any tool and you can switch between Claude, ChatGPT, and Gemini without starting over.",
   },
   {
     q: "What is Constitutional AI?",
-    a: "Constitutional AI is Anthropic's training method that teaches Claude to evaluate its own outputs against a set of principles — making it more reliable, honest, and less prone to harmful outputs without excessive refusals.",
+    a: "It's the training method Anthropic uses to shape Claude's behavior against a written set of principles rather than case-by-case human ratings alone. In practice it's why Claude tends to explain its reasoning and refuse less arbitrarily. It's a design choice, not a benchmark you can compare head-to-head with ChatGPT or Gemini.",
   },
 ];
 
 const capabilities = [
   {
     icon: MessageSquare,
-    title: "Long-form writing & editing",
-    body: "Reports, essays, emails, scripts, and creative content. Claude adapts to your voice and maintains consistency across thousands of words.",
+    title: "Where Claude tends to win: long writing",
+    body: "Longer reports, essays, and edits that need to hold one voice across thousands of words. People who write for a living often prefer its drafts here. ChatGPT and Gemini write well too; this is a lean, not a law.",
     color: "bg-[#d0f0ea]",
     textColor: "text-teal",
   },
   {
-    icon: Code,
-    title: "Code generation & debugging",
-    body: "Write, explain, and debug code in Python, JS, TS, Go, Rust, SQL, and more. Claude Code (the CLI) edits multi-file projects end-to-end.",
-    color: "bg-[#ffecd2]",
-    textColor: "text-orange",
-  },
-  {
     icon: Brain,
-    title: "Research & document analysis",
-    body: "Paste entire PDFs, papers, or codebases. Claude's 200K context window reads it all and synthesizes key findings with citations.",
+    title: "Where Claude tends to win: long documents",
+    body: "Paste a full contract, a hundred-page report, or a codebase and ask questions across all of it. Its large context window makes this comfortable. Gemini also handles very long inputs; test both on your own files.",
     color: "bg-[#e8e4ff]",
     textColor: "text-[#6b5aed]",
   },
   {
     icon: Zap,
-    title: "Structured data & extraction",
-    body: "Turn unstructured text into JSON, tables, or databases. Claude follows schemas reliably — great for data pipelines and automation.",
+    title: "Where ChatGPT usually wins: multimodal",
+    body: "Image generation, voice mode, and the deepest app and plugin ecosystem live in ChatGPT today. If a task needs pictures or spoken conversation, that's usually the faster path.",
     color: "bg-[#ffd6e0]",
     textColor: "text-[#c2185b]",
   },
   {
-    icon: Shield,
-    title: "Safe, precise instruction-following",
-    body: "Constitutional AI training makes Claude less likely to hallucinate or over-refuse. It follows complex multi-step instructions more reliably.",
-    color: "bg-[#d0f0ea]",
-    textColor: "text-teal",
-  },
-  {
     icon: BookOpen,
-    title: "Multilingual communication",
-    body: "Claude communicates fluently in 100+ languages. It can translate, localize, and adapt tone across cultures — not just convert words.",
+    title: "Where Gemini usually wins: Google's stack",
+    body: "If your work lives in Google Search, Docs, and Gmail, Gemini's built-in integration is hard to beat. Choose by where your data already sits, not by brand.",
     color: "bg-[#ffecd2]",
     textColor: "text-orange",
+  },
+  {
+    icon: Code,
+    title: "A near-tie: everyday coding help",
+    body: "Writing, explaining, and debugging code is strong on all three. Claude, ChatGPT, and Gemini are close enough that most people pick by habit or by which one their team already pays for.",
+    color: "bg-[#ffecd2]",
+    textColor: "text-orange",
+  },
+  {
+    icon: Shield,
+    title: "Claude's design choice: fewer arbitrary refusals",
+    body: "Anthropic trains Claude to reason against written principles, which is why it often explains its thinking and declines less randomly. It's a defaults difference, not a capability the others lack.",
+    color: "bg-[#d0f0ea]",
+    textColor: "text-teal",
   },
 ];
 
 const models = [
   {
-    name: "Claude 3.5 Sonnet",
-    badge: "Recommended",
+    name: "Sonnet (the middle tier)",
+    badge: "Everyday pick",
     badgeColor: "bg-teal",
-    desc: "The best balance of intelligence and speed. Handles writing, code, and analysis at production scale. This is the model most developers use via API.",
+    desc: "The balanced model most people land on: fast enough for daily use, capable enough for real work. Roughly the slot ChatGPT's default GPT model or Gemini Flash fill on the other platforms.",
   },
   {
-    name: "Claude 3 Opus",
-    badge: "Most Intelligent",
+    name: "Opus (the top tier)",
+    badge: "Most capable",
     badgeColor: "bg-[#6b5aed]",
-    desc: "Anthropic's most capable model. Best for complex reasoning, nuanced strategy, and tasks where accuracy matters more than speed.",
+    desc: "Anthropic's heaviest model, for hard reasoning where you'll trade speed for depth. Comparable in intent to ChatGPT's top reasoning models and Gemini Pro.",
   },
   {
-    name: "Claude 3 Haiku",
+    name: "Haiku (the fast tier)",
     badge: "Fastest",
     badgeColor: "bg-orange",
-    desc: "Lightweight and fast. Great for classification, summarization, simple extraction, and high-volume API use cases.",
+    desc: "Small and quick, for simple, high-volume tasks like sorting or summarizing. Every major provider ships a tier like this — pick by cost and speed.",
   },
 ];
 
@@ -184,9 +184,9 @@ export default async function WhatIsClaudePage({
               },
               {
                 "@type": "Article",
-                headline: "What is Claude AI? A Complete Beginner's Guide",
+                headline: "What is Claude AI? How It Compares to ChatGPT and Gemini",
                 description:
-                  "Claude is Anthropic's AI assistant built for safety, nuance, and long-context reasoning. Learn what Claude is, how it works, and how it differs from other AI models.",
+                  "A model-agnostic look at Claude from Anthropic: where it sits in the AI landscape next to ChatGPT and Gemini, what it's genuinely good at, and when to pick it over the others.",
                 url: pagePath,
                 inLanguage: locale,
                 author: {
@@ -259,16 +259,16 @@ export default async function WhatIsClaudePage({
         <section className="px-6 pb-16 pt-[80px] text-center">
           <div className="mx-auto max-w-[800px]">
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-orange">
-              Beginner Guide
+              The AI Landscape
             </p>
             <h1 className="mt-3 text-[3.5rem] font-extrabold leading-[1.1] text-ink max-md:text-[2.4rem] max-[480px]:text-[1.8rem]">
-              What is Claude AI? The AI That Reads More and Reasons Better
+              What is Claude AI, and where does it sit next to ChatGPT?
             </h1>
             <p className="mt-3 font-serif text-[1.6rem] italic text-walnut max-md:text-[1.2rem]">
-              The AI built for safe, nuanced, and long-context reasoning
+              One of the three frontier chat models, explained without the hype
             </p>
             <p className="mx-auto mb-10 mt-6 max-w-[660px] text-[1.05rem] leading-[1.7] text-text-secondary">
-              Claude is Anthropic&apos;s AI assistant — a large language model trained with Constitutional AI to be helpful, harmless, and honest. It&apos;s used by millions of people for writing, coding, research, and automation, and by developers via the Claude API and ChatGPT Codex CLI.
+              Claude is the AI model built by Anthropic. Alongside OpenAI&apos;s ChatGPT and Google&apos;s Gemini, it&apos;s one of the three tools most people actually reach for. This is a straight read on what Claude is, what it&apos;s good and not good at, and when it&apos;s the right pick versus the other two.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
               <Link
@@ -293,7 +293,7 @@ export default async function WhatIsClaudePage({
           <div className="mx-auto max-w-[800px]">
             <div className="rounded-[18px] border-[4px] border-ink bg-[#d0f0ea] p-8 shadow-[6px_6px_0px_#1c1917] max-[480px]:p-6">
               <p className="text-[1.1rem] font-medium leading-[1.8] text-ink">
-                Claude is an AI assistant built by Anthropic. It excels at writing, analysis, coding, and following complex instructions. Claude uses Constitutional AI training for safety and offers models ranging from fast (Haiku) to powerful (Opus), all accessible through claude.ai or the API.
+                Claude is Anthropic&apos;s AI model — a direct alternative to ChatGPT and Gemini. It&apos;s known for careful writing and for handling very long documents in one go. Like the others, it ships in a fast tier, a balanced tier, and a top tier, and you use it through a chat site or an API. There&apos;s no single &quot;best&quot; model; there&apos;s the one that fits the task in front of you.
               </p>
             </div>
           </div>
@@ -306,31 +306,31 @@ export default async function WhatIsClaudePage({
               The Basics
             </p>
             <h2 className="mt-3 text-center text-[2rem] font-extrabold leading-[1.2] text-ink">
-              How Claude works
+              How Claude fits in the AI landscape
             </h2>
             <div className="mt-10 space-y-6">
               <div className="rounded-[16px] border-[3px] border-ink bg-cream p-[24px_28px] shadow-[3px_3px_0px_#1c1917]">
                 <div className="mb-2 text-[1.05rem] font-bold text-ink">
-                  A large language model trained by Anthropic
+                  Same category as ChatGPT and Gemini
                 </div>
                 <p className="text-[0.9rem] leading-[1.6] text-text-secondary">
-                  Claude is a large language model (LLM) — a neural network trained on vast amounts of text to understand and generate human language. Unlike search engines, Claude doesn&apos;t look things up. It reasons from patterns learned during training. Anthropic, founded by former OpenAI researchers including Dario Amodei, built Claude with a primary focus on safety and alignment.
+                  Claude is a large language model: a system trained on huge amounts of text to understand and generate language. So are ChatGPT and Gemini. None of the three &quot;looks things up&quot; the way a search engine does by default; they reason from patterns learned in training. Anthropic, the company behind Claude, was started by former OpenAI researchers and leans hard on safety and alignment as its differentiator.
                 </p>
               </div>
               <div className="rounded-[16px] border-[3px] border-ink bg-cream p-[24px_28px] shadow-[3px_3px_0px_#1c1917]">
                 <div className="mb-2 text-[1.05rem] font-bold text-ink">
-                  Constitutional AI: how Claude learns to be safe
+                  What actually differs is defaults, not magic
                 </div>
                 <p className="text-[0.9rem] leading-[1.6] text-text-secondary">
-                  Anthropic pioneered a training approach called Constitutional AI (CAI). Instead of relying solely on human feedback for every edge case, Claude is trained to evaluate its own responses against a set of principles — like &quot;be helpful&quot;, &quot;avoid harm&quot;, and &quot;be honest.&quot; This makes Claude more consistent, less prone to hallucination, and less likely to refuse reasonable requests out of over-caution.
+                  People ask which model is &quot;smartest.&quot; In real use the frontier models are close, and the gap shifts with every release. What you actually feel day to day is defaults: how each one writes, how it handles long inputs, whether it refuses, and what it plugs into. Claude&apos;s reputation is careful writing and long-document reasoning. ChatGPT&apos;s is breadth and multimodal features. Gemini&apos;s is Google integration.
                 </p>
               </div>
               <div className="rounded-[16px] border-[3px] border-ink bg-cream p-[24px_28px] shadow-[3px_3px_0px_#1c1917]">
                 <div className="mb-2 text-[1.05rem] font-bold text-ink">
-                  200K-token context — the biggest practical difference
+                  Long context is where Claude earned its name
                 </div>
                 <p className="text-[0.9rem] leading-[1.6] text-text-secondary">
-                  Claude&apos;s 200,000-token context window is one of its defining features. That&apos;s roughly 150,000 words — enough to paste an entire novel, a full codebase, or a hundred-page research report and have Claude reason across all of it in a single conversation. Most practical AI tasks hit this ceiling with other models. Claude rarely does.
+                  Claude can take a very large amount of text at once — enough to paste a full codebase or a hundred-page report and ask questions across all of it. Gemini also handles very long inputs, and ChatGPT&apos;s limits have grown too, so this is less of a moat than it was a year ago. It&apos;s still a practical reason people reach for Claude on document-heavy work.
                 </p>
               </div>
             </div>
@@ -344,7 +344,7 @@ export default async function WhatIsClaudePage({
               Model Family
             </p>
             <h2 className="mt-3 text-center text-[2rem] font-extrabold leading-[1.2] text-ink">
-              Which Claude model should you use?
+              Claude&apos;s tiers, and their ChatGPT/Gemini equivalents
             </h2>
             <div className="mt-10 grid gap-6 md:grid-cols-3">
               {models.map((model) => (
@@ -371,10 +371,10 @@ export default async function WhatIsClaudePage({
         <section className="px-6 py-16">
           <div className="mx-auto max-w-[960px]">
             <p className="text-center text-xs font-bold uppercase tracking-[0.2em] text-text-secondary">
-              What Claude Can Do
+              Claude vs The Field
             </p>
             <h2 className="mt-3 text-center text-[2rem] font-extrabold leading-[1.2] text-ink">
-              Six areas where Claude excels
+              Where Claude wins, and where ChatGPT or Gemini do
             </h2>
             <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {capabilities.map((cap) => (
@@ -404,7 +404,7 @@ export default async function WhatIsClaudePage({
               FAQ
             </p>
             <h2 className="mt-3 text-center text-[2rem] font-extrabold leading-[1.2] text-ink">
-              Common questions about Claude
+              Claude vs ChatGPT vs Gemini: common questions
             </h2>
             <div className="mt-10 space-y-4">
               {faqs.map((faq, i) => (

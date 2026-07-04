@@ -17,9 +17,9 @@ export async function generateMetadata({
   const pathForLocale = (loc: string) =>
     `${baseUrl}${loc === routing.defaultLocale ? "" : `/${loc}`}/claude-vs-gemini`;
 
-  const title = "Claude vs Gemini: Complete AI Comparison Guide (2025)";
+  const title = "Claude vs Gemini: How the Two Stack Up (and vs ChatGPT)";
   const description =
-    "Claude vs Gemini — which AI is better for writing, coding, reasoning, and multimodal tasks? An honest, fact-based comparison to help you choose the right model.";
+    "Claude vs Gemini for writing, coding, and multimodal work — plus where each one fits if you're already using ChatGPT. A neutral, task-by-task comparison to help you pick.";
 
   return {
     title,
@@ -59,80 +59,74 @@ export function generateStaticParams() {
 const comparisons = [
   {
     category: "Long-form writing",
-    claude: "Excellent — nuanced voice, consistent tone across thousands of words, adapts to style",
-    gemini: "Good — tends toward factual tone, less adaptive to creative voice",
+    claude: "Often preferred — holds a voice and stays consistent across long pieces",
+    gemini: "Capable, tends toward a more factual, neutral tone",
     winner: "claude" as const,
   },
   {
-    category: "Code generation",
-    claude: "Strong — explains reasoning, catches edge cases, ChatGPT Codex CLI for agentic dev",
-    gemini: "Strong — deep integration with Google IDEs and Workspace tools",
+    category: "Everyday coding help",
+    claude: "Strong — explains its reasoning, catches edge cases",
+    gemini: "Strong — ties into Google's dev tools",
     winner: "tie" as const,
   },
   {
-    category: "Context window",
-    claude: "200K tokens — full codebases, entire books, 100-page reports",
-    gemini: "1M tokens (Gemini 1.5 Pro) — massive, but real-world retrieval quality varies",
+    category: "Very long inputs",
+    claude: "Large context, comfortable with whole codebases and long reports",
+    gemini: "Even larger context on its Pro model — good for big data dumps",
     winner: "gemini" as const,
   },
   {
-    category: "Multimodal (images, video)",
-    claude: "Strong image understanding and analysis",
-    gemini: "Native multimodal — audio, video, images trained from the ground up",
+    category: "Multimodal (images, audio, video)",
+    claude: "Reads images well; text-first overall",
+    gemini: "Built multimodal from the start — audio and video included",
     winner: "gemini" as const,
   },
   {
     category: "Google Workspace integration",
-    claude: "Available via Claude.ai and API",
-    gemini: "Deep native — Docs, Sheets, Gmail, Meet all built in",
+    claude: "Used via claude.ai and API",
+    gemini: "Native across Docs, Sheets, Gmail, and Meet",
     winner: "gemini" as const,
-  },
-  {
-    category: "Developer API & tooling",
-    claude: "Claude API + ChatGPT Codex CLI + MCP ecosystem",
-    gemini: "Google AI Studio + Vertex AI — strong GCP integration",
-    winner: "tie" as const,
-  },
-  {
-    category: "Safety & instruction-following",
-    claude: "Constitutional AI — precise, low hallucination, low refusal rate",
-    gemini: "Good — Google safety filters can be conservative",
-    winner: "claude" as const,
-  },
-  {
-    category: "Document analysis",
-    claude: "200K context — reads entire codebases or books in one session",
-    gemini: "Strong, especially for Google Docs natively",
-    winner: "claude" as const,
   },
   {
     category: "Real-time web search",
-    claude: "Via MCP tools or computer use — not built in by default",
-    gemini: "Native Google Search integration — real-time and cited",
+    claude: "Available with tools connected; not on by default",
+    gemini: "Native Google Search, real-time and cited",
     winner: "gemini" as const,
+  },
+  {
+    category: "Refusals & instruction-following",
+    claude: "Tends to explain itself and refuse less arbitrarily",
+    gemini: "Solid; safety filters can be on the cautious side",
+    winner: "claude" as const,
+  },
+  {
+    category: "vs ChatGPT (the default most people have)",
+    claude: "The pick when you want careful writing or long-document work",
+    gemini: "The pick when your day already runs on Google",
+    winner: "tie" as const,
   },
 ];
 
 const useCases = [
   {
-    title: "Choose Claude for writing & research",
-    body: "Long-form content, legal document review, research synthesis, nuanced editing. Claude's Constitutional AI training and precise instruction-following make it more reliable for complex text work.",
+    title: "Reach for Claude on careful text",
+    body: "Long-form writing, contract or report review, research synthesis, and edits that need to hold a consistent voice. This is where people who don't live in Google tend to prefer it.",
     icon: "✍️",
   },
   {
-    title: "Choose Claude for developer workflows",
-    body: "Claude Code gives you a full agentic CLI that runs in your terminal. MCP connects Claude to any tool. For multi-file projects, autonomous coding, and API integration, Claude has the edge.",
-    icon: "⚙️",
-  },
-  {
-    title: "Choose Gemini for Google Workspace",
-    body: "If your team lives in Docs, Sheets, Gmail, and Meet, Gemini's native integration is hard to beat. It summarizes threads, drafts replies, and analyzes spreadsheets without copy-paste.",
+    title: "Reach for Gemini inside Google",
+    body: "If your work lives in Docs, Sheets, Gmail, and Meet, Gemini's native integration summarizes threads, drafts replies, and reads spreadsheets without any copy-paste.",
     icon: "📊",
   },
   {
-    title: "Choose Gemini for multimodal tasks",
-    body: "Audio transcription, video understanding, image analysis at scale — Gemini was built multimodal from the start. Claude handles images but Gemini's native training gives it an edge.",
+    title: "Reach for Gemini on multimodal",
+    body: "Audio, video, and image-heavy tasks play to Gemini's strengths — it was trained multimodal from the start. Claude reads images but is text-first overall.",
     icon: "🎬",
+  },
+  {
+    title: "Don't forget ChatGPT",
+    body: "Neither of these has to replace what you already use. Plenty of people keep ChatGPT as their default and add Claude or Gemini for the specific jobs each is better at. The skill is knowing which to open.",
+    icon: "🔀",
   },
 ];
 
@@ -160,9 +154,9 @@ export default async function ClaudeVsGeminiPage({
             "@graph": [
               {
                 "@type": "Article",
-                headline: "Claude vs Gemini: Honest AI Comparison for 2025",
+                headline: "Claude vs Gemini: How the Two Stack Up in 2025",
                 description:
-                  "A fact-based comparison of Claude and Gemini across writing, coding, multimodal tasks, and Google Workspace integration.",
+                  "A neutral comparison of Claude and Gemini across writing, coding, multimodal work, and Google integration — plus where each fits alongside ChatGPT.",
                 url: pagePath,
                 inLanguage: locale,
                 author: {
@@ -243,13 +237,13 @@ export default async function ClaudeVsGeminiPage({
               Honest AI Comparison
             </p>
             <h1 className="mt-3 text-[3.5rem] font-extrabold leading-[1.1] text-ink max-md:text-[2.4rem] max-[480px]:text-[1.8rem]">
-              Claude vs Gemini: Which AI Wins for Your Workflow?
+              Claude vs Gemini, and where each beats ChatGPT
             </h1>
             <p className="mt-3 font-serif text-[1.6rem] italic text-walnut max-md:text-[1.2rem]">
-              Two powerful models, different strengths — which fits your workflow?
+              Two strong alternatives, two very different strengths
             </p>
             <p className="mx-auto mb-10 mt-6 max-w-[660px] text-[1.05rem] leading-[1.7] text-text-secondary">
-              Claude (Anthropic) and Gemini (Google DeepMind) are two of the most capable AI models available today. Both excel at reasoning and code. The real differences emerge in writing quality, developer tooling, Google Workspace integration, and multimodal tasks. Here&apos;s the honest breakdown.
+              Claude (Anthropic) and Gemini (Google DeepMind) are two of the most capable models going, and both are common alternatives once ChatGPT stops being enough for a specific job. They split cleanly: Claude leans into careful writing and long documents, Gemini into Google integration and multimodal work. Here&apos;s the straight, model-agnostic breakdown.
             </p>
             <Link
               href="/courses/why-chatgpt/meet-chatgpt"
@@ -269,7 +263,7 @@ export default async function ClaudeVsGeminiPage({
           <div className="mx-auto max-w-[800px]">
             <div className="rounded-[18px] border-[4px] border-ink bg-[#d0f0ea] p-8 shadow-[6px_6px_0px_#1c1917] max-[480px]:p-6">
               <p className="text-[1.1rem] font-medium leading-[1.8] text-ink">
-                Claude excels at writing, code generation (via Claude Code), and precise instruction-following with a 200K-token context window. Gemini excels at multimodal tasks and Google ecosystem integration with up to 1M tokens. For professional knowledge work, Claude's accuracy throughout long contexts gives it an edge.
+                Claude leans toward writing quality and steady instruction-following; Gemini leans toward multimodal work and deep Google integration, with a larger maximum context on its top model. Neither is a universal winner. For text-heavy knowledge work Claude is the more common pick; for anything anchored in Google Docs, Sheets, or Search, Gemini is. Choose by where your work already lives.
               </p>
             </div>
           </div>
@@ -348,13 +342,13 @@ export default async function ClaudeVsGeminiPage({
           <div className="mx-auto max-w-[800px]">
             <div className="rounded-[18px] border-[4px] border-ink bg-cream p-10 shadow-[6px_6px_0px_#1c1917] max-[480px]:p-6">
               <h2 className="mb-4 text-[1.8rem] font-extrabold text-ink max-md:text-[1.4rem]">
-                The context window myth
+                Bigger context isn&apos;t automatically better
               </h2>
               <p className="mb-4 text-[1.05rem] leading-[1.7] text-text-secondary">
-                Gemini 1.5 Pro&apos;s 1M-token context window sounds decisive — and it is impressive. But raw context size isn&apos;t the full story. In the <strong>Needle in a Haystack</strong> benchmark, which tests whether models can reliably retrieve information from deep within their context, Claude consistently outperforms Gemini 1.5 Pro on retrieval accuracy at equivalent depths.
+                Gemini&apos;s top model advertises a much larger maximum context than Claude, and on paper that sounds decisive. In practice, a huge window and reliable recall from deep inside it are two different things. Every model&apos;s retrieval gets shakier the more you cram in, so the headline token number tells you the ceiling, not the day-to-day quality.
               </p>
               <p className="text-[1.05rem] leading-[1.7] text-text-secondary">
-                For most professional use cases — analyzing a codebase, reviewing a contract, synthesizing research — Claude&apos;s 200K window is sufficient, and the retrieval quality is more reliable. For tasks requiring a true million-token context (e.g., loading entire data dumps), Gemini 1.5 Pro is the stronger choice.
+                For most real work — reading a codebase, reviewing a contract, synthesizing a few reports — Claude&apos;s window is more than enough and its recall holds up well. If you genuinely need to load an enormous data dump in one shot, Gemini&apos;s larger maximum is the reason to reach for it. Test both on your own material rather than trusting the spec sheet.
               </p>
             </div>
           </div>
@@ -392,10 +386,10 @@ export default async function ClaudeVsGeminiPage({
             </h2>
             <div className="space-y-4">
               {[
-                { q: "Is Claude better than Gemini?", a: "Claude and Gemini have different strengths. Claude excels at writing, code generation, and instruction-following. Gemini excels at multimodal tasks and Google ecosystem integration. The best choice depends on your use case." },
-                { q: "Which AI has the larger context window?", a: "Gemini supports up to 1M tokens with Gemini 1.5 Pro, while Claude supports up to 200K tokens. However, Claude's instruction-following accuracy remains higher throughout long contexts." },
-                { q: "Can I use both Claude and Gemini?", a: "Yes. Many professionals use Claude for writing and development (via Claude Code) and Gemini for tasks integrated with Google Workspace. They serve complementary roles." },
-                { q: "Is Gemini free to use?", a: "Gemini offers a free tier through Google AI Studio and the Gemini app. Claude also has a free tier at claude.ai. Both have paid plans for higher usage limits and more capable models." },
+                { q: "Is Claude better than Gemini?", a: "Neither wins outright. Claude leans toward writing and instruction-following; Gemini toward multimodal work and Google integration. The better tool is the one that matches your task and where your work already lives." },
+                { q: "Which one has the larger context window?", a: "Gemini's top model advertises a larger maximum context than Claude. But a bigger ceiling doesn't guarantee better recall from deep inside it, so treat the number as an upper limit rather than a quality score." },
+                { q: "Do I have to pick just one?", a: "No. Many people keep ChatGPT as their default and add Claude for careful writing or Gemini for Google-based work, switching by task. The prompting skills carry across all three." },
+                { q: "Is Gemini free to use?", a: "Yes, through the Gemini app and Google AI Studio. Claude has a free tier at claude.ai, and ChatGPT has one too. All three reserve their most capable models and higher limits for paid plans." },
               ].map((item) => (
                 <div key={item.q} className="rounded-[16px] border-[3px] border-ink bg-cream p-6 shadow-[3px_3px_0px_#1c1917]">
                   <div className="mb-2 flex items-start gap-3">
@@ -413,10 +407,10 @@ export default async function ClaudeVsGeminiPage({
         <section className="px-6 pb-[80px] pt-8 text-center">
           <div className="mx-auto max-w-[800px]">
             <h2 className="text-[2.4rem] font-extrabold leading-[1.2] text-ink max-md:text-[1.8rem]">
-              Already choosing Claude?
+              Whichever you pick, learn it properly
             </h2>
             <p className="mt-2 font-serif text-[1.3rem] italic text-walnut">
-              Learn it systematically. Free courses, no credit card.
+              Model-agnostic skills that transfer. Free courses, no credit card.
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
               <Link

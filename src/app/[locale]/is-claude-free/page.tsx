@@ -16,9 +16,9 @@ export async function generateMetadata({
   const pathForLocale = (loc: string) =>
     `${baseUrl}${loc === routing.defaultLocale ? "" : `/${loc}`}/is-claude-free`;
 
-  const title = "Is Claude AI Free? Best Pricing Guide for 2025";
+  const title = "Is Claude AI Free? And How Its Free Tier Compares";
   const description =
-    "Yes, Claude AI has a free tier. Here's exactly what's included, what the limits are, and when you'd want to upgrade. Honest, direct answer with no marketing fluff.";
+    "Yes, Claude has a free tier — and so do ChatGPT and Gemini. Here's what Claude's free plan includes, where its limits differ from the others, and how to decide which free AI to start with.";
 
   return {
     title,
@@ -58,54 +58,54 @@ export function generateStaticParams() {
 const faqItems = [
   {
     q: "Is Claude AI free to use?",
-    a: "Yes. Claude.ai offers a free tier that gives you access to Claude without a credit card. You can start conversations, upload documents, and use Claude for writing, analysis, coding help, and research — all for free.",
+    a: "Yes. Claude.ai has a free tier with no credit card required. You can chat, upload documents, and use it for writing, analysis, coding help, and research at no cost — the same shape of free plan ChatGPT and Gemini offer.",
+  },
+  {
+    q: "How does Claude's free tier compare to ChatGPT's and Gemini's?",
+    a: "All three give you a genuinely usable free plan with daily limits. The practical differences are the extras: ChatGPT's free tier includes some image generation and voice; Gemini's ties into Google Search and Docs; Claude's strength on the free plan is careful writing and handling long documents. For learning the basics, any of them works.",
   },
   {
     q: "What's included in the Claude free tier?",
-    a: "The free tier includes access to Claude's conversational interface at claude.ai, the ability to upload files and images, document analysis, coding help, and general-purpose writing and research tasks. Free accounts have usage limits — you can hit a daily cap during peak hours.",
+    a: "Access to Claude's chat interface at claude.ai, file and image uploads, document analysis, coding help, and general writing and research. Free accounts have usage limits, so during busy periods you may hit a daily cap and be asked to wait.",
   },
   {
     q: "What are the free tier limitations?",
-    a: "Free users may encounter rate limits during high-demand periods, meaning Claude will ask you to wait before sending more messages. Free accounts also have access to a specific model tier — paid plans unlock access to more powerful models like Claude Opus.",
+    a: "Rate limits during high demand and access to a standard model tier rather than the most powerful one. This is true across the board — ChatGPT and Gemini also gate their top models and higher limits behind paid plans.",
   },
   {
     q: "Do you need a credit card to use Claude for free?",
-    a: "No credit card required to start. Create an account at claude.ai with an email address and you can use the free tier immediately.",
+    a: "No. Create an account at claude.ai with an email and the free tier works immediately. Same for ChatGPT and Gemini.",
   },
   {
-    q: "Is Claude Code free?",
-    a: "Claude Code is a CLI tool that uses the Anthropic Claude API. Running it requires an Anthropic API account with API credits — it is not included in the claude.ai free tier. However, Learn to GPT's free courses teach you Custom GPT and prompting workflows before you need to pay for API access.",
+    q: "Which free AI should I start with?",
+    a: "The one closest to where you already work. If you live in Google Docs, try Gemini; if you want image generation or voice out of the box, ChatGPT; if you're doing long writing or document review, Claude. You can't really go wrong, and the skills carry across all three.",
   },
   {
     q: "Is Learn to GPT free?",
-    a: "Learn to GPT's foundational tracks (Track 1: Foundations and Track 6: Practitioner Setup) are completely free — no credit card required. Advanced content including Track 7 (hooks, agents, multi-agent architectures) is available through our paid masterclass.",
+    a: "Yes, the foundational courses are free with no credit card required. They teach model-agnostic skills — prompting, context, workflows — that apply whether you end up on ChatGPT, Claude, or Gemini. Deeper material is available for learners who want to go further.",
   },
   {
-    q: "When should I upgrade from the free tier?",
-    a: "Upgrade when you need: (1) higher daily message limits without waiting, (2) access to more powerful Claude models, (3) Claude Projects for team collaboration, or (4) larger context windows for long documents.",
-  },
-  {
-    q: "Is Claude free for businesses?",
-    a: "Claude has business and team plans that are not free, but individual employees can use the free tier for personal exploration. Businesses that want team collaboration, administrative controls, and higher limits should look at Claude's team offerings.",
+    q: "When should I pay for a subscription?",
+    a: "When free limits start slowing you down: higher daily caps, access to the most powerful model, and larger context for long documents. The trigger is the same on every platform — you'll feel the ceiling before you need to think about it.",
   },
 ];
 
 const freeIncludes = [
-  "Conversations with Claude at claude.ai",
+  "Chat with Claude at claude.ai — no credit card",
   "File and image uploads",
   "Document analysis and summarization",
   "Writing, editing, and research",
   "Coding help and debugging",
-  "Access to Learn to GPT's free tracks (Tracks 1 and 6)",
+  "Roughly on par with ChatGPT's and Gemini's free plans",
 ];
 
 const paidUnlocks = [
   "Higher daily message limits",
-  "Access to more powerful Claude models (Opus, etc.)",
-  "Claude Projects for team knowledge bases",
-  "Larger context windows",
+  "Access to the most powerful model tier (Opus)",
+  "Larger context windows for long documents",
   "Priority access during peak hours",
-  "Advanced Learn to GPT content (Track 7 and above)",
+  "Projects and team features",
+  "The same upgrade triggers you'd hit on ChatGPT or Gemini",
 ];
 
 export default async function IsClaudeFreePage({
@@ -132,7 +132,7 @@ export default async function IsClaudeFreePage({
             "@graph": [
               {
                 "@type": "FAQPage",
-                name: "Is Claude AI Free? Free Tier Explained",
+                name: "Is Claude AI Free? Free Tier vs ChatGPT and Gemini",
                 url: pathForLocale(locale),
                 inLanguage: locale,
                 mainEntity: faqItems.map((item) => ({
@@ -202,10 +202,10 @@ export default async function IsClaudeFreePage({
             <div className="mx-auto mt-8 max-w-[660px] rounded-[18px] border-[4px] border-ink bg-[#d0f0ea] p-8 shadow-[6px_6px_0px_#1c1917]">
               <div className="flex items-center justify-center gap-3">
                 <CheckCircle className="size-8 text-teal" />
-                <span className="text-[1.5rem] font-extrabold text-ink">Yes — Claude AI has a free tier.</span>
+                <span className="text-[1.5rem] font-extrabold text-ink">Yes — and so are ChatGPT and Gemini.</span>
               </div>
               <p className="mt-4 text-[1.05rem] leading-[1.7] text-text-secondary">
-                You can use Claude at <strong>claude.ai</strong> without paying anything. No credit card required. Create an account with your email and start immediately. Free accounts have usage limits — you may hit a daily cap during peak hours — but the core product is genuinely usable at no cost.
+                You can use Claude at <strong>claude.ai</strong> for free with no credit card, the same way you can use ChatGPT and Gemini for free. All three cap daily usage and reserve their most powerful models for paid plans, but each free tier is genuinely useful. The real question isn&apos;t whether Claude is free — it&apos;s which free AI fits what you&apos;re trying to do.
               </p>
             </div>
 
@@ -238,7 +238,7 @@ export default async function IsClaudeFreePage({
               <div className="rounded-[18px] border-[4px] border-ink bg-cream p-8 shadow-[6px_6px_0px_#1c1917]">
                 <div className="mb-4 flex items-center gap-2">
                   <Zap className="size-6 text-teal" />
-                  <h3 className="text-[1.3rem] font-extrabold text-ink">Free tier includes</h3>
+                  <h3 className="text-[1.3rem] font-extrabold text-ink">Claude&apos;s free tier includes</h3>
                 </div>
                 <ul className="space-y-3">
                   {freeIncludes.map((item) => (

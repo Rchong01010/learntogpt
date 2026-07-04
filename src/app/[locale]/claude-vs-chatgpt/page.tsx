@@ -16,9 +16,9 @@ export async function generateMetadata({
   const pathForLocale = (loc: string) =>
     `${baseUrl}${loc === routing.defaultLocale ? "" : `/${loc}`}/claude-vs-chatgpt`;
 
-  const title = "Claude vs ChatGPT: Complete Comparison Guide (2025)";
+  const title = "Claude vs ChatGPT: An Even-Handed 2025 Comparison";
   const description =
-    "Claude vs ChatGPT — which AI is better for writing, coding, analysis, and research? An honest, fact-based comparison with real examples to help you choose.";
+    "Most people start on ChatGPT and wonder if Claude is worth adding. A neutral, task-by-task comparison of the two AI models — what each is genuinely better at, and how to decide which to open for a given job.";
 
   return {
     title,
@@ -57,79 +57,79 @@ export function generateStaticParams() {
 
 const comparisons = [
   {
-    category: "Long-form writing",
-    claude: "Excellent — nuanced, structured, adapts to voice",
-    chatgpt: "Good — can feel formulaic at scale",
-    winner: "claude" as const,
-  },
-  {
-    category: "Code generation",
-    claude: "Strong — explains reasoning, catches edge cases",
-    chatgpt: "Strong — large plugin ecosystem, GPT-4o speed",
+    category: "Everyday questions & drafts",
+    claude: "Strong, clear answers",
+    chatgpt: "Strong, and the one most people already have open",
     winner: "tie" as const,
   },
   {
-    category: "Document analysis",
-    claude: "200K token context — reads entire codebases or books",
-    chatgpt: "128K tokens — good for most tasks",
+    category: "Long-form writing",
+    claude: "Often preferred — holds a voice, less repetitive over long pieces",
+    chatgpt: "Very capable, occasionally more formulaic at length",
     winner: "claude" as const,
   },
   {
-    category: "Web browsing",
-    claude: "Available via computer use / MCP tools",
-    chatgpt: "Native browsing built in to Plus",
-    winner: "chatgpt" as const,
+    category: "Very long documents",
+    claude: "Large context window handles a full book or codebase in one go",
+    chatgpt: "Context has grown a lot; fine for most real documents",
+    winner: "claude" as const,
   },
   {
     category: "Image generation",
-    claude: "Not built in (uses Claude models for vision)",
-    chatgpt: "DALL·E 3 built in",
+    claude: "Not built in — reads images but doesn't create them",
+    chatgpt: "Built-in image generation",
     winner: "chatgpt" as const,
   },
   {
-    category: "Safety & instruction-following",
-    claude: "Trained with Constitutional AI — precise, low refusal rate",
-    chatgpt: "Good — sometimes over-cautious on edge cases",
+    category: "Voice conversation",
+    claude: "Text-first",
+    chatgpt: "Built-in voice mode",
+    winner: "chatgpt" as const,
+  },
+  {
+    category: "Web browsing & real-time info",
+    claude: "Available with the right tools set up",
+    chatgpt: "Browsing built in on paid plans",
+    winner: "chatgpt" as const,
+  },
+  {
+    category: "Apps, plugins & integrations",
+    claude: "Growing, but smaller catalog",
+    chatgpt: "The largest third-party ecosystem today",
+    winner: "chatgpt" as const,
+  },
+  {
+    category: "Refusals & instruction-following",
+    claude: "Tends to explain itself and refuse less arbitrarily",
+    chatgpt: "Good, occasionally more cautious on edge cases",
     winner: "claude" as const,
-  },
-  {
-    category: "API & developer tools",
-    claude: "Claude API + ChatGPT Codex CLI + MCP ecosystem",
-    chatgpt: "OpenAI API + GPT-4o assistants + plugins",
-    winner: "tie" as const,
-  },
-  {
-    category: "Multilingual support",
-    claude: "Strong across 100+ languages",
-    chatgpt: "Strong across 100+ languages",
-    winner: "tie" as const,
   },
 ];
 
 const useCases = [
   {
-    title: "Choose Claude for writing & analysis",
+    title: "Stay on ChatGPT for anything visual or spoken",
     body:
-      "Long-form content, legal document review, research synthesis, nuanced editing — Claude's larger context window and Constitutional AI training make it more reliable for complex, high-stakes text work.",
-    icon: "✍️",
-  },
-  {
-    title: "Choose Claude for developer workflows",
-    body:
-      "Claude Code gives you a full agentic CLI that runs in your terminal, edits multi-file projects, writes tests, and deploys. The MCP ecosystem extends Claude into any tool you already use.",
-    icon: "⚙️",
-  },
-  {
-    title: "ChatGPT wins for multimedia & browsing",
-    body:
-      "If you need image generation, voice mode, or real-time web search baked in without extra setup, ChatGPT Plus has the edge today.",
+      "Image generation, voice conversations, and the deepest app ecosystem live in ChatGPT. If a task needs pictures, speech, or a specific integration, it's usually the faster route.",
     icon: "🖼️",
   },
   {
-    title: "Both are excellent for most everyday tasks",
+    title: "Reach for Claude on long, careful text",
     body:
-      "Summarizing emails, drafting messages, answering questions, explaining concepts — either model handles this well. The differences become meaningful at professional scale and complexity.",
+      "Long documents, drafting that needs to hold a consistent voice, or reviewing a big contract or report in one pass. This is where people who already use ChatGPT tend to open Claude instead.",
+    icon: "✍️",
+  },
+  {
+    title: "Either one handles everyday work",
+    body:
+      "Summarizing email, drafting messages, explaining a concept, quick research — both models do this well. Use whichever you already have open; the difference here is small.",
     icon: "⚡",
+  },
+  {
+    title: "The pros keep both",
+    body:
+      "Plenty of heavy users pay for both and switch by task rather than picking a side. The skill that matters is knowing which one fits the job, and that's exactly what Learn to GPT teaches.",
+    icon: "🔀",
   },
 ];
 
@@ -157,9 +157,9 @@ export default async function ClaudeVsChatGPTPage({
             "@graph": [
               {
                 "@type": "Article",
-                headline: "Claude vs ChatGPT: Honest Comparison for 2025",
+                headline: "Claude vs ChatGPT: An Even-Handed Comparison for 2025",
                 description:
-                  "An honest, fact-based comparison of Claude and ChatGPT across writing, coding, analysis, and research use cases.",
+                  "A neutral, task-by-task comparison of Claude and ChatGPT for people who already use one and want to know when the other is worth opening.",
                 url: pagePath,
                 inLanguage: locale,
                 author: {
@@ -186,15 +186,15 @@ export default async function ClaudeVsChatGPTPage({
                     name: "Is Claude better than ChatGPT?",
                     acceptedAnswer: {
                       "@type": "Answer",
-                      text: "Claude excels at long-form writing, document analysis, and developer workflows via Claude Code. ChatGPT has the edge for built-in image generation and web browsing. For most professional use cases, Claude's larger context window and precise instruction-following give it an advantage.",
+                      text: "Neither is better across the board. Claude tends to be preferred for long-form writing and long-document work; ChatGPT leads on image generation, voice, and its app ecosystem, and it's the tool most people already have open. Pick by the task in front of you rather than by brand.",
                     },
                   },
                   {
                     "@type": "Question",
-                    name: "Which AI is better for coding?",
+                    name: "Do I need both Claude and ChatGPT?",
                     acceptedAnswer: {
                       "@type": "Answer",
-                      text: "Both Claude and ChatGPT are strong at code generation. Claude's unique advantage is Claude Code — an agentic CLI that edits multi-file projects, runs tests, and deploys. For raw code snippets, both are comparable.",
+                      text: "Not to get started — one is plenty to learn the fundamentals. Many heavy users do keep both and switch by task: ChatGPT for visual and multimodal work, Claude for careful long-form text. The prompting skills transfer either way.",
                     },
                   },
                 ],
@@ -264,12 +264,10 @@ export default async function ClaudeVsChatGPTPage({
               Claude vs ChatGPT
             </h1>
             <p className="mt-3 font-serif text-[1.6rem] italic text-walnut max-md:text-[1.2rem]">
-              Which AI is actually better for your work?
+              You&apos;re probably on one already. Is the other worth it?
             </p>
             <p className="mx-auto mb-10 mt-6 max-w-[600px] text-[1.05rem] leading-[1.7] text-text-secondary">
-              Both are excellent models. The real question is which one fits
-              your workflow. We break down the honest differences across writing,
-              coding, analysis, and research — with no hype and no vendor bias.
+              Most people meet ChatGPT first and later wonder where Claude fits. We&apos;re model-agnostic here, so this is a straight, task-by-task read: what each one is genuinely better at, and how to decide which to open for the job in front of you.
             </p>
             <Link
               href="/courses/why-chatgpt/meet-chatgpt"
@@ -289,7 +287,7 @@ export default async function ClaudeVsChatGPTPage({
           <div className="mx-auto max-w-[800px]">
             <div className="rounded-[18px] border-[4px] border-ink bg-[#d0f0ea] p-8 shadow-[6px_6px_0px_#1c1917] max-[480px]:p-6">
               <p className="text-[1.1rem] font-medium leading-[1.8] text-ink">
-                Claude and ChatGPT are both frontier AI models, but they excel at different things. Claude (by Anthropic) is stronger at long-form writing, document analysis, and developer workflows via Claude Code. ChatGPT (by OpenAI) has the edge for built-in image generation and web browsing. For most professional knowledge work, Claude&apos;s 200K-token context window, precise instruction-following, and Constitutional AI training give it a measurable advantage in output quality and reliability.
+                Claude (by Anthropic) and ChatGPT (by OpenAI) are both frontier AI models, and for everyday work they&apos;re close. The differences show up at the edges: Claude tends to be stronger on long-form writing and reading very long documents in one pass, while ChatGPT leads on built-in image generation, voice, and its large app ecosystem — and it&apos;s the one most people already have open. There is no single winner. The useful question is which one fits the task, not which brand to pledge to.
               </p>
             </div>
           </div>
@@ -306,27 +304,27 @@ export default async function ClaudeVsChatGPTPage({
             </h2>
             <div className="space-y-6">
               <div className="rounded-[18px] border-[3px] border-ink bg-cream p-7 shadow-[3px_3px_0px_#1c1917]">
-                <h3 className="mb-2 text-[1.1rem] font-bold text-ink">Context window: Claude handles more</h3>
+                <h3 className="mb-2 text-[1.1rem] font-bold text-ink">Multimedia and ecosystem: ChatGPT&apos;s home turf</h3>
                 <p className="text-[0.92rem] leading-[1.6] text-text-secondary">
-                  Claude supports a 200,000-token context window, roughly 150,000 words. That means you can paste an entire codebase, a full research paper, or a 300-page legal document and Claude processes it in a single conversation. GPT-4o supports 128K tokens. For tasks that require reading and synthesizing long documents, Claude&apos;s larger context window is a concrete advantage.
+                  ChatGPT ships image generation, a voice mode, web browsing, and the largest catalog of third-party apps and plugins, all with no setup. For most people this is the reason it&apos;s the default. If your task involves pictures, spoken conversation, or a specific integration, ChatGPT is usually the shorter path. Claude can read images and, with the right tools connected, browse the web, but it doesn&apos;t generate images.
                 </p>
               </div>
               <div className="rounded-[18px] border-[3px] border-ink bg-cream p-7 shadow-[3px_3px_0px_#1c1917]">
-                <h3 className="mb-2 text-[1.1rem] font-bold text-ink">Developer tools: Claude Code vs ChatGPT plugins</h3>
+                <h3 className="mb-2 text-[1.1rem] font-bold text-ink">Long documents: where Claude pulls ahead</h3>
                 <p className="text-[0.92rem] leading-[1.6] text-text-secondary">
-                  Claude Code is a standalone CLI that runs in your terminal, reads your project files, edits code, runs tests, and deploys. It operates autonomously on multi-step tasks. ChatGPT&apos;s developer experience centers on the Assistants API and plugin ecosystem. For developers who want an agentic coding tool, Claude Code is significantly more capable. For developers who want multi-model flexibility, ChatGPT&apos;s plugin marketplace offers broader integrations.
+                  Claude&apos;s large context window lets you paste a full codebase, a long research paper, or a lengthy contract and ask questions across all of it in one conversation. ChatGPT&apos;s context has grown a lot and is fine for most real documents, but on the longest inputs Claude is still the more comfortable pick. Test both on your own files before deciding.
                 </p>
               </div>
               <div className="rounded-[18px] border-[3px] border-ink bg-cream p-7 shadow-[3px_3px_0px_#1c1917]">
-                <h3 className="mb-2 text-[1.1rem] font-bold text-ink">Writing quality: Claude tends to be less formulaic</h3>
+                <h3 className="mb-2 text-[1.1rem] font-bold text-ink">Writing: a real but subjective edge for Claude</h3>
                 <p className="text-[0.92rem] leading-[1.6] text-text-secondary">
-                  For long-form writing, Claude consistently produces more nuanced, less repetitive output. It adapts better to voice-matching, maintains consistency across longer pieces, and avoids the predictable patterns that make ChatGPT output feel templated. This matters most for professional content creation, editing, and any task where the output needs to sound human.
+                  A lot of people who write for a living prefer Claude&apos;s drafts: it tends to hold a consistent voice and stay less repetitive across a long piece. This is a lean, not a law, and it&apos;s partly taste. The honest move is to give both the same brief and keep whichever output you&apos;d actually send.
                 </p>
               </div>
               <div className="rounded-[18px] border-[3px] border-ink bg-cream p-7 shadow-[3px_3px_0px_#1c1917]">
-                <h3 className="mb-2 text-[1.1rem] font-bold text-ink">Multimedia: ChatGPT has more built-in</h3>
+                <h3 className="mb-2 text-[1.1rem] font-bold text-ink">Everyday coding help: close enough to call a tie</h3>
                 <p className="text-[0.92rem] leading-[1.6] text-text-secondary">
-                  ChatGPT includes DALL-E 3 image generation, native voice mode, and built-in web browsing without any setup. Claude can browse the web via MCP tools and analyze images, but it does not generate images natively. If multimedia creation is central to your workflow, ChatGPT offers a more integrated out-of-box experience.
+                  For writing, explaining, and debugging code in a chat window, both are strong and the gap moves with each release. Most people pick by habit or by which one their team already pays for. Both companies also ship command-line coding tools for developers who want AI working directly in a terminal.
                 </p>
               </div>
             </div>
@@ -450,14 +448,14 @@ export default async function ClaudeVsChatGPTPage({
           <div className="mx-auto max-w-[800px]">
             <div className="rounded-[18px] border-[4px] border-ink bg-cream p-10 shadow-[6px_6px_0px_#1c1917] max-[480px]:p-6">
               <h2 className="mb-4 text-[1.8rem] font-extrabold text-ink max-md:text-[1.4rem]">
-                Already decided on Claude?
+                Pick either — the skills transfer
               </h2>
               <p className="mb-6 text-[1.05rem] leading-[1.7] text-text-secondary">
-                Learn to GPT is the fastest way to go from "I have a Claude
-                account" to actually using it in your daily work. Free tracks
-                cover the foundations — prompting, context, professional
-                workflows. The masterclass unlocks Claude Code, the API,
-                and advanced agent patterns.
+                Learn to GPT teaches the fundamentals that carry across every chat
+                model: writing clear prompts, giving good context, and iterating
+                on output. Learn them once on ChatGPT or Claude and you can move
+                between the two without starting over. Free tracks cover the
+                foundations; deeper courses go into real professional workflows.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link
@@ -488,19 +486,19 @@ export default async function ClaudeVsChatGPTPage({
               {[
                 {
                   q: "Can I use Claude and ChatGPT together?",
-                  a: "Yes, and many professionals do. A common pattern is using Claude for long-form writing, document analysis, and coding (via Claude Code), while using ChatGPT for quick image generation and web browsing tasks. The models complement each other well.",
+                  a: "Yes, and many people do. A common pattern is ChatGPT for image generation, voice, and quick everyday tasks, and Claude for long-form writing and reading long documents. They complement each other, and you don't have to pick a side.",
                 },
                 {
                   q: "Which is better for coding?",
-                  a: "For raw code generation, both are comparable. Claude's advantage is Claude Code, an agentic CLI that reads your project, edits multiple files, runs tests, and commits. ChatGPT has a broader plugin ecosystem. If you want autonomous coding workflows, Claude Code is the stronger tool.",
+                  a: "For everyday coding help in a chat window, they're close, and the gap shifts with each release. Most people choose by habit or by which one their team already pays for. Both also offer command-line tools for developers who want AI working inside a terminal.",
                 },
                 {
                   q: "Is Claude more expensive than ChatGPT?",
-                  a: "Both offer free tiers and paid subscriptions at similar price points. API pricing varies by model and usage. Claude's larger context window means you can process longer documents in a single call, which can be more cost-effective for document-heavy workflows.",
+                  a: "Both have free tiers and paid subscriptions at broadly similar price points, and API pricing varies by model and usage. For document-heavy work, Claude's larger context can mean fewer calls, which can offset cost. For most individuals the monthly plans land in the same ballpark.",
                 },
                 {
                   q: "Which should I learn first?",
-                  a: "If your work involves writing, analysis, or software development, start with Claude. Its instruction-following precision and context window make it easier to get reliable results as a beginner. The skills you build transfer to other models.",
+                  a: "The one you already have open. ChatGPT is where most people start, and that's fine. The prompting and context skills you build there transfer directly to Claude and Gemini, so you're not locked in whichever you begin with.",
                 },
               ].map((item) => (
                 <div key={item.q} className="rounded-[16px] border-[3px] border-ink bg-cream p-6 shadow-[3px_3px_0px_#1c1917]">
@@ -519,7 +517,7 @@ export default async function ClaudeVsChatGPTPage({
         <section className="px-6 pb-[80px] pt-8 text-center">
           <div className="mx-auto max-w-[800px]">
             <h2 className="text-[2.4rem] font-extrabold leading-[1.2] text-ink max-md:text-[1.8rem]">
-              Ready to master Claude?
+              Ready to get more out of any AI?
             </h2>
             <p className="mt-2 font-serif text-[1.3rem] italic text-walnut">
               Free courses. No credit card. Start in 60 seconds.
