@@ -407,7 +407,7 @@ export default async function AiAutomationPage({
               {[
                 { href: "/claude-for-business", label: "ChatGPT for Business", desc: "ROI and team workflows" },
                 { href: "/claude-for-developers", label: "For Developers", desc: "API, CLI, and agents" },
-                { href: "/claude-code", label: "ChatGPT Codex", desc: "The developer CLI" },
+                { href: "/claude-code", label: "Claude Code", desc: "The terminal coding agent" },
                 { href: "/claude-api-tutorial", label: "API Tutorial", desc: "Build with the ChatGPT API" },
               ].map(({ href, label, desc }) => (
                 <Link

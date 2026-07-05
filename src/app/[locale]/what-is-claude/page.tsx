@@ -33,7 +33,7 @@ export async function generateMetadata({
           url: `${baseUrl}/og-default.png`,
           width: 1200,
           height: 630,
-          alt: "What is Claude AI — Learn to GPT",
+          alt: "What is Claude AI | Learn to GPT",
         },
       ],
     },
@@ -75,7 +75,7 @@ const faqs = [
   },
   {
     q: "Do I have to learn Claude separately from ChatGPT?",
-    a: "No. The core skills — writing clear prompts, giving context, iterating on output — are the same across every chat model. Learn them once on any tool and you can switch between Claude, ChatGPT, and Gemini without starting over.",
+    a: "No. The core skills (writing clear prompts, giving context, iterating on output) are the same across every chat model. Learn them once on any tool and you can switch between Claude, ChatGPT, and Gemini without starting over.",
   },
   {
     q: "What is Constitutional AI?",
@@ -145,7 +145,7 @@ const models = [
     name: "Haiku (the fast tier)",
     badge: "Fastest",
     badgeColor: "bg-orange",
-    desc: "Small and quick, for simple, high-volume tasks like sorting or summarizing. Every major provider ships a tier like this — pick by cost and speed.",
+    desc: "Small and quick, for simple, high-volume tasks like sorting or summarizing. Every major provider ships a tier like this. Pick by cost and speed.",
   },
 ];
 
@@ -293,7 +293,7 @@ export default async function WhatIsClaudePage({
           <div className="mx-auto max-w-[800px]">
             <div className="rounded-[18px] border-[4px] border-ink bg-[#d0f0ea] p-8 shadow-[6px_6px_0px_#1c1917] max-[480px]:p-6">
               <p className="text-[1.1rem] font-medium leading-[1.8] text-ink">
-                Claude is Anthropic&apos;s AI model — a direct alternative to ChatGPT and Gemini. It&apos;s known for careful writing and for handling very long documents in one go. Like the others, it ships in a fast tier, a balanced tier, and a top tier, and you use it through a chat site or an API. There&apos;s no single &quot;best&quot; model; there&apos;s the one that fits the task in front of you.
+                Claude is Anthropic&apos;s AI model, a direct alternative to ChatGPT and Gemini. It&apos;s known for careful writing and for handling very long documents in one go. Like the others, it ships in a fast tier, a balanced tier, and a top tier, and you use it through a chat site or an API. There&apos;s no single &quot;best&quot; model; there&apos;s the one that fits the task in front of you.
               </p>
             </div>
           </div>
@@ -330,7 +330,7 @@ export default async function WhatIsClaudePage({
                   Long context is where Claude earned its name
                 </div>
                 <p className="text-[0.9rem] leading-[1.6] text-text-secondary">
-                  Claude can take a very large amount of text at once — enough to paste a full codebase or a hundred-page report and ask questions across all of it. Gemini also handles very long inputs, and ChatGPT&apos;s limits have grown too, so this is less of a moat than it was a year ago. It&apos;s still a practical reason people reach for Claude on document-heavy work.
+                  Claude can take a very large amount of text at once: enough to paste a full codebase or a hundred-page report and ask questions across all of it. Gemini also handles very long inputs, and ChatGPT&apos;s limits have grown too, so this is less of a moat than it was a year ago. It&apos;s still a practical reason people reach for Claude on document-heavy work.
                 </p>
               </div>
             </div>

@@ -19,7 +19,7 @@ export async function generateMetadata({
 
   const title = "Claude vs Gemini: How the Two Stack Up (and vs ChatGPT)";
   const description =
-    "Claude vs Gemini for writing, coding, and multimodal work — plus where each one fits if you're already using ChatGPT. A neutral, task-by-task comparison to help you pick.";
+    "Claude vs Gemini for writing, coding, and multimodal work, plus where each one fits if you're already using ChatGPT. A neutral, task-by-task comparison to help you pick.";
 
   return {
     title,
@@ -33,7 +33,7 @@ export async function generateMetadata({
           url: `${baseUrl}/og-default.png`,
           width: 1200,
           height: 630,
-          alt: "Claude vs Gemini — Learn to GPT",
+          alt: "Claude vs Gemini | Learn to GPT",
         },
       ],
     },
@@ -59,26 +59,26 @@ export function generateStaticParams() {
 const comparisons = [
   {
     category: "Long-form writing",
-    claude: "Often preferred — holds a voice and stays consistent across long pieces",
+    claude: "Often preferred: holds a voice and stays consistent across long pieces",
     gemini: "Capable, tends toward a more factual, neutral tone",
     winner: "claude" as const,
   },
   {
     category: "Everyday coding help",
-    claude: "Strong — explains its reasoning, catches edge cases",
-    gemini: "Strong — ties into Google's dev tools",
+    claude: "Strong: explains its reasoning, catches edge cases",
+    gemini: "Strong: ties into Google's dev tools",
     winner: "tie" as const,
   },
   {
     category: "Very long inputs",
     claude: "Large context, comfortable with whole codebases and long reports",
-    gemini: "Even larger context on its Pro model — good for big data dumps",
+    gemini: "Even larger context on its Pro model, good for big data dumps",
     winner: "gemini" as const,
   },
   {
     category: "Multimodal (images, audio, video)",
     claude: "Reads images well; text-first overall",
-    gemini: "Built multimodal from the start — audio and video included",
+    gemini: "Built multimodal from the start, audio and video included",
     winner: "gemini" as const,
   },
   {
@@ -120,7 +120,7 @@ const useCases = [
   },
   {
     title: "Reach for Gemini on multimodal",
-    body: "Audio, video, and image-heavy tasks play to Gemini's strengths — it was trained multimodal from the start. Claude reads images but is text-first overall.",
+    body: "Audio, video, and image-heavy tasks play to Gemini's strengths; it was trained multimodal from the start. Claude reads images but is text-first overall.",
     icon: "🎬",
   },
   {
@@ -156,7 +156,7 @@ export default async function ClaudeVsGeminiPage({
                 "@type": "Article",
                 headline: "Claude vs Gemini: How the Two Stack Up in 2025",
                 description:
-                  "A neutral comparison of Claude and Gemini across writing, coding, multimodal work, and Google integration — plus where each fits alongside ChatGPT.",
+                  "A neutral comparison of Claude and Gemini across writing, coding, multimodal work, and Google integration, plus where each fits alongside ChatGPT.",
                 url: pagePath,
                 inLanguage: locale,
                 author: {
@@ -253,7 +253,7 @@ export default async function ClaudeVsGeminiPage({
               <ArrowRight className="size-5" />
             </Link>
             <p className="mt-3 text-[0.85rem] text-text-secondary">
-              Free forever — no credit card required
+              Free forever, no credit card required
             </p>
           </div>
         </section>
@@ -348,7 +348,7 @@ export default async function ClaudeVsGeminiPage({
                 Gemini&apos;s top model advertises a much larger maximum context than Claude, and on paper that sounds decisive. In practice, a huge window and reliable recall from deep inside it are two different things. Every model&apos;s retrieval gets shakier the more you cram in, so the headline token number tells you the ceiling, not the day-to-day quality.
               </p>
               <p className="text-[1.05rem] leading-[1.7] text-text-secondary">
-                For most real work — reading a codebase, reviewing a contract, synthesizing a few reports — Claude&apos;s window is more than enough and its recall holds up well. If you genuinely need to load an enormous data dump in one shot, Gemini&apos;s larger maximum is the reason to reach for it. Test both on your own material rather than trusting the spec sheet.
+                For most real work (reading a codebase, reviewing a contract, synthesizing a few reports), Claude&apos;s window is more than enough and its recall holds up well. If you genuinely need to load an enormous data dump in one shot, Gemini&apos;s larger maximum is the reason to reach for it. Test both on your own material rather than trusting the spec sheet.
               </p>
             </div>
           </div>

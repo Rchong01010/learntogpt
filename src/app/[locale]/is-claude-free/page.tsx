@@ -18,7 +18,7 @@ export async function generateMetadata({
 
   const title = "Is Claude AI Free? And How Its Free Tier Compares";
   const description =
-    "Yes, Claude has a free tier — and so do ChatGPT and Gemini. Here's what Claude's free plan includes, where its limits differ from the others, and how to decide which free AI to start with.";
+    "Yes, Claude has a free tier, and so do ChatGPT and Gemini. Here's what Claude's free plan includes, where its limits differ from the others, and how to decide which free AI to start with.";
 
   return {
     title,
@@ -32,7 +32,7 @@ export async function generateMetadata({
           url: `${baseUrl}/og-default.png`,
           width: 1200,
           height: 630,
-          alt: "Is Claude AI Free? — Learn to GPT",
+          alt: "Is Claude AI Free? | Learn to GPT",
         },
       ],
     },
@@ -58,7 +58,7 @@ export function generateStaticParams() {
 const faqItems = [
   {
     q: "Is Claude AI free to use?",
-    a: "Yes. Claude.ai has a free tier with no credit card required. You can chat, upload documents, and use it for writing, analysis, coding help, and research at no cost — the same shape of free plan ChatGPT and Gemini offer.",
+    a: "Yes. Claude.ai has a free tier with no credit card required. You can chat, upload documents, and use it for writing, analysis, coding help, and research at no cost, the same shape of free plan ChatGPT and Gemini offer.",
   },
   {
     q: "How does Claude's free tier compare to ChatGPT's and Gemini's?",
@@ -70,7 +70,7 @@ const faqItems = [
   },
   {
     q: "What are the free tier limitations?",
-    a: "Rate limits during high demand and access to a standard model tier rather than the most powerful one. This is true across the board — ChatGPT and Gemini also gate their top models and higher limits behind paid plans.",
+    a: "Rate limits during high demand and access to a standard model tier rather than the most powerful one. This is true across the board; ChatGPT and Gemini also gate their top models and higher limits behind paid plans.",
   },
   {
     q: "Do you need a credit card to use Claude for free?",
@@ -82,16 +82,16 @@ const faqItems = [
   },
   {
     q: "Is Learn to GPT free?",
-    a: "Yes, the foundational courses are free with no credit card required. They teach model-agnostic skills — prompting, context, workflows — that apply whether you end up on ChatGPT, Claude, or Gemini. Deeper material is available for learners who want to go further.",
+    a: "Yes, the foundational courses are free with no credit card required. They teach model-agnostic skills (prompting, context, workflows) that apply whether you end up on ChatGPT, Claude, or Gemini. Deeper material is available for learners who want to go further.",
   },
   {
     q: "When should I pay for a subscription?",
-    a: "When free limits start slowing you down: higher daily caps, access to the most powerful model, and larger context for long documents. The trigger is the same on every platform — you'll feel the ceiling before you need to think about it.",
+    a: "When free limits start slowing you down: higher daily caps, access to the most powerful model, and larger context for long documents. The trigger is the same on every platform: you'll feel the ceiling before you need to think about it.",
   },
 ];
 
 const freeIncludes = [
-  "Chat with Claude at claude.ai — no credit card",
+  "Chat with Claude at claude.ai, no credit card",
   "File and image uploads",
   "Document analysis and summarization",
   "Writing, editing, and research",
@@ -202,10 +202,10 @@ export default async function IsClaudeFreePage({
             <div className="mx-auto mt-8 max-w-[660px] rounded-[18px] border-[4px] border-ink bg-[#d0f0ea] p-8 shadow-[6px_6px_0px_#1c1917]">
               <div className="flex items-center justify-center gap-3">
                 <CheckCircle className="size-8 text-teal" />
-                <span className="text-[1.5rem] font-extrabold text-ink">Yes — and so are ChatGPT and Gemini.</span>
+                <span className="text-[1.5rem] font-extrabold text-ink">Yes, and so are ChatGPT and Gemini.</span>
               </div>
               <p className="mt-4 text-[1.05rem] leading-[1.7] text-text-secondary">
-                You can use Claude at <strong>claude.ai</strong> for free with no credit card, the same way you can use ChatGPT and Gemini for free. All three cap daily usage and reserve their most powerful models for paid plans, but each free tier is genuinely useful. The real question isn&apos;t whether Claude is free — it&apos;s which free AI fits what you&apos;re trying to do.
+                You can use Claude at <strong>claude.ai</strong> for free with no credit card, the same way you can use ChatGPT and Gemini for free. All three cap daily usage and reserve their most powerful models for paid plans, but each free tier is genuinely useful. The real question isn&apos;t whether Claude is free; it&apos;s which free AI fits what you&apos;re trying to do.
               </p>
             </div>
 
@@ -277,7 +277,7 @@ export default async function IsClaudeFreePage({
                 Learn to GPT is also free to start
               </h2>
               <p className="mb-4 text-[1.05rem] leading-[1.7] text-text-secondary">
-                Learn to GPT is an independent learning platform (not affiliated with OpenAI) that teaches you how to use ChatGPT effectively. Two full learning tracks — <strong className="text-ink">Track 1: Foundations</strong> and <strong className="text-ink">Track 6: Practitioner Setup</strong> — are completely free, covering everything from your first prompt to Custom GPT configuration and system prompt design.
+                Learn to GPT is an independent learning platform (not affiliated with OpenAI) that teaches you how to use ChatGPT effectively. Two full learning tracks, <strong className="text-ink">Track 1: Foundations</strong> and <strong className="text-ink">Track 6: Practitioner Setup</strong>, are completely free, covering everything from your first prompt to Custom GPT configuration and system prompt design.
               </p>
               <p className="text-[1.05rem] leading-[1.7] text-text-secondary">
                 Advanced content (agent architectures, hooks, multi-agent pipelines) is available through our paid masterclass for learners who want to go deeper. No credit card required for the free tracks.

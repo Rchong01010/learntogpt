@@ -17,9 +17,9 @@ export async function generateMetadata({
   const pathForLocale = (loc: string) =>
     `${baseUrl}${loc === routing.defaultLocale ? "" : `/${loc}`}/claude-for-data-analysis`;
 
-  const title = "Claude for Data Analysis: CSV, Research & Structured Output";
+  const title = "Claude vs ChatGPT for Data Analysis: Which Tool for Which Job";
   const description =
-    "Use Claude to analyze CSV files, synthesize research, generate SQL, extract structured data, and build reports. Learn the workflows, prompts, and techniques that make it work.";
+    "ChatGPT runs Python on your files; Claude reasons across huge pasted documents and returns clean structured output. A task-by-task guide to splitting data work between them, with prompts.";
 
   return {
     title,
@@ -33,7 +33,7 @@ export async function generateMetadata({
           url: `${baseUrl}/og-default.png`,
           width: 1200,
           height: 630,
-          alt: "Claude for Data Analysis — Learn to GPT",
+          alt: "Claude for Data Analysis | Learn to GPT",
         },
       ],
     },
@@ -59,49 +59,49 @@ export function generateStaticParams() {
 const analysisWorkflows = [
   {
     icon: FileSpreadsheet,
-    title: "CSV and spreadsheet analysis",
-    desc: "Paste raw CSV data (or describe the columns) and ask Claude to analyze it. Descriptive stats, trend identification, anomaly detection, cohort comparisons — in natural language.",
-    prompt: "Here's a CSV of monthly sales data for 3 products over 24 months. Identify: (1) which product has the strongest growth trend, (2) any seasonal patterns, (3) months where all 3 products underperformed, (4) the top 5 individual anomalies.",
+    title: "Spreadsheets: run the numbers in ChatGPT",
+    desc: "For real computation (sums, pivots, regressions) upload the file to ChatGPT's data analysis mode, which writes and executes Python. Language models doing mental math over pasted CSVs make mistakes; executed code doesn't. Use Claude when the question is interpretive rather than arithmetic.",
+    prompt: "Upload sales.csv, then: run a month-over-month growth calculation per product line in Python, show the code, and chart the three fastest-growing lines. Flag any month where the data looks incomplete before analyzing it.",
     color: "bg-[#d0f0ea]",
     textColor: "text-teal",
   },
   {
     icon: Database,
-    title: "SQL generation and query writing",
-    desc: "Describe your database schema and the question you want answered — Claude writes the SQL. Works for Postgres, MySQL, BigQuery, SQLite. Include your schema DDL for best results.",
-    prompt: "Schema: users (id, email, created_at), orders (id, user_id, amount, status, created_at). Write a query that returns monthly revenue by cohort (month of user signup), for the past 12 months, with MoM growth rate.",
+    title: "SQL generation: a genuine tie",
+    desc: "Describe your tables and the question; any frontier model writes solid Postgres, MySQL, or BigQuery. Paste your actual schema DDL and sample rows to cut hallucinated column names. Whichever tool you use, read the query before running it against production.",
+    prompt: "Given these CREATE TABLE statements and three sample rows per table, write one query answering: which signup cohorts have the highest 90-day repeat-purchase rate? Explain each join in a comment.",
     color: "bg-[#ffecd2]",
     textColor: "text-orange",
   },
   {
     icon: Search,
-    title: "Research synthesis",
-    desc: "Paste multiple papers, reports, or sources. Claude synthesizes key findings, surfaces contradictions, maps the evidence, and highlights gaps — across the full 200K context window.",
-    prompt: "Read these 5 research papers on [topic]. Synthesize: (1) findings that appear in 3+ studies, (2) directly contradictory findings and likely explanations, (3) methodological limitations across the literature, (4) the most important open questions.",
+    title: "Research synthesis: Claude's home turf",
+    desc: "This is the task that justifies the second tab. Drop several papers or reports into one Claude conversation and interrogate the whole pile at once. Its long context holds more source material in view than most alternatives, which changes what questions you can ask.",
+    prompt: "You have the full text of several studies on this topic. Build a claims matrix: each row a finding, columns for which studies support it, dispute it, or don't address it. Then tell me where the literature genuinely disagrees and why.",
     color: "bg-[#e8e4ff]",
     textColor: "text-[#6b5aed]",
   },
   {
     icon: Table,
-    title: "Structured data extraction",
-    desc: "Feed Claude unstructured text — PDFs, emails, web pages, news articles — and ask it to extract structured data into JSON, CSV, or a schema you define. Reliable, fast, and auditable.",
-    prompt: "Extract from this job posting: {role_title, company, location, salary_range (null if not listed), required_years_experience, tech_stack (array), remote_policy}. Return as JSON. If a field is ambiguous, add an 'extraction_notes' field.",
+    title: "Structured extraction: Claude's other strength",
+    desc: "Turning messy text (emails, postings, transcripts) into JSON or CSV rows against a schema you define. Claude has a reputation for holding a schema faithfully across many documents; GPT models do this well too with structured-output mode. Spot-check either.",
+    prompt: "Convert each of these vendor emails into one JSON record: {vendor, product, quoted_price or null, delivery_weeks or null, open_questions[]}. Where the email is ambiguous, put your uncertainty in open_questions rather than guessing.",
     color: "bg-[#ffd6e0]",
     textColor: "text-[#c2185b]",
   },
   {
     icon: BarChart3,
-    title: "Report generation",
-    desc: "Give Claude raw data and a report template (or describe the audience). It generates the narrative, pulls the key metrics, writes the executive summary, and flags what needs human judgment.",
-    prompt: "Here's our Q2 marketing data. Write a board-ready executive summary: lead the headline finding, show the 3 most important metrics with context, flag 1 risk, end with 2 recommended actions. Max 350 words. No jargon.",
+    title: "Report narratives: pick by writing taste",
+    desc: "Turning finished numbers into an executive summary is a writing job, not a math job. Many people prefer Claude's prose defaults here, but this is preference, not capability. Give whichever model you use the audience, the length cap, and one example of a past report you liked.",
+    prompt: "Using these final Q2 figures (already verified), draft the two-paragraph summary for a board pack: headline result first, one risk named plainly, no adjectives doing the work numbers should do. Match the attached example's tone.",
     color: "bg-[#d0f0ea]",
     textColor: "text-teal",
   },
   {
     icon: TrendingUp,
-    title: "Exploratory data conversations",
-    desc: "Use Claude as a thought partner on messy data. \"I have this dataset and I'm not sure what questions to ask.\" Claude helps you frame the analysis, choose the right approach, and interpret ambiguous results.",
-    prompt: "I have 18 months of customer support ticket data: ticket_id, created_at, category, resolution_time_hours, CSAT_score (1-5), agent_id, product_area. What are the 5 most valuable analyses I could run? For each, describe what I'd learn and why it matters.",
+    title: "Framing the analysis: use either as a thought partner",
+    desc: "Before any tool touches the data, talk through what's worth asking. Describe the columns and the business question, and let the model propose analyses, confounds, and cheap first checks. This works equally well in Claude, ChatGPT, or Gemini.",
+    prompt: "I have 18 months of support tickets with timestamps, categories, resolution times, and satisfaction scores. Before I compute anything: what confounds should worry me, what would a skeptic check first, and what result would actually change a staffing decision?",
     color: "bg-[#ffecd2]",
     textColor: "text-orange",
   },
@@ -109,15 +109,16 @@ const analysisWorkflows = [
 
 const codeExamples = [
   {
-    title: "Python: CSV analysis with pandas prompt",
+    title: "Python: send a data preview, not the whole file",
     language: "python",
-    code: `# Prompt Claude with your data
+    code: `# Same pattern works with the OpenAI SDK;
+# swap the client and model name.
 import anthropic
 import pandas as pd
 
 df = pd.read_csv("sales_data.csv")
-csv_preview = df.head(20).to_csv()
-schema = df.dtypes.to_string()
+preview = df.head(20).to_csv()
+dtypes = df.dtypes.to_string()
 
 client = anthropic.Anthropic()
 response = client.messages.create(
@@ -125,28 +126,30 @@ response = client.messages.create(
     max_tokens=2000,
     messages=[{
         "role": "user",
-        "content": f"""Schema:
-{schema}
+        "content": f"""Column types:
+{dtypes}
 
-Sample data (first 20 rows):
-{csv_preview}
+First 20 rows:
+{preview}
 
-Analyze: top 3 trends, any anomalies,
-and the single most actionable insight."""
+Suggest the three analyses most worth
+running on this, and what each would
+tell us. Do not compute anything yet."""
     }]
 )
 print(response.content[0].text)`,
   },
   {
-    title: "Structured output: extract to JSON",
+    title: "Structured extraction against a fixed schema",
     language: "python",
-    code: `# Extract structured data reliably
+    code: `# Keep the schema in the prompt verbatim
+# so every record comes back uniform.
 response = client.messages.create(
     model="claude-opus-4-5",
     max_tokens=1000,
     messages=[{
         "role": "user",
-        "content": """Extract from this job posting as JSON:
+        "content": """Return this posting as JSON:
 {
   "role_title": string,
   "company": string,
@@ -156,8 +159,9 @@ response = client.messages.create(
   "tech_stack": string[],
   "years_experience": number | null
 }
+Use null, never guess missing fields.
 
-Job posting:
+Posting:
 """ + job_posting_text
     }]
 )
@@ -167,12 +171,12 @@ data = json.loads(response.content[0].text)`,
 ];
 
 const useCaseGrid = [
-  { role: "Analysts", tasks: "SQL generation, cohort analysis, dashboard narrative, anomaly flagging" },
-  { role: "Researchers", tasks: "Literature synthesis, methodology critique, citation extraction, gap analysis" },
-  { role: "Product managers", tasks: "User feedback synthesis, NPS analysis, feature request clustering, roadmap summaries" },
-  { role: "Finance teams", tasks: "Financial model commentary, variance analysis, board report drafts, forecast narratives" },
-  { role: "Marketing teams", tasks: "Campaign data synthesis, attribution analysis, A/B test interpretation, content performance" },
-  { role: "Operations", tasks: "Process mining from logs, SLA analysis, bottleneck identification, efficiency reporting" },
+  { role: "Analysts", tasks: "SQL drafting in either tool; ChatGPT for computed checks; Claude for the writeup" },
+  { role: "Researchers", tasks: "Claude for multi-paper synthesis and contradiction-hunting across long sources" },
+  { role: "Product managers", tasks: "Claude to digest months of user feedback in one pass; either tool for roadmap notes" },
+  { role: "Finance teams", tasks: "ChatGPT's Python execution for variance math; Claude for board narrative drafts" },
+  { role: "Marketing teams", tasks: "ChatGPT for campaign number-crunching; Claude to interpret test results in context" },
+  { role: "Operations", tasks: "Either tool to mine long log extracts; verify anything quantitative with executed code" },
 ];
 
 export default async function ClaudeForDataAnalysisPage({
@@ -199,17 +203,17 @@ export default async function ClaudeForDataAnalysisPage({
             "@graph": [
               {
                 "@type": "WebPage",
-                name: "Claude for Data Analysis: CSV, Research & Structured Output",
+                name: "Claude vs ChatGPT for Data Analysis: Which Tool for Which Job",
                 description:
-                  "Use Claude to analyze CSV files, synthesize research, generate SQL, and extract structured data. Workflows, prompts, and code examples.",
+                  "A task-by-task split of data work between Claude and ChatGPT: computation, SQL, research synthesis, structured extraction, and report narratives.",
                 url: pagePath,
                 inLanguage: locale,
               },
               {
                 "@type": "Course",
-                name: "Data Analysis with Claude",
+                name: "Data Analysis with AI Models",
                 description:
-                  "Learn to use Claude AI for CSV analysis, SQL generation, research synthesis, structured data extraction, and report generation.",
+                  "Learn when to use Claude, ChatGPT, or Gemini for CSV analysis, SQL generation, research synthesis, structured extraction, and reporting.",
                 provider: {
                   "@type": "EducationalOrganization",
                   name: "Learn to GPT",
@@ -259,13 +263,13 @@ export default async function ClaudeForDataAnalysisPage({
           <div className="mx-auto max-w-[800px]">
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-orange">For Analysts & Researchers</p>
             <h1 className="mt-3 text-[3.5rem] font-extrabold leading-[1.1] text-ink max-md:text-[2.4rem] max-[480px]:text-[1.8rem]">
-              Analyze Data, Write SQL, and Extract Insights Without Code
+              Data work splits cleanly between Claude and ChatGPT
             </h1>
             <p className="mt-3 font-serif text-[1.6rem] italic text-walnut max-md:text-[1.2rem]">
-              CSV analysis, SQL generation, research synthesis, structured output
+              One executes code, the other reads everything at once
             </p>
             <p className="mx-auto mb-10 mt-6 max-w-[660px] text-[1.05rem] leading-[1.7] text-text-secondary">
-              Claude&apos;s 200K context window, reliable JSON output, and strong reasoning make it the most versatile AI for data work. Paste a CSV, describe your database schema, dump a research paper — Claude analyzes, extracts, queries, and reports without you writing a line of code.
+              ChatGPT&apos;s data analysis mode actually runs Python on your uploaded files, which makes it the safer choice for anything arithmetic. Claude&apos;s edge is the other half of the job: reading a huge pile of documents or feedback in one conversation, extracting it into clean structure, and writing the narrative on top. This page maps which task goes to which tool.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
               <Link
@@ -288,25 +292,25 @@ export default async function ClaudeForDataAnalysisPage({
         {/* Why Claude for data */}
         <section className="px-6 py-16">
           <div className="mx-auto max-w-[800px]">
-            <p className="text-center text-xs font-bold uppercase tracking-[0.2em] text-text-secondary">Why Claude</p>
-            <h2 className="mt-3 text-center text-[2rem] font-extrabold leading-[1.2] text-ink">What makes Claude good at data work</h2>
+            <p className="text-center text-xs font-bold uppercase tracking-[0.2em] text-text-secondary">The Split</p>
+            <h2 className="mt-3 text-center text-[2rem] font-extrabold leading-[1.2] text-ink">Three rules for dividing the work</h2>
             <div className="mt-10 space-y-6">
               <div className="rounded-[16px] border-[3px] border-ink bg-cream p-[24px_28px] shadow-[3px_3px_0px_#1c1917]">
-                <div className="mb-2 text-[1.05rem] font-bold text-ink">200K context — your entire dataset fits</div>
+                <div className="mb-2 text-[1.05rem] font-bold text-ink">If it needs computing, use executed code</div>
                 <p className="text-[0.9rem] leading-[1.6] text-text-secondary">
-                  A 200,000-token context window holds roughly 150,000 words or ~500 pages of text. In data terms: a 5,000-row CSV with 10 columns, 20 research papers, an entire annual report, or a year of customer support tickets. Claude reads it all in one session — no chunking, no summaries, no information loss at the edges.
+                  A language model predicting the sum of a column is guessing, however confidently. ChatGPT&apos;s data analysis mode sidesteps this by writing Python and running it on your actual file. Claude&apos;s analysis tool can run JavaScript in-browser for similar checks. Either way: for numbers that matter, insist on executed code you can read, not model arithmetic.
                 </p>
               </div>
               <div className="rounded-[16px] border-[3px] border-ink bg-cream p-[24px_28px] shadow-[3px_3px_0px_#1c1917]">
-                <div className="mb-2 text-[1.05rem] font-bold text-ink">Reliable structured output — JSON schemas that hold</div>
+                <div className="mb-2 text-[1.05rem] font-bold text-ink">If it needs reading, use the biggest context</div>
                 <p className="text-[0.9rem] leading-[1.6] text-text-secondary">
-                  Claude follows JSON schemas reliably — more consistently than most alternatives. For data extraction pipelines where every record needs to conform to a schema, this matters enormously. Define your output structure once; Claude applies it faithfully across thousands of documents.
+                  Synthesis quality drops when a tool has to chunk your sources and summarize the summaries. Claude&apos;s context window is large enough to hold a stack of papers, a long annual report, or months of support tickets in one conversation, which is why document-heavy analysts tend to keep it open next to ChatGPT rather than instead of it.
                 </p>
               </div>
               <div className="rounded-[16px] border-[3px] border-ink bg-cream p-[24px_28px] shadow-[3px_3px_0px_#1c1917]">
-                <div className="mb-2 text-[1.05rem] font-bold text-ink">Strong quantitative reasoning</div>
+                <div className="mb-2 text-[1.05rem] font-bold text-ink">If it needs judgment, any of them can push back</div>
                 <p className="text-[0.9rem] leading-[1.6] text-text-secondary">
-                  Claude scores well on quantitative benchmarks — MATH, GSM8K, MMLU. For data work this means: it catches calculation errors, reasons correctly about statistical concepts (correlation vs. causation, sampling bias, p-values), and flags when your framing of a question is analytically flawed.
+                  Correlation versus causation, sampling bias, a question framed so the answer flatters the asker: the frontier models are all capable of catching these when you ask them to play skeptic. That prompt (&quot;what would a hostile reviewer say about this analysis?&quot;) transfers across Claude, ChatGPT, and Gemini unchanged.
                 </p>
               </div>
             </div>
@@ -317,7 +321,7 @@ export default async function ClaudeForDataAnalysisPage({
         <section className="px-6 py-16">
           <div className="mx-auto max-w-[960px]">
             <p className="text-center text-xs font-bold uppercase tracking-[0.2em] text-text-secondary">Workflows</p>
-            <h2 className="mt-3 text-center text-[2rem] font-extrabold leading-[1.2] text-ink">Six data analysis workflows — with prompts</h2>
+            <h2 className="mt-3 text-center text-[2rem] font-extrabold leading-[1.2] text-ink">Six data tasks, routed to the right tool</h2>
             <div className="mt-10 grid gap-6 md:grid-cols-2">
               {analysisWorkflows.map((wf) => (
                 <div key={wf.title} className="rounded-[24px] border-[4px] border-ink bg-cream p-[28px_24px] shadow-[4px_4px_0px_#1c1917]">
@@ -339,7 +343,7 @@ export default async function ClaudeForDataAnalysisPage({
         <section className="px-6 py-16">
           <div className="mx-auto max-w-[800px]">
             <p className="text-center text-xs font-bold uppercase tracking-[0.2em] text-text-secondary">Code Examples</p>
-            <h2 className="mt-3 text-center text-[2rem] font-extrabold leading-[1.2] text-ink">Working with the Claude API for data tasks</h2>
+            <h2 className="mt-3 text-center text-[2rem] font-extrabold leading-[1.2] text-ink">The same split, from the API side</h2>
             <div className="mt-10 space-y-6">
               {codeExamples.map((ex) => (
                 <div key={ex.title} className="overflow-hidden rounded-[18px] border-[4px] border-ink shadow-[4px_4px_0px_#1c1917]">
@@ -362,7 +366,7 @@ export default async function ClaudeForDataAnalysisPage({
         <section className="px-6 py-16">
           <div className="mx-auto max-w-[900px]">
             <p className="text-center text-xs font-bold uppercase tracking-[0.2em] text-text-secondary">By Role</p>
-            <h2 className="mt-3 text-center text-[2rem] font-extrabold leading-[1.2] text-ink">Who uses Claude for data analysis</h2>
+            <h2 className="mt-3 text-center text-[2rem] font-extrabold leading-[1.2] text-ink">How different roles split the two tools</h2>
             <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {useCaseGrid.map((uc) => (
                 <div key={uc.role} className="rounded-[16px] border-[3px] border-ink bg-cream p-[20px_22px] shadow-[3px_3px_0px_#1c1917]">

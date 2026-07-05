@@ -17,9 +17,9 @@ export async function generateMetadata({
   const pathForLocale = (loc: string) =>
     `${baseUrl}${loc === routing.defaultLocale ? "" : `/${loc}`}/claude-for-non-programmers`;
 
-  const title = "Claude for Non-Programmers: Use AI Without Writing Code";
+  const title = "Claude Without Code: How It Compares to ChatGPT for Everyday Work";
   const description =
-    "You don't need to write code to use Claude effectively. Claude excels at writing, analysis, research, brainstorming, and organizing information — skills that help anyone in any role work faster.";
+    "Already using ChatGPT for emails, summaries, and reports? Here's where Claude fits for non-programmers: the tasks it tends to handle better, the ones ChatGPT or Gemini still win, and how to pick by task instead of brand.";
 
   return {
     title,
@@ -33,7 +33,7 @@ export async function generateMetadata({
           url: `${baseUrl}/og-default.png`,
           width: 1200,
           height: 630,
-          alt: "Claude for Non-Programmers — Learn to GPT",
+          alt: "Claude for Non-Programmers | Learn to GPT",
         },
       ],
     },
@@ -59,43 +59,43 @@ export function generateStaticParams() {
 const capabilities = [
   {
     icon: FileText,
-    title: "Writing and editing",
-    desc: "Draft emails, reports, proposals, blog posts, or any professional document. Claude matches your tone when you give it examples. Ask it to edit for clarity, shorten a long memo, or rewrite something for a different audience.",
+    title: "Long-form writing: Claude's lean",
+    desc: "Memos, proposals, and reports that need to hold one voice for pages at a time. People who write for a living often find Claude's drafts need less de-robotifying than ChatGPT's defaults. Both improve sharply once you show them examples of your tone. A lean, not a law.",
     color: "bg-[#ffecd2]",
     textColor: "text-orange",
   },
   {
     icon: BarChart3,
-    title: "Summarizing and analyzing",
-    desc: "Paste a 50-page PDF, a long email thread, or meeting notes. Claude reads the full text and gives you the key points, action items, or a structured summary. Its 200K context window means it can process entire reports in one pass.",
+    title: "Long documents: Claude's other lean",
+    desc: "Feed it a full contract, a board pack, or a month of meeting notes and ask questions across the whole thing. Claude's large context window made its name here. Gemini handles very long inputs too, and ChatGPT's limits keep growing, so test on your own files.",
     color: "bg-[#d0f0ea]",
     textColor: "text-teal",
   },
   {
     icon: Lightbulb,
-    title: "Brainstorming and ideation",
-    desc: "Need 20 campaign ideas? A name for a new initiative? Angles for a presentation? Claude generates diverse, structured options — not just the obvious ones. Then you pick, combine, and refine.",
+    title: "Brainstorming: pick any of the three",
+    desc: "Naming a project, generating campaign angles, stress-testing a plan. All three models do this well, and the differences are mostly in how the ideas are organized. If you already have ChatGPT open, there is no reason to switch tabs for this.",
     color: "bg-[#e8e4ff]",
     textColor: "text-[#6b5aed]",
   },
   {
     icon: MessageSquare,
-    title: "Research and Q&A",
-    desc: "Ask Claude to explain a concept, compare options, or break down a complex topic. It draws on broad training data to give you clear, structured answers. Paste articles or data and ask specific questions about them.",
+    title: "Live research: Gemini and ChatGPT lead",
+    desc: "Questions that need current information favor tools wired into search. Gemini leans on Google directly; ChatGPT's browsing is mature. Claude can search the web too, but if your day is lookup-heavy, the other two are the more natural fit.",
     color: "bg-[#ffd6e0]",
     textColor: "text-[#c2185b]",
   },
   {
     icon: Briefcase,
-    title: "Organizing and formatting",
-    desc: "Turn messy notes into a clean outline. Convert a wall of text into a table. Build a project plan from a list of requirements. Claude is excellent at imposing structure on unstructured information.",
+    title: "Structuring messy input: a near-tie",
+    desc: "Notes into outlines, walls of text into tables, requirements into project plans. Every frontier model imposes structure well. The skill that matters is yours: saying exactly what shape you want the output in.",
     color: "bg-[#ffecd2]",
     textColor: "text-orange",
   },
   {
     icon: Users,
-    title: "Communication and translation",
-    desc: "Rewrite a technical email for a non-technical audience. Adjust the formality of a message. Translate between languages while preserving nuance. Claude adapts content for different readers without losing the core message.",
+    title: "Rewriting for an audience: tone matters",
+    desc: "Technical email to plain English, formal to friendly, one language to another. All three handle it; Claude tends to preserve nuance in the rewrite a little more faithfully, which is why editors keep it around even when ChatGPT is their daily driver.",
     color: "bg-[#d0f0ea]",
     textColor: "text-teal",
   },
@@ -104,46 +104,46 @@ const capabilities = [
 const roleWorkflows = [
   {
     role: "Marketing",
-    tasks: "Campaign copy, social media posts, email sequences, brand voice documents, competitive analysis summaries, content calendars",
+    tasks: "Claude for brand-voice drafts and long positioning docs; ChatGPT for image generation and quick social variants; either for calendars and competitor teardowns.",
   },
   {
     role: "HR and People Ops",
-    tasks: "Job descriptions, policy drafts, onboarding checklists, performance review templates, interview questions, employee communications",
+    tasks: "Claude for policy language and sensitive employee comms where wording precision matters; any model for job posts, onboarding checklists, and interview question banks.",
   },
   {
     role: "Finance and Operations",
-    tasks: "Report summaries, data interpretation, process documentation, meeting minutes, vendor comparison matrices, compliance checklists",
+    tasks: "Claude for digesting long reports and contracts in one pass; ChatGPT's data analysis mode for spreadsheet work; either for process docs and vendor comparisons.",
   },
   {
     role: "Sales",
-    tasks: "Prospect research, outreach personalization, proposal drafts, objection handling scripts, call prep notes, follow-up emails",
+    tasks: "ChatGPT or Gemini for prospect research that needs live web data; Claude for proposal drafts and call prep built from long email threads and transcripts.",
   },
   {
     role: "Executive and Leadership",
-    tasks: "Board deck narratives, strategic analysis, stakeholder communications, decision frameworks, town hall talking points, initiative briefs",
+    tasks: "Claude for board narratives and strategy memos that have to read well; Gemini if your decision docs already live in Google Workspace; any model for talking points.",
   },
   {
     role: "Education and Training",
-    tasks: "Lesson plans, assessment questions, study guides, curriculum outlines, feedback on student work, learning objective frameworks",
+    tasks: "Any of the three for lesson plans, quizzes, and study guides. Claude pulls ahead when you paste a full curriculum or a stack of student work and ask for feedback across it.",
   },
 ];
 
 const faqItems = [
   {
-    q: "Is the free tier enough for non-programmers?",
-    a: "Yes. Claude's free tier gives you access to the conversational interface with generous daily limits. For most writing, analysis, and brainstorming tasks, the free tier is sufficient. You only need a paid plan for heavy daily usage or access to the most powerful models.",
+    q: "I already use ChatGPT. Is Claude worth adding?",
+    a: "For most everyday tasks, no single model is worth a religious conversion. Where Claude earns a second tab is long documents and writing that has to sound human. If your work is short prompts, images, or voice, ChatGPT already covers you. Try Claude's free tier on your longest, hardest document and judge from that.",
   },
   {
-    q: "Is my data private when I use Claude?",
-    a: "Anthropic does not train on your conversations by default. In the API and Team/Enterprise plans, your data is never used for training. On the free consumer plan, you can opt out of data usage in your privacy settings. For sensitive business documents, use Claude's Team or Enterprise tier.",
+    q: "Do the free tiers cover non-technical work?",
+    a: "Usually. Claude, ChatGPT, and Gemini all offer free tiers with daily limits, and writing, summarizing, and brainstorming sit comfortably inside them. Paid plans buy you heavier usage and the top-end models. Start free on whichever tool fits your task and upgrade only when you hit the ceiling.",
   },
   {
-    q: "How steep is the learning curve?",
-    a: "Most people get useful results within their first conversation. The interface is a chat window — you type what you need, Claude responds. The learning curve is about getting better results, not figuring out how to use the tool. Start with simple requests and add specificity as you learn what works.",
+    q: "Which one is safest for sensitive business documents?",
+    a: "Check the plan, not the brand. Consumer free tiers across all three providers have looser data terms than their business tiers. If you are pasting contracts or employee data, use a Team or Enterprise plan (or the API) from whichever provider your company approves, and read the current data policy rather than trusting a summary.",
   },
   {
-    q: "How is Claude different from ChatGPT for non-coders?",
-    a: "Claude tends to follow complex, multi-part instructions more reliably. It also has a 200K token context window (roughly 150,000 words), so it can read and analyze much longer documents in a single conversation. Many users report that Claude produces more natural-sounding writing with less of the 'AI voice' that other tools default to.",
+    q: "Is there a learning curve difference between the tools?",
+    a: "Not really. All three are chat windows: type what you need, read the reply, refine. The skill that compounds is prompting, and it transfers. Context, format, iteration. Learn it once on any model and you can sit down at the other two without starting over.",
   },
 ];
 
@@ -171,7 +171,7 @@ export default async function ClaudeForNonProgrammersPage({
             "@graph": [
               {
                 "@type": "FAQPage",
-                name: "Claude for Non-Programmers: Use AI Without Writing Code",
+                name: "Claude Without Code: How It Compares to ChatGPT for Everyday Work",
                 url: pagePath,
                 inLanguage: locale,
                 mainEntity: faqItems.map((item) => ({
@@ -185,9 +185,9 @@ export default async function ClaudeForNonProgrammersPage({
               },
               {
                 "@type": "WebPage",
-                name: "Claude for Non-Programmers: Use AI Without Writing Code",
+                name: "Claude Without Code: How It Compares to ChatGPT for Everyday Work",
                 description:
-                  "You don't need to write code to use Claude effectively. Learn the workflows, prompts, and techniques that help anyone in any role work faster with AI.",
+                  "A model-agnostic guide for non-programmers: which everyday tasks favor Claude, which favor ChatGPT or Gemini, and how to pick by task instead of brand.",
                 url: pagePath,
                 inLanguage: locale,
               },
@@ -232,16 +232,16 @@ export default async function ClaudeForNonProgrammersPage({
           <div className="mx-auto max-w-[800px]">
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-orange">No Code Required</p>
             <h1 className="mt-3 text-[3.5rem] font-extrabold leading-[1.1] text-ink max-md:text-[2.4rem] max-[480px]:text-[1.8rem]">
-              Get More Done with AI — No Coding Required
+              Claude for people who don&apos;t code, next to the tool you already use
             </h1>
             <p className="mt-3 font-serif text-[1.6rem] italic text-walnut max-md:text-[1.2rem]">
-              Powerful AI that works through plain conversation
+              Pick the model by the task, not the logo
             </p>
             <p className="mx-auto mb-10 mt-6 max-w-[660px] text-[1.05rem] leading-[1.7] text-text-secondary">
-              You don&apos;t need to write code to use Claude effectively. Claude excels at writing, analysis, research, brainstorming, and organizing information — skills that help anyone in any role work faster. If you can describe what you need in plain language, you can use Claude.
+              If you&apos;re a non-programmer using AI at work, odds are you&apos;re already in ChatGPT. The question isn&apos;t whether to abandon it. It&apos;s knowing which everyday tasks Claude handles better, which ones ChatGPT or Gemini still win, and when it&apos;s worth a second browser tab.
             </p>
             <p className="mx-auto mb-10 max-w-[660px] text-[1.05rem] leading-[1.7] text-text-secondary">
-              Most AI tools are marketed to developers. Claude is different. While it has powerful coding capabilities, its core strength is understanding and generating natural language — which means it&apos;s just as useful for a marketing manager, HR director, or financial analyst as it is for a software engineer. Here&apos;s how.
+              The short version: Claude&apos;s reputation with non-technical users comes from two things, writing that sounds less like a machine and the ability to digest very long documents in one conversation. ChatGPT keeps the edge on images, voice, and its app ecosystem. Gemini wins when your work lives in Google&apos;s stack. Everything below is that decision, task by task.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
               <Link
@@ -265,9 +265,9 @@ export default async function ClaudeForNonProgrammersPage({
         <section className="px-6 py-16">
           <div className="mx-auto max-w-[960px]">
             <p className="text-center text-xs font-bold uppercase tracking-[0.2em] text-text-secondary">Capabilities</p>
-            <h2 className="mt-3 text-center text-[2rem] font-extrabold leading-[1.2] text-ink">What Claude can do without code</h2>
+            <h2 className="mt-3 text-center text-[2rem] font-extrabold leading-[1.2] text-ink">Six everyday tasks, and which model leans ahead</h2>
             <p className="mx-auto mt-4 max-w-[700px] text-center text-[0.95rem] leading-[1.7] text-text-secondary">
-              Every one of these workflows happens through plain conversation. You type what you need, Claude responds. No terminal, no IDE, no programming language.
+              All of this happens in a chat window on any of the three tools. No terminal, no IDE. The useful question is where each model&apos;s defaults give you a head start.
             </p>
             <div className="mt-10 grid gap-6 md:grid-cols-2">
               {capabilities.map((cap) => (
@@ -287,9 +287,9 @@ export default async function ClaudeForNonProgrammersPage({
         <section className="px-6 py-16">
           <div className="mx-auto max-w-[800px]">
             <p className="text-center text-xs font-bold uppercase tracking-[0.2em] text-text-secondary">By Role</p>
-            <h2 className="mt-3 text-center text-[2rem] font-extrabold leading-[1.2] text-ink">Real workflows for non-technical roles</h2>
+            <h2 className="mt-3 text-center text-[2rem] font-extrabold leading-[1.2] text-ink">Which tool for which job, by role</h2>
             <p className="mx-auto mt-4 max-w-[660px] text-center text-[0.95rem] leading-[1.7] text-text-secondary">
-              Claude isn&apos;t a generic chatbot that gives you the same bland answers regardless of context. When you tell Claude your role, your audience, and your constraints, it tailors its output accordingly. Here&apos;s what that looks like in practice.
+              Most teams end up running two models side by side rather than standardizing on one. Here&apos;s a practical split by role, based on where each tool&apos;s defaults help.
             </p>
             <div className="mt-10 space-y-4">
               {roleWorkflows.map((rw) => (
@@ -306,30 +306,30 @@ export default async function ClaudeForNonProgrammersPage({
         <section className="px-6 py-16">
           <div className="mx-auto max-w-[800px]">
             <p className="text-center text-xs font-bold uppercase tracking-[0.2em] text-text-secondary">Tips</p>
-            <h2 className="mt-3 text-center text-[2rem] font-extrabold leading-[1.2] text-ink">Getting better results from Claude</h2>
+            <h2 className="mt-3 text-center text-[2rem] font-extrabold leading-[1.2] text-ink">Prompting habits that work on every model</h2>
             <div className="mt-10 space-y-6">
               <div className="rounded-[16px] border-[3px] border-ink bg-cream p-[24px_28px] shadow-[3px_3px_0px_#1c1917]">
-                <div className="mb-2 text-[1.05rem] font-bold text-ink">Give Claude context about who you are and what you need</div>
+                <div className="mb-2 text-[1.05rem] font-bold text-ink">Say who you are and what the output is for</div>
                 <p className="text-[0.9rem] leading-[1.6] text-text-secondary">
-                  Instead of &quot;write a follow-up email,&quot; try &quot;I&apos;m an account manager at a B2B SaaS company. Write a follow-up email to a prospect who attended our demo yesterday but hasn&apos;t responded to my recap email. Tone: professional but warm, not pushy.&quot; The more context you provide, the less editing you do afterward.
+                  A bare &quot;write a follow-up email&quot; produces boilerplate on Claude, ChatGPT, and Gemini alike. Name your role, the recipient, the situation, and the tone you want, and every one of them sharpens up. Context up front means less editing after, whichever tab you typed it into.
                 </p>
               </div>
               <div className="rounded-[16px] border-[3px] border-ink bg-cream p-[24px_28px] shadow-[3px_3px_0px_#1c1917]">
-                <div className="mb-2 text-[1.05rem] font-bold text-ink">Be specific about format and length</div>
+                <div className="mb-2 text-[1.05rem] font-bold text-ink">Specify the shape of the output</div>
                 <p className="text-[0.9rem] leading-[1.6] text-text-secondary">
-                  &quot;Summarize this report&quot; gives you a wall of text. &quot;Summarize this report in 5 bullet points, each under 20 words, focusing on financial impact&quot; gives you something you can paste into a Slack message. Tell Claude exactly how you want the output structured — bullets, tables, numbered lists, headers, or plain paragraphs.
+                  Ask for a summary and you get a wall of prose. Ask for five bullets under twenty words each, sorted by financial impact, and you get something you can drop straight into Slack. Format instructions are the cheapest quality upgrade in prompting, and no model reads your mind about them.
                 </p>
               </div>
               <div className="rounded-[16px] border-[3px] border-ink bg-cream p-[24px_28px] shadow-[3px_3px_0px_#1c1917]">
-                <div className="mb-2 text-[1.05rem] font-bold text-ink">Iterate instead of starting over</div>
+                <div className="mb-2 text-[1.05rem] font-bold text-ink">Refine in place, don&apos;t restart</div>
                 <p className="text-[0.9rem] leading-[1.6] text-text-secondary">
-                  Claude remembers your entire conversation. If the first draft isn&apos;t right, don&apos;t re-prompt from scratch. Say &quot;Make the tone more casual&quot; or &quot;Cut paragraphs 2 and 4, expand paragraph 3 with specific examples.&quot; Each round of feedback gets you closer to what you need, and Claude learns your preferences within the conversation.
+                  Every major chat model keeps the running conversation in view. When a draft misses, give surgical feedback (&quot;more casual,&quot; &quot;cut the second paragraph, expand the third with an example&quot;) instead of re-prompting from zero. Two or three rounds of that usually beats one perfect mega-prompt.
                 </p>
               </div>
               <div className="rounded-[16px] border-[3px] border-ink bg-cream p-[24px_28px] shadow-[3px_3px_0px_#1c1917]">
-                <div className="mb-2 text-[1.05rem] font-bold text-ink">Use Claude Projects for recurring work</div>
+                <div className="mb-2 text-[1.05rem] font-bold text-ink">Set up persistent context for repeat work</div>
                 <p className="text-[0.9rem] leading-[1.6] text-text-secondary">
-                  If you do the same type of work repeatedly — weekly reports, client proposals, meeting summaries — create a Claude Project with your templates, style guides, and preferences as project knowledge. Claude will reference these documents in every conversation within that project, so you don&apos;t have to re-explain your context every time.
+                  Weekly reports, client proposals, and recurring summaries shouldn&apos;t require re-explaining your company every Monday. Claude calls this feature Projects; ChatGPT has Projects and custom instructions; Gemini has Gems. Load your templates and style notes once and the tool carries them into every session.
                 </p>
               </div>
             </div>
@@ -340,16 +340,16 @@ export default async function ClaudeForNonProgrammersPage({
         <section className="px-6 py-16">
           <div className="mx-auto max-w-[800px]">
             <p className="text-center text-xs font-bold uppercase tracking-[0.2em] text-text-secondary">Level Up</p>
-            <h2 className="mt-3 text-center text-[2rem] font-extrabold leading-[1.2] text-ink">When you might want Claude Code</h2>
+            <h2 className="mt-3 text-center text-[2rem] font-extrabold leading-[1.2] text-ink">The next step up: agent tools without being a programmer</h2>
             <div className="mt-10 rounded-[16px] border-[3px] border-ink bg-cream p-[24px_28px] shadow-[3px_3px_0px_#1c1917]">
               <p className="mb-4 text-[0.9rem] leading-[1.6] text-text-secondary">
-                Here&apos;s a secret: even non-programmers can use Claude Code (Anthropic&apos;s command-line tool) for automation tasks. Claude Code can read your files, run commands, and build things — and you tell it what to do in plain English.
+                A growing number of non-programmers run terminal-based AI agents: Anthropic&apos;s Claude Code and OpenAI&apos;s Codex CLI both take plain-English instructions and then read files, run commands, and build things on your machine for you.
               </p>
               <p className="mb-4 text-[0.9rem] leading-[1.6] text-text-secondary">
-                Examples that non-programmers have used Claude Code for: organizing thousands of files into folders, converting spreadsheets between formats, building simple internal tools, creating data visualizations, and automating repetitive file operations.
+                Typical non-programmer uses: sorting thousands of files into folders, converting spreadsheets between formats, generating charts from a CSV, or stitching together a small internal tool. The agent writes and runs the code; you describe the outcome and check the result.
               </p>
               <p className="text-[0.9rem] leading-[1.6] text-text-secondary">
-                You don&apos;t need to know how to code — you need to know how to describe what you want. Claude Code writes and runs the code for you. It&apos;s the bridge between &quot;I wish I could automate this&quot; and actually automating it.
+                The skill barrier is lower than it looks. If you can write a clear request in a chat window, you can drive one of these tools. Claude Code is the more established of the two for this kind of general automation, which is why we cover it here even on a GPT-focused site.
               </p>
             </div>
             <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
@@ -384,7 +384,7 @@ export default async function ClaudeForNonProgrammersPage({
         <section className="px-6 pb-[80px] pt-8 text-center" data-variant="A">
           <div className="mx-auto max-w-[800px]">
             <h2 className="text-[2.4rem] font-extrabold leading-[1.2] text-ink max-md:text-[1.8rem]">
-              Start learning Claude today — free
+              Start learning Claude today, free
             </h2>
             <p className="mt-2 font-serif text-[1.3rem] italic text-walnut">
               Stop reading about it. Build something.

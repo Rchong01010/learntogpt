@@ -16,9 +16,9 @@ export async function generateMetadata({
   const pathForLocale = (loc: string) =>
     `${baseUrl}${loc === routing.defaultLocale ? "" : `/${loc}`}/claude-for-developers`;
 
-  const title = "ChatGPT for Developers: API, Claude Code & Agents";
+  const title = "Claude for Developers: Where It Fits in a GPT-Centric Stack";
   const description =
-    "Learn how to use Claude as a developer — ChatGPT Codex CLI, the OpenAI API, tool use, agent workflows, and MCP integrations. Courses from beginner to architect.";
+    "A developer's map of the Claude side of the fence: Claude Code vs Codex CLI, the Anthropic API next to OpenAI's, MCP, and agent patterns that transfer between both ecosystems.";
 
   return {
     title,
@@ -32,7 +32,7 @@ export async function generateMetadata({
           url: `${baseUrl}/og-default.png`,
           width: 1200,
           height: 630,
-          alt: "ChatGPT for Developers — Learn to GPT",
+          alt: "Claude for Developers | Learn to GPT",
         },
       ],
     },
@@ -62,7 +62,7 @@ const tracks = [
     bgColor: "#d0f0ea",
     track: "Track 3",
     title: "Claude Code",
-    desc: "The agentic CLI that writes, edits, and ships code. Project scaffolding, multi-file edits, TDD, and deployment workflows.",
+    desc: "The terminal agent, learned properly: scaffolding, multi-file edits, TDD loops, and shipping. Skills carry straight over to Codex CLI.",
     href: "/claude-code",
   },
   {
@@ -71,7 +71,7 @@ const tracks = [
     bgColor: "#ffecd2",
     track: "Track 4",
     title: "API & Agents",
-    desc: "Tool use, streaming, agentic loops, error handling, and production-ready patterns with the OpenAI API.",
+    desc: "Tool use, streaming, agentic loops, and error handling with the OpenAI API. The same patterns port to Anthropic's API with minor syntax changes.",
     href: "/curriculum",
   },
   {
@@ -80,7 +80,7 @@ const tracks = [
     bgColor: "#d0f0ea",
     track: "Track 5",
     title: "Architect",
-    desc: "Evals, observability, cost optimization, safety, and enterprise deployment patterns at scale.",
+    desc: "Evals, observability, cost control, and deployment patterns that don't care which model vendor sits underneath.",
     href: "/curriculum",
   },
   {
@@ -89,7 +89,7 @@ const tracks = [
     bgColor: "#ffecd2",
     track: "Track 7",
     title: "Advanced Workflows",
-    desc: "Slash commands, memory systems, multi-agent architectures, hooks — the masterclass track.",
+    desc: "Slash commands, memory systems, hooks, and multi-agent orchestration: the deep end of agentic tooling.",
     href: "/masterclass",
   },
 ];
@@ -97,33 +97,33 @@ const tracks = [
 const features = [
   {
     icon: Terminal,
-    title: "ChatGPT Codex CLI",
-    desc: "Run `claude` in your terminal. It reads your repo, understands context, edits files, runs tests, and commits. No copy-paste loop.",
+    title: "Claude Code vs Codex CLI",
+    desc: "Two terminal agents, one shape: type the task, the agent reads the repo, edits files, runs tests. Learn one and you've mostly learned the other; we teach with Claude Code and flag the differences.",
   },
   {
     icon: Wrench,
     title: "Tool Use & MCP",
-    desc: "Give Claude tools — web search, database queries, file ops, API calls. The Model Context Protocol standardizes how Claude connects to any external system.",
+    desc: "Wiring models to web search, databases, and file systems. The Model Context Protocol started at Anthropic and has been adopted across the industry, including by OpenAI, so it's worth learning regardless of your model.",
   },
   {
     icon: Code2,
-    title: "Streaming API",
-    desc: "Build real-time AI features with the Anthropic streaming API. Get token-by-token responses for chat interfaces, pipelines, and live previews.",
+    title: "Streaming APIs",
+    desc: "Token-by-token responses for chat UIs and pipelines. Anthropic's and OpenAI's streaming interfaces differ in event names more than in concept; we show both shapes.",
   },
   {
     icon: Layers,
     title: "Multi-Agent Architectures",
-    desc: "Orchestrate fleets of specialized Claude agents. One agent plans, one executes, one validates. Production patterns with error handling and observability.",
+    desc: "Planner, executor, validator. Orchestration patterns with real error handling, built vendor-neutral so a model swap is a config change, not a rewrite.",
   },
   {
     icon: Zap,
-    title: "CLAUDE.md Configuration",
-    desc: "Teach Claude your project conventions once. CLAUDE.md files persist project context so Claude already knows your stack, commands, and style guide.",
+    title: "Project Convention Files",
+    desc: "CLAUDE.md for Claude Code, AGENTS.md for Codex CLI: persistent files that teach the agent your stack, commands, and style guide once instead of every session.",
   },
   {
     icon: Cpu,
     title: "Evals & Cost Optimization",
-    desc: "Measure what matters. Build eval suites, track quality over time, optimize token usage, and build cost controls into production systems.",
+    desc: "Eval suites, quality tracking over time, and token cost control. The discipline that separates demos from production, on any provider.",
   },
 ];
 
@@ -151,9 +151,9 @@ export default async function ClaudeForDevelopersPage({
             "@graph": [
               {
                 "@type": "WebPage",
-                name: "ChatGPT for Developers: API, Claude Code & Agents",
+                name: "Claude for Developers: Where It Fits in a GPT-Centric Stack",
                 description:
-                  "Learn how to use Claude as a developer — ChatGPT Codex CLI, the OpenAI API, tool use, agent workflows, and MCP integrations.",
+                  "Claude Code vs Codex CLI, the Anthropic API next to OpenAI's, MCP, and agent patterns that transfer between ecosystems.",
                 url: pagePath,
                 inLanguage: locale,
                 isPartOf: {
@@ -164,9 +164,9 @@ export default async function ClaudeForDevelopersPage({
               },
               {
                 "@type": "Course",
-                name: "ChatGPT for Developers",
+                name: "AI Developer Tracks: Claude Code, APIs, and Agents",
                 description:
-                  "Developer-focused tracks covering ChatGPT Codex CLI, OpenAI API, tool use, agent architectures, and production deployment.",
+                  "Developer-focused tracks covering Claude Code, the OpenAI and Anthropic APIs, tool use, agent architectures, and production deployment.",
                 provider: {
                   "@type": "EducationalOrganization",
                   name: "Learn to GPT",
@@ -174,8 +174,8 @@ export default async function ClaudeForDevelopersPage({
                 },
                 educationalLevel: "Intermediate to Advanced",
                 teaches: [
-                  "ChatGPT Codex CLI",
-                  "OpenAI API",
+                  "Claude Code and Codex CLI",
+                  "OpenAI and Anthropic APIs",
                   "Tool use and MCP",
                   "Multi-agent architectures",
                   "Production deployment",
@@ -196,7 +196,7 @@ export default async function ClaudeForDevelopersPage({
                   {
                     "@type": "ListItem",
                     position: 2,
-                    name: "ChatGPT for Developers",
+                    name: "Claude for Developers",
                     item: pagePath,
                   },
                 ],
@@ -247,20 +247,22 @@ export default async function ClaudeForDevelopersPage({
               Tracks 3 · 4 · 5 · 7
             </div>
             <h1 className="text-[3.5rem] font-extrabold leading-[1.1] text-ink max-md:text-[2.4rem] max-[480px]:text-[1.8rem]">
-              Ship Production AI Features with{" "}
+              The{" "}
               <em className="font-serif font-normal not-italic text-orange italic">
-                Claude Code
+                Claude
               </em>{" "}
-              and the API
+              side of the developer stack, mapped for GPT builders
             </h1>
             <p className="mt-4 font-serif text-[1.6rem] italic text-walnut max-md:text-[1.2rem]">
-              API, CLI, agents, and production patterns
+              Learn the patterns once; the vendor is a config value
             </p>
             <p className="mx-auto mb-10 mt-6 max-w-[620px] text-[1.05rem] leading-[1.7] text-text-secondary">
-              Claude is not just a chatbot for developers — it is a programmable
-              intelligence layer. Claude Code runs in your terminal as an agentic
-              pair programmer. The API lets you build production AI features with
-              tool use, streaming, and multi-agent orchestration.
+              If you build with the OpenAI API, the Claude ecosystem will look
+              familiar: Claude Code mirrors Codex CLI in the terminal, the
+              Anthropic API mirrors chat completions with different event names,
+              and MCP works across both. These tracks teach the transferable
+              layer: agents, tool use, streaming, and the production discipline
+              around them.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
               <Link
@@ -287,7 +289,7 @@ export default async function ClaudeForDevelopersPage({
               What You&apos;ll Learn
             </p>
             <h2 className="mt-3 text-center text-[2rem] font-extrabold leading-[1.2] text-ink">
-              From first API call to production agents
+              What transfers between the GPT and Claude ecosystems
             </h2>
 
             <div className="mx-auto mt-11 grid max-w-[960px] gap-6 max-md:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
@@ -397,7 +399,7 @@ export default async function ClaudeForDevelopersPage({
               </div>
             </div>
             <p className="mt-5 text-center font-mono text-[0.85rem] font-semibold tracking-[0.05em] text-text-secondary">
-              Claude Code reads your codebase, edits files, and runs tests
+              Claude Code in practice. Swap the install line and this is a Codex CLI session.
             </p>
           </div>
         </section>
@@ -406,10 +408,10 @@ export default async function ClaudeForDevelopersPage({
         <section className="px-6 pb-[100px] pt-8 text-center">
           <div className="mx-auto max-w-[800px]">
             <h2 className="text-[2.4rem] font-extrabold leading-[1.2] text-ink max-md:text-[1.9rem]">
-              Start building with Claude today
+              Add the Claude column to your toolbox
             </h2>
             <p className="mt-2 font-serif text-[1.5rem] italic text-walnut">
-              Free tracks to start. Masterclass for production patterns.
+              Free tracks to start. Masterclass when you&apos;re shipping agents for real.
             </p>
             <div className="mt-9 flex flex-wrap items-center justify-center gap-4">
               <Link

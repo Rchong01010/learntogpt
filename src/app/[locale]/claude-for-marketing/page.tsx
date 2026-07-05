@@ -16,9 +16,9 @@ export async function generateMetadata({
   const pathForLocale = (loc: string) =>
     `${baseUrl}${loc === routing.defaultLocale ? "" : `/${loc}`}/claude-for-marketing`;
 
-  const title = "Claude for Marketing Teams: Content, SEO, Social Media & Email";
+  const title = "Claude in the Marketing Stack: What It Does Better Than ChatGPT";
   const description =
-    "How marketing teams use Claude for content creation, SEO research, social media writing, email campaigns, and competitive analysis. Real techniques, prompt templates, and team workflows.";
+    "Most marketing teams already run on ChatGPT. Here's the honest split: where Claude earns a place (long-form drafts, brand voice, competitor teardowns) and where ChatGPT or Gemini keep the job.";
 
   return {
     title,
@@ -32,7 +32,7 @@ export async function generateMetadata({
           url: `${baseUrl}/og-default.png`,
           width: 1200,
           height: 630,
-          alt: "Claude for Marketing Teams — Learn to GPT",
+          alt: "Claude for Marketing Teams | Learn to GPT",
         },
       ],
     },
@@ -58,68 +58,68 @@ export function generateStaticParams() {
 const useCases = [
   {
     icon: PenLine,
-    title: "Content Creation",
-    desc: "Draft blog posts, landing pages, product descriptions, and thought leadership articles. Claude maintains brand voice when you provide a style guide and examples in the system prompt.",
+    title: "Long-form content: Claude's strongest case",
+    desc: "Blog posts, landing pages, and thought-leadership pieces that have to sound like a person wrote them. Fed a style guide and a few approved examples, Claude's drafts tend to need fewer de-AI-ing passes than ChatGPT's. Test on your own brand before deciding.",
   },
   {
     icon: Search,
-    title: "SEO Research & Writing",
-    desc: "Analyze search intent, cluster keywords, write meta descriptions, and build topical authority content. Claude understands semantic SEO — not just keyword stuffing.",
+    title: "SEO research: split the job",
+    desc: "Keyword clustering and intent classification work on any frontier model. Anything needing live SERP data (what currently ranks, People Also Ask) favors a search-connected tool like Gemini or ChatGPT with browsing. Claude shines at the writing stage after research is done.",
   },
   {
     icon: Share2,
-    title: "Social Media",
-    desc: "Adapt long-form content for LinkedIn, X, Instagram, and TikTok. Each platform gets the right format, length, and hook style. Batch-generate a week of posts from one source piece.",
+    title: "Social: ChatGPT keeps most of this",
+    desc: "Cutting one source piece into LinkedIn, X, and Instagram variants is a job all three do fine, and ChatGPT adds native image generation for the visual half of the post. If your social workflow already lives there, there's no reason to move it.",
   },
   {
     icon: Mail,
-    title: "Email Campaigns",
-    desc: "Write subject lines, body copy, and CTAs for nurture sequences, product launches, and re-engagement campaigns. A/B test copy variants with Claude before sending.",
+    title: "Email: variants from either, judgment from you",
+    desc: "Subject lines, nurture copy, re-engagement sequences. Generate variants in whichever tool is open; the deciding factor is your send data, not the model. Claude's longer memory of the thread helps when a sequence has to stay coherent across seven emails.",
   },
   {
     icon: TrendingUp,
-    title: "Competitive Analysis",
-    desc: "Paste competitor landing pages or messaging. Claude extracts positioning, unique claims, and gaps your brand can fill. Faster than any manual SWOT.",
+    title: "Competitor teardowns: Claude's context wins",
+    desc: "Paste five competitor landing pages, a pricing page, and their last quarter of blog titles into one conversation and ask for the positioning map. Claude's long context holds all of it at once, which beats feeding a smaller window page by page.",
   },
   {
     icon: BarChart3,
-    title: "Performance Analysis",
-    desc: "Feed Claude your campaign metrics and ask for insights. Claude identifies which segments, channels, or messages drove results — turning data dumps into actionable narratives.",
+    title: "Campaign metrics: compute first, narrate second",
+    desc: "For actual number-crunching, ChatGPT's data analysis mode runs real Python on your export. Then hand the verified figures to whichever model writes your reporting voice best. Don't let any chat model do arithmetic you'll repeat to a CMO.",
   },
 ];
 
 const prompts = [
   {
-    label: "Blog Post Outline",
-    code: `You are a content strategist for [Brand].
-Write a 1,500-word blog post outline targeting
-the keyword "[keyword]".
+    label: "Brand-voice draft (works in Claude or ChatGPT)",
+    code: `Attached: our voice guide and two approved posts.
+Draft a post targeting "[keyword]" for [audience].
 
-Include: H1, 5 H2 sections with 3 bullet points each,
-internal link suggestions, and a CTA paragraph.
-Tone: expert but approachable. No jargon.`,
+Before writing, list three ways our approved posts
+differ from generic AI copy on this topic.
+Then write the draft obeying those three rules.
+Flag any sentence you're least sure sounds like us.`,
   },
   {
-    label: "Social Adaptation",
-    code: `Take this blog post excerpt and rewrite it
-for three platforms:
+    label: "Competitor positioning map (lean: Claude)",
+    code: `Below are the landing pages of our top 4
+competitors, pasted in full.
 
-1. LinkedIn: 150-word professional post, no hashtags
-2. X/Twitter: 280-char hook + 3 follow-up tweets
-3. Instagram caption: conversational, 3 hashtags max
-
-[Paste blog excerpt here]`,
+Build a table: each row a competitor, columns for
+core claim, target buyer, proof offered, and the
+objection they ignore. Then name the one position
+none of them occupies and argue whether it's
+vacant or poisoned.`,
   },
   {
-    label: "Email Subject Lines",
-    code: `Generate 10 subject line variants for this email:
-- Topic: [product launch / offer / announcement]
-- Audience: [segment description]
-- Goal: [open rate / click / reply]
+    label: "Subject line batch (any model, judge by sends)",
+    code: `Write 10 subject lines for [campaign].
+Constraints: under 45 characters, no clickbait
+words our guide bans, at least 3 that state the
+benefit plainly with zero cleverness.
 
-Include: curiosity, benefit, urgency, and social
-proof variants. Flag which is most likely to
-perform for a B2B audience.`,
+Label each by mechanism (curiosity, benefit,
+urgency, proof) so we can A/B by category
+instead of by line.`,
   },
 ];
 
@@ -147,9 +147,9 @@ export default async function ClaudeForMarketingPage({
             "@graph": [
               {
                 "@type": "WebPage",
-                name: "Claude for Marketing Teams: Content, SEO, Social Media & Email",
+                name: "Claude in the Marketing Stack: What It Does Better Than ChatGPT",
                 description:
-                  "How marketing teams use Claude for content creation, SEO research, social media writing, email campaigns, and competitive analysis.",
+                  "An honest split of marketing work across Claude, ChatGPT, and Gemini: long-form drafts, SEO research, social, email, competitor teardowns, and campaign analysis.",
                 url: pathForLocale(locale),
                 inLanguage: locale,
                 about: [
@@ -209,13 +209,13 @@ export default async function ClaudeForMarketingPage({
               Content · SEO · Social · Email
             </div>
             <h1 className="text-[3.5rem] font-extrabold leading-[1.1] text-ink max-md:text-[2.4rem] max-[480px]:text-[1.8rem]">
-              Produce More Content at Higher Quality with Claude
+              Your marketing team runs on ChatGPT. Where does Claude fit?
             </h1>
             <p className="mt-4 font-serif text-[1.6rem] italic text-walnut max-md:text-[1.2rem]">
-              Stop reading about it. Build something.
+              Assign channels to models the way you assign them to people
             </p>
             <p className="mx-auto mb-10 mt-7 max-w-[620px] text-[1.1rem] font-normal leading-[1.7] text-text-secondary">
-              The fastest-growing marketing teams treat Claude as a senior writer, strategist, and analyst — not a spell-checker. This guide covers how to integrate Claude into every stage of your marketing stack, from ideation to performance review.
+              Marketing was the first department to adopt ChatGPT, and for social, images, and quick variants it&apos;s still the right desk. Claude earns its seat on the long-form side: drafts that must hold a brand voice for two thousand words, and competitor research where you paste everything at once. This guide splits the stack honestly instead of pretending one tool does it all.
             </p>
 
             <div className="mb-4 flex flex-wrap items-center justify-center gap-4 max-[480px]:flex-col max-[480px]:items-center">
@@ -243,7 +243,7 @@ export default async function ClaudeForMarketingPage({
               Marketing Use Cases
             </p>
             <h2 className="mt-3 text-center text-[2rem] font-extrabold leading-[1.2] text-ink">
-              Where Claude fits in your marketing stack
+              Six channels, and which model gets each one
             </h2>
 
             <div className="mx-auto mt-11 grid max-w-[960px] gap-6 max-md:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
@@ -270,16 +270,16 @@ export default async function ClaudeForMarketingPage({
         <section className="px-6 py-16">
           <div className="mx-auto max-w-[800px]">
             <h2 className="mb-6 text-center text-[2rem] font-extrabold text-ink">
-              Keeping Brand Voice Consistent
+              Brand voice survives the tool, or it doesn&apos;t survive at all
             </h2>
             <div className="rounded-[18px] border-[4px] border-ink bg-cream p-10 shadow-[6px_6px_0px_#1c1917] max-[480px]:p-6">
               <p className="mb-4 text-[1.05rem] leading-[1.7] text-text-secondary">
-                The biggest failure mode for marketing teams using AI is inconsistent voice. Every writer gets a slightly different Claude, and the content feels disjointed. Here is the fix:
+                When a team uses two or three AI tools, the failure mode isn&apos;t the models. It&apos;s that each writer prompts differently and the output reads like five different companies. The fix is the same regardless of vendor:
               </p>
               <ul className="ml-6 space-y-3 text-[1.05rem] leading-[1.7] text-text-secondary">
-                <li><strong className="text-ink">Create a Claude Project for your marketing team.</strong> Upload your brand voice guide, three to five approved content examples, and a list of words you never use. Every writer in the Project inherits this context.</li>
-                <li><strong className="text-ink">Write a precise system prompt.</strong> Specify tone adjectives, sentence length targets, heading style, CTA language, and audience assumptions. &quot;Conversational and direct, second-person, max 20 words per sentence, no exclamation points&quot; is actionable. &quot;Sound human&quot; is not.</li>
-                <li><strong className="text-ink">Build a prompt library for recurring content types.</strong> Blog outlines, LinkedIn posts, email subject lines — each type gets its own tested prompt that lives in your team&apos;s shared doc.</li>
+                <li><strong className="text-ink">Put your voice assets in persistent context.</strong> Claude Projects, ChatGPT Projects, or Gemini Gems: each can hold your voice guide, a few approved examples, and your banned-words list so every writer starts from the same baseline.</li>
+                <li><strong className="text-ink">Make the instructions measurable.</strong> &quot;Second person, sentences under 20 words, no exclamation points, CTAs name the action&quot; can be checked. &quot;Sound human&quot; can&apos;t. Vague voice instructions are why AI copy converges on the same beige.</li>
+                <li><strong className="text-ink">Version a shared prompt library per content type.</strong> One tested prompt each for outlines, posts, and subject lines, stored where the team works. When someone improves a prompt, everyone inherits the improvement.</li>
               </ul>
             </div>
           </div>
@@ -322,15 +322,15 @@ export default async function ClaudeForMarketingPage({
         <section className="px-6 py-16">
           <div className="mx-auto max-w-[800px]">
             <h2 className="mb-8 text-center text-[2rem] font-extrabold text-ink">
-              The Claude SEO Content Workflow
+              An SEO content workflow across two models
             </h2>
             <div className="space-y-4">
               {[
-                { step: "01", title: "Keyword clustering", body: "Give Claude a flat list of 50-100 keywords and ask it to group them into topic clusters. Output: a structured content map with primary and secondary terms per cluster." },
-                { step: "02", title: "Search intent analysis", body: "For each target keyword, Claude identifies intent (informational, navigational, commercial, transactional) and recommends content format accordingly." },
-                { step: "03", title: "Outline generation", body: "Claude builds H1/H2/H3 structures that match top-ranking SERP formats for the keyword, with internal link suggestions and FAQ section for featured snippet targeting." },
-                { step: "04", title: "Draft and edit loop", body: "First draft from Claude, human edit pass for accuracy and examples, Claude second pass for consistency and flow. Faster and better than writing from scratch." },
-                { step: "05", title: "Meta tag generation", body: "Claude generates 3-5 meta title and description variants per page. A/B test in Search Console. Use the winner, iterate quarterly." },
+                { step: "01", title: "Cluster keywords (either model)", body: "Dump your flat keyword export into whichever tool is open and ask for topic clusters with a primary and secondary term per group. This is pattern-sorting; every frontier model handles it." },
+                { step: "02", title: "Check the live SERP (search-connected tool)", body: "What actually ranks, the People Also Ask boxes, the format Google rewards: this needs current data. Use ChatGPT with browsing or Gemini here, not a model answering from training memory." },
+                { step: "03", title: "Outline against what you found (Claude)", body: "Paste the ranking pages' structures plus your cluster and let Claude propose the heading tree, internal links, and an FAQ block. Long context means it can see every competitor page at once while it outlines." },
+                { step: "04", title: "Draft, human pass, polish pass", body: "First draft from your voice-guide-loaded model, a human edit for accuracy and real examples, then one more model pass for flow. The human in the middle is the step teams skip and regret." },
+                { step: "05", title: "Meta variants, then let data pick", body: "Ask for a handful of title and description variants per page, ship one, and watch click-through in Search Console. The model generates options; the SERP is the judge." },
               ].map(({ step, title, body }) => (
                 <div key={step} className="flex gap-6 rounded-[16px] border-[3px] border-ink bg-cream p-6 shadow-[3px_3px_0px_#1c1917]">
                   <div className="flex-shrink-0 font-mono text-[2rem] font-bold text-orange">{step}</div>

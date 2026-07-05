@@ -18,7 +18,7 @@ export async function generateMetadata({
 
   const title = "20 Best Claude Prompts (That Also Work on ChatGPT & Gemini)";
   const description =
-    "20 copy-paste prompt templates for writing, code, analysis, and research. Built to run well on Claude, ChatGPT, and Gemini alike — because good prompt structure is model-agnostic. From Learn to GPT.";
+    "20 copy-paste prompt templates for writing, code, analysis, and research. Built to run well on Claude, ChatGPT, and Gemini alike, because good prompt structure is model-agnostic. From Learn to GPT.";
 
   return {
     title,
@@ -32,7 +32,7 @@ export async function generateMetadata({
           url: `${baseUrl}/og-default.png`,
           width: 1200,
           height: 630,
-          alt: "Best Claude Prompts — Learn to GPT",
+          alt: "Best Claude Prompts | Learn to GPT",
         },
       ],
     },
@@ -65,13 +65,13 @@ const promptCategories = [
         title: "Voice-matching editor",
         prompt:
           "Below are three samples of how I write: [paste samples]. Study the rhythm, word choice, and tone, then redraft the text that follows so it reads like I wrote it. No em dashes, no clichés, and no wrap-up paragraph.\n\nText to redraft: [paste draft]",
-        why: "Stops any model from defaulting to generic AI prose. The examples anchor the output to your actual style — this works identically on Claude, ChatGPT, and Gemini.",
+        why: "Stops any model from defaulting to generic AI prose. The examples anchor the output to your actual style; this works identically on Claude, ChatGPT, and Gemini.",
       },
       {
         title: "Long-form outline",
         prompt:
           "I need an outline for a [article/report/essay] on [topic], aimed at [audience]. Give me a working headline, five to seven sections, the single point each section should land, and for each one a note on the evidence or example to back it up.",
-        why: "A structured output request makes the model organize before it writes — saves real revision time no matter which assistant you paste it into.",
+        why: "A structured output request makes the model organize before it writes, which saves real revision time no matter which assistant you paste it into.",
       },
       {
         title: "Email with a clear ask",
@@ -102,7 +102,7 @@ const promptCategories = [
         title: "Bug hunt with reproduction",
         prompt:
           "There's a bug in my [framework/language] code. Actual behavior: [symptom]. Expected behavior: [what should happen]. Relevant code: [paste code]. Reason through the likely cause step by step before you propose the fix.",
-        why: "Expected-vs-actual framing forces systematic diagnosis instead of guessing — a technique that pays off on every model.",
+        why: "Expected-vs-actual framing forces systematic diagnosis instead of guessing, a technique that pays off on every model.",
       },
       {
         title: "Function with tests",
@@ -114,7 +114,7 @@ const promptCategories = [
         title: "Refactor for readability",
         prompt:
           "Refactor this code for readability without changing what it does. Pull repeated logic into named functions, swap magic numbers for named constants, rename unclear variables, and add a comment only where the reason isn't obvious from the code.\n\n[paste code]",
-        why: "The 'without changing behavior' constraint is critical — it stops the model from helpfully 'improving' your logic while it tidies the code.",
+        why: "The 'without changing behavior' constraint is critical: it stops the model from helpfully 'improving' your logic while it tidies the code.",
       },
     ],
   },
@@ -139,7 +139,7 @@ const promptCategories = [
         title: "Data interpretation",
         prompt:
           "Here's a dataset: [paste or describe it]. Give me the single most important trend or anomaly, the missing data that would change how I read it, and which decisions this data can and cannot justify. Be concrete.",
-        why: "Asking for what the data doesn't support is the critical question — prevents overconfident conclusions.",
+        why: "Asking for what the data doesn't support is the critical question; it prevents overconfident conclusions.",
       },
       {
         title: "Risk analysis",
@@ -158,25 +158,25 @@ const promptCategories = [
         title: "Explain a complex topic",
         prompt:
           "Explain [topic] to me as [a smart 12-year-old / a non-technical business person / an expert in a nearby field]. Lean on analogies, define any jargon you use, and finish with the three things people at my level most often get wrong about it.",
-        why: "The misunderstanding section is the most valuable part — it surfaces the non-obvious gaps in most explanations.",
+        why: "The misunderstanding section is the most valuable part: it surfaces the non-obvious gaps in most explanations.",
       },
       {
         title: "Research synthesis",
         prompt:
           "I'm researching [topic]. My sources: [paste excerpts or notes]. Pull together where they agree, where they clash and why, the questions none of them answer, and what the strongest current consensus appears to be.",
-        why: "Synthesis across sources is where these tools earn their keep — the value is in the connections, not in summarizing each source alone.",
+        why: "Synthesis across sources is where these tools earn their keep; the value is in the connections, not in summarizing each source alone.",
       },
       {
         title: "Devil's advocate",
         prompt:
-          "My position is [position]. Argue the other side as well as a smart, well-informed opponent would — real arguments, no strawmen. Then tell me which of those counterpoints I should lose the most sleep over.",
-        why: "Explicitly asking for the strongest counterargument stops the model from sliding into agreeable, flattering agreement — a failure mode all of them share.",
+          "My position is [position]. Argue the other side as well as a smart, well-informed opponent would: real arguments, no strawmen. Then tell me which of those counterpoints I should lose the most sleep over.",
+        why: "Explicitly asking for the strongest counterargument stops the model from sliding into agreeable, flattering agreement, a failure mode all of them share.",
       },
       {
         title: "Literature overview",
         prompt:
           "As of your knowledge cutoff, walk me through what's known about [topic]: the main schools of thought, the strongest evidence behind each, the questions still in dispute, and the researchers or sources worth knowing. Flag anything likely to be out of date.",
-        why: "Naming the knowledge cutoff keeps any model from presenting stale training data as current — especially useful when the model can't browse.",
+        why: "Naming the knowledge cutoff keeps any model from presenting stale training data as current, especially useful when the model can't browse.",
       },
     ],
   },
@@ -200,7 +200,7 @@ const promptCategories = [
       {
         title: "Pre-mortem",
         prompt:
-          "Fast-forward to [one year from now]: [project / plan] has failed outright. Working backward, list the five most probable reasons it collapsed — specific to my situation, not boilerplate — and for each, the move I could make today to head it off.",
+          "Fast-forward to [one year from now]: [project / plan] has failed outright. Working backward, list the five most probable reasons it collapsed (specific to my situation, not boilerplate) and for each, the move I could make today to head it off.",
         why: "Pre-mortem framing surfaces implementation risks that forward-looking planning systematically misses.",
       },
     ],
@@ -323,7 +323,7 @@ export default async function BestClaudePromptsPage({
               Good structure beats the right brand.
             </p>
             <p className="mx-auto mb-10 mt-6 max-w-[620px] text-[1.05rem] leading-[1.7] text-text-secondary">
-              These prompt patterns produce high-quality output on any frontier model — Claude, ChatGPT, or Gemini — across writing, coding, analysis, research, and strategy. People search for &quot;Claude prompts,&quot; but what actually makes them work is structure, and structure travels between models. Each includes the template and why it works.
+              These prompt patterns produce high-quality output on any frontier model (Claude, ChatGPT, or Gemini) across writing, coding, analysis, research, and strategy. People search for &quot;Claude prompts,&quot; but what actually makes them work is structure, and structure travels between models. Each includes the template and why it works.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
               <Link
@@ -341,7 +341,7 @@ export default async function BestClaudePromptsPage({
               </Link>
             </div>
             <p className="mt-3 text-[0.85rem] text-text-secondary">
-              Try every prompt in the live ChatGPT sandbox — no copy-paste needed
+              Try every prompt in the live ChatGPT sandbox, no copy-paste needed
             </p>
           </div>
         </section>
@@ -351,7 +351,7 @@ export default async function BestClaudePromptsPage({
           <div className="mx-auto max-w-[800px]">
             <div className="rounded-[18px] border-[4px] border-ink bg-[#d0f0ea] p-8 shadow-[6px_6px_0px_#1c1917] max-[480px]:p-6">
               <p className="text-[1.1rem] font-medium leading-[1.8] text-ink">
-                The best prompts follow one pattern regardless of which model you use: define a role, specify the output format, set constraints, and include one or two examples. Claude, ChatGPT, and Gemini all reward this structure. Which is why a prompt tuned for one usually works on the others with little or no change — the skill is portable, not brand-locked.
+                The best prompts follow one pattern regardless of which model you use: define a role, specify the output format, set constraints, and include one or two examples. Claude, ChatGPT, and Gemini all reward this structure. Which is why a prompt tuned for one usually works on the others with little or no change. The skill is portable, not brand-locked.
               </p>
             </div>
           </div>
@@ -456,7 +456,7 @@ export default async function BestClaudePromptsPage({
             <div className="space-y-4">
               {[
                 { q: "What makes a prompt effective on any model?", a: "Specificity (clear role, audience, output format), structure (examples and constraints), and context (relevant background). The pattern of role + format + constraints + examples produces the best results on Claude, ChatGPT, and Gemini alike." },
-                { q: "Can I use the same prompt on Claude, ChatGPT, and Gemini?", a: "Usually, yes. A well-structured prompt is portable because all three respond to the same signals. You'll occasionally tweak wording for a model's quirks, but the bones carry over — which is exactly why we teach prompting model-agnostically." },
+                { q: "Can I use the same prompt on Claude, ChatGPT, and Gemini?", a: "Usually, yes. A well-structured prompt is portable because all three respond to the same signals. You'll occasionally tweak wording for a model's quirks, but the bones carry over, which is exactly why we teach prompting model-agnostically." },
                 { q: "How do I write a good system prompt?", a: "Start with a role, specify the output format, add constraints (word count, tone, what to avoid), and include one or two examples of ideal output. This structure works whether the field is called a system prompt, custom instructions, or a gem." },
                 { q: "What are the most common prompt mistakes?", a: "Being too vague (no role, format, or constraints), giving no context (no model can infer your industry or goals), and asking for everything at once. Breaking a complex task into steps beats one giant prompt every time." },
               ].map((item) => (

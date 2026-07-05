@@ -101,7 +101,7 @@ const faqs = [
   },
   {
     question: "Do slash commands work in VS Code or other IDEs?",
-    answer: "Claude Code slash commands work in the ChatGPT Codex CLI terminal. If you use the Claude Code extension for VS Code, slash commands work in the integrated terminal panel. The commands are not IDE-specific — they work anywhere Claude Code runs.",
+    answer: "Claude Code slash commands work in any terminal where Claude Code runs. If you use the Claude Code extension for VS Code, slash commands work in the integrated terminal panel. The commands are not IDE-specific; they work anywhere Claude Code runs.",
   },
   {
     question: "How do I create complex multi-step slash commands?",
@@ -244,7 +244,7 @@ export default async function ClaudeSlashCommandsPage({
           <div className="mx-auto max-w-[800px]">
             <div className="rounded-[18px] border-[4px] border-ink bg-[#d0f0ea] p-8 shadow-[6px_6px_0px_#1c1917] max-[480px]:p-6">
               <p className="text-[1.1rem] font-medium leading-[1.8] text-ink">
-                Claude Code slash commands are shortcuts you type in the terminal to trigger specific workflows: /review for code review, /commit for smart commits, /help for the full command list. You can also define custom slash commands for your project's unique workflows.
+                Claude Code slash commands are shortcuts you type in the terminal to trigger specific workflows: /review for code review, /commit for smart commits, /help for the full command list. You can also define custom slash commands for your project&apos;s unique workflows.
               </p>
             </div>
           </div>

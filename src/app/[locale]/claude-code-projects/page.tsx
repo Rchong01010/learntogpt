@@ -71,7 +71,7 @@ const faqs = [
   },
   {
     q: "Do Claude Projects work with the API?",
-    a: "Projects are a feature of claude.ai and the Claude desktop apps. For API usage, you achieve similar persistence through system prompts and the CLAUDE.md file in Claude Code. The ChatGPT Codex CLI automatically loads CLAUDE.md at the start of every session, giving you project-like persistence in terminal workflows.",
+    a: "Projects are a feature of claude.ai and the Claude desktop apps. For API usage, you achieve similar persistence through system prompts and the CLAUDE.md file in Claude Code. Claude Code automatically loads CLAUDE.md at the start of every session, giving you project-like persistence in terminal workflows.",
   },
 ];
 

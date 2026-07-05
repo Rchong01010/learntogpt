@@ -168,7 +168,7 @@ export default async function LearnAIPage({
                 teaches: [
                   "Artificial Intelligence fundamentals",
                   "Prompt engineering",
-                  "ChatGPT Codex CLI",
+                  "AI coding agents (Codex CLI, Claude Code)",
                   "OpenAI API",
                   "AI agent architecture",
                   "Multi-agent systems",

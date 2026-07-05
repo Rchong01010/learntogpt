@@ -32,7 +32,7 @@ export async function generateMetadata({
           url: `${baseUrl}/og-default.png`,
           width: 1200,
           height: 630,
-          alt: "Claude for Business — Learn to GPT",
+          alt: "Claude for Business | Learn to GPT",
         },
       ],
     },
@@ -59,7 +59,7 @@ const roiStats = [
   {
     stat: "Hours back",
     label: "On repetitive knowledge work",
-    desc: "Writing, research, and summarizing are where teams feel the time savings first — the same on Claude, ChatGPT, or Gemini.",
+    desc: "Writing, research, and summarizing are where teams feel the time savings first, the same on Claude, ChatGPT, or Gemini.",
   },
   {
     stat: "Faster drafts",
@@ -137,7 +137,7 @@ const trainingOptions = [
       "All 7 tracks including advanced workflows",
       "Private GitHub repo with pre-built agents",
       "Interactive exercises with live ChatGPT sandbox",
-      "Lifetime access — new content added regularly",
+      "Lifetime access, new content added regularly",
     ],
     cta: { label: "Start Learning", href: "/masterclass", primary: true },
   },
@@ -164,7 +164,7 @@ const blockingPatterns = [
   {
     icon: Clock,
     title: "Unstructured rollout",
-    desc: "Handing out logins with no training produces low adoption and inconsistent results, whatever the tool. Structured onboarding is the difference between 'we tried AI' and real ROI — and it's model-agnostic.",
+    desc: "Handing out logins with no training produces low adoption and inconsistent results, whatever the tool. Structured onboarding is the difference between 'we tried AI' and real ROI, and it's model-agnostic.",
   },
   {
     icon: Zap,
@@ -174,7 +174,7 @@ const blockingPatterns = [
   {
     icon: Shield,
     title: "No data governance",
-    desc: "Business and enterprise plans give you data controls that consumer accounts don't — true for Claude and ChatGPT alike. Training people on what goes in and what stays out is a first step, not an afterthought.",
+    desc: "Business and enterprise plans give you data controls that consumer accounts don't. That's true for Claude and ChatGPT alike. Training people on what goes in and what stays out is a first step, not an afterthought.",
   },
 ];
 
@@ -215,7 +215,7 @@ export default async function ClaudeForBusinessPage({
               },
               {
                 "@type": "Course",
-                name: "Claude for Business — Enterprise Training",
+                name: "Claude for Business: Enterprise Training",
                 description:
                   "Structured Claude AI training for business teams. Custom curriculum, live workshops, and implementation support.",
                 provider: {
@@ -293,7 +293,7 @@ export default async function ClaudeForBusinessPage({
               The model is the easy part. Adoption is the hard part.
             </p>
             <p className="mx-auto mb-10 mt-6 max-w-[620px] text-[1.05rem] leading-[1.7] text-text-secondary">
-              Claude is a strong choice for knowledge work — long context, steady
+              Claude is a strong choice for knowledge work: long context, steady
               instruction-following, and enterprise data controls. But for most
               teams it sits alongside ChatGPT and Gemini, not obviously above them.
               The return on AI comes from how your people use it, not from which
@@ -436,7 +436,7 @@ export default async function ClaudeForBusinessPage({
             </h2>
             <p className="mx-auto mt-3 max-w-[600px] text-center text-[1rem] text-text-secondary">
               Learn to GPT was built to solve the adoption problem. Gamified
-              lessons, live sandbox, and real workflows — not slide decks.
+              lessons, live sandbox, and real workflows, not slide decks.
             </p>
 
             <div className="mx-auto mt-10 grid max-w-[800px] gap-6 md:grid-cols-2">

@@ -71,7 +71,7 @@ const faqs = [
   },
   {
     q: "Is my code safe when using AI pair programming?",
-    a: "ChatGPT Codex runs in your browser — your code is sent to OpenAI's API for processing but is not stored or used for training. For additional security, ChatGPT Codex supports hooks that can block operations on sensitive files, and your custom instructions can specify files or directories that should never be modified. Enterprise plans offer additional data governance controls.",
+    a: "Claude Code runs locally in your terminal; your code is sent to Anthropic's API for processing but is not used to train models by default. For additional security, Claude Code supports hooks that can block operations on sensitive files, and your CLAUDE.md can specify files or directories that should never be modified. OpenAI's Codex CLI takes a similar local-first approach with its own approval modes, and enterprise plans on both sides add data governance controls.",
   },
 ];
 

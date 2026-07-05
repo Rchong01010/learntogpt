@@ -19,7 +19,7 @@ export async function generateMetadata({
 
   const title = "Claude for Writers: When to Use It Over ChatGPT for Writing";
   const description =
-    "A writer's guide to Claude — where it beats ChatGPT for drafting, editing, and voice-matching, where it doesn't, and the model-agnostic workflows that make any AI a better writing partner.";
+    "A writer's guide to Claude: where it beats ChatGPT for drafting, editing, and voice-matching, where it doesn't, and the model-agnostic workflows that make any AI a better writing partner.";
 
   return {
     title,
@@ -33,7 +33,7 @@ export async function generateMetadata({
           url: `${baseUrl}/og-default.png`,
           width: 1200,
           height: 630,
-          alt: "Claude for Writers — Learn to GPT",
+          alt: "Claude for Writers | Learn to GPT",
         },
       ],
     },
@@ -60,48 +60,48 @@ const writingWorkflows = [
   {
     icon: Lightbulb,
     title: "Brainstorming and ideation",
-    desc: "\"Give me 20 angles for a piece about remote work burnout — from personal essay to data journalism to satire.\" A good model returns diverse directions rather than the obvious ones. Then you pick, mix, and refine.",
-    prompt: "Generate 15 contrarian angles for [topic]. For each: the core insight, who the target reader is, and what makes it different from the obvious take.",
+    desc: "Ask for angles in bulk and force variety: personal essay, data piece, satire, reported feature. The spread is the value; your judgment does the picking. Claude and ChatGPT are equally good sparring partners here.",
+    prompt: "I'm writing about [topic]. Pitch me a dozen takes a bored editor hasn't seen. One line each: the claim, who it's for, and why the usual version of this piece fails.",
     color: "bg-[#d0f0ea]",
     textColor: "text-teal",
   },
   {
     icon: PenLine,
     title: "First draft generation",
-    desc: "Share your outline, thesis, and a few paragraphs of existing writing to establish voice. The model drafts a section in your style. Faster than staring at a blank page — and you edit, you don't just accept.",
-    prompt: "Here's my voice (examples below). Draft a 400-word opening section for an essay about [topic] in this style. Focus on [specific angle]. Don't soften the argument.",
+    desc: "Hand over the outline, the thesis, and a sample of how you actually write, and let the model produce the ugly first version. Its job is momentum, not the finish. Writers who like Claude here like it for sounding less templated out of the gate.",
+    prompt: "Below: my outline and two samples of my writing. Produce a rough opening section arguing [thesis]. Keep the claim sharp, skip any throat-clearing intro, and leave TODO markers where you'd want a real anecdote from me.",
     color: "bg-[#ffecd2]",
     textColor: "text-orange",
   },
   {
     icon: RefreshCw,
     title: "Structural editing",
-    desc: "Paste your draft and ask for a structural diagnosis: \"What's the strongest argument here? Where does it lose momentum? Which paragraphs could be cut without loss?\" You get an editor's-eye view in seconds, on whichever model you use.",
-    prompt: "Read this essay draft. Identify: (1) the strongest 3 paragraphs, (2) the weakest 3 and why, (3) where the argument loses thread, (4) what's missing that would make it more convincing.",
+    desc: "Before line edits, get a diagnosis of the skeleton: where the argument sags, what earns its place, what a ruthless cut list looks like. Any frontier model plays structural editor well if you ask for verdicts instead of compliments.",
+    prompt: "Act as a structural editor who bills by the minute. For this draft: name the load-bearing paragraphs, the ones you'd cut tonight, the point where a reader quits, and the one missing move that would fix the piece.",
     color: "bg-[#e8e4ff]",
     textColor: "text-[#6b5aed]",
   },
   {
     icon: Microscope,
     title: "Line editing and polish",
-    desc: "With clear instructions, the model edits for clarity, rhythm, and precision without homogenizing your voice. \"Tighten this. Don't change my vocabulary. Fix passive voice but keep the ironic passive in paragraph 3.\" The constraints matter more than the brand.",
-    prompt: "Edit this paragraph for clarity and punch. Keep my voice — do not replace uncommon words with simpler ones. Fix passive voice except where it's clearly intentional. Track every change you make.",
+    desc: "Line editing is where AI most wants to sand your voice into oatmeal, so the instructions carry the whole job. Name what's off-limits (your vocabulary, your deliberate rule-breaking) and demand a change log. Constraints beat brand choice here.",
+    prompt: "Tighten this passage. Off-limits: my word choices, sentence fragments I used on purpose, and the rhythm of the last line. Return two things: the edited text, and a list of every change with a one-word reason.",
     color: "bg-[#ffd6e0]",
     textColor: "text-[#c2185b]",
   },
   {
     icon: BookOpen,
     title: "Research synthesis",
-    desc: "Paste five papers, reports, or articles and ask the model to synthesize findings, flag contradictions, and highlight gaps. Claude's large context handles them all at once; ChatGPT manages most real stacks too.",
-    prompt: "Read the attached research. Synthesize the key findings across all sources. Where do they agree? Where do they contradict? What questions remain unanswered? Use citations.",
+    desc: "For essays and features built on sources, dump the whole reading pile into one conversation. Claude's context window is the reason writers pick it for this; a stack of PDFs that would need chunking elsewhere fits in one pass.",
+    prompt: "Here are my sources for a piece on [topic]. Build me: the consensus in two sentences, the live disagreements with who's on each side, and the three facts most likely to surprise a general reader. Cite by source name.",
     color: "bg-[#d0f0ea]",
     textColor: "text-teal",
   },
   {
     icon: MessageSquare,
     title: "Voice-matching and ghostwriting",
-    desc: "Share 500+ words of your writing as a style reference. The model reverse-engineers your patterns — sentence length, vocabulary, comma habits, rhythm — and writes new content in that voice. Give it more examples and the match improves.",
-    prompt: "Analyze the voice in the examples below. Then write [content type] on [topic] in that exact voice. Match: sentence length distribution, vocabulary register, structural patterns, and rhetorical moves.",
+    desc: "Feed it enough of your published work and the model can draft in a credible imitation of you. More sample text means a better forgery. Useful for newsletters and ghostwritten posts; always do the final read yourself, since the misses are subtle.",
+    prompt: "Study the writing samples below until you can describe my style in five concrete rules. State the rules first. Then apply them to draft [content type] about [topic], and flag the two sentences you're least confident sound like me.",
     color: "bg-[#ffecd2]",
     textColor: "text-orange",
   },
@@ -110,11 +110,11 @@ const writingWorkflows = [
 const voiceTips = [
   {
     title: "Show the model your writing, don't describe it",
-    body: "\"I write in a clear, direct style\" tells any AI nothing. Paste three to five paragraphs of your best work. The model reads the actual patterns — sentence length, vocabulary, rhythm, structural habits — and matches those. This works the same on Claude and ChatGPT.",
+    body: "\"I write in a clear, direct style\" tells any AI nothing. Paste three to five paragraphs of your best work. The model reads the actual patterns (sentence length, vocabulary, rhythm, structural habits) and matches those. This works the same on Claude and ChatGPT.",
   },
   {
     title: "Be specific about what NOT to change",
-    body: "\"Edit for clarity\" is vague. \"Edit for clarity. Keep my vocabulary. Don't add em dashes. Don't insert transitions I haven't written.\" Constraints are what separate an edit that helps from one that quietly overwrites your voice — on every model.",
+    body: "\"Edit for clarity\" is vague. \"Edit for clarity. Keep my vocabulary. Don't add em dashes. Don't insert transitions I haven't written.\" Constraints are what separate an edit that helps from one that quietly overwrites your voice, on every model.",
   },
   {
     title: "Use AI for the draft, not the final version",
@@ -122,19 +122,19 @@ const voiceTips = [
   },
   {
     title: "Ask for several versions, not one",
-    body: "\"Give me three openings — one that starts with a scene, one with an argument, one with data.\" Pick the strongest and develop it. You spend your energy choosing and refining instead of generating from a blank page. A model-agnostic habit worth keeping.",
+    body: "\"Give me three openings: one that starts with a scene, one with an argument, one with data.\" Pick the strongest and develop it. You spend your energy choosing and refining instead of generating from a blank page. A model-agnostic habit worth keeping.",
   },
 ];
 
 const contentTypes = [
-  { type: "Blog posts & articles", desc: "Outlines, drafts, intros, headlines, meta descriptions" },
-  { type: "Newsletters", desc: "Opening hooks, structured sections, CTAs, subject lines" },
-  { type: "Books & long-form", desc: "Chapter outlines, scene drafts, character development, consistency checks" },
-  { type: "Scripts & screenplays", desc: "Dialogue, scene direction, structure, beat sheets" },
-  { type: "Email campaigns", desc: "Sequences, subject lines, A/B variants, personalization" },
-  { type: "Social media", desc: "Thread drafts, post variations, captions, hooks" },
-  { type: "Speeches & presentations", desc: "Outlines, key messages, rhetorical structure, speaker notes" },
-  { type: "Academic writing", desc: "Research synthesis, literature reviews, argument structure, citations" },
+  { type: "Essays & articles", desc: "Angle-hunting, skeleton edits, headline batches to test" },
+  { type: "Newsletters", desc: "Recurring voice held issue to issue via saved style context" },
+  { type: "Books & long-form", desc: "Claude's lane: whole-manuscript continuity and timeline checks" },
+  { type: "Scripts & screenplays", desc: "Table-reading dialogue aloud, beat logic, pacing passes" },
+  { type: "Email campaigns", desc: "Variant generation in bulk; your send data picks winners" },
+  { type: "Social media", desc: "One idea recut per platform; ChatGPT adds the image side" },
+  { type: "Speeches & talks", desc: "Spoken-rhythm drafts, callback structure, cut-to-time passes" },
+  { type: "Academic writing", desc: "Source synthesis and counterargument stress-testing, never uncited claims" },
 ];
 
 export default async function ClaudeForWritersPage({
@@ -163,7 +163,7 @@ export default async function ClaudeForWritersPage({
                 "@type": "WebPage",
                 name: "Claude for Writers: When to Use It Over ChatGPT",
                 description:
-                  "A writer's guide to where Claude beats ChatGPT for drafting, editing, and voice-matching — and the model-agnostic workflows that make any AI a better writing partner.",
+                  "A writer's guide to where Claude beats ChatGPT for drafting, editing, and voice-matching, plus the model-agnostic workflows that make any AI a better writing partner.",
                 url: pagePath,
                 inLanguage: locale,
               },
@@ -171,7 +171,7 @@ export default async function ClaudeForWritersPage({
                 "@type": "Course",
                 name: "Writing with Claude",
                 description:
-                  "Learn to use Claude AI as a professional writing assistant — brainstorming, drafting, editing, voice-matching, and research synthesis.",
+                  "Learn to use Claude AI as a professional writing assistant: brainstorming, drafting, editing, voice-matching, and research synthesis.",
                 provider: {
                   "@type": "EducationalOrganization",
                   name: "Learn to GPT",
@@ -227,7 +227,7 @@ export default async function ClaudeForWritersPage({
               Brainstorm partner, structural editor, research synthesizer
             </p>
             <p className="mx-auto mb-10 mt-6 max-w-[660px] text-[1.05rem] leading-[1.7] text-text-secondary">
-              Among writers who use AI daily, Claude has a reputation for drafts that hold a voice and for honest editing. It won&apos;t write the piece for you, but it makes every stage faster without flattening how you sound. If ChatGPT is already your default, this is where Claude tends to earn a second tab — and the workflows below work on either.
+              Among writers who use AI daily, Claude has a reputation for drafts that hold a voice and for honest editing. It won&apos;t write the piece for you, but it makes every stage faster without flattening how you sound. If ChatGPT is already your default, this is where Claude tends to earn a second tab, and the workflows below work on either.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
               <Link
@@ -262,13 +262,13 @@ export default async function ClaudeForWritersPage({
               <div className="rounded-[16px] border-[3px] border-ink bg-cream p-[24px_28px] shadow-[3px_3px_0px_#1c1917]">
                 <div className="mb-2 text-[1.05rem] font-bold text-ink">Critique that isn&apos;t just flattery</div>
                 <p className="text-[0.9rem] leading-[1.6] text-text-secondary">
-                  Every model has a tendency to tell you your draft is great. Claude is a bit more willing to say what&apos;s weak when you explicitly ask it to be a tough editor. It&apos;s a lean, not a guarantee — and you can push ChatGPT the same direction with a firm prompt. The point is to ask for the hard read on purpose.
+                  Every model has a tendency to tell you your draft is great. Claude is a bit more willing to say what&apos;s weak when you explicitly ask it to be a tough editor. It&apos;s a lean, not a guarantee, and you can push ChatGPT the same direction with a firm prompt. The point is to ask for the hard read on purpose.
                 </p>
               </div>
               <div className="rounded-[16px] border-[3px] border-ink bg-cream p-[24px_28px] shadow-[3px_3px_0px_#1c1917]">
                 <div className="mb-2 text-[1.05rem] font-bold text-ink">And where ChatGPT still wins</div>
                 <p className="text-[0.9rem] leading-[1.6] text-text-secondary">
-                  If your writing work touches images, a voice-dictated first draft, or a specific publishing integration, ChatGPT&apos;s built-in tools are the faster route. This isn&apos;t Claude-versus-the-world — it&apos;s picking the right tab for the task, which is exactly the habit worth building.
+                  If your writing work touches images, a voice-dictated first draft, or a specific publishing integration, ChatGPT&apos;s built-in tools are the faster route. This isn&apos;t Claude-versus-the-world; it&apos;s picking the right tab for the task, which is exactly the habit worth building.
                 </p>
               </div>
             </div>
@@ -279,7 +279,7 @@ export default async function ClaudeForWritersPage({
         <section className="px-6 py-16">
           <div className="mx-auto max-w-[960px]">
             <p className="text-center text-xs font-bold uppercase tracking-[0.2em] text-text-secondary">Workflows</p>
-            <h2 className="mt-3 text-center text-[2rem] font-extrabold leading-[1.2] text-ink">Six writing workflows — with prompts</h2>
+            <h2 className="mt-3 text-center text-[2rem] font-extrabold leading-[1.2] text-ink">Six writing workflows, with prompts</h2>
             <div className="mt-10 grid gap-6 md:grid-cols-2">
               {writingWorkflows.map((wf) => (
                 <div key={wf.title} className="rounded-[24px] border-[4px] border-ink bg-cream p-[28px_24px] shadow-[4px_4px_0px_#1c1917]">

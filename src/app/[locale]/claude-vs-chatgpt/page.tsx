@@ -18,7 +18,7 @@ export async function generateMetadata({
 
   const title = "Claude vs ChatGPT: An Even-Handed 2025 Comparison";
   const description =
-    "Most people start on ChatGPT and wonder if Claude is worth adding. A neutral, task-by-task comparison of the two AI models — what each is genuinely better at, and how to decide which to open for a given job.";
+    "Most people start on ChatGPT and wonder if Claude is worth adding. A neutral, task-by-task comparison of the two AI models: what each is genuinely better at, and how to decide which to open for a given job.";
 
   return {
     title,
@@ -32,7 +32,7 @@ export async function generateMetadata({
           url: `${baseUrl}/og-default.png`,
           width: 1200,
           height: 630,
-          alt: "Claude vs ChatGPT — Learn to GPT",
+          alt: "Claude vs ChatGPT | Learn to GPT",
         },
       ],
     },
@@ -64,7 +64,7 @@ const comparisons = [
   },
   {
     category: "Long-form writing",
-    claude: "Often preferred — holds a voice, less repetitive over long pieces",
+    claude: "Often preferred: holds a voice, less repetitive over long pieces",
     chatgpt: "Very capable, occasionally more formulaic at length",
     winner: "claude" as const,
   },
@@ -76,7 +76,7 @@ const comparisons = [
   },
   {
     category: "Image generation",
-    claude: "Not built in — reads images but doesn't create them",
+    claude: "Not built in; reads images but doesn't create them",
     chatgpt: "Built-in image generation",
     winner: "chatgpt" as const,
   },
@@ -122,7 +122,7 @@ const useCases = [
   {
     title: "Either one handles everyday work",
     body:
-      "Summarizing email, drafting messages, explaining a concept, quick research — both models do this well. Use whichever you already have open; the difference here is small.",
+      "Summarizing email, drafting messages, explaining a concept, quick research: both models do this well. Use whichever you already have open; the difference here is small.",
     icon: "⚡",
   },
   {
@@ -194,7 +194,7 @@ export default async function ClaudeVsChatGPTPage({
                     name: "Do I need both Claude and ChatGPT?",
                     acceptedAnswer: {
                       "@type": "Answer",
-                      text: "Not to get started — one is plenty to learn the fundamentals. Many heavy users do keep both and switch by task: ChatGPT for visual and multimodal work, Claude for careful long-form text. The prompting skills transfer either way.",
+                      text: "Not to get started; one is plenty to learn the fundamentals. Many heavy users do keep both and switch by task: ChatGPT for visual and multimodal work, Claude for careful long-form text. The prompting skills transfer either way.",
                     },
                   },
                 ],
@@ -277,7 +277,7 @@ export default async function ClaudeVsChatGPTPage({
               <ArrowRight className="size-5" />
             </Link>
             <p className="mt-3 text-[0.85rem] text-text-secondary">
-              Free forever — no credit card required
+              Free forever, no credit card required
             </p>
           </div>
         </section>
@@ -287,7 +287,7 @@ export default async function ClaudeVsChatGPTPage({
           <div className="mx-auto max-w-[800px]">
             <div className="rounded-[18px] border-[4px] border-ink bg-[#d0f0ea] p-8 shadow-[6px_6px_0px_#1c1917] max-[480px]:p-6">
               <p className="text-[1.1rem] font-medium leading-[1.8] text-ink">
-                Claude (by Anthropic) and ChatGPT (by OpenAI) are both frontier AI models, and for everyday work they&apos;re close. The differences show up at the edges: Claude tends to be stronger on long-form writing and reading very long documents in one pass, while ChatGPT leads on built-in image generation, voice, and its large app ecosystem — and it&apos;s the one most people already have open. There is no single winner. The useful question is which one fits the task, not which brand to pledge to.
+                Claude (by Anthropic) and ChatGPT (by OpenAI) are both frontier AI models, and for everyday work they&apos;re close. The differences show up at the edges: Claude tends to be stronger on long-form writing and reading very long documents in one pass, while ChatGPT leads on built-in image generation, voice, and its large app ecosystem, and it&apos;s the one most people already have open. There is no single winner. The useful question is which one fits the task, not which brand to pledge to.
               </p>
             </div>
           </div>
@@ -448,7 +448,7 @@ export default async function ClaudeVsChatGPTPage({
           <div className="mx-auto max-w-[800px]">
             <div className="rounded-[18px] border-[4px] border-ink bg-cream p-10 shadow-[6px_6px_0px_#1c1917] max-[480px]:p-6">
               <h2 className="mb-4 text-[1.8rem] font-extrabold text-ink max-md:text-[1.4rem]">
-                Pick either — the skills transfer
+                Pick either; the skills transfer
               </h2>
               <p className="mb-6 text-[1.05rem] leading-[1.7] text-text-secondary">
                 Learn to GPT teaches the fundamentals that carry across every chat

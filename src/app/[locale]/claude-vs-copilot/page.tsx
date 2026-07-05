@@ -16,9 +16,9 @@ export async function generateMetadata({
   const pathForLocale = (loc: string) =>
     `${baseUrl}${loc === routing.defaultLocale ? "" : `/${loc}`}/claude-vs-copilot`;
 
-  const title = "Claude vs Copilot: Complete AI Coding Comparison (2025)";
+  const title = "GitHub Copilot vs Claude Code vs Codex CLI: Developer Tooling Compared";
   const description =
-    "Claude Code vs GitHub Copilot — which AI coding tool is right for you? Honest feature-by-feature comparison covering IDE integration, autonomous tasks, context window, and real-world use cases.";
+    "Autocomplete in the IDE, an agent in the terminal, or OpenAI's Codex CLI: a working developer's comparison of GitHub Copilot and Claude Code, with the ChatGPT ecosystem angle included.";
 
   return {
     title,
@@ -32,7 +32,7 @@ export async function generateMetadata({
           url: `${baseUrl}/og-default.png`,
           width: 1200,
           height: 630,
-          alt: "Claude Code vs GitHub Copilot — Learn to GPT",
+          alt: "Claude Code vs GitHub Copilot | Learn to GPT",
         },
       ],
     },
@@ -58,50 +58,50 @@ export function generateStaticParams() {
 const comparisons = [
   {
     category: "Autonomous task execution",
-    claudeCode: "Full agentic mode — reads, edits, runs, and tests multi-file projects end-to-end",
-    copilot: "Copilot Workspace (preview) — still mostly single-file suggestions",
+    claudeCode: "Agentic by design: plans a task, edits across the repo, runs commands, iterates until done",
+    copilot: "Agent features have arrived, but the product's center of gravity is still assistance while you type",
     winner: "claude" as const,
   },
   {
-    category: "Context window",
-    claudeCode: "200K tokens — ingests entire codebases, READMEs, and docs in one pass",
-    copilot: "~8K–128K (model-dependent) — truncates large files silently",
+    category: "How much of your repo it sees",
+    claudeCode: "Reads whatever files it decides are relevant, plus your CLAUDE.md conventions file",
+    copilot: "Builds context from open files and workspace indexing; less direct control over what's in view",
     winner: "claude" as const,
   },
   {
     category: "IDE integration",
-    claudeCode: "Terminal-native; VS Code extension available; works in any editor via terminal",
-    copilot: "Deep VS Code, JetBrains, Neovim, and Visual Studio integration out of the box",
+    claudeCode: "Lives in the terminal (including VS Code's integrated one); editor-agnostic as a result",
+    copilot: "First-class citizen in VS Code, JetBrains, Neovim, and Visual Studio",
     winner: "copilot" as const,
   },
   {
     category: "Inline autocomplete",
-    claudeCode: "Not the primary mode — optimized for agentic sessions, not keystroke completions",
-    copilot: "Industry-leading inline suggestions — trained on billions of code lines",
+    claudeCode: "Doesn't do keystroke completion; that's simply not the product",
+    copilot: "The defining feature: ghost-text suggestions as you type, tuned over years",
     winner: "copilot" as const,
   },
   {
     category: "Multi-file refactoring",
-    claudeCode: "Natively understands whole-project structure; modifies 10+ files in one command",
-    copilot: "Improving, but Workspace still beta; single-file edits more reliable",
+    claudeCode: "Comfortable touching a dozen files off one instruction, then showing you the diff",
+    copilot: "Multi-file edits exist via chat and agent mode; inline flow still favors local changes",
     winner: "claude" as const,
   },
   {
-    category: "Debugging & root cause analysis",
-    claudeCode: "Reads stack traces, runs tests, proposes and applies fixes autonomously",
-    copilot: "Chat explains errors; does not execute or iterate automatically",
+    category: "Debugging loops",
+    claudeCode: "Reads the stack trace, reruns the failing test, patches, reruns again",
+    copilot: "Chat explains the error well; the run-and-verify loop is more manual",
     winner: "claude" as const,
   },
   {
-    category: "Test generation",
-    claudeCode: "Writes tests, runs them, reads failures, and fixes the implementation",
-    copilot: "Generates test stubs well; does not close the write-run-fix loop",
-    winner: "claude" as const,
+    category: "Model choice",
+    claudeCode: "Anthropic models only",
+    copilot: "Lets you pick the underlying model, including Claude and GPT variants, inside one subscription",
+    winner: "copilot" as const,
   },
   {
-    category: "GitHub workflow integration",
-    claudeCode: "Works with git via terminal; no native PR review or Actions hooks",
-    copilot: "Native PR review summaries, Actions integration, and Copilot for Docs",
+    category: "GitHub platform hooks",
+    claudeCode: "Full git fluency from the terminal, plus a GitHub Action; PR review is a separate setup",
+    copilot: "Native PR summaries, code review, and Actions integration because GitHub owns it",
     winner: "copilot" as const,
   },
 ];
@@ -109,25 +109,25 @@ const comparisons = [
 const useCases = [
   {
     icon: Terminal,
-    title: "Choose Claude Code if you…",
+    title: "Pick a terminal agent (Claude Code or Codex CLI) if you…",
     points: [
-      "Work on large codebases that exceed typical context limits",
-      "Want an agent that can take a task from prompt to tested commit autonomously",
-      "Build APIs, backends, or CLIs where IDE autocomplete is less critical",
-      "Run complex refactors across dozens of files in a single session",
-      "Prefer a conversation-first interface over keystroke-level suggestions",
+      "Hand off whole tasks (\"add the endpoint, migrate the schema, make tests pass\") rather than lines",
+      "Spend your day in backends, CLIs, and infra where autocomplete adds little",
+      "Want the tool to run commands and read failures itself instead of narrating fixes to you",
+      "Refactor across many files often enough that diff review beats hand-editing",
+      "Already pay for Claude or ChatGPT and want the agent bundled with the subscription",
     ],
     accent: "bg-orange",
   },
   {
     icon: Code2,
-    title: "Choose Copilot if you…",
+    title: "Pick Copilot if you…",
     points: [
-      "Live in VS Code or JetBrains and rely on inline completions all day",
-      "Work in a GitHub-first team that uses PRs and Actions heavily",
-      "Need suggestions as you type, not just when you ask a question",
-      "Code primarily in one or two files at a time, not whole projects",
-      "Are already on a GitHub Enterprise plan where Copilot is bundled",
+      "Feel the value of AI most between keystrokes, not between tasks",
+      "Live in VS Code or JetBrains and want zero context-switching",
+      "Ship through GitHub PRs and want review summaries where the review happens",
+      "Want one subscription that can route to GPT or Claude models as they leapfrog",
+      "Are on GitHub Enterprise where it's effectively already paid for",
     ],
     accent: "bg-teal",
   },
@@ -157,9 +157,9 @@ export default async function ClaudeVsCopilotPage({
             "@graph": [
               {
                 "@type": "Article",
-                headline: "Claude Code vs GitHub Copilot: Full Comparison 2025",
+                headline: "GitHub Copilot vs Claude Code vs Codex CLI: Developer Tooling Compared",
                 description:
-                  "Honest feature-by-feature comparison of Claude Code and GitHub Copilot covering autonomous task execution, IDE integration, context window, and real-world use cases.",
+                  "A three-way look at AI developer tooling: GitHub Copilot's in-IDE assistance, Claude Code's terminal agent, and where OpenAI's Codex CLI fits for ChatGPT-ecosystem developers.",
                 url: pathForLocale(locale),
                 inLanguage: locale,
                 author: {
@@ -233,13 +233,13 @@ export default async function ClaudeVsCopilotPage({
               AI Coding Tools Compared
             </div>
             <h1 className="text-[3.5rem] font-extrabold leading-[1.1] text-ink max-md:text-[2.4rem] max-[480px]:text-[1.8rem]">
-              Claude Code vs GitHub Copilot
+              Copilot, Claude Code, or Codex CLI?
             </h1>
             <p className="mt-4 font-serif text-[1.6rem] italic text-walnut max-md:text-[1.2rem]">
-              Two tools. Different philosophies. One right choice for your workflow.
+              The real split is autocomplete versus agent, not brand versus brand
             </p>
             <p className="mx-auto mb-10 mt-7 max-w-[660px] text-[1.1rem] font-normal leading-[1.7] text-text-secondary">
-              GitHub Copilot pioneered AI-assisted coding with keystroke-level autocomplete. Claude Code takes a different bet: an autonomous agent that reads your whole project, plans, edits, runs tests, and iterates — without you steering every step. This comparison breaks down what each tool actually does well, where each falls short, and which one fits your workflow.
+              Developer AI tooling has settled into two shapes. In-IDE assistance, where GitHub Copilot defined the category, and terminal agents that take a whole task and drive it to done, where Anthropic&apos;s Claude Code and OpenAI&apos;s Codex CLI compete head-on. If you&apos;re coming from the ChatGPT side, this page maps all three: what each shape is for, where Copilot still wins, and how to decide without tribal loyalty.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4 max-[480px]:flex-col">
               <Link
@@ -263,7 +263,7 @@ export default async function ClaudeVsCopilotPage({
           <div className="mx-auto max-w-[800px]">
             <div className="rounded-[18px] border-[4px] border-ink bg-[#d0f0ea] p-8 shadow-[6px_6px_0px_#1c1917] max-[480px]:p-6">
               <p className="text-[1.1rem] font-medium leading-[1.8] text-ink">
-                Claude Code and GitHub Copilot solve different problems. Claude Code is a terminal agent that handles multi-file refactoring, testing, and deployment autonomously. Copilot is an IDE plugin that provides inline code suggestions as you type. Many developers use both together.
+                Short answer: they&apos;re different shapes of tool. Copilot assists inside your editor while you write each line. Claude Code (and OpenAI&apos;s Codex CLI, its closest rival) is an agent you hand a task to in the terminal; it edits files, runs tests, and comes back with a diff. Plenty of developers run one of each, and Copilot itself now lets you pick Claude or GPT models under the hood.
               </p>
             </div>
           </div>
@@ -274,16 +274,16 @@ export default async function ClaudeVsCopilotPage({
           <div className="mx-auto max-w-[800px]">
             <div className="rounded-[18px] border-[4px] border-ink bg-cream p-10 shadow-[6px_6px_0px_#1c1917] max-[480px]:p-6">
               <h2 className="mb-4 text-[1.8rem] font-extrabold text-ink max-md:text-[1.4rem]">
-                The fundamental difference
+                Two shapes of tool, three products
               </h2>
               <p className="mb-4 text-[1.05rem] leading-[1.7] text-text-secondary">
-                Copilot is a <strong>suggestion engine</strong>. It watches you type and predicts the next line, block, or function. It&apos;s exceptionally good at this — trained on billions of lines of public code, it catches patterns you might miss and autocompletes boilerplate at speed.
+                Copilot&apos;s core loop is <strong>prediction while you type</strong>. Ghost text appears, you accept or reject, and the boilerplate tax on your day drops. It has grown chat and agent features, but the muscle memory it built the category on is keystroke-level assistance inside the editor.
               </p>
               <p className="mb-4 text-[1.05rem] leading-[1.7] text-text-secondary">
-                Claude Code is an <strong>autonomous agent</strong>. You describe a task — &quot;add pagination to the user list, write tests, update the API docs&quot; — and it reads your project structure, understands your patterns, makes changes across multiple files, runs your test suite, reads the failures, and fixes them. You review the diff when it&apos;s done.
+                The terminal agents invert the loop: <strong>you describe the outcome, the tool does the typing</strong>. Tell Claude Code or Codex CLI to add pagination, update the docs, and get the suite green, and it works through the repo, runs the tests, reads its own failures, and retries. Your job moves from writing code to reviewing diffs. Claude Code is the more mature of the two agents; Codex CLI is the natural pick if your subscription and habits are already in the ChatGPT ecosystem.
               </p>
               <p className="text-[1.05rem] leading-[1.7] text-text-secondary">
-                Neither approach is universally better. The question is which workflow matches how you actually build software.
+                Neither shape is strictly better. Ask which part of your day you want compressed: the typing or the tasks.
               </p>
             </div>
           </div>
@@ -296,7 +296,7 @@ export default async function ClaudeVsCopilotPage({
               Feature Breakdown
             </p>
             <h2 className="mt-3 text-center text-[2rem] font-extrabold leading-[1.2] text-ink">
-              Head-to-head comparison
+              Claude Code and Copilot, category by category
             </h2>
 
             <div className="mt-10 overflow-hidden rounded-[18px] border-[4px] border-ink bg-cream shadow-[6px_6px_0px_#1c1917]">
@@ -335,7 +335,7 @@ export default async function ClaudeVsCopilotPage({
               ))}
             </div>
             <p className="mt-4 text-center text-[0.8rem] text-text-secondary">
-              Orange checkmark = stronger in that category. Comparison reflects capabilities as of 2025.
+              Orange checkmark = the stronger fit in that category. Both products ship updates constantly; treat this as a snapshot, and note Codex CLI tracks the Claude Code column&apos;s shape almost point for point.
             </p>
           </div>
         </section>
@@ -394,25 +394,23 @@ export default async function ClaudeVsCopilotPage({
                 <pre className="font-mono text-[0.85rem] leading-[32px] text-ink">
                   <code>
                     <span className="text-orange">$ </span>
-                    <span className="text-ink">claude &quot;Add rate limiting to all POST endpoints. Use upstash/ratelimit. Tests must pass.&quot;</span>
+                    <span className="text-ink">claude &quot;Every POST route needs rate limiting. Use upstash/ratelimit. Don&apos;t stop until the suite is green.&quot;</span>
                     {"\n\n"}
-                    <span className="text-text-secondary"># Claude reads your project structure</span>
+                    <span className="text-text-secondary"># scans the repo, finds the POST handlers</span>
                     {"\n"}
-                    <span className="text-text-secondary"># Identifies 6 POST endpoints across 3 files</span>
+                    <span className="text-text-secondary"># adds the dependency, writes one middleware</span>
                     {"\n"}
-                    <span className="text-text-secondary"># Installs dependency, writes middleware</span>
+                    <span className="text-text-secondary"># wires it into each route, extends the tests</span>
                     {"\n"}
-                    <span className="text-text-secondary"># Applies to each route, updates tests</span>
-                    {"\n"}
-                    <span className="text-text-secondary"># Runs: npm test → 2 failures → fixes them</span>
+                    <span className="text-text-secondary"># test run fails twice; it patches both causes</span>
                     {"\n\n"}
-                    <span className="text-teal">✓ All 47 tests pass. Ready to review.</span>
+                    <span className="text-teal">✓ Suite green. Diff staged for your review.</span>
                   </code>
                 </pre>
               </div>
             </div>
             <p className="mt-5 text-center font-mono text-[0.85rem] font-semibold tracking-[0.05em] text-text-secondary">
-              One prompt. Full task loop. No manual steering.
+              This is the agent shape. Codex CLI sessions look nearly identical.
             </p>
           </div>
         </section>
@@ -422,13 +420,13 @@ export default async function ClaudeVsCopilotPage({
           <div className="mx-auto max-w-[800px]">
             <div className="rounded-[18px] border-[4px] border-ink bg-[#ffecd2] p-10 shadow-[6px_6px_0px_#1c1917] max-[480px]:p-6">
               <h2 className="mb-4 text-[1.8rem] font-extrabold text-ink max-md:text-[1.4rem]">
-                Can you use both?
+                The pairing most developers land on
               </h2>
               <p className="mb-4 text-[1.05rem] leading-[1.7] text-text-secondary">
-                Yes — and many developers do. Copilot handles inline suggestions while you type. Claude Code handles the bigger, higher-effort tasks: feature implementation, debugging sessions, refactoring runs. Think of Copilot as your typing accelerator and Claude Code as your autonomous junior developer.
+                One in-IDE assistant plus one terminal agent. Copilot smooths the typing all day; the agent (Claude Code or Codex CLI) takes the chunky work: a feature branch, a debugging session, a refactor that touches twenty files. The two shapes don&apos;t compete for the same minutes of your day, which is why the combination feels natural rather than redundant.
               </p>
               <p className="text-[1.05rem] leading-[1.7] text-text-secondary">
-                If you have to pick one, the decision comes down to your primary workflow. Autocomplete-heavy coding in a single IDE? Copilot wins. Agentic, multi-file tasks with an AI that closes the loop? Claude Code wins.
+                Forced to pick one? Follow your bottleneck. If your slow part is producing lines of code, Copilot. If your slow part is finishing whole tasks, an agent. And if you want to defer the model question entirely, Copilot&apos;s model picker lets you run Claude or GPT under one bill while you decide.
               </p>
             </div>
           </div>
@@ -442,10 +440,10 @@ export default async function ClaudeVsCopilotPage({
             </h2>
             <div className="space-y-4">
               {[
-                { q: "Is Claude Code better than GitHub Copilot?", a: "They solve different problems. Claude Code is a terminal agent for multi-step tasks (refactoring, testing, deployment). Copilot is an IDE tool for inline suggestions. Claude Code handles complexity; Copilot handles flow." },
-                { q: "Can I use Claude Code and Copilot together?", a: "Yes. Many developers use Copilot for inline code suggestions while coding and Claude Code for larger tasks like refactoring, debugging, and multi-file operations. They complement each other." },
-                { q: "Which AI coding tool should I learn first?", a: "Start with Claude Code if you want autonomous development capabilities. Start with Copilot if you want inline coding assistance." },
-                { q: "Does Claude Code work in VS Code?", a: "Claude Code runs in the terminal, including the integrated terminal in VS Code. It reads your entire project directory, edits files directly, and runs shell commands. It is not an inline autocomplete extension like Copilot." },
+                { q: "Where does OpenAI's Codex CLI fit in this comparison?", a: "Codex CLI is OpenAI's answer to Claude Code: a terminal agent that edits files, runs commands, and iterates on a task. If you already pay for ChatGPT, it's the zero-extra-cost way to try agentic coding. Claude Code is generally the more polished agent today; the gap moves with every release." },
+                { q: "Is Copilot's agent mode the same thing as Claude Code?", a: "Same direction, different maturity. Copilot has been adding task-level agent features on top of an autocomplete product, while Claude Code and Codex CLI were built agent-first. For deep multi-file work with a run-test-fix loop, the terminal agents still feel more capable." },
+                { q: "Which should a developer learn first in 2025?", a: "Learn the shape, not the brand. Spend a week with any terminal agent and a week with in-IDE assistance and you'll know which compresses your particular workday. The prompting skills transfer between Claude Code and Codex CLI almost unchanged." },
+                { q: "Does Claude Code replace my IDE tooling?", a: "No. It runs in a terminal (including the one inside VS Code), edits files directly, and executes shell commands. It doesn't do ghost-text completion, so developers who value that keep Copilot alongside it rather than choosing between them." },
               ].map((item) => (
                 <div key={item.q} className="rounded-[16px] border-[3px] border-ink bg-cream p-6 shadow-[3px_3px_0px_#1c1917]">
                   <div className="mb-2 flex items-start gap-3">
