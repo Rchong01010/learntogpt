@@ -1,0 +1,47 @@
+name: Verify
+
+# PR verification gate: typecheck + security scan are blocking; lint is
+# advisory until the pre-existing lint debt (66 errors as of 2026-07-17) is
+# cleared, then flip continue-on-error off. Build verification is covered by
+# the Vercel preview deploy on every PR.
+on:
+  pull_request:
+  push:
+    branches: [master]
+
+permissions:
+  contents: read
+
+jobs:
+  typecheck:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npx tsc --noEmit
+
+  lint:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npm run lint
+
+  security:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install semgrep==1.154.0
+      - run: semgrep scan --config p/security-audit --config p/secrets --severity ERROR --error
