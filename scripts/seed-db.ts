@@ -1,18 +1,39 @@
 /**
  * Seed the database with course content from JSON files.
  *
- * Usage: npx tsx scripts/seed-db.ts
+ * Usage: npx tsx scripts/seed-db.ts [--force]
  *
  * Requires NEXT_PUBLIC_SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY in .env.local
+ *
+ * ── FRESHNESS GUARD (2026-07-23) — mirrors the reseed-course.ts quarantine ───
+ * The seed content JSON files are the ORIGINAL English source. Localized
+ * exercise/course rows (798 of them across zh-CN, ja, ko, de, fr, es, pt-BR)
+ * are produced downstream by the l10n pipeline and live only in the DB — they
+ * are NOT reflected back into these JSON files. A naive reseed would upsert the
+ * English source over every locale row (onConflict lesson_id,order_index /
+ * slug,locale,platform), silently clobbering all localized content.
+ *
+ * Guard: before overwriting an EXISTING row whose content differs from the
+ * seed, this script REFUSES the write and reports it, unless --force is passed.
+ * Inserting NEW content (no existing row) always proceeds — normal seeding of
+ * new English lessons is unaffected.
+ * ─────────────────────────────────────────────────────────────────────────────
  */
 
 import { createClient } from "@supabase/supabase-js";
 import { readFileSync, readdirSync } from "fs";
 import { join } from "path";
 
+const FORCE = process.argv.includes("--force");
+
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const SERVICE_ROLE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY;
 const PLATFORM = process.env.NEXT_PUBLIC_PLATFORM ?? "learntogpt";
+
+// Tracks rows the freshness guard refused to overwrite (existing + differing,
+// no --force). A non-empty list at the end is reported loudly and exits non-zero
+// so a clobbering reseed can never masquerade as a clean run.
+const refusals: string[] = [];
 
 if (!SUPABASE_URL || !SERVICE_ROLE_KEY) {
   console.error("Missing NEXT_PUBLIC_SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY");
@@ -87,6 +108,28 @@ async function seedTrack(data: TrackData, locale: string) {
     if (course.level_required != null) courseRow.level_required = course.level_required;
     if (course.prerequisite_slug !== undefined) courseRow.prerequisite_slug = course.prerequisite_slug;
 
+    // FRESHNESS GUARD: refuse to overwrite an existing course row for this
+    // locale if its content-bearing fields differ from the seed (unless --force).
+    if (!FORCE) {
+      const { data: existingCourse } = await supabase
+        .from("courses")
+        .select("id, title, description")
+        .eq("slug", course.slug)
+        .eq("locale", locale)
+        .eq("platform", PLATFORM)
+        .maybeSingle();
+      if (
+        existingCourse &&
+        (existingCourse.title !== course.title ||
+          existingCourse.description !== course.description)
+      ) {
+        const msg = `courses[slug=${course.slug}, locale=${locale}] exists and differs from seed`;
+        console.warn(`  SKIP (freshness guard): ${msg}. Pass --force to overwrite.`);
+        refusals.push(msg);
+        continue;
+      }
+    }
+
     const { data: insertedCourse, error: courseError } = await supabase
       .from("courses")
       .upsert(courseRow, { onConflict: "slug,locale,platform" })
@@ -139,6 +182,32 @@ async function seedTrack(data: TrackData, locale: string) {
         const exercise = lesson.exercises[exIdx];
         const orderIndex = exercise.order_index ?? exIdx + 1;
         if (orderIndex > seedMaxOrder) seedMaxOrder = orderIndex;
+
+        // FRESHNESS GUARD: refuse to overwrite an existing exercise row for this
+        // (lesson_id, order_index) if its content-bearing fields differ from the
+        // seed (unless --force). This is what protects localized rows from being
+        // clobbered by the English seed source. NEW rows still insert normally.
+        const seedPrompt = exercise.prompt ?? exercise.question ?? "";
+        if (!FORCE) {
+          const { data: existingEx } = await supabase
+            .from("exercises")
+            .select("id, prompt, correct_answer, explanation")
+            .eq("lesson_id", lessonId)
+            .eq("order_index", orderIndex)
+            .maybeSingle();
+          if (
+            existingEx &&
+            (existingEx.prompt !== seedPrompt ||
+              existingEx.correct_answer !== String(exercise.correct_answer ?? "") ||
+              existingEx.explanation !== (exercise.explanation ?? ""))
+          ) {
+            const msg = `exercises[lesson=${lesson.slug} (${lessonId}), order_index=${orderIndex}, locale=${locale}] exists and differs from seed`;
+            console.warn(`      SKIP (freshness guard): ${msg}. Pass --force to overwrite.`);
+            refusals.push(msg);
+            continue;
+          }
+        }
+
         const { error: exerciseError } = await supabase.from("exercises").upsert(
           {
             lesson_id: lessonId,
@@ -268,7 +337,7 @@ async function main() {
 
   // Locales that can appear as a suffix in filenames (e.g. track1-why-claude.zh-CN.json).
   // Order matters: check longer tags before shorter ones to avoid partial matches.
-  const knownLocales = ["zh-CN", "en", "ja", "ko", "de", "fr", "es"];
+  const knownLocales = ["zh-CN", "pt-BR", "en", "ja", "ko", "de", "fr", "es"];
 
   for (const file of files) {
     // Derive locale from filename: "track1-why-claude.zh-CN.json" → "zh-CN",
@@ -299,6 +368,23 @@ async function main() {
 
   console.log("\n================================");
   console.log(`Done! Seeded ${totalCourses} courses, ${totalLessons} lessons, ${totalExercises} exercises`);
+
+  if (refusals.length > 0) {
+    console.error(
+      `\nFRESHNESS GUARD: refused to overwrite ${refusals.length} existing row(s) ` +
+        `that differ from the English seed source (localized content is DB-only). ` +
+        `These were left untouched:`
+    );
+    for (const r of refusals) console.error(`  - ${r}`);
+    console.error(
+      `\nIf you genuinely intend to overwrite localized rows with the English ` +
+        `seed, re-run with --force. Exiting non-zero so this is never a silent clobber.`
+    );
+    process.exit(1);
+  }
 }
 
-main().catch(console.error);
+main().catch((err) => {
+  console.error(err);
+  process.exit(1);
+});
