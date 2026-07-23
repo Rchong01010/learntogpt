@@ -27,15 +27,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Wave 2 (GTM bible v2.0 §3): /pricing is dropped from the sitemap. The
   // route still exists (redirects to /curriculum) so existing inbound links
   // don't 404, but we don't actively advertise it for indexing.
-  // NOTE: 26 Claude-developer-tooling slugs (claude-code*, claude-mcp*,
-  // claude-hooks, claude-api-tutorial, claude-system-prompts, claude-agents,
-  // claude-artifacts, claude-tool-use, claude-extended-thinking,
-  // claude-context-window, claude-memory, claude-projects, claude-for-developers,
-  // claude-sonnet-vs-opus, claude-slash-commands, claude-batch-api) are 301'd to
-  // claude-academy.com (see next.config.ts CLAUDE_DEV_REDIRECT_SLUGS) and are
-  // intentionally OMITTED here so they're not advertised for indexing on LG.
-  // Cross-brand comparisons and general Claude-product pages are kept below.
-  const routes = ["", "/curriculum", "/learn", "/prompt-engineering", "/getting-started", "/ai-training", "/for-teams", "/certification", "/affiliates/apply", "/sign-up", "/sign-in", "/privacy", "/terms", "/learn-chatgpt", "/chatgpt-tutorial", "/how-to-use-chatgpt", "/chatgpt-for-beginners", "/chatgpt-prompts", "/custom-gpts-tutorial", "/chatgpt-tips", "/chatgpt-for-business", "/chatgpt-vs-claude", "/chatgpt-api-tutorial", "/ai-certification", "/learn-ai", "/ai-for-beginners", "/ai-automation", "/ai-pair-programming", "/claude-vs-chatgpt", "/best-claude-prompts", "/claude-for-business", "/claude-for-marketing", "/is-claude-free", "/claude-vs-copilot", "/what-is-claude", "/claude-vs-gemini", "/claude-for-writers", "/claude-for-data-analysis", "/claude-for-non-programmers"];
+  // NOTE (2026-07-23): ALL 34 /claude-* slugs are 301'd to claude-academy.com
+  // (see next.config.ts CLAUDE_REDIRECT_SLUGS — Claude SEO consolidated onto
+  // claude-academy; LG stays pure ChatGPT). They are intentionally OMITTED
+  // here, so neither the URLs nor their hreflang alternates are advertised
+  // for indexing on LG. Claude-adjacent pages whose slug does not start with
+  // claude- (chatgpt-vs-claude, what-is-claude, is-claude-free,
+  // best-claude-prompts) stay on LG and remain listed below.
+  const routes = ["", "/curriculum", "/learn", "/prompt-engineering", "/getting-started", "/ai-training", "/for-teams", "/certification", "/affiliates/apply", "/sign-up", "/sign-in", "/privacy", "/terms", "/learn-chatgpt", "/chatgpt-tutorial", "/how-to-use-chatgpt", "/chatgpt-for-beginners", "/chatgpt-prompts", "/custom-gpts-tutorial", "/chatgpt-tips", "/chatgpt-for-business", "/chatgpt-vs-claude", "/chatgpt-api-tutorial", "/ai-certification", "/learn-ai", "/ai-for-beginners", "/ai-automation", "/ai-pair-programming", "/best-claude-prompts", "/is-claude-free", "/what-is-claude"];
 
   const pathFor = (locale: string, route: string) =>
     `${base}${locale === routing.defaultLocale ? "" : `/${locale}`}${route}`;
