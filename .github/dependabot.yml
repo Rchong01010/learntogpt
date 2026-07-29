@@ -1,0 +1,27 @@
+version: 2
+
+# Keeps the SHA pins in .github/workflows/ from rotting.
+#
+# Every action is pinned to a 40-char commit SHA so a compromised upstream
+# account cannot repoint a tag at malicious code inside CI. The cost of that
+# safety is that a pin is frozen: it does not pick up upstream security
+# patches on its own. Without this file, pinning is a one-time snapshot that
+# silently ages.
+#
+# Dependabot rewrites both the SHA and the trailing `# vX.Y.Z` comment, so
+# the version stays legible and the diff stays reviewable.
+#
+# NO AUTO-MERGE, deliberately. A bot that can both propose and land a change
+# to a CI workflow reintroduces the exact trust problem pinning was meant to
+# close. These PRs get read by a human.
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: "chore(ci)"
+    labels:
+      - "dependencies"
+      - "github-actions"
