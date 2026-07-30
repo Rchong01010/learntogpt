@@ -181,6 +181,9 @@ export async function getCompletedCourseCount(userId: string): Promise<number> {
 
 /**
  * Returns whether the user has purchased the one-time course unlock.
+ *
+ * Excludes revoked unlocks (e.g. refunds): a row with a non-null
+ * `revoked_at` no longer grants access.
  */
 export async function hasUnlocked(userId: string): Promise<boolean> {
   const supabase = await createSupabaseServer();
@@ -189,6 +192,7 @@ export async function hasUnlocked(userId: string): Promise<boolean> {
     .select("id")
     .eq("user_id", userId)
     .eq("platform", PLATFORM)
+    .is("revoked_at", null)
     .maybeSingle();
   return data !== null;
 }
