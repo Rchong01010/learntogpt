@@ -2,6 +2,7 @@ import { Resend } from "resend";
 import { verifyCronAuth } from "@/lib/auth";
 import { personalizeUnsubscribe, buildUnsubscribeHeaders } from "@/lib/unsubscribe-token";
 import { createSupabaseAdmin } from "@/lib/supabase-server";
+import { PLATFORM_SOURCE, assertPlatformScope } from "@/lib/platform-scope";
 import {
   buildWelcomeEmail,
   buildDay3Email,
@@ -97,6 +98,10 @@ export async function GET(request: Request) {
     return Response.json({ error: "Not configured" }, { status: 500 });
   }
 
+  // Fail closed rather than send cross-brand email to the shared user table.
+  const scopeError = assertPlatformScope("welcome-emails");
+  if (scopeError) return scopeError;
+
   const supabase = await createSupabaseAdmin();
   const now = Date.now();
   const jobs: EmailJob[] = [];
@@ -108,6 +113,7 @@ export async function GET(request: Request) {
   const { data: email1Users, error: e1Err } = await supabase
     .from("user_profiles")
     .select("user_id, display_name")
+    .eq("source", PLATFORM_SOURCE)
     .gte("created_at", e1Start)
     .lte("created_at", e1End)
     .eq("email_unsubscribed", false);
@@ -132,6 +138,7 @@ export async function GET(request: Request) {
   const { data: email2Users, error: e2Err } = await supabase
     .from("user_profiles")
     .select("user_id, display_name, xp")
+    .eq("source", PLATFORM_SOURCE)
     .gte("created_at", e2Start)
     .lte("created_at", e2End)
     .eq("xp", 0)
@@ -157,6 +164,7 @@ export async function GET(request: Request) {
   const { data: email3Users, error: e3Err } = await supabase
     .from("user_profiles")
     .select("user_id, display_name, xp")
+    .eq("source", PLATFORM_SOURCE)
     .gte("created_at", e3Start)
     .lte("created_at", e3End)
     .eq("xp", 0)
