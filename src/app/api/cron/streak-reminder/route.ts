@@ -2,6 +2,7 @@ import { Resend } from "resend";
 import { verifyCronAuth } from "@/lib/auth";
 import { personalizeUnsubscribe, buildUnsubscribeHeaders } from "@/lib/unsubscribe-token";
 import { createSupabaseAdmin } from "@/lib/supabase-server";
+import { PLATFORM_SOURCE, assertPlatformScope } from "@/lib/platform-scope";
 import { escapeHtml } from "@/lib/escape-html";
 
 /**
@@ -124,6 +125,11 @@ export async function GET(request: Request) {
     return Response.json({ error: "Not configured" }, { status: 500 });
   }
 
+  // Shared user_profiles table: without this, the streak reset below WRITES to
+  // Claude Academy users' rows. See src/lib/platform-scope.ts.
+  const scopeError = assertPlatformScope("streak-reminder");
+  if (scopeError) return scopeError;
+
   const now = Date.now();
   const windowStart = new Date(now - TWENTY_EIGHT_HOURS_MS).toISOString();
   const windowEnd = new Date(now - TWENTY_HOURS_MS).toISOString();
@@ -143,6 +149,7 @@ export async function GET(request: Request) {
   const { data: staleUsers, error: staleErr } = await supabase
     .from("user_profiles")
     .select("user_id")
+    .eq("source", PLATFORM_SOURCE)
     .gt("current_streak", 0);
 
   if (staleErr) {
@@ -189,6 +196,7 @@ export async function GET(request: Request) {
   const { data: profiles, error: profileErr } = await supabase
     .from("user_profiles")
     .select("user_id, current_streak, streak_reminder_sent_at")
+    .eq("source", PLATFORM_SOURCE)
     .gt("current_streak", 0)
     .eq("email_unsubscribed", false);
 

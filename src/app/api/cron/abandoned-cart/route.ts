@@ -2,6 +2,7 @@ import { Resend } from "resend";
 import { verifyCronAuth } from "@/lib/auth";
 import { personalizeUnsubscribe, buildUnsubscribeHeaders } from "@/lib/unsubscribe-token";
 import { createSupabaseAdmin } from "@/lib/supabase-server";
+import { PLATFORM_SOURCE, assertPlatformScope } from "@/lib/platform-scope";
 import { buildAbandonedCartEmail } from "@/lib/emails/abandoned-cart";
 
 /**
@@ -84,6 +85,10 @@ export async function GET(request: Request) {
     return Response.json({ error: "Not configured" }, { status: 500 });
   }
 
+  // Shared user_profiles table. See src/lib/platform-scope.ts.
+  const scopeError = assertPlatformScope("abandoned-cart");
+  if (scopeError) return scopeError;
+
   const now = Date.now();
   const windowStart = new Date(now - FORTY_EIGHT_HOURS_MS).toISOString();
   const windowEnd = new Date(now - TWENTY_FOUR_HOURS_MS).toISOString();
@@ -95,6 +100,7 @@ export async function GET(request: Request) {
   const { data: recentUsers, error: usersErr } = await supabase
     .from("user_profiles")
     .select("user_id, created_at")
+    .eq("source", PLATFORM_SOURCE)
     .gte("created_at", windowStart)
     .lte("created_at", windowEnd)
     .eq("email_unsubscribed", false);
