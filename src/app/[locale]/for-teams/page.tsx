@@ -180,7 +180,7 @@ export default async function ForTeamsPage({
               {t("intro")}
             </p>
             <a
-              href="mailto:reid@getateam.ai?subject=LearnToGPT%20for%20Teams"
+              href="mailto:support@learntogpt.com?subject=LearnToGPT%20for%20Teams"
               className="inline-flex items-center justify-center gap-2 rounded-full border-[3px] border-ink bg-orange px-10 py-4 text-[1.1rem] font-bold text-white shadow-[6px_6px_0px_#1c1917] transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[1px_1px_0px_#1c1917]"
             >
               {t("cta")}
@@ -336,7 +336,7 @@ export default async function ForTeamsPage({
             </p>
             <div className="mt-8">
               <a
-                href="mailto:reid@getateam.ai?subject=LearnToGPT%20for%20Teams"
+                href="mailto:support@learntogpt.com?subject=LearnToGPT%20for%20Teams"
                 className="inline-flex items-center justify-center gap-2 rounded-full border-[3px] border-ink bg-orange px-10 py-4 text-[1.1rem] font-bold text-white shadow-[6px_6px_0px_#1c1917] transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[1px_1px_0px_#1c1917]"
               >
                 {t("cta")}

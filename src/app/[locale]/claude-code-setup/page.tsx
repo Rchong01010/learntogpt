@@ -228,7 +228,7 @@ export default async function ClaudeCodeSetupPage({
                 <ArrowRight className="size-5" />
               </Link>
               <a
-                href="mailto:reid@getateam.ai?subject=Claude%20Code%20Setup%20Call"
+                href="mailto:support@learntogpt.com?subject=Claude%20Code%20Setup%20Call"
                 className="inline-flex items-center justify-center rounded-full border-[3px] border-ink bg-cream px-10 py-4 text-[1.1rem] font-bold text-ink shadow-[6px_6px_0px_#1c1917] transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[1px_1px_0px_#1c1917]"
               >
                 Book a Setup Call
@@ -398,7 +398,7 @@ export default async function ClaudeCodeSetupPage({
                   ))}
                 </ul>
                 <a
-                  href="mailto:reid@getateam.ai?subject=Claude%20Code%20Setup%20Call"
+                  href="mailto:support@learntogpt.com?subject=Claude%20Code%20Setup%20Call"
                   className="inline-flex w-full items-center justify-center gap-2 rounded-full border-[3px] border-ink bg-cream px-8 py-3 font-bold text-ink shadow-[4px_4px_0px_#1c1917] transition-all hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[2px_2px_0px_#1c1917]"
                 >
                   Book Setup Call

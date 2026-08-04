@@ -142,7 +142,7 @@ export function CheckoutStatusBanner({ entitled }: { entitled?: boolean }) {
                 {t("tryAgainCta")}
               </a>
               <a
-                href="mailto:reid@getateam.ai?subject=Checkout%20help"
+                href="mailto:support@learntogpt.com?subject=Checkout%20help"
                 className="text-sm font-semibold text-text-secondary underline transition-colors hover:text-ink"
               >
                 {t("supportCta")}

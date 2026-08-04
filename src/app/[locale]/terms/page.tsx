@@ -74,10 +74,10 @@ export default function TermsPage() {
                 Courses are free. If you have a historical paid subscription on file,
                 refunds are handled on a case-by-case basis — email{" "}
                 <a
-                  href="mailto:reid@getateam.ai"
+                  href="mailto:support@learntogpt.com"
                   className="font-semibold text-orange hover:underline"
                 >
-                  reid@getateam.ai
+                  support@learntogpt.com
                 </a>
                 .
               </p>
@@ -142,8 +142,8 @@ export default function TermsPage() {
               <h2 className="text-lg font-bold text-ink">11. Contact</h2>
               <p className="mt-2">
                 Questions about these terms? Contact us at{" "}
-                <a href="mailto:reid@getateam.ai" className="font-semibold text-orange hover:underline">
-                  reid@getateam.ai
+                <a href="mailto:support@learntogpt.com" className="font-semibold text-orange hover:underline">
+                  support@learntogpt.com
                 </a>
               </p>
             </section>

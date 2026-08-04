@@ -153,7 +153,7 @@ const trainingOptions = [
     ],
     cta: {
       label: "Contact Us",
-      href: "mailto:reid@getateam.ai?subject=Claude%20Academy%20Enterprise",
+      href: "mailto:support@learntogpt.com?subject=Claude%20Academy%20Enterprise",
       primary: false,
       isEmail: true,
     },
@@ -301,7 +301,7 @@ export default async function ClaudeForBusinessPage({
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
               <a
-                href="mailto:reid@getateam.ai?subject=Claude%20Academy%20Enterprise%20Training"
+                href="mailto:support@learntogpt.com?subject=Claude%20Academy%20Enterprise%20Training"
                 className="inline-flex items-center justify-center gap-2 rounded-full border-[3px] border-ink bg-orange px-10 py-4 text-[1.1rem] font-bold text-white shadow-[6px_6px_0px_#1c1917] transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[1px_1px_0px_#1c1917]"
               >
                 Talk to Us About Teams
