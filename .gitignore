@@ -54,3 +54,8 @@ distribution/
 # Local design experiments + prospect dumps + one-off CA-fork scripts (not product code)
 design-*.html
 affiliate-prospects-*/
+
+# Outreach target lists carry third-party names and business emails.
+# They live in the private vault, never in this public repo.
+creators-*.json
+affiliate-prospects-*/
