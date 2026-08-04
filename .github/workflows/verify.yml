@@ -21,7 +21,15 @@ jobs:
         with:
           node-version: 20
           cache: npm
-      - run: npm ci
+      # --ignore-scripts: package lifecycle hooks (preinstall/install/postinstall)
+      # are the execution vector for the Shai-Hulud worm family. ~/.npmrc sets
+      # ignore-scripts=true on the dev host but that file never reaches a runner,
+      # so CI was the last place a malicious hook could still execute. No package
+      # in this lockfile needs its install script: esbuild, @swc/core,
+      # unrs-resolver, sharp and @parcel/watcher all resolve prebuilt platform
+      # binaries (@esbuild/linux-x64 etc.) from the lockfile at runtime, and
+      # msw's postinstall no-ops without an `msw.workerDirectory` key.
+      - run: npm ci --ignore-scripts
       - run: npx tsc --noEmit
 
   lint:
@@ -33,7 +41,8 @@ jobs:
         with:
           node-version: 20
           cache: npm
-      - run: npm ci
+      # --ignore-scripts: see the typecheck job above for the full rationale.
+      - run: npm ci --ignore-scripts
       - run: npm run lint
 
   security:
