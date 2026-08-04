@@ -170,7 +170,7 @@
       "masterclassButton": "获取大师课",
       "setupTitle": "或者让我为你设置",
       "setupBody": "预约一对一会议，我会在你的电脑上完成所有设置。你将带走一套为你项目量身配置的完整系统。",
-      "setupButton": "与 Reid 预约通话"
+      "setupButton": "预约配置通话"
     }
   },
   "pricing": {
@@ -330,7 +330,7 @@
     "failedToOpenPortal": "未能打开订阅门户",
     "failedToDeleteAccount": "未能删除账户",
     "allFreeHeading": "所有课程均免费。",
-    "allFreeBody": "Learn to GPT 没有付费方案。如果你希望我一对一为你配置，请发邮件至 reid@getateam.ai。"
+    "allFreeBody": "Learn to GPT 没有付费方案。如果你希望我们的团队一对一为你配置，请发邮件至 support@learntogpt.com。"
   },
   "leaderboard": {
     "heading": "排行榜",

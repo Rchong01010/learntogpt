@@ -1,6 +1,6 @@
 # Claude Academy International Expansion — Weekend Proof
 
-**Candidate:** Reid Chong
+**Candidate:** [redacted]
 **Role:** International Expansion Lead, Anthropic
 **Application date:** 2026-04-10
 **This document:** 2026-04-11 (weekend of the application)
@@ -133,7 +133,7 @@ Same playbook, applied to Anthropic's own surfaces. In priority order:
 
 **Merge commit:** `773fbff` on `main` — `feat/i18n-weekend` fast-forwarded into `main` on 2026-04-11
 
-**Production deploy:** https://claude-academy-kha6rworp-reid-chongs-projects.vercel.app (Vercel, auto-deployed from `main`)
+**Production deploy:** Vercel, auto-deployed from `main`
 
 **Commit history:** 18+ commits spanning foundation → route restructure → UI extraction → translation scripts → translations → reseed → SEO → docs, with a commit message for every discrete decision
 
@@ -181,12 +181,12 @@ Target runtime: 90–120 seconds. Screen-record at 1080p, browser zoom 110% so t
 
 ---
 
-## Follow-up email — DRAFT (do not send until Reid has reviewed)
+## Follow-up email — DRAFT (do not send until reviewed)
 
-> **This is a draft.** Reid should personalize the recipient name, confirm the role title matches the exact posting, paste the real Loom URL, and edit tone to taste before sending.
+> **This is a draft.** The sender should personalize the recipient name, confirm the role title matches the exact posting, paste the real Loom URL, and edit tone to taste before sending.
 
 **To:** [recruiter or hiring manager name — look up on LinkedIn / Anthropic careers page]
-**From:** reid@getateam.ai
+**From:** [sender email]
 **Subject:** Re: International Expansion Lead — I shipped a proof over the weekend
 
 ---
@@ -212,9 +212,9 @@ Could we find 30 minutes this week? I can work around any time zone on your side
 
 Thanks for building the product I get to teach every day.
 
-Reid Chong
-reid@getateam.ai
-(803) 291-0708
+[name]
+[email]
+[phone]
 
 ---
 
@@ -228,4 +228,4 @@ A 30-minute conversation. If the interview process moves forward on its normal p
 
 Either way — thank you for making a product I build with every day. I'd rather help you ship it to more people than anything else I can think of right now.
 
-— Reid
+— [name]

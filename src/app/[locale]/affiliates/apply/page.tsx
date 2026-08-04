@@ -373,8 +373,8 @@ export default function AffiliateApplyPage() {
 
         <div className="mt-8 text-center text-sm text-stone-500">
           Questions?{" "}
-          <a href="mailto:reid@getateam.ai" className="text-[#e07a3a] underline">
-            reid@getateam.ai
+          <a href="mailto:affiliates@learntogpt.com" className="text-[#e07a3a] underline">
+            affiliates@learntogpt.com
           </a>
         </div>
       </div>

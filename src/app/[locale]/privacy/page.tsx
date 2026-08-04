@@ -117,8 +117,8 @@ export default function PrivacyPage() {
               <h2 className="text-lg font-bold text-ink">9. Contact</h2>
               <p className="mt-2">
                 Questions about this policy? Contact us at{" "}
-                <a href="mailto:reid@getateam.ai" className="font-semibold text-orange hover:underline">
-                  reid@getateam.ai
+                <a href="mailto:support@learntogpt.com" className="font-semibold text-orange hover:underline">
+                  support@learntogpt.com
                 </a>
               </p>
             </section>

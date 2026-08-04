@@ -155,8 +155,8 @@ export default function AffiliateAssetsPage() {
           </ul>
           <p className="text-stone-700 mt-4">
             Need the brand pack faster? Email{" "}
-            <a href="mailto:reid@getateam.ai" className="text-[#e07a3a] underline">
-              reid@getateam.ai
+            <a href="mailto:affiliates@learntogpt.com" className="text-[#e07a3a] underline">
+              affiliates@learntogpt.com
             </a>
             .
           </p>

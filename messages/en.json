@@ -170,7 +170,7 @@
       "masterclassButton": "Get the Masterclass",
       "setupTitle": "Or have it done for you",
       "setupBody": "Book a 1:1 and I'll set it up on your machine. You walk away with the full system running, configured for your projects.",
-      "setupButton": "Schedule a call with Reid"
+      "setupButton": "Schedule a setup call"
     }
   },
   "pricing": {
@@ -329,7 +329,7 @@
     "failedToOpenPortal": "Failed to open subscription portal",
     "failedToDeleteAccount": "Failed to delete account",
     "allFreeHeading": "All courses are free.",
-    "allFreeBody": "There's no paid tier on Learn to GPT. If you want me to set things up with you 1:1, email reid@getateam.ai."
+    "allFreeBody": "There's no paid tier on Learn to GPT. If you'd like the team to set things up with you 1:1, email support@learntogpt.com."
   },
   "leaderboard": {
     "heading": "Leaderboard",
