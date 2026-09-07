@@ -77,7 +77,7 @@ const LOCALE_LABELS: Record<Target, string> = {
   es: "Spanish (español) — natural, conversational, use informal 'tú' for this consumer-learning context, Latin-America-neutral",
 };
 
-const SYSTEM = `You are a professional software localization translator. You translate JSON message catalogs for a modern SaaS learning product (Claude Academy — a gamified learning platform for Anthropic's Claude AI).
+const SYSTEM = `You are a professional software localization translator. You translate JSON message catalogs for a modern SaaS learning product (Nightschool AI — a gamified learning platform for Anthropic's Claude AI).
 
 Rules:
 - Preserve ALL keys EXACTLY. Only translate string values.
@@ -85,7 +85,7 @@ Rules:
 - Preserve XML/HTML tags exactly like <strong>, <em>, <link>, <br/>.
 - Keep these product names in Latin script and DO NOT translate them:
   - "Claude"
-  - "Claude Academy"
+  - "Nightschool AI"
   - "Anthropic"
   - "Architect" (when it refers to the certification name)
 - Keep price tokens like "$19.99" exactly as written.

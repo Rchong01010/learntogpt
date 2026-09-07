@@ -172,7 +172,7 @@ async function main() {
   }
 
   console.log(
-    `\nClaude Academy affiliate coupon setup${dryRun ? " (DRY RUN)" : ""}`
+    `\nNightschool AI affiliate coupon setup${dryRun ? " (DRY RUN)" : ""}`
   );
   console.log("=".repeat(60));
   console.log(`Parsed ${creators.length} creator rows from ${inputPath}\n`);
