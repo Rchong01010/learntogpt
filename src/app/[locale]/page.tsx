@@ -5,6 +5,7 @@ import { Link } from "@/i18n/routing";
 import { routing } from "@/i18n/routing";
 import { LocaleSwitcher } from "@/components/LocaleSwitcher";
 import { FaqJsonLd } from "@/components/FaqJsonLd";
+import { safeJsonLd } from "@/lib/json-ld";
 
 /*
  * Reconciliation note (Phase 5):
@@ -89,7 +90,7 @@ export default async function LandingPage({
         // Safe: own structured data, not user input
         // nosemgrep: react-dangerouslysetinnerhtml
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
+          __html: safeJsonLd({
             "@context": "https://schema.org",
             "@graph": [
               {

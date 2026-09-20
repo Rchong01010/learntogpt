@@ -1,3 +1,4 @@
+import { safeJsonLd } from "@/lib/json-ld";
 /**
  * Schema.org BreadcrumbList structured data.
  * Renders a <script type="application/ld+json"> block.
@@ -28,7 +29,7 @@ export function BreadcrumbJsonLd({ items }: BreadcrumbJsonLdProps) {
     // nosemgrep: react-dangerouslysetinnerhtml
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      dangerouslySetInnerHTML={{ __html: safeJsonLd(schema) }}
     />
   );
 }

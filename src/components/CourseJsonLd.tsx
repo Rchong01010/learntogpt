@@ -1,3 +1,4 @@
+import { safeJsonLd } from "@/lib/json-ld";
 /**
  * Schema.org Course structured data for SEO / AEO.
  * Renders a <script type="application/ld+json"> block.
@@ -48,7 +49,7 @@ export function CourseJsonLd({
     // nosemgrep: react-dangerouslysetinnerhtml
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      dangerouslySetInnerHTML={{ __html: safeJsonLd(schema) }}
     />
   );
 }

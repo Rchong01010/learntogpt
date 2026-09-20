@@ -1,3 +1,5 @@
+import { safeJsonLd } from "@/lib/json-ld";
+
 interface FaqItem {
   question: string;
   answer: string;
@@ -29,14 +31,14 @@ export function FaqJsonLd({ faqs }: FaqJsonLdProps) {
     })),
   };
 
-  // Safe: JSON.stringify output from our own schema object, not user input.
+  // FAQ text can flow in from generated content — escape HTML-significant
+  // chars so a "</script>" in a value can't close the tag early.
   // nosemgrep: react-dangerouslysetinnerhtml
-  const jsonLd: string = JSON.stringify(schema);
+  const jsonLd: string = safeJsonLd(schema);
 
   return (
     <script
       type="application/ld+json"
-      // Safe: jsonLd is JSON.stringify output from our own schema object, not user input.
       // nosemgrep: react-dangerouslysetinnerhtml
       dangerouslySetInnerHTML={{ __html: jsonLd }}
     />

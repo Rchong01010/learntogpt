@@ -3,6 +3,7 @@ import { setRequestLocale } from "next-intl/server";
 import { ArrowRight, HelpCircle, Code, Zap, Terminal } from "lucide-react";
 import { Link } from "@/i18n/routing";
 import { routing } from "@/i18n/routing";
+import { safeJsonLd } from "@/lib/json-ld";
 
 export async function generateMetadata({
   params,
@@ -127,7 +128,7 @@ export default async function ChatGPTAPITutorialPage({
 
   return (
     <div className="min-h-screen bg-[#fdf8f0]">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: safeJsonLd(jsonLd) }} />
 
       {/* Hero */}
       <section className="px-6 pt-[80px] pb-16 text-center">
