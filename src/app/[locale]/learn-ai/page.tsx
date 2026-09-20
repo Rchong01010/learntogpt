@@ -4,6 +4,7 @@ import { ArrowRight, BookOpen, Brain, Layers, Lightbulb, Zap, MessageSquare, Hel
 import { Link } from "@/i18n/routing";
 import { routing } from "@/i18n/routing";
 import { LocaleSwitcher } from "@/components/LocaleSwitcher";
+import { safeJsonLd } from "@/lib/json-ld";
 
 export async function generateMetadata({
   params,
@@ -138,7 +139,7 @@ export default async function LearnAIPage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
+          __html: safeJsonLd({
             "@context": "https://schema.org",
             "@graph": [
               {

@@ -4,6 +4,7 @@ import { ArrowRight, Award, TrendingUp, BookOpen, Users, Target, Shield, HelpCir
 import { Link } from "@/i18n/routing";
 import { routing } from "@/i18n/routing";
 import { LocaleSwitcher } from "@/components/LocaleSwitcher";
+import { safeJsonLd } from "@/lib/json-ld";
 
 export async function generateMetadata({
   params,
@@ -134,7 +135,7 @@ export default async function AiCertificationPage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
+          __html: safeJsonLd({
             "@context": "https://schema.org",
             "@graph": [
               {

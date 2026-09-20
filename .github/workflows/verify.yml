@@ -31,6 +31,9 @@ jobs:
       # msw's postinstall no-ops without an `msw.workerDirectory` key.
       - run: npm ci --ignore-scripts
       - run: npx tsc --noEmit
+      # Blocks a bare JSON.stringify inside dangerouslySetInnerHTML (JSON-LD
+      # injection). No install needed — plain Node, no deps.
+      - run: node scripts/check-json-ld-escaping.mjs
 
   lint:
     runs-on: ubuntu-latest
