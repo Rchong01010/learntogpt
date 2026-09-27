@@ -4,7 +4,7 @@ import { LevelBadge } from "@/components/gamification/LevelBadge";
 import { Flame, Trophy, Globe, MapPin } from "lucide-react";
 import { getLocale, getTranslations } from "next-intl/server";
 import { cn } from "@/lib/utils";
-import { getUser } from "@/lib/auth";
+import { requireUser } from "@/lib/auth";
 import { createSupabaseServer } from "@/lib/supabase-server";
 import { maskDisplayName } from "@/lib/leaderboard-privacy";
 import { Link } from "@/i18n/routing";
@@ -58,7 +58,9 @@ export default async function LeaderboardPage({
 }: {
   searchParams: Promise<Record<string, string | string[] | undefined>>;
 }) {
-  const user = await getUser();
+  // Defense in depth: the proxy gates /leaderboard, but the page must not
+  // depend on the proxy path match alone (encoded-path bypass, 2026-09-27).
+  const user = await requireUser();
   const supabase = await createSupabaseServer();
   const t = await getTranslations("leaderboard");
   const locale = await getLocale();
