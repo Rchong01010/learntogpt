@@ -53,6 +53,10 @@ export async function POST(request: Request) {
     if (typeof metadata !== "object" || Array.isArray(metadata)) {
       return Response.json({ error: "Invalid metadata" }, { status: 400 });
     }
+    // Cap the stored blob: metadata is client-supplied and lands in jsonb.
+    if (JSON.stringify(metadata).length > 2048) {
+      return Response.json({ error: "Metadata too large" }, { status: 400 });
+    }
     validatedMetadata = metadata as Record<string, unknown>;
   }
 

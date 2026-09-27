@@ -5,6 +5,7 @@ import { useRouter } from "@/i18n/routing";
 import { useSearchParams } from "next/navigation";
 import { createBrowserClient } from "@supabase/ssr";
 import { mergeLocalProgressToServer } from "@/lib/local-progress";
+import { safeRedirectPath } from "@/lib/safe-redirect";
 
 /**
  * Intermediate landing page after Google OAuth completes.
@@ -48,12 +49,8 @@ export default function AuthSuccessPage() {
       // If a specific next= destination was explicitly requested (e.g. checkout,
       // courses deep-link), honour it — don't hijack with onboarding.
       if (next) {
-        const safe =
-          next.startsWith("/") &&
-          !next.startsWith("//") &&
-          !/^[a-zA-Z][a-zA-Z\d+\-.]*:/.test(next)
-            ? next
-            : "/dashboard";
+        // Shared allowlist + same-origin check (rejects "/\evil.example").
+        const safe = safeRedirectPath(next, "/dashboard");
         router.replace(safe as Parameters<typeof router.replace>[0]);
         return;
       }

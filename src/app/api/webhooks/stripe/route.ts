@@ -365,10 +365,35 @@ export async function POST(request: NextRequest) {
 
   try {
     switch (event.type) {
-      case "checkout.session.completed": {
+      // `completed` fires when the customer finishes checkout, which for a
+      // delayed-notification payment method is BEFORE the money settles;
+      // `async_payment_succeeded` is the settlement event for those methods.
+      // Both land here and are gated on payment_status, so fulfillment happens
+      // once, on whichever event first reports "paid". Every write below is an
+      // idempotent upsert, so double delivery is safe.
+      case "checkout.session.completed":
+      case "checkout.session.async_payment_succeeded": {
         const session = event.data.object as Stripe.Checkout.Session;
         const product = session.metadata?.product;
         const userId = session.metadata?.user_id;
+
+        // Entitlement gate: never grant access for unsettled money. Card
+        // checkouts are already "paid" here (no-op on the common path);
+        // delayed methods are "unpaid" and must wait for
+        // async_payment_succeeded, otherwise a payment that later fails has
+        // already handed out paid access. "no_payment_required" (100% coupon)
+        // is a legitimate free checkout and still fulfills.
+        if (
+          session.payment_status !== "paid" &&
+          session.payment_status !== "no_payment_required"
+        ) {
+          console.info(
+            "[stripe] checkout session not yet settled; deferring fulfillment",
+            session.id,
+            session.payment_status
+          );
+          break;
+        }
 
         if (!userId) {
           // Customer paid but checkout session was created without a user_id

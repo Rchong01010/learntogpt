@@ -63,6 +63,8 @@ const CLAUDE_REDIRECT_SLUGS = [
 const REDIRECT_LOCALES = ["ja", "ko", "zh-CN", "de", "fr", "es", "pt-BR"];
 
 const nextConfig: NextConfig = {
+  // Don't advertise the framework (X-Powered-By: Next.js) to scanners.
+  poweredByHeader: false,
   async redirects() {
     const ACADEMY = "https://nightschoolai.com";
     return CLAUDE_REDIRECT_SLUGS.flatMap((slug) => [
