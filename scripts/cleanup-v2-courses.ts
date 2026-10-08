@@ -25,7 +25,7 @@ const supabase = createClient(SUPABASE_URL, SERVICE_ROLE_KEY);
 const OLD_TRACKS = ["fundamentals", "work", "claude_code", "api_agents", "architect_prep"];
 
 async function main() {
-  console.log("Claude Academy — V2 Course Cleanup");
+  console.log("Nightschool AI — V2 Course Cleanup");
   console.log("===================================\n");
 
   // Show what will be deleted

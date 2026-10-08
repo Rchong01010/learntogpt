@@ -1,3 +1,4 @@
+import { safeJsonLd } from "@/lib/json-ld";
 /**
  * Schema.org LearningResource structured data for lesson pages.
  * Renders a <script type="application/ld+json"> block.
@@ -50,7 +51,7 @@ export function LessonJsonLd({
     // nosemgrep: react-dangerouslysetinnerhtml
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      dangerouslySetInnerHTML={{ __html: safeJsonLd(schema) }}
     />
   );
 }

@@ -76,7 +76,7 @@ const LOCALE_LABELS: Record<string, string> = {
   es: "Spanish (español) — natural, conversational, informal 'tú', Latin-America-neutral",
 };
 
-const SYSTEM = `You are a professional software localization translator. You translate course content JSON for Claude Academy — a gamified learning platform for Anthropic's Claude AI.
+const SYSTEM = `You are a professional software localization translator. You translate course content JSON for Nightschool AI — a gamified learning platform for Anthropic's Claude AI.
 
 The JSON describes a track containing courses, each with lessons, each with exercises. You must:
 
@@ -106,7 +106,7 @@ PRESERVE EXACTLY (never translate):
 - Code blocks inside <pre> or <code> — preserve literal code
 - URLs and link targets inside href attributes
 - Placeholders like {variable}, {{variable}}
-- "Claude", "Claude Academy", "Anthropic", "Architect" (brand/product/cert names in Latin script)
+- "Claude", "Nightschool AI", "Anthropic", "Architect" (brand/product/cert names in Latin script)
 - Exact price tokens like "$19.99"
 
 CRITICAL for exercises:

@@ -1,5 +1,5 @@
 import { Resend } from "resend";
-import { timingSafeEqual } from "crypto";
+import { secretsMatch } from "@/lib/auth";
 import { escapeHtml } from "@/lib/escape-html";
 import { pingSignupSlack } from "@/lib/slack-signups";
 
@@ -15,10 +15,12 @@ const NOTIFY_EMAIL = process.env.NOTIFY_EMAIL || (() => {
  * Sends Reid an email notification for every new signup.
  */
 export async function POST(request: Request) {
-  // Verify webhook secret with timing-safe comparison
+  // Verify webhook secret with a length-guarded, timing-safe comparison.
+  // secretsMatch hashes both sides before comparing, so a wrong-length (or
+  // multi-byte) header returns a clean 401 instead of throwing inside
+  // timingSafeEqual and surfacing as an unhandled 500.
   const secret = request.headers.get("x-webhook-secret");
-  if (!WEBHOOK_SECRET || !secret || secret.length !== WEBHOOK_SECRET.length ||
-      !timingSafeEqual(Buffer.from(secret), Buffer.from(WEBHOOK_SECRET))) {
+  if (!WEBHOOK_SECRET || !secret || !secretsMatch(secret, WEBHOOK_SECRET)) {
     return Response.json({ error: "Unauthorized" }, { status: 401 });
   }
 

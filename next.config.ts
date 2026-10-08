@@ -64,7 +64,7 @@ const REDIRECT_LOCALES = ["ja", "ko", "zh-CN", "de", "fr", "es", "pt-BR"];
 
 const nextConfig: NextConfig = {
   async redirects() {
-    const ACADEMY = "https://claude-academy.com";
+    const ACADEMY = "https://nightschoolai.com";
     return CLAUDE_REDIRECT_SLUGS.flatMap((slug) => [
       // Prefix-free (default locale, en)
       {

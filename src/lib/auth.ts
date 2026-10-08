@@ -23,13 +23,33 @@ export function verifyCronAuth(
 ): boolean {
   if (!authHeader || !cronSecret) return false;
 
-  const expected = `Bearer ${cronSecret}`;
+  return secretsMatch(authHeader, `Bearer ${cronSecret}`);
+}
 
-  // Hash both sides to equal-length buffers so timingSafeEqual never throws on
-  // a length mismatch and the comparison stays constant-time regardless of the
-  // attacker-supplied header length.
-  const a = createHash("sha256").update(authHeader).digest();
-  const b = createHash("sha256").update(expected).digest();
+/**
+ * Constant-time equality for two secret strings of arbitrary length.
+ *
+ * Hashes both sides to fixed-width (32-byte) digests before comparing, which
+ * gives two properties a raw `timingSafeEqual(Buffer.from(a), Buffer.from(b))`
+ * does not:
+ *
+ *  1. It never THROWS. `timingSafeEqual` requires equal BYTE lengths, so a
+ *     caller guarding it with a `a.length !== b.length` check is still unsafe:
+ *     `String.length` counts UTF-16 code units, not bytes. A header of the
+ *     right character length but containing any multi-byte character (e.g. a
+ *     single accented letter) passes the guard and then throws inside
+ *     `timingSafeEqual` — turning a clean 401 into an unhandled 500. That
+ *     class of bug is what this helper exists to make unrepresentable.
+ *  2. The comparison time is independent of the secret's length and contents.
+ *
+ * Hashing does not weaken the check: SHA-256 is collision-resistant, so equal
+ * digests means equal inputs for any realistic attacker.
+ */
+export function secretsMatch(provided: string, expected: string): boolean {
+  if (!provided || !expected) return false;
+
+  const a = createHash("sha256").update(provided, "utf8").digest();
+  const b = createHash("sha256").update(expected, "utf8").digest();
 
   return timingSafeEqual(a, b);
 }

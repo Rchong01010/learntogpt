@@ -8,6 +8,7 @@ import { LocaleSwitcher } from "@/components/LocaleSwitcher";
 import { CheckoutStatusBanner } from "@/components/CheckoutStatusBanner";
 import { Suspense } from "react";
 import { ArrowRight, BookOpen, Sparkles, Code, Wrench, Award, Cog, Terminal } from "lucide-react";
+import { safeJsonLd } from "@/lib/json-ld";
 
 // Force dynamic rendering — lesson counts change, and SSG at build time
 // would call createSupabaseAdmin() without a request context (same issue
@@ -174,7 +175,7 @@ export default async function CurriculumPage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
+          __html: safeJsonLd({
             "@context": "https://schema.org",
             "@type": "ItemList",
             name: t("meta.title"),

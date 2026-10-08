@@ -9,7 +9,7 @@ chat.
 
 ## 1. Apply the Supabase migration
 
-Open the Supabase SQL editor for the **Claude Academy** project and run:
+Open the Supabase SQL editor for the **Nightschool AI** project and run:
 
 ```
 supabase/migrations/020_affiliate_snapshots.sql
