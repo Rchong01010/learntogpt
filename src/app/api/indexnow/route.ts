@@ -1,5 +1,6 @@
 import { NextRequest } from "next/server";
 import { rateLimit, getClientIP } from "@/lib/rate-limit";
+import { secretsMatch } from "@/lib/auth";
 
 const INDEXNOW_KEY =
   "15a6b41dc65a56c5481d4b9efef40b91776984c57dd17a1ab496f34007876dfb";
@@ -13,7 +14,8 @@ export async function POST(request: NextRequest) {
   }
 
   const secret = request.headers.get("x-indexnow-secret");
-  if (secret !== process.env.INDEXNOW_SECRET) {
+  // Constant-time compare (a plain !== leaks the secret prefix via timing).
+  if (!secret || !secretsMatch(secret, process.env.INDEXNOW_SECRET)) {
     return Response.json({ error: "Unauthorized" }, { status: 401 });
   }
 

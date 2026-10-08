@@ -4,19 +4,7 @@ import { createServerClient } from "@supabase/ssr";
 import { headers } from "next/headers";
 import { routing } from "@/i18n/routing";
 import type { Locale } from "@/i18n/routing";
-
-/** Allowed post-auth redirect destinations (prefix match for nested routes). */
-const REDIRECT_ALLOWLIST = [
-  "/dashboard",
-  "/settings",
-  "/courses",
-  "/profile",
-  "/leaderboard",
-  "/missions",
-  "/api/checkout",
-  "/auth-success",
-  "/onboarding",
-];
+import { safeRedirectPath } from "@/lib/safe-redirect";
 
 /**
  * Extracts a supported locale from the Accept-Language header.
@@ -77,35 +65,6 @@ function localizePath(
   if (locale === routing.defaultLocale) return path;
   if (path.startsWith("/api/")) return path;
   return `/${locale}${path}`;
-}
-
-/**
- * Validates that a redirect path is a safe, relative URL.
- * - Must start with "/"
- * - Must NOT start with "//" (protocol-relative URL — open redirect vector)
- * - Must NOT contain a protocol (e.g. "http:", "javascript:")
- * - Must be on the allowlist of known internal paths
- *
- * Returns the path if valid, or the fallback otherwise.
- */
-function safeRedirectPath(path: string | null, fallback: string): string {
-  if (
-    !path ||
-    !path.startsWith("/") ||
-    path.startsWith("//") ||
-    /^[a-zA-Z][a-zA-Z\d+\-.]*:/.test(path)
-  ) {
-    return fallback;
-  }
-
-  // Strip query string and hash for allowlist comparison (prefix match
-  // so nested routes like /courses/meet-claude/intro pass through).
-  const pathname = path.split("?")[0].split("#")[0];
-  if (!REDIRECT_ALLOWLIST.some((allowed) => pathname === allowed || pathname.startsWith(`${allowed}/`))) {
-    return fallback;
-  }
-
-  return path;
 }
 
 /*

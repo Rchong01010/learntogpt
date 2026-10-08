@@ -11,6 +11,7 @@ import {
 import { getLevelFromXP, type LessonXpBreakdown } from "@/types";
 import { rateLimit } from "@/lib/rate-limit";
 import { validateOrigin } from "@/lib/auth";
+import { PLATFORM } from "@/lib/config";
 
 const UUID_REGEX = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 const VALID_STATUSES = new Set(["in_progress", "completed"]);
@@ -74,11 +75,26 @@ export async function POST(request: Request) {
   // Look up lesson + course to check tier and XP reward server-side
   const { data: lesson } = await supabase
     .from("lessons")
-    .select("xp_reward, estimated_minutes, is_free")
+    .select("xp_reward, estimated_minutes, is_free, course_id")
     .eq("id", lesson_id)
     .single();
 
   if (!lesson) {
+    return Response.json({ error: "Lesson not found" }, { status: 404 });
+  }
+
+  // Platform scope: `lessons` is shared with claude-academy in one Supabase
+  // project and carries no platform column, so without this check a signed-in
+  // user could POST any Nightschool lesson id here and mint progress + XP on
+  // the shared user_profiles/leaderboard through this app. Only lessons whose
+  // course belongs to this platform may be recorded.
+  const { data: lessonCourse } = await supabase
+    .from("courses")
+    .select("platform")
+    .eq("id", lesson.course_id)
+    .maybeSingle();
+
+  if (!lessonCourse || lessonCourse.platform !== PLATFORM) {
     return Response.json({ error: "Lesson not found" }, { status: 404 });
   }
 

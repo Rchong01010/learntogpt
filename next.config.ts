@@ -63,6 +63,8 @@ const CLAUDE_REDIRECT_SLUGS = [
 const REDIRECT_LOCALES = ["ja", "ko", "zh-CN", "de", "fr", "es", "pt-BR"];
 
 const nextConfig: NextConfig = {
+  // Don't advertise the framework (X-Powered-By: Next.js) to scanners.
+  poweredByHeader: false,
   async redirects() {
     const ACADEMY = "https://nightschoolai.com";
     return CLAUDE_REDIRECT_SLUGS.flatMap((slug) => [
@@ -91,7 +93,7 @@ const nextConfig: NextConfig = {
           { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=()" },
           {
             key: "Content-Security-Policy",
-            value: "default-src 'self'; script-src 'self' 'unsafe-inline' https://challenges.cloudflare.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: blob: https:; connect-src 'self' https://*.supabase.co wss://*.supabase.co https://api.stripe.com https://challenges.cloudflare.com https://*.google-analytics.com https://*.analytics.google.com; frame-src https://js.stripe.com https://challenges.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://fonts.googleapis.com;",
+            value: "default-src 'self'; script-src 'self' 'unsafe-inline' https://challenges.cloudflare.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: blob: https:; connect-src 'self' https://*.supabase.co wss://*.supabase.co https://api.stripe.com https://challenges.cloudflare.com https://*.google-analytics.com https://*.analytics.google.com; frame-src https://js.stripe.com https://challenges.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://fonts.googleapis.com; base-uri 'self'; form-action 'self'; object-src 'none';",
           },
           {
             key: "Strict-Transport-Security",

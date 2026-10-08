@@ -3,6 +3,10 @@ import type { NextRequest } from "next/server";
 import createMiddleware from "next-intl/middleware";
 import { createServerClient } from "@supabase/ssr";
 import { routing } from "./i18n/routing";
+import {
+  isProtectedRoute as isProtectedPath,
+  matchLocale as matchLocaleIn,
+} from "./lib/protected-routes";
 
 /**
  * Learn to GPT proxy: composes next-intl locale routing with Supabase auth.
@@ -18,77 +22,21 @@ import { routing } from "./i18n/routing";
 
 const handleI18nRouting = createMiddleware(routing);
 
-// Protected routes matched AFTER stripping any locale prefix.
-const PROTECTED_ROUTES = [
-  "/dashboard",
-  "/courses",
-  "/profile",
-  "/leaderboard",
-  "/settings",
-  "/missions",
-  "/api/progress",
-  "/api/exercises",
-  "/api/leaderboard",
-  "/api/missions",
-  "/api/account",
-  "/api/portal",
-];
-
-// Public carve-outs: routes that match a PROTECTED_ROUTES prefix but are
-// intentionally accessible without auth. Used for lead-magnet courses whose
-// lessons act as the top-of-funnel for Learn to GPT. Lesson-level `is_free`
-// on the course/lesson rows is still the authoritative paywall inside the
-// page render; this just lets guests through the proxy gate.
-const PUBLIC_ROUTE_PREFIXES = [
-  "/courses/whats-new-in-claude",
-  "/courses/why-chatgpt",
-  "/courses/three-levels",
-  "/courses/strategic-prompting",
-  "/courses/essentials",
-  "/courses/practitioner-setup",
-];
-
-/**
- * Match the first path segment to a known locale case-insensitively. Locales
- * in routing.locales like "zh-CN" must still match a request path using
- * "/zh-cn/..." or "/ZH-CN/..." — otherwise the locale-stripped protection
- * check can be bypassed with a case-variant prefix. next-intl's own
- * middleware normalizes case on a redirect pass, but we do not want the
- * auth gate to depend on that behavior holding.
- */
 function matchLocale(
   segment: string | undefined
 ): (typeof routing.locales)[number] | null {
-  if (!segment) return null;
-  const lower = segment.toLowerCase();
-  const found = routing.locales.find((l) => l.toLowerCase() === lower);
-  return found ?? null;
+  return matchLocaleIn(segment, routing.locales);
 }
 
-function stripLocale(pathname: string): string {
-  const segments = pathname.split("/").filter(Boolean);
-  if (segments.length === 0) return "/";
-  if (matchLocale(segments[0])) {
-    return "/" + segments.slice(1).join("/");
-  }
-  return pathname;
+function isProtectedRoute(pathname: string): boolean {
+  // Decodes percent-escapes and fails closed; see src/lib/protected-routes.ts.
+  return isProtectedPath(pathname, routing.locales);
 }
 
 function extractLocale(pathname: string): (typeof routing.locales)[number] {
   const segments = pathname.split("/").filter(Boolean);
   const match = matchLocale(segments[0]);
   return match ?? routing.defaultLocale;
-}
-
-function isProtectedRoute(pathname: string): boolean {
-  const stripped = stripLocale(pathname);
-  const publicCarveOut = PUBLIC_ROUTE_PREFIXES.some(
-    (prefix) => stripped === prefix || stripped.startsWith(`${prefix}/`)
-  );
-  if (publicCarveOut) return false;
-  return PROTECTED_ROUTES.some(
-    (route) => stripped === route || stripped.startsWith(`${route}/`)
-  );
 }
 
 function isWebhookRoute(pathname: string): boolean {

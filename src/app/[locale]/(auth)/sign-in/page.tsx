@@ -2,9 +2,10 @@
 
 import { useState, useRef, useEffect } from "react";
 import { useTranslations } from "next-intl";
-import { useRouter, Link } from "@/i18n/routing";
+import { useRouter, Link, routing } from "@/i18n/routing";
 import { useSearchParams } from "next/navigation";
 import { createSupabaseBrowser } from "@/lib/supabase-browser";
+import { safeRedirectPath } from "@/lib/safe-redirect";
 import { Turnstile } from "@marsidev/react-turnstile";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -17,6 +18,13 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+
+function stripLocalePrefix(path: string | null): string | null {
+  if (!path) return path;
+  const first = path.split("/")[1]?.toLowerCase();
+  const isLocale = routing.locales.some((l) => l.toLowerCase() === first);
+  return isLocale ? path.slice(first.length + 1) || "/" : path;
+}
 
 const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || "";
 
@@ -32,9 +40,15 @@ export default function SignInPage() {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const turnstileRef = useRef<any>(null);
 
-  // Read redirect param set by proxy.ts checkAuth(). Validated server-side
-  // by safeRedirectPath in the auth callback — here we just pass it through.
-  const redirectTo = searchParams.get("redirect") || "/dashboard";
+  // Read redirect param set by proxy.ts checkAuth(). The email/password path
+  // navigates to it directly with router.push (no server hop), so it MUST be
+  // validated here too — an unvalidated value was an open redirect after login.
+  // proxy.ts passes the raw pathname, which may carry a locale prefix
+  // ("/ja/dashboard"); the locale-aware router re-adds it, so strip it first.
+  const redirectTo = safeRedirectPath(
+    stripLocalePrefix(searchParams.get("redirect")),
+    "/dashboard",
+  );
 
   // Show error from auth callback redirect (e.g. expired OAuth code).
   const authError = searchParams.get("error");

@@ -1,5 +1,5 @@
 import { verifyTurnstile } from "@/lib/turnstile";
-import { rateLimit } from "@/lib/rate-limit";
+import { rateLimit, getClientIP } from "@/lib/rate-limit";
 
 /**
  * Verifies a Turnstile token before allowing sign-up.
@@ -7,10 +7,9 @@ import { rateLimit } from "@/lib/rate-limit";
  */
 export async function POST(request: Request) {
   // Rate limit by IP to prevent brute-forcing
-  const ip =
-    request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
-    request.headers.get("x-real-ip") ||
-    "unknown";
+  // getClientIP prefers Vercel's x-real-ip; reading a client-supplied
+  // x-forwarded-for first let every request pick a fresh rate-limit bucket.
+  const ip = getClientIP(request);
   const rl = rateLimit(`captcha:${ip}`, { limit: 10, windowSeconds: 60 });
   if (!rl.allowed) {
     return Response.json({ error: "Too many attempts" }, { status: 429 });
