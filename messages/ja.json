@@ -170,7 +170,7 @@
       "masterclassButton": "マスタークラスを入手",
       "setupTitle": "または代わりにセットアップ",
       "setupBody": "1対1セッションを予約すれば、あなたのマシンにすべてセットアップします。プロジェクトに合わせて設定された完全なシステムを持ち帰れます。",
-      "setupButton": "Reidと通話を予約"
+      "setupButton": "セットアップ通話を予約"
     }
   },
   "pricing": {
@@ -329,7 +329,7 @@
     "failedToOpenPortal": "サブスクリプションポータルを開けませんでした",
     "failedToDeleteAccount": "アカウントの削除に失敗しました",
     "allFreeHeading": "すべてのコースが無料です。",
-    "allFreeBody": "Learn to GPTに有料プランはありません。1対1でセットアップをご希望の場合は、reid@getateam.ai までご連絡ください。"
+    "allFreeBody": "Learn to GPTに有料プランはありません。1対1でのセットアップをご希望の場合は、support@learntogpt.com までご連絡ください。"
   },
   "leaderboard": {
     "heading": "リーダーボード",

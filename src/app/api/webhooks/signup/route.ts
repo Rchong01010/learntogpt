@@ -6,8 +6,8 @@ import { pingSignupSlack } from "@/lib/slack-signups";
 const WEBHOOK_SECRET = process.env.SUPABASE_WEBHOOK_SECRET;
 const RESEND_API_KEY = process.env.RESEND_API_KEY;
 const NOTIFY_EMAIL = process.env.NOTIFY_EMAIL || (() => {
-  console.warn("[signup-webhook] NOTIFY_EMAIL not set — using fallback reid@getateam.ai");
-  return "reid@getateam.ai";
+  console.warn("[signup-webhook] NOTIFY_EMAIL not set — using fallback support@learntogpt.com");
+  return "support@learntogpt.com";
 })();
 
 /**

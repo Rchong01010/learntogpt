@@ -170,7 +170,7 @@
       "masterclassButton": "Obtenir la Masterclass",
       "setupTitle": "Ou faites-le faire pour vous",
       "setupBody": "Réservez une session 1:1 et je configure tout sur votre machine. Vous repartez avec le système complet, configuré pour vos projets.",
-      "setupButton": "Planifier un appel avec Reid"
+      "setupButton": "Planifier un appel de configuration"
     }
   },
   "pricing": {
@@ -330,7 +330,7 @@
     "failedToOpenPortal": "Échec de l'ouverture du portail d'abonnement",
     "failedToDeleteAccount": "Échec de la suppression du compte",
     "allFreeHeading": "Tous les cours sont gratuits.",
-    "allFreeBody": "Il n'y a pas de formule payante sur Learn to GPT. Si vous voulez que je configure tout avec vous en 1:1, écrivez-moi à reid@getateam.ai."
+    "allFreeBody": "Il n'y a pas de formule payante sur Learn to GPT. Si vous voulez que notre équipe configure tout avec vous en 1:1, écrivez-nous à support@learntogpt.com."
   },
   "leaderboard": {
     "heading": "Classement",
