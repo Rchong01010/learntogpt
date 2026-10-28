@@ -5,7 +5,8 @@ import { routing } from '@/i18n/routing';
 import { redirect } from 'next/navigation';
 import { createSupabaseServer } from '@/lib/supabase-server';
 import { getLessonContent } from '@/lib/content-cache';
-import { requireUser, getUser, isPro } from '@/lib/auth';
+import { requireUser, getUser } from '@/lib/auth';
+import { canAccessCourse } from '@/lib/course-access';
 import { LessonPlayerClient } from './LessonPlayerClient';
 import { AdvancedTrackEndCta } from '@/components/AdvancedTrackEndCta';
 import { AccountGate } from '@/components/AccountGate';
@@ -151,31 +152,10 @@ export default async function LessonPage({
   // existing progress in this course (grace rule). If not started → redirect
   // to the course page which shows the PaywallCta.
   if (authenticatedUser) {
-    const userIsPro = await isPro(authenticatedUser.id);
-    if (!userIsPro) {
-      // Fetch all lesson IDs in this course to check for existing progress
-      const { data: courseLessonIds } = await supabase
-        .from('lessons')
-        .select('id')
-        .eq('course_id', course.id);
-
-      const ids = (courseLessonIds ?? []).map((l) => l.id);
-      let hasProgress = false;
-      if (ids.length > 0) {
-        const { data: existingProgress } = await supabase
-          .from('user_progress')
-          .select('lesson_id')
-          .eq('user_id', authenticatedUser.id)
-          .in('lesson_id', ids)
-          .limit(1);
-        hasProgress = (existingProgress ?? []).length > 0;
-      }
-
-      if (!hasProgress) {
-        // No prior progress in this course — enforce paywall by redirecting to
-        // the course overview page where PaywallCta is rendered.
-        redirect(`/courses/${slug}`);
-      }
+    if (!(await canAccessCourse(supabase, authenticatedUser.id, course.id))) {
+      // No prior progress in this course — enforce paywall by redirecting to
+      // the course overview page where PaywallCta is rendered.
+      redirect(`/courses/${slug}`);
     }
   }
 
