@@ -11,6 +11,7 @@ import {
 import { getLevelFromXP, type LessonXpBreakdown } from "@/types";
 import { rateLimit } from "@/lib/rate-limit";
 import { validateOrigin } from "@/lib/auth";
+import { canAccessCourse } from "@/lib/course-access";
 import { PLATFORM } from "@/lib/config";
 
 const UUID_REGEX = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
@@ -98,8 +99,11 @@ export async function POST(request: Request) {
     return Response.json({ error: "Lesson not found" }, { status: 404 });
   }
 
-  // Wave 2 (GTM bible v2.0 §3): Pro paywall is OFF — every signed-in user
-  // can record progress on every lesson.
+  // Progress may only be recorded for courses the lesson page would serve
+  // this user (same decision, see src/lib/course-access.ts).
+  if (!(await canAccessCourse(supabase, user.id, lesson.course_id))) {
+    return Response.json({ error: "Course locked" }, { status: 403 });
+  }
 
   const serverXP = lesson.xp_reward ?? 10;
   const estimatedMinutes = lesson.estimated_minutes ?? 5;
